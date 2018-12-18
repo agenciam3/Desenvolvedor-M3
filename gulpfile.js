@@ -1,8 +1,11 @@
-var gulp = require('gulp');
-var imagemin = require('gulp-imagemin');
-var uglify = require('gulp-uglify');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
+let gulp = require('gulp');
+let imagemin = require('gulp-imagemin');
+let uglify = require('gulp-uglify');
+let sass = require('gulp-sass');
+let concat = require('gulp-concat');
+let postcss = require('gulp-postcss');
+let autoprefixer = require('autoprefixer');
+let cleanCSS = require('gulp-clean-css');
 
 /* TOP LEVEL FUNCTIONS 
 
@@ -23,7 +26,7 @@ gulp.task('message', function (done) {
 // copy html
 
 gulp.task('copy', function (done) {
-    gulp.src('src/*html')
+    gulp.src('src/*.html')
         .pipe(gulp.dest('dist'));
     done();
 });
@@ -46,11 +49,22 @@ gulp.task('minify', function (done) {
 })
 
 
-// compile sass
+// compile concat and minify sass/css
+
+var plugins = [
+    autoprefixer({
+        browsers: ['last 1 version']
+    })
+];
 
 gulp.task('sass', function (done) {
     gulp.src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(concat('styles.css'))
+        .pipe(postcss(plugins))
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
         .pipe(gulp.dest('dist/css'));
     done();
 });

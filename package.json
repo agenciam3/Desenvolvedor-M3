@@ -17,13 +17,16 @@
   },
   "homepage": "https://github.com/romRDX/Desenvolvedor-M3#readme",
   "devDependencies": {
+    "gulp-clean-css": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^5.0.3",
+    "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.1",
     "node-sass": "^4.11.0"
   },
   "dependencies": {
+    "autoprefixer": "^9.4.3",
     "gulp": "3.9.1"
   }
 }
