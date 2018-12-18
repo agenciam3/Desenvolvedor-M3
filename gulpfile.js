@@ -13,7 +13,7 @@ gulp.watch - watch files and folders for changes
 
 */
 
-// logs messagee
+// logs message
 
 gulp.task('message', function (done) {
     return console.log('gulp is running...');
