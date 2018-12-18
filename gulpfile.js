@@ -69,6 +69,18 @@ gulp.task('sass', function (done) {
     done();
 });
 
+gulp.task('css', function (done) {
+    gulp.src('src/sass/*.css')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(concat('reset.css'))
+        .pipe(postcss(plugins))
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(gulp.dest('dist/css'));
+    done();
+});
+
 // scripts cocat + minify
 
 gulp.task('scripts', function () {
@@ -86,5 +98,6 @@ gulp.task('watch', function () {
     gulp.watch('src/js/*.js', ['scripts']);
     gulp.watch('src/images/*', ['imgmin']);
     gulp.watch('src/sass/*.scss', ['sass']);
+    // gulp.watch('src/sass/*.css', ['css']);
     gulp.watch('src/*.html', ['copy']);
 });
