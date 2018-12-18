@@ -1,4 +1,6 @@
 @import "../../node_modules/normalize.css/normalize";
-@import "partials/variables";
-@import "partials/mixin";
-@import "partials/extends";
+@import "./partials/variables";
+@import "./partials/base";
+@import "./partials/mixin";
+@import "./partials/extends";
+@import "./components/header";

@@ -6,19 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>M3 | Digital Performance </title>
-  <link rel="stylesheet" href="assets/css/main.min.css">
+  <link rel="stylesheet" href="./assets/css/main.min.css">
 </head>
 
 <body>
   <header>
-    <nav>
-      <a href="#" class="logo"><img src="./layout/imagens/logo-m3.png" alt="Logo"></a>
-      <a href="#"><img src="./layout/imagens/bag.png" alt="shopping bag"> <span class="bag-counter">3</span></a>
+    <nav class="nav container">
+      <a class="nav__brand" href="#" class="logo"><img src="./layout/imagens/logo-m3.png" alt="Logo"></a>
+      <div class="nav__bag">
+        <a class="nav__bag-link" href="#">
+          <img src="./layout/imagens/bag.png" alt="shopping bag">
+          <div class="nav__bag-counter">
+            <span>3</span>
+          </div>
+        </a>
+      </div>
     </nav>
+    <hr class="nav-border">
   </header>
-  <main>
+  <main class="container">
     <div class="content-header">
-      <h1 class="title">Blusas</h1>
+      <h1 class="content-header__title">
+        Blusas
+      </h1>
       <form class="order-by">
         <select name="order-by" id="order-by">
           <option value="order-by">Ordernar por:</option>
@@ -29,8 +39,8 @@
       </form>
     </div>
     <aside class="side-menu">
-      <div class="side-menu--block">
-        <h2 class="side-menu--title">Cores</h2>
+      <div class="side-menu__block">
+        <h2 class="side-menu__title">Cores</h2>
         <form>
           <div>
             <label>
@@ -65,8 +75,8 @@
         </form>
         <a href="#">Ver todas as cores <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon"></a>
       </div>
-      <div class="side-menu--block">
-        <h2 class="side-menu--title">Tamanhos</h2>
+      <div class="side-menu__block">
+        <h2 class="side-menu__title">Tamanhos</h2>
         <form>
           <div class="size-button">
             <label>
@@ -137,8 +147,8 @@
         </form>
         <a href="#">Ver todas as cores <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon"></a>
       </div>
-      <div class="side-menu--block">
-        <h2 class="side-menu--title">Faixa de preço</h2>
+      <div class="side-menu__block">
+        <h2 class="side-menu__title">Faixa de preço</h2>
         <form>
           <div>
             <label>
@@ -179,84 +189,85 @@
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
       <article class="products-item">
         <figure>
           <img src="./layout/imagens/img_2.png" alt="products image">
         </figure>
-        <h3 class="products-item--title">Camiseta Mescla</h3>
-        <p class="products-item--price">R$ 28,00</p>
-        <small class="products-item--divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item--btn">Comprar</a>
+        <h3 class="products-item__title">Camiseta Mescla</h3>
+        <p class="products-item__price">R$ 28,00</p>
+        <small class="products-item__divided-by"> até 3x de R$9,33</small>
+        <a href="#" class="products-item__btn">Comprar</a>
       </article>
-      <button class="products--btn">Carregar mais</button>
+
+      <button class="products__btn--accent">Carregar mais</button>
     </section>
   </main>
   <footer>
