@@ -1,0 +1,33 @@
+{
+  "name": "Desenvolvedor-M3",
+  "version": "1.0.0",
+  "description": "Projeto front end",
+  "main": "js/main.js",
+  "scripts": {
+    "clean": "gulp clean",
+    "sass": "gulp sass",
+    "css": "gulp css",
+    "scripts": "gulp scripts",
+    "build": "gulp",
+    "dev": "gulp watch"
+  },
+  "author": "Heraldo Ecard Roque Filho",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.0",
+    "autoprefixer": "^9.4.2",
+    "babel-loader": "^8.0.4",
+    "cssnano": "^4.1.7",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.11.0",
+    "webpack": "^4.27.1"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
+}
