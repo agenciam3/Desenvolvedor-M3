@@ -18,6 +18,10 @@
   "homepage": "https://github.com/romRDX/Desenvolvedor-M3#readme",
   "devDependencies": {
     "gulp": "^4.0.0",
-    "gulp-imagemin": "^5.0.3"
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "node-sass": "^4.11.0"
   }
 }
