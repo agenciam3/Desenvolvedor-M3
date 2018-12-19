@@ -13,6 +13,11 @@
     src: url('fonts/OpenSans-Regular.ttf')
 }
 
+@font-face {
+    font-family: "Open Sans sBold";
+    src: url('fonts/OpenSans-SemiBold.ttf')
+}
+
 $skyblue: #00bff3;
 
 $desktop: 840px;
@@ -23,8 +28,67 @@ $desktop: 840px;
     }
 }
 
+// --- HEADER --------------------------------------
+
+header {
+    border-bottom: 2px solid gray;
+    padding: 0 0 15px 0;
+
+    #logo {
+        height: 80px;
+        margin: 15px 0 0 30px;
+
+
+        @include desktop {
+            height: 30px;
+        }
+    }
+
+    #bag {
+        float: right;
+        position: relative;
+        margin: 25px 80px 0 0;
+        display: block;
+
+
+        img {
+            height: 60px;
+            margin: 0 auto;
+
+
+        }
+
+        .prods {
+            position: absolute;
+            left: 37px;
+            top: 22px;
+            //display: none;
+            border-radius: 50%;
+            background-color: #00c0ee;
+            width: 50px;
+            height: 50px;
+
+
+            #qtd {
+                font-size: 30px;
+                font-family: "Open Sans sBold";
+                margin: 2.5px 1px 0 0;
+                text-align: center;
+                color: white;
+
+            }
+        }
+    }
+}
+
+// --- BODY ----------------------------------------
+
+body {
+    margin: 0;
+}
 
 .content {
+
 
     #bmob {
 
@@ -130,7 +194,7 @@ $desktop: 840px;
             .fil-bar {
                 width: 100%;
                 border-bottom: 2px solid gray;
-                margin: 0 0 60px 0;
+                margin: 10px 0 60px 0;
             }
 
             h1 {
@@ -470,4 +534,22 @@ $desktop: 840px;
             background-color: darken($color: #00c0ee, $amount: 3)
         }
     }
+}
+
+// --- FOOTER --------------------------------------
+
+footer {
+    background-color: black;
+
+    margin: 150px 0 0 0;
+
+    p {
+        color: white;
+        font-family: "Open Sans Regular";
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 0 5px 0;
+        margin: 0;
+    }
+
 }

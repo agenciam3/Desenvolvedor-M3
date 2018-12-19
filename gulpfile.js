@@ -60,7 +60,7 @@ var plugins = [
 gulp.task('sass', function (done) {
     gulp.src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(concat('styles.css'))
+        .pipe(concat('mobile.css'))
         .pipe(postcss(plugins))
         .pipe(cleanCSS({
             compatibility: 'ie8'
@@ -71,8 +71,8 @@ gulp.task('sass', function (done) {
 
 gulp.task('css', function (done) {
     gulp.src('src/sass/*.css')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(concat('reset.css'))
+        // .pipe(sass().on('error', sass.logError))
+        .pipe(concat('desktop.css'))
         .pipe(postcss(plugins))
         .pipe(cleanCSS({
             compatibility: 'ie8'
@@ -98,6 +98,6 @@ gulp.task('watch', function () {
     gulp.watch('src/js/*.js', ['scripts']);
     gulp.watch('src/images/*', ['imgmin']);
     gulp.watch('src/sass/*.scss', ['sass']);
-    // gulp.watch('src/sass/*.css', ['css']);
+    gulp.watch('src/sass/*.css', ['css']);
     gulp.watch('src/*.html', ['copy']);
 });
