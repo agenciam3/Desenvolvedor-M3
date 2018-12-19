@@ -40,10 +40,10 @@
             <h2>Blusas</h2>
 
             <div class="box">
-                <div class="button1">
+                <div id="filt" class="button1">
                     <h1>Filtar</h1>
                 </div>
-                <div class="button1">
+                <div id="ord" class="button1">
                     <h1>Ordenar</h1>
                 </div>
             </div>
@@ -52,15 +52,15 @@
         <div id="opcoes">
 
             <div id="filtrar">
-                <div>
+                <div class="fil-bar">
                     <h1>Filtrar</h1>
-                    <div class="fclose"></div>
+                    <div class="fclose fcjs"></div>
                 </div>
 
                 <div id="cores">
                     <h2>cores</h2>
-                    <div class="fclose"></div>
-                    <div class="corOpt">
+                    <div id="fc1" class="fclose fcjs2"></div>
+                    <div class="Opt fc1">
                         <input type="checkbox" name="" id="am"><label for="am"> Amarelo </label> <br>
                         <input type="checkbox" name="" id="az"><label for="az"> Azul</label><br>
                         <input type="checkbox" name="" id="br"><label for="br"> Branco</label><br>
@@ -77,19 +77,43 @@
 
                 <div id="tamanhos">
                     <h2>tamanhos</h2>
-                    <div class="fclose"></div>
+                    <div id="fc2" class="fclose fcjs2"></div>
+
+                    <div class="Opt2 fc2">
+                        <input type="checkbox" name="" id="P"><label for="P"> P </label> <br>
+                        <input type="checkbox" name="" id="M"><label for="M"> M</label><br>
+                        <input type="checkbox" name="" id="G"><label for="G"> G</label><br>
+                        <input type="checkbox" name="" id="GG"><label for="GG"> GG</label><br>
+                        <input type="checkbox" name="" id="U"><label for="U"> U</label><br>
+                        <input type="checkbox" name="" id="36"><label for="36"> 36</label><br>
+                        <input type="checkbox" name="" id="38"><label for="38"> 38</label><br>
+                        <input type="checkbox" name="" id="40"><label for="40"> 40</label><br>
+                        <input type="checkbox" name="" id="42"><label for="42"> 42</label><br>
+                        <input type="checkbox" name="" id="44"><label for="44"> 44</label><br>
+                        <input type="checkbox" name="" id="46"><label for="46"> 46</label><br>
+                        <input type="checkbox" name="" id=""><label id="xxx" for=""></label><br>
+
+                    </div>
                 </div>
 
                 <div id="precos">
                     <h2>preços</h2>
-                    <div class="fclose"></div>
+                    <div id="fc3" class="fclose fcjs2"></div>
+                    <div class="Opt fc3">
+                        <input type="checkbox" name="" id="r50"><label for="r50"> de R$ 0 até R$ 50 </label> <br>
+                        <input type="checkbox" name="" id="r150"><label for="r150"> de R$ 51 até R$ 150</label><br>
+                        <input type="checkbox" name="" id="r300"><label for="r300"> de R$ 151 até R$ 300</label><br>
+                        <input type="checkbox" name="" id="r500"><label for="r500"> de R$ 301 até R$ 500</label><br>
+                        <input type="checkbox" name="" id="r501"><label for="r501"> a partir de R$ 501</label><br>
+
+                    </div>
                 </div>
             </div>
 
             <div id="ordenar">
-                <div>
+                <div class="fil-bar">
                     <h1>Ordenar</h1>
-                    <div class="fclose"></div>
+                    <div class="fclose fcjs"></div>
                 </div>
                 <h2>Mais recentes</h2>
                 <h2>Menor preço</h2>
@@ -174,19 +198,25 @@
 
         </div>
         <a>
-            <div id="mais">Mais Produtos</div>
+            <div id="mais">
+                Carregar Mais
+            </div>
         </a>
     </section>
+
+    <footer>
+        <p>Agência M3 - Agência de Performance Digital</p>
+    </footer>
 
     <body>
 
     </body>
-    <!--
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/main.js"></script> -->
 
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!--
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/wow.min.js"></script> -->
+    <script src="js/main.js"></script>
 
 </body>
 

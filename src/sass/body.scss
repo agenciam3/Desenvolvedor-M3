@@ -59,20 +59,23 @@
     #opcoes {
         position: fixed;
         top: 0;
-        left: 0%;
+        left: -100%;
         background-color: white;
         width: 100%;
         height: 100%;
+        overflow-y: scroll;
+        transition: 0.7s;
         // display: none;
 
         #filtrar {
             display: block;
             position: absolute;
             top: 0;
-            left: 0px;
+            left: -100%;
             width: 100%;
             background-color: white;
             height: 100%;
+            transition: .7s;
 
             // RDX TEST
             .fclose {
@@ -113,11 +116,16 @@
 
             // RDX TEST
 
-
-            h1 {
+            .fil-bar {
                 width: 100%;
                 border-bottom: 2px solid gray;
-                padding: 0 0 20px 30px;
+                margin: 0 0 60px 0;
+            }
+
+            h1 {
+
+                padding: 20px 0 10px 30px;
+                margin: 30px 0 40px 0;
                 font-family: "Open Sans Light";
                 text-transform: uppercase;
                 font-size: 50px;
@@ -160,6 +168,7 @@
                         width: 4px;
                         height: 100%;
                         margin-left: -2px;
+                        transform: rotate(90deg);
                     }
 
                     /* horizontal line */
@@ -169,28 +178,58 @@
                         width: 100%;
                         height: 4px;
                         margin-top: -2px;
+                        transform: rotate(90deg);
                     }
 
-                    &:active {
-                        cursor: pointer;
+                }
 
-                        &:before {
-                            transform: rotate(90deg);
-                        }
+                .fclose2 {
+                    position: absolute;
+                    right: 30px;
+                    top: 15px;
+                    width: 40px;
+                    height: 40px;
 
-                        &:after {
-                            transform: rotate(180deg);
-                        }
+                    &:before,
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        background-color: black;
+                        transition: transform 0.25s ease-out;
                     }
+
+                    /* Vertical line */
+                    &:before {
+                        top: 0;
+                        left: 50%;
+                        width: 4px;
+                        height: 100%;
+                        margin-left: -2px;
+                        transform: rotate(90deg);
+                    }
+
+                    /* horizontal line */
+                    &:after {
+                        top: 50%;
+                        left: 0;
+                        width: 100%;
+                        height: 4px;
+                        margin-top: -2px;
+                        transform: rotate(0deg);
+                    }
+
                 }
 
             }
 
-            .corOpt {
+            .Opt {
                 font-size: 38px;
                 padding: 0 0 0 80px;
                 margin: 0 0 50px 0;
                 font-family: 'Open Sans Regular';
+                height: 0px;
+                overflow: hidden;
+                transition: 0.7s;
 
                 label {
                     position: relative;
@@ -215,7 +254,7 @@
                         content: "";
                         width: 31px;
                         height: 31px;
-                        border: 1px solid black;
+                        //  border: 1px solid black;
                         display: inline-block;
                         box-sizing: border-box;
                         position: absolute;
@@ -225,26 +264,60 @@
                 }
 
                 input:checked+label::after {
-                    background-color: 00bff3;
+                    background-color: #00bff3;
                 }
 
                 input[type=checkbox] {
-                    transform: scale(4);
-                    padding: 10px;
-                    margin: 0 30px 50px 25px;
                     display: none;
+                }
+            }
+
+            .Opt2 {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                width: 80%;
+                margin: 0 0 50px 50px;
+                height: 0px;
+                overflow: hidden;
+                transition: 0.7s;
+
+                label {
+                    position: relative;
+                    padding: 35px 0px;
+                    width: 20%;
+                    display: block;
+                    margin: 0 15px 15px 15px;
+                    text-align: center;
+                    border: 2px solid transparent;
+                    font-size: 35px;
+                    font-family: "Open Sans Regular";
+
+                }
+
+                input:checked+label {
+                    border: 2px solid #00bff3;
+                }
+
+                input[type=checkbox] {
+                    display: none;
+                }
+
+                #xxx {
+                    border: initial;
                 }
             }
         }
 
         #ordenar {
-            display: none;
+            //display: none;
             position: absolute;
             top: 0;
-            left: 0px;
+            left: -100%;
             width: 100%;
             background-color: white;
             height: 100%;
+            transition: .7s;
 
             // RDX TEST
             .fclose {
@@ -285,11 +358,17 @@
 
             // RDX TEST
 
-
-            h1 {
+            .fil-bar {
                 width: 100%;
                 border-bottom: 2px solid gray;
-                padding: 0 0 20px 30px;
+                margin: 0 0 60px 0;
+            }
+
+            h1 {
+
+                padding: 20px 0 10px 30px;
+                margin: 30px 0 40px 0;
+                //  padding: 0 0 20px 30px;
                 font-family: "Open Sans Light";
                 text-transform: uppercase;
                 font-size: 50px;
@@ -367,7 +446,13 @@
     #mais {
         width: 30%;
         text-align: center;
-        margin: 70px auto 0 auto;
-        border: 1px solid black;
+        margin: 100px auto 0 auto;
+        padding: 25px 30px 20px 30px;
+        border: 0px solid black;
+        text-transform: uppercase;
+        background-color: #00c0ee;
+        font-size: 30px;
+        font-family: "Open Sans Bold";
+        color: white;
     }
 }

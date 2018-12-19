@@ -1,8 +1,23 @@
 footer {
-    background-color: green;
+    background-color: black;
+
+    margin: 150px 0 0 0;
+
+    p {
+        color: white;
+        font-family: "Open Sans Regular";
+        font-size: 20px;
+        text-align: center;
+        padding: 10px 0 5px 0;
+    }
+
+}
 
 
-    // RDX TEST2
+
+/*
+
+// RDX TEST2
     .fclose {
         position: absolute;
         right: 30px;
@@ -18,7 +33,6 @@ footer {
             transition: transform 0.25s ease-out;
         }
 
-        /* Vertical line */
         &:before {
             top: 0;
             left: 50%;
@@ -27,7 +41,7 @@ footer {
             margin-left: -2px;
         }
 
-        /* horizontal line */
+
         &:after {
             top: 50%;
             left: 0;
@@ -49,6 +63,4 @@ footer {
         }
     }
 
-    // RDX TEST2
-
-}
+*/
