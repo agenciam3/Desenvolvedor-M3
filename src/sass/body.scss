@@ -13,6 +13,17 @@
     src: url('fonts/OpenSans-Regular.ttf')
 }
 
+$skyblue: #00bff3;
+
+$desktop: 840px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+
 .content {
 
     #bmob {
@@ -264,7 +275,7 @@
                 }
 
                 input:checked+label::after {
-                    background-color: #00bff3;
+                    background-color: $skyblue;
                 }
 
                 input[type=checkbox] {
@@ -296,7 +307,7 @@
                 }
 
                 input:checked+label {
-                    border: 2px solid #00bff3;
+                    border: 2px solid $skyblue;
                 }
 
                 input[type=checkbox] {
@@ -454,5 +465,9 @@
         font-size: 30px;
         font-family: "Open Sans Bold";
         color: white;
+
+        &:active {
+            background-color: darken($color: #00c0ee, $amount: 3)
+        }
     }
 }
