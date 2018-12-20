@@ -274,31 +274,8 @@ $(document).ready(function () {
         return array;
     }
 
-    // Used like so
     var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
     arr = shuffle(arr);
-    // console.log(arr);
-    // console.log('\n' + arr[2]);
-    // var prod1 = arr[0];
-    // var prod2 = arr[0];
-    // var prod3 = arr[0];
-    // var prod4 = arr[0];
-    // var prod5 = arr[0];
-    // var prod6 = arr[0];
-    // var prod7 = arr[0];
-    // var prod8 = arr[0];
-    // var prod9 = arr[0];
-
-    // var prod10 = arr[0];
-    // var prod11 = arr[0];
-    // var prod12 = arr[0];
-    // var prod13 = arr[0];
-    // var prod14 = arr[0];
-    // var prod15 = arr[0];
-    // var prod16 = arr[0];
-    // var prod17 = arr[0];
-    // var prod18 = arr[0];
-
 
     // produtos principais
     for (var i = 0; i < 18; i++) {
@@ -346,10 +323,65 @@ $(document).ready(function () {
     // var x = $('.prod:nth-child(1) .button2').attr('data-cod');
     // console.log(x);
 
+    var prodcar = [];
+    var prodcar2;
+
+    var pcar = 0;
+    var pcar2;
+
+    prodcar2 = JSON.parse(localStorage.getItem('lista'));
+    pcar2 = JSON.parse(localStorage.getItem('qtdx'));
+
+    console.log(pcar);
+
+    if (pcar2 != null) {
+        prodcar = prodcar2;
+        console.log(prodcar);
+    }
+
+    if (prodcar2 != null) {
+        if (pcar2.qtd > 0) {
+            console.log(pcar2.qtd);
+            pcar = parseInt(pcar2.qtd);
+            console.log('\npcar 2º: ', pcar);
+        }
+    }
+
+    prods();
+
+    function prods() {
+        if (pcar > 0) {
+            $('.prods').css('display', 'initial');
+            $('#qtd').html(pcar);
+        }
+    }
 
     $(".button2").on('click', function () {
         var x = $(this).attr('data-cod');
-        console.log(x);
 
+        // console.log('\n 1--' + x);
+
+        prodcar[pcar] = prod.p[x - 1];
+
+        // console.log('\n conteudo: ', prodcar[pcar]);
+
+        pcar += 1;
+
+        prods();
+
+        var quantidade = {
+            "qtd": "0"
+        };
+
+        quantidade.qtd = pcar;
+        console.log('\n quantidade : ', quantidade);
+
+        localStorage.setItem('qtdx', JSON.stringify(quantidade));
+        console.log('\qtd final : ', pcar);
+
+        localStorage.setItem('lista', JSON.stringify(prodcar));
+        console.log('\nlista : ', prodcar);
     });
+
+
 });

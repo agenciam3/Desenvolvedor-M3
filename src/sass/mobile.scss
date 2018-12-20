@@ -221,7 +221,7 @@ header {
             position: absolute;
             right: 11px;
             top: 26px;
-            //display: none;
+            display: none;
             border-radius: 50%;
             background-color: #00c0ee;
             width: 17px;
@@ -973,7 +973,7 @@ body {
         // background-color: #00c0ee;
         // font-size: 15px;
         font-family: "Open Sans Regular";
-        // color: white;
+        color: white;
         // letter-spacing: 1px;
         // font-weight: 600;
         // width: 100%;
@@ -1011,6 +1011,7 @@ footer {
 
     margin: 50px 0 0 0;
 
+
     p {
         color: white;
         font-family: "Open Sans Regular";
@@ -1018,6 +1019,11 @@ footer {
         text-align: center;
         padding: 5px 0 5px 0;
         margin: 0;
+
+        @include desktop {
+            padding: 10px 0 10px 0;
+            font-size: 15px;
+        }
     }
 
 }
