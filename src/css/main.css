@@ -322,10 +322,6 @@ h3 {
   max-width: 900px;
   margin: 0 auto; }
 
-@media (max-width: 900px) {
-  .side-menu {
-    display: none; } }
-
 .nav {
   display: flex;
   justify-content: space-between; }
@@ -366,7 +362,10 @@ h3 {
 
 .content-header {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  flex-wrap: wrap; }
+  .content-header__mobile {
+    display: none; }
   .content-header__title {
     margin-top: 35px;
     margin-bottom: 32px; }
@@ -385,18 +384,30 @@ h3 {
     font-size: 12px;
     cursor: pointer;
     padding: 20px; }
+  .content-header__mobile-btn-box {
+    border: solid 1px #666;
+    margin: 0;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer; }
+  .content-header__mobile-btn {
+    background: #fff;
+    border: none;
+    color: #666; }
 
 .layout {
-  display: flex; }
+  display: flex;
+  justify-content: space-between; }
 
 .products {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
-  margin-left: 70px; }
+  justify-content: space-between;
+  width: 100%; }
   .products-item {
     text-align: center;
-    margin-right: 30px;
     margin-top: 40px; }
     .products-item img {
       width: 195px;
@@ -419,6 +430,7 @@ h3 {
       display: inline-block;
       text-decoration: none; }
   .products__btn--accent {
+    cursor: pointer;
     align-self: center;
     text-align: center;
     font-size: 14px;
@@ -436,6 +448,7 @@ h3 {
     flex-basis: 100%; }
 
 .side-menu {
+  margin-right: 70px;
   width: 60%; }
   .side-menu a {
     color: #666;
@@ -487,3 +500,19 @@ h3 {
       cursor: pointer; }
     .side-menu__form-sizes input[type="checkbox"] {
       display: none; }
+
+@media (max-width: 900px) {
+  .container {
+    width: 95%; }
+  .side-menu {
+    display: none; }
+  .content-header {
+    display: block;
+    text-align: center; }
+    .content-header__mobile {
+      display: flex;
+      justify-content: center; }
+  .content-header__form {
+    display: none; }
+  .products {
+    justify-content: center; } }

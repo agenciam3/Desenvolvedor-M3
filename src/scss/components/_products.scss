@@ -1,12 +1,11 @@
 .products {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
-    margin-left: 70px;
 
     &-item {
         text-align: center;
-        margin-right: 30px;
         margin-top: 40px;
 
         img {
@@ -43,6 +42,7 @@
     }
 
     &__btn--accent {
+        cursor: pointer;
         align-self: center;
         text-align: center;
         font-size: 14px;

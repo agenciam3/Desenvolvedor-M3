@@ -1,6 +1,11 @@
 .content-header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__mobile {
+        display: none;
+    }
 
     &__title {
         margin-top: 35px;
@@ -27,8 +32,26 @@
             padding: 20px;
         }
     }
+
+    &__mobile-btn-box {
+        border: solid 1px $dark-gray;
+        margin: 0;
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__mobile-btn {
+        background: #fff;
+        border: none;
+        color: $dark-gray;
+    }
 }
+
 
 .layout {
     display: flex;
+    justify-content: space-between;
 }

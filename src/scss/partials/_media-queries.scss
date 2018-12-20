@@ -1,5 +1,28 @@
 @media (max-width: 900px) {
+
+    .container {
+        width: 95%;
+    }
+
     .side-menu {
         display: none;
+    }
+
+    .content-header {
+        display: block;
+        text-align: center;
+
+        &__mobile {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .content-header__form {
+        display: none;
+    }
+
+    .products {
+        justify-content: center;
     }
 }
