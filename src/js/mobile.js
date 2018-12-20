@@ -231,7 +231,7 @@ $(document).ready(function () {
                 "cod": "16"
             },
             {
-                "nome": "CAMISA TRANSPARENTE V2",
+                "nome": "CAMISA TRANSPARENTE",
                 "preco": "796,00",
                 "parcela": "até 5x de R$60,00",
                 "cor": ['Preto', 'Vinho'],
@@ -299,13 +299,57 @@ $(document).ready(function () {
     // var prod17 = arr[0];
     // var prod18 = arr[0];
 
-    for (var i = 0; i < 9; i++) {
 
+    // produtos principais
+    for (var i = 0; i < 18; i++) {
 
-        $('#produtos').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2'><h1>Comprar</h1></div></div>")
+        if (i < 9) {
+            $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[i]].cod + "'><h1>Comprar</h1></div></div>")
 
-        if (i == 8) {
-            $('#produtos').append(" <div id='mais'><p> Carregar Mais </p></div>");
+            if (i == 8) {
+                $('#produtos1').append(" <div id='mais1' class='mais'><p> Carregar Mais </p></div>");
+                $('#produtos1').append("<div id='produtos2' class='produtos'></div>");
+            }
         }
+
+        if (i > 8) {
+
+
+            $('#produtos2').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[i]].cod + "'><h1>Comprar</h1></div></div>")
+
+            if (i == 17) {
+                $('#produtos2').append(" <div id='mais2' class='mais'><p> Carregar Menos </p></div>");
+            }
+        }
+
     };
+
+    // abre mais produtos
+
+    $('#mais1 p').on('click', function () {
+        $('#mais1').css('display', 'none');
+        $('#mais2').css('display', 'initial');
+        $('#produtos2').css('height', 'fit-content');
+    });
+
+    // fecha o mais produtos
+    $('#mais2 p').on('click', function () {
+        $('#produtos2').css('height', '0');
+        $('#mais2').css('display', 'none');
+        $('#mais1').css('display', 'initial');
+    });
+
+
+    // CARRINHO DE COMPRAS
+
+    // funciona
+    // var x = $('.prod:nth-child(1) .button2').attr('data-cod');
+    // console.log(x);
+
+
+    $(".button2").on('click', function () {
+        var x = $(this).attr('data-cod');
+        console.log(x);
+
+    });
 });

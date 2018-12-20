@@ -876,7 +876,7 @@ body {
         }
     }
 
-    #produtos {
+    .produtos {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -942,6 +942,7 @@ body {
                     color: white;
                     padding: 10px 0;
                     letter-spacing: .5px;
+                    cursor: pointer;
 
                     @include desktop {
                         padding: 20px 0;
@@ -952,40 +953,50 @@ body {
         }
     }
 
-    #mais {
+    #produtos2 {
 
-        text-align: center;
-        margin: 0px auto 0 auto;
-        padding: 13px 27px;
-        border: 0px solid black;
-        text-transform: uppercase;
-        background-color: #00c0ee;
-        font-size: 15px;
+        margin: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        min-height: 0;
+
+    }
+
+    .mais {
+
+        // text-align: center;
+        // margin: 0px auto 0 auto;
+        // padding: 13px 27px;
+        // border: 0px solid black;
+        // text-transform: uppercase;
+        // background-color: #00c0ee;
+        // font-size: 15px;
         font-family: "Open Sans Regular";
-        color: white;
-        letter-spacing: 1px;
-        font-weight: 600;
+        // color: white;
+        // letter-spacing: 1px;
+        // font-weight: 600;
+        // width: 100%;
 
-        @include desktop {
-            width: 100%;
-            background-color: white;
-            margin: 45px 0 00px 0;
-        }
+        // @include desktop {
+        width: 100%;
+        background-color: white;
+        margin: 45px 0 00px 0;
+        // }
 
         p {
 
-            @include desktop {
-                background-color: #00c0ee;
-                width: fit-content;
-                padding: 20px 40px;
-                text-align: center;
-                margin: 0 auto;
-                font-size: 20px;
-                cursor: pointer;
+            // @include desktop {
+            background-color: #00c0ee;
+            width: fit-content;
+            padding: 20px 40px;
+            text-align: center;
+            margin: 0 auto;
+            font-size: 20px;
+            cursor: pointer;
 
-                &:active {
-                    background-color: darken($color: #00c0ee, $amount: 3)
-                }
+            &:active {
+                background-color: darken($color: #00c0ee, $amount: 3) // }
             }
         }
 
@@ -1010,3 +1021,32 @@ footer {
     }
 
 }
+
+// TEST
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+//   <div class="dropdown">
+//     <span>Mouse over me</span>
+//     <div class="dropdown-content">
+//       <p>Hello World!</p>
+//     </div>
+//   </div>
