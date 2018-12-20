@@ -29,250 +29,253 @@
       <h1 class="content-header__title">
         Blusas
       </h1>
-      <form class="order-by">
+      <form class="content-header__form">
         <select name="order-by" id="order-by">
-          <option value="order-by">Ordernar por:</option>
+          <option value="order-by">Ordernar por: </option>
           <option value="newer">Mais Recente</option>
           <option value="lowest-price">Menor preço</option>
-          <option value="highest-price" class="order-by__active">Maior preço</option>
+          <option value="highest-price">Maior preço</option>
         </select>
       </form>
     </div>
-    <aside class="side-menu">
-      <div class="side-menu__block">
-        <h2 class="side-menu__title">Cores</h2>
-        <form>
-          <div>
-            <label>
-              <input type="checkbox" value="amarelo" />
-              <span>Amarelo</span>
-            </label>
+    <div class="layout">
+      <aside class="side-menu">
+        <div class="side-menu__block">
+          <h2 class="side-menu__title">Cores</h2>
+          <form class="side-menu__form">
+            <div>
+              <label>
+                <input type="checkbox" value="amarelo" />
+                <span>Amarelo</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="azul" />
+                <span>Azul</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="branco" />
+                <span>Branco</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="cinza" />
+                <span>Cinza</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="laranja" />
+                <span>Laranja</span>
+              </label>
+            </div>
+          </form>
+          <a href="#">Ver todas as cores <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon"></a>
+        </div>
+        <div class="side-menu__block">
+          <h2 class="side-menu__title">Tamanhos</h2>
+          <form class="side-menu__form-sizes">
+            <div>
+              <label>
+                <input type="checkbox" value="p" />
+                <span>P</span>
+              </label>
+            </div>
+            <div class="side-menu__form-sizes--active">
+              <label>
+                <input type="checkbox" value="m" />
+                <span>M</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="g" />
+                <span>G</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="gg" />
+                <span>GG</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="u" />
+                <span>U</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="36" />
+                <span>36</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="38" />
+                <span>38</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="40" />
+                <span>40</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="42" />
+                <span>42</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="44" />
+                <span>44</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="46" />
+                <span>46</span>
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="side-menu__block">
+          <h2 class="side-menu__title">Faixa de preço</h2>
+          <form class="side-menu__form">
+            <div>
+              <label>
+                <input type="checkbox" value="0-50" />
+                <span>de R$0 até R$50</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="51-150" />
+                <span>de R$51 até R$150</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="151-300" />
+                <span>de R$151 até R$300</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="301-500" />
+                <span>de R$301 até R$500</span>
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="checkbox" value="1" />
+                <span>a partir de R$01</span>
+              </label>
+            </div>
+          </form>
+        </div>
+      </aside>
+      <section>
+        <div class="products">
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <article class="products-item">
+            <figure>
+              <img src="./layout/imagens/img_2.png" alt="products image">
+            </figure>
+            <h3 class="products-item__title">Camiseta Mescla</h3>
+            <p class="products-item__price">R$ 28,00</p>
+            <small class="products-item__divided-by"> até 3x de R$9,33</small>
+            <a href="#" class="products-item__btn">Comprar</a>
+          </article>
+          <div class="products__btn">
+            <button class="products__btn--accent">Carregar mais</button>
           </div>
-          <div>
-            <label>
-              <input type="checkbox" value="azul" />
-              <span>Azul</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="branco" />
-              <span>Branco</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="cinza" />
-              <span>Cinza</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="laranja" />
-              <span>Laranja</span>
-            </label>
-          </div>
-        </form>
-        <a href="#">Ver todas as cores <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon"></a>
-      </div>
-      <div class="side-menu__block">
-        <h2 class="side-menu__title">Tamanhos</h2>
-        <form>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="p" />
-              <span>P</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="m" />
-              <span>M</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="g" />
-              <span>G</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="gg" />
-              <span>GG</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="u" />
-              <span>U</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="36" />
-              <span>36</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="38" />
-              <span>38</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="40" />
-              <span>40</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="42" />
-              <span>42</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="44" />
-              <span>44</span>
-            </label>
-          </div>
-          <div class="size-button">
-            <label>
-              <input type="checkbox" value="46" />
-              <span>46</span>
-            </label>
-          </div>
-        </form>
-        <a href="#">Ver todas as cores <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon"></a>
-      </div>
-      <div class="side-menu__block">
-        <h2 class="side-menu__title">Faixa de preço</h2>
-        <form>
-          <div>
-            <label>
-              <input type="checkbox" value="0-50" />
-              <span>de R$0 até R$50</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="51-150" />
-              <span>de R$51 até R$150</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="151-300" />
-              <span>de R$151 até R$300</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="301-500" />
-              <span>de R$301 até R$500</span>
-            </label>
-          </div>
-          <div>
-            <label>
-              <input type="checkbox" value="1" />
-              <span>a partir de R$01</span>
-            </label>
-          </div>
-        </form>
-        <a href="#">Ver todas as cores <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon"></a>
-      </div>
-    </aside>
-    <section class="products">
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-      <article class="products-item">
-        <figure>
-          <img src="./layout/imagens/img_2.png" alt="products image">
-        </figure>
-        <h3 class="products-item__title">Camiseta Mescla</h3>
-        <p class="products-item__price">R$ 28,00</p>
-        <small class="products-item__divided-by"> até 3x de R$9,33</small>
-        <a href="#" class="products-item__btn">Comprar</a>
-      </article>
-
-      <button class="products__btn--accent">Carregar mais</button>
-    </section>
+        </div>
+      </section>
+    </div>
   </main>
-  <footer>
-    <p class="footer-text">Agência M3 - Agência de Performance Digital</p>
-  </footer>
+  <foote class="footer">
+    <p class="footer__text">Agência M3 - Agência de Performance Digital</p>
+  </foote>
   <script src="assets/js/bundle.min.js"></script>
 </body>
 
