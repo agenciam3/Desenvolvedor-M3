@@ -1028,20 +1028,65 @@ footer {
 .dropdown {
     position: relative;
     display: inline-block;
+    margin: 39px 13vw 0 0;
+
+    .dropsp {
+        border: 1px solid black;
+        padding: 7px 7px 7px 7px;
+    }
+
+    .arrow {
+        border: solid black;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 3px;
+        text-decoration: underline;
+        margin: 0px 3px 3px 0px;
+        border-right: 1px solid black;
+    }
+
+    .up {
+        transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+    }
+
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+
+
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
+    top: 23px;
     background-color: #f9f9f9;
-    min-width: 160px;
+    width: fit-content;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
+    padding: 0;
     z-index: 1;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+    border: 1px solid black;
+
+    p {
+        // border: 1px solid black;
+        padding: 8px 22px 8px 7px;
+
+        &:hover {
+            background-color: $skyblue;
+        }
+    }
+}
+
+.title-ord {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 //   <div class="dropdown">
