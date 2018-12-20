@@ -1,3 +1,142 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+// CODE INIT
+
 @font-face {
     font-family: "Open Sans Light";
     src: url('fonts/OpenSans-Light.ttf');
@@ -20,6 +159,8 @@
 
 $skyblue: #00bff3;
 
+$lgray: lighten(gray, 4);
+
 $desktop: 840px;
 
 @mixin desktop {
@@ -31,50 +172,80 @@ $desktop: 840px;
 // --- HEADER --------------------------------------
 
 header {
-    border-bottom: 2px solid gray;
-    padding: 0 0 15px 0;
+    border-bottom: 1px solid lighten($color: gray, $amount: 30);
+    padding: 0 0 6px 0;
+
+    .pheader {
+        height: 100%;
+        display: block;
+    }
 
     #logo {
-        height: 80px;
+        height: 25px;
         margin: 15px 0 0 30px;
 
 
         @include desktop {
             height: 30px;
+            margin: 15px 0 0 10.8vw;
+
+            //174px;
         }
     }
 
     #bag {
         float: right;
-        position: relative;
-        margin: 25px 80px 0 0;
-        display: block;
+        margin: 16px 20px 0 0;
 
+        @include desktop {
+            margin: 16px 30px 0 150px;
+            position: relative;
+            display: block;
+            //right: 168px;
+            right: 10vw;
+            // 17em
+
+        }
 
         img {
-            height: 60px;
+            height: 20px;
             margin: 0 auto;
 
+            @include desktop {
+                height: 27px;
+            }
 
         }
 
         .prods {
             position: absolute;
-            left: 37px;
-            top: 22px;
+            left: 12px;
+            top: 9px;
             //display: none;
             border-radius: 50%;
             background-color: #00c0ee;
-            width: 50px;
-            height: 50px;
+            width: 17px;
+            height: 17px;
+
+            @include desktop {
+                width: 20px;
+                height: 20px;
+                left: 17px;
+                top: 13px;
+            }
 
 
             #qtd {
-                font-size: 30px;
+                font-size: 11px;
                 font-family: "Open Sans sBold";
-                margin: 2.5px 1px 0 0;
+                margin: 2.1px 1px 0 0;
                 text-align: center;
                 color: white;
+
+                @include desktop {
+                    font-size: 13px;
+                    margin: 2.5px 1px 0 0;
+                }
 
             }
         }
@@ -90,14 +261,40 @@ body {
 .content {
 
 
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 0 0 9.4vw;
+        // 150px;
+    }
+
+
+    h4 {
+        display: none;
+
+        @include desktop {
+            display: block;
+            width: 100%;
+            margin: 25px 0 20px 28px;
+            font-family: "Open Sans Regular";
+            text-transform: uppercase;
+            font-size: 25px;
+            letter-spacing: 5px;
+        }
+    }
+
     #bmob {
 
         h2 {
             width: 100%;
             text-align: center;
-            font-family: 'Open Sans Light';
-            font-size: 60px;
+            font-family: 'Open Sans Regular';
+            font-size: 30px;
             margin: 20px 0 20px 0;
+
+            @include desktop {
+                display: none;
+            }
         }
 
 
@@ -107,6 +304,21 @@ body {
             display: flex;
             justify-content: center;
             margin: 10px 0 0 0;
+
+            @include desktop {
+                display: none;
+            }
+
+            #filt,
+            #ord {
+                h1 {
+                    font-size: 13px;
+                    font-family: "Open Sans Regular";
+                    color: $lgray;
+                    padding: 8px 5px;
+
+                }
+            }
 
         }
 
@@ -118,7 +330,7 @@ body {
             padding: 8px 0 8px 0;
 
             &:active {
-                box-shadow: inset 0 0 15px #000000;
+                box-shadow: inset 0 0 10px #000000;
             }
 
             h1 {
@@ -142,23 +354,57 @@ body {
         transition: 0.7s;
         // display: none;
 
+        @include desktop {
+            position: relative;
+            left: auto;
+            width: 21%;
+            height: initial;
+            overflow-y: visible;
+        }
+
         #filtrar {
             display: block;
             position: absolute;
             top: 0;
-            left: -100%;
+            //left: -100%;
             width: 100%;
             background-color: white;
             height: 100%;
             transition: .7s;
 
+            #fc11 {
+
+                @include desktop {
+                    height: 500px;
+                }
+            }
+
+            #fc22 {
+
+                @include desktop {
+                    height: 180px;
+                }
+            }
+
+            #fc33 {
+
+                @include desktop {
+                    height: 292px;
+                }
+            }
+
             // RDX TEST
             .fclose {
                 position: absolute;
-                right: 30px;
-                top: 50px;
-                width: 40px;
-                height: 40px;
+                right: 15px;
+                top: 25px;
+                width: 20px;
+                height: 20px;
+
+                @include desktop {
+                    display: none;
+                }
+
 
                 &:before,
                 &:after {
@@ -172,9 +418,9 @@ body {
                 &:before {
                     top: 0;
                     left: 50%;
-                    width: 4px;
+                    width: 2px;
                     height: 100%;
-                    margin-left: -2px;
+                    margin-left: -1px;
                     transform: rotate(45deg);
                 }
 
@@ -183,8 +429,8 @@ body {
                     top: 50%;
                     left: 0;
                     width: 100%;
-                    height: 4px;
-                    margin-top: -2px;
+                    height: 2px;
+                    margin-top: -1px;
                     transform: rotate(45deg);
                 }
             }
@@ -193,28 +439,42 @@ body {
 
             .fil-bar {
                 width: 100%;
-                border-bottom: 2px solid gray;
+                border-bottom: 1px solid $lgray;
                 margin: 10px 0 60px 0;
+
+                @include desktop {
+                    margin: 0px 0 50px 0;
+                    border: none;
+                }
             }
 
             h1 {
 
-                padding: 20px 0 10px 30px;
-                margin: 30px 0 40px 0;
-                font-family: "Open Sans Light";
+                // padding: 20px 0 10px 30px;
+                margin: 25px 0 20px 20px;
+                font-family: "Open Sans Regular";
                 text-transform: uppercase;
-                font-size: 50px;
+                font-size: 15px;
                 color: gray;
                 letter-spacing: 5px;
+
+                @include desktop {
+                    display: none;
+                }
             }
 
             h2 {
-                font-family: "Open Sans Light";
-                font-size: 42px;
-                margin: 0 0 50px 30px;
+                font-family: "Open Sans Regular";
+                font-size: 16px;
+                margin: 0 0 0px 20px;
                 text-transform: uppercase;
                 letter-spacing: 4px;
+
+                @include desktop {
+                    margin: 0 0 20px 28px;
+                }
             }
+
 
             #cores,
             #tamanhos,
@@ -223,10 +483,10 @@ body {
 
                 .fclose {
                     position: absolute;
-                    right: 30px;
-                    top: 15px;
-                    width: 40px;
-                    height: 40px;
+                    right: 15px;
+                    top: 0px;
+                    width: 14px;
+                    height: 14px;
 
                     &:before,
                     &:after {
@@ -240,9 +500,9 @@ body {
                     &:before {
                         top: 0;
                         left: 50%;
-                        width: 4px;
+                        width: 2px;
                         height: 100%;
-                        margin-left: -2px;
+                        margin-left: -1px;
                         transform: rotate(90deg);
                     }
 
@@ -251,8 +511,8 @@ body {
                         top: 50%;
                         left: 0;
                         width: 100%;
-                        height: 4px;
-                        margin-top: -2px;
+                        height: 2px;
+                        margin-top: -1px;
                         transform: rotate(90deg);
                     }
 
@@ -260,10 +520,10 @@ body {
 
                 .fclose2 {
                     position: absolute;
-                    right: 30px;
-                    top: 15px;
-                    width: 40px;
-                    height: 40px;
+                    right: 15px;
+                    top: 0px;
+                    width: 14px;
+                    height: 14px;
 
                     &:before,
                     &:after {
@@ -277,9 +537,9 @@ body {
                     &:before {
                         top: 0;
                         left: 50%;
-                        width: 4px;
+                        width: 2px;
                         height: 100%;
-                        margin-left: -2px;
+                        margin-left: -1px;
                         transform: rotate(90deg);
                     }
 
@@ -288,8 +548,8 @@ body {
                         top: 50%;
                         left: 0;
                         width: 100%;
-                        height: 4px;
-                        margin-top: -2px;
+                        height: 2px;
+                        margin-top: -1px;
                         transform: rotate(0deg);
                     }
 
@@ -298,25 +558,34 @@ body {
             }
 
             .Opt {
-                font-size: 38px;
-                padding: 0 0 0 80px;
-                margin: 0 0 50px 0;
+                font-size: 15px;
+                //  padding: 0 0 0 80px;
+                margin: 30px 0 20px 40px;
                 font-family: 'Open Sans Regular';
                 height: 0px;
                 overflow: hidden;
                 transition: 0.7s;
 
+                @include desktop {
+                    margin: 15px 0 20px 27px;
+                }
+
                 label {
                     position: relative;
-                    padding: 0 0 0 60px;
+                    padding: 10px 0 0 40px;
                     display: block;
-                    margin: 0 0 15px 0;
+                    margin: 0px 0 25px 0;
+
+                    @include desktop {
+                        margin: 0px 0 0px 0;
+
+                    }
 
 
                     &::before {
                         content: "";
-                        width: 46px;
-                        height: 46px;
+                        width: 24px;
+                        height: 24px;
                         border: 1px solid black;
                         display: inline-block;
                         box-sizing: border-box;
@@ -327,14 +596,14 @@ body {
 
                     &::after {
                         content: "";
-                        width: 31px;
-                        height: 31px;
+                        width: 18px;
+                        height: 18px;
                         //  border: 1px solid black;
                         display: inline-block;
                         box-sizing: border-box;
                         position: absolute;
-                        left: 6.5px;
-                        top: 12.4px;
+                        left: 2.5px;
+                        top: 8.4px;
                     }
                 }
 
@@ -349,23 +618,32 @@ body {
 
             .Opt2 {
                 display: flex;
-                justify-content: space-around;
+                // justify-content: space-around;
                 flex-wrap: wrap;
                 width: 80%;
-                margin: 0 0 50px 50px;
+                margin: 0 0 50px 35px;
                 height: 0px;
                 overflow: hidden;
                 transition: 0.7s;
+                padding: 10px 0 0 0;
+
+                padding: 10px 0 0 40px;
+
+                @include desktop {
+                    padding: 11px 0 0 10px;
+                    margin: 0 0 50px 9px;
+                }
 
                 label {
-                    position: relative;
-                    padding: 35px 0px;
-                    width: 20%;
-                    display: block;
-                    margin: 0 15px 15px 15px;
                     text-align: center;
+                    position: relative;
+                    padding: 12px;
+                    width: 16px;
+                    height: 16px;
+                    display: block;
+                    margin: 10px 10px 0 10px;
                     border: 2px solid transparent;
-                    font-size: 35px;
+                    font-size: 14px;
                     font-family: "Open Sans Regular";
 
                 }
@@ -376,11 +654,58 @@ body {
 
                 input[type=checkbox] {
                     display: none;
+                    margin: 0;
                 }
 
                 #xxx {
                     border: initial;
                 }
+            }
+
+            #optbut {
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                display: flex;
+                justify-content: space-around;
+                position: relative;
+                margin: 40px 0 40px 0;
+                transition: .7s;
+
+                .button3 {
+                    border: 0px solid black;
+                    width: 40%;
+                    background-color: $skyblue;
+                    color: white;
+                    font-size: 20px;
+                    text-align: center;
+                    font-family: "Open Sans Regular";
+                    text-transform: uppercase;
+                    padding: 12px 10px;
+
+                    &:active {
+                        box-shadow: inset 0 0 10px #000000;
+                    }
+
+                }
+
+                .button4 {
+                    border: 1px solid $lgray;
+                    width: 40%;
+                    background-color: white;
+                    color: $lgray;
+                    font-size: 20px;
+                    text-align: center;
+                    font-family: "Open Sans Regular";
+                    text-transform: uppercase;
+                    padding: 12px 10px;
+
+                    &:active {
+                        box-shadow: inset 0 0 10px #000000;
+                    }
+                }
+
+
             }
         }
 
@@ -397,10 +722,14 @@ body {
             // RDX TEST
             .fclose {
                 position: absolute;
-                right: 30px;
-                top: 50px;
-                width: 40px;
-                height: 40px;
+                right: 15px;
+                top: 20px;
+                width: 14px;
+                height: 14px;
+
+                @include desktop {
+                    display: none;
+                }
 
                 &:before,
                 &:after {
@@ -414,9 +743,9 @@ body {
                 &:before {
                     top: 0;
                     left: 50%;
-                    width: 4px;
+                    width: 2px;
                     height: 100%;
-                    margin-left: -2px;
+                    margin-left: -1px;
                     transform: rotate(45deg);
                 }
 
@@ -425,8 +754,8 @@ body {
                     top: 50%;
                     left: 0;
                     width: 100%;
-                    height: 4px;
-                    margin-top: -2px;
+                    height: 2px;
+                    margin-top: -1px;
                     transform: rotate(45deg);
                 }
             }
@@ -435,56 +764,74 @@ body {
 
             .fil-bar {
                 width: 100%;
-                border-bottom: 2px solid gray;
-                margin: 0 0 60px 0;
+                border-bottom: 1px solid $lgray;
+                margin: 0 0 30px 0;
+
+                @include desktop {
+                    display: none;
+                }
             }
 
             h1 {
 
-                padding: 20px 0 10px 30px;
-                margin: 30px 0 40px 0;
+                //  padding: 25px 0 20px 20px;
+                margin: 25px 0 20px 20px;
                 //  padding: 0 0 20px 30px;
                 font-family: "Open Sans Light";
                 text-transform: uppercase;
-                font-size: 50px;
+                font-size: 15px;
                 color: gray;
                 letter-spacing: 5px;
             }
 
             h2 {
-                font-family: "Open Sans Light";
-                font-size: 42px;
-                margin: 0 0 50px 30px;
+                font-family: "Open Sans Regular";
+                font-size: 16px;
+                margin: 0 0 45px 20px;
+                letter-spacing: 4px;
+
+                @include desktop {
+                    display: none;
+                }
             }
         }
-
     }
 
     #produtos {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        margin: 20px 0 0 0;
+        margin: 35px 0 0 0;
+
+        @include desktop {
+            width: 70%;
+            margin: 55px 0 0 0;
+        }
 
         .prod {
             width: 44%;
             border: 0px solid black;
             text-align: center;
-            margin: 60px 0 0 0;
+            margin: 0px 0 40px 0;
+
+            @include desktop {
+                width: 25%;
+                margin: 0px 15px 40px 15px;
+            }
 
             img {
                 width: 100%;
             }
 
             h2 {
-                font-size: 30px;
+                font-size: 13px;
                 text-transform: uppercase;
                 font-family: 'Open Sans Regular';
-                font-weight: 300;
+                margin: 10px 0 20px 0;
             }
 
             h3 {
-                font-size: 30px;
+                font-size: 15px;
                 text-transform: uppercase;
                 font-family: 'Open Sans Bold';
                 font-weight: 900;
@@ -492,10 +839,10 @@ body {
             }
 
             p {
-                font-family: 'Open Sans Light';
-                font-size: 28px;
+                font-family: 'Open Sans Regular';
+                font-size: 13px;
                 font-weight: 200;
-                margin: 5px 0 30px 0;
+                margin: 5px 0 15px 0;
             }
 
             .button2 {
@@ -508,27 +855,54 @@ body {
                 }
 
                 h1 {
-                    font-size: 30px;
+                    font-size: 13px;
                     text-transform: uppercase;
-                    font-family: 'Open Sans Light';
+                    font-family: 'Open Sans Regular';
                     font-weight: 900;
                     color: white;
+                    padding: 10px 0;
+                    letter-spacing: .5px;
+
+                    @include desktop {
+                        padding: 20px 0;
+                        font-size: 18px;
+                    }
                 }
             }
         }
     }
 
     #mais {
-        width: 30%;
+
         text-align: center;
-        margin: 100px auto 0 auto;
-        padding: 25px 30px 20px 30px;
+        margin: 0px auto 0 auto;
+        padding: 13px 27px;
         border: 0px solid black;
         text-transform: uppercase;
         background-color: #00c0ee;
-        font-size: 30px;
-        font-family: "Open Sans Bold";
+        font-size: 15px;
+        font-family: "Open Sans Regular";
         color: white;
+        letter-spacing: 1px;
+        font-weight: 600;
+
+        @include desktop {
+            width: 100%;
+            background-color: white;
+            margin: 45px 0 00px 0;
+        }
+
+        p {
+
+            @include desktop {
+                background-color: #00c0ee;
+                width: fit-content;
+                padding: 20px 40px;
+                text-align: center;
+                margin: 0 auto;
+                font-size: 20px;
+            }
+        }
 
         &:active {
             background-color: darken($color: #00c0ee, $amount: 3)
@@ -541,14 +915,14 @@ body {
 footer {
     background-color: black;
 
-    margin: 150px 0 0 0;
+    margin: 50px 0 0 0;
 
     p {
         color: white;
         font-family: "Open Sans Regular";
-        font-size: 20px;
+        font-size: 10px;
         text-align: center;
-        padding: 10px 0 5px 0;
+        padding: 5px 0 5px 0;
         margin: 0;
     }
 
