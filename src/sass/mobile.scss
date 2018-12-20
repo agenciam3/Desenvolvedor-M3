@@ -219,8 +219,8 @@ header {
 
         .prods {
             position: absolute;
-            left: 12px;
-            top: 9px;
+            right: 11px;
+            top: 26px;
             //display: none;
             border-radius: 50%;
             background-color: #00c0ee;
@@ -375,7 +375,7 @@ body {
             #fc11 {
 
                 @include desktop {
-                    height: 500px;
+                    height: fit-content;
                 }
             }
 
@@ -581,7 +581,6 @@ body {
 
                     }
 
-
                     &::before {
                         content: "";
                         width: 24px;
@@ -606,6 +605,86 @@ body {
                         top: 8.4px;
                     }
                 }
+
+                .maiscor {
+
+                    @include desktop {
+                        height: 85px;
+                        overflow: hidden;
+                    }
+
+                    h5 {
+
+                        // display: none;
+                        height: 0;
+                        overflow: hidden;
+                        margin: 0;
+                        padding: 0;
+
+                        @include desktop {
+                            display: block;
+                            font-family: "Open Sans Regular";
+                            font-size: 14px;
+                            padding: 20px 0 50px 0;
+                            margin: 0 0 20px 0;
+                            color: $lgray;
+                            text-decoration: underline;
+                            cursor: pointer;
+
+                        }
+                    }
+
+                    .arrow {
+                        border: solid black;
+                        border-width: 0 1px 1px 0;
+                        display: inline-block;
+                        padding: 3px;
+                        text-decoration: underline;
+                        margin: 0px 3px 3px 0px;
+                    }
+
+                    .up {
+                        transform: rotate(-135deg);
+                        -webkit-transform: rotate(-135deg);
+                    }
+
+                    .down {
+                        transform: rotate(45deg);
+                        -webkit-transform: rotate(45deg);
+                    }
+
+
+                }
+
+                .maiscor2 {
+                    @include desktop {
+                        height: initial;
+                        overflow: hidden;
+                    }
+
+                    h5 {
+                        height: 0;
+                        overflow: hidden;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    h6 {
+                        height: 0;
+                        overflow: hidden;
+                        margin: 0;
+                        padding: 0;
+
+                        @include desktop {
+                            height: fit-content;
+                            text-decoration: underline;
+                            margin: 20px 0 50px 0;
+                            cursor: pointer;
+                            color: $lgray;
+                        }
+                    }
+                }
+
 
                 input:checked+label::after {
                     background-color: $skyblue;
@@ -805,6 +884,7 @@ body {
 
         @include desktop {
             width: 70%;
+            min-height: 1171px;
             margin: 55px 0 0 0;
         }
 
@@ -901,12 +981,15 @@ body {
                 text-align: center;
                 margin: 0 auto;
                 font-size: 20px;
+                cursor: pointer;
+
+                &:active {
+                    background-color: darken($color: #00c0ee, $amount: 3)
+                }
             }
         }
 
-        &:active {
-            background-color: darken($color: #00c0ee, $amount: 3)
-        }
+
     }
 }
 
