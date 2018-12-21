@@ -681,4 +681,36 @@ $(document).ready(function () {
         prods();
     });
 
+
+
+
+    //  LIMPAR FILTROS
+
+    //  LIMPAR FILTROS
+    // não funciona
+    $('input:radio').on('click', function () {
+
+        $('.rad').each(function () {
+            $(this).attr('checked', false);
+        });
+    });
+
+
+    // ORDENAR 
+
+    $('.button4').on('click', function () {
+
+        var lista = [];
+
+        $('.button2').each(function () {
+            lista.push($(this).attr('data-cod'));
+        });
+
+        $('#produtos1').html('');
+        jQuery.each(lista, function (key, val) {
+            $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[arr[val]].cod + ".png' alt=''><h2>" + prod.p[arr[val]].nome + "</h2><h3>R$ " + prod.p[arr[val]].preco.replace('.', ',') + "</h3><p>" + prod.p[arr[val]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[val]].cod + "'><h1>Comprar</h1></div></div>");
+
+        })
+    });
+
 });
