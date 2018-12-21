@@ -1,6 +1,6 @@
 # INFORMAÇÕES 
 
-<-> Rômullo Sander Agostinho da Silva <-> 
+< - > Rômullo Sander Agostinho da Silva <-> 
 
 - E-MAIL: romullo_sas@outlook.com
 - CELL: (22) 981239315
@@ -17,4 +17,4 @@
 - O botão "carregar mais" desaparece caso algum filtro seja selecionado.
 - As funções dos botões de ordenação não foram implementadas.
 
-#### Me ponho a disposição para o que precisarem
+#### Me ponho a disposição para o que precisarem.
