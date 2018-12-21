@@ -53,7 +53,7 @@ var plugins = [
 gulp.task('sass', function (done) {
     gulp.src('src/sass/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(concat('mobile.css'))
+        .pipe(concat('main.css'))
         .pipe(postcss(plugins))
         .pipe(cleanCSS({
             compatibility: 'ie8'
@@ -62,16 +62,16 @@ gulp.task('sass', function (done) {
     done();
 });
 
-gulp.task('css', function (done) {
-    gulp.src('src/sass/*.css')
-        .pipe(concat('desktop.css'))
-        .pipe(postcss(plugins))
-        .pipe(cleanCSS({
-            compatibility: 'ie8'
-        }))
-        .pipe(gulp.dest('dist/css'));
-    done();
-});
+// gulp.task('css', function (done) {
+//     gulp.src('src/sass/*.css')
+//         .pipe(concat('desktop.css'))
+//         .pipe(postcss(plugins))
+//         .pipe(cleanCSS({
+//             compatibility: 'ie8'
+//         }))
+//         .pipe(gulp.dest('dist/css'));
+//     done();
+// });
 
 // concatenar e minificar js
 
