@@ -1,6 +1,6 @@
 # INFORMAÇÕES 
 
-- Rômullo Sander Agostinho da Silva
+-- Rômullo Sander Agostinho da Silva
 
 - E-MAIL: romullo_sas@outlook.com
 - CELL: (22) 981239315
