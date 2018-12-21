@@ -258,7 +258,328 @@ body {
     margin: 0;
 }
 
+#carrinho {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    transition: 0.7s;
+    top: -100%;
+    opacity: 0;
+
+    #close-car {
+        z-index: 200;
+    }
+
+    h5 {
+        position: absolute;
+        top: 18px;
+        left: 3%;
+        z-index: 100;
+        font-family: "Open Sans Regular";
+        color: $lgray;
+        font-size: 25px;
+        letter-spacing: 1px;
+        border-bottom: 1px solid black;
+        padding: 9px 0px 5px 17px;
+        background-color: white;
+        width: 91.5%; // 89.1vw
+
+        @include desktop {
+            left: 5%;
+            top: 6.5vw;
+            font-size: 35px;
+            padding: 0px 0 5px 17px;
+            border: initial;
+            width: fit-content;
+        }
+
+    }
+
+    .fclose {
+        position: absolute;
+        right: 7%;
+        top: 25px;
+        width: 20px;
+        height: 20px;
+        z-index: 10;
+
+        @include desktop {
+            right: 105px;
+            top: 105px;
+            width: 35px;
+            height: 35px;
+        }
+
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: black;
+            transition: transform 0.25s ease-out;
+        }
+
+        /* Vertical line */
+        &:before {
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            margin-left: -1px;
+            transform: rotate(45deg);
+        }
+
+        /* horizontal line */
+        &:after {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            margin-top: -1px;
+            transform: rotate(45deg);
+        }
+    }
+
+    .blackout {
+        background-color: black;
+        opacity: .6;
+        width: inherit;
+        height: inherit;
+    }
+
+    .car-info {
+        width: 94%;
+        height: 95%;
+        background-color: white;
+        margin: 5% 3%;
+        opacity: 1;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        transition: .7s;
+        border-bottom: 20px solid black;
+        box-sizing: border-box;
+        z-index: 1;
+
+        @include desktop {
+            width: 90%;
+            height: 80%;
+            background-color: white;
+            margin: 5% 5%;
+            display: flex;
+        }
+
+        #ur-car {
+            height: 75%;
+            width: 100%;
+            border-bottom: 1px solid black;
+            padding: 40px 0 0 0;
+            overflow-y: scroll;
+
+            @include desktop {
+                padding: 50px 0 0 0;
+                height: 93.1%;
+                display: flex;
+                overflow-x: scroll;
+                overflow-y: hidden;
+            }
+
+            .carr-prod {
+
+                border-bottom: 1px solid black;
+                border-top: 1px solid black;
+                padding: 0 0px 0 10px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0px 0 9px 0px;
+
+                @include desktop {
+                    display: block;
+                    margin: 50px 40px 9px 40px;
+                    border: initial;
+                    border: 2px solid $lgray;
+                    border-top-left-radius: 20px;
+                    border-top-right-radius: 20px;
+                    padding: 12px 12px 0 12px;
+                    position: relative;
+                }
+
+                img {
+                    height: 110px;
+
+                    @include desktop {
+                        height: 450px;
+                        border-bottom: 1px solid black;
+                        padding: 12px 12px 12px 12px;
+                    }
+                }
+
+                .carr-txt,
+                .carr-txt2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    font-family: "Open Sans Regular";
+
+                    @include desktop {
+                        font-size: 20px;
+                        margin: 13px 0 0 0;
+                    }
+
+                    h1,
+                    h2,
+                    h3 {
+
+                        @include desktop {
+                            margin: 0 0 15px 0;
+                        }
+                    }
+                }
+
+                .cp-ex {
+                    width: 12%;
+                    background-color: black;
+                    position: relative;
+
+                    @include desktop {
+                        position: absolute;
+                        bottom: -1px;
+                        background-color: #000;
+                        width: 50px;
+                        height: 50px;
+                        right: -1px;
+                        border: 1px solid black;
+                        border-top-left-radius: 20px;
+                    }
+
+                    .fclose {
+                        right: 13%;
+                        top: 37%;
+                        width: 30px;
+                        height: 30px;
+                        z-index: 10;
+
+                        @include desktop {
+                            right: 9px;
+                            top: 24%;
+                        }
+
+                        &:before,
+                        &:after {
+                            content: "";
+                            position: absolute;
+                            background-color: white;
+                            transition: transform 0.25s ease-out;
+                        }
+
+                        &:before {
+                            top: 0;
+                            left: 50%;
+                            width: 4px;
+                            height: 100%;
+                            margin-left: -2px;
+                            transform: rotate(45deg);
+                        }
+
+                        /* horizontal line */
+                        &:after {
+                            top: 50%;
+                            left: 0;
+                            width: 100%;
+                            height: 4px;
+                            margin-top: -2px;
+                            transform: rotate(45deg);
+                        }
+                    }
+                }
+            }
+        }
+
+        .car-btn {
+            display: flex;
+
+            @include desktop {
+                flex-direction: column;
+                border-left: 1px solid black;
+                width: 25%;
+            }
+
+            #total {
+
+                @include desktop {
+                    margin-top: 65px;
+                }
+            }
+
+            .c-btn {
+                width: 50%;
+                height: 100%;
+                // border: .5px solid red;
+                text-align: center;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                @include desktop {
+                    width: 100%;
+                }
+
+                h1,
+                h2,
+                h3,
+                h4 {
+                    font-family: "Open Sans Regular";
+                    font-size: 16px;
+                    // height: 50%;
+                    margin: 3px;
+
+                    @include desktop {
+                        font-size: 30px;
+                        margin: 38px 3px;
+                    }
+                }
+
+                h3 {
+                    margin-top: 20px;
+
+                    @include desktop {
+                        margin-top: 40px;
+                    }
+                }
+
+                .car-but {
+                    background: black;
+                    color: white;
+                    padding: 15px;
+                    width: 70%;
+                    margin: 5px;
+                    font-family: "Open Sans Bold";
+                    font-size: 13px;
+
+                    @include desktop {
+                        height: fit-content;
+                        padding: 30px 15px;
+                        font-size: 20px;
+                    }
+
+                    &:nth-child(1) {
+                        background: $skyblue;
+                        color: black;
+                    }
+                }
+            }
+
+            #total {
+                padding: 20px 0 0 0;
+            }
+        }
+    }
+
+}
+
+
 .content {
+
 
 
     @include desktop {
@@ -803,8 +1124,8 @@ body {
                 position: absolute;
                 right: 15px;
                 top: 20px;
-                width: 14px;
-                height: 14px;
+                width: 20px;
+                height: 20px;
 
                 @include desktop {
                     display: none;
@@ -1032,9 +1353,14 @@ footer {
 
 
 .dropdown {
-    position: relative;
-    display: inline-block;
-    margin: 39px 13vw 0 0;
+
+    display: none;
+
+    @include desktop {
+        position: relative;
+        display: inline-block;
+        margin: 39px 13vw 0 0;
+    }
 
     .dropsp {
         border: 1px solid black;

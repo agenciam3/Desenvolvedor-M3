@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     // abre a janela + filtrar
     $('#filt').on('click', function () {
 
@@ -104,7 +105,7 @@ $(document).ready(function () {
     var prod = {
         "p": [{
                 "nome": "CAMISETA MESCLA",
-                "preco": "28,00",
+                "preco": "28.00",
                 "parcela": "até 3x de R$9,33",
                 "cor": ['Branco', 'Amarelo'],
                 "tamanho": ['P', 'M', 'G'],
@@ -112,7 +113,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "SAIA EM COURO",
-                "preco": "398,00",
+                "preco": "398.00",
                 "parcela": "até 5x de R$30,00",
                 "cor": ['Preto', 'Azul'],
                 "tamanho": ['M', 'G', 'GG'],
@@ -120,7 +121,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CARDIGAN TIGRE",
-                "preco": "398,00",
+                "preco": "398.00",
                 "parcela": "até 5x de R$30,00",
                 "cor": ['Laranja', 'Preto'],
                 "tamanho": ['G', 'GG', 'U'],
@@ -128,7 +129,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CARDIGAN OFF WHITE",
-                "preco": "99,90",
+                "preco": "99.90",
                 "parcela": "até 3x de R$33,30",
                 "cor": ['Branco', 'Cinza'],
                 "tamanho": ['GG', 'U', '36'],
@@ -136,7 +137,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "BODY LEOPARDO",
-                "preco": "129,90",
+                "preco": "129.90",
                 "parcela": "até 3x de R$33,30",
                 "cor": ['Laranja', 'Preto'],
                 "tamanho": ['U', '36', '38'],
@@ -144,7 +145,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CASACO PELOS",
-                "preco": "398,00",
+                "preco": "398.00",
                 "parcela": "até 5x de R$30,00",
                 "cor": ['Rosa', 'Branco'],
                 "tamanho": ['36', '38', '40'],
@@ -152,7 +153,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CROPPED STRIPES",
-                "preco": "120,00",
+                "preco": "120.00",
                 "parcela": "até 3x de R$40,00",
                 "cor": ['Laranja', 'Amarelo'],
                 "tamanho": ['38', '40', '42'],
@@ -160,7 +161,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CAMISA TRANSPARENTE",
-                "preco": "398,00",
+                "preco": "398.00",
                 "parcela": "até 5x de R$30,00",
                 "cor": ['Preto', 'Laranja'],
                 "tamanho": ['40', '42', '44'],
@@ -168,7 +169,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "POCHETE CLUTH",
-                "preco": "99,00",
+                "preco": "99.00",
                 "parcela": "até 3x de R$33,00",
                 "cor": ['Preto', 'Verde'],
                 "tamanho": ['42', '44', '46'],
@@ -176,7 +177,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CAMISA MESCLA V2",
-                "preco": "56,00",
+                "preco": "56.00",
                 "parcela": "até 3x de R$18,66",
                 "cor": ['Branco', 'Vermelho'],
                 "tamanho": ['44', '46', 'P'],
@@ -184,7 +185,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "SAIA DE COURO V2",
-                "preco": "796,00",
+                "preco": "796.00",
                 "parcela": "até 5x de R$60,00",
                 "cor": ['Preto', 'Rosa'],
                 "tamanho": ['46', 'P', 'M'],
@@ -192,7 +193,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CARDIGAN TIGRE V2",
-                "preco": "796,00",
+                "preco": "796.00",
                 "parcela": "até 5x de R$60,00",
                 "cor": ['Laranja', 'Preto'],
                 "tamanho": ['P', 'M', 'G'],
@@ -200,7 +201,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CARDIGAN OFF WHITE V2",
-                "preco": "199,80",
+                "preco": "199.80",
                 "parcela": "até 3x de R$66,60",
                 "cor": ['Branco', 'Preto'],
                 "tamanho": ['M', 'G', 'U'],
@@ -208,7 +209,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "BODY LEOPARDO V2",
-                "preco": "259,80",
+                "preco": "259.80",
                 "parcela": "até 3x de R$66,60",
                 "cor": ['Laranja', 'Preto'],
                 "tamanho": ['G', 'U', '36'],
@@ -216,7 +217,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CASACO PELOS V2",
-                "preco": "796,00",
+                "preco": "796.00",
                 "parcela": "até 5x de R$60,00",
                 "cor": ['Rosa', 'Vinho'],
                 "tamanho": ['U', '36', '38'],
@@ -224,7 +225,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CROPPED STRIPES V2",
-                "preco": "240,00",
+                "preco": "240.00",
                 "parcela": "até 3x de R$80,00",
                 "cor": ['Laranja', 'Azul'],
                 "tamanho": ['36', '38', '40'],
@@ -232,7 +233,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "CAMISA TRANSPARENTE",
-                "preco": "796,00",
+                "preco": "796.00",
                 "parcela": "até 5x de R$60,00",
                 "cor": ['Preto', 'Vinho'],
                 "tamanho": ['40', '42', '44'],
@@ -240,7 +241,7 @@ $(document).ready(function () {
             },
             {
                 "nome": "POCHETE CLUTH V2",
-                "preco": "199,00",
+                "preco": "199.00",
                 "parcela": "até 3x de R$66,00",
                 "cor": ['Preto', 'Verde'],
                 "tamanho": ['42', '44', '46'],
@@ -281,7 +282,7 @@ $(document).ready(function () {
     for (var i = 0; i < 18; i++) {
 
         if (i < 9) {
-            $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[i]].cod + "'><h1>Comprar</h1></div></div>")
+            $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco.replace('.', ',') + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[i]].cod + "'><h1>Comprar</h1></div></div>")
 
             if (i == 8) {
                 $('#produtos1').append(" <div id='mais1' class='mais'><p> Carregar Mais </p></div>");
@@ -292,7 +293,7 @@ $(document).ready(function () {
         if (i > 8) {
 
 
-            $('#produtos2').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[i]].cod + "'><h1>Comprar</h1></div></div>")
+            $('#produtos2').append("<div class='prod'><img src='images/" + prod.p[arr[i]].cod + ".png' alt=''><h2>" + prod.p[arr[i]].nome + "</h2><h3>R$ " + prod.p[arr[i]].preco.replace('.', ',') + "</h3><p>" + prod.p[arr[i]].parcela + "</p><div class='button2' data-cod='" + prod.p[arr[i]].cod + "'><h1>Comprar</h1></div></div>")
 
             if (i == 17) {
                 $('#produtos2').append(" <div id='mais2' class='mais'><p> Carregar Menos </p></div>");
@@ -354,16 +355,17 @@ $(document).ready(function () {
             $('.prods').css('display', 'initial');
             $('#qtd').html(pcar);
         }
+
+        if (pcar == 0) {
+            $('.prods').css('display', 'none');
+        }
     }
 
+    // manipulação localStorage
     $(".button2").on('click', function () {
         var x = $(this).attr('data-cod');
 
-        // console.log('\n 1--' + x);
-
         prodcar[pcar] = prod.p[x - 1];
-
-        // console.log('\n conteudo: ', prodcar[pcar]);
 
         pcar += 1;
 
@@ -383,5 +385,78 @@ $(document).ready(function () {
         console.log('\nlista : ', prodcar);
     });
 
+
+
+    // PAGINA SEU CARRINHO
+
+    // abrir pagina
+    var gerou = 0;
+
+    $('#bag').on('click', function () {
+
+        geracar();
+
+        $('#carrinho').css('top', '0%');
+
+        setTimeout(function () {
+
+            $('#carrinho').css('opacity', '1');
+        }, 300);
+    });
+
+    // fechar pagina
+
+    $('#close-car').on('click', function () {
+        $('#carrinho').css('opacity', '0');
+
+        setTimeout(function () {
+
+            $('#carrinho').css('top', '-100%');
+        }, 300);
+    });
+
+    // gerar produtos na pagina
+    function geracar() {
+
+        $('#ur-car').html('');
+        // console.log('\n\n GERACAR');
+        var lisprod = prodcar;
+        var soma = 0;
+
+        for (var i = 0; i < pcar; i++) {
+
+            $('#ur-car').append('<div class="carr-prod" ><img src="images/' + lisprod[i].cod + '.png" alt=""><div class="carr-txt" ><h1>' + lisprod[i].nome + '</h1> <h2> R$ ' + lisprod[i].preco.replace('.', ',') + '</h2> <h3>' + lisprod[i].parcela + '</h3> </div> <div id="excluir" class="cp-ex" data-id="' + i + '" ><div class="fclose" > </div> </div> </div>');
+
+            // soma += parseFloat(lisprod[i].preco);
+            soma += parseFloat(lisprod[i].preco);
+            //  console.log('\n item: ', lisprod[i]);
+        };
+
+
+        $('.carr-txt2 h1').html('Valor Total: R$ ' + soma.toFixed(2).replace('.', ','));
+
+    }
+
+    //geracar();
+    // 
+
+    // excluir produto
+
+    $(document).on('click', '#excluir', function () {
+        var data = $(this).attr('data-id');
+        // console.log(data);
+        var data = parseInt(data);
+        prodcar.splice(data, 1);
+
+        pcar -= 1;
+
+        localStorage.setItem('qtdx', JSON.stringify(pcar));
+        //console.log('\qtd final : ', pcar);
+
+        localStorage.setItem('lista', JSON.stringify(prodcar));
+        //console.log('\nlista : ', prodcar);
+        geracar();
+        prods();
+    });
 
 });
