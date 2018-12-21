@@ -16,3 +16,5 @@
 - A função do botão "limpar" do filtro não foi implementado.
 - O botão "carregar mais" desaparece caso algum filtro seja selecionado.
 - As funções dos botões de ordenação não foram implementadas.
+
+#### Me ponho a disposição para o que precisarem

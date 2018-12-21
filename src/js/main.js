@@ -39,7 +39,7 @@ $(document).ready(function () {
         switch (id) {
             case 'fc1':
                 {
-                    size = '650px';
+                    size = '650px'; // 650
                     break;
                 }
 

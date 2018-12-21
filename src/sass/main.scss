@@ -876,7 +876,7 @@ body {
                     }
 
                     .fc11b {
-                        height: 450px;
+                        height: 650px !important;
                     }
 
                 }
@@ -950,11 +950,12 @@ body {
 
                     // h5 {
 
-                    // display: none;
+                    display: none;
                     // height: 0;
                     // overflow: hidden;
                     margin: 0;
                     padding: 0;
+
 
                     @include desktop {
                         display: block;
@@ -1250,7 +1251,9 @@ body {
                 width: 44%;
                 border: 0px solid black;
                 text-align: center;
-                margin: 0px auto 40px auto;
+                // margin: 0px auto 40px auto;
+                margin: 0px 3% 40px 3%;
+
 
                 @include desktop {
                     width: 25%;

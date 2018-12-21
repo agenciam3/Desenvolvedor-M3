@@ -7,23 +7,16 @@ let postcss = require('gulp-postcss');
 let autoprefixer = require('autoprefixer');
 let cleanCSS = require('gulp-clean-css');
 
-/* TOP LEVEL FUNCTIONS 
 
-gulp.task - define tasks
-gulp.src - point tofiles to use
-gulp.dest - points to folder to output
-gulp.watch - watch files and folders for changes
 
-*/
-
-// logs message
+// teste
 
 gulp.task('message', function (done) {
     return console.log('gulp is running...');
     done();
 });
 
-// copy html
+// html
 
 gulp.task('copy', function (done) {
     gulp.src('src/*.html')
@@ -31,7 +24,7 @@ gulp.task('copy', function (done) {
     done();
 });
 
-// optimize images
+// otimizar imagens
 
 gulp.task('imgmin', () =>
     gulp.src('src/images/*')
@@ -39,17 +32,17 @@ gulp.task('imgmin', () =>
     .pipe(gulp.dest('dist/images'))
 );
 
-// minify js
+// minificar js
 
-gulp.task('minify', function (done) {
-    gulp.src('src/js/*.js')
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
-    done();
-})
+// gulp.task('minify', function (done) {
+//     gulp.src('src/js/*.js')
+//         .pipe(uglify())
+//         .pipe(gulp.dest('dist/js'));
+//     done();
+// })
 
 
-// compile concat and minify sass/css
+// compilar concatenar e minificar sass/css
 
 var plugins = [
     autoprefixer({
@@ -71,7 +64,6 @@ gulp.task('sass', function (done) {
 
 gulp.task('css', function (done) {
     gulp.src('src/sass/*.css')
-        // .pipe(sass().on('error', sass.logError))
         .pipe(concat('desktop.css'))
         .pipe(postcss(plugins))
         .pipe(cleanCSS({
@@ -81,13 +73,13 @@ gulp.task('css', function (done) {
     done();
 });
 
-// scripts cocat + minify
+// concatenar e minificar js
 
 gulp.task('scripts', function () {
 
     gulp.src('src/js/*.js')
         .pipe(concat('main.js'))
-        // .pipe(uglify())
+        .pipe(uglify())
         .pipe(gulp.dest('dist/js'));
 
 });
