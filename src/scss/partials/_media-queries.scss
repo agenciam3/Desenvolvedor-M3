@@ -26,3 +26,16 @@
         justify-content: center;
     }
 }
+
+@media(max-width: 400px) {
+    .products {
+
+        &-item {
+            width: 140px;
+
+            &__btn {
+                padding: 13px 30px;
+            }
+        }
+    }
+}

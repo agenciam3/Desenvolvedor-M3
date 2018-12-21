@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>M3 | Digital Performance </title>
   <link rel="stylesheet" href="./assets/css/main.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
@@ -24,11 +25,14 @@
     </nav>
     <hr class="nav-border">
   </header>
-  <div class="mobile-menu">
-    <div class="mobile-menu__order-by show">
+  <div class="mobile-menu ">
+    <div class="mobile-menu__order-by">
       <div class="mobile-menu__title">
         <h2>Ordernar</h2>
-        <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon">
+        <div class="btn-x">
+          <div class="btn-x__line1"></div>
+          <div class="btn-x__line2"></div>
+        </div>
       </div>
       <div class="mobile-menu__list">
         <ul>
@@ -38,21 +42,36 @@
         </ul>
       </div>
     </div>
-    <div class="mobile-menu__filter">
+    <div class="mobile-menu__filter ">
       <div class="mobile-menu__title">
         <h2>Filtrar</h2>
-        <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon">
+        <div class="btn-x">
+          <div class="btn-x__line1"></div>
+          <div class="btn-x__line2"></div>
+        </div>
       </div>
       <div class="mobile-menu__list">
         <ul>
           <li>
-            <h2>Cores</h2> <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon">
+            <h2>Cores</h2>
+            <div class="btn-plus ">
+              <div class="btn-plus__line1 "></div>
+              <div class="btn-plus__line2 "></div>
+            </div>
           </li>
           <li>
-            <h2>Tamanhos </h2> <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon">
+            <h2>Tamanhos </h2>
+            <div class="btn-plus">
+              <div class="btn-plus__line1"></div>
+              <div class="btn-plus__line2"></div>
+            </div>
           </li>
           <li>
-            <h2>Preço</h2> <img src="./layout/imagens/dropdown icon.png" alt="dropdown icon">
+            <h2>Preço</h2>
+            <div class="btn-plus">
+              <div class="btn-plus__line1"></div>
+              <div class="btn-plus__line2"></div>
+            </div>
           </li>
         </ul>
       </div>
@@ -88,32 +107,47 @@
           <form class="side-menu__form">
             <div>
               <label>
-                <input type="checkbox" value="amarelo" />
-                <span>Amarelo</span>
+                <input type="radio" value="amarelo" name="color" />
+                <span>
+                  <div></div>
+                </span>
+                Amarelo
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="azul" />
-                <span>Azul</span>
+                <input type="radio" value="azul" name="color" />
+                <span>
+                  <div></div>
+                </span>
+                Azul
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="branco" />
-                <span>Branco</span>
+                <input type="radio" value="branco" name="color" />
+                <span>
+                  <div></div>
+                </span>
+                Branco
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="cinza" />
-                <span>Cinza</span>
+                <input type="radio" value="cinza" name="color" />
+                <span>
+                  <div></div>
+                </span>
+                Cinza
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="laranja" />
-                <span>Laranja</span>
+                <input type="radio" value="laranja" name="color" />
+                <span>
+                  <div></div>
+                </span>
+                Laranja
               </label>
             </div>
           </form>
@@ -122,72 +156,72 @@
         <div class="side-menu__block">
           <h2 class="side-menu__title">Tamanhos</h2>
           <form class="side-menu__form-sizes">
-            <div>
-              <label>
-                <input type="checkbox" value="p" />
+            <label>
+              <input type="radio" value="p" name="size" />
+              <div>
                 <span>P</span>
-              </label>
-            </div>
-            <div class="side-menu__form-sizes--active">
-              <label>
-                <input type="checkbox" value="m" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="m" name="size" />
+              <div>
                 <span>M</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="g" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="g" name="size" />
+              <div>
                 <span>G</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="gg" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="gg" name="size" />
+              <div>
                 <span>GG</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="u" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="u" name="size" />
+              <div>
                 <span>U</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="36" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="36" name="size" />
+              <div>
                 <span>36</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="38" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="38" name="size" />
+              <div>
                 <span>38</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="40" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="40" name="size" />
+              <div>
                 <span>40</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="42" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="42" name="size" />
+              <div>
                 <span>42</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="44" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="44" name="size" />
+              <div>
                 <span>44</span>
-              </label>
-            </div>
-            <div>
-              <label>
-                <input type="checkbox" value="46" />
+              </div>
+            </label>
+            <label>
+              <input type="radio" value="46" name="size" />
+              <div>
                 <span>46</span>
-              </label>
-            </div>
+              </div>
+            </label>
           </form>
         </div>
         <div class="side-menu__block">
@@ -195,32 +229,47 @@
           <form class="side-menu__form">
             <div>
               <label>
-                <input type="checkbox" value="0-50" />
-                <span>de R$0 até R$50</span>
+                <input type="radio" value="0-50" name="price" />
+                <span>
+                  <div></div>
+                </span>
+                de R$0 até R$50
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="51-150" />
-                <span>de R$51 até R$150</span>
+                <input type="radio" value="51-150" name="price" />
+                <span>
+                  <div></div>
+                </span>
+                de R$51 até R$150
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="151-300" />
-                <span>de R$151 até R$300</span>
+                <input type="radio" value="151-300" name="price" />
+                <span>
+                  <div></div>
+                </span>
+                de R$151 até R$300
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="301-500" />
-                <span>de R$301 até R$500</span>
+                <input type="radio" value="301-500" name="price" />
+                <span>
+                  <div></div>
+                </span>
+                de R$301 até R$500
               </label>
             </div>
             <div>
               <label>
-                <input type="checkbox" value="1" />
-                <span>a partir de R$01</span>
+                <input type="radio" value="1" name="price" />
+                <span>
+                  <div></div>
+                </span>
+                a partir de R$01
               </label>
             </div>
           </form>

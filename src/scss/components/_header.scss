@@ -1,6 +1,7 @@
 .nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     &__brand {
         margin: 16px 10px;
@@ -9,7 +10,7 @@
     &__bag {
         text-decoration: none;
         margin-right: 24px;
-        margin-top: 16px;
+        margin-top: 15px;
     }
 
     &__bag-counter {

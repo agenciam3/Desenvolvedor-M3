@@ -15,7 +15,7 @@
     &__title {
         text-transform: uppercase;
         margin-bottom: 13px;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
     }
 
     &__form {
@@ -27,22 +27,35 @@
 
         label {
             font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            span {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                background-color: #fff;
+                border: solid 1px rgba(0, 0, 0, 0.5);
+                margin-right: 9px;
+
+                div {
+                    transition: .4s;
+                }
+            }
         }
 
-        input[type="checkbox"] {
+        input[type="radio"] {
             display: none;
 
-            &+span:before {
-                content: " ";
-                margin-right: 9px;
-                padding: 0px 7px;
-                border: solid 1px rgba(0, 0, 0, 0.5);
-            }
-
-            &:checked+span:before {
-                content: url('./../../../layout/imagens/Select.png');
-                padding: 0px 3px;
-                border: solid 1px rgba(0, 0, 0, 0.5);
+            &:checked+span div {
+                background-color: $accent-color;
+                width: 9px;
+                height: 9px;
+                position: relative;
+                top: 25%;
+                left: 25%;
+                transform: translate(-7%, -7%);
             }
         }
 
@@ -50,7 +63,6 @@
 
     &__form-sizes {
         color: rgba(0, 0, 0, 0.5);
-
         display: flex;
         flex-wrap: wrap;
 
@@ -62,19 +74,20 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 9px;
-            margin-bottom: 8px;
             cursor: pointer;
+            transition: .3s;
 
         }
 
-        div.side-menu__form-sizes--active {
-            color: #000;
-            border: 1px solid $accent-color;
-        }
+        // div.side-menu__form-sizes--active {
+        //     color: #000;
+        //     border: 1px solid $accent-color;
+        // }
 
         label {
             height: 16px;
+            margin-right: 9px;
+            margin-bottom: 23px;
         }
 
         span {
@@ -82,8 +95,13 @@
             cursor: pointer;
         }
 
-        input[type="checkbox"] {
+        input[type="radio"] {
             display: none;
+
+            &:checked~div {
+                color: #000;
+                border: 1px solid $accent-color;
+            }
         }
     }
 }

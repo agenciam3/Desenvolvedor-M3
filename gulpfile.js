@@ -4,6 +4,7 @@ const sass = require("gulp-sass");
 const rename = require("gulp-rename");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
+const imagemin = require('gulp-imagemin');
 const cssnano = require("cssnano");
 const del = require("del");
 
@@ -17,6 +18,10 @@ const paths = {
   styles: {
     src: "./src/css/*.css",
     dest: "./assets/css"
+  },
+  images: {
+    src: "./layout/imagens/**",
+    dest: "./assets/img"
   },
   scripts: {
     src: "./src/js/**"
@@ -54,6 +59,12 @@ function postCss() {
     .pipe(gulp.dest(paths.styles.dest));
 }
 
+function images() {
+  return gulp.src(paths.images.src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(paths.images.dest))
+}
+
 function scripts(cb) {
   return webpack(require("./webpack.config"), () => {
     cb();
@@ -66,7 +77,7 @@ function watch() {
   gulp.watch(paths.styles.src, postCss);
 }
 
-const build = gulp.series(clean, buildCss, postCss, scripts);
+const build = gulp.series(clean, buildCss, postCss, images, scripts);
 
 exports.clean = clean;
 exports.sass = buildCss;
@@ -74,5 +85,6 @@ exports.css = postCss;
 exports.scripts = scripts;
 exports.watch = watch;
 exports.build = build;
+exports.images = images;
 
 exports.default = build;

@@ -9,12 +9,14 @@
         margin-top: 40px;
 
         img {
-            width: 195px;
-            height: 293px;
+            width: 100%;
+            height: auto;
         }
 
         figure {
             margin: 0;
+            width: 100%;
+            height: auto;
         }
 
         &__title {

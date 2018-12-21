@@ -1,4 +1,5 @@
 .mobile-menu {
+    display: none;
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -38,6 +39,7 @@
                 list-style-type: none;
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
 
                 h2 {
                     @extend %title;
@@ -87,4 +89,60 @@
             padding: 25px;
         }
     }
+}
+
+.mobile-menu.show {
+    display: block;
+}
+
+.btn-x {
+    margin-top: 12px;
+    margin-right: 25px;
+    cursor: pointer;
+
+    &__line1 {
+        @extend %line;
+        margin-bottom: 10px;
+        transform: rotate(45deg);
+    }
+
+    &__line2 {
+        @extend %line;
+        transform: rotate(135deg);
+        position: relative;
+        top: -13px;
+    }
+}
+
+.btn-plus {
+    margin-top: 15px;
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+
+    &__line1 {
+        background-color: #000;
+        height: 3px;
+        width: 30px;
+        margin-bottom: 10px;
+        transform: rotate(90deg);
+    }
+
+    &__line1.open {
+        display: none;
+    }
+
+    &__line2 {
+        background-color: #000;
+        height: 3px;
+        width: 30px;
+        position: relative;
+        top: -13px;
+    }
+
+    &__line2.open {
+        top: 0;
+    }
+
 }
