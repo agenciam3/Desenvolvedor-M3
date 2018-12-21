@@ -336,6 +336,9 @@ h3 {
   height: 3px;
   width: 30px; }
 
+.no-opacity {
+  opacity: 0; }
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -420,7 +423,8 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%; }
+  width: 100%;
+  transition: 1s; }
   .products-item {
     text-align: center;
     margin-top: 40px; }

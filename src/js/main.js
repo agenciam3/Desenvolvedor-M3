@@ -1,3 +1,5 @@
+import DisplayProducts from './modules/DisplayProducts';
+
 function ready(fn) {
   if (
     document.attachEvent ?
@@ -11,7 +13,7 @@ function ready(fn) {
 }
 
 function main() {
-
+  new DisplayProducts();
 }
 
 ready(main);
