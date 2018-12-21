@@ -696,9 +696,10 @@ body {
             #fc11 {
 
                 @include desktop {
-                    height: fit-content;
+                    height: 282px;
                 }
             }
+
 
             #fc22 {
 
@@ -874,6 +875,18 @@ body {
                         transform: rotate(0deg);
                     }
 
+                    .fc11b {
+                        height: 450px;
+                    }
+
+                }
+
+                .fc11b {
+                    height: 450px;
+                }
+
+                .menoscores {
+                    display: none;
                 }
 
             }
@@ -885,7 +898,7 @@ body {
                 font-family: 'Open Sans Regular';
                 height: 0px;
                 overflow: hidden;
-                transition: 0.7s;
+                transition: 0.3s;
 
                 @include desktop {
                     margin: 15px 0 20px 27px;
@@ -927,33 +940,35 @@ body {
                     }
                 }
 
-                .maiscor {
+                .maiscor,
+                .menoscor {
+
+                    // @include desktop {
+                    //     height: 85px;
+                    //     overflow: hidden;
+                    // }
+
+                    // h5 {
+
+                    // display: none;
+                    // height: 0;
+                    // overflow: hidden;
+                    margin: 0;
+                    padding: 0;
 
                     @include desktop {
-                        height: 85px;
-                        overflow: hidden;
+                        display: block;
+                        font-family: "Open Sans Regular";
+                        font-size: 14px;
+                        padding: 20px 0 50px 0;
+                        margin: 0 0 20px 0;
+                        color: $lgray;
+                        text-decoration: underline;
+                        cursor: pointer;
+
                     }
 
-                    h5 {
-
-                        // display: none;
-                        height: 0;
-                        overflow: hidden;
-                        margin: 0;
-                        padding: 0;
-
-                        @include desktop {
-                            display: block;
-                            font-family: "Open Sans Regular";
-                            font-size: 14px;
-                            padding: 20px 0 50px 0;
-                            margin: 0 0 20px 0;
-                            color: $lgray;
-                            text-decoration: underline;
-                            cursor: pointer;
-
-                        }
-                    }
+                    // }
 
                     .arrow {
                         border: solid black;
@@ -1014,6 +1029,14 @@ body {
                 input[type=checkbox] {
                     display: none;
                 }
+
+                input:checked+label::after {
+                    background-color: $skyblue;
+                }
+
+                input[type=radio] {
+                    display: none;
+                }
             }
 
             .Opt2 {
@@ -1053,6 +1076,11 @@ body {
                 }
 
                 input[type=checkbox] {
+                    display: none;
+                    margin: 0;
+                }
+
+                input[type=radio] {
                     display: none;
                     margin: 0;
                 }
@@ -1197,10 +1225,8 @@ body {
         }
     }
 
-    .produtos {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
+    #prodbox {
+
         margin: 35px 0 0 0;
 
         @include desktop {
@@ -1209,120 +1235,133 @@ body {
             margin: 55px 0 0 0;
         }
 
-        .prod {
-            width: 44%;
-            border: 0px solid black;
-            text-align: center;
-            margin: 0px 0 40px 0;
+        .produtos {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
 
-            @include desktop {
-                width: 25%;
-                margin: 0px 15px 40px 15px;
-            }
+            // @include desktop {
+            //     width: 70%;
+            //     min-height: 1171px;
+            //     margin: 55px 0 0 0;
+            // }
 
-            img {
-                width: 100%;
-            }
+            .prod {
+                width: 44%;
+                border: 0px solid black;
+                text-align: center;
+                margin: 0px auto 40px auto;
 
-            h2 {
-                font-size: 13px;
-                text-transform: uppercase;
-                font-family: 'Open Sans Regular';
-                margin: 10px 0 20px 0;
-            }
-
-            h3 {
-                font-size: 15px;
-                text-transform: uppercase;
-                font-family: 'Open Sans Bold';
-                font-weight: 900;
-                margin: 0;
-            }
-
-            p {
-                font-family: 'Open Sans Regular';
-                font-size: 13px;
-                font-weight: 200;
-                margin: 5px 0 15px 0;
-            }
-
-            .button2 {
-                background-color: black;
-                width: 100%;
-                padding: 1px 0 1px 0;
-
-                &:active {
-                    background-color: #4c4c4c;
+                @include desktop {
+                    width: 25%;
+                    margin: 0px 4% 40px 4%;
                 }
 
-                h1 {
+                img {
+                    width: 100%;
+                }
+
+                h2 {
                     font-size: 13px;
                     text-transform: uppercase;
                     font-family: 'Open Sans Regular';
-                    font-weight: 900;
-                    color: white;
-                    padding: 10px 0;
-                    letter-spacing: .5px;
-                    cursor: pointer;
+                    margin: 10px 0 20px 0;
+                }
 
-                    @include desktop {
-                        padding: 20px 0;
-                        font-size: 18px;
+                h3 {
+                    font-size: 15px;
+                    text-transform: uppercase;
+                    font-family: 'Open Sans Bold';
+                    font-weight: 900;
+                    margin: 0;
+                }
+
+                p {
+                    font-family: 'Open Sans Regular';
+                    font-size: 13px;
+                    font-weight: 200;
+                    margin: 5px 0 15px 0;
+                }
+
+                .button2 {
+                    background-color: black;
+                    width: 100%;
+                    padding: 1px 0 1px 0;
+
+                    &:active {
+                        background-color: #4c4c4c;
+                    }
+
+                    h1 {
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        font-family: 'Open Sans Regular';
+                        font-weight: 900;
+                        color: white;
+                        padding: 10px 0;
+                        letter-spacing: .5px;
+                        cursor: pointer;
+
+                        @include desktop {
+                            padding: 20px 0;
+                            font-size: 18px;
+                        }
                     }
                 }
             }
         }
-    }
 
-    #produtos2 {
+        #produtos2 {
 
-        margin: 0;
-        width: 100%;
-        height: 0;
-        overflow: hidden;
-        min-height: 0;
+            margin: 0;
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+            min-height: 0;
 
-    }
-
-    .mais {
-
-        // text-align: center;
-        // margin: 0px auto 0 auto;
-        // padding: 13px 27px;
-        // border: 0px solid black;
-        // text-transform: uppercase;
-        // background-color: #00c0ee;
-        // font-size: 15px;
-        font-family: "Open Sans Regular";
-        color: white;
-        // letter-spacing: 1px;
-        // font-weight: 600;
-        // width: 100%;
-
-        // @include desktop {
-        width: 100%;
-        background-color: white;
-        margin: 45px 0 00px 0;
-        // }
-
-        p {
-
-            // @include desktop {
-            background-color: #00c0ee;
-            width: fit-content;
-            padding: 20px 40px;
-            text-align: center;
-            margin: 0 auto;
-            font-size: 20px;
-            cursor: pointer;
-
-            &:active {
-                background-color: darken($color: #00c0ee, $amount: 3) // }
-            }
         }
 
+        .mais {
 
+            // text-align: center;
+            // margin: 0px auto 0 auto;
+            // padding: 13px 27px;
+            // border: 0px solid black;
+            // text-transform: uppercase;
+            // background-color: #00c0ee;
+            // font-size: 15px;
+            font-family: "Open Sans Regular";
+            color: white;
+            // letter-spacing: 1px;
+            // font-weight: 600;
+            // width: 100%;
+
+            // @include desktop {
+            width: 100%;
+            background-color: white;
+            margin: 45px 0 00px 0;
+            // }
+
+            p {
+
+                // @include desktop {
+                background-color: #00c0ee;
+                width: fit-content;
+                padding: 20px 40px;
+                text-align: center;
+                margin: 0 auto;
+                font-size: 20px;
+                cursor: pointer;
+
+                &:active {
+                    background-color: darken($color: #00c0ee, $amount: 3) // }
+                }
+            }
+
+
+        }
     }
+
 }
 
 // --- FOOTER --------------------------------------

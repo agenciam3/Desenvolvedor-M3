@@ -93,9 +93,16 @@ $(document).ready(function () {
     // mais cores
 
     $('.maiscor').on('click', function () {
-        $(this).toggleClass('maiscor2');
+        $('#fc11').toggleClass('fc11b');
+        $(this).css('display', "none");
+        $('.menoscor').css('display', 'block');
     });
 
+    $('.menoscor').on('click', function () {
+        $('#fc11').toggleClass('fc11b');
+        $(this).css('display', "none");
+        $('.maiscor').css('display', 'block');
+    });
 
 
 
@@ -433,7 +440,7 @@ $(document).ready(function () {
         };
 
 
-        $('.carr-txt2 h1').html('Valor Total: R$ ' + soma.toFixed(2).replace('.', ','));
+        $('.carr-txt2 h1').html('Valor Total R$ ' + soma.toFixed(2).replace('.', ','));
 
     }
 
@@ -455,6 +462,221 @@ $(document).ready(function () {
 
         localStorage.setItem('lista', JSON.stringify(prodcar));
         //console.log('\nlista : ', prodcar);
+        geracar();
+        prods();
+    });
+
+
+
+
+    // FILTRAR 
+
+
+    // TODOS
+
+    var listacores = [];
+    listacores.push(0);
+
+    console.log('\n LISTA CORES: ', listacores[0]);
+
+    // NÃO FUNCIONA
+    // $("input:radio").on('click', function () {
+
+    //     if ($(this).is(':checked')) {
+    //         console.log('\n - valores 1 ' + this.id);
+
+    //         var id11 = $("input:radio[name='cores']:checked").id;
+    //         var id22 = $("input:radio[name='tamanhos']:checked").id;
+    //         var id33 = $("input:radio[name='valores']:checked").id;
+
+
+    //         var num = this.id;
+
+    //         var num2 = parseFloat(id33);
+
+    //         var a, b, c;
+
+
+    //         switch (num2) {
+    //             case 50:
+    //                 {
+    //                     a = 0;
+    //                     b = 50;
+    //                     break;
+    //                 }
+
+    //             case 150:
+    //                 {
+    //                     a = 51;
+    //                     b = 150;
+    //                     break;
+    //                 }
+
+    //             case 300:
+    //                 {
+    //                     a = 151;
+    //                     b = 300;
+    //                     break;
+    //                 }
+
+    //             case 500:
+    //                 {
+    //                     a = 301;
+    //                     b = 500;
+    //                     break;
+    //                 }
+
+    //             case 501:
+    //                 {
+    //                     c = 501;
+    //                     break;
+    //                 }
+    //         }
+
+    //         var valor;
+    //         var valorx
+
+    //         $('#produtos1').html('');
+    //         for (var i = 0; i < 18; i++) {
+
+    //             valor = prod.p[i].tamanho[0];
+    //             valor2 = prod.p[i].tamanho[1];
+    //             valor3 = prod.p[i].tamanho[2];
+
+    //             valorx = prod.p[i].preco;
+
+    //             if (id11 == prod.p[i].cor[0] || id11 == prod.p[i].cor[1] || id22 == valor || id22 == valor2 || id22 == valor3 || a < valorx && valorx < b || valorx > c) {
+
+    //                 $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[i].cod + ".png' alt=''><h2>" + prod.p[i].nome + "</h2><h3>R$ " + prod.p[i].preco.replace('.', ',') + "</h3><p>" + prod.p[i].parcela + "</p><div class='button2' data-cod='" + prod.p[i].cod + "'><h1>Comprar</h1></div></div>");
+    //             }
+    //         }
+
+    //     }
+    // });
+
+    // CORES
+
+    $("input:radio[name='cores']").change(function () {
+        if ($(this).is(':checked')) {
+            console.log('\n - valores 1 ' + this.id);
+
+            $('#produtos1').html('');
+            for (var i = 0; i < 18; i++) {
+                if (this.id == prod.p[i].cor[0] || this.id == prod.p[i].cor[1]) {
+                    console.log('\n id:', prod.p[i].nome);
+                    $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[i].cod + ".png' alt=''><h2>" + prod.p[i].nome + "</h2><h3>R$ " + prod.p[i].preco.replace('.', ',') + "</h3><p>" + prod.p[i].parcela + "</p><div class='button2' data-cod='" + prod.p[i].cod + "'><h1>Comprar</h1></div></div>");
+                }
+            }
+        }
+    });
+
+    // TAMANHO
+
+    $("input:radio[name='tamanhos']").change(function () {
+        if ($(this).is(':checked')) {
+            console.log('\n - valores 1 ' + this.id);
+
+            var num = this.id;
+
+            $('#produtos1').html('');
+
+            for (var i = 0; i < 18; i++) {
+
+                valor = prod.p[i].tamanho[0];
+                valor2 = prod.p[i].tamanho[1];
+                valor3 = prod.p[i].tamanho[2];
+
+                if (this.id == valor || this.id == valor2 || this.id == valor3) {
+                    console.log('\n id:', prod.p[i].nome);
+                    $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[i].cod + ".png' alt=''><h2>" + prod.p[i].nome + "</h2><h3>R$ " + prod.p[i].preco.replace('.', ',') + "</h3><p>" + prod.p[i].parcela + "</p><div class='button2' data-cod='" + prod.p[i].cod + "'><h1>Comprar</h1></div></div>");
+                }
+            }
+        }
+    });
+
+
+    // VALORES
+
+    $("input:radio[name='valores']").change(function () {
+        if ($(this).is(':checked')) {
+            // console.log('\n - valores 1 ' + this.id);
+
+            var num2 = parseFloat(this.id);
+
+            var a, b, c;
+
+
+            switch (num2) {
+                case 50:
+                    {
+                        a = 0;
+                        b = 50;
+                        break;
+                    }
+
+                case 150:
+                    {
+                        a = 51;
+                        b = 150;
+                        break;
+                    }
+
+                case 300:
+                    {
+                        a = 151;
+                        b = 300;
+                        break;
+                    }
+
+                case 500:
+                    {
+                        a = 301;
+                        b = 500;
+                        break;
+                    }
+
+                case 501:
+                    {
+                        c = 501;
+                        break;
+                    }
+            }
+
+            var valorx;
+            // console.log('\n - valores 2 ' + valor);
+
+            $('#produtos1').html('');
+            for (var i = 0; i < 18; i++) {
+
+                valorx = prod.p[i].preco;
+
+                // console.log('\n', a, ' - ', b, ' - ', valor);
+                if (a < valorx && valorx < b) {
+                    console.log('\n id:', prod.p[i].nome);
+                    $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[i].cod + ".png' alt=''><h2>" + prod.p[i].nome + "</h2><h3>R$ " + prod.p[i].preco.replace('.', ',') + "</h3><p>" + prod.p[i].parcela + "</p><div class='button2' data-cod='" + prod.p[i].cod + "'><h1>Comprar</h1></div></div>")
+
+                }
+
+                if (valorx > c) {
+                    console.log('\n id:', prod.p[i].nome);
+                    $('#produtos1').append("<div class='prod'><img src='images/" + prod.p[i].cod + ".png' alt=''><h2>" + prod.p[i].nome + "</h2><h3>R$ " + prod.p[i].preco.replace('.', ',') + "</h3><p>" + prod.p[i].parcela + "</p><div class='button2' data-cod='" + prod.p[i].cod + "'><h1>Comprar</h1></div></div>")
+
+                }
+            }
+        }
+    });
+
+
+    // ESVAZIAR CARRINHO 
+
+
+    $('#ecar-but').on('click', function () {
+        prodcar = [];
+        pcar = 0;
+
+        localStorage.setItem('qtdx', JSON.stringify(pcar));
+        localStorage.setItem('lista', JSON.stringify(prodcar));
+
         geracar();
         prods();
     });
