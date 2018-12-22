@@ -489,30 +489,29 @@ h3 {
       cursor: pointer;
       display: flex;
       align-items: center; }
-      .side-menu__form label span {
-        display: inline-block;
-        width: 15px;
-        height: 15px;
-        background-color: #fff;
-        border: solid 1px rgba(0, 0, 0, 0.5);
-        margin-right: 9px; }
-        .side-menu__form label span div {
-          transition: .4s; }
+    .side-menu__form-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border: solid 1px rgba(0, 0, 0, 0.5);
+      margin-right: 9px; }
+      .side-menu__form-box span {
+        transition: .4s; }
     .side-menu__form input[type="radio"] {
       display: none; }
-      .side-menu__form input[type="radio"]:checked + span div {
+      .side-menu__form input[type="radio"]:checked + .side-menu__form-box span {
+        display: inline-block;
         background-color: #00C0EE;
         width: 9px;
-        height: 9px;
-        position: relative;
-        top: 25%;
-        left: 25%;
-        transform: translate(-7%, -7%); }
+        height: 9px; }
   .side-menu__form-sizes {
     color: rgba(0, 0, 0, 0.5);
     display: flex;
     flex-wrap: wrap; }
-    .side-menu__form-sizes div {
+    .side-menu__form-sizes span {
       height: 32px;
       width: 32px;
       border: solid 1px rgba(0, 0, 0, 0.1);
@@ -520,7 +519,7 @@ h3 {
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      transition: .3s; }
+      transition: .2s; }
     .side-menu__form-sizes label {
       height: 16px;
       margin-right: 9px;
@@ -530,7 +529,7 @@ h3 {
       cursor: pointer; }
     .side-menu__form-sizes input[type="radio"] {
       display: none; }
-      .side-menu__form-sizes input[type="radio"]:checked ~ div {
+      .side-menu__form-sizes input[type="radio"]:checked ~ span {
         color: #000;
         border: 1px solid #00C0EE; }
 

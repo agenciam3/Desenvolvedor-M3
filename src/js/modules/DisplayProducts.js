@@ -18,9 +18,10 @@ export default class DisplayProducts {
 
     displayProducts() {
         let priceDivided;
+        let decimals;
         let html = "";
         for (let product of this.products) {
-            priceDivided = Math.floor(product.price / product.divided_up_to, -1);
+            priceDivided = Math.floor(product.price / product.divided_up_to)
 
             html += `
             <article class="products-item">
@@ -28,7 +29,7 @@ export default class DisplayProducts {
               <img src="./${product.img}" alt="products image">
             </figure>
             <h3 class="products-item__title">${product.name}</h3>
-            <p class="products-item__price">R$ ${product.price}</p>
+            <p class="products-item__price">R$ ${product.price.toFixed(2)}</p>
             <small class = "products-item__divided-by" > até ${product.divided_up_to}
             x de R$ ${priceDivided} </small>
             <a href="#" class="products-item__btn">Comprar</a>
