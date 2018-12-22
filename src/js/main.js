@@ -1,5 +1,6 @@
 import Products from './modules/Products';
 import Filters from './modules/Filters';
+import Dropdown from './modules/Dropdown';
 
 function ready(fn) {
   if (
@@ -16,6 +17,7 @@ function ready(fn) {
 function main() {
   new Products();
   new Filters();
+  new Dropdown();
 }
 
 ready(main);

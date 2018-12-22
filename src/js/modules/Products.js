@@ -9,11 +9,37 @@ export default class Products {
     constructor() {
         this.displayProducts(initialData);
         events.on('renderProducts', this.displayProducts);
+        this.selectors();
+        this.eventListeners();
+    }
+    selectors() {
+        this.buyButton = document.querySelectorAll('.products-item__btn');
+        this.shippingCartCounter = document.querySelector('.nav__bag-counter span');
+        this.counter = 0;
+    }
+    eventListeners() {
+        for (let button of this.buyButton) {
+            button.addEventListener('click', this.addItemToCart.bind(this));
+        }
+    }
+    addItemToCart(e) {
+        e.preventDefault();
+        this.counter += 1;
+        this.shippingCartCounter.innerHTML = this.counter;
     }
 
     displayProducts(products) {
         let priceDivided;
         let html = "";
+        if (products.length === 0) {
+            html += `
+            <div class="no-item-found">
+                <p>Nenhum item foi encontrado</p>
+            </div>
+            `;
+            let productsSection = document.getElementById('products');
+            productsSection.innerHTML = html;
+        }
         for (let product of products) {
             priceDivided = (Math.floor((product.price / product.divided_up_to) * 100) / 100);
             html += `
@@ -36,7 +62,6 @@ export default class Products {
             `
         let productsSection = document.getElementById('products');
         productsSection.innerHTML = html;
-        productsSection.classList.remove('no-opacity');
     }
 
 }

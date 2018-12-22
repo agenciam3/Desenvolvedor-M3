@@ -66,3 +66,16 @@
         flex-basis: 100%;
     }
 }
+
+.no-item-found {
+    width: 100%;
+    height: 500px;
+    grid-column: 1 / span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        text-align: center;
+    }
+}

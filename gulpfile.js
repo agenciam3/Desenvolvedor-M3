@@ -77,7 +77,7 @@ function watch() {
   gulp.watch(paths.styles.src, postCss);
 }
 
-const build = gulp.series(clean, buildCss, postCss, images, scripts);
+const build = gulp.series(clean, buildCss, postCss, gulp.parallel(images, scripts));
 
 exports.clean = clean;
 exports.sass = buildCss;

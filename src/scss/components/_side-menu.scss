@@ -21,6 +21,54 @@
     &__form {
         margin-bottom: 15px;
 
+        &-color {
+            max-height: 117px;
+            overflow: hidden;
+            transition: .5s;
+
+            &.show-colors {
+                max-height: 600px;
+            }
+
+            div {
+                margin-bottom: 9px;
+            }
+
+            label {
+                font-size: 14px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+
+            }
+
+            &-box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 15px;
+                height: 15px;
+                background-color: #fff;
+                border: solid 1px rgba(0, 0, 0, 0.5);
+                margin-right: 9px;
+
+                span {
+                    transition: .4s;
+                }
+            }
+
+            input[type="radio"] {
+                display: none;
+
+                &:checked+.side-menu__form-box span {
+                    display: inline-block;
+                    background-color: $accent-color;
+                    width: 9px;
+                    height: 9px;
+                }
+            }
+        }
+
         div {
             margin-bottom: 9px;
         }

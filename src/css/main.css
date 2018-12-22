@@ -469,6 +469,16 @@ h3 {
     margin-bottom: 48px;
     flex-basis: 100%; }
 
+.no-item-found {
+  width: 100%;
+  height: 500px;
+  grid-column: 1 / span 3;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .no-item-found p {
+    text-align: center; }
+
 .side-menu {
   margin-right: 70px;
   width: 60%; }
@@ -483,6 +493,37 @@ h3 {
     letter-spacing: 3px; }
   .side-menu__form {
     margin-bottom: 15px; }
+    .side-menu__form-color {
+      max-height: 117px;
+      overflow: hidden;
+      transition: .5s; }
+      .side-menu__form-color.show-colors {
+        max-height: 600px; }
+      .side-menu__form-color div {
+        margin-bottom: 9px; }
+      .side-menu__form-color label {
+        font-size: 14px;
+        cursor: pointer;
+        display: flex;
+        align-items: center; }
+      .side-menu__form-color-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border: solid 1px rgba(0, 0, 0, 0.5);
+        margin-right: 9px; }
+        .side-menu__form-color-box span {
+          transition: .4s; }
+      .side-menu__form-color input[type="radio"] {
+        display: none; }
+        .side-menu__form-color input[type="radio"]:checked + .side-menu__form-box span {
+          display: inline-block;
+          background-color: #00C0EE;
+          width: 9px;
+          height: 9px; }
     .side-menu__form div {
       margin-bottom: 9px; }
     .side-menu__form label {
