@@ -42,7 +42,7 @@ function buildCss() {
 function postCss() {
   var plugins = [
     autoprefixer({
-      browsers: ["last 1 version", "> 1%", "not dead"],
+      browsers: ["last 1 version", "> 1%"],
       grid: "autoplace"
     }),
     cssnano()

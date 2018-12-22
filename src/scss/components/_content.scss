@@ -52,6 +52,6 @@
 
 
 .layout {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 280px 1fr;
 }

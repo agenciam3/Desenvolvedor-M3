@@ -25,7 +25,7 @@
     </nav>
     <hr class="nav-border">
   </header>
-  <div class="mobile-menu ">
+  <div class="mobile-menu">
     <div class="mobile-menu__order-by">
       <div class="mobile-menu__title">
         <h2>Ordernar</h2>
@@ -83,18 +83,18 @@
         Blusas
       </h1>
       <form class="content-header__form">
-        <select name="order-by" id="order-by">
+        <select name="order-by" id="order-by-desktop">
           <option value="order-by">Ordernar por: </option>
-          <option value="newer">Mais Recente</option>
+          <option value="newest">Mais Recente</option>
           <option value="lowest-price">Menor preço</option>
           <option value="highest-price">Maior preço</option>
         </select>
       </form>
       <div class="content-header__mobile">
         <div class="content-header__mobile-btn-box">
-          <button class="content-header__mobile-btn">Filtrar</button>
+          <button class="content-header__mobile-btn" id="filter-mobile-button">Filtrar</button>
         </div>
-        <div class="content-header__mobile-btn-box">
+        <div class="content-header__mobile-btn-box" id="order-by-mobile-button">
           <button class="content-header__mobile-btn">Ordernar</button>
         </div>
       </div>
@@ -102,12 +102,12 @@
 
     <div class="layout">
       <aside class="side-menu">
-        <div class="side-menu__block">
+        <section class="side-menu__block">
           <h2 class="side-menu__title">Cores</h2>
-          <form class="side-menu__form">
+          <form class="side-menu__form" id="color-desktop">
             <div>
               <label>
-                <input type="radio" value="amarelo" name="color" />
+                <input type="radio" value="yellow" name="color" />
                 <span class="side-menu__form-box">
                   <span></span>
                 </span>
@@ -116,7 +116,7 @@
             </div>
             <div>
               <label>
-                <input type="radio" value="azul" name="color" />
+                <input type="radio" value="blue" name="color" />
                 <span class="side-menu__form-box">
                   <span></span>
                 </span>
@@ -125,7 +125,7 @@
             </div>
             <div>
               <label>
-                <input type="radio" value="branco" name="color" />
+                <input type="radio" value="white" name="color" />
                 <span class="side-menu__form-box">
                   <span></span>
                 </span>
@@ -134,7 +134,7 @@
             </div>
             <div>
               <label>
-                <input type="radio" value="cinza" name="color" />
+                <input type="radio" value="grey" name="color" />
                 <span class="side-menu__form-box">
                   <span></span>
                 </span>
@@ -143,7 +143,7 @@
             </div>
             <div>
               <label>
-                <input type="radio" value="laranja" name="color" />
+                <input type="radio" value="orange" name="color" />
                 <span class="side-menu__form-box">
                   <span></span>
                 </span>
@@ -152,10 +152,10 @@
             </div>
           </form>
           <a href="#">Ver todas as cores <img src="./assets/img/dropdown-icon.png" alt="dropdown icon"></a>
-        </div>
-        <div class="side-menu__block">
+        </section>
+        <section class="side-menu__block">
           <h2 class="side-menu__title">Tamanhos</h2>
-          <form class="side-menu__form-sizes">
+          <form class="side-menu__form-sizes" id="size-desktop">
             <label>
               <input type="radio" value="p" name="size" />
               <span>
@@ -223,10 +223,10 @@
               </span>
             </label>
           </form>
-        </div>
-        <div class="side-menu__block">
+        </section>
+        <section class="side-menu__block">
           <h2 class="side-menu__title">Faixa de preço</h2>
-          <form class="side-menu__form">
+          <form class="side-menu__form" id="price-desktop">
             <div>
               <label>
                 <input type="radio" value="0-50" name="price" />
@@ -273,10 +273,10 @@
               </label>
             </div>
           </form>
-        </div>
+        </section>
       </aside>
       <div>
-        <div class="products no-opacity" id="products">
+        <div class="products" id="products">
         </div>
       </div>
     </div>

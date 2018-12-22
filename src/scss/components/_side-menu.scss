@@ -63,8 +63,9 @@
 
     &__form-sizes {
         color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: 39px 39px 39px 39px;
+        grid-row-gap: 23px;
 
 
         span {
@@ -81,8 +82,6 @@
 
         label {
             height: 16px;
-            margin-right: 9px;
-            margin-bottom: 23px;
         }
 
         span {

@@ -1,4 +1,5 @@
-import DisplayProducts from './modules/DisplayProducts';
+import Products from './modules/Products';
+import Filters from './modules/Filters';
 
 function ready(fn) {
   if (
@@ -13,7 +14,8 @@ function ready(fn) {
 }
 
 function main() {
-  new DisplayProducts();
+  new Products();
+  new Filters();
 }
 
 ready(main);

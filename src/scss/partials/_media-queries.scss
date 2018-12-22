@@ -8,6 +8,12 @@
         display: none;
     }
 
+    .layout {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
     .content-header {
         display: block;
         text-align: center;
@@ -23,6 +29,8 @@
     }
 
     .products {
+        display: flex;
+        flex-wrap: wrap;
         justify-content: center;
     }
 }
