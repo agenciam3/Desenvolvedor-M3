@@ -1,5 +1,5 @@
 .mobile-menu {
-    display: none;
+    opacity: 0;
     background-color: #fff;
     position: fixed;
     top: 0;
@@ -7,6 +7,8 @@
     width: 100%;
     z-index: 3;
     overflow: hidden;
+    max-width: 0px;
+    transition: .5s;
 
     &__order-by {
         display: none;
@@ -92,7 +94,8 @@
 }
 
 .mobile-menu.show {
-    display: block;
+    opacity: 1;
+    max-width: 900px;
 }
 
 .btn-x {

@@ -410,7 +410,7 @@ h3 {
     justify-content: center;
     cursor: pointer; }
   .content-header__mobile-btn {
-    padding: 25px;
+    margin: 25px;
     background: #fff;
     border: none;
     color: #666; }
@@ -575,14 +575,16 @@ h3 {
         border: 1px solid #00C0EE; }
 
 .mobile-menu {
-  display: none;
+  opacity: 0;
   background-color: #fff;
   position: fixed;
   top: 0;
   height: 100vh;
   width: 100%;
   z-index: 3;
-  overflow: hidden; }
+  overflow: hidden;
+  max-width: 0px;
+  transition: .5s; }
   .mobile-menu__order-by {
     display: none; }
   .mobile-menu__order-by.show {
@@ -631,7 +633,8 @@ h3 {
       padding: 25px; }
 
 .mobile-menu.show {
-  display: block; }
+  opacity: 1;
+  max-width: 900px; }
 
 .btn-x {
   margin-top: 12px;
@@ -689,7 +692,7 @@ h3 {
     flex-wrap: wrap;
     justify-content: center; } }
 
-@media (max-width: 400px) {
+@media (max-width: 430px) {
   .products-item {
     width: 140px; }
     .products-item__btn {
