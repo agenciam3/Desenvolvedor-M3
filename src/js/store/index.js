@@ -8,6 +8,16 @@ import {
 export const store = (() => {
     let data = initialData;
     return {
+        backToInitialData() {
+            data = initialData;
+            return data;
+        },
+        addData() {
+            data.push(...data);
+            console.log(data);
+            events.emit('renderProducts', data);
+            return data;
+        },
         getData() {
             return data;
         },

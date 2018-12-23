@@ -4,16 +4,22 @@ import {
 import {
     events
 } from '../events';
+import {
+    store
+} from '../store';
 
 export default class Products {
     constructor() {
         this.displayProducts(initialData);
         events.on('renderProducts', this.displayProducts);
+        events.on('renderProducts', this.selectors.bind(this));
+        events.on('renderProducts', this.eventListeners.bind(this));
         this.selectors();
         this.eventListeners();
     }
     selectors() {
         this.buyButton = document.querySelectorAll('.products-item__btn');
+        this.loadMoreButton = document.querySelector('.products__btn');
         this.shippingCartCounter = document.querySelector('.nav__bag-counter span');
         this.counter = 0;
     }
@@ -21,11 +27,15 @@ export default class Products {
         for (let button of this.buyButton) {
             button.addEventListener('click', this.addItemToCart.bind(this));
         }
+        this.loadMoreButton.addEventListener('click', this.addProducts)
     }
     addItemToCart(e) {
         e.preventDefault();
         this.counter += 1;
         this.shippingCartCounter.innerHTML = this.counter;
+    }
+    addProducts() {
+        store.addData();
     }
 
     displayProducts(products) {
@@ -63,5 +73,4 @@ export default class Products {
         let productsSection = document.getElementById('products');
         productsSection.innerHTML = html;
     }
-
 }

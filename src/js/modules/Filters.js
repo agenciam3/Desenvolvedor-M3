@@ -20,7 +20,7 @@ export default class Filters {
         this.isPriceFormCliked = {};
     }
     eventListeners() {
-        this.orderByForm.addEventListener('change', this.sortByOrderBy);
+        this.orderByForm.addEventListener('change', this.sortByOrderBy.bind(this));
         for (let input of this.colorForm) {
             input.addEventListener('change', this.filterByColor.bind(this));
             input.addEventListener('click', this.removeColorFilter.bind(this));
@@ -61,45 +61,50 @@ export default class Filters {
     }
 
     filterByColor(e) {
-        let filteredProducts = this.products.filter((product) => {
+        this.products = this.products.filter((product) => {
             return product.color.includes(e.target.value);
         });
-        events.emit('renderProducts', filteredProducts)
+        store.setData(this.products);
+        events.emit('renderProducts', this.products)
     }
     removeColorFilter(e) {
         if (this.isColorClicked[e.target.value]) {
-            e.target.checked = false;
+            this.uncheckAllRadioButtons();
             this.isColorClicked = {
                 [event.target.value]: false
             };
-            this.products = store.getData();
+            this.products = store.backToInitialData();
             store.setData(this.products);
+        } else {
+            this.isColorClicked = {
+                [event.target.value]: true
+            };
         }
-        this.isColorClicked = {
-            [event.target.value]: true
-        };
 
     }
 
     filterBySize(e) {
-        let filteredProducts = this.products.filter((product) => {
+        this.products = this.products.filter((product) => {
             return product.sizes.includes(e.target.value);
         });
-        events.emit('renderProducts', filteredProducts)
+        store.setData(this.products);
+        events.emit('renderProducts', this.products)
     }
 
     removeSizeFilter(e) {
         if (this.isSizeFormClicked[e.target.value]) {
-            e.target.checked = false;
+            this.uncheckAllRadioButtons();
             this.isSizeFormClicked = {
                 [event.target.value]: false
             };
-            this.products = store.getData();
+            this.products = store.backToInitialData();
             store.setData(this.products);
+        } else {
+            this.isSizeFormClicked = {
+                [event.target.value]: true
+            };
         }
-        this.isSizeFormClicked = {
-            [event.target.value]: true
-        };
+
 
     }
 
@@ -107,7 +112,7 @@ export default class Filters {
         let range = e.target.value.split("-");
         const minPrice = Number(range[0]);
         const maxPrice = Number(range[1]) || 999999999999;
-        let filteredProducts = this.products.filter((product) => {
+        this.products = this.products.filter((product) => {
             if (product.price >= minPrice) {
                 if (product.price <= maxPrice) {
                     return true;
@@ -115,21 +120,36 @@ export default class Filters {
             }
             return false;
         });
-        events.emit('renderProducts', filteredProducts);
+        store.setData(this.products);
+        events.emit('renderProducts', this.products);
     }
 
     removePriceFilter(e) {
         if (this.isPriceFormCliked[e.target.value]) {
-            e.target.checked = false;
+            this.uncheckAllRadioButtons();
             this.isPriceFormCliked = {
                 [event.target.value]: false
             };
-            this.products = store.getData();
+            this.products = store.backToInitialData();
             store.setData(this.products);
+        } else {
+            this.isPriceFormCliked = {
+                [event.target.value]: true
+            };
         }
-        this.isPriceFormCliked = {
-            [event.target.value]: true
-        };
 
+
+    }
+
+    uncheckAllRadioButtons() {
+        for (let input of this.colorForm) {
+            input.checked = false;
+        }
+        for (let input of this.sizeForm) {
+            input.checked = false;
+        }
+        for (let input of this.priceForm) {
+            input.checked = false;
+        }
     }
 }
