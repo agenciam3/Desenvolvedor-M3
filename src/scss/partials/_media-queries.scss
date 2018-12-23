@@ -4,8 +4,49 @@
         width: 95%;
     }
 
+    .btn-plus {
+        display: block;
+    }
+
     .side-menu {
-        display: none;
+        @include mobileMenu();
+
+        &__block {
+            margin-top: 46px;
+            margin-left: 39px;
+        }
+
+        &.show {
+            opacity: 1;
+            max-width: 900px;
+        }
+
+        a {
+            display: none;
+        }
+
+        &__form {
+            @include mobileForms();
+
+            &-color {
+                @include mobileForms();
+            }
+
+            &-sizes {
+                @include mobileForms();
+
+                &.show {
+                    height: 145px;
+                }
+            }
+
+        }
+    }
+
+    .filter-mobile-btn {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .layout {
@@ -34,6 +75,7 @@
         justify-content: center;
     }
 }
+
 
 @media(max-width: 430px) {
     .products {

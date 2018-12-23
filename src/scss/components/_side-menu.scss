@@ -16,6 +16,12 @@
         text-transform: uppercase;
         margin-bottom: 13px;
         letter-spacing: 3px;
+
+        &-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
 
     &__form {

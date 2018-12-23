@@ -12,12 +12,13 @@ export default class Filters {
     selectors() {
         this.products = store.getData();
         this.orderByForm = document.getElementById("order-by-desktop");
-        this.colorForm = document.querySelectorAll("#color-desktop div label input[type='radio']");
+        this.colorForm = document.querySelectorAll("#color div label input[type='radio']");
         this.isColorClicked = {};
-        this.sizeForm = document.querySelectorAll("#size-desktop label input[type='radio']");
+        this.sizeForm = document.querySelectorAll("#size label input[type='radio']");
         this.isSizeFormClicked = {};
-        this.priceForm = document.querySelectorAll("#price-desktop div label input[type='radio']");
+        this.priceForm = document.querySelectorAll("#price div label input[type='radio']");
         this.isPriceFormCliked = {};
+        this.filterMobileClearBtn = document.querySelector('.filter-mobile-btn__clear');
     }
     eventListeners() {
         this.orderByForm.addEventListener('change', this.sortByOrderBy.bind(this));
@@ -33,6 +34,7 @@ export default class Filters {
             input.addEventListener('change', this.filterByPrice.bind(this));
             input.addEventListener('click', this.removePriceFilter.bind(this));
         }
+        this.filterMobileClearBtn.addEventListener('click', this.uncheckAllRadioButtons.bind(this))
     }
 
     sortByOrderBy(e) {
@@ -148,5 +150,6 @@ export default class Filters {
         for (let input of this.priceForm) {
             input.checked = false;
         }
+        this.products = store.backToInitialData();
     }
 }

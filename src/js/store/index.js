@@ -10,6 +10,7 @@ export const store = (() => {
     return {
         backToInitialData() {
             data = initialData;
+            events.emit('renderProducts', data);
             return data;
         },
         addData() {

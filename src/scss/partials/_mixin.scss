@@ -1,0 +1,39 @@
+@mixin mobileForms {
+    max-height: 0px;
+    overflow: hidden;
+    transition: .5s;
+    opacity: 0;
+    margin-left: 15px;
+
+    &.show {
+        opacity: 1;
+        max-height: 900px;
+    }
+}
+
+@mixin line {
+    background-color: #000;
+    height: 3px;
+    width: 30px
+}
+
+@mixin title {
+    color: $dark-gray;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@mixin mobileMenu {
+    opacity: 0;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 4;
+    max-width: 0px;
+    transition: .5s;
+    overflow-y: scroll;
+}

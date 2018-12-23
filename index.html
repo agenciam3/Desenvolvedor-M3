@@ -43,40 +43,6 @@
         </ul>
       </div>
     </div>
-    <div class="mobile-menu__filter ">
-      <div class="mobile-menu__title">
-        <h2>Filtrar</h2>
-        <div class="btn-x">
-          <div class="btn-x__line1"></div>
-          <div class="btn-x__line2"></div>
-        </div>
-      </div>
-      <div class="mobile-menu__list">
-        <ul>
-          <li>
-            <h2>Cores</h2>
-            <div class="btn-plus ">
-              <div class="btn-plus__line1 "></div>
-              <div class="btn-plus__line2 "></div>
-            </div>
-          </li>
-          <li>
-            <h2>Tamanhos </h2>
-            <div class="btn-plus">
-              <div class="btn-plus__line1"></div>
-              <div class="btn-plus__line2"></div>
-            </div>
-          </li>
-          <li>
-            <h2>Preço</h2>
-            <div class="btn-plus">
-              <div class="btn-plus__line1"></div>
-              <div class="btn-plus__line2"></div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
   <main class="container">
     <div class="content-header">
@@ -92,8 +58,8 @@
         </select>
       </form>
       <div class="content-header__mobile">
-        <div class="content-header__mobile-btn-box">
-          <button class="content-header__mobile-btn" id="filter-mobile-button">Filtrar</button>
+        <div class="content-header__mobile-btn-box" id="filter-mobile-button">
+          <button class="content-header__mobile-btn">Filtrar</button>
         </div>
         <div class="content-header__mobile-btn-box" id="order-by-mobile-button">
           <button class="content-header__mobile-btn">Ordernar</button>
@@ -102,9 +68,24 @@
     </div>
     <div class="layout">
       <aside class="side-menu">
+        <div class="mobile-menu__filter">
+          <div class="mobile-menu__title">
+            <h2>Filtrar</h2>
+            <div class="btn-x" id="btn-x-filter">
+              <div class="btn-x__line1"></div>
+              <div class="btn-x__line2"></div>
+            </div>
+          </div>
+        </div>
         <section class="side-menu__block">
-          <h2 class="side-menu__title">Cores</h2>
-          <form class="side-menu__form-color" id="color-desktop">
+          <div class="side-menu__title-block">
+            <h2 class="side-menu__title">Cores</h2>
+            <div class="btn-plus" id="btn-plus-color">
+              <div class="btn-plus__line1"></div>
+              <div class="btn-plus__line2"></div>
+            </div>
+          </div>
+          <form class="side-menu__form-color" id="color">
             <div>
               <label>
                 <input type="radio" value="yellow" name="color" />
@@ -199,8 +180,14 @@
           <a id="dropdown-colors" href="#">Ver todas as cores <img src="./assets/img/dropdown-icon.png" alt="dropdown icon"></a>
         </section>
         <section class="side-menu__block">
-          <h2 class="side-menu__title">Tamanhos</h2>
-          <form class="side-menu__form-sizes" id="size-desktop">
+          <div class="side-menu__title-block">
+            <h2 class="side-menu__title">Tamanhos</h2>
+            <div class="btn-plus" id="btn-plus-sizes">
+              <div class="btn-plus__line1"></div>
+              <div class="btn-plus__line2"></div>
+            </div>
+          </div>
+          <form class="side-menu__form-sizes" id="size">
             <label>
               <input type="radio" value="p" name="size" />
               <span>
@@ -270,8 +257,14 @@
           </form>
         </section>
         <section class="side-menu__block">
-          <h2 class="side-menu__title">Faixa de preço</h2>
-          <form class="side-menu__form" id="price-desktop">
+          <div class="side-menu__title-block">
+            <h2 class="side-menu__title">Faixa de preço</h2>
+            <div class="btn-plus" id="btn-plus-price">
+              <div class="btn-plus__line1"></div>
+              <div class="btn-plus__line2"></div>
+            </div>
+          </div>
+          <form class="side-menu__form" id="price">
             <div>
               <label>
                 <input type="radio" value="0-50" name="price" />
@@ -318,6 +311,10 @@
               </label>
             </div>
           </form>
+          <div class="filter-mobile-btn">
+            <button class="filter-mobile-btn__apply">Aplicar</button>
+            <button class="filter-mobile-btn__clear">Limpar</button>
+          </div>
         </section>
       </aside>
       <div>
