@@ -64,8 +64,7 @@ export default class Filters {
         this.products = this.products.filter((product) => {
             return product.color.includes(e.target.value);
         });
-        store.setData(this.products);
-        events.emit('renderProducts', this.products)
+        events.emit('renderProducts', this.products);
     }
     removeColorFilter(e) {
         if (this.isColorClicked[e.target.value]) {
@@ -87,7 +86,6 @@ export default class Filters {
         this.products = this.products.filter((product) => {
             return product.sizes.includes(e.target.value);
         });
-        store.setData(this.products);
         events.emit('renderProducts', this.products)
     }
 
@@ -120,7 +118,6 @@ export default class Filters {
             }
             return false;
         });
-        store.setData(this.products);
         events.emit('renderProducts', this.products);
     }
 
