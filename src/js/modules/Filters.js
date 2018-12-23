@@ -81,14 +81,14 @@ export default class Filters {
                 [event.target.value]: true
             };
         }
-
     }
 
     filterBySize(e) {
-        this.products = this.products.filter((product) => {
+        if (this.cachedColorProducts)
+        this.cachedColorProducts = this.products.filter((product) => {
             return product.sizes.includes(e.target.value);
         });
-        events.emit('renderProducts', this.products)
+        events.emit('renderProducts', this.cachedColorProducts)
     }
 
     removeSizeFilter(e) {
@@ -104,7 +104,6 @@ export default class Filters {
                 [event.target.value]: true
             };
         }
-
 
     }
 
@@ -136,7 +135,6 @@ export default class Filters {
                 [event.target.value]: true
             };
         }
-
 
     }
 
