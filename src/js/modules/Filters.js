@@ -19,6 +19,7 @@ export default class Filters {
         this.priceForm = document.querySelectorAll("#price div label input[type='radio']");
         this.isPriceFormCliked = {};
         this.filterMobileClearBtn = document.querySelector('.filter-mobile-btn__clear');
+        this.isFilterActive = {};
     }
     eventListeners() {
         this.orderByForm.addEventListener('change', this.sortByOrderBy.bind(this));
@@ -63,10 +64,27 @@ export default class Filters {
     }
 
     filterByColor(e) {
-        this.products = this.products.filter((product) => {
-            return product.color.includes(e.target.value);
-        });
-        events.emit('renderProducts', this.products);
+        if (this.isFilterActive[e.target.name]) {
+            for (let input of this.sizeForm) {
+                input.checked = false;
+            }
+            for (let input of this.priceForm) {
+                input.checked = false;
+            }
+            this.products = store.backToInitialData();
+            this.products = this.products.filter((product) => {
+                return product.color.includes(e.target.value);
+            });
+            store.setData(this.products);
+        } else {
+            this.products = this.products.filter((product) => {
+                return product.color.includes(e.target.value);
+            });
+            this.isFilterActive = {
+                [e.target.name]: true
+            }
+            store.setData(this.products);
+        }
     }
     removeColorFilter(e) {
         if (this.isColorClicked[e.target.value]) {
@@ -84,11 +102,29 @@ export default class Filters {
     }
 
     filterBySize(e) {
-        if (this.cachedColorProducts)
-        this.cachedColorProducts = this.products.filter((product) => {
-            return product.sizes.includes(e.target.value);
-        });
-        events.emit('renderProducts', this.cachedColorProducts)
+        if (this.isFilterActive[e.target.name]) {
+            for (let input of this.colorForm) {
+                input.checked = false;
+            }
+            for (let input of this.priceForm) {
+                input.checked = false;
+            }
+            this.products = store.backToInitialData();
+
+            this.products = this.products.filter((product) => {
+                return product.sizes.includes(e.target.value);
+            });
+            store.setData(this.products);
+
+        } else {
+            this.products = this.products.filter((product) => {
+                return product.sizes.includes(e.target.value);
+            });
+            store.setData(this.products);
+            this.isFilterActive = {
+                [e.target.name]: true
+            };
+        }
     }
 
     removeSizeFilter(e) {
@@ -98,7 +134,6 @@ export default class Filters {
                 [event.target.value]: false
             };
             this.products = store.backToInitialData();
-            store.setData(this.products);
         } else {
             this.isSizeFormClicked = {
                 [event.target.value]: true
@@ -108,18 +143,46 @@ export default class Filters {
     }
 
     filterByPrice(e) {
-        let range = e.target.value.split("-");
-        const minPrice = Number(range[0]);
-        const maxPrice = Number(range[1]) || 999999999999;
-        this.products = this.products.filter((product) => {
-            if (product.price >= minPrice) {
-                if (product.price <= maxPrice) {
-                    return true;
-                }
+        let range;
+        if (this.isFilterActive[e.target.name]) {
+            for (let input of this.sizeForm) {
+                input.checked = false;
             }
-            return false;
-        });
-        events.emit('renderProducts', this.products);
+            for (let input of this.colorForm) {
+                input.checked = false;
+            }
+            this.products = store.backToInitialData();
+            range = e.target.value.split("-");
+            const minPrice = Number(range[0]);
+            const maxPrice = Number(range[1]) || 999999999999;
+            this.products = this.products.filter((product) => {
+                if (product.price >= minPrice) {
+                    if (product.price <= maxPrice) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+            store.setData(this.products)
+
+        } else {
+            range = e.target.value.split("-");
+            const minPrice = Number(range[0]);
+            const maxPrice = Number(range[1]) || 999999999999;
+            this.products = this.products.filter((product) => {
+                if (product.price >= minPrice) {
+                    if (product.price <= maxPrice) {
+                        return true;
+                    }
+                }
+                return false;
+            });
+            store.setData(this.products)
+
+            this.isFilterActive = {
+                [e.target.name]: true
+            }
+        };
     }
 
     removePriceFilter(e) {
@@ -129,7 +192,6 @@ export default class Filters {
                 [event.target.value]: false
             };
             this.products = store.backToInitialData();
-            store.setData(this.products);
         } else {
             this.isPriceFormCliked = {
                 [event.target.value]: true
