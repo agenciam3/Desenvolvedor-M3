@@ -36,7 +36,7 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 - No seu fork, codifique o layout seguindo as instruções abaixo;
 - Atualize o readme com as instruções necessárias para rodar o seu código;
 - Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- Faça um pull request (ou envie para [pablo@digitalm3.com.br](pablo@digitalm3.com.br)).
+- Faça um pull request (ou envie para [davi@digitalm3.com.br](davi@digitalm3.com.br)).
 
 
 **obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
@@ -60,4 +60,4 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Javascript sem plugins e modular
 - Grunt, Gulp ou similar
 
-##### Dúvidas: [pablo@digitalm3.com.br](pablo@digitalm3.com.br)
+##### Dúvidas: [davi@digitalm3.com.br](davi@digitalm3.com.br)
