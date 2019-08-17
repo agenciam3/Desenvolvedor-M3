@@ -1,0 +1,163 @@
+/* restart */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+/* header */
+header {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+    padding: 1% 10%;
+}
+
+/* grid content */
+div.content {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    padding: 0 10%;
+}
+
+/* aside */
+aside {
+    display: flex;
+    flex-direction: column;
+    padding: 15% 15% 15% 0;
+}
+
+aside p#title {
+    margin-bottom: 15%;
+    font-size: 1.8rem; 
+}
+
+aside p#sub-title {
+    margin-bottom: 5%;
+    text-transform: uppercase;
+    color: #000;
+}
+
+aside div.colors {
+    margin-bottom: 5%;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+aside div.check {
+    display: flex;
+    align-items: center;
+}
+
+aside div.checkbox {
+    border: 1px solid #ccc;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    line-height: 15px;
+    padding: 2px;
+    background-clip: content-box;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+aside div#blue, aside div#price-range-4 {
+    background-color: #3cb6d4;
+}
+
+aside a#more-colors {
+    margin-bottom: 15%;
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+aside div.sizes {
+    margin-bottom: 15%;
+}
+
+aside div.sizes div.size {
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    float: left;
+    margin: 5px;
+    font-size: 0.7rem;
+    color: #aaa;
+    cursor: pointer;
+}
+
+aside div.price-ranges {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+/* main */
+main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    padding: 5% 0;
+}
+
+main select {
+    grid-column: 3 / 4;
+    margin-bottom: 20%;
+    padding: 10px;
+}
+
+main div.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20%;
+    font-size: 0.8rem;
+}
+
+main div.product p#product-name {
+    text-transform: uppercase;
+    margin: 10% 0;
+}
+
+main div.product p#product-price {
+    margin-bottom: 3%;
+    color: #000;
+    font-weight: bold;
+}
+
+main div.product button.buy-product {
+    width: 100%;
+    padding: 5%;
+    margin-top: 10%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+main button#load-more-products {
+    width: 80%;
+    padding: 5%;
+    border: none;
+    background-color: #3cb6d4;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    grid-column: 2/3;
+    justify-self: center;
+}
+
+/* footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1%;
+    font-size: 0.9rem;
+}
