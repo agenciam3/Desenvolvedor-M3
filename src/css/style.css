@@ -4,95 +4,320 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    color: #333;
+    color: #555;
+    outline: none;
 }
 
 /* header */
 header {
-    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 2px solid #ccc;
-    padding: 1% 10%;
+}
+
+header a#bag-icon {
+    color: #000;
+    font-size: 1.5rem;
+    transition: 0.4s;
+}
+
+header a#bag-icon:hover {
+    opacity: 0.7;
 }
 
 /* grid content */
 div.content {
     display: grid;
-    grid-template-columns: 25% 75%;
-    padding: 0 10%;
 }
 
 /* aside */
 aside {
     display: flex;
     flex-direction: column;
-    padding: 15% 15% 15% 0;
 }
 
 aside p#title {
-    margin-bottom: 15%;
+    margin-bottom: 50px;
     font-size: 1.8rem; 
 }
 
-aside p#sub-title {
-    margin-bottom: 5%;
-    text-transform: uppercase;
-    color: #000;
+aside div#mobile-menu div {
+    border: 1px solid #ccc;
+    width: 50%;
+    height: 50px;
+    line-height: 50px;
+    color: #aaa;
+    cursor: pointer;
 }
 
-aside div.colors {
-    margin-bottom: 5%;
+aside div#mobile-menu div:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
+aside div#mobile-filter-hidden {
+    display: none;
+}
+
+aside div#mobile-filter-showed {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+} 
+
+aside div#mobile-filter-showed div#mobile-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-header > p {
+    color: #aaa;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-header button#close-mobile-filter {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-header button#close-mobile-filter:hover {
+    opacity: 0.7;
+}
+
+aside div#mobile-filter-showed div.mobile-filter-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+aside div#mobile-filter-showed div.mobile-filter-option > span {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+aside div#mobile-filter-showed div.mobile-filter-option > span:hover {
+    opacity: 0.7;
+}
+
+aside div#mobile-filter-showed div#mobile-colors-hidden {
+    display: none;
+}
+
+aside div#mobile-filter-showed div#mobile-colors-showed {
+    padding: 0 40px;
     font-size: 0.9rem;
     line-height: 1.4rem;
 }
 
-aside div.check {
+aside div#mobile-filter-showed div#mobile-sizes-hidden {
+    display: none;
+}
+
+aside div#mobile-filter-showed div#mobile-sizes-showed {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 35px;
+}
+
+aside div#mobile-filter-showed div#mobile-price-ranges-hidden {
+    display: none;
+}
+
+aside div#mobile-filter-showed div#mobile-price-ranges-showed {
+    padding: 0 40px 20px 40px;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-buttons > button {
+    width: 45%;
+    padding: 10px 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-aply {
+    background-color: #3cb6d4;
+    color: #fff;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-aply:hover {
+    opacity: 0.7;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-clean {
+    border: 1px solid #ccc;
+    color: #aaa;
+}
+
+aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-clean:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+
+aside div.input-check {
     display: flex;
     align-items: center;
 }
 
-aside div.checkbox {
+aside div.input-check div.checkbox {
     border: 1px solid #ccc;
     width: 15px;
     height: 15px;
-    text-align: center;
-    line-height: 15px;
     padding: 2px;
     background-clip: content-box;
-    display: inline-block;
     margin-right: 10px;
+    transition: 0.4s;
 }
 
-aside div#blue, aside div#price-range-4 {
+aside div.input-check div.checkbox:hover {
+    border: 1px solid #3cb6d4;
+}
+
+aside div.input-check div.checkbox.checked {
     background-color: #3cb6d4;
 }
 
-aside a#more-colors {
-    margin-bottom: 15%;
-    font-size: 0.8rem;
-    color: #aaa;
-}
-
-aside div.sizes {
-    margin-bottom: 15%;
-}
-
-aside div.sizes div.size {
+aside div.size {
     border: 1px solid #ccc;
     width: 30px;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    float: left;
     margin: 5px;
     font-size: 0.7rem;
     color: #aaa;
     cursor: pointer;
+    transition: 0.4s;
 }
 
-aside div.price-ranges {
+aside div.size:hover {
+    border: 1px solid #3cb6d4;
+}
+
+aside div.size.selected {
+    background-color: #3cb6d4;
+    color: #fff;
+    border: none;
+}
+
+aside div#mobile-ordering-hidden {
+    display: none;
+}
+
+aside div#mobile-ordering-showed {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+aside div#mobile-ordering-showed div#mobile-ordering-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 20px;
+}
+
+aside div#mobile-ordering-showed div#mobile-ordering-header > p {
+    color: #aaa;
+}
+
+aside div#mobile-ordering-showed div#mobile-ordering-header button#close-mobile-ordering {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+aside div#mobile-ordering-showed div#mobile-ordering-header button#close-mobile-ordering:hover {
+    opacity: 0.7;
+}
+
+aside div#mobile-ordering-showed > button {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    text-align: start;
+    padding: 20px 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+aside div#mobile-ordering-showed > button:hover {
+    background-color: #3cb6d4;
+    color: #fff;
+}
+
+aside div#desktop-menu {
+    flex-direction: column;
+}
+
+aside div#desktop-menu p#sub-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+aside div#desktop-menu div#desktop-colors {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+aside div#desktop-menu div#desktop-colors div#hidden-colors {
+    display: none;
+}
+
+aside div#desktop-menu div#desktop-colors div#showed-colors {
+    display: block;
+}
+
+aside div#desktop-menu button#more-colors {
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+    color: #aaa;
+    border: none;
+    background: none;
+    text-align: start;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+aside div#desktop-menu div#desktop-sizes {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside div#desktop-menu div#desktop-price-ranges {
     font-size: 0.9rem;
     line-height: 1.4rem;
 }
@@ -100,57 +325,97 @@ aside div.price-ranges {
 /* main */
 main {
     display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    padding: 5% 0;
+    padding: 50px 0;
 }
 
-main select {
-    grid-column: 3 / 4;
-    margin-bottom: 20%;
+main div#desktop-ordering {
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 50px;
     padding: 10px;
+    border: 1px solid #ccc;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+}
+
+main div#desktop-ordering div#ordering-hidden-options {
+    display: none;
+}
+
+main div#desktop-ordering div#ordering-showed-options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+main div#desktop-ordering div#ordering-showed-options button {
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main div#desktop-ordering div#ordering-showed-options button:hover {
+    background-color: #3cb6d4;
+    color: #fff;
 }
 
 main div.product {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20%;
+    margin-bottom: 50px;
     font-size: 0.8rem;
 }
 
 main div.product p#product-name {
     text-transform: uppercase;
-    margin: 10% 0;
+    margin: 20px 0;
 }
 
 main div.product p#product-price {
-    margin-bottom: 3%;
+    margin-bottom: 10px;
     color: #000;
     font-weight: bold;
 }
 
 main div.product button.buy-product {
     width: 100%;
-    padding: 5%;
-    margin-top: 10%;
+    padding: 10px;
+    margin-top: 20px;
     border: none;
     background-color: #000;
     color: #fff;
-    cursor: pointer;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main div.product button.buy-product:hover {
+    opacity: 0.7;
 }
 
 main button#load-more-products {
-    width: 80%;
-    padding: 5%;
+    padding: 10px;
+    margin-bottom: 0;
     border: none;
     background-color: #3cb6d4;
     color: #fff;
-    cursor: pointer;
     font-weight: bold;
-    grid-column: 2/3;
-    justify-self: center;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main button#load-more-products:hover {
+    opacity: 0.7;
 }
 
 /* footer */
@@ -158,6 +423,159 @@ footer {
     background-color: #000;
     color: #fff;
     text-align: center;
-    padding: 1%;
+    padding: 10px;
     font-size: 0.9rem;
+}
+
+/* media queries */
+@media(max-width: 480px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    div.content {
+        padding: 0 10px;
+        grid-template-columns: 100%;
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    aside p#title {
+        margin: 20px 0;
+    }
+
+    aside div#mobile-menu {
+        display: flex;
+    }
+
+    aside div#desktop-menu {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+
+    main div#desktop-ordering {
+        display: none;
+    }
+
+    main button#load-more-products {
+        grid-column: 1 / 2;
+    } 
+}
+
+@media(min-width: 481px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    div.content {
+        padding: 0 20px;
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    aside p#title {
+        margin: 20px 0;
+    }
+    
+    aside div#mobile-menu {
+        display: flex;
+    }
+
+    aside div#desktop-menu {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: auto auto;
+        justify-content: space-evenly;
+    }
+
+    main div#desktop-ordering {
+        display: none;
+    }
+
+    main button#load-more-products {
+        grid-column: 1 / 3;
+        width: 50%;
+        justify-self: center;
+    }
+}
+
+@media(min-width: 790px) {
+    header {
+        padding: 10px 65px;
+    }
+
+    div.content {
+        padding: 0 65px;
+        grid-template-columns: 25% 75%;
+    }
+
+    aside {
+        text-align: start;
+        padding: 50px 0;
+    }
+
+    aside p#title {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    aside div#mobile-menu {
+        display: none;
+    }
+
+    aside div#mobile-filter-showed,
+    aside div#mobile-ordering-showed {
+        display: none;
+    }
+
+    html {
+        overflow: auto;
+    }
+
+    aside div#desktop-menu {
+        display: flex;
+    }
+
+    main div#desktop-ordering {
+        display: flex;
+        grid-column: 2 / 3;
+    } 
+}
+
+@media(min-width: 1130px) {
+    header {
+        padding: 10px 150px;
+    }
+
+    div.content {
+        padding: 0 150px;
+    }
+
+    aside {
+        padding-right: 25px;
+    }
+
+    main {
+        grid-template-columns: auto auto auto;
+        justify-content: space-between;
+    }
+
+    main div#desktop-ordering {
+        grid-column: 3 / 4;
+    }
+
+    main button#load-more-products {
+        grid-column: 2 / 3;
+        width: 100%;
+    }
 }
