@@ -1,0 +1,157 @@
+/* restart */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    outline: none;
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+
+header a#bag-icon {
+    color: #000;
+    font-size: 1.5rem;
+    transition: 0.4s;
+}
+
+header a#bag-icon:hover {
+    opacity: 0.7;
+}
+
+/* content */
+div.content {
+    display: grid;
+}
+
+/* aside */
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+aside p#title {
+    margin-bottom: 50px;
+    font-size: 1.8rem; 
+}
+
+aside div.input-check {
+    display: flex;
+    align-items: center;
+}
+
+aside div.input-check div.checkbox {
+    border: 1px solid #ccc;
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+    background-clip: content-box;
+    margin-right: 10px;
+    transition: 0.4s;
+}
+
+aside div.input-check div.checkbox:hover {
+    border: 1px solid #3cb6d4;
+}
+
+aside div.input-check div.checkbox.checked {
+    background-color: #3cb6d4;
+}
+
+aside div.size {
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 5px;
+    font-size: 0.7rem;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+aside div.size:hover {
+    border: 1px solid #3cb6d4;
+}
+
+aside div.size.selected {
+    background-color: #3cb6d4;
+    color: #fff;
+    border: none;
+}
+
+/* main */
+main {
+    display: grid;
+    padding: 50px 0;
+}
+
+main div.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    font-size: 0.8rem;
+}
+
+main div.product p#product-name {
+    text-transform: uppercase;
+    margin: 20px 0;
+}
+
+main div.product p#product-price {
+    margin-bottom: 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+main div.product button.buy-product {
+    width: 200px;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main div.product button.buy-product:hover {
+    opacity: 0.7;
+}
+
+main button#load-more-products {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 0;
+    border: none;
+    background-color: #3cb6d4;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    justify-self: center;
+    align-self: end;
+}
+
+main button#load-more-products:hover {
+    opacity: 0.7;
+}
+
+/* footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}

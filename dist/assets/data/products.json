@@ -1,0 +1,289 @@
+[
+    {
+        "image": "./assets/images/img_2.png",
+        "name": "Camiseta Mescla",
+        "price": 28.00,
+        "color": "Cinza",
+        "size": ["P", "M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_3.png",
+        "name": "Saia em Couro",
+        "price": 398.00,
+        "color": "Vinho",
+        "size": [36, 38, 40, 42]
+    },
+
+    {
+        "image": "./assets/images/img_4.png",
+        "name": "Cardigan Tigre",
+        "price": 398.00,
+        "color": "Laranja",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_5.png",
+        "name": "Cardigan Off White",
+        "price": 99.90,
+        "color": "Branco",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_6.png",
+        "name": "Body Leopardo",
+        "price": 129.90,
+        "color": "Amarelo",
+        "size": ["P", "M", "G", "GG"]
+    },
+
+    {
+        "image": "./assets/images/img_7.png",
+        "name": "Casaco Pelos",
+        "price": 398.00,
+        "color": "Rosa",
+        "size": ["P", "M"]
+    },
+
+    {
+        "image": "./assets/images/img_8.png",
+        "name": "Cropped Stripes",
+        "price": 120.00,
+        "color": "Azul",
+        "size": ["M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_9.png",
+        "name": "Camisa Transparente",
+        "price": 398.00,
+        "color": "Preto",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_10.png",
+        "name": "Pochete Clutch",
+        "price": 99.00,
+        "color": "Preto",
+        "size": [38, 42, 44, 46]
+    },
+
+    {
+        "image": "./assets/images/img_2.png",
+        "name": "Camiseta Mescla",
+        "price": 28.00,
+        "color": "Cinza",
+        "size": ["P", "M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_3.png",
+        "name": "Saia em Couro",
+        "price": 398.00,
+        "color": "Vinho",
+        "size": [36, 38, 40, 42]
+    },
+
+    {
+        "image": "./assets/images/img_4.png",
+        "name": "Cardigan Tigre",
+        "price": 398.00,
+        "color": "Laranja",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_5.png",
+        "name": "Cardigan Off White",
+        "price": 99.90,
+        "color": "Branco",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_6.png",
+        "name": "Body Leopardo",
+        "price": 129.90,
+        "color": "Amarelo",
+        "size": ["P", "M", "G", "GG"]
+    },
+
+    {
+        "image": "./assets/images/img_7.png",
+        "name": "Casaco Pelos",
+        "price": 398.00,
+        "color": "Rosa",
+        "size": ["P", "M"]
+    },
+
+    {
+        "image": "./assets/images/img_8.png",
+        "name": "Cropped Stripes",
+        "price": 120.00,
+        "color": "Azul",
+        "size": ["M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_9.png",
+        "name": "Camisa Transparente",
+        "price": 398.00,
+        "color": "Preto",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_10.png",
+        "name": "Pochete Clutch",
+        "price": 99.00,
+        "color": "Preto",
+        "size": [38, 42, 44, 46]
+    },
+
+    {
+        "image": "./assets/images/img_2.png",
+        "name": "Camiseta Mescla",
+        "price": 28.00,
+        "color": "Cinza",
+        "size": ["P", "M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_3.png",
+        "name": "Saia em Couro",
+        "price": 398.00,
+        "color": "Vinho",
+        "size": [36, 38, 40, 42]
+    },
+
+    {
+        "image": "./assets/images/img_4.png",
+        "name": "Cardigan Tigre",
+        "price": 398.00,
+        "color": "Laranja",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_5.png",
+        "name": "Cardigan Off White",
+        "price": 99.90,
+        "color": "Branco",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_6.png",
+        "name": "Body Leopardo",
+        "price": 129.90,
+        "color": "Amarelo",
+        "size": ["P", "M", "G", "GG"]
+    },
+
+    {
+        "image": "./assets/images/img_7.png",
+        "name": "Casaco Pelos",
+        "price": 398.00,
+        "color": "Rosa",
+        "size": ["P", "M"]
+    },
+
+    {
+        "image": "./assets/images/img_8.png",
+        "name": "Cropped Stripes",
+        "price": 120.00,
+        "color": "Azul",
+        "size": ["M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_9.png",
+        "name": "Camisa Transparente",
+        "price": 398.00,
+        "color": "Preto",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_10.png",
+        "name": "Pochete Clutch",
+        "price": 99.00,
+        "color": "Preto",
+        "size": [38, 42, 44, 46]
+    },
+
+    {
+        "image": "./assets/images/img_2.png",
+        "name": "Camiseta Mescla",
+        "price": 28.00,
+        "color": "Cinza",
+        "size": ["P", "M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_3.png",
+        "name": "Saia em Couro",
+        "price": 398.00,
+        "color": "Vinho",
+        "size": [36, 38, 40, 42]
+    },
+
+    {
+        "image": "./assets/images/img_4.png",
+        "name": "Cardigan Tigre",
+        "price": 398.00,
+        "color": "Laranja",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_5.png",
+        "name": "Cardigan Off White",
+        "price": 99.90,
+        "color": "Branco",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_6.png",
+        "name": "Body Leopardo",
+        "price": 129.90,
+        "color": "Amarelo",
+        "size": ["P", "M", "G", "GG"]
+    },
+
+    {
+        "image": "./assets/images/img_7.png",
+        "name": "Casaco Pelos",
+        "price": 398.00,
+        "color": "Rosa",
+        "size": ["P", "M"]
+    },
+
+    {
+        "image": "./assets/images/img_8.png",
+        "name": "Cropped Stripes",
+        "price": 120.00,
+        "color": "Azul",
+        "size": ["M", "G"]
+    },
+
+    {
+        "image": "./assets/images/img_9.png",
+        "name": "Camisa Transparente",
+        "price": 398.00,
+        "color": "Preto",
+        "size": ["U"]
+    },
+
+    {
+        "image": "./assets/images/img_10.png",
+        "name": "Pochete Clutch",
+        "price": 99.00,
+        "color": "Preto",
+        "size": [38, 42, 44, 46]
+    }
+]

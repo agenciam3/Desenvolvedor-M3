@@ -1,0 +1,151 @@
+/* media queries */
+@media(max-width: 480px) {
+    header {
+        padding: 10px 10px;
+    }
+
+    div.content {
+        padding: 0 10px;
+        grid-template-columns: 100%;
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    aside p#title {
+        margin: 20px 0;
+    }
+
+    aside div#mobile-menu {
+        display: flex;
+    }
+
+    aside div#desktop-menu {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+
+    main div#desktop-ordering {
+        display: none;
+    }
+
+    main button#load-more-products {
+        grid-column: 1 / 2;
+    } 
+}
+
+@media(min-width: 481px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    div.content {
+        padding: 0 20px;
+    }
+
+    aside {
+        text-align: center;
+    }
+
+    aside p#title {
+        margin: 20px 0;
+    }
+    
+    aside div#mobile-menu {
+        display: flex;
+    }
+
+    aside div#desktop-menu {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-evenly;
+    }
+
+    main div#desktop-ordering {
+        display: none;
+    }
+
+    main button#load-more-products {
+        grid-column: 1 / 3;
+        justify-self: center;
+    }
+}
+
+@media(min-width: 790px) {
+    header {
+        padding: 10px 65px;
+    }
+
+    div.content {
+        padding: 0 65px;
+        grid-template-columns: 25% 75%;
+    }
+
+    aside {
+        text-align: start;
+        padding: 50px 0;
+    }
+
+    aside p#title {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    aside div#mobile-menu {
+        display: none;
+    }
+
+    aside div#mobile-filter-showed,
+    aside div#mobile-ordering-showed {
+        display: none;
+    }
+
+    html {
+        overflow: auto;
+    }
+
+    aside div#desktop-menu {
+        display: flex;
+    }
+
+    main div#desktop-ordering {
+        display: flex;
+        grid-column: 2 / 3;
+    }
+}
+
+@media(min-width: 1130px) {
+    header {
+        padding: 10px 150px;
+    }
+
+    div.content {
+        padding: 0 150px;
+    }
+
+    aside {
+        padding-right: 25px;
+    }
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-between;
+    }
+
+    main div#desktop-ordering {
+        grid-column: 3 / 4;
+    }
+
+    main button#load-more-products {
+        grid-column: 2 / 3;
+        
+    }
+}

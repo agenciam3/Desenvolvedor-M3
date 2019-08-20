@@ -1,0 +1,31 @@
+{
+  "name": "desenvolvedor-m3",
+  "version": "1.0.0",
+  "description": "Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.",
+  "main": "index.js",
+  "scripts": {
+    "execute": "gulp execute"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielschuabramos/Desenvolvedor-M3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielschuabramos/Desenvolvedor-M3/issues"
+  },
+  "homepage": "https://github.com/danielschuabramos/Desenvolvedor-M3#readme",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.7.0",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-open": "^3.0.1",
+    "gulp-uglify": "^3.0.2"
+  }
+}

@@ -1,0 +1,90 @@
+/* aside */
+aside div#desktop-menu {
+    flex-direction: column;
+}
+
+aside div#desktop-menu p#sub-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #000;
+}
+
+aside div#desktop-menu div#desktop-colors {
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+aside div#desktop-menu div#desktop-colors div#hidden-colors {
+    display: none;
+}
+
+aside div#desktop-menu div#desktop-colors div#showed-colors {
+    display: block;
+}
+
+aside div#desktop-menu button#more-colors {
+    margin-bottom: 30px;
+    font-size: 0.8rem;
+    color: #aaa;
+    border: none;
+    background: none;
+    text-align: start;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+aside div#desktop-menu div#desktop-sizes {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+aside div#desktop-menu div#desktop-price-ranges {
+    font-size: 0.9rem;
+    line-height: 1.4rem;
+}
+
+/* main */
+main div#desktop-ordering {
+    flex-direction: column;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 50px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #aaa;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    justify-self: center;
+    align-self: start;
+}
+
+main div#desktop-ordering div#ordering-hidden-options {
+    display: none;
+}
+
+main div#desktop-ordering div#ordering-showed-options {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+main div#desktop-ordering div#ordering-showed-options button {
+    padding: 10px;
+    border: none;
+    background-color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+main div#desktop-ordering div#ordering-showed-options button:hover {
+    background-color: #3cb6d4;
+    color: #fff;
+}
