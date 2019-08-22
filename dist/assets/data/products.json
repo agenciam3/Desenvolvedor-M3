@@ -12,7 +12,7 @@
         "name": "Saia em Couro",
         "price": 398.00,
         "color": "Vinho",
-        "size": [36, 38, 40, 42]
+        "size": ["36", "38", "40", "42"]
     },
 
     {
@@ -68,7 +68,7 @@
         "name": "Pochete Clutch",
         "price": 99.00,
         "color": "Preto",
-        "size": [38, 42, 44, 46]
+        "size": ["38", "42", "44", "46"]
     },
 
     {
@@ -84,7 +84,7 @@
         "name": "Saia em Couro",
         "price": 398.00,
         "color": "Vinho",
-        "size": [36, 38, 40, 42]
+        "size": ["36", "38", "40", "42"]
     },
 
     {
@@ -140,7 +140,7 @@
         "name": "Pochete Clutch",
         "price": 99.00,
         "color": "Preto",
-        "size": [38, 42, 44, 46]
+        "size": ["38", "42", "44", "46"]
     },
 
     {
@@ -156,7 +156,7 @@
         "name": "Saia em Couro",
         "price": 398.00,
         "color": "Vinho",
-        "size": [36, 38, 40, 42]
+        "size": ["36", "38", "40", "42"]
     },
 
     {
@@ -212,7 +212,7 @@
         "name": "Pochete Clutch",
         "price": 99.00,
         "color": "Preto",
-        "size": [38, 42, 44, 46]
+        "size": ["38", "42", "44", "46"]
     },
 
     {
@@ -228,7 +228,7 @@
         "name": "Saia em Couro",
         "price": 398.00,
         "color": "Vinho",
-        "size": [36, 38, 40, 42]
+        "size": ["36", "38", "40", "42"]
     },
 
     {
@@ -284,6 +284,6 @@
         "name": "Pochete Clutch",
         "price": 99.00,
         "color": "Preto",
-        "size": [38, 42, 44, 46]
+        "size": ["38", "42", "44", "46"]
     }
 ]

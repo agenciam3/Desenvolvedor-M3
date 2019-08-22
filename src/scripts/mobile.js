@@ -6,11 +6,13 @@ const colors = document.querySelectorAll('div.color');
 const sizes = document.querySelectorAll('div.size');
 const priceRanges = document.querySelectorAll('div.price-range');
 
+const closeMobileFilter = document.getElementById('close-mobile-filter');
+
 // Abertura e fechamento do menu 'Filtrar'
 function setFilterMenu() {
     const mobileMenuFilterOption = document.getElementById('mobile-menu-filter-option');
     const mobileFilter = document.querySelector('div.mobile-filter');
-    const closeMobileFilter = document.getElementById('close-mobile-filter');
+    
     
     mobileMenuFilterOption.onclick = function() {
         mobileFilter.setAttribute('id', 'mobile-filter-showed');
@@ -105,25 +107,6 @@ function shareInputFilters() {
     }
 }
 
-// Funcionamento dos botões do menu 'Filtrar'
-// Botão 'Aplicar'
-function aplyFilters() {
-
-}
-
-// Botão 'Limpar'
-function cleanFilters() {
-    const mobileFilterClean = document.getElementById('mobile-filter-clean');
-
-    mobileFilterClean.onclick = function() {
-        const checkboxesChecked = document.querySelectorAll('div.checked');
-        const sizesSelected = document.querySelectorAll('div.selected');
-        
-        checkboxesChecked.forEach(checkbox => checkbox.classList.remove('checked'));
-        sizesSelected.forEach(size => size.classList.remove('selected'));
-    }
-}
-
 // Abertura e fechamento do menu 'Ordenar'
 function setOrderingMenu() {
     const mobileMenuOrderingOption = document.getElementById('mobile-menu-ordering-option');
@@ -146,6 +129,4 @@ setColorsOption();
 setSizesOption();
 setPriceRangesOption();
 shareInputFilters();
-// aplyFilters();
-cleanFilters();
 setOrderingMenu();

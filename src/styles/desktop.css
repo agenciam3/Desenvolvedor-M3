@@ -45,6 +45,19 @@ aside div#desktop-menu div#desktop-price-ranges {
     line-height: 1.4rem;
 }
 
+aside div#desktop-menu div#desktop-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+}
+
+aside div#desktop-menu div#desktop-menu-buttons > button {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+    margin-bottom: 20px;
+}
+
 /* main */
 main div#desktop-ordering {
     flex-direction: column;
@@ -57,7 +70,6 @@ main div#desktop-ordering {
     cursor: pointer;
     transition: 0.4s;
     position: relative;
-    justify-self: center;
     align-self: start;
 }
 

@@ -108,29 +108,8 @@ aside div#mobile-filter-showed div#mobile-filter-buttons {
 aside div#mobile-filter-showed div#mobile-filter-buttons > button {
     width: 45%;
     padding: 10px 0;
-    border: none;
-    background: none;
     cursor: pointer;
     transition: 0.4s;
-}
-
-aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-aply {
-    background-color: #3cb6d4;
-    color: #fff;
-}
-
-aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-aply:hover {
-    opacity: 0.7;
-}
-
-aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-clean {
-    border: 1px solid #ccc;
-    color: #aaa;
-}
-
-aside div#mobile-filter-showed div#mobile-filter-buttons > button#mobile-filter-clean:hover {
-    background-color: #ccc;
-    color: #fff;
 }
 
 aside div#mobile-ordering-hidden {

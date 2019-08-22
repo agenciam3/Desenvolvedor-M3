@@ -1,11 +1,11 @@
 /* media queries */
 @media(max-width: 480px) {
     header {
-        padding: 10px 10px;
+        padding: 10px 20px;
     }
 
     div.content {
-        padding: 0 10px;
+        padding: 0 20px;
         grid-template-columns: 100%;
     }
 
@@ -27,7 +27,6 @@
 
     main {
         grid-template-columns: 1fr;
-        justify-content: center;
     }
 
     main div#desktop-ordering {
@@ -36,6 +35,7 @@
 
     main button#load-more-products {
         grid-column: 1 / 2;
+        justify-self: center;
     } 
 }
 
@@ -66,7 +66,6 @@
 
     main {
         grid-template-columns: 1fr 1fr;
-        justify-content: space-evenly;
     }
 
     main div#desktop-ordering {
@@ -81,11 +80,11 @@
 
 @media(min-width: 790px) {
     header {
-        padding: 10px 65px;
+        padding: 10px 80px;
     }
 
     div.content {
-        padding: 0 65px;
+        padding: 0 80px;
         grid-template-columns: 25% 75%;
     }
 
@@ -119,16 +118,17 @@
     main div#desktop-ordering {
         display: flex;
         grid-column: 2 / 3;
+        justify-self: center;
     }
 }
 
 @media(min-width: 1130px) {
     header {
-        padding: 10px 150px;
+        padding: 10px 135px;
     }
 
     div.content {
-        padding: 0 150px;
+        padding: 0 135px;
     }
 
     aside {
@@ -137,15 +137,16 @@
 
     main {
         grid-template-columns: 1fr 1fr 1fr;
-        justify-content: space-between;
+        justify-items: end;
     }
 
     main div#desktop-ordering {
         grid-column: 3 / 4;
+        justify-self: end;
     }
 
     main button#load-more-products {
         grid-column: 2 / 3;
-        
+        justify-self: end;
     }
 }

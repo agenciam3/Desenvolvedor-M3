@@ -39,7 +39,7 @@ function trackChanges() {
 }
 
 function runServer() {
-    connect.server({
+    return connect.server({
         root: target,
         port: 5555
     });
@@ -53,5 +53,5 @@ function openBrowser() {
         }));
 }
 
-exports.default = trackChanges;
+exports.track = trackChanges;
 exports.execute = series(openBrowser, runServer);
