@@ -1,3 +1,5 @@
+// Funcionalidades presentes na versão desktop
+
 // Alterna a vizualização de mais ou menos cores
 function showOtherColors() {
     const moreColors = document.getElementById('more-colors');

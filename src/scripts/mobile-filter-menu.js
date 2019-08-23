@@ -1,12 +1,4 @@
-const mobileColors = document.querySelector('div.mobile-colors');
-const mobileSizes = document.querySelector('div.mobile-sizes');
-const mobilePriceRanges = document.querySelector('div.mobile-price-ranges');
-
-const colors = document.querySelectorAll('div.color');
-const sizes = document.querySelectorAll('div.size');
-const priceRanges = document.querySelectorAll('div.price-range');
-
-const closeMobileFilter = document.getElementById('close-mobile-filter');
+// Funcionamento do menu de filtragem na versão mobile
 
 // Abertura e fechamento do menu 'Filtrar'
 function setFilterMenu() {
@@ -26,6 +18,7 @@ function setFilterMenu() {
 }
 
 // Alterna entre a expansão e retração das opções do menu 'Filtrar'
+
 // Expansão e retração da opção 'Cores'
 function setColorsOption() {
     const expandMobileColors = document.getElementById('expand-mobile-colors');
@@ -78,55 +71,7 @@ function setPriceRangesOption() {
     }
 }
 
-// Transferência dos inputs de filtragem entre mobile e desktop, com base no tamanho da tela
-function shareInputFilters() {
-    const desktopColors = document.getElementById('desktop-colors');
-    const desktopOtherColors = document.querySelector('div.other-colors');
-    const desktopSizes = document.getElementById('desktop-sizes');
-    const desktopPriceRanges = document.getElementById('desktop-price-ranges');
-
-    document.body.onresize = function() {
-        if(window.innerWidth >= 790) {
-            colors.forEach((color, index) => {
-                if(index < 5) {
-                    desktopColors.insertBefore(color, desktopOtherColors);
-                }
-                else {
-                    desktopOtherColors.appendChild(color);
-                }
-            });
-    
-            sizes.forEach(size => desktopSizes.appendChild(size));
-            priceRanges.forEach(priceRange => desktopPriceRanges.appendChild(priceRange));
-        }
-        else {
-            colors.forEach(color => mobileColors.appendChild(color));
-            sizes.forEach(size => mobileSizes.appendChild(size));
-            priceRanges.forEach(priceRange => mobilePriceRanges.appendChild(priceRange));
-        }
-    }
-}
-
-// Abertura e fechamento do menu 'Ordenar'
-function setOrderingMenu() {
-    const mobileMenuOrderingOption = document.getElementById('mobile-menu-ordering-option');
-    const mobileOrdering = document.querySelector('div.mobile-ordering');
-    const closeMobileOrdering = document.getElementById('close-mobile-ordering');
-    
-    mobileMenuOrderingOption.onclick = function() {
-        mobileOrdering.setAttribute('id', 'mobile-ordering-showed');
-        document.body.style.overflow = 'hidden';
-    }
-    
-    closeMobileOrdering.onclick = function() {
-        mobileOrdering.setAttribute('id', 'mobile-ordering-hidden');
-        document.body.style.overflow = 'auto';
-    }
-}
-
 setFilterMenu();
 setColorsOption();
 setSizesOption();
 setPriceRangesOption();
-shareInputFilters();
-setOrderingMenu();

@@ -1,3 +1,5 @@
+/* Estilização dos elementos presentes na versão mobile */
+
 /* aside */
 aside div#mobile-menu div {
     border: 1px solid #ccc;
@@ -27,6 +29,7 @@ aside div#mobile-filter-showed {
     width: 100%;
     height: 100%;
     background-color: #fff;
+    z-index: 1;
 } 
 
 aside div#mobile-filter-showed div#mobile-filter-header {
@@ -125,6 +128,7 @@ aside div#mobile-ordering-showed {
     width: 100%;
     height: 100%;
     background-color: #fff;
+    z-index: 1;
 }
 
 aside div#mobile-ordering-showed div#mobile-ordering-header {

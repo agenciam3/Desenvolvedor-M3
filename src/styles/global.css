@@ -1,3 +1,5 @@
+/* Estilização dos elementos presentes tanto na versão desktop quanto mobile */
+
 /* restart */
 * {
     margin: 0;
@@ -20,14 +22,35 @@ header {
     border-bottom: 2px solid #ccc;
 }
 
-header a#bag-icon {
-    color: #000;
-    font-size: 1.5rem;
+header div#bag {
+    display: flex;
+    align-items: end;
+    cursor: pointer;
     transition: 0.4s;
 }
 
-header a#bag-icon:hover {
+header div#bag:hover {
     opacity: 0.7;
+}
+
+header div#bag a#bag-icon {
+    color: #000;
+    font-size: 1.5rem;
+}
+
+header div#bag p#bag-items {
+    background-color: #3cb6d4;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: bold;
+    position: relative;
+    top: 5px;
+    right: 5px;
 }
 
 /* content */
@@ -102,6 +125,10 @@ aside button.filter-aply:hover {
     opacity: 0.7;
 }
 
+aside button.filter-aply:active {
+    opacity: 1;
+}
+
 aside button.filter-clean {
     border: 1px solid #ccc;
     color: #aaa;
@@ -111,6 +138,10 @@ aside button.filter-clean {
 aside button.filter-clean:hover {
     background-color: #ccc;
     color: #fff;
+}
+
+aside button.filter-clean:active {
+    opacity: 0.7;
 }
 
 /* main */
@@ -125,6 +156,7 @@ main div.product {
     align-items: center;
     margin-bottom: 50px;
     font-size: 0.8rem;
+    position: relative;
 }
 
 main div.product p#product-name {
@@ -154,6 +186,10 @@ main div.product button.buy-product:hover {
     opacity: 0.7;
 }
 
+main div.product button.buy-product:active {
+    opacity: 1;
+}
+
 main button#load-more-products {
     width: 200px;
     padding: 10px;
@@ -169,6 +205,14 @@ main button#load-more-products {
 
 main button#load-more-products:hover {
     opacity: 0.7;
+}
+
+main button#load-more-products:active {
+    opacity: 1;
+}
+
+main p#products-not-found {
+    font-size: 1.5rem;
 }
 
 /* footer */

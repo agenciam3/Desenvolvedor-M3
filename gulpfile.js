@@ -1,15 +1,36 @@
 const {src, dest, watch, series} = require('gulp');
+
+const jsonServer = require('json-server');
+const open = require('gulp-open');
 const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
-const connect = require('gulp-connect'); 
-const open = require('gulp-open');
 
 const sourceJS = './src/scripts';
 const sourceCSS = './src/styles';
 const target = './dist';
+
+const server = jsonServer.create();
+const middlewares = jsonServer.defaults({
+    static: target
+});
+const router = jsonServer.router('./dist/assets/data/products.json');
+
+function runServer() {
+    server.use(middlewares);
+    server.use(router);
+    server.listen(5555);
+}
+
+function openBrowser() {
+    return src(target)
+        .pipe(open({
+            uri: 'http://localhost:5555',
+            app: 'firefox'
+        }));
+}
 
 function optimizeJS() {
     return src(`${sourceJS}/*.js`)
@@ -36,21 +57,6 @@ function trackChanges() {
     watch(`${sourceJS}/*.js`, {ignoreInitial: false}, optimizeJS);
     watch(`${sourceCSS}/*.css`, {ignoreInitial: false}, optimizeCSS);
     watch('./layout/imagens/*.png', {ignoreInitial: false}, optimizeImages);
-}
-
-function runServer() {
-    return connect.server({
-        root: target,
-        port: 5555
-    });
-}
-
-function openBrowser() {
-    return src(target)
-        .pipe(open({
-            uri: 'http://localhost:5555',
-            app: 'firefox'
-        }));
 }
 
 exports.track = trackChanges;

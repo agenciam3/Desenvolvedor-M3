@@ -1,3 +1,5 @@
+/* Estilização dos elementos presentes na versão desktop */
+
 /* aside */
 aside div#desktop-menu {
     flex-direction: column;
@@ -85,6 +87,7 @@ main div#desktop-ordering div#ordering-showed-options {
     left: 0;
     width: 100%;
     border: 1px solid #ccc;
+    z-index: 1;
 }
 
 main div#desktop-ordering div#ordering-showed-options button {

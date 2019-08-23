@@ -12,7 +12,11 @@
     <body>
         <header>
             <a href=""><img src="./assets/images/logo-m3.png" alt="Logo Agência M3"></a>
-            <a id="bag-icon" href=""><i class="fas fa-shopping-bag"></i></a>
+
+            <div id="bag">
+                <a id="bag-icon" href=""><i class="fas fa-shopping-bag"></i></a>
+                <p id="bag-items">0</p>
+            </div>
         </header>
 
         <div class="content">
@@ -182,13 +186,11 @@
                 <div id="desktop-ordering">
                     Ordenar por &#9662;
                     <div id="ordering-hidden-options" class="ordering-options">
-                        <button>Mais recentes</button>
-                        <button>Menor preço</button>
-                        <button>Maior preço</button>
+                        <button id="most-recent">Mais recentes</button>
+                        <button id="lowest-price">Menor preço</button>
+                        <button id="biggest-price">Maior preço</button>
                     </div>
-                </div>
-                
-                <button id="load-more-products">CARREGAR MAIS</button>
+                </div>            
             </main>
         </div>
 
@@ -197,6 +199,6 @@
         </footer>
 
         <script src="https://kit.fontawesome.com/6752027b42.js"></script>
-        <script src="./script.min.js"></script>       
+        <script src="./script.min.js"></script>     
     </body>
 </html>
