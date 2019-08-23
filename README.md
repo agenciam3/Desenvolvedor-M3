@@ -61,3 +61,14 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Grunt, Gulp ou similar
 
 ##### Dúvidas: [davi@digitalm3.com.br](mailto:davi@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3).
+
+## Instruções para a execução do código
+
+- Faça um clone local do repositório
+- Navegue até a pasta **Desenvolvedor-M3**
+- Digite *npm install*
+- Digite *npm run app* e aguarde o Firefox abrir
+- Caso não possua o Firefox instalado, abra outro navegador no endereço http://localhost:5555
+
+##### Email para contato: danielschuabramos@outlook.com
+ 
