@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "./layout/imagens/img_2.png",
+      "name": "Camiseta Mescla",
+      "price": 28
+    },
+    {
+      "id": 2,
+      "image": "./layout/imagens/img_3.png",
+      "name": "Saia em Couro",
+      "price": 398
+    },
+    {
+      "id": 3,
+      "image": "./layout/imagens/img_4.png",
+      "name": "Cardigan Tigre",
+      "price": 398
+    },
+    {
+      "id": 4,
+      "image": "./layout/imagens/img_5.png",
+      "name": "Cardigan Off White",
+      "price": 99.9
+    },
+    {
+      "id": 5,
+      "image": "./layout/imagens/img_6.png",
+      "name": "Body Leopardo",
+      "price": 129.9
+    },
+    {
+      "id": 6,
+      "image": "./layout/imagens/img_7.png",
+      "name": "Casaco Pelos",
+      "price": 398
+    },
+    {
+      "id": 7,
+      "image": "./layout/imagens/img_8.png",
+      "name": "Cropped Stripes",
+      "price": 120
+    },
+    {
+      "id": 8,
+      "image": "./layout/imagens/img_9.png",
+      "name": "Camisa Transparente",
+      "price": 398
+    },
+    {
+      "id": 9,
+      "image": "./layout/imagens/img_10.png",
+      "name": "Pochete Clutch",
+      "price": 99
+    }
+  ]
+}
