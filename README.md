@@ -61,3 +61,12 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Grunt, Gulp ou similar
 
 ##### Dúvidas: [davi@digitalm3.com.br](mailto:davi@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3).
+
+########### Como executar ################
+
+Navegue até a pasta do projeto, execute um servidor em localhost e, após, acesse pelo navegador este servidor.
+
+(Para desenvolvimento foi usado um servidor php e a porta 8000)
+
+##### Email: joaobuzato@gmail.com
+ 

@@ -1,0 +1,353 @@
+
+
+body{
+    background-color: #fff;
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+
+    color: #333;
+
+}
+
+.menu1{
+    margin: 0 auto;
+    width: 70%;
+   
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+  }
+  header div#bag {
+    display: flex;
+    align-items: end;
+    cursor: pointer;
+    transition: 0.4s;
+  }
+  header div#bag:hover {
+    opacity: 0.6;
+  }
+  header div#bag a#bag-icon {
+    color: #000;
+    font-size: 1.4rem;
+  }
+  header div#bag p#bag-items {
+    background-color: #3cb6d4;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    position: relative;
+    top: 5px;
+    right: 5px;
+  }
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+.menu_principal{
+    margin: 0 auto;
+    vertical-align: top; 
+    background-color:#fff;
+    height: 64px;
+    border-bottom: 2px solid #c7c7c7;
+    margin-bottom: 40px;
+}
+.menu-venda{
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    right: 100%;
+    
+}
+.header-2{
+    
+    background-color: #fff;
+    margin: 0 auto;
+    width: 70%;
+    
+    height: 64px;
+    
+
+}
+
+.tipo{
+    
+    float:left;
+    font-size: 26px;
+    font-weight: normal;
+    widows:  30%
+}
+
+.select-style {
+    width: 30%;
+    float: right;
+    border: 1px solid #333;
+    width: 125px;
+    right: 30px;
+    overflow: hidden;
+    background: #fff;
+    margin-right: 90px;
+}
+
+.select-style option{
+    width: 125px;
+    right: 30px;
+    
+ }
+
+ 
+.select-style select {
+    padding: 10px 8px;
+    width: 100%;
+    border: none;
+    box-shadow: none;
+    background: #fff;
+    appearance: none;       
+    -webkit-appearance: none;
+}
+
+.select-selected {
+    background-color: #00c0ee;
+  }
+.produtos{
+    /*display: inline-block;*/
+    list-style-type:none;
+    width: 65%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+}
+.item{
+
+    display:inline-grid;
+
+    padding-left: 15px;
+    padding-bottom: 40px;
+    padding-right: 15px;
+    text-align: center
+}
+.item-content{
+    align-content: center
+}
+.prod-name{
+
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.prod-price{
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color: black;
+
+}
+.prod-parc{
+    font-size: 12px;
+    font-weight: normal;
+    
+
+}
+.prod-button{
+
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+.button-mais{
+    
+    background-color: #00c0ee;
+    border: none;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    left:40%;
+    margin-bottom: 48px;
+    margin-top: 50px;
+    
+
+}
+
+
+/*Filtros de tipos*******************************************/
+
+.menu-filtro{
+    display: inline-block;
+    background-color: #fff;
+    float: left;
+    width: 15%;
+    padding-left: 15%;
+    min-width: 180px;
+}
+h2{
+
+    font-size: 14px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-bottom: 16px;
+}
+
+.cor{
+    padding-bottom: 48px;
+}
+
+.tipo-cor{
+    display:block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    width: 100px;
+    cursor: pointer;
+    font-size: 14px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.checkbox1{
+    position: relative;
+    padding-top: 2px;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+}
+.checkmark{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    background-color: #fff;
+    border: 1px solid #333;
+}
+.tipo-cor:hover .checkmark {
+    background-color: #ccc;
+}
+
+.tipo-cor input:checked ~ .checkmark{
+    background-color: #00c0ee;
+}
+
+
+.tipo-preco{
+    display:block;
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    width: 137px;
+    cursor: pointer;
+    font-size: 13px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.tipo-preco:hover .checkmark {
+    background-color: #ccc;
+}
+
+.tipo-preco input:checked ~ .checkmark{
+    background-color: #00c0ee;
+}
+
+
+.tipo-tamanho{
+    display:inline-block;
+    position: relative;
+    margin-bottom: 3px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+ 
+.checkboxbox{
+    width: 30px;
+    right: 30px;
+    display:inline-block;
+    background: #fff;
+    font-size: 12px;
+    color: #333;
+    margin: 3px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    user-select: none;
+}
+.checkbox2{
+    display: none;
+}
+
+.tipo-tamanho:hover .checkmark {
+    background-color: #ccc;
+}
+
+.tipo-tamanho input:checked ~ .checkboxbox{
+    border: 1px solid #00c0ee;
+}
+.todas1{
+    display: inline-block;
+    font-size: 13px;
+    height: 0px;
+    line-height: 20px;
+    margin-left: 24px;
+}
+a {
+    color: #333;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+
+
+
+footer{
+
+    background-color: black;
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+    color: #fff;
+
+}
