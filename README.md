@@ -50,9 +50,10 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - HTML5 e CSS3
 - Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
 - Interação com JSON para filtar os produtos
-- Funcionalidade de adicionar ao carrinho
-- Funcionalidade de carregar mais produtos
-- Não utilizar Bootstrap;
+- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
+- Funcionalidade: Adicionar produto ao carrinho.
+- Funcionalidade: Carregar mais produtos.
+- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
 - Responsividade
 
 #### Bônus
