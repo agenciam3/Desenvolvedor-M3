@@ -6,7 +6,7 @@ fetch(requestURL).then(
   function(response){
     response
       .json()
-      .then( desenharProdutos )
+      .then( produtosHandler )
       .catch(
         function(err){
           console.error(err);
@@ -19,13 +19,17 @@ fetch(requestURL).then(
   }
 )
 
-function desenharProdutos(obj) {
+function produtosHandler(obj) {
 
     var produtos = obj;
 
     var qtdParcelas = "";
     var valorParcela = "";
 
+    let carregarMaisButton = document.getElementById("carregar-produtos");
+    let filtrarProdutosButton = document.getElementById("filtrar-produtos");
+    let ordenarProdutos = document.getElementById("ordenar-produtos");
+    
 
     for (var i = 0; i < produtos.length; i++) {
 
@@ -46,8 +50,13 @@ function desenharProdutos(obj) {
       var parcelaArredondada = parseFloat(valorParcela.toFixed(2));
       qtdParcelasElemento.textContent = 'até ' + qtdParcelas + 'x de R$' + parcelaArredondada;comprarBotaoElemento.textContent = "Comprar";
 
-      sectionProduto.setAttribute("id","produto"+produtos[i].id)
+      sectionProduto.setAttribute("id","produto"+produtos[i].id);
       sectionProduto.classList.add("column");
+
+      if(i>=6){
+        sectionProduto.classList.add("hideProduto");
+      }
+
       comprarBotaoElemento.classList.add("btn","btn-comprar");
       comprarBotaoElemento.setAttribute("id", "comprar");
 
@@ -58,7 +67,24 @@ function desenharProdutos(obj) {
       sectionProduto.appendChild(comprarBotaoElemento);
 
       document.getElementById("produtos").appendChild(sectionProduto);
+
     }
+
+    carregarMaisButton.addEventListener("click",showProdutos,false);
+    filtrarProdutosButton.addEventListener("click",filtrarProdutos,false);
+}
+
+function showProdutos(){
+  var produtosEscondidos = document.getElementsByClassName('hideProduto');
+
+  for (const produto of produtosEscondidos) {
+    produto.removeAttribute("class","hideProduto");
+  }
+
+}
+
+function filtrarProdutos(){
+  console.log("oi");
 }
 
 

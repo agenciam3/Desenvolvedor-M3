@@ -6,7 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <title>M3 Performance Digital</title>
-
         <link rel="stylesheet" href="css/grid.css"/>
         <link rel="stylesheet" href="css/style.css"/>
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
@@ -42,8 +41,6 @@
                     <h2>Filtrar</h2>
                     <i class="fa fa-plus"></i>
                 </div>
-
-                <form id="filtro">
 
                     <div id="cores-menu">
                         <div id="cores-header">
@@ -154,10 +151,8 @@
                         </label>
                     </div>
 
-                    <button type="submit" value="aplicar">APLICAR</button>
-                    <button type="reset" value="limpar">LIMPAR</button>
-
-                </form>
+                    <button id="filtrar-produtos" >APLICAR</button>
+                    <button id="limpar-filtros">LIMPAR</button>
 
             </aside>
 
@@ -167,7 +162,8 @@
                     <i class="fa fa-plus"></i>
                 </div>
 
-                <select>
+                <select id="ordenar-produtos">
+                    <option value="0"></option>
                     <option value="1">Mais Recentes</option>
                     <option value="2">Maior Preço</option>
                     <option value="3">Menor Preço</option>
@@ -175,7 +171,9 @@
             </aside>
 
             <section id="produtos">
+                
             </section>
+            <button id="carregar-produtos">CARREGAR MAIS</button>
 
         </main>
         
@@ -183,7 +181,9 @@
             <p>Agência M3 - Agência de Perfomance Digital</p>
         </footer>
         
+        
         <script src="./js/renderProduto.js"></script>
+        
 
     </body>
 </html>

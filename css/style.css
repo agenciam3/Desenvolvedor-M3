@@ -7,6 +7,9 @@ body{
   margin:0;
 }
 
+.hideProduto{
+  display: none !important;
+}
 
 /* .fa-minus {
   background: url('../img/minus.png');
