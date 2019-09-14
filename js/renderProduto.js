@@ -1,31 +1,6 @@
-function desenharProdutos(produtos) {
-    for (var i = 0; i < produtos.length; i++) {
-
-      var article = document.createElement('article');
-      var nomeProduto = document.createElement('h2');
-      var precoProduto = document.createElement('p');
-      var imgProduto = document.createElement('img');
-      var comprarBotao = document.createElement('button');
-  
-      nomeProduto.textContent = produtos[i].nome;
-      precoProduto.textContent = 'R$: ' + produtos[i].preco;
-      imgProduto.src = produtos[i].img;
-      comprarBotao.textContent = "Comprar";
-  
-      article.classList.add("column");
-      comprarBotao.classList.add("btn","btn-comprar");
-      comprarBotao.setAttribute("id", "comprar");
-
-      article.appendChild(imgProduto);
-      article.appendChild(nomeProduto);
-      article.appendChild(precoProduto);
-      article.appendChild(comprarBotao);
-
-      document.getElementById("teste").appendChild(article);
-    }
-}
-
 var requestURL = "./api/produtos.json";
+
+// Leitura do JSON
 
 fetch(requestURL).then(
   function(response){
@@ -43,3 +18,47 @@ fetch(requestURL).then(
     console.error(err);
   }
 )
+
+function desenharProdutos(obj) {
+
+    var produtos = obj;
+
+    var qtdParcelas = "";
+    var valorParcela = "";
+
+
+    for (var i = 0; i < produtos.length; i++) {
+
+      var sectionProduto = document.createElement('section');
+        var imgProdutoElemento = document.createElement('img');
+        var nomeProdutoElemento = document.createElement('h2');
+        var precoProdutoElemento = document.createElement('p');
+        var qtdParcelasElemento = document.createElement('span');
+        var comprarBotaoElemento = document.createElement('button');
+  
+      imgProdutoElemento.src = produtos[i].img;
+      nomeProdutoElemento.textContent = produtos[i].nome;
+      precoProdutoElemento.textContent = 'R$: ' + produtos[i].preco;
+
+      if(produtos[i].preco<350) qtdParcelas = 3;
+      else  qtdParcelas = 5;
+      valorParcela = produtos[i].preco/qtdParcelas;
+      var parcelaArredondada = parseFloat(valorParcela.toFixed(2));
+      qtdParcelasElemento.textContent = 'até ' + qtdParcelas + 'x de R$' + parcelaArredondada;comprarBotaoElemento.textContent = "Comprar";
+
+      sectionProduto.setAttribute("id","produto"+produtos[i].id)
+      sectionProduto.classList.add("column");
+      comprarBotaoElemento.classList.add("btn","btn-comprar");
+      comprarBotaoElemento.setAttribute("id", "comprar");
+
+      sectionProduto.appendChild(imgProdutoElemento);
+      sectionProduto.appendChild(nomeProdutoElemento);
+      sectionProduto.appendChild(precoProdutoElemento);
+      sectionProduto.appendChild(qtdParcelasElemento);
+      sectionProduto.appendChild(comprarBotaoElemento);
+
+      document.getElementById("produtos").appendChild(sectionProduto);
+    }
+}
+
+
