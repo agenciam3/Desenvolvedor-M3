@@ -1,0 +1,19 @@
+[
+    {"id": 1,"nome": "Camiseta Mescla","preco": 28.00,"cor": ["Preto","Branco"],"tamanho":["p","m","gg"],"img": "img/img_2.png"},
+
+    { "id": 2, "nome": "Saia em Couro","preco": 398.00,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40], "img": "img/img_3.png"},
+
+    { "id": 3, "nome": "Cardigan Tigre", "preco": 398.00,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40], "img": "img/img_4.png"},
+
+    { "id": 4, "nome": "Cardigan Off White", "preco": 99.90,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40],  "img": "img/img_5.png"},
+
+    { "id": 5, "nome": "Body Leopardo", "preco": 129.90,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40],  "img": "img/img_6.png"},
+
+    { "id": 6, "nome": "Casaco Pelos", "preco": 398.00,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40],  "img": "img/img_7.png"},
+
+    { "id": 7, "nome": "Cropped Stripes", "preco": 120.00,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40],  "img": "img/img_8.png"},
+
+    { "id": 8, "nome": "Camisa Transparente", "preco": 398.00,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40],  "img": "img/img_9.png"},
+        
+    { "id": 9, "nome": "Pochete Clutch", "preco": 99.00,"cor": ["Vinho","Amarelo","Branco"],"tamanho":[36,38,40],  "img": "img/img_10.png"}
+]
