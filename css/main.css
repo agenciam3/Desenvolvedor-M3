@@ -244,6 +244,12 @@ header img:hover{
 
 #mais-recente, #maior-preco, #menor-preco{
     margin: 40px 0 ;
+    cursor: pointer;
+}
+
+#mais-recente:hover, #maior-preco:hover, #menor-preco:hover{
+    color: #5ccbe7;
+    transition: 0.5s;
 }
 
 
@@ -292,13 +298,40 @@ header img:hover{
     transition: 0.5;
 }
 
+#aviso-compra{
+    padding: 8px;
+	border: 1px solid #87c940;
+	border-radius: 4px;
+	margin: 10px auto;
+    font-size: 0.8rem;
+	color: #FFF;
+    background-color: #a0d468;
+    width: 80%;
+    position: fixed;
+    top:6%;
+    right:3%;
+    opacity:0.8;
+    box-shadow: 3px 3px 1em #888;
+}
+
+@media (min-width:375px){
+    #aviso-compra{
+        max-width: 325px;
+    }
+}
+
+#aviso-compra p{
+    display: inline-block
+}
+
+#aviso-compra i{
+    float: right;
+}
+
 #btn-carregar-produtos{
     margin: 15px 25%;;
 
 }
-
-
-
 
 footer{
     padding: 10px;
@@ -306,10 +339,6 @@ footer{
     color:white;
     text-align: center;
 }
-
-
-
-
 @media (min-width:375px){
     .container{
         width: 90%;

@@ -30,7 +30,16 @@
         </header>
 
         <main class="container">
-            
+
+            <!-- Aviso de Compra -->
+            <div id="aviso-compra" class="esconder-elemento">
+                <div id="aviso-container">
+                    <span id="produto-adicionado"></span><p> adicionado ao carrinho</p>
+                    <i id="fechar-aviso" class="fa fa-check"></i>
+                </div>
+            </div>
+
+            <!-- Menu Principal -->
             <section class="conteudo-principal" id="conteudo-principal">
                 <h1>Blusas</h1>
 
@@ -46,6 +55,7 @@
                 
             </section>
             
+            <!-- Menu de Filtro -->
             <aside id="filtrar-menu">
 
                 <div id="filtrar-header">
@@ -59,7 +69,7 @@
                         <i id="minimizar-cores" class="fa fa-minus esconder-elemento"></i>
                         <i id="maximizar-cores" class="fa fa-plus"></i>
                     </div>
-                        
+
                     <div id="cores-container" class="esconder-elemento">
 
                         <div class="cor-opcao">
@@ -210,7 +220,7 @@
                                 </div>
                                 <label class="preco" for="preco-5">a partir de R$ 501</label>
                             </div>
-                        </div>
+                    </div>
                 </div>
                     
                 <div id="filtros-btn">
@@ -220,6 +230,7 @@
 
             </aside>
 
+            <!-- Menu de ordenar -->
             <aside id="ordenar-menu">
                 <div id="ordenar-header">
                     <h2>Ordenar</h2>
@@ -233,6 +244,7 @@
                 </div>
             </aside>
 
+            <!-- Seção de Produtos -->
             <section id="produtos-secao"></section>
             <div class="clearFix"></div>
 
@@ -245,10 +257,7 @@
                 <p>Agência M3 - Agência de Perfomance Digital</p>
             </div>
         </footer>
-        
-        <script src="./js/jquery.min.js"></script>
+
         <script src="./js/main.js"></script>
-        
-        
     </body>
 </html>

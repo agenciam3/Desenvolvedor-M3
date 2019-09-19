@@ -1,5 +1,6 @@
 (function(){
     var bagQtd = 0;
+
     // Função que inica todos os listener e chama a primeira renderização dos produtos
     function init(){
         getProdutos();
@@ -47,6 +48,7 @@
             }  
         });
 
+        // listener para carregar mais produtos
         document.addEventListener('click',function(event){
             if(event.target && event.target.id == 'btn-carregar-produtos'){
                 carregarMaisProdutos();
@@ -451,12 +453,14 @@
     function abrirMaisCores(){
         document.getElementById("ver-mais-cores").classList.add("esconder-elemento");
         document.getElementById("cores-escondidas").classList.add("mostrar-elemento");
+        document.getElementById("ver-menos-cores").classList.add("mostrar-elemento");
     }
 
     //Função para fechar mais cores
     function fecharMaisCores(){
         document.getElementById("ver-mais-cores").classList.remove("esconder-elemento");
         document.getElementById("cores-escondidas").classList.remove("mostrar-elemento");
+        document.getElementById("ver-menos-cores").classList.remove("mostrar-elemento");
     }
 
     // Função para adicionar itens ao carrinho
@@ -474,18 +478,31 @@
                     };
 
         adicionarItemJSON(produto);
-        atualizarQtdItensBag();      
-        alert(nomeProduto + " adicionado ao carrinho");
+        atualizarQtdItensBag();
+        mostrarAvisoCompra(produto);      
     }
 
+    // Funçao para enviar JSON
     function adicionarItemJSON(produto){
         //
-
     }
 
+    // Função que atualiza os itens mostrados na sacola
     function atualizarQtdItensBag(){
         bagQtd++;
         document.getElementById('bag-qtd').textContent = bagQtd;
+    }
+
+    // Função para mostrar aviso de Compra
+    function mostrarAvisoCompra(produto){
+        document.getElementById("produto-adicionado").textContent = produto.nome+" ";
+        document.getElementById("aviso-compra").classList.remove("esconder-elemento");
+        setTimeout(fecharAvisoCompra,1250);
+    }
+
+    // Função para fechar aviso de Compra
+    function fecharAvisoCompra(){
+        document.getElementById("aviso-compra").classList.add("esconder-elemento");
     }
 
     // Função para Carregar mais Produtos
@@ -495,14 +512,6 @@
     }
 
     init();
-    // // Atualiza quantidade de itens na sacola
-    // function atualizaQtdBag(){
-    //     document.getElementById('bag-qtd').textContent = bagQtd;
-    // }
-
-    // bagQtd++;
-
-    // atualizaQtdBag();
 })();
 
 
