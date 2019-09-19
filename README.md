@@ -1,3 +1,17 @@
+## Como rodar o código
+Foi utilizado um servidor apache para criação e uso do projeto, para tal:
+- Baixe e extraia ou clone o repositório dentro da pasta www do wamp ou htdocs do xampp (no meu caso, foi utilizado xampp)
+- Inicialize o servidor apache
+- Vá ao navegador(no meu caso, foi utilizado o Mozilla Firefox) e entre na pasta do projeto (http://localhost/Desenvolvedor-M3/)
+- Navegue à vontade. :)
+
+## Dúvidas??
+E-mail: eldercosta@outlook.com ou eldercostaoficial@gmail.com
+
+Whats: (22)99943-4249
+
+Obrigado!!
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
