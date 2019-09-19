@@ -34,6 +34,21 @@
         // listener para abrir ou fechar menu Ordenar
         document.getElementById("btn-ordenar").addEventListener("click",abrirMenuOrdenar,false);
         document.getElementById("fechar-ordenar").addEventListener("click",fecharMenuOrdenar,false);
+
+        // listener para abrir ou fechar mais cores
+        document.getElementById("ver-mais-cores").addEventListener("click",abrirMaisCores,false);
+        document.getElementById("ver-menos-cores").addEventListener("click",fecharMaisCores,false);
+
+        // listener para adicionar produto ao carrinho
+        
+        window.addEventListener("load",function(){
+            var comprarArray = [...document.getElementsByClassName("btn btn-comprar")];
+            console.log(comprarArray);
+            console.log("loaded");
+        },false);
+        // comprarArray.forEach(btnComprar => console.log(btnComprar)
+        // btnComprar.addEventListener("click",adicionarItemCarrinho,false)
+        // );
     }
 
     // Função para requisitar e abrir produtos.json
@@ -99,7 +114,7 @@
           }
     
           comprarBotaoElemento.classList.add("btn","btn-comprar");
-          comprarBotaoElemento.setAttribute("id", "btn-comprar");
+          comprarBotaoElemento.setAttribute("id", "btn-comprar-");
     
           sectionProduto.appendChild(imgProdutoElemento);
           sectionProduto.appendChild(nomeProdutoElemento);
@@ -131,25 +146,18 @@
         var filtroTamanhos = filtro.slice(1,2);
         var filtroPrecos = filtro.slice(2,3);
         
-        // console.log("filtro cores:" + filtroCores);
-        // console.log(filtroTamanhos);
-        // console.log(filtroProdutos);
-    
-        // var produtosFiltrados = produtos.filter(produto => produto.cor.includes(filtroCores.filter(cores => cores.filter(function(cor){return cor;}))));
-    
-        // console.log(produtosFiltrados);
-    
-        // var produtosFiltrados = filtroCores.filter(cores => cores.filter( cor => produtos.filter(produto => produto.cor.includes(cor))));
-    
-        // var produtosFiltrados = produtos.filter(produto => produto.cor.filter( coresProduto => filtroCores.filter(cores => cores.filter(cor => console.log(cor)))));
-        
         var produtosFiltroCor = []
     
         produtos.forEach(produto => {
+            console.log(produto);
             produto.cor.forEach(corProduto => {
                 filtroCores.forEach(coresFiltro => {
+                    console.log(coresFiltro);
                     coresFiltro.forEach(cor => {
+                        
                         if(cor == corProduto) {
+                            console.log("cor filtro: "+cor);
+                        console.log("cor produto: "+corProduto);
                             produtosFiltroCor.push(produto)
                         }
                     })
@@ -171,37 +179,83 @@
             })
         });
 
-        // var produtosFiltroPreco = [];
+        var produtosFiltroPreco = [];
     
-        // produtos.forEach(produto => {
-        //     produto.preco.forEach(preco => {
-        //         filtroPrecos.forEach(precoFiltro => {
-        //             if(preco == precoFiltro) { 
-        //                 produtosFiltroPreco.push(produto)
-        //             }
-        //         })
-        //     })
-        // });
+        produtos.forEach(produto => {
+            filtroPrecos.forEach(precoFiltro => {
+                precoFiltro.forEach(preco => {
+                    var precoMax;
+                    var precoMin;
+
+                    // Atribuiçao de range
+                    if(preco == 'preco-1'){
+                        precoMin = 0;
+                        precoMax = 50;
+                    }else if(preco == 'preco-2'){
+                        precoMin = 51;
+                        precoMax = 150;
+                    }else if(preco == 'preco-3'){
+                        precoMin = 151;
+                        precoMax = 300;
+                    }else if(preco == 'preco-4'){
+                        precoMin = 301;
+                        precoMax = 500;
+                    }else if(preco == 'preco-5'){
+                        precoMin = 501;
+                    }else{
+                        precoMin = 0;
+                        precoMax = 0;
+                    }
+
+                    // Comparação preco produto e range
+                    if(precoMin == 0 && precoMax ==0){
+                        produtosFiltroPreco.push(produto);
+                    }else if(precoMin<=produto.preco && produto.preco<=precoMax){
+                        produtosFiltroPreco.push(produto);
+                    }else if(produto.preco >= 501){
+                        produtosFiltroPreco.push(produto);
+                    }
+                });
+            })
+        });
     
         var produtosFiltrados = [];
-        
-        if(produtosFiltroCor.length > 0 && produtosFiltroTamanho.length > 0) {
+
+        if(produtosFiltroCor.length > 0 && produtosFiltroTamanho.length > 0 && produtosFiltroPreco.length >0) {
+            produtosFiltroCor.forEach(pCor => {
+                produtosFiltroTamanho.forEach(pTam => {
+                    produtosFiltroPreco.forEach(pPreco => {
+                        if(pCor.id == pTam.id == pPreco.id) { produtosFiltrados.push(pCor)};
+                    })
+                })
+            })
+        }else if(produtosFiltroCor.length > 0 && produtosFiltroTamanho.length > 0 && produtosFiltroPreco.length == 0){
             produtosFiltroCor.forEach(pCor => {
                 produtosFiltroTamanho.forEach(pTam => {
                     if(pCor.id == pTam.id) { produtosFiltrados.push(pCor)};
                 })
             })
-        } else if(produtosFiltroCor.length > 0 ){
+        }else if(produtosFiltroCor.length > 0 && produtosFiltroPreco.length > 0 && produtosFiltroTamanho.length == 0){
+            produtosFiltroCor.forEach(pCor => {
+                produtosFiltroPreco.forEach(pPreco => {
+                    if(pCor.id == pPreco.id) { produtosFiltrados.push(pCor)};
+                })
+            })
+        }else if(produtosFiltroTamanho.length > 0 && produtosFiltroPreco.length >0 && produtosFiltroCor.length == 0){
+            produtosFiltroTamanho.forEach(pTam => {
+                produtosFiltroPreco.forEach(pPreco => {
+                    if(pTam.id == pPreco.id) { produtosFiltrados.push(pTam)};
+                })
+            })
+        }else if(produtosFiltroCor.length > 0 ){
             produtosFiltrados = produtosFiltroCor;
         } else if(produtosFiltroTamanho.length > 0){
             produtosFiltrados = produtosFiltroTamanho;
-        } else {
+        } else if(produtosFiltroPreco.length > 0) {
+            produtosFiltrados = produtosFiltroPreco;
+        }else{
             produtosFiltrados = produtos;
         }
-    
-        // console.log(produtosFiltroCor);
-        // console.log(produtosFiltrotamanho);
-        console.log(produtosFiltrados);
         
         return produtosFiltrados;
     }
@@ -392,6 +446,22 @@
         document.getElementById("conteudo-principal").classList.add("esconder-elemento");
         document.getElementById("btn-carregar-produtos").classList.add("esconder-elemento");
         document.getElementById("produtos-secao").classList.add("esconder-elemento");
+    }
+
+    //Função para abrir mais cores
+    function abrirMaisCores(){
+        document.getElementById("ver-mais-cores").classList.add("esconder-elemento");
+        document.getElementById("cores-escondidas").classList.add("mostrar-elemento");
+    }
+
+    //Função para fechar mais cores
+    function fecharMaisCores(){
+        document.getElementById("ver-mais-cores").classList.remove("esconder-elemento");
+        document.getElementById("cores-escondidas").classList.remove("mostrar-elemento");
+    }
+
+    function adicionarItemCarrinho(event){
+        console.log(event);
     }
 
     init();
