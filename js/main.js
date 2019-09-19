@@ -46,6 +46,12 @@
                 adicionarItemCarrinho(event);
             }  
         });
+
+        document.addEventListener('click',function(event){
+            if(event.target && event.target.id == 'btn-carregar-produtos'){
+                carregarMaisProdutos();
+            }  
+        });
     }
 
     // Função para requisitar e abrir produtos.json
@@ -482,10 +488,13 @@
         document.getElementById('bag-qtd').textContent = bagQtd;
     }
 
-    init();
-        
-    
+    // Função para Carregar mais Produtos
+    function carregarMaisProdutos(){
+        var produtosEscondidos = [...document.getElementsByClassName("produto-container esconder-elemento")];
+        produtosEscondidos.forEach(produto => produto.classList.remove("esconder-elemento"));
+    }
 
+    init();
     // // Atualiza quantidade de itens na sacola
     // function atualizaQtdBag(){
     //     document.getElementById('bag-qtd').textContent = bagQtd;
