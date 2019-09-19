@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
     <head>
+        
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
         <title>M3 Performance Digital</title>
-        <link rel="stylesheet" href="css/grid.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
+
+        <link rel="stylesheet" href="css/main.css"/>
         <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
 
     </head>
@@ -16,174 +18,231 @@
 
         <header>
             <div class="container">
-                <div class="row">
-                    <a href=""><img src="img/logo-m3.png" alt="logo-m3"/></a>
+                <a href=""><img src="img/logo-m3.png" alt="logo-m3"/></a>
 
-                    <div class="buy-bag" id="buy-bag">
-                            <a href=""><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>
-                            <p id="bag-qtd">0</p>
+                <div class="buy-bag" id="buy-bag">
+                    <div class="bag-qtd">
+                        <p id="bag-qtd">0</p>
                     </div>
+                    <a id="bag-icon" href=""><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>    
                 </div>
             </div>
         </header>
 
         <main class="container">
-
-            <section class="conteudo-principal">
+            
+            <section class="conteudo-principal" id="conteudo-principal">
                 <h1>Blusas</h1>
-                <div id="btn-filtrar"><p>Filtrar</p></div>
-                <div id="btn-ordenar"><p>Ordenar</p></div>            
-            </section>
 
+                <div id="botoes-menu">
+                    <div class="btn" id="btn-filtrar">
+                        <p>Filtrar</p>
+                    </div>
+
+                    <div class="btn" id="btn-ordenar">
+                        <p>Ordenar</p>
+                    </div>
+                </div>
+                
+            </section>
+            
             <aside id="filtrar-menu">
 
                 <div id="filtrar-header">
                     <h2>Filtrar</h2>
-                    <i class="fa fa-plus"></i>
+                    <i id="fechar-filtrar" class="fa fa-times"></i>
+                </div>
+                
+                <div id="cores-menu">
+                    <div id="cores-header">
+                        <h2>Cores</h2>
+                        <i id="minimizar-cores" class="fa fa-minus esconder-elemento"></i>
+                        <i id="maximizar-cores" class="fa fa-plus"></i>
+                    </div>
+                        
+                    <div id="cores-container" class="esconder-elemento">
+
+                        <div class="cor-opcao">
+                            <div class="checkbox" id="Amarelo">
+                                <div class="cor-selecionada" id="Amarelo"></div>
+                            </div>
+                            <label class="color" for="amarelo">Amarelo</label>
+                        </div>
+
+                        <div class="cor-opcao">
+                            <div class="checkbox" id="azul">
+                                <div class="cor-selecionada" id="azul"></div>
+                            </div>
+                            <label class="color" for="azul">Azul</label>
+                        </div>
+
+                        <div class="cor-opcao">
+                            <div class="checkbox" id="branco">
+                                <div class="cor-selecionada" id="branco"></div>
+                            </div> 
+                            <label class="color" for="branco">Branco</label>
+                        </div>
+
+                        <div class="cor-opcao">
+                            <div class="checkbox" id="cinza">
+                                <div class="cor-selecionada" id="cinza"></div>
+                            </div>
+                            <label class="color" for="cinza">Cinza</label>
+                        </div>
+
+                        <div class="cor-opcao">
+                            <div class="checkbox" id="laranja">
+                                <div class="cor-selecionada" id="laranja"></div>
+                            </div> 
+                            <label class="color" for="laranja">Laranja</label>
+                        </div>
+
+                        <div id="ver-todas-cores">
+                            <p>Ver todas as cores</p>
+                        </div>
+
+                        <div id="cores-escondidas">
+
+                            <div class="cor-opcao">
+                                <div class="checkbox" id="verde">
+                                    <div class="cor-selecionada" id="verde"></div>
+                                </div> 
+                                <label class="color" for="verde">Verde</label>
+                            </div>
+
+                            <div class="cor-opcao">
+                                <div class="checkbox" id="vermelho">
+                                    <div class="cor-selecionada" id="vermelho"></div>
+                                </div> 
+                                <label class="color" for="vermelho">Vermelho</label>
+                            </div>
+
+                            <div class="cor-opcao">
+                                <div class="checkbox" id="preto">
+                                    <div class="cor-selecionada" id="preto"></div>
+                                </div> 
+                                <label class="color" for="preto">Preto</label>
+                            </div>
+
+                            <div class="cor-opcao">
+                                <div class="checkbox" id="rosa">
+                                    <div class="cor-selecionada" id="rosa"></div>
+                                </div> 
+                                <label class="color" for="rosa">Rosa</label>
+                            </div>
+
+                            <div class="cor-opcao">
+                                <div class="checkbox" id="vinho">
+                                    <div class="cor-selecionada" id="vinho"></div>
+                                </div> 
+                                <label class="color" for="vinho">Vinho</label>
+                            </div>
+
+                        </div>   
+                    </div>
                 </div>
 
-                    <div id="cores-menu">
-                        <div id="cores-header">
-                            <h2>Cores</h2>
-                            <i class="fa fa-minus"></i>
-                        </div>
-                        
-                        <div id="cores-container">
-                                <input class="checkbox" type="checkbox" name="cor" id="amarelo" value="amarelo">
-                                <label for="amarelo" class="tipo-cor">Amarelo</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="azul" value="azul">
-                                <label for="azul" class="tipo-cor">Azul</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="branco" value="branco">
-                                <label for="branco" class="tipo-cor">Branco</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="Cinza" value="Cinza">
-                                <label for="Cinza" class="tipo-cor">Cinza</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="laranja" value="laranja">
-                                <label for="laranja" class="tipo-cor">Laranja</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="verde" value="verde">
-                                <label for="verde" class="tipo-cor">Verde</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="vermelho" value="vermelho">
-                                <label for="vermelho" class="tipo-cor">Vermelho</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="preto" value="preto">
-                                <label for="preto" class="tipo-cor">Preto</label>
-                                <br>
-    
-                                <input class="checkbox" type="checkbox" name="cor" id="rosa" value="rosa">
-                                <label for="rosa" class="tipo-cor">Rosa</label>
-                                <br>
-                                
-                                <input class="checkbox" type="checkbox" name="cor" id="vinho" value="vinho">
-                                <label for="vinho" class="tipo-cor">Vinho</label>
-                                <br>
-                        </div>
-                            
+                <div id="tamanhos-menu">
+                    <div id="tamanhos-header">
+                        <h2>Tamanhos</h2>
+                        <i id="minimizar-tamanhos" class="fa fa-minus esconder-elemento"></i>
+                        <i id="maximizar-tamanhos" class="fa fa-plus"></i>
                     </div>
 
-                    <div id="tamanhos-menu">
-                        <div id="tamanhos-header">
-                            <h2>Tamanhos</h2>
-                            <i class="fa fa-minus"></i>
-                        </div>
+                    <div id="tamanhos-container" class="esconder-elemento">
+                        <div class="tamanho-option" id="p">P</div>
+                        <div class="tamanho-option" id="m">M</div>
+                        <div class="tamanho-option" id="g">G</div>
+                        <div class="tamanho-option" id="gg">GG</div>
+                        <div class="tamanho-option" id="u">U</div>
+                        <div class="tamanho-option" id="36">36</div>
+                        <div class="tamanho-option" id="38">38</div>
+                        <div class="tamanho-option" id="40">40</div>
+                        <div class="tamanho-option" id="42">42</div>
+                        <div class="tamanho-option" id="44">44</div>
+                        <div class="tamanho-option" id="46">46</div>
+                    </div>
+                </div>
 
-                        <div class="tamanhos-container">
-                            <span class="tamanhos-checkbox" id="p">p</span>
-                            <span class="tamanhos-checkbox" id="m">m</span>
-                            <span class="tamanhos-checkbox" id="g">g</span>
-                            <span class="tamanhos-checkbox" id="gg">gg</span>
-                            <span class="tamanhos-checkbox" id="u">u</span>
-                            <span class="tamanhos-checkbox" id="36">36</span>
-                            <span class="tamanhos-checkbox" id="38">38</span>
-                            <span class="tamanhos-checkbox" id="40">40</span>
-                            <span class="tamanhos-checkbox" id="42">42</span>
-                            <span class="tamanhos-checkbox" id="44">44</span>
-                            <span class="tamanhos-checkbox" id="46">46</span>
-                        </div>
-                        
+                <div id="precos-menu">
+                    <div id="precos-header">
+                        <h2>Faixa de Preço</h2>
+                        <i id="minimizar-precos"class="fa fa-minus esconder-elemento"></i>
+                        <i id="maximizar-precos" class="fa fa-plus"></i>
                     </div>
 
-                    <div id="precos-menu">
-                        <div id="precos-header">
-                            <h2>Faixa de Preço</h2>
-                            <i class="fa fa-minus"></i>
+                    <div id="precos-container" class="esconder-elemento">
+                            <div class="preco-opcao">
+                                <div class="checkbox" id="preco-1">
+                                    <div class="preco-selecionado" id="preco-1"></div>
+                                </div>
+                                <label class="preco" for="preco-1">de R$ 0 a R$ 50</label>
+                            </div>
+        
+                            <div class="preco-opcao">
+                                <div class="checkbox" id="preco-2">
+                                    <div class="preco-selecionado" id="preco-2"></div>
+                                </div>
+                                <label class="preco" for="preco-2">de R$ 51 a R$ 150</label>
+                            </div>
+    
+                            <div class="preco-opcao">
+                                <div class="checkbox" id="preco-3">
+                                    <div class="preco-selecionado" id="preco-3"></div>
+                                </div>
+                                <label class="preco" for="preco-3">de R$ 151 a R$ 300</label>
+                            </div>
+    
+                            <div class="preco-opcao">
+                                <div class="checkbox" id="preco-4">
+                                    <div class="preco-selecionado" id="preco-4"></div>
+                                </div>
+                                <label class="preco" for="preco-4">de R$ 301 a R$ 500</label>
+                            </div>
+    
+                            <div class="preco-opcao">
+                                <div class="checkbox" id="preco-5">
+                                    <div class="preco-selecionado" id="preco-1"></div>
+                                </div>
+                                <label class="preco" for="preco-5">a partir de R$ 501</label>
+                            </div>
                         </div>
-
-                        <label for="0-50" class="tipo-preco">de R$ 0 até R$ 50
-                            <input class="checkbox1" type="checkbox" name="filter-option-list-checkbox" id="0-50" value="0-50">
-                            <br>
-                            <span class="checkmark"></span>
-                        </label>
-
-                        <label for="51-150" class="tipo-preco">de R$ 51 até R$ 150
-                            <input class="checkbox1" type="checkbox" name="filter-option-list-checkbox" id="51-150" value="51-150">
-                            <br>
-                            <span class="checkmark"></span>
-                        </label>
-
-                        <label for="151-300" class="tipo-preco">de R$ 151 até R$ 300
-                            <input class="checkbox1" type="checkbox" name="filter-option-list-checkbox" id="151-300" value="151-300">
-                            <br>
-                            <span class="checkmark"></span>
-                        </label>
-
-                        <label for="301-500" class="tipo-preco">de R$ 301 até R$ 500
-                            <input class="checkbox1" type="checkbox" name="filter-option-list-checkbox" id="301-500" value="301-500">
-                            <br>
-                            <span class="checkmark"></span>
-                        </label>
-
-                        <label for="501-" class="tipo-preco">a partir de R$ 501
-                            <input class="checkbox1" type="checkbox" name="filter-option-list-checkbox" id="501-" value="501-">
-                            <br>
-                            <span class="checkmark"></span>
-                        </label>
-                    </div>
-
-                    <button id="filtrar-produtos" >APLICAR</button>
-                    <button id="limpar-filtros">LIMPAR</button>
+                </div>
+                    
+                <div id="filtros-btn">
+                    <button id="btn-aplicar-filtro" class="btn">APLICAR</button>
+                    <button id="btn-limpar-filtro" class="btn">LIMPAR</button>
+                </div>
 
             </aside>
 
             <aside id="ordenar-menu">
                 <div id="ordenar-header">
                     <h2>Ordenar</h2>
-                    <i class="fa fa-plus"></i>
+                    <i id="fechar-ordenar" class="fa fa-times"></i>
                 </div>
 
-                <select id="ordenar-produtos">
-                    <option value="0"></option>
-                    <option value="1">Mais Recentes</option>
-                    <option value="2">Maior Preço</option>
-                    <option value="3">Menor Preço</option>
-                </select>
+                <div id="ordenar-container" class="ordenar-container">
+                    <div id="mais-recente">Mais recentes</div>
+                    <div id="menor-preco">Menor preço</div>
+                    <div id="maior-preco">Maior preço</div>
+                </div>
             </aside>
 
-            <section id="produtos">
-                
-            </section>
-            <button id="carregar-produtos">CARREGAR MAIS</button>
+            <section id="produtos-secao"></section>
+            <div class="clearFix"></div>
+
+            <button id="btn-carregar-produtos" class="btn">CARREGAR MAIS</button>
 
         </main>
         
         <footer>
-            <p>Agência M3 - Agência de Perfomance Digital</p>
+            <div class="container">
+                <p>Agência M3 - Agência de Perfomance Digital</p>
+            </div>
         </footer>
         
+        <script src="./js/main.js"></script>
         
-        <script src="./js/renderProduto.js"></script>
-        
-
     </body>
 </html>
