@@ -1,4 +1,5 @@
 (function(){
+    var bagQtd = 0;
     // Função que inica todos os listener e chama a primeira renderização dos produtos
     function init(){
         getProdutos();
@@ -40,15 +41,11 @@
         document.getElementById("ver-menos-cores").addEventListener("click",fecharMaisCores,false);
 
         // listener para adicionar produto ao carrinho
-        
-        window.addEventListener("load",function(){
-            var comprarArray = [...document.getElementsByClassName("btn btn-comprar")];
-            console.log(comprarArray);
-            console.log("loaded");
-        },false);
-        // comprarArray.forEach(btnComprar => console.log(btnComprar)
-        // btnComprar.addEventListener("click",adicionarItemCarrinho,false)
-        // );
+        document.addEventListener('click',function(event){
+            if(event.target && event.target.id == 'btn-comprar'){
+                adicionarItemCarrinho(event);
+            }  
+        });
     }
 
     // Função para requisitar e abrir produtos.json
@@ -114,7 +111,8 @@
           }
     
           comprarBotaoElemento.classList.add("btn","btn-comprar");
-          comprarBotaoElemento.setAttribute("id", "btn-comprar-");
+          comprarBotaoElemento.setAttribute("id", "btn-comprar");
+          comprarBotaoElemento.setAttribute("data-id", produtosFiltrados[i].id);
     
           sectionProduto.appendChild(imgProdutoElemento);
           sectionProduto.appendChild(nomeProdutoElemento);
@@ -149,15 +147,10 @@
         var produtosFiltroCor = []
     
         produtos.forEach(produto => {
-            console.log(produto);
             produto.cor.forEach(corProduto => {
                 filtroCores.forEach(coresFiltro => {
-                    console.log(coresFiltro);
                     coresFiltro.forEach(cor => {
-                        
                         if(cor == corProduto) {
-                            console.log("cor filtro: "+cor);
-                        console.log("cor produto: "+corProduto);
                             produtosFiltroCor.push(produto)
                         }
                     })
@@ -460,13 +453,38 @@
         document.getElementById("cores-escondidas").classList.remove("mostrar-elemento");
     }
 
+    // Função para adicionar itens ao carrinho
     function adicionarItemCarrinho(event){
-        console.log(event);
+        var idProduto = event.target.getAttribute("data-id");
+        var imgProduto = event.target.parentNode.childNodes[0].attributes[0].nodeValue;
+        var nomeProduto = event.target.parentNode.childNodes[1].innerText;
+        var precoProduto = event.target.parentNode.childNodes[2].innerText;
+
+        var produto = {
+                        id   : idProduto , 
+                        nome : nomeProduto, 
+                        img  : imgProduto, 
+                        preco: precoProduto
+                    };
+
+        adicionarItemJSON(produto);
+        atualizarQtdItensBag();      
+        alert(nomeProduto + " adicionado ao carrinho");
+    }
+
+    function adicionarItemJSON(produto){
+        //
+
+    }
+
+    function atualizarQtdItensBag(){
+        bagQtd++;
+        document.getElementById('bag-qtd').textContent = bagQtd;
     }
 
     init();
         
-    // var bagQtd = 0;
+    
 
     // // Atualiza quantidade de itens na sacola
     // function atualizaQtdBag(){
