@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>M3 | Digital Performance </title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+</head>
+
+
+
+<body>
+
+  <header>
+
+    <nav class="header container">
+
+      <a class="header__brand" href="#"><img src="./layout/imagens/logo-m3.png" alt="Logo"></a>
+
+      <div class="header__nav-div-bag">
+
+        <a class="header-nav__bag-link" href="#">
+
+          <img src="./layout/bag.png" alt="compras">
+
+          <div class="header_nav-div__bag-counter">
+
+            <span>0</span>
+
+          </div>
+
+        </a>
+
+      </div>
+
+    </nav>
+
+    <hr class="nav-border">
+
+  </header>
+
+  
+
+  <main class="container">
+
+    <div class="main__div">
+
+      <h1 class="main__div__title">
+
+        Blusas
+
+      </h1>
+
+      <form class="main__div__form">
+
+        <select name="order-by" id="order-by-desktop">
+
+          <option value="order-by">Ordernar por: </option>
+
+          <option value="newest">Mais Recente</option>
+
+          <option value="lowest-price">Menor preço</option>
+
+          <option value="highest-price">Maior preço</option>
+
+        </select>
+
+      </form>
+
+      
+
+    </div>
+
+    <div class="layout">
+
+      <aside class="aside-menu">
+
+      
+
+        <section class="aside-menu_colors_block">
+
+          <div class="aside-menu__title-block">
+
+            <h2 class="aside-menu__title">Cores</h2>
+
+            <div class="btn-plus" id="btn-plus-color">
+
+              <div class="btn-plus__line1"></div>
+
+              <div class="btn-plus__line2"></div>
+
+            </div>
+
+          </div>
+
+          <form class="aside-menu__form-color" id="color">
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="yellow" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Amarelo
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="blue" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Azul
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="white" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Branco
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="grey" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Cinza
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="orange" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Laranja
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="green" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Verde
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="red" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Vermelho
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="black" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Preto
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="pink" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Rosa
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="burgundy" name="color" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                Vinho
+
+              </label>
+
+            </div>
+
+          </form>
+
+          <a id="see__all-colors" href="#">Ver todas as cores </a>
+
+        </section>
+
+        <section class="aside-menu__block">
+
+          <div class="aside-menu__title-block">
+
+            <h2 class="aside-menu__title">Tamanhos</h2>
+
+           
+
+          </div>
+
+          <form class="aside-menu__form-sizes" id="size">
+
+            <label>
+
+              <input type="radio" value="p" name="size" />
+
+              <span>
+
+                <span>P</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="m" name="size" />
+
+              <span>
+
+                <span>M</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="g" name="size" />
+
+              <span>
+
+                <span>G</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="gg" name="size" />
+
+              <span>
+
+                <span>GG</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="u" name="size" />
+
+              <span>
+
+                <span>U</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="36" name="size" />
+
+              <span>
+
+                <span>36</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="38" name="size" />
+
+              <span>
+
+                <span>38</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="40" name="size" />
+
+              <span>
+
+                <span>40</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="42" name="size" />
+
+              <span>
+
+                <span>42</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="44" name="size" />
+
+              <span>
+
+                <span>44</span>
+
+              </span>
+
+            </label>
+
+            <label>
+
+              <input type="radio" value="46" name="size" />
+
+              <span>
+
+                <span>46</span>
+
+              </span>
+
+            </label>
+
+          </form>
+
+        </section>
+
+        <section class="aside-menu__block">
+
+          <div class="aside-menu__title-block">
+
+            <h2 class="aside-menu__title">Faixa de preço</h2>
+
+            
+
+          </div>
+
+          <form class="aside-menu__form-price" id="price">
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="0-50" name="price" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                de R$0 até R$50
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="51-150" name="price" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                de R$51 até R$150
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="151-300" name="price" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                de R$151 até R$300
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="301-500" name="price" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                de R$301 até R$500
+
+              </label>
+
+            </div>
+
+            <div>
+
+              <label>
+
+                <input type="radio" value="1" name="price" />
+
+                <span class="aside-menu__form-box">
+
+                  <span></span>
+
+                </span>
+
+                a partir de R$01
+
+              </label>
+
+            </div>
+
+          </form>
+
+          
+
+        </section>
+
+      </aside>
+
+      <div>
+
+        <div class="products" id="products">
+        <div id="main__interess__list"></div>
+        </div>
+
+      </div>
+
+    </div>
+    
+
+  </main>
+  
+
+  <footer class="footer">
+
+    <p class="footer">Agência M3 - Agência de Performance Digital</p>
+
+  </footer>
+
+  <script src= "buscaproduto.js"></script>
+  
+
+</body>
+
+
+
+</html>

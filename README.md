@@ -1,3 +1,17 @@
+instruções para abrir o projeto:
+abra o arquivo index
+
+obs:  Somente arquivo html estruturado, junto com css.
+Funções js estão sendo estudadas.
+
+Nenhuma interação com botões foi feita, devido a minha baixa experiência e conhecimento, porém, estou trabalhando duro para adquirir tais conhecimentos.
+
+Agradeço a oportunidade de aprender com este projeto
+Tenho grande admiração pela empresa e desejo de fazer parte para contribuir e aprender.
+
+e-mail para contato: rafaelflcolonese2@hotmail.com
+
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
@@ -61,3 +75,4 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Grunt, Gulp ou similar
 
 ##### Dúvidas: [pablo@digitalm3.com.br](pablo@digitalm3.com.br)
+

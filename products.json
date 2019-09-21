@@ -1,0 +1,837 @@
+{
+
+    "products": [
+  
+      {
+  
+        "id": 1,
+  
+        "image": "./layout/images/img_2.png",
+  
+        "name": "Camiseta Mescla",
+  
+        "price": 28,
+  
+        "color": "Cinza",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 2,
+  
+        "image": "./layout/images/img_3.png",
+  
+        "name": "Saia em Couro",
+  
+        "price": 398,
+  
+        "color": "Vinho",
+  
+        "size": [
+  
+          "36",
+  
+          "38",
+  
+          "40",
+  
+          "42"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 3,
+  
+        "image": "./layout/images/img_4.png",
+  
+        "name": "Cardigan Tigre",
+  
+        "price": 398,
+  
+        "color": "Laranja",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 4,
+  
+        "image": "./layout/images/img_5.png",
+  
+        "name": "Cardigan Off White",
+  
+        "price": 99.9,
+  
+        "color": "Branco",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 5,
+  
+        "image": "./layout/images/img_6.png",
+  
+        "name": "Body Leopardo",
+  
+        "price": 129.9,
+  
+        "color": "Amarelo",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G",
+  
+          "GG"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 6,
+  
+        "image": "./layout/images/img_7.png",
+  
+        "name": "Casaco Pelos",
+  
+        "price": 398,
+  
+        "color": "Rosa",
+  
+        "size": [
+  
+          "P",
+  
+          "M"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 7,
+  
+        "image": "./layout/images/img_8.png",
+  
+        "name": "Cropped Stripes",
+  
+        "price": 120,
+  
+        "color": "Azul",
+  
+        "size": [
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 8,
+  
+        "image": "./layout/images/img_9.png",
+  
+        "name": "Camisa Transparente",
+  
+        "price": 398,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 9,
+  
+        "image": "./layout/images/img_10.png",
+  
+        "name": "Pochete Clutch",
+  
+        "price": 99,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "38",
+  
+          "42",
+  
+          "44",
+  
+          "46"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 10,
+  
+        "image": "./layout/images/img_2.png",
+  
+        "name": "Camiseta Mescla",
+  
+        "price": 28,
+  
+        "color": "Cinza",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 11,
+  
+        "image": "./layout/images/img_3.png",
+  
+        "name": "Saia em Couro",
+  
+        "price": 398,
+  
+        "color": "Vinho",
+  
+        "size": [
+  
+          "36",
+  
+          "38",
+  
+          "40",
+  
+          "42"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 12,
+  
+        "image": "./layout/images/img_4.png",
+  
+        "name": "Cardigan Tigre",
+  
+        "price": 398,
+  
+        "color": "Laranja",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 13,
+  
+        "image": "./layout/images/img_5.png",
+  
+        "name": "Cardigan Off White",
+  
+        "price": 99.9,
+  
+        "color": "Branco",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 14,
+  
+        "image": "./layout/images/img_6.png",
+  
+        "name": "Body Leopardo",
+  
+        "price": 129.9,
+  
+        "color": "Amarelo",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G",
+  
+          "GG"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 15,
+  
+        "image": "./layout/images/img_7.png",
+  
+        "name": "Casaco Pelos",
+  
+        "price": 398,
+  
+        "color": "Rosa",
+  
+        "size": [
+  
+          "P",
+  
+          "M"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 16,
+  
+        "image": "./layout/images/img_8.png",
+  
+        "name": "Cropped Stripes",
+  
+        "price": 120,
+  
+        "color": "Azul",
+  
+        "size": [
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 17,
+  
+        "image": "./layout/images/img_9.png",
+  
+        "name": "Camisa Transparente",
+  
+        "price": 398,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 18,
+  
+        "image": "./layout/images/img_10.png",
+  
+        "name": "Pochete Clutch",
+  
+        "price": 99,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "38",
+  
+          "42",
+  
+          "44",
+  
+          "46"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 19,
+  
+        "image": "./layout/images/img_2.png",
+  
+        "name": "Camiseta Mescla",
+  
+        "price": 28,
+  
+        "color": "Cinza",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 20,
+  
+        "image": "./layout/images/img_3.png",
+  
+        "name": "Saia em Couro",
+  
+        "price": 398,
+  
+        "color": "Vinho",
+  
+        "size": [
+  
+          "36",
+  
+          "38",
+  
+          "40",
+  
+          "42"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 21,
+  
+        "image": "./layout/images/img_4.png",
+  
+        "name": "Cardigan Tigre",
+  
+        "price": 398,
+  
+        "color": "Laranja",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 22,
+  
+        "image": "./layout/images/img_5.png",
+  
+        "name": "Cardigan Off White",
+  
+        "price": 99.9,
+  
+        "color": "Branco",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 23,
+  
+        "image": "./layout/images/img_6.png",
+  
+        "name": "Body Leopardo",
+  
+        "price": 129.9,
+  
+        "color": "Amarelo",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G",
+  
+          "GG"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 24,
+  
+        "image": "./layout/images/img_7.png",
+  
+        "name": "Casaco Pelos",
+  
+        "price": 398,
+  
+        "color": "Rosa",
+  
+        "size": [
+  
+          "P",
+  
+          "M"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 25,
+  
+        "image": "./layout/images/img_8.png",
+  
+        "name": "Cropped Stripes",
+  
+        "price": 120,
+  
+        "color": "Azul",
+  
+        "size": [
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 26,
+  
+        "image": "./layout/images/img_9.png",
+  
+        "name": "Camisa Transparente",
+  
+        "price": 398,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 27,
+  
+        "image": "./layout/images/img_10.png",
+  
+        "name": "Pochete Clutch",
+  
+        "price": 99,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "38",
+  
+          "42",
+  
+          "44",
+  
+          "46"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 28,
+  
+        "image": "./layout/images/img_2.png",
+  
+        "name": "Camiseta Mescla",
+  
+        "price": 28,
+  
+        "color": "Cinza",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 29,
+  
+        "image": "./layout/images/img_3.png",
+  
+        "name": "Saia em Couro",
+  
+        "price": 398,
+  
+        "color": "Vinho",
+  
+        "size": [
+  
+          "36",
+  
+          "38",
+  
+          "40",
+  
+          "42"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 30,
+  
+        "image": "./layout/images/img_4.png",
+  
+        "name": "Cardigan Tigre",
+  
+        "price": 398,
+  
+        "color": "Laranja",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 31,
+  
+        "image": "./layout/images/img_5.png",
+  
+        "name": "Cardigan Off White",
+  
+        "price": 99.9,
+  
+        "color": "Branco",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 32,
+  
+        "image": "./layout/images/img_6.png",
+  
+        "name": "Body Leopardo",
+  
+        "price": 129.9,
+  
+        "color": "Amarelo",
+  
+        "size": [
+  
+          "P",
+  
+          "M",
+  
+          "G",
+  
+          "GG"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 33,
+  
+        "image": "./layout/images/img_7.png",
+  
+        "name": "Casaco Pelos",
+  
+        "price": 398,
+  
+        "color": "Rosa",
+  
+        "size": [
+  
+          "P",
+  
+          "M"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 34,
+  
+        "image": "./layout/images/img_8.png",
+  
+        "name": "Cropped Stripes",
+  
+        "price": 120,
+  
+        "color": "Azul",
+  
+        "size": [
+  
+          "M",
+  
+          "G"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 35,
+  
+        "image": "./layout/images/img_9.png",
+  
+        "name": "Camisa Transparente",
+  
+        "price": 398,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "U"
+  
+        ]
+  
+      },
+  
+      {
+  
+        "id": 36,
+  
+        "image": "./layout/images/img_10.png",
+  
+        "name": "Pochete Clutch",
+  
+        "price": 99,
+  
+        "color": "Preto",
+  
+        "size": [
+  
+          "38",
+  
+          "42",
+  
+          "44",
+  
+          "46"
+  
+        ]
+  
+      }
+  
+    ],
+  
+    "bag-items": [
+  
+      
+  
+    ]
+  
+  }
