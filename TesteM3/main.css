@@ -1,0 +1,516 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+* {
+  font-family: "Open Sans";
+}
+
+button {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 80%;
+}
+
+/* grid-template */
+
+.grid {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 110px 50px auto;
+  grid-template: "logo logo . . . . . . . . . bag"
+    "category category category category category category category category category category order order"
+    "filter filter filter product product product product product product product product product"
+    "filter filter filter btnCarregar btnCarregar btnCarregar btnCarregar btnCarregar btnCarregar btnCarregar btnCarregar btnCarregar";
+  grid-column-gap: 30px;
+}
+
+
+.column {
+  margin: 5px;
+  /* background-color: rgb(58, 58, 58); */
+}
+
+.logo {
+  grid-area: logo;
+  /* border-bottom: 1px black solid; */
+}
+
+.bag {
+  grid-area: bag;
+}
+
+.category {
+  grid-area: category;
+}
+
+.order {
+  grid-area: order;
+}
+
+.filter {
+  grid-area: filter;
+}
+
+.product {
+  grid-area: product;
+}
+
+.product-1 {
+  grid-area: product-1;
+}
+
+.product-2 {
+  grid-area: product-2;
+}
+
+.product-3 {
+  grid-area: product-3;
+}
+
+.btnCarregar {
+  grid-area: btnCarregar;
+}
+
+/* design */
+
+footer {
+  width: 100%;
+  height: 40px;
+  clear: both;
+  background-color: black;
+  text-align: center;
+}
+
+footer p {
+  height: 50%;
+  transform: translateY(50%);
+  color: white;
+}
+
+.category-name {
+  font-family: "Open Sans";
+  font-size: 32px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 35.2px;
+}
+
+h1,
+h3,
+label,
+a {
+  font-family: "Open Sans";
+  font-weight: 400;
+}
+
+/* Order Button */
+
+.order {
+  margin: auto;
+  display: block;
+}
+
+.orderBtn {
+  background-color: white;
+  cursor: pointer;
+  border: 1px solid black;
+  text-align: left;
+  position: relative;
+  min-width: 120px;
+  padding: 5px 10px;
+  z-index:2;
+}
+
+.order-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 120px;
+  border: 1px solid black;
+
+}
+
+.order-content button {
+  width: 100%;
+  display: block;
+  padding: 5px;
+  color: black;
+  text-align: left;
+  font-size: 13px;
+  background-color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.order-content button:hover {
+  color: white;
+  background-color: #2196f3;
+}
+
+.show {
+  /* adicionar essa classe quando mostrar o menu Order */
+  display: block;
+
+}
+
+.disapear {
+  display: none !important;
+}
+
+/* filters */
+
+.filter {
+  display: block;
+}
+
+.filters.colors {
+  margin-bottom: 30px;
+}
+
+.asd {
+  width: 220px;
+}
+
+/* checkbox=custom */
+
+.checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-right: 0px;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.checkbox-label input:checked~.checkbox-custom {
+  background-color: #2196f3;
+}
+
+/* filter size button custom */
+
+.sizeBtn {
+  width: 16%;
+  background-color: white;
+  display: inline-block;
+  padding: 10px;
+  margin: 4px;
+  color: grey;
+  border: 1px solid grey;
+  font-size: 12px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sizeBtnClicked,
+.sizeBtn:hover {
+  /* adicionar essa classe quando o filtro estiver selecionado */
+  border: 1px solid #2196f3;
+  color: black;
+}
+
+/* botão comprar */
+.btnComprar {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 10px 60px;
+  cursor: pointer;
+}
+
+.btnComprar:hover {
+  background-color: #2196f3;
+}
+
+/* produtos */
+
+
+.products {
+  display: inline-block;
+  text-align: center;
+  line-height: 0.8;
+  margin-bottom: 20px;
+  font-size: 13px;
+  padding-right: 15px;
+  padding-left: 30px;
+}
+
+.products :nth-child(3) {
+  font-weight: bold;
+}
+
+/* botão carregarmais */
+.btnCarregar {
+  text-align: center;
+}
+
+.btnCarregarMais {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 25px;
+  cursor: pointer;
+  border: none;
+  margin: 20px 0 10px 0;
+}
+
+.btnCarregarMais:hover {
+  background-color: black;
+  color: white;
+}
+
+/* shoppingCart */
+.shoppingCart {
+  border: none;
+  cursor: pointer;
+  background-image: url("imagens/cart_icon.png");
+  background-size: cover;
+  width: 30px;
+  height: 30px;
+  z-index:;
+}
+
+.showCart {
+  display: block;
+  overflow: scroll;
+  background-color: white;
+  position: absolute;
+  width: 35%;
+  transform: translateX(-80%);
+  height: 280px;
+  border: 1px solid grey;
+  z-index:10;
+}
+
+.cartItem {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  height: 125px;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.cartItem img {
+  height: 100px;
+  width: 66px;
+  padding: 10px;
+}
+
+.cartItem>.itemName {
+
+  font-size: 16px;
+  padding-right: 5px;
+
+}
+
+.cartItem>.itemTotalPrice {
+  font-size: 14px;
+  padding: 15px;
+}
+
+.itemQtd {
+  height: 40px;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+
+.totalCart {
+  width: 100;
+  text-align: center;
+}
+
+
+#cartList>.btnClearCart {
+  display: block;
+  margin: 5px auto;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  text-align: center;
+
+}
+
+.btnCart {
+  padding: 5px 10px;
+  margin: 5px 5px 5px 5px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+
+/* mobile */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 110px 50px auto;
+    grid-template: "logo logo . . . bag"
+      "category category category . order order"
+      "filter filter filter product product product"
+      "filter filter filter btnCarregarr btnCarregar btnCarregar";
+  }
+
+  .products {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .container {
+    width: 88%;
+  }
+
+}
+
+@media only screen and (max-width: 767px) {
+  .grid {
+    grid-template-columns: repeat(4, 100%);
+    grid-template-rows: 110px 50px auto 200px;
+    grid-template: "logo logo logo bag"
+      "category category category category"
+      "filter filter order order"
+      ". product product ."
+      "btnCarregar btnCarregar btnCarregar btnCarregar";
+    grid-column-gap: 0px;
+  }
+
+  .filter {
+    width: 100%;
+    position: relative;
+  }
+
+  .filters {
+    display: none;
+  }
+
+  .show {
+    display: block !important;
+  }
+
+  .checkbox-label {
+    margin: 10px 5px;
+  }
+
+
+  #prices,
+  #sizes,
+  #colors {
+    display: none;
+    width: 100%;
+    position: relative;
+  }
+
+  .prices,
+  .sizeBtn,
+  .colors {
+    display: none;
+
+
+  }
+
+  h3 {
+    display: none;
+  }
+
+  .product {
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .order {
+    width: 100%;
+  }
+
+  .showMobile {
+    display: block !important;
+
+
+  }
+  .orderBtn{
+    
+  }
+  .showMobileSize{
+    display:inline-block !important;
+  }
+  .btnAsd{
+    border: 1px solid black;
+  }
+
+  .btnFilters,
+  .btnFiltroMobile,
+  .orderBtn,
+  .order-content {
+    background-color: white;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    margin: auto;
+    
+  }
+  .order-content{
+    border:none;
+  }
+  .order-content button {
+    font-size:16px;
+  }
+
+  .showCart {
+
+    width: 90%;
+    transform: translateX(-97%);
+
+  }
+
+  .fullscreen {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    background-color:white;
+    display:block;
+  }
+
+}

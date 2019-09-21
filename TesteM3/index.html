@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <script type="text/javascript" src="filter.js" defer></script>
+  <script type="text/javascript" src="cart.js" defer></script>
+  <script type="text/javascript" src="sort.js" defer></script>
+  <script type="text/javascript" src="main.js" defer></script>
+  
+
+  <title>Document</title>
+</head>
+
+<body>
+  <section class="container grid row">
+    <div class="column logo">
+      <img src="imagens/logo-m3.png" />
+    </div>
+    <div class="column bag">
+      <button id="cart" class="shoppingCart" onclick="slideDownCart()"></button>
+      <div id="cartList"></div>
+    </div>
+    <div class="column category">
+      <h1 class="category-name">Blusas</h1>
+    </div>
+    <div id="order" class="column order">
+      <button id="orderBtn" onclick="orderBtn()" class="orderBtn">Ordenar por :</button>
+      <div id="orderMenu" class="order-content">
+        <button onclick="sortData('recent')">Mais Recentes</button>
+        <button onclick="sortData('ascendingPrice')">Menor Preço</button>
+        <button onclick="sortData('descendingPrice')">Maior Preço</button>
+      </div>
+    </div>
+    <div id="filter" class="column filter">
+      <div id="colors" class="filters">
+        <h3>CORES</h3>
+
+        <label class="colors checkbox-label yellow">Amarelo
+          <input type="checkbox" id="yellow" onclick="controlFilter('color','yellow')" />
+          <span class="checkbox-custom"></span>
+        </label>
+
+        <label class="colors checkbox-label blue">Azul
+          <input type="checkbox" id="blue" onclick="controlFilter('color','blue')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="colors checkbox-label white">Branco
+          <input type="checkbox" id="white" onclick="controlFilter('color','white')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="colors checkbox-label grey">Cinza
+          <input type="checkbox" id="grey" onclick="controlFilter('color','grey')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="colors checkbox-label orange">Laranja
+          <input type="checkbox" id="orange" onclick="controlFilter('color','orange')" />
+          <span class="checkbox-custom"></span>
+        </label>
+      </div>
+      <div id="sizes" class="filters asd">
+        <h3>TAMANHOS</h3>
+
+        <button class="sizeBtn small" id="S" onclick="controlFilter('size','S')">S</button>
+        <button class="sizeBtn medium" id="M" onclick="controlFilter('size','M')">M</button>
+        <button class="sizeBtn big" id="G" onclick="controlFilter('size','G')">G</button>
+        <button class="sizeBtn bigbig" id="GG" onclick="controlFilter('size','GG')">GG</button>
+        <button class="sizeBtn u" id="U" onclick="controlFilter('size','U')">U</button>
+        <button class="sizeBtn 36" id="36" onclick="controlFilter('size','36')">36</button>
+        <button class="sizeBtn 38" id="38" onclick="controlFilter('size','38')">38</button>
+        <button class="sizeBtn 40" id="40" onclick="controlFilter('size','40')">40</button>
+        <button class="sizeBtn 42" id="42" onclick="controlFilter('size','42')">42</button>
+        <button class="sizeBtn 44" id="44" onclick="controlFilter('size','44')">44</button>
+        <button class="sizeBtn 46" id="46" onclick="controlFilter('size','46')">46</button>
+      </div>
+      <div id="prices" class="filters">
+        <h3>FAIXA DE PREÇO</h3>
+        <label class="prices checkbox-label 0-50">de R$0 até R$50
+          <input type="checkbox" id="1-50" onclick="controlFilter('price','1-50')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="prices checkbox-label 51-150">de R$51 até R$150
+          <input type="checkbox" id="51-150" onclick="controlFilter('price','51-150')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="prices checkbox-label 151-300">de R$151 até R$300
+          <input type="checkbox" id="151-300" onclick="controlFilter('price','151-300')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="prices checkbox-label 301-500">de R$301 até R$500
+          <input type="checkbox" id="301-500" onclick="controlFilter('price','301-500')" />
+          <span class="checkbox-custom"></span>
+        </label>
+        <label class="prices checkbox-label 1">a partir de R$ 01
+          <input type="checkbox" id="1-9999" onclick="controlFilter('price','1-9999')" />
+          <span class="checkbox-custom"></span>
+        </label>
+      </div>
+    </div>
+    <div id="product" class="column product">
+    </div>
+    <div id="btnCarregar" class="column btnCarregar">
+      <button id="btnCarregarMais" class="btnCarregarMais">CARREGAR MAIS</button>
+    </div>
+
+  </section>
+  <footer>
+    <p>Agência M3 - Agência de Performance Digital</p>
+  </footer>
+</body>
+
+</html>

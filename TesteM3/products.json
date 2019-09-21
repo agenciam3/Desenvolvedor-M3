@@ -1,0 +1,193 @@
+[{
+        "id": "1",
+        "code": "001",
+        "name": "CAMISETA MESCLA",
+        "price": "28.00",
+        "portions": "3",
+        "size": "M",
+        "color": "white",
+        "image": "imagens/img_2.png"
+    },
+    {
+        "id": "2",
+        "code": "002",
+        "name": "SAIA EM COURO",
+        "price": "388.00",
+        "portions": "5",
+        "size": "S",
+        "color": "black",
+        "image": "imagens/img_3.png"
+    },
+    {
+        "id": "3",
+        "code": "003",
+        "name": "CARDIGAN TIGRE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "G",
+        "color": "orange",
+        "image": "imagens/img_4.png"
+    },
+    {
+        "id": "4",
+        "code": "004",
+        "name": "CARDIGAN OFF WHITE",
+        "price": "99.00",
+        "portions": "3",
+        "size": "GG",
+        "color": "white",
+        "image": "imagens/img_5.png"
+    },
+    {
+        "id": "5",
+        "code": "005",
+        "name": "BODY LEOPARDO",
+        "price": "129.90",
+        "portions": "3",
+        "size": "U",
+        "color": "grey",
+        "image": "imagens/img_6.png"
+    },
+    {
+        "id": "7",
+        "code": "007",
+        "name": "CASACO PELOS",
+        "price": "398.00",
+        "portions": "5",
+        "size": "36",
+        "color": "yellow",
+        "image": "imagens/img_7.png"
+    },
+    {
+        "id": "8",
+        "code": "008",
+        "name": "CROPPED STRIPS",
+        "price": "120.00",
+        "portions": "3",
+        "size": "38",
+        "color": "blue",
+        "image": "imagens/img_8.png"
+    },
+    {
+        "id": "9",
+        "code": "009",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "10",
+        "code": "010",
+        "name": "POCHETE CLUTCH",
+        "price": "99.00",
+        "portions": "3",
+        "size": "42",
+        "color": "orange",
+        "image": "imagens/img_10.png"
+    },
+    {
+        "id": "11",
+        "code": "011",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "12",
+        "code": "012",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "13",
+        "code": "013",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "14",
+        "code": "014",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "15",
+        "code": "015",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "16",
+        "code": "016",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "17",
+        "code": "017",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "18",
+        "code": "018",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "19",
+        "code": "019",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    },
+    {
+        "id": "20",
+        "code": "020",
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398.00",
+        "portions": "5",
+        "size": "40",
+        "color": "yellow",
+        "image": "imagens/img_9.png"
+    }
+
+
+]
