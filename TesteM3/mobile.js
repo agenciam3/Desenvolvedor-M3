@@ -1,14 +1,17 @@
+
+    
+    
+    
+    
 const mq = window.matchMedia("(max-width: 767px)");
 if (mq.matches) {
-
     var btnFilters, btnColors, btnSizes, btnPrices;
-    btnFilters = document.createElement("button");
-    btnColors = document.createElement("button");
     btnSizes = document.createElement("button");
+    btnColors = document.createElement("button");
     btnPrices = document.createElement("button");
+    btnFilters = document.createElement("button");
 
-
-    btnFilters.classList.add("showMobile");
+    
     var idFilter = document.getElementById("filter");
     var idColors = document.getElementById("colors");
     var idSizes = document.getElementById("sizes");
@@ -21,26 +24,25 @@ if (mq.matches) {
 
     console.log(classColors);
 
+    
     var temp = document.createTextNode("Filtrar");
     btnFilters.appendChild(temp);
-    btnFilters.classList.add("btnFilters", "btnAsd", "showMobile");
+    btnFilters.classList.add("btnFilters", "btnAsd", "showMobile", "show");
     idFilter.prepend(btnFilters);
 
-
-
-
+   
     temp = document.createTextNode("Cores");
     btnColors.appendChild(temp);
     btnColors.classList.add("btnFiltroMobile");
     idColors.prepend(btnColors);
 
-
+    
     temp = document.createTextNode("Tamanhos");
     btnSizes.appendChild(temp);
     btnSizes.classList.add("btnFiltroMobile", "btnTamanho");
     idSizes.prepend(btnSizes);
 
-
+    
     temp = document.createTextNode("Preços");
     btnPrices.appendChild(temp);
     btnPrices.classList.add("btnFiltroMobile");
