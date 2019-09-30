@@ -6,3 +6,6 @@ Upei num servidor de teste prórrio, segue o link: https://turing.pro.br/andrey/
 Tenho quase nenhuma experiência mas fiz o melhor que pude, obrigado!
 
 o teste psicológico também está aqui
+
+email: candreynascimento@gmail.com
+celular: 24 999893913
