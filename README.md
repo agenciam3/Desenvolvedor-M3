@@ -1,13 +1,4 @@
-instruções para abrir o projeto:
-abra o arquivo index
 
-obs:  Somente arquivo html estruturado, junto com css.
-Funções js estão sendo estudadas.
-
-Nenhuma interação com botões foi feita, devido a minha baixa experiência e conhecimento, porém, estou trabalhando duro para adquirir tais conhecimentos.
-
-Agradeço a oportunidade de aprender com este projeto
-Tenho grande admiração pela empresa e desejo de fazer parte para contribuir e aprender.
 
 e-mail para contato: rafaelflcolonese2@hotmail.com
 
