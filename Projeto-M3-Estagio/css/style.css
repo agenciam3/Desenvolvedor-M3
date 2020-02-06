@@ -1,0 +1,414 @@
+/*--------------configuração geral------------------*/
+*{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+ul{
+	list-style: none;
+}
+a{
+	cursor: pointer;
+	text-decoration: none;
+}
+body{
+	font-family: arial, helvetica ,sans-serif;
+}
+/*--------------------------Definiçao dos layouts(utilizando Grid)-----------------*/
+body{
+	display: grid;
+	display: -ms-grid;
+	min-height: 100vh;
+	grid-template-columns:240px 1fr;
+	grid-template-rows: 60px 60px 1fr 60px;
+	grid-template-areas: 
+		'cabecalho cabecalho'
+		'navegacao dropdown'
+		'navegacao conteudo'
+		'rodape rodape';
+}
+
+@media (max-width: 600px){
+	#nav-desktop{
+		grid-area: none;
+		display: none;
+	}
+	#dropdown{
+		display: none;
+	}
+	#nav-mobile{
+		display: block;
+		grid-area: nav-mobile;
+	}
+
+	body{
+		grid-template-columns: 1fr;
+		grid-template-rows: 60px 100px 1fr 60px;
+		grid-template-areas: 
+		'cabecalho'
+		'nav-mobile'
+		'conteudo'
+		'rodape';
+	}
+	
+}
+
+/*------------------------------------------------Cabecalho-------------------------*/
+header{
+	max-height: 60px;
+	display: block;
+	border-bottom:2px solid #c7c7c7;
+	grid-area: cabecalho;
+	background:#fff;
+	width: 100%;
+	position: fixed;
+	}
+@media(max-width: 600px){
+	header{position: absolute;}
+}
+header div {
+	display: inline;
+}
+#logo img{
+	padding: 10px 60px;
+	background-color:#fff;
+	width: 119px;
+	height: 30px; 
+}
+#icone img{
+	float: right;
+	margin-right: 10%;
+	width: 40px;
+	margin-top: 10px;
+	height: 40px;
+}
+#icone img:hover{
+	width: 44px;
+	height: 44px;
+}
+
+
+/*--------------------------------------Navegação---------------------------------*/
+/*-------xxxxxxxxxxxxx---Navegacao-desktop---xxxxxxxxxxxxxxx---*/
+#nav-desktop{
+	grid-area:navegacao;
+	margin-top: 20px;
+	padding-left: 60px;
+	}
+#nav-desktop h2{
+	color: black;
+	font-weight: normal;
+	font-size: 2em;
+}
+#nav-desktop h3{
+	margin-bottom: 5px;
+	margin-top: 30px;
+	text-transform: uppercase;
+	font-weight: normal;
+	font-size: 1.3em
+}
+.link-cor {
+	font-size: 0.9em;
+	color:#7f7f7f;
+	padding-top: 10px;
+	margin-top: 10px;
+	text-decoration: underline;
+}
+.link-cor:hover,.link-cor:active{
+	color: #2bbff2;
+} 
+/*---------------------Configuracao-dropdown-----------------------------------------*/
+#dropdown{
+	grid-area:dropdown;
+
+}
+.filtro-dropdown{
+	border: 1px solid black;
+	width: 120px;
+	height: 25px;
+	float: right;
+	margin: 30px 15% 10px 0;
+	color: black;
+}
+.filtro-dropdown li{
+	display: block;
+	cursor: pointer;
+	line-height: 25px;
+	margin-left: -1px;
+}
+.filtro-dropdown li a{
+	color: black;
+	font-size: 1em;
+	padding: 5px;
+
+}
+.filtro-dropdown li ul{
+	border: 1px solid black;
+	position: absolute;
+	display: none;
+	background: #fff;
+}
+.filtro-dropdown li:hover ul, .filtro-dropdown li.over ul{display:block;}
+
+.filtro-dropdown li ul li{
+	width: 121px;
+}
+.filtro-dropdown ul li a:hover{
+	background: #2bbff2;
+	display: block;
+	color: white;
+	font-size: 0.9em;
+	font-weight: bold;
+
+}
+
+/*------------xxxxxxxxxxxx---------Navegacao-Mobile--------xxxxxxxxxxxxxxxx------------*/
+@media (min-width: 576px){
+	#nav-mobile{
+		display: none;
+	}
+}
+#nav-mobile h2{
+	text-align: center;
+	color: black;
+	font-weight: normal;
+	font-size: 2em;
+	margin: 20px 10px 0px 10px;
+}
+
+.mobile-dropdown{
+	width: 80%;
+	height: 50px;
+	display: inline-block;
+	margin:10px 10% 10px 10%;
+}
+.mobile-dropdown .filtrar,
+.mobile-dropdown .ordenar{
+	border: 1px solid black;
+	margin: 0 auto; 
+	margin-right: -5px;
+	width: 50%;
+	height: 50px;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+}
+.filtrar li, .ordenar li {
+	text-align: left;
+	margin-left: 5px;
+}
+.mobile-dropdown li a{
+	color: black;
+	font-size: 1em;
+	padding: 5px;
+	line-height: 50px;
+}
+.mobile-dropdown ul{
+	border: 1px solid black;
+	width: 50%;
+	left: 10%;
+	position: absolute;
+	background: yellow;
+	display: none;
+	background: #fff;
+	line-height: 10px;
+}
+.mobile-dropdown .ordenar ul{
+	left: 50%;
+}
+.mobile-dropdown li:hover ul, .mobile-dropdown li.over ul{display:block;}
+
+.mob-botao{
+
+}
+.botao-aplicar
+.botao-limpar,{
+	font-size: 0.8em;
+	display: inline;
+	background: #2bbff2;
+	color: white;
+	width: 30px;
+}
+.botao-limpar{
+	
+	background: #c3c3c3;
+	border: 1px solid black;
+}
+
+
+/*---------------------Filtros-checkbox-------------------*/
+.checkbox{
+	display: none;
+}
+label{
+	color: #7f7f7f;
+	margin: 10px 0;
+	padding-bottom: 3px;
+	cursor: pointer;
+}
+.checkbox + label:before{
+	content: "";
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	background: white;
+	margin-right: 5px;
+	border: 1px solid #7f7f7f;
+	margin-bottom: -2px;
+	cursor: pointer;
+}
+.checkbox + label:hover{
+	color: #2bbff2;
+}
+.checkbox:checked + label:before{
+	background: url(../imagens/checkbox-ativo.png);
+	border: none;
+	width: 15px;
+	height: 15px; 
+}
+
+
+/*-------------filtro-tamanho-checkbox ---------------------*/
+.filtro-tamanho{
+	display: inline-block;
+}
+.check{
+	display: none;
+}
+.check + label:before{
+	cursor: pointer;
+	text-align: center;
+	display: inline-block;
+	margin: 4px 4px 4px 0;
+	width: 23px;
+	height: 23px;
+	line-height: 23px;
+	padding: 2px;
+	border: 1px solid #7f7f7f; 
+}
+.p:before{content:'P';} .m:before{content:'M';} .g:before{content:'G';} .gg:before{content:'GG';} .u:before{content:'U';} .t36:before{content:'36';} .t38:before{content:'38';} .t40:before{content:'40';} .t42:before{content:'42';} .t44:before{content:'44';} .t46:before{content:'46';}
+
+.check + label:hover{
+	color: #2bbff2;
+}
+
+.check:checked + label:before{
+	border: 2px solid #2bbff2;
+	width: 21px;
+	height: 21px;
+}
+
+
+
+
+
+
+/*-------------------------------------Conteudo Principal--------------------------------------------------------*/
+/*-------Inicio configuração Flex-Box--------*/
+.flex-container{
+	display: -webkit-flex;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items: center;
+	margin-bottom: 15px;
+}
+.flex-container div{
+	width: 31%;
+	padding: 10px;
+	margin: 0 auto;
+}
+/*-------Fim configuração Flex-Box--------*/
+
+.blusas{
+	height: 60%;
+	width: 80%;
+	padding:10% 10%;
+	margin:10px auto;
+	max-width:195px; 
+	max-height:293px;
+}
+main{
+	text-align: center;
+	grid-area: conteudo;
+	padding:0;
+	margin: 0;
+}
+main h4{
+	text-transform: uppercase;
+	font-size: 1em;
+	font-weight: normal;
+	margin-bottom: 10px;
+	margin-top: -20px;
+	display: block;
+}
+main h3{
+	font-weight: 400;
+	font-size: 1.2em;
+}
+main p{
+	font-size: 0.9em;
+	margin-top: 0px;
+	margin-bottom:10px;
+}
+/*--------------------------------botões conteudos------------------ */
+div button{
+	width: 100%;
+	height:40px;
+	background-color: black;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	font-weight: 500;
+	border:none;
+	cursor: pointer;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+div button:hover{
+	border: 2px solid #2bbff2;
+
+}
+div button:active{
+	color: #2bbff2;
+	font-size: 1.4em;
+}
+span button{
+	font-height:900;
+	padding: 5px;
+	display: inline-block;
+	margin: 20px;
+	border:none;
+	font-size: 1em;
+	cursor: pointer;
+	color: white;
+	background-color: #2bbff2;
+	width: 180px;
+	height: 50px;
+	text-transform: uppercase;
+}
+span button:hover{
+	border: 1px solid #4b0082;
+}
+span button:active{
+	color:#4b0082;
+	font-size: 1.1em;
+
+}
+
+/*------------------------------------------------------RODAPE---------------------------*/
+
+footer{
+	grid-area: rodape;
+	margin-top: 20px;
+	background-color: black;
+	text-align: center;
+	color: white;
+	padding: 10px;
+}
+
+
+
+
+
+
