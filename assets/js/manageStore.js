@@ -1,0 +1,1 @@
+import{initialData}from"./store.js";import{events}from"./events.js";export const iventory=(()=>{let t=initialData;return{backToInitialData:()=>(t=initialData,events.emit("displayProducts",t),t),addData:()=>(t.push(...t),console.log(t),events.emit("displayProducts",t),t),getData:()=>t,setData:a=>(t=[...a],events.emit("displayProducts",t),t)}})();

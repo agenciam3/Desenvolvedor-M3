@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desenvolvedor-M3</title>
+    <link type="text/css" rel="stylesheet" href="assets/styles/filters.css"  >
+    <link type="text/css" rel="stylesheet" href="assets/styles/header.css"  >
+    <!--<link type="text/css" rel="stylesheet" href="css/maincss.css">-->
+
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+    </head>
+
+<body>
+    <header>
+        <nav class="navContainer">
+            <a class="navBrand" href="#"><img src="layout/imagens/logo-m3.png" alt="Logo"></a>
+            <div id="navBag">
+                <a id="navBagLinker" href="#">
+                    <img src="layout/bag.png" alt="shop">
+                    <div id="counterBag">
+                        <span class="spanCounter">0</span>
+
+                    </div>
+                </a>
+
+            </div>
+           
+        </nav>
+        <hr class="border">
+    </header>
+    
+    <main class="container">
+
+    <aside>
+
+        <section class="sideMenuColor">
+
+        <h1 id="shirt">Blusas</h1>
+        <form class="formenuColor" id="formColor">
+        <div id="colorFilter">
+            <h2 id="Colors">Cores</h2>
+            <div>
+            <label for="yellow">
+                <input type="checkbox" name="color" id="yellow"value="yellow">
+                <span id="spanbox"><span></span></span>Amarelo
+            </label>
+        </div>
+        <div>
+            <label for="blue">
+                <input type="checkbox" name="color"value="blue" id="blue">
+                <span id="spanbox"><span></span></span>Azul
+            </label>
+        </div>
+        <div>
+            <label for="white">
+                <input type="checkbox"name="color" value="white" id="white">
+                <span id="spanbox"><span></span></span>Branco
+            </label>
+        </div>
+        <div>
+            <label for="grey">
+                <input type="checkbox" name="color"value="grey" id="grey">
+                <span id="spanbox"><span></span></span>Cinza
+            </label>
+        </div>
+        <div>
+            <label for="orange">
+                <input type="checkbox" name="color"value="orange" id="orange">
+                <span id="spanbox"><span></span></span>Laranja
+            </label>
+        </div>
+        <div>
+            <label for="green">
+                <input type="checkbox"name="color" value="green" id="green">
+                <span id="spanbox"><span></span></span>Verde
+            </label>
+        </div>
+        <div>
+            <label for="red">
+                <input type="checkbox" name="color"value="red" id="red">
+                <span id="spanbox"></span>Vermelho
+            </label>
+        </div>
+        <div>
+            <label for="black">
+                <input type="checkbox" name="color"value="black" id="black">
+                <span id="spanbox"><span></span></span>Preto
+            </label>
+        </div>
+        <div>
+            <label for="pink">
+                <input type="checkbox"name="color" value="pink" id="pink">
+                <span id="spanbox"><span></span></span>Rosa
+            </label>
+        </div>
+        <div>
+            <label for="bugundy">
+                <input type="checkbox"name="color" value="burgunby" id="burgundy">
+                <span id="spanbox"><span></span></span>Vinho
+            </label>
+        </div>
+
+
+        </div>
+    </form>
+    </section>
+    <section class="sideMenuSize">
+      <form class="formenuSize" id="formSize">
+          <h2 id="Sizes">Tamanhos</h2>
+          <div id="sizeFilter">
+              
+                <label for="p">
+                    <input type="checkbox" value="p" id="p">
+                    <span id="spanP"><span>P</span></span>
+                </label>
+                <label for="m">
+                    <input type="checkbox" value="m" id="m">
+                    <span id="spanM"><span>M</span></span>
+                </label>
+                <label for="g">
+                    <input type="checkbox" value="g" id="g">
+                    <span id="spanG"><span>G</span></span>
+                </label>
+                <label for="gg">
+                    <input type="checkbox" value="gg" id="gg">
+                    <span id="spanGg"><span>GG</span></span>
+                </label>
+                <label for="u">
+                    <input type="checkbox" value="u" id="u">
+                    <span id="spanU"><span>U</span></span>
+                </label>
+                <label for="36">
+                    <input type="checkbox" value="36" id="36">
+                    <span id="span36"><span>36</span></span>
+                </label>
+                <label for="38">
+                    <input type="checkbox" value="38" id="38">
+                    <span id="span38"><span>38</span></span>
+                </label>
+                <label for="40">
+                    <input type="checkbox" value="40" id="40">
+                    <span id="span40"><span>40</span></span>
+                </label>
+                <label for="42">
+                    <input type="checkbox" value="42" id="42">
+                    <span id="span42"><span>42</span></span>
+                </label>
+                <label for="44">
+                    <input type="checkbox" value="44" id="44">
+                    <span id="span44"><span>44</span></span>
+                </label>
+                <label for="46">
+                    <input type="checkbox" value="46" id="46">
+                    <span id="span46"><span>46</span></span>
+                </label>
+          </div>
+      </form>
+
+    </section>
+
+    <section class="sideMenuPrice">
+        <form class="formenuPrice" id="formPrice">
+            
+            <div id="priceFilter">
+                <h2 id="prices">Faixa de preços</h2>
+                <label for="0-50">
+                    <input type="radio" value="0-50" id="0-50">
+                    <span id="spanbox"><span></span></span>de R$0 até R$50
+                </label>
+                <label for="51-150">
+                    <input type="radio" value="51-150" id="51-150">
+                    <span id="spanbox"><span></span></span>de R$51 até R$150
+                </label>
+                <label for="151-300">
+                    <input type="radio" value="151-300" id="151-300">
+                    <span id="spanbox"><span></span></span>de R$151 até R$300
+                </label>
+                <label for="301-500">
+                    <input type="radio" value="301-500" id="301-500">
+                    <span id="spanbox"><span></span></span>de R$301 até R$500
+                </label>
+                <label for="1">
+                    <input type="radio" value="1" id="1">
+                    <span id="spanbox"><span></span></span>a partir de R$01
+                </label>
+
+
+            </div>
+        </form>
+    </section>
+
+    </aside>
+    <div>
+        <div id="products">
+            <ul class="productList"></ul>
+        </div>
+
+    </div>
+
+</main>
+<footer id="footer">
+    <p id="footerText">Agência M3 - Agência de Performance Digital</p>
+
+</footer>
+    
+    
+       
+    <script type="module" src="assets/js/master.js"></script>
+    
+     
+    <script ></script>
+    
+</body>
+
+</html>

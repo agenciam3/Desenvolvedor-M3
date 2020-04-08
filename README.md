@@ -1,6 +1,10 @@
+Orientações:
+No terminal use os comando; npm i, npm init, gulp build.
+
+contato: rafaelflcolonese@hotmail.com 
+(22)996066662
 
 
-e-mail para contato: rafaelflcolonese2@hotmail.com
 
 
 # Venha ser um desenvolvedor da Digital M3
@@ -66,4 +70,3 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Grunt, Gulp ou similar
 
 ##### Dúvidas: [pablo@digitalm3.com.br](pablo@digitalm3.com.br)
-
