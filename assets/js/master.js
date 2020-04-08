@@ -1,0 +1,1 @@
+import Products from"./renderProduct.js";import Filters from"./FiltersButtons.js";function ready(t){(document.attachEvent?"complete"===document.readyState:"loading"!==document.readyState)?t():document.addEventListener("DOMContentLoaded",t)}function main(){new Products,new Filters}ready(main);
