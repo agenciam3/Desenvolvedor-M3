@@ -24,7 +24,8 @@ function generateHTML(cb) {
 
 function generateAssets(cb) {
   src('src')
-  .pipe(dest('./dist/app'))
+    .pipe(dest('./dist/app'))
+  cb();
 }
 
 
@@ -40,8 +41,10 @@ function browserSync(cb) {
 }
 
 
+const build = parallel(generateCSS, generateAssets, generateHTML);
 
-exports.scss = generateCSS;
-exports.assets = generateAssets;
-exports.html = generateHTML;
-exports.serve = browserSync;
+exports.build = build;
+exports.serve = series(build, browserSync);
+// exports.scss = generateCSS;
+// exports.assets = generateAssets;
+// exports.html = generateHTML;
