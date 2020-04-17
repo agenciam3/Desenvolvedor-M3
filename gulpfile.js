@@ -1,27 +1,47 @@
-'use strict';
-var gulp = require('gulp');
+const { src, dest, watch, parallel, series } = require("gulp");
 
-
-// Sass
-var sass = require('gulp-sass');
+const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
+const sync = require("browser-sync").create();
 
-gulp.task('sass', function () {
-  return gulp.src('./src/**/*.scss')
+
+
+function generateCSS(cb) {
+  src('./src/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/app'));
-});
-
-gulp.task('sass:watch', function () {
-  gulp.watch('./src/**/*.scss', gulp.series('sass'));
-});
+    .pipe(dest('./dist/app'))
+    .pipe(sync.stream());
+  cb();
+}
 
 
+function generateHTML(cb) {
+  src('./src/**/*.html')
+    .pipe(dest('./dist/app'));
+  cb();
+}
 
-gulp.task('build:html', function () {
-  return gulp.src('./src/app/**/*.html')
-    .pipe(gulp.dest('./dist/app'))
-})
 
-// Default
-gulp.task('default', gulp.parallel('sass'));
+function generateAssets(cb) {
+  src('src')
+  .pipe(dest('./dist/app'))
+}
+
+
+function browserSync(cb) {
+  sync.init({
+    server: {
+      baseDir: "./dist/app"
+    }
+  });
+  watch('./src/**/*.html', generateHTML);
+  watch('./src/**/*.scss', generateCSS);
+  watch("./dist/**/*").on('change', sync.reload);
+}
+
+
+
+exports.scss = generateCSS;
+exports.assets = generateAssets;
+exports.html = generateHTML;
+exports.serve = browserSync;
