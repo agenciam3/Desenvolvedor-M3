@@ -1,0 +1,123 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0 auto;
+}
+
+.centralizador {
+    width: 870px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+
+.topo {
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 2px solid #c7c7c7;
+    padding: 10px 0;
+}
+
+.logo {
+    display: inline-block;
+}
+
+.sacola {
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+}
+
+/* CONTEÚDO */
+
+.sidefiltros {
+    width: 200px;
+    display: inline-block;
+    float: left;
+}
+
+.sidefiltros h1{
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.sidefiltros h2 {
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.conteudo {
+    width: 670px;
+    display: inline-block;
+}
+
+.produto {
+    margin-top: 30px;
+    margin-right: 25px;
+    width: 195px;
+    display: inline-block;
+}
+
+.titulo-produto {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.preco-produto {
+    font-size: 16px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.parcelamento {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.produto button {
+    width: 100%;
+    height: 42px;
+    background-color: #000;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.ver-mais {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.ver-mais button {
+    background-color: #00c0ee;
+    width: 160px;
+    height: 42px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+}
+
+/* RODAPÉ */
+
+.rodape {
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 30px;
+}
