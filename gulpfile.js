@@ -7,15 +7,21 @@ var sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
 gulp.task('sass', function () {
-  return gulp.src('./src/sass/**/*.scss')
+  return gulp.src('./src/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest('./dist/app'));
 });
 
 gulp.task('sass:watch', function () {
-  gulp.watch('./src/sass/**/*.scss', gulp.series('sass'));
+  gulp.watch('./src/**/*.scss', gulp.series('sass'));
 });
 
+
+
+gulp.task('build:html', function () {
+  return gulp.src('./src/app/**/*.html')
+    .pipe(gulp.dest('./dist/app'))
+})
 
 // Default
 gulp.task('default', gulp.parallel('sass'));
