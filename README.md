@@ -1,5 +1,5 @@
 Orientações:
-No terminal use os comando; npm i, npm init, gulp build.
+No terminal use os comando; npm i, npm init, npm run build & npm run gulpfile.
 
 contato: rafaelflcolonese@hotmail.com 
 (22)996066662

@@ -32,6 +32,11 @@
            
         </nav>
         <hr class="border">
+        <select name="select" class="select" change="comboselect()">
+            <option value="date">Mais recente</option> 
+            <option value="pricemin" selected>Menor preço</option>
+            <option value="pricemax">Maior preço</option>
+          </select>
     </header>
     
     <main class="container">
@@ -115,47 +120,47 @@
           <div id="sizeFilter">
               
                 <label for="p">
-                    <input type="checkbox" value="p" id="p">
+                    <input type="checkbox" value="p"name="sizes" id="p">
                     <span id="spanP"><span>P</span></span>
                 </label>
                 <label for="m">
-                    <input type="checkbox" value="m" id="m">
+                    <input type="checkbox"name="sizes" value="m" id="m">
                     <span id="spanM"><span>M</span></span>
                 </label>
                 <label for="g">
-                    <input type="checkbox" value="g" id="g">
+                    <input type="checkbox" name="sizes"value="g" id="g">
                     <span id="spanG"><span>G</span></span>
                 </label>
                 <label for="gg">
-                    <input type="checkbox" value="gg" id="gg">
+                    <input type="checkbox"name="sizes" value="gg" id="gg">
                     <span id="spanGg"><span>GG</span></span>
                 </label>
                 <label for="u">
-                    <input type="checkbox" value="u" id="u">
+                    <input type="checkbox" name="sizes"value="u" id="u">
                     <span id="spanU"><span>U</span></span>
                 </label>
                 <label for="36">
-                    <input type="checkbox" value="36" id="36">
+                    <input type="checkbox" name="sizes"value="36" id="36">
                     <span id="span36"><span>36</span></span>
                 </label>
                 <label for="38">
-                    <input type="checkbox" value="38" id="38">
+                    <input type="checkbox" name="sizes"value="38" id="38">
                     <span id="span38"><span>38</span></span>
                 </label>
                 <label for="40">
-                    <input type="checkbox" value="40" id="40">
+                    <input type="checkbox" name="sizes"value="40" id="40">
                     <span id="span40"><span>40</span></span>
                 </label>
                 <label for="42">
-                    <input type="checkbox" value="42" id="42">
+                    <input type="checkbox" name="sizes"value="42" id="42">
                     <span id="span42"><span>42</span></span>
                 </label>
                 <label for="44">
-                    <input type="checkbox" value="44" id="44">
+                    <input type="checkbox" name="sizes"value="44" id="44">
                     <span id="span44"><span>44</span></span>
                 </label>
                 <label for="46">
-                    <input type="checkbox" value="46" id="46">
+                    <input type="checkbox" name="sizes"value="46" id="46">
                     <span id="span46"><span>46</span></span>
                 </label>
           </div>
@@ -208,9 +213,9 @@
 
 </footer>
     
-    
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
        
-    <script type="module" src="assets/js/master.js"></script>
+    <script src="./bundle.js"></script>
     
      
     <script ></script>

@@ -2,6 +2,26 @@ header {
   max-width: 900px;
   margin: 0 auto;
 }
+.select {
+    border: auto ;
+    border-color: black;
+    padding: 10px 40px;
+    color: black;
+    margin-top: 14px;
+    display: inline-block;
+    margin-left: 600px;
+    text-align: left;
+    font-size: 12px;
+    cursor: pointer;
+    
+}
+.select option {
+    width: 100%;
+    padding: 20px ;
+    cursor: pointer;
+    text-align: left;
+    font-size: 12px;
+}
 
 
 .nav {

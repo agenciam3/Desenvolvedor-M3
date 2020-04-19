@@ -1,14 +1,18 @@
 {
-  "name": "desenvolvedor-m3",
+  "name": "package",
   "version": "1.0.0",
-  "description": "Iniciar apenas clicando no arquivo index.html Somente este arquivo terminado, ao passo que o css está sendo trabalhado e nenhum js implementado.",
+  "description": "Iniciar digitando o comando ('npm i, npm init, npm run build & npm run gulpfile')",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --mode=development",
+    "build": "webpack --mode=production -w",
+    "gulpfile": "gulp build --mode=production"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/cli": "^7.8.4",
     "@std/esm": "^0.26.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
@@ -20,16 +24,19 @@
     "gulp-watch": "^5.0.1",
     "http-server": "^0.12.1",
     "jquery": "^3.4.1",
-    "type": "module",
+    "package.json": "^2.0.1",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "underscore": "^1.9.2",
     "url": "^0.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
-    "@babel/preset-env": "^7.8.7",
+    "@babel/plugin-transform-async-to-generator": "^7.8.3",
+    "@babel/polyfill": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
     "@babel/register": "^7.8.6",
     "babel-core": "^6.26.3",
+    "babel-loader": "^8.1.0",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
@@ -38,7 +45,19 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^1.2.0",
     "gulp-uglify-es": "^2.0.0",
-    "readable-stream": "^3.6.0"
+    "jquery-extend": "^2.0.3",
+    "readable-stream": "^3.6.0",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
-  "keywords": []
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rafaelflc12/Desenvolvedor_M3.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Rafaelflc12/Desenvolvedor_M3/issues"
+  },
+  "homepage": "https://github.com/Rafaelflc12/Desenvolvedor_M3#readme"
 }

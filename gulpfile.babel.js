@@ -3,6 +3,7 @@ terser = require('gulp-terser'),
 uglifys = require('gulp-uglify-js'),
 sass = require('gulp-sass'),
 imagemin = require('gulp-imagemin'),
+webpack = require('webpack'),
 browserSync = require('browser-sync').create();
 
 
@@ -21,6 +22,7 @@ const config = {
       dist:  './assets/img/'
     }
   };
+  
 
 function style() {
   return gulp.src(config.styles.src)
@@ -56,11 +58,12 @@ function watch() {
     port: 8080,
     startPath: 'index.html'
   });
+  
   gulp.watch('./src/styles/*.scss', style);
   gulp.watch('./src/scripts/*.js', minijs);
   gulp.watch('./layout/imagens/*', image);
 
-  gulp.watch('./*.html').on('change', browserSync.reload);
+  gulp.watch(['./*.html','./bundle.js']).on('change', browserSync.reload);
 
   gulp.watch('./src/scripts/*.js').on('change', browserSync.reload);
   gulp.watch('./src/styles/*.scss').on('change', browserSync.reload);

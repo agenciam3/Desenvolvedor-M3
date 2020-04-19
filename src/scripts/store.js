@@ -16,7 +16,7 @@
 
         "img": "./assets/img/img_2.png",
 
-        "date": "feb 5, 2020"
+        "date": "april 13, 2020"
 
     },
 
@@ -34,7 +34,7 @@
 
         "img": "./assets/img/img_3.png",
 
-        "date": "feb 5, 2020"
+        "date": "april 13, 2020"
 
     },
 
@@ -52,7 +52,7 @@
 
         "img": "./assets/img/img_4.png",
 
-        "date": "feb 5, 2020"
+        "date": "april 13, 2020"
 
     },
 
