@@ -1,6 +1,6 @@
-import { AppView } from "./app-view.js";
-import { Router } from "./router.js";
-import APP_ROUTES from "./app-routes.js"
+import APP_ROUTES from "./app/app-routes.js"
+import { AppView } from "./app/app-view.js";
+import { Router } from "./app/router.js";
 
 const onLoad = async () => {
     const view = new AppView();

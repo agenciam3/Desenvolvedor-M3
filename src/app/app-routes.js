@@ -1,11 +1,11 @@
 import { Route } from './route.js'
 
-const html = 'http://localhost';
-const script = `.`; // Caminho relativo ao arquivo atual
+const root = 'http://localhost:3000/app';
 
 const routes = [
-    new Route(/^\/?$/, `${html}/component/teste/teste-component.html`, `${script}/component/teste/teste-component.js`),
-    new Route(/^\/404\/?$/, `${html}/404.html`)
+    // new Route(/^\/?$/, `${root}/component/teste/teste-component.html`, `./component/teste/teste-component.js`),
+    new Route(/^\/?$/, `${root}/component/home/home.component.html`, `./component/home/home.component.js`),
+    new Route(/^\/404\/?$/, `${root}/404.html`)
 ];
 
 export default routes;

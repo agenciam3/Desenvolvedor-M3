@@ -1,0 +1,28 @@
+@import './theme.scss';
+
+.checkbox-container {
+    input[type="checkbox"] {
+        all: unset;
+        cursor: pointer;
+        outline: 1px solid $border-color;
+        outline-offset: 2px;
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+    }
+    input[type="checkbox"]:checked {
+        all: unset;
+        cursor: pointer;
+        background-color: $main-color;
+        outline: 1px solid $border-color;
+        outline-offset: 2px;
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+    }
+    label{
+        cursor: pointer;
+    }
+}

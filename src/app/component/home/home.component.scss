@@ -1,0 +1,74 @@
+@import "../../shared/style/theme.scss";
+
+$side-menu-width: 12%;
+$main-content-width: 90%;
+
+.home-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.side-menu {
+    width: $side-menu-width;
+}
+
+.main-content {
+    width: $main-content-width;
+    display: flex;
+    flex-flow: row wrap;
+    .item {
+        display: flex;
+        flex-direction: column;
+        margin: 25px;
+        .descricao {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 10px;
+            .preco {
+                font-weight: bold;
+            }
+        }
+        .item-footer {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: black;
+            height: 40px;
+            span {
+                vertical-align: middle;
+                margin-bottom: 2px;
+            }
+        }
+    }
+}
+
+.filtro {
+    h2 {
+        margin-bottom: 5px;
+    }
+    margin-bottom: 45px;
+}
+
+.tamanho-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: space-between;
+    div {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $border-color;
+        color: $border-color;
+        width: 35px;
+        height: 35px;
+        margin: 5px;
+    }
+    .selected {
+        border: 2px solid $main-color;
+        color: black;
+    }
+}

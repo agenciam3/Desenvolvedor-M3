@@ -1,0 +1,37 @@
+@import "./app/shared/style/theme.scss";
+@import "./app/shared/style/components.scss";
+
+body {
+    font-family: Open Sans;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.app-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 auto;
+    justify-content: space-between;
+    border-bottom: 2px solid $border-color;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    flex: 0 1 auto;
+    background-color: $footer-bg;
+    color: $footer-text-color;
+}
