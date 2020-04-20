@@ -1,12 +1,21 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    margin: 0 auto;
+    margin: auto;
 }
 
-.centralizador {
+img{
+	max-width:100%;
+	height:auto;
+}
+
+.section {
+    margin: auto;
+}
+
+/* .centralizador {
     width: 870px;
     margin: 0 auto;
-}
+} */
 
 /* HEADER */
 
@@ -23,8 +32,8 @@ body {
 
 .sacola {
     display: inline-block;
-    float: right;
     margin-top: 10px;
+    float: right;
 }
 
 /* CONTEÚDO */
@@ -47,47 +56,43 @@ body {
 }
 
 .conteudo {
-    width: 670px;
-    display: inline-block;
+    width: 60%;
+    column-count: 3;
+    column-gap: 10px;
 }
 
 .produto {
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 25px;
-    width: 195px;
+    width: 100%;
     display: inline-block;
+    text-align: center;
 }
 
-.titulo-produto {
+.titulo-produto, .parcelamento {
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
-    text-align: center;
 }
 
 .preco-produto {
     font-size: 16px;
     font-weight: 800;
-    text-align: center;
     margin-top: 10px;
 }
 
 .parcelamento {
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
     margin-bottom: 10px;
 }
 
 .produto button {
-    width: 100%;
+    width: 195px;
     height: 42px;
     background-color: #000;
     color: #fff;
     font-weight: 700;
     font-size: 14px;
     text-transform: uppercase;
-    text-align: center;
     border: none;
     cursor: pointer;
 }
@@ -120,4 +125,41 @@ body {
     text-align: center;
     padding: 10px 0;
     margin-top: 30px;
+}
+
+/* MOBILE */
+
+@media only screen and (max-width: 768px) {
+
+    .sidefiltros {
+        display: none;
+    }
+
+    .conteudo {
+        width: 100%;
+        column-count: 2;
+        column-gap: 10px;
+    }
+
+    .produto button {
+        width: 100%;
+    }
+
+    .ordernar {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    .ordernar button {
+        background-color: #fff;
+        border: 1px solid #666;
+        color: #666;
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2px;
+        height: 42px;
+        width: 50%;
+    }
+
+
 }
