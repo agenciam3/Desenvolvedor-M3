@@ -1,6 +1,6 @@
 body {
     font-family: 'Open Sans', sans-serif;
-    margin: auto;
+    margin: 0 auto;
 }
 
 img{
@@ -8,38 +8,52 @@ img{
 	height:auto;
 }
 
-.section {
-    margin: auto;
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 100px;
 }
-
-/* .centralizador {
-    width: 870px;
-    margin: 0 auto;
-} */
 
 /* HEADER */
 
 .topo {
     width: 100%;
-    margin: 0 auto;
     border-bottom: 2px solid #c7c7c7;
-    padding: 10px 0;
+}
+
+.topoint {
+    width: 100%;
+    margin: 10px 0;
 }
 
 .logo {
     display: inline-block;
+    float: left;
 }
 
 .sacola {
     display: inline-block;
-    margin-top: 10px;
     float: right;
+    margin-top: 10px;
 }
 
 /* CONTEÚDO */
 
+.filtrarordenar {
+    display: none;
+}
+
+.ordenar select {
+    height: 30px;
+    width: 125px;
+    float: right !important;
+    font-size: 12px;
+    font-weight: 400;
+}
+
 .sidefiltros {
-    width: 200px;
+    width: 30%;
     display: inline-block;
     float: left;
 }
@@ -56,7 +70,7 @@ img{
 }
 
 .conteudo {
-    width: 60%;
+    width: 70%;
     column-count: 3;
     column-gap: 10px;
 }
@@ -131,6 +145,10 @@ img{
 
 @media only screen and (max-width: 768px) {
 
+    .container {
+        margin: 0 10px;
+    }
+
     .sidefiltros {
         display: none;
     }
@@ -145,12 +163,17 @@ img{
         width: 100%;
     }
 
-    .ordernar {
-        text-align: center;
-        margin: 30px 0;
+    .ordenar {
+        display: none;
     }
 
-    .ordernar button {
+    .filtrarordenar {
+        text-align: center;
+        margin: 20px 0;
+        display: contents;
+    }
+
+    .filtrarordenar button {
         background-color: #fff;
         border: 1px solid #666;
         color: #666;
