@@ -1,4 +1,4 @@
-@import './theme.scss';
+@import "./theme.scss";
 
 .checkbox-container {
     input[type="checkbox"] {
@@ -22,7 +22,20 @@
         height: 10px;
         display: inline-block;
     }
-    label{
+    label {
         cursor: pointer;
+    }
+}
+
+select {
+    height: 30px;
+    border: 1px solid $border-color;
+    padding-right: 20px;
+    line-height: 3;
+    cursor: pointer;
+    option {
+        height: 30px;
+        cursor: pointer;
+        padding-bottom: 50px;
     }
 }

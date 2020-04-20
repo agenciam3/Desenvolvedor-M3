@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "descricao": "camiseta mescla",
+        "foto": "http://localhost:3000/assets/images/img_2.png",
+        "cores": [
+            {
+                "id": 5,
+                "descricao": "cinza"
+            },
+            {
+                "id": 2,
+                "descricao": "branco"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 1,
+                "descricao": "P"
+            },
+            {
+                "id": 2,
+                "descricao": "M"
+            },
+            {
+                "id": 3,
+                "descricao": "G"
+            }
+        ],
+        "preco": 28.00
+    },
+    {
+        "id": 2,
+        "descricao": "saia em couro",
+        "foto": "http://localhost:3000/assets/images/img_3.png",
+        "cores": [
+            {
+                "id": 1,
+                "descricao": "preto"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 1,
+                "descricao": "P"
+            },
+            {
+                "id": 2,
+                "descricao": "M"
+            },
+            {
+                "id": 3,
+                "descricao": "G"
+            }
+        ],
+        "preco": 398.00
+    },
+    {
+        "id": 3,
+        "descricao": "cardigan tigre",
+        "foto": "http://localhost:3000/assets/images/img_4.png",
+        "cores": [
+            {
+                "id": 6,
+                "descricao": "laranja"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 2,
+                "descricao": "M"
+            },
+            {
+                "id": 3,
+                "descricao": "G"
+            }
+        ],
+        "preco": 398.00
+    },
+    {
+        "id": 4,
+        "descricao": "cardigan off white",
+        "foto": "http://localhost:3000/assets/images/img_5.png",
+        "cores": [
+            {
+                "id": 2,
+                "descricao": "branco"
+            },
+            {
+                "id": 5,
+                "descricao": "cinza"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 4,
+                "descricao": "GG"
+            }
+        ],
+        "preco": 99.90
+    },
+    {
+        "id": 5,
+        "descricao": "body leopardo",
+        "foto": "http://localhost:3000/assets/images/img_6.png",
+        "cores": [
+            {
+                "id": 6,
+                "descricao": "laranja"
+            },
+            {
+                "id": 7,
+                "descricao": "marrom"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 4,
+                "descricao": "GG"
+            }
+        ],
+        "preco": 129.90
+    },
+    {
+        "id": 6,
+        "descricao": "casaco pelos",
+        "foto": "http://localhost:3000/assets/images/img_7.png",
+        "cores": [
+            {
+                "id": 8,
+                "descricao": "rosa"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 2,
+                "descricao": "M"
+            }
+        ],
+        "preco": 398.00
+    },
+    {
+        "id": 7,
+        "descricao": "cropped stripes",
+        "foto": "http://localhost:3000/assets/images/img_8.png",
+        "cores": [
+            {
+                "id": 9,
+                "descricao": "colorido"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 1,
+                "descricao": "P"
+            },
+            {
+                "id": 4,
+                "descricao": "GG"
+            }
+        ],
+        "preco": 120.00
+    },
+    {
+        "id": 8,
+        "descricao": "camisa transparente",
+        "foto": "http://localhost:3000/assets/images/img_9.png",
+        "cores": [
+            {
+                "id": 1,
+                "descricao": "preto"
+            },
+            {
+                "id": 10,
+                "descricao": "transparente"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 1,
+                "descricao": "P"
+            },
+            {
+                "id": 4,
+                "descricao": "GG"
+            }
+        ],
+        "preco": 398.00
+    },
+    {
+        "id": 9,
+        "descricao": "pochete clutch",
+        "foto": "http://localhost:3000/assets/images/img_10.png",
+        "cores": [
+            {
+                "id": 1,
+                "descricao": "preto"
+            }
+        ],
+        "tamanhos": [
+            {
+                "id": 2,
+                "descricao": "M"
+            },
+            {
+                "id": 4,
+                "descricao": "GG"
+            }
+        ],
+        "preco": 99.00
+    }
+]

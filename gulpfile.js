@@ -4,6 +4,7 @@ const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 const sync = require("browser-sync").create();
 const del = require('del');
+const css_prefixer = require('gulp-autoprefixer');
 
 
 function clean(cb) {
@@ -15,6 +16,9 @@ function clean(cb) {
 function generateCSS(cb) {
   src('./src/**/*.scss')
     .pipe(sass().on('error', sass.logError))
+    .pipe(css_prefixer({
+      cascade: false
+    }))
     .pipe(dest('./dist/app'))
     .pipe(sync.stream());
   cb();

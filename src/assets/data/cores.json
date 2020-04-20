@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "descricao": "preto"
+    },
+    {
+        "id": 2,
+        "descricao": "branco"
+    },
+    {
+        "id": 3,
+        "descricao": "amarelo"
+    },
+    {
+        "id": 4,
+        "descricao": "azul"
+    },
+    {
+        "id": 5,
+        "descricao": "cinza"
+    },
+    {
+        "id": 6,
+        "descricao": "laranja"
+    },
+    {
+        "id": 7,
+        "descricao": "marrom"
+    },
+    {
+        "id": 8,
+        "descricao": "rosa"
+    },
+    {
+        "id": 9,
+        "descricao": "colorido"
+    },
+    {
+        "id": 10,
+        "descricao": "transparente"
+    }
+]

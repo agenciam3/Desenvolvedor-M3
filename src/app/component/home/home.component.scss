@@ -1,7 +1,7 @@
 @import "../../shared/style/theme.scss";
 
 $side-menu-width: 12%;
-$main-content-width: 90%;
+$main-content-width: 88%;
 
 .home-wrapper {
     display: flex;
@@ -12,35 +12,69 @@ $main-content-width: 90%;
     width: $side-menu-width;
 }
 
-.main-content {
-    width: $main-content-width;
+.main {
     display: flex;
-    flex-flow: row wrap;
-    .item {
+    flex-direction: column;
+    width: $main-content-width;
+    div {
+        margin-bottom: 10px;
+    }
+    .main-header {
         display: flex;
-        flex-direction: column;
-        margin: 25px;
-        .descricao {
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .main-content {
+        display: flex;
+        flex-flow: row wrap;
+        .item {
             display: flex;
             flex-direction: column;
-            text-align: center;
-            margin: 10px;
-            .preco {
-                font-weight: bold;
+            margin: 25px;
+            .descricao {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                margin: 10px;
+                .preco {
+                    font-weight: bold;
+                }
+            }
+            .item-footer {
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: $secondary-font-color;
+                background-color: $secondary-color;
+                height: 40px;
+                span {
+                    vertical-align: middle;
+                    margin-bottom: 2px;
+                }
             }
         }
-        .item-footer {
+    }
+    .main-footer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        button {
+            all: unset;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            background-color: black;
-            height: 40px;
-            span {
-                vertical-align: middle;
-                margin-bottom: 2px;
-            }
+            background-color: $main-color;
+            color: $secondary-font-color;
+            padding: 7px;
+            padding-left: 14px;
+            padding-right: 14px;
+            //Desabilita marcacao de texto
+            -webkit-touch-callout: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     }
 }
@@ -66,9 +100,19 @@ $main-content-width: 90%;
         width: 35px;
         height: 35px;
         margin: 5px;
+        //Desabilita marcacao de texto
+        -webkit-touch-callout: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
     .selected {
-        border: 2px solid $main-color;
-        color: black;
+        border: 1px solid $main-color;
+        color: $main-font-color;
     }
+}
+
+.hidden {
+    display: none !important;
 }
