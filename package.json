@@ -23,5 +23,8 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0"
   }
 }

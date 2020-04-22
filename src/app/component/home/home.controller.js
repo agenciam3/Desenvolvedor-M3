@@ -1,14 +1,19 @@
 export class HomeController {
     filtros = {};
-    page = 1;
-    page_size = 2;
-    end = false;
-
     orderBy = '';
+    page = 1;
+    page_size = 6;
+    page_end = false;
 
-    constructor(homeView, homeService) {
+    /**
+     * @param {import('./home.view').HomeView} homeView 
+     * @param {import('./home.service').homeService} homeService 
+     * @param {import('../../shared/services/cart.service').CartService} carrinhoService
+     */
+    constructor(homeView, homeService, carrinhoService) {
         this.view = homeView;
         this.service = homeService;
+        this.carrinhoService = carrinhoService;
     }
 
     async Init() {
@@ -21,40 +26,59 @@ export class HomeController {
         this.view.onSelectedFilterPreco(this.filterPreco);
         this.view.onOrderChanged(this.orderItens);
         this.view.onLoadMore(this.carregarMais);
+        this.view.onMostrarTodasCores(this.mostrarCores);
     }
 
     async loadProdutos() {
+        if (this.page_end) { return; }
         const data = await this.service.getProdutos(this.page, this.page_size, this.filtros, this.orderBy);
-        this.end = data.length < this.page_size;
-        console.log(this.end);
-        this.view.loadProdutos(data, !this.end);
+        this.page_end = data.length < this.page_size;
+        this.view.loadProdutos(data, !this.page_end);
+        this.view.onComprarClick(this.adicionarAoCarrinho);
+    }
+
+    resetProduto() {
+        this.view.cleanProdutos();
+        this.page = 1;
+        this.page_end = false;
     }
 
     //----- EVENTS -----
     filterCor = async (ev) => {
         this.filtros['cor'] = this.view.getFiltrosCor();
+        this.resetProduto();
         this.loadProdutos();
     }
 
     filterTamanho = async (ev) => {
         this.filtros['tamanho'] = this.view.getFiltrosTamanho();
+        this.resetProduto();
         this.loadProdutos();
     }
 
     filterPreco = async (ev) => {
         this.filtros['preco'] = this.view.getFiltrosPreco();
+        this.resetProduto();
         this.loadProdutos();
     }
 
     orderItens = async (ev) => {
         this.orderBy = this.view.getOrder();
-        console.log(this.orderBy);
+        this.resetProduto();
         this.loadProdutos();
     }
 
-    carregarMais = async(ev) => {
+    carregarMais = async (ev) => {
         this.page++;
         this.loadProdutos();
     }
 
+    adicionarAoCarrinho = async (id) => {
+        const item = await this.service.getProdutoById(id);
+        this.carrinhoService.addItem(item);
+    }
+
+    mostrarCores = (ev) => {
+        this.view.mostrarTodasCores();
+    }
 }

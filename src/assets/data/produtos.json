@@ -27,7 +27,13 @@
                 "descricao": "G"
             }
         ],
-        "preco": 28.00
+        "preco": 28.00,
+        "parcelas": [
+            {
+                "qtd": 3,
+                "val": 9.33
+            }
+        ]
     },
     {
         "id": 2,
@@ -53,7 +59,13 @@
                 "descricao": "G"
             }
         ],
-        "preco": 398.00
+        "preco": 398.00,
+        "parcelas": [
+            {
+                "qtd": 5,
+                "val": 30
+            }
+        ]
     },
     {
         "id": 3,
@@ -75,7 +87,13 @@
                 "descricao": "G"
             }
         ],
-        "preco": 398.00
+        "preco": 398.00,
+        "parcelas": [
+            {
+                "qtd": 5,
+                "val": 30
+            }
+        ]
     },
     {
         "id": 4,
@@ -97,7 +115,13 @@
                 "descricao": "GG"
             }
         ],
-        "preco": 99.90
+        "preco": 99.90,
+        "parcelas": [
+            {
+                "qtd": 3,
+                "val": 33.30
+            }
+        ]
     },
     {
         "id": 5,
@@ -119,7 +143,13 @@
                 "descricao": "GG"
             }
         ],
-        "preco": 129.90
+        "preco": 129.90,
+        "parcelas": [
+            {
+                "qtd": 3,
+                "val": 43.43
+            }
+        ]
     },
     {
         "id": 6,
@@ -137,7 +167,13 @@
                 "descricao": "M"
             }
         ],
-        "preco": 398.00
+        "preco": 398.00,
+        "parcelas": [
+            {
+                "qtd": 5,
+                "val": 30
+            }
+        ]
     },
     {
         "id": 7,
@@ -159,7 +195,13 @@
                 "descricao": "GG"
             }
         ],
-        "preco": 120.00
+        "preco": 120.00,
+        "parcelas": [
+            {
+                "qtd": 3,
+                "val": 40
+            }
+        ]
     },
     {
         "id": 8,
@@ -185,7 +227,13 @@
                 "descricao": "GG"
             }
         ],
-        "preco": 398.00
+        "preco": 398.00,
+        "parcelas": [
+            {
+                "qtd": 5,
+                "val": 30
+            }
+        ]
     },
     {
         "id": 9,
@@ -207,6 +255,12 @@
                 "descricao": "GG"
             }
         ],
-        "preco": 99.00
+        "preco": 99.00,
+        "parcelas": [
+            {
+                "qtd": 3,
+                "val": 33
+            }
+        ]
     }
 ]

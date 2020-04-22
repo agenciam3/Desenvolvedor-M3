@@ -45,6 +45,12 @@ function generateAssets(cb) {
   cb();
 }
 
+function importFontAwesome(cb) {
+  src('./node_modules/@fortawesome/fontawesome-free/**/*')
+    .pipe(dest('./dist/app/dependencies/fontAwesome'));
+  cb();
+}
+
 
 function browserSync(cb) {
   sync.init({
@@ -60,12 +66,9 @@ function browserSync(cb) {
 }
 
 
-const build = series(clean, parallel(generateJS, generateCSS, generateHTML, generateAssets));
+const loadDependences = parallel(importFontAwesome);
+const build = series(clean, parallel(generateJS, generateCSS, generateHTML, generateAssets, loadDependences));
 
 exports.build = build;
 exports.serve = series(build, browserSync);
-// exports.js = generateJS;
-// exports.clean = clean;
-// exports.scss = generateCSS;
-// exports.assets = generateAssets;
-// exports.html = generateHTML;
+exports.fa = importFontAwesome;

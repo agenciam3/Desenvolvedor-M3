@@ -31,6 +31,12 @@ export class HomeService {
         return await req.json();
     }
 
+    async getProdutoById(id) {
+        const req = await fetch(APP.data + 'produtos.json');
+        let resp = await req.json();
+        return resp.find(x => x.id == id);
+    }
+
     // ----- helper -----
     filter(array, filtros) {
         let resp = array;

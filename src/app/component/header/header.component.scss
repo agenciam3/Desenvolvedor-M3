@@ -1,0 +1,32 @@
+@import "../../shared/style/theme.scss";
+
+.header-component {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 2px solid $border-color;
+    padding-left: 10%;
+    padding-right: 10%;
+
+    .header-toolbar {
+        font-size: 5px;
+        //badge
+        .fa-stack[data-count]:after {
+            position: absolute;
+            right: 0%;
+            bottom: 0%;
+            content: attr(data-count);
+            font-size: 70%;
+            border-radius: 50%;
+            color: $secondary-font-color;
+            background: rgba($main-color, 0.85);
+            text-align: center;
+            width: 27px;
+            height: 27px;
+        }
+    }
+
+    #cart{
+        cursor: pointer;
+    }
+}

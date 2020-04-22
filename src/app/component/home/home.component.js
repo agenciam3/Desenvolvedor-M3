@@ -1,11 +1,11 @@
 import { HomeView } from "./home.view.js";
 import { HomeService } from "./home.service.js";
 import { HomeController } from "./home.controller.js"
-
-console.log('Home works!');
+import { CartService } from "../../shared/services/cart.service.js";
 
 const homeView = new HomeView();
 const homeService = new HomeService();
-const homeController = new HomeController(homeView, homeService);
+const carrinhoService = CartService.getInstance();
+const homeController = new HomeController(homeView, homeService, carrinhoService);
 
 homeController.Init();

@@ -1,0 +1,8 @@
+@import "../../shared/style/theme.scss";
+
+.footer-component {
+    display: flex;
+    justify-content: center;
+    background-color: $footer-bg;
+    color: $footer-text-color;
+}

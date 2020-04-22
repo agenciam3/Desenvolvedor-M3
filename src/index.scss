@@ -14,12 +14,8 @@ body {
     height: 100%;
 }
 
-header {
-    display: flex;
-    flex-direction: row;
+header-component {
     flex: 0 1 auto;
-    justify-content: space-between;
-    border-bottom: 2px solid $border-color;
 }
 
 main {
@@ -28,10 +24,6 @@ main {
     flex: 1 1 auto;
 }
 
-footer {
-    display: flex;
-    justify-content: center;
+footer-component{
     flex: 0 1 auto;
-    background-color: $footer-bg;
-    color: $footer-text-color;
 }

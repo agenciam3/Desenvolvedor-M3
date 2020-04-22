@@ -34,7 +34,9 @@ export class Router {
             try {
                 await import(route.js);
             } catch (e) {
+                console.error(e);
                 this.changeContent.call(this, e.message);
+                
             }
         }
     }

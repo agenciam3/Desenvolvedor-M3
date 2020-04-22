@@ -11,7 +11,6 @@ export class AppView {
         while (element.firstChild) {
             element.removeChild(element.firstChild);
         }
-
         element.appendChild(document.createRange().createContextualFragment(content));
     }
 }

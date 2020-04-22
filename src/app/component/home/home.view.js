@@ -6,42 +6,45 @@ export class HomeView {
 
     loadProdutos(produtos = [], hasMore) {
         const target = document.getElementById('produtos');
-        let itens = "";
         for (const p of produtos) {
-            itens += `
-                <div class="item">
-                    <img src="${p.foto}">
-                    <div class="descricao">
-                        <div>${p.descricao}</div>
-                        <div class="preco">R$${p.preco.toFixed(2).replace('.', ',')}</div>
-                        <div>até ?x de R$??</div>
-                    </div>
-                    <div class="item-footer"><span>comprar</span></div>
-                </div>
-            `
+            target.appendChild(this.generateProdutoElement(p));
         }
 
-        if(!hasMore){
-            document.getElementById('btnCarregarMais').classList.add('hidden');
-        }
-        else{
-            document.getElementById('btnCarregarMais').classList.remove('hidden');
-        }
-        
-        target.innerHTML += itens;
+        const carregarMais = document.getElementById('btnCarregarMais');
+        if (!hasMore)
+            carregarMais.classList.add('hidden');
+        else
+            carregarMais.classList.remove('hidden');
     }
 
 
     loadFiltroCores(cores) {
         const target = document.getElementById('filtro-cores');
-        let itens = "";
-        for (const c of cores) {
-            itens += `
-                <input type="checkbox" id="clr-${c.id}" name="${c.descricao}" value="${c.id}">
-                <label for="clr-${c.id}">${c.descricao}</label><br>
-            `;
+        const max_itens = 5;
+        for (var i = 0; i < cores.length; i++) {
+            const c = cores[i];
+
+            const input = document.createElement('input');
+            input.setAttribute('type', 'checkbox');
+            input.setAttribute('id', `clr-${c.id}`)
+            input.setAttribute('name', `clr-${c.id}`)
+            input.setAttribute('value', c.id);
+
+            const label = document.createElement('label');
+            label.setAttribute('for', `clr-${c.id}`);
+            label.innerText = c.descricao;
+
+            const br = document.createElement('br');
+            if(i+1 > max_itens){
+                input.classList.add('hidden');
+                label.classList.add('hidden');
+                br.classList.add('hidden');
+            }
+
+            target.appendChild(input);
+            target.appendChild(label);
+            target.appendChild(br);
         }
-        target.innerHTML = itens;
     }
 
     loadFiltroTamanhos(tamanhos) {
@@ -107,7 +110,6 @@ export class HomeView {
         const filtros = [];
         for (const el of elememts) {
             if (el.classList.contains('selected')) {
-                console.log(el);
                 filtros.push(Number(el.value));
             }
         }
@@ -129,6 +131,32 @@ export class HomeView {
         return document.getElementById('order').selectedOptions[0].value;
     }
 
+    cleanProdutos() {
+        document.getElementById('produtos').innerHTML = '';
+    }
+
+    generateProdutoElement(produto) {
+        const p = `
+            <div class="item" id="item-${produto.id}">
+                <img src="${produto.foto}">
+                <div class="descricao">
+                    <div>${produto.descricao}</div>
+                    <div class="preco">R$${produto.preco.toFixed(2).replace('.', ',')}</div>
+                    <div>até ${produto.parcelas.slice(-1)[0].qtd}x de R$${produto.parcelas.slice(-1)[0].val.toFixed(2).replace('.', ',')}</div>
+                </div>
+                <div class="item-footer"><span>comprar</span></div>
+            </div>
+        `;
+        return document.createRange().createContextualFragment(p);
+    }
+
+    mostrarTodasCores(){
+        const elements = document.querySelector('#filtro-cores').children;
+        for (const el of elements) {
+            el.classList.remove('hidden')
+        }
+        document.getElementById('mostrar-cores').classList.add('hidden');
+    }
     // ----- EVENTS -----
 
     onSelectedFilterCor(cb) {
@@ -162,4 +190,21 @@ export class HomeView {
         element.addEventListener('click', cb);
     }
 
+    onComprarClick(cb) {
+        const elements = document.querySelectorAll('#produtos .item-footer');
+        for (const item of elements) {
+            item.addEventListener('click', ev => {
+                const id = item.parentElement.id.split('-')[1];
+                cb(id);
+            });
+        }
+    }
+
+    onMostrarTodasCores(cb){
+        document.getElementById('mostrar-cores').addEventListener('click', cb);
+    }
+
+    onCarrinhoClick(cb){
+        document.getElementById().addEventListener('click', cb);
+    }
 }
