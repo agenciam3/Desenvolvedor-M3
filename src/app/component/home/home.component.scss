@@ -28,6 +28,7 @@ $side-menu-width: 12%;
         margin-bottom: 10px;
     }
     .main-header {
+        margin-top: 15px;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -70,6 +71,8 @@ $side-menu-width: 12%;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        margin-top: 45px;
+        margin-bottom: 45px;
     }
 }
 

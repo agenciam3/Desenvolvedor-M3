@@ -3,6 +3,8 @@
 .footer-component {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 40px;
     background-color: $footer-bg;
     color: $footer-text-color;
 }

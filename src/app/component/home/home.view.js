@@ -256,10 +256,10 @@ export class HomeView {
     onComprarClick(cb) {
         const elements = document.querySelectorAll('#produtos .item-footer');
         for (const item of elements) {
-            item.addEventListener('click', ev => {
+            item.onclick = (ev) => {
                 const id = item.parentElement.id.split('-')[1];
                 cb(id);
-            });
+            }
         }
     }
 
