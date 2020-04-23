@@ -1,7 +1,7 @@
 export class HomeView {
 
     constructor() {
-        this.loadFiltroParcela();
+        this.loadFiltroPreco();
     }
 
     loadProdutos(produtos = [], hasMore) {
@@ -20,81 +20,41 @@ export class HomeView {
 
     loadFiltroCores(cores) {
         const target = document.getElementById('filtro-cores');
-        const max_itens = 5;
-        for (var i = 0; i < cores.length; i++) {
-            const c = cores[i];
+        const targetMobile = document.getElementById('filtro-cores-mobile');
 
-            const input = document.createElement('input');
-            input.setAttribute('type', 'checkbox');
-            input.setAttribute('id', `clr-${c.id}`)
-            input.setAttribute('name', `clr-${c.id}`)
-            input.setAttribute('value', c.id);
-
-            const label = document.createElement('label');
-            label.setAttribute('for', `clr-${c.id}`);
-            label.innerText = c.descricao;
-
-            const br = document.createElement('br');
-            if(i+1 > max_itens){
-                input.classList.add('hidden');
-                label.classList.add('hidden');
-                br.classList.add('hidden');
-            }
-
-            target.appendChild(input);
-            target.appendChild(label);
-            target.appendChild(br);
-        }
+        this.generateFiltroCores(cores, target, false);
+        this.generateFiltroCores(cores, targetMobile, true);
     }
+
 
     loadFiltroTamanhos(tamanhos) {
-        const target = document.getElementById('filtro-tamanhos');
-        target.innerHTML = '';
+        const targets = [
+            document.getElementById('filtro-tamanhos'),
+            document.getElementById('filtro-tamanhos-mobile')
+        ];
+
+        const createElement = (tamanho) => {
+            const div = document.createElement('div');
+            div.innerText = tamanho.descricao;
+            div.value = tamanho.id;
+            div.addEventListener('click', ev => {
+                ev.target.classList.toggle('selected');
+            });
+            return div;
+        }
 
         for (const t of tamanhos) {
-            const div = document.createElement('div');
-            div.innerText = t.descricao;
-            div.value = t.id;
-
-            div.addEventListener('click', ev => {
-                if (div.classList.contains('selected')) {
-                    div.classList.remove('selected');
-                }
-                else {
-                    div.classList.add('selected');
-                }
-            })
-
-            target.appendChild(div);
+            targets.forEach(x => x.appendChild(createElement(t)));
         }
     }
 
-    loadFiltroParcela() {
-        const target = document.getElementById('filtro-precos');
-        target.innerHTML = `
-            <input type="checkbox" id="pr-1" value="0-50">
-            <label for="pr-1">de R$0 até R$50</label><br>
-            <input type="checkbox" id="pr-2" value="51-150">
-            <label for="pr-2">de R$51 até R$150</label><br>
-            <input type="checkbox" id="pr-3" value="151-300">
-            <label for="pr-3">de R$151 até R$300</label><br>
-            <input type="checkbox" id="pr-4" value="301-500">
-            <label for="pr-4">de R$301 até R$500</label><br>
-            <input type="checkbox" id="pr-5" value="501-9999999">
-            <label for="pr-5">a partir de R$501</label><br>
-        `;
-        const elements = document.querySelectorAll('#filtro-precos input');
-        for (const item of elements) {
-            item.addEventListener('click', (ev) => {
-                const desired_check = ev.target.checked;
-                elements.forEach(x => x.checked = false);//desmarca todos
-                ev.target.checked = desired_check;
-            });
-        }
+    loadFiltroPreco() {
+        this.generateFiltroPreco(document.getElementById('filtro-precos'), false);
+        this.generateFiltroPreco(document.getElementById('filtro-precos-mobile'), true);
     }
 
-    getFiltrosCor() {
-        var elememts = document.querySelectorAll('#filtro-cores input');
+    getFiltrosCor(isMobile = false) {
+        var elememts = !isMobile ? document.querySelectorAll('#filtro-cores input') : document.querySelectorAll('#filtro-cores-mobile input');
         const filtros = [];
         for (const el of elememts) {
             if (el.checked) {
@@ -105,8 +65,8 @@ export class HomeView {
     }
 
 
-    getFiltrosTamanho() {
-        var elememts = document.querySelectorAll('#filtro-tamanhos div');
+    getFiltrosTamanho(isMobile = false) {
+        var elememts = !isMobile ? document.querySelectorAll('#filtro-tamanhos div') : document.querySelectorAll('#filtro-tamanhos-mobile div');
         const filtros = [];
         for (const el of elememts) {
             if (el.classList.contains('selected')) {
@@ -116,8 +76,8 @@ export class HomeView {
         return filtros;
     }
 
-    getFiltrosPreco() {
-        var elememts = document.querySelectorAll('#filtro-precos input');
+    getFiltrosPreco(isMobile = false) {
+        var elememts = !isMobile ? document.querySelectorAll('#filtro-precos input') : document.querySelectorAll('#filtro-precos-mobile input');
         let resp = null;
         for (const el of elememts) {
             if (el.checked) {
@@ -127,12 +87,82 @@ export class HomeView {
         return resp;
     }
 
-    getOrder() {
-        return document.getElementById('order').selectedOptions[0].value;
+    getOrder(isMobile = false) {
+        // debugger;
+        if (!isMobile) {
+            return document.getElementById('order').selectedOptions[0].value;
+        }
+        else {
+            const elements = document.querySelectorAll('#dropdown-ordem section');
+            for (const el of elements) {
+                if (el.getAttribute('selected') == 'true') {
+                    return el.getAttribute('value');
+                }
+            }
+        }
     }
 
     cleanProdutos() {
         document.getElementById('produtos').innerHTML = '';
+    }
+
+    //----- DropDown -----
+
+    hideDropdownAll() {
+        this.hideDropdownFiltrar();
+        this.hideDropdownOrdenar();
+    }
+
+    toggleDropdownFiltrar() {
+        document.getElementById('dropdown-filtros').classList.toggle('hidden');
+    }
+    hideDropdownFiltrar() {
+        document.getElementById('dropdown-filtros').classList.add('hidden');
+    }
+
+    toggleDropdownOrdenar() {
+        document.getElementById('dropdown-ordem').classList.toggle('hidden');
+    }
+    hideDropdownOrdenar() {
+        document.getElementById('dropdown-ordem').classList.add('hidden');
+    }
+
+    initDropdown() {
+        const elements = document.querySelectorAll('.dropdown-item-tile');
+        for (const element of elements) {
+            element.addEventListener('click', (ev) => {
+                element.parentElement.children[1]?.classList.toggle('hidden');
+            });
+        }
+    }
+    // ----- Generate -----
+    generateFiltroCores(cores, target, isMobile) {
+        const max_itens = 5;
+        const prefix = isMobile ? 'm-clr' : 'clr';
+        for (var i = 0; i < cores.length; i++) {
+            const c = cores[i];
+
+            const input = document.createElement('input');
+            input.setAttribute('type', 'checkbox');
+            input.setAttribute('id', `${prefix}-${c.id}`)
+            input.setAttribute('name', `${prefix}-${c.id}`)
+            input.setAttribute('value', c.id);
+
+            const label = document.createElement('label');
+            label.setAttribute('for', `${prefix}-${c.id}`);
+            label.innerText = c.descricao;
+
+            const br = document.createElement('br');
+
+            if (!isMobile && (i + 1 > max_itens)) {
+                input.classList.add('hidden');
+                label.classList.add('hidden');
+                br.classList.add('hidden');
+            }
+            target.appendChild(input);
+            target.appendChild(label);
+            target.appendChild(br);
+        }
     }
 
     generateProdutoElement(produto) {
@@ -150,13 +180,46 @@ export class HomeView {
         return document.createRange().createContextualFragment(p);
     }
 
-    mostrarTodasCores(){
+    generateFiltroPreco(target, isMobile) {
+        const prefix = isMobile ? 'm-pr' : 'pr';
+        target.innerHTML = `
+            <input type="checkbox" id="${prefix}-1" value="0-50">
+            <label for="${prefix}-1">de R$0 até R$50</label><br>
+            <input type="checkbox" id="${prefix}-2" value="51-150">
+            <label for="${prefix}-2">de R$51 até R$150</label><br>
+            <input type="checkbox" id="${prefix}-3" value="151-300">
+            <label for="${prefix}-3">de R$151 até R$300</label><br>
+            <input type="checkbox" id="${prefix}-4" value="301-500">
+            <label for="${prefix}-4">de R$301 até R$500</label><br>
+            <input type="checkbox" id="${prefix}-5" value="501-9999999">
+            <label for="${prefix}-5">a partir de R$501</label><br>
+        `;
+
+        //permitir apenas 1 checkbox selecionado
+        const elements = document.querySelectorAll('#filtro-precos input');
+        for (const item of elements) {
+            item.addEventListener('click', (ev) => {
+                const desired_check = ev.target.checked;
+                elements.forEach(x => x.checked = false);//desmarca todos
+                ev.target.checked = desired_check;
+            });
+        }
+    }
+
+    mostrarTodasCores() {
         const elements = document.querySelector('#filtro-cores').children;
         for (const el of elements) {
             el.classList.remove('hidden')
         }
         document.getElementById('mostrar-cores').classList.add('hidden');
     }
+
+    limparFiltrosDropDown() {
+        document.querySelectorAll('#filtro-cores-mobile input').forEach(item => item.checked = false);
+        document.querySelectorAll('#filtro-tamanhos-mobile div').forEach(item => item.classList.remove('selected'));
+        document.querySelectorAll('#filtro-precos-mobile input').forEach(item => item.checked = false);
+    }
+
     // ----- EVENTS -----
 
     onSelectedFilterCor(cb) {
@@ -200,11 +263,37 @@ export class HomeView {
         }
     }
 
-    onMostrarTodasCores(cb){
+    onMostrarTodasCores(cb) {
         document.getElementById('mostrar-cores').addEventListener('click', cb);
     }
 
-    onCarrinhoClick(cb){
-        document.getElementById().addEventListener('click', cb);
+    onDropdownFiltrarClick(cb) {
+        document.getElementById('dropdown-filtrar').addEventListener('click', cb);
     }
+
+    onDropdownOrdenarClick(cb) {
+        document.getElementById('dropdown-ordenar').addEventListener('click', cb);
+    }
+
+    onDropdownAplicarClick(cb) {
+        this.hideDropdownAll();
+        document.getElementById('dropdown-aplicar').addEventListener('click', cb);
+    }
+
+    onDropdownLimparClick(cb) {
+        document.getElementById('dropdown-limpar').addEventListener('click', cb);
+    }
+
+    onDropDownOrderClick(cb) {
+        const elementsMobile = document.querySelectorAll('#dropdown-ordem section');
+        for (const item of elementsMobile) {
+            item.addEventListener('click', (ev) => {
+                elementsMobile.forEach(x => x.setAttribute('selected', 'false'))
+                item.setAttribute('selected', 'true');
+                cb();
+            })
+        }
+    }
+
+
 }

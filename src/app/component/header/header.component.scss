@@ -29,4 +29,13 @@
     #cart{
         cursor: pointer;
     }
+
+    
+}
+
+@media (max-width: 768px) {
+    .header-component{
+        width: 100%;
+        padding: 0;
+    }
 }

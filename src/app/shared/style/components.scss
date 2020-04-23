@@ -39,3 +39,20 @@ select {
         padding-bottom: 50px;
     }
 }
+
+button {
+    all: unset;
+    cursor: pointer;
+    background-color: $main-color;
+    color: $secondary-font-color;
+    text-align: center;
+    padding: 7px;
+    padding-left: 14px;
+    padding-right: 14px;
+    //Desabilita marcacao de texto
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

@@ -20,6 +20,7 @@ export class HomeController {
         this.loadProdutos();
         this.view.loadFiltroCores(await this.service.getCores());
         this.view.loadFiltroTamanhos(await this.service.getTamanhos());
+        this.view.initDropdown();
 
         this.view.onSelectedFilterCor(this.filterCor);
         this.view.onSelectedFilterTamanho(this.filterTamanho);
@@ -27,6 +28,12 @@ export class HomeController {
         this.view.onOrderChanged(this.orderItens);
         this.view.onLoadMore(this.carregarMais);
         this.view.onMostrarTodasCores(this.mostrarCores);
+
+        this.view.onDropdownFiltrarClick(this.showDropdownFiltrar);
+        this.view.onDropdownOrdenarClick(this.showDropdownOrdenar);
+        this.view.onDropdownLimparClick(this.dropdownFiltroLimpar);
+        this.view.onDropdownAplicarClick(this.dropdownFiltroAplicar);
+        this.view.onDropDownOrderClick(this.dropdownOrdenar);
     }
 
     async loadProdutos() {
@@ -81,4 +88,34 @@ export class HomeController {
     mostrarCores = (ev) => {
         this.view.mostrarTodasCores();
     }
+
+    showDropdownFiltrar = (ev) => {
+        this.view.hideDropdownOrdenar();
+        this.view.toggleDropdownFiltrar();
+    }
+
+    showDropdownOrdenar = (ev) => {
+        this.view.hideDropdownFiltrar();
+        this.view.toggleDropdownOrdenar();
+    }
+
+    dropdownFiltroLimpar = (ev) => {
+        this.view.limparFiltrosDropDown();
+    }
+
+    dropdownFiltroAplicar = (ev) => {
+        this.filtros['cor'] = this.view.getFiltrosCor(true);
+        this.filtros['tamanho'] = this.view.getFiltrosTamanho(true);
+        this.filtros['preco'] = this.view.getFiltrosPreco(true);
+        this.view.hideDropdownAll();
+        this.resetProduto();
+        this.loadProdutos();
+    }
+
+    dropdownOrdenar = (ev) => {
+        this.orderBy = this.view.getOrder(true);
+        this.resetProduto();
+        this.loadProdutos();
+    }
+
 }
