@@ -174,7 +174,7 @@ export class HomeView {
                     <div class="preco">R$${produto.preco.toFixed(2).replace('.', ',')}</div>
                     <div>até ${produto.parcelas.slice(-1)[0].qtd}x de R$${produto.parcelas.slice(-1)[0].val.toFixed(2).replace('.', ',')}</div>
                 </div>
-                <div class="item-footer"><span>comprar</span></div>
+                <div class="item-footer"><button>comprar</button></div>
             </div>
         `;
         return document.createRange().createContextualFragment(p);

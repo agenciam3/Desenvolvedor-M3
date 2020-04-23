@@ -1,16 +1,17 @@
 
+import environment from '../../../environment.js';
 export class ViewBase {
 
     constructor() {
     }
 
     async render(selector, template_url, style_url) {
-        const req_html = await fetch(template_url);
+        const req_html = await fetch(environment.app + template_url);
         const content = await req_html.text();
         const target = document.querySelector(selector);
 
         this.___loadHtml(target, content);
-        this.___loadCss(style_url, selector);
+        this.___loadCss(environment.app + style_url, selector);
     }
 
     ___loadHtml(target, content) {
@@ -19,7 +20,7 @@ export class ViewBase {
         }
         target.appendChild(document.createRange().createContextualFragment(content));
     }
-    
+
     ___loadCss(style_url, css_id) {
         if (!document.getElementById(css_id)) {
             var head = document.getElementsByTagName('head')[0];

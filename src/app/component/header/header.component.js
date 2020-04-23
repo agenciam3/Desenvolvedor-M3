@@ -3,8 +3,8 @@ import { CartService } from "../../shared/services/cart.service.js";
 
 export class HeaderComponent {
     selector = 'header-component';
-    template_url = 'http://localhost:3000/app/component/header/header.component.html';
-    style_url = 'http://localhost:3000/app/component/header/header.component.css';
+    template_url = 'component/header/header.component.html';
+    style_url = 'component/header/header.component.css';
 
     constructor() {
         this.view = new HeaderView();
