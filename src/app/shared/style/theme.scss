@@ -2,24 +2,18 @@ $main-color: #00c0ee;
 $secondary-color: black;
 $border-color: gray;
 
-$main-font-color: black;
+$main-font-color: #333333;
 $secondary-font-color: white;
 
 $footer-bg: black;
 $footer-text-color: white;
 
-* {
+body {
+    color: $main-font-color;
     letter-spacing: 1px;
     font-family: "Open Sans";
-    // color: #333333;
-}
-
-body{
-    color: #333333;
 }
 
 h2 {
-    // font-size: 32px;
-    font-family: "Open Sans";
     font-weight: 400;
 }
