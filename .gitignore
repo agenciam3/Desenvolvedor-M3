@@ -120,3 +120,4 @@ temp/
 .history
 
 # End of https://www.gitignore.io/api/node,visualstudiocode
+node_modules
