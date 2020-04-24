@@ -1,56 +1,56 @@
-var produtos = { "produtos":
+var produtos =
 [
     {
-        "imagem": "img_02.png",
+        "imagem": "img_2.png",
         "produto": "Camiseta Mescla",
         "tamanho": ["P", "M", "G"],
         "cor": ["cinza", "mescla"],
         "preco": "28,00"
     },
     {
-        "imagem": "img_03.png",
+        "imagem": "img_3.png",
         "produto": "Saia em Couro",
         "tamanho": ["36", "38", "40", "42", "44", "46"],
         "cor": ["preto"],
         "preco": "398,00"
     },
     {
-        "imagem": "img_04.png",
+        "imagem": "img_4.png",
         "produto": "Cardigan Tigre",
         "tamanho": ["P", "M", "G", "GG"],
         "cor": ["laranja", "preto", "estampado"],
         "preco": "398,00"
     },
     {
-        "imagem": "img_05.png",
+        "imagem": "img_5.png",
         "produto": "Cardigan Off White",
         "tamanho": ["P", "M", "G"],
         "cor": ["branco", "off white"],
         "preco": "99,90"
     },
     {
-        "imagem": "img_06.png",
+        "imagem": "img_6.png",
         "produto": "Body Leopardo",
         "tamanho": ["U"],
         "cor": ["amarelo", "preto", "marrom", "estampado"],
         "preco": "129,90"
     },
     {
-        "imagem": "img_07.png",
+        "imagem": "img_7.png",
         "produto": "Casaco Pelos",
         "tamanho": ["P", "M", "G"],
         "cor": ["rosa"],
         "preco": "398,00"
     },
     {
-        "imagem": "img_08.png",
+        "imagem": "img_8.png",
         "produto": "Cropped Stripes",
         "tamanho": ["U"],
         "cor": ["azul", "verde", "amarelo", "laranja", "estampado"],
         "preco": "120,00"
     },
     {
-        "imagem": "img_09.png",
+        "imagem": "img_9.png",
         "produto": "Camisa Transparente",
         "tamanho": ["P", "M", "G", "GG"],
         "cor": ["preto"],
@@ -64,4 +64,3 @@ var produtos = { "produtos":
         "preco": "99,00"
     }
 ]
-}

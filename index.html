@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/74124220f9.js" crossorigin="anonymous"></script>
-    <script src='main.js'></script>
+    
 </head>
 <body>
     <header>
@@ -44,79 +44,66 @@
             <div class="sidefiltros">
                 <h1>Blusas</h1>
                 <div class="filtros">
-                    <h2>Cores</h2>
+                    <h2 id="teste">Cores</h2>
+                    <input type="checkbox" id="amarelo" name="amarelo" value="amarelo">
+                    <label for="amarelo"><span>Amarelo</span></label><br>
+                    <input type="checkbox" id="azul" name="azul" value="azul">
+                    <label for="azul"><span>Azul</span></label><br>
+                    <input type="checkbox" id="branco" name="branco" value="branco">
+                    <label for="branco"><span>Branco</span></label><br>
+                    <input type="checkbox" id="cinza" name="cinza" value="cinza">
+                    <label for="cinza"><span>Cinza</span></label><br>
+                    <input type="checkbox" id="laranja" name="laranja" value="laranja">
+                    <label for="laranja"><span>Laranja</span></label><br>
+                    <input type="checkbox" id="verde" name="verde" value="verde">
+                    <label for="verde"><span>Verde</span></label><br>
+                    <input type="checkbox" id="vermelho" name="vermelho" value="vermelho">
+                    <label for="vermelho"><span>Vermelho</span></label><br>
+                    <input type="checkbox" id="preto" name="preto" value="preto">
+                    <label for="preto"><span>Preto</span></label><br>
+                    <input type="checkbox" id="rosa" name="rosa" value="rosa">
+                    <label for="rosa"><span>Rosa</span></label><br>
+                    <input type="checkbox" id="vinho" name="vinho" value="vinho">
+                    <label for="vinho"><span>Vinho</span></label><br>
+                    <input type="checkbox" id="estampado" name="estampado" value="estampado">
+                    <label for="estampado"><span>Estampado</span></label><br>
                 </div>
                 <div class="filtros">
                     <h2>Tamanhos</h2>
+                    <button>P</button>
+                    <button>M</button>
+                    <button>G</button>
+                    <button>GG</button>
+                    <button>U</button>
+                    <button>36</button>
+                    <button>38</button>
+                    <button>40</button>
+                    <button>42</button>
+                    <button>44</button>
+                    <button>46</button>
                 </div>
                 <div class="filtros">
                     <h2>Faixa de Preços</h2>
+                    <input type="checkbox" id="faixa1" name="faixa1" value="faixa1">
+                    <label for="faixa1">de R$ 0 até R$ 50</label><br>
+                    <input type="checkbox" id="faixa2" name="faixa2" value="faixa2">
+                    <label for="faixa2">de R$ 51 até R$ 150</label><br>
+                    <input type="checkbox" id="faixa3" name="faixa3" value="faixa3">
+                    <label for="faixa3">de R$ 151 até R$ 300</label><br>
+                    <input type="checkbox" id="faixa4" name="faixa4" value="faixa4">
+                    <label for="faixa4">de R$ 301 até R$ R$ 500</label><br>
+                    <input type="checkbox" id="faixa5" name="faixa5" value="faixa5">
+                    <label for="faixa5">a partir de R$ 500</label><br>
                 </div>
             </div>
-            <div class="conteudo">
-                <div class="produto">
+            <div class="conteudo" id="conteudo">
+                <!-- <div class="produto">
                     <div class="img-produto"><img src="layout/imagens/img_2.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
                     <div class="titulo-produto">Camiseta Mescla</div>
                     <div class="preco-produto">R$ 28,00</div>
                     <div class="parcelamento">até 3x de R$ 9,33</div>
                     <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_3.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Saia em Couro</div>
-                    <div class="preco-produto">R$ 398,00</div>
-                    <div class="parcelamento">até 5x de R$ 79,60</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_4.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Cardigan Tigre</div>
-                    <div class="preco-produto">R$ 398,00</div>
-                    <div class="parcelamento">até 5x de R$ 79,60</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_5.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Cardigan Off White</div>
-                    <div class="preco-produto">R$ 99,90</div>
-                    <div class="parcelamento">até 3x de R$ 33,30</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_6.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Body Leopardo</div>
-                    <div class="preco-produto">R$ 129,90</div>
-                    <div class="parcelamento">até 3x de R$ 43,30</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_7.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Casaco Pelos</div>
-                    <div class="preco-produto">R$ 398,00</div>
-                    <div class="parcelamento">até 5x de R$ 79,60</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_8.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Cropped Stripes</div>
-                    <div class="preco-produto">R$ 120,00</div>
-                    <div class="parcelamento">até 3x de R$ 40,00</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_9.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Camisa Transparente</div>
-                    <div class="preco-produto">R$ 398,00</div>
-                    <div class="parcelamento">até 5x de R$ 79,60</div>
-                    <button>Comprar</button>
-                </div>
-                <div class="produto">
-                    <div class="img-produto"><img src="layout/imagens/img_10.png" alt="Camiseta Mescla" title="Camiseta Mescla"></div>
-                    <div class="titulo-produto">Pochete Clutch</div>
-                    <div class="preco-produto">R$ 99,00</div>
-                    <div class="parcelamento">até 3x de R$ 33,00</div>
-                    <button>Comprar</button>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="ver-mais"><button>Carregar Mais</button></div>
@@ -129,5 +116,8 @@
             </div>
         </div>
     </footer>
+    <script src='jquery-3.5.0.min.js'></script>
+    <script src='produtos.js'></script>
+    <script src='main.js'></script>
 </body>
 </html>

@@ -12,8 +12,9 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0 100px;
+    margin: 0 80px;
 }
+  
 
 /* HEADER */
 
@@ -47,13 +48,13 @@ img{
 .ordenar select {
     height: 30px;
     width: 125px;
-    float: right !important;
+    float: right;
     font-size: 12px;
     font-weight: 400;
 }
 
 .sidefiltros {
-    width: 30%;
+    width: 20%;
     display: inline-block;
     float: left;
 }
@@ -69,15 +70,31 @@ img{
     text-transform: uppercase;
 }
 
+.filtros button {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin: 5px;
+    background: none;
+    border: 1px solid #c7c7c7;
+    color: #c7c7c7;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.filtros button:active {
+    border: 2px solid #00c0ee;
+    color: #666;
+}
+
 .conteudo {
-    width: 70%;
+    width: 80%;
     column-count: 3;
-    column-gap: 10px;
+    column-gap: 0;
 }
 
 .produto {
     margin-top: 20px;
-    margin-right: 25px;
     width: 100%;
     display: inline-block;
     text-align: center;
@@ -100,7 +117,7 @@ img{
 }
 
 .produto button {
-    width: 195px;
+    width: 80%;
     height: 42px;
     background-color: #000;
     color: #fff;
