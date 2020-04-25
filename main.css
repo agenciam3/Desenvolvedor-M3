@@ -8,6 +8,52 @@ img{
 	height:auto;
 }
 
+input {
+    display: none;
+}
+
+input:checked + label::after {
+    background-color: #00c0ee;
+}
+
+label {
+    padding-left: 20px;
+    cursor: pointer;
+    position: relative;
+}
+
+label::before, label::after {
+    margin-top: 3px;
+    content: "";
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+label::before {
+    border: solid 1px #666;
+}
+
+label::after {
+    border: none;
+}
+
+label::before {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 0;
+    top: -1.5px;
+}
+
+label::after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 3px;
+    top: 1.5px;
+}
+
+
 .container {
     display: flex;
     flex-wrap: wrap;

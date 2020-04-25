@@ -1,6 +1,7 @@
-function listagemProdutos(){
+function listagemProdutos(insumos){
     var conteudo = document.getElementById('conteudo');
-    for (var i = 0; i<produtos.length;i++) {
+    conteudo.innerHTML = '';
+    for (var i = 0; i<insumos.length;i++) {
         var divProduto = document.createElement('div');
         divProduto.setAttribute('class', 'produto');
 
@@ -8,17 +9,17 @@ function listagemProdutos(){
         divImagem.setAttribute('class','img-produto');
 
         var imgProduto = document.createElement('img');
-        imgProduto.setAttribute('src', 'layout/imagens/' + produtos[i].imagem);
+        imgProduto.setAttribute('src', 'layout/imagens/' + insumos[i].imagem);
         imgProduto.setAttribute('alt', 'Camise Mescla');
-        imgProduto.setAttribute('title', 'Camisa Mescla');
+        imgProduto.setAttribute('title', insumos[i].produto);
 
         var tituloProduto = document.createElement('div');
         tituloProduto.setAttribute('class', 'titulo-produto');
-        tituloProduto.innerHTML = produtos[i].produto;
+        tituloProduto.innerHTML = insumos[i].produto;
 
         var precoProduto = document.createElement('div');
         precoProduto.setAttribute('class', 'preco-produto');
-        precoProduto.innerHTML = 'R$ ' + produtos[i].preco;
+        precoProduto.innerHTML = 'R$ ' + insumos[i].preco;
 
         var parcelamento = document.createElement('div');
         parcelamento.setAttribute('class', 'parcelamento');
@@ -39,7 +40,7 @@ function listagemProdutos(){
     }
 }
 
-listagemProdutos();
+listagemProdutos(produtos);
 
 function filtroCores() {
     var filtros = document.getElementById('filtroCores');
@@ -49,6 +50,8 @@ function filtroCores() {
         checkBox.setAttribute('type', 'checkbox');
         checkBox.setAttribute('name', coresProdutos[i]);
         checkBox.setAttribute('value', coresProdutos[i]);
+        checkBox.setAttribute('id', coresProdutos[i]);
+        checkBox.setAttribute('onChange', 'filtragemCores("'+coresProdutos[i]+'")');
 
         var cores = document.createElement('label');
         cores.setAttribute('for', coresProdutos[i]);
@@ -63,3 +66,15 @@ function filtroCores() {
 }
 
 filtroCores();
+
+function filtragemCores(cor) {
+    
+    if($("#"+cor)[0].checked) {
+        var produtosFiltrados = produtos.filter(produto => produto.cor == cor);
+        listagemProdutos(produtosFiltrados);
+    }
+    else{
+        listagemProdutos(produtos);
+    }
+    
+}
