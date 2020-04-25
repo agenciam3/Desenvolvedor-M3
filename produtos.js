@@ -63,4 +63,12 @@ var produtos =
         "cor": ["preto"],
         "preco": "99,00"
     }
-]
+];
+
+var coresProdutos = [
+     "amarelo", "azul", "branco", "cinza", "estampado", "laranja", "preto", "rosa", "verde", "vermelho", "vinho"
+];
+
+var tamanhoProdutos = [
+    "P", "M", "G", "GG", "U", "36", "38", "40", "42", "44", "46"
+];

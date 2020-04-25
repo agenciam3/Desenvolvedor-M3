@@ -18,7 +18,7 @@ function listagemProdutos(){
 
         var precoProduto = document.createElement('div');
         precoProduto.setAttribute('class', 'preco-produto');
-        precoProduto.innerHTML = produtos[i].preco;
+        precoProduto.innerHTML = 'R$ ' + produtos[i].preco;
 
         var parcelamento = document.createElement('div');
         parcelamento.setAttribute('class', 'parcelamento');
@@ -40,3 +40,26 @@ function listagemProdutos(){
 }
 
 listagemProdutos();
+
+function filtroCores() {
+    var filtros = document.getElementById('filtroCores');
+    for (var i = 0; i<coresProdutos.length;i++) {
+
+        var checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+        checkBox.setAttribute('name', coresProdutos[i]);
+        checkBox.setAttribute('value', coresProdutos[i]);
+
+        var cores = document.createElement('label');
+        cores.setAttribute('for', coresProdutos[i]);
+        cores.innerText = coresProdutos[i];
+
+        var quebraLinha = document.createElement('br')
+
+        filtros.appendChild(checkBox);
+        filtros.appendChild(cores);
+        filtros.appendChild(quebraLinha);
+    }
+}
+
+filtroCores();

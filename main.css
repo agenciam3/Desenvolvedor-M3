@@ -87,6 +87,19 @@ img{
     color: #666;
 }
 
+.filtros label {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.ver-todas a{
+    color: #666;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid #666;
+}
 .conteudo {
     width: 80%;
     column-count: 3;
