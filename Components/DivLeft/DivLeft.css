@@ -1,8 +1,115 @@
-.box-filters{
-    justify-content: flex-start;
+ol {
+    list-style: none;
+}
+
+.box-filters {
+    margin-top: 2rem;
+    margin-left: 10rem;
+}
+
+.box-content {
+    justify-content: start;
     text-align: start;
     align-items: flex-start;
 }
-.blusas-p{
-    
+
+.blusas-p {
+    font-weight: 1100;
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 2em;
+}
+/*-----------------Tamanhos--------------------*/
+.box-cores {
+    margin: 2rem 0rem;
+}
+
+.box-cores>p {
+    font-weight: 1100;
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 1.1em;
+}
+
+.box-input-cores {
+    margin: 1rem 0rem;
+}
+
+.box-input-cores>div>label {
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 0.8em;
+    margin-left:0.5rem;
+}
+
+/*--------------Input Checkbox----------------*/
+input[type=checkbox]{
+    margin-top:0.25rem;
+}
+input[type=checkbox]:after {
+    position: relative;
+    display: block;
+    left:1.8px;
+    top: -11px;
+    width: 7px;
+    height: 7px;
+    border-width: 1px;
+    border-style: solid;
+    border-color:white;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+input[type=checkbox]:before {
+    border: 1px solid #808080;
+    content: "";
+    background: #FFF;
+    position: relative;
+    display: block;
+    width: 11px;
+    height: 11px;
+}
+
+input[type=checkbox]:checked:after {
+    background-color: #4EE0FA;
+}
+
+/*-----------------Cores-------------------*/
+.box-tamanhos {
+    margin: 3rem 0rem;
+}
+.box-tamanhos>p {
+    font-family: 'Monteserrat', sans-serif;
+}
+.box-button-tamanhos{
+    margin:1rem 0rem;
+    width:10rem;
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns:repeat(4, 1fr)
+}
+.box-button-tamanhos>button{
+    height: 2rem;
+    width: 2rem;
+    outline: none;
+    opacity: 0.5;
+    background-color: white;
+    color: black;
+    border:1px solid lightgrey
+}
+.box-button-tamanhos>button:focus{
+   border:1px solid #4EE0FA;
+}
+/*--------------Preços----------------*/
+.box-precos{
+    margin:2rem 0rem;
+}
+.box-precos>p{
+    font-family: 'Monteserrat', sans-serif;
+}
+.box-input-precos{
+    margin:1rem 0rem;
+}
+.box-input-precos>div>label{
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 0.8em;
+    margin-left:0.5rem;
 }

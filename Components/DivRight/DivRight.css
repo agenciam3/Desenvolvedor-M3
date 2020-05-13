@@ -1,0 +1,71 @@
+/*-------------Select--------------*/
+.container-select-box{
+    display: flex;
+    justify-content: flex-end;
+    text-align: end;
+    align-items: flex-end;
+}
+.container-select-box>select{
+    margin:3rem 5rem;
+    width:10rem;
+    padding:0.25rem;
+    outline:none;
+    background-position: center right;
+    background-repeat: no-repeat;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: white;
+    color:black
+}
+.container-select-box>select>option:checked{
+    background-color: #4EE0FA; 
+    color:white;
+}
+
+/*----------Cards-----------*/
+#container-cards{
+    display: grid;
+    grid-gap:2rem;
+    grid-template-columns:repeat(3, 1fr);
+    margin-bottom:4rem;
+}
+/*--Card content---*/
+.card-content{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.nome{
+    margin:0.5rem 0rem;
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 1.2em;
+}
+.preco{
+    margin-bottom:0.25rem;
+    font-family: 'Monteserrat', sans-serif;
+    font-weight: bold;
+}
+
+.parcelas{
+    margin:0.25rem 0rem;
+    font-family: 'Monteserrat', sans-serif;
+}
+
+.btn-comprar{
+    margin-top:0.5rem;
+    color:white;
+    background-color:black;
+    border:none;
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 80%;
+    height: 2.5rem;
+}

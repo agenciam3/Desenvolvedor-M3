@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agência M#</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='./Pages/Index.css'>
+    <link rel='stylesheet' type='text/css' href='./UI/Header/Header.css'>
+     <link rel='stylesheet' type='text/css' href='./UI/Footer/Footer.css'>
+      <link rel='stylesheet' type='text/css' href='./Pages/Index.css'>
+      <link rel='stylesheet' type='text/css' href='./Components/DivLeft/DivLeft.css'>
+      <link rel='stylesheet' type='text/css' href='./Components/DivRight/DivRight.css'>
+</head>
+
+<body>
+    <div class="header-grid">
+    <div class="row1">
+        <img  src="./imagens/m3.png">
+    </div>
+    <div class="row2">
+        <img  class="logo-menu" src="./imagens/wallet.svg" />
+    </div>
+</div>
+    <section class="container">
+        <div class="rowIndex-1">
+            <div class="box-filters">
+    <div class="box-content">
+        <p class="blusas-p">Blusas</p>
+        <div class="box-cores">
+            <p>CORES</p>
+            <div class="box-input-cores">
+                <div><input type="checkbox" name="azul" value="azul"><label>Azul</label></div>
+                <div><input type="checkbox" name="vermelho" value="vermelho"><label>Vermelho</label></div>
+            </div>
+        </div>
+         <div class="box-tamanhos">
+            <p>TAMANHOS</p>
+            <div class="box-button-tamanhos">
+                <button>P</button>
+                <button>M</button>
+                <button>G</button>
+                <button>GG</button>
+                <button>U</button>
+                <button>36</button>
+            </div>
+        </div>
+         <div class="box-precos">
+            <p>FAIXAS DE PRECO</p>
+            <div class="box-input-precos">
+                <div><input type="checkbox" name="preco1" value="1"><label>de R$0 até R$50</label></div>
+                <div><input type="checkbox" name="preco2" value="2"><label>de R$51 até R$100</label></div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="rowIndex-2">
+            <div class="container-select-box">
+    <select>
+        <option value="volvo">Mais recentes</option>
+        <option value="saab">Menor preço</option>
+        <option value="mercedes">Maior preço</option>
+    </select>
+</div>
+<div id="container-cards">
+      <div class="card">
+        <div class="card-content">
+            <img src="./imagens/img_2.png">
+            <p id="nome">Camiseta Mescla</p>
+            <p id="preco">R$ 28,00</p>
+            <p id="parcelas">até 3x de R$ 9.33</p>
+            <button id="btn-comprar">COMPRAR</button>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+    <footer>
+    <p>Agência M3 - Agência de Performance Digital</p>
+</footer>
+    <script type="text/javascript" src="./JSON/produto.js"></script>
+    <script type="text/javascript" src="./Pages/Index.js"></script>
+</body>
+
+</html>

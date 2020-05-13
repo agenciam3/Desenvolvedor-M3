@@ -1,4 +1,5 @@
 .container{
+    display: flex;
     justify-content: center;
 }
 .rowIndex-1{

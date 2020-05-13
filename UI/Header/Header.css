@@ -6,7 +6,7 @@ body,p{
 .header-grid{
     background-color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     height: auto;
@@ -19,10 +19,10 @@ body,p{
     padding:0.5rem;
 }
 .row1{
-    margin-right: 10rem;
+    padding-left: 10rem;
 }
 .row2{
-    margin-left: 10rem;
+    padding-right: 5rem;
 }
 
 .logo-menu{
