@@ -1,0 +1,9 @@
+.container{
+    justify-content: center;
+}
+.rowIndex-1{
+    width: 35%;
+}
+.rowIndex-2{
+    width: 65%;
+}

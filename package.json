@@ -1,0 +1,23 @@
+{
+  "name": "desenvolvedor-m3",
+  "version": "1.0.0",
+  "description": "<p>Email: joaovitormunizlopes@gmail.com</p>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joaovitor32/Desenvolvedor-M3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joaovitor32/Desenvolvedor-M3/issues"
+  },
+  "homepage": "https://github.com/joaovitor32/Desenvolvedor-M3#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-file-include": "^2.2.2"
+  }
+}

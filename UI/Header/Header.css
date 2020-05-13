@@ -1,0 +1,31 @@
+body,p{
+    margin:0;
+    padding:0;
+}
+/*---------------------------*/
+.header-grid{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    width: auto;
+    position: relative;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+.row1,.row2{
+    padding:0.5rem;
+}
+.row1{
+    margin-right: 10rem;
+}
+.row2{
+    margin-left: 10rem;
+}
+
+.logo-menu{
+    width: 2.5rem;
+    height: 2rem;
+}
