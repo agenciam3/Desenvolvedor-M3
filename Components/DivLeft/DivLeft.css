@@ -65,4 +65,10 @@ input[type=checkbox]:checked:after {
     #box-filter-mobile {
         display: none;
     }
+    input[type=checkbox]:after {
+        left:2px;
+        top: -11px;
+        width: 7px;
+        height: 7px;
+    }
 }

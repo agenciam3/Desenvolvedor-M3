@@ -17,3 +17,14 @@
     font-size: 0.8em;
     margin-left:0.5rem;
 }
+@media only screen and (max-width: 600px) {
+    .box-cores>p {
+       display: none;
+    }
+    .box-cores {
+        margin: 0.25rem 2rem;
+    }
+    .box-input-cores {
+        margin: 0.25rem 0rem;
+    }
+}

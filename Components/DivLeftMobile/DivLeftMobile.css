@@ -73,6 +73,30 @@
     display: block;
     font-size: 1.2em;
  }
+ /*------------Collapse-----------------*/
+.collapsible {
+    cursor: pointer;
+    padding: 0.5rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.4px;
+  }
+  .collapsible-div{
+      display: flex;
+      justify-content: space-between;
+  }
+  .collapsible-div>img{
+      height: 1.25rem;
+      width: 1.25rem;
+      padding:0rem;
+   }
+  .content {
+    padding: 0 0.5px;
+    display: none;
+    overflow: hidden;
+  }
 /*-----------------Mobile-------------------------*/
 @media only screen and (max-width: 600px) {
     #box-mobile-filter{

@@ -15,5 +15,9 @@ const fetchTamanhos = () => {
     tamanhos.forEach(tam => {
         htmlTam += `<button onclick=filterByTamanho('${tam.tamanho}')>${tam.tamanho}</button>`
     })
-    boxButtonTamanhos.innerHTML = htmlTam
+    if(window.innerWidth<500){
+        boxButtonTamanhos[0].innerHTML = htmlTam;
+    }else{
+        boxButtonTamanhos[1].innerHTML = htmlTam;
+    }
 }

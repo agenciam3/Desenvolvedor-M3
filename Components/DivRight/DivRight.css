@@ -52,7 +52,7 @@
     display: grid;
     grid-gap: 2rem;
     grid-template-columns: repeat(3, 1fr);
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
 }
 
 /*--Card content---*/
@@ -91,7 +91,27 @@
     width: 80%;
     height: 2.5rem;
 }
-
+.carregar-mais{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#btn-card{
+    animation: fade-in 0.5s ease-in forwards;
+    opacity: 0;
+}
+.carregar-mais>button{
+    margin-top: 0.5rem;
+    color: white;
+    background-color:#4EE0FA;
+    border: none;
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 1em;
+    padding:0.5rem 1rem;
+    font-weight: bold;
+    width: 25%;
+    height: 2.5rem;
+}
 /*-------------Mobile--------------------*/
 
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
@@ -107,6 +127,7 @@
         grid-gap: 0rem;
         margin-top:2rem;
         margin-left:0.5rem;
+        margin-bottom:1rem;
     }
     .container-select-box {
         display: none;
@@ -125,5 +146,8 @@
     }
     .nome {
         font-size: 0.8em;
+    }
+    .carregar-mais>button{
+        width: 60%;
     }
 }

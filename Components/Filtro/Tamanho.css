@@ -24,3 +24,14 @@
 .box-button-tamanhos>button:focus{
    border:1px solid #4EE0FA;
 }
+@media only screen and (max-width: 600px) {
+    .box-tamanhos>p {
+        display: none;
+    }
+    .box-tamanhos {
+        margin: 0.25rem 2rem;
+    }
+    .box-button-tamanhos{
+        margin:0.25rem 0rem;   
+    }
+}

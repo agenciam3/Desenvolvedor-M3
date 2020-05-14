@@ -15,5 +15,10 @@ const fetchPrecos = () => {
     precos.forEach(preco => {
         htmlPreco += `<div><input type="checkbox" onclick="filterByPreco(this,'${preco.value}')" value="${preco.value}"><label>de ${preco.preco}</label></div>`
     })
-    boxInputPrecos.innerHTML = htmlPreco;
+    if(window.innerWidth<500){
+        boxInputPrecos[0].innerHTML = htmlPreco;
+    }else{
+        boxInputPrecos[1].innerHTML = htmlPreco;
+    }
+   
 }

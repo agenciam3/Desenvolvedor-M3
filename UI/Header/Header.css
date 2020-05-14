@@ -1,9 +1,11 @@
-body,p{
-    margin:0;
-    padding:0;
+body, p {
+    margin: 0;
+    padding: 0;
 }
+
 /*---------------------------*/
-.header-grid{
+
+.header-grid {
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -15,32 +17,78 @@ body,p{
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.3);
     z-index: 2;
 }
-.row1,.row2{
-    padding:0.5rem;
+
+.row1, .row2 {
+    padding: 0.5rem;
 }
-.row1{
+
+.row1 {
     padding-left: 10rem;
 }
-.row2{
+
+.row2 {
     padding-right: 5rem;
 }
 
-.logo-menu{
+.logo-menu {
     width: 2.5rem;
     height: 2rem;
 }
+
+.hide-carrinho {
+    display: none;
+}
+
+.logo-menu:hover+.hide-carrinho {
+    display: block;
+    z-index: 4;
+    top:60px;
+    width:20rem;
+    right: 1.5rem;
+    position: absolute;
+    background-color: white;
+    border:1px solid #4de0fa
+}
+.carrinho-p-empty{
+    font-size: 1.2em;
+    color:#4de0fa;
+    padding:1rem;
+    font-weight: bold;
+    font-family: 'Monteserrat', sans-serif;
+}
+.carrinho-p{
+    font-size: 0.8em;
+    color:#4de0fa;
+    padding:0.25rem;
+    font-weight: bold;
+    font-family: 'Monteserrat', sans-serif;
+}
+.sum-p{
+    font-size: 1em;
+    color:#4de0fa;
+    padding:0.5rem;
+    font-weight: bold;
+    font-family: 'Monteserrat', sans-serif;
+    justify-content: flex-end;
+    text-align: end;
+    margin-right: 1rem;
+}
 /*------------Mobile------------------*/
+
 @media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
-    .row1{
+    .row1 {
         padding-left: 5rem;
     }
 }
+
 @media only screen and (max-width: 600px) {
-    .row1{
+    .row1 {
         padding-left: 0.5rem;
     }
-    .row2{
+    .row2 {
         padding-right: 0.5rem;
     }
-    
+    .logo-menu:hover+.hide-carrinho {
+        right: 1rem;
+    }
 }

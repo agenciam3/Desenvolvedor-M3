@@ -16,9 +16,18 @@
             <p >Filtrar</p>
             <img onclick="closeFiltrar()" src="./imagens/close.svg"/>
         </div>
-         <button>Mais recentes</button>
-        <button>Menor preço</button>
-        <button>Maior preço</button>
+        <button type="button" onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Cor</p><img src="./imagens/plus.svg"/></div></button>
+        <div class="content">
+            @@include('../Filtro/Cor.html')
+        </div>
+        <button type="button"  onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Tamanho</p><img src="./imagens/plus.svg"/></button>
+        <div class="content">
+            @@include('../Filtro/Tamanho.html')
+        </div>
+        <button type="button"  onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Preço</p><img src="./imagens/plus.svg"/></button>
+        <div class="content">
+            @@include('../Filtro/Preco.html')
+        </div>
     </div>
 </div>
 
@@ -28,5 +37,8 @@
             <p >Ordenar</p>
             <img onclick="closeOrdenar()" src="./imagens/close.svg"/>
         </div>
+        <button>Mais recentes</button>
+        <button>Menor preço</button>
+        <button>Maior preço</button>
     </div>
 </div>

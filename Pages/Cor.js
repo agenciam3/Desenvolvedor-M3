@@ -15,5 +15,9 @@ const fetchCores = () => {
     cores.forEach(cor => {
         htmlCor += `<div><input type="checkbox" name="check" onclick="filterByCor(this,'${cor.cor}')" value="${cor.corCor}" /><label>${cor.cor}</label></div>`
     })
-    boxInputCores.innerHTML = htmlCor
+    if(window.innerWidth<500){
+        boxInputCores[0].innerHTML = htmlCor;
+    }else{
+        boxInputCores[1].innerHTML = htmlCor;
+    }
 }

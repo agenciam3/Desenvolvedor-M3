@@ -25,7 +25,10 @@
         <img  src="./imagens/m3.png">
     </div>
     <div class="row2">
-        <img  class="logo-menu" src="./imagens/wallet.svg" />
+        <img class="logo-menu" src="./imagens/wallet.svg" />
+        <div id="box-carrinho-display" class="hide-carrinho">
+            
+        </div>
     </div>
 </div>
     <section class="container">
@@ -47,9 +50,33 @@
             <p >Filtrar</p>
             <img onclick="closeFiltrar()" src="./imagens/close.svg"/>
         </div>
-         <button>Mais recentes</button>
-        <button>Menor preço</button>
-        <button>Maior preço</button>
+        <button type="button" onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Cor</p><img src="./imagens/plus.svg"/></div></button>
+        <div class="content">
+            <div class="box-cores">
+    <p>CORES</p>
+    <div class="box-input-cores">
+                
+    </div>
+</div>
+        </div>
+        <button type="button"  onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Tamanho</p><img src="./imagens/plus.svg"/></button>
+        <div class="content">
+            <div class="box-tamanhos">
+    <p>TAMANHOS</p>
+    <div class="box-button-tamanhos">
+             
+    </div>
+</div>
+        </div>
+        <button type="button"  onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Preço</p><img src="./imagens/plus.svg"/></button>
+        <div class="content">
+            <div class="box-precos">
+    <p>FAIXAS DE PRECO</p>
+    <div class="box-input-precos">
+                
+    </div>
+</div>
+        </div>
     </div>
 </div>
 
@@ -59,6 +86,9 @@
             <p >Ordenar</p>
             <img onclick="closeOrdenar()" src="./imagens/close.svg"/>
         </div>
+        <button>Mais recentes</button>
+        <button>Menor preço</button>
+        <button>Maior preço</button>
     </div>
 </div>
         <div class="rowIndex-1">
@@ -67,19 +97,19 @@
         <p class="blusas-p">Blusas</p>
         <div class="box-cores">
     <p>CORES</p>
-    <div id="box-input-cores">
+    <div class="box-input-cores">
                 
     </div>
 </div>
         <div class="box-tamanhos">
     <p>TAMANHOS</p>
-    <div id="box-button-tamanhos">
+    <div class="box-button-tamanhos">
              
     </div>
 </div>
         <div class="box-precos">
     <p>FAIXAS DE PRECO</p>
-    <div id="box-input-precos">
+    <div class="box-input-precos">
                 
     </div>
 </div>
@@ -98,6 +128,9 @@
 <div id="container-cards">
      
 </div>
+<div class="carregar-mais">
+    <button id="btn-card" onclick="carregarMais()">CARREGAR MAIS</button>
+<div>
         </div>
     </section>
     <footer>
