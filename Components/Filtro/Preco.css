@@ -1,0 +1,14 @@
+.box-precos{
+    margin:2rem 0rem;
+}
+.box-precos>p{
+    font-family: 'Monteserrat', sans-serif;
+}
+.box-input-precos{
+    margin:1rem 0rem;
+}
+.box-input-precos>div>label{
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 0.8em;
+    margin-left:0.5rem;
+}

@@ -1,7 +1,7 @@
 let cardBox = document.getElementById('container-cards')
-let boxInputCores = document.getElementById('box-input-cores');
-let boxButtonTamanhos = document.getElementById('box-button-tamanhos');
-let boxInputPrecos = document.getElementById('box-input-precos');
+let boxInputCores = document.getElementsByClassName('box-input-cores');
+let boxButtonTamanhos = document.getElementsByClassName('box-button-tamanhos');
+let boxInputPrecos = document.getElementsByClassName('box-input-precos');
 
 let carrinho = [];
 

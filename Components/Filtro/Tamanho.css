@@ -1,0 +1,26 @@
+/*-----------------Cores-------------------*/
+.box-tamanhos {
+    margin: 3rem 0rem;
+}
+.box-tamanhos>p {
+    font-family: 'Monteserrat', sans-serif;
+}
+.box-button-tamanhos{
+    margin:1rem 0rem;
+    width:10rem;
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns:repeat(4, 1fr)
+}
+.box-button-tamanhos>button{
+    height: 2rem;
+    width: 2rem;
+    outline: none;
+    opacity: 0.5;
+    background-color: white;
+    color: black;
+    border:1px solid lightgrey
+}
+.box-button-tamanhos>button:focus{
+   border:1px solid #4EE0FA;
+}
