@@ -13,6 +13,7 @@
       <link rel='stylesheet' type='text/css' href='./Pages/Index.css'>
       <link rel='stylesheet' type='text/css' href='./Components/DivLeft/DivLeft.css'>
       <link rel='stylesheet' type='text/css' href='./Components/DivRight/DivRight.css'>
+      <link rel='stylesheet' type='text/css' href='./Components/DivLeftMobile/DivLeftMobile.css'>
 </head>
 
 <body>
@@ -25,33 +26,61 @@
     </div>
 </div>
     <section class="container">
+        <div id="box-mobile-filter" >
+    <p id="blusas-p-mobile">Blusas</p>
+    <div class="buscas-mobile">
+        <div class="filtrar-buscas-mobile">
+            <button onclick="abrirFiltrar()">Filtrar</button>
+        </div>
+        <div class="ordernar-buscas-mobile">
+            <button onclick="abrirOrdenar()">Ordenar</button>
+        </div>
+    </div>
+</div>
+
+<div id="modalFiltrar" class="modal">
+     <div class="modal-content">
+        <div class="header-modal">
+            <p >Filtrar</p>
+            <img onclick="closeFiltrar()" src="./imagens/close.svg"/>
+        </div>
+         <button>Mais recentes</button>
+        <button>Menor preço</button>
+        <button>Maior preço</button>
+    </div>
+</div>
+
+<div id="modalOrdenar" class="modal">
+     <div class="modal-content">
+        <div class="header-modal">
+            <p >Ordenar</p>
+            <img onclick="closeOrdenar()" src="./imagens/close.svg"/>
+        </div>
+         <button>Mais recentes</button>
+        <button>Menor preço</button>
+        <button>Maior preço</button>
+    </div>
+</div>
         <div class="rowIndex-1">
-            <div class="box-filters">
+            <div id="box-filter-mobile" class="box-filters">
     <div class="box-content">
         <p class="blusas-p">Blusas</p>
         <div class="box-cores">
             <p>CORES</p>
-            <div class="box-input-cores">
-                <div><input type="checkbox" name="azul" value="azul"><label>Azul</label></div>
-                <div><input type="checkbox" name="vermelho" value="vermelho"><label>Vermelho</label></div>
+            <div id="box-input-cores">
+                
             </div>
         </div>
          <div class="box-tamanhos">
             <p>TAMANHOS</p>
-            <div class="box-button-tamanhos">
-                <button>P</button>
-                <button>M</button>
-                <button>G</button>
-                <button>GG</button>
-                <button>U</button>
-                <button>36</button>
+            <div id="box-button-tamanhos">
+             
             </div>
         </div>
          <div class="box-precos">
             <p>FAIXAS DE PRECO</p>
-            <div class="box-input-precos">
-                <div><input type="checkbox" name="preco1" value="1"><label>de R$0 até R$50</label></div>
-                <div><input type="checkbox" name="preco2" value="2"><label>de R$51 até R$100</label></div>
+            <div id="box-input-precos">
+                
             </div>
         </div>
     </div>
@@ -66,23 +95,17 @@
     </select>
 </div>
 <div id="container-cards">
-      <div class="card">
-        <div class="card-content">
-            <img src="./imagens/img_2.png">
-            <p id="nome">Camiseta Mescla</p>
-            <p id="preco">R$ 28,00</p>
-            <p id="parcelas">até 3x de R$ 9.33</p>
-            <button id="btn-comprar">COMPRAR</button>
-        </div>
-    </div>
+     
 </div>
         </div>
     </section>
     <footer>
     <p>Agência M3 - Agência de Performance Digital</p>
 </footer>
-    <script type="text/javascript" src="./JSON/produto.js"></script>
-    <script type="text/javascript" src="./Pages/Index.js"></script>
+    <script type="text/javascript" src="./JSON/json.js"></script>
+     <script type="text/javascript" src="./Model/Produto.js"></script>
+    <script type="text/javascript"  src="./Pages/Index.js"></script>
+    <script type="text/javascript"  src="./Components/DivLeftMobile/Modal.js"></script>
 </body>
 
 </html>

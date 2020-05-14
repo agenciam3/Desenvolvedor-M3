@@ -13,11 +13,13 @@
       <link rel='stylesheet' type='text/css' href='./Pages/Index.css'>
       <link rel='stylesheet' type='text/css' href='./Components/DivLeft/DivLeft.css'>
       <link rel='stylesheet' type='text/css' href='./Components/DivRight/DivRight.css'>
+      <link rel='stylesheet' type='text/css' href='./Components/DivLeftMobile/DivLeftMobile.css'>
 </head>
 
 <body>
     @@include('../UI/Header/Header.html')
     <section class="container">
+        @@include('../Components/DivLeftMobile/DivLeftMobile.html')
         <div class="rowIndex-1">
             @@include('../Components/DivLeft/DivLeft.html')
         </div>
@@ -26,8 +28,10 @@
         </div>
     </section>
     @@include('../UI/Footer/Footer.html')
-    <script type="text/javascript" src="./JSON/produto.js"></script>
-    <script type="text/javascript" src="./Pages/Index.js"></script>
+    <script type="text/javascript" src="./JSON/json.js"></script>
+     <script type="text/javascript" src="./Model/Produto.js"></script>
+    <script type="text/javascript"  src="./Pages/Index.js"></script>
+    <script type="text/javascript"  src="./Components/DivLeftMobile/Modal.js"></script>
 </body>
 
 </html>

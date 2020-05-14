@@ -29,11 +29,11 @@ ol {
     font-size: 1.1em;
 }
 
-.box-input-cores {
+#box-input-cores {
     margin: 1rem 0rem;
 }
 
-.box-input-cores>div>label {
+#box-input-cores>div>label {
     font-family: 'Monteserrat', sans-serif;
     font-size: 0.8em;
     margin-left:0.5rem;
@@ -79,14 +79,14 @@ input[type=checkbox]:checked:after {
 .box-tamanhos>p {
     font-family: 'Monteserrat', sans-serif;
 }
-.box-button-tamanhos{
+#box-button-tamanhos{
     margin:1rem 0rem;
     width:10rem;
     display: grid;
     grid-gap:10px;
     grid-template-columns:repeat(4, 1fr)
 }
-.box-button-tamanhos>button{
+#box-button-tamanhos>button{
     height: 2rem;
     width: 2rem;
     outline: none;
@@ -95,7 +95,7 @@ input[type=checkbox]:checked:after {
     color: black;
     border:1px solid lightgrey
 }
-.box-button-tamanhos>button:focus{
+#box-button-tamanhos>button:focus{
    border:1px solid #4EE0FA;
 }
 /*--------------Preços----------------*/
@@ -105,11 +105,23 @@ input[type=checkbox]:checked:after {
 .box-precos>p{
     font-family: 'Monteserrat', sans-serif;
 }
-.box-input-precos{
+#box-input-precos{
     margin:1rem 0rem;
 }
-.box-input-precos>div>label{
+#box-input-precos>div>label{
     font-family: 'Monteserrat', sans-serif;
     font-size: 0.8em;
     margin-left:0.5rem;
+}
+/*----------Mobile-------------*/
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .box-filters {
+        margin-left: 5rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #box-filter-mobile {
+        display: none;
+    }
 }

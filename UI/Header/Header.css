@@ -29,3 +29,18 @@ body,p{
     width: 2.5rem;
     height: 2rem;
 }
+/*------------Mobile------------------*/
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .row1{
+        padding-left: 5rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .row1{
+        padding-left: 0.5rem;
+    }
+    .row2{
+        padding-right: 0.5rem;
+    }
+    
+}
