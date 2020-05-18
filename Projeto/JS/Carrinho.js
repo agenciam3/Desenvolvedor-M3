@@ -4,16 +4,16 @@ export let addProdutoCarrinho = (event,produto) => {
     event.stopPropagation();
 
     let hasValue = cart.some(item => item.id == produto);
+    let prod = produtos.filter(prod => prod.codProduto == produto);    
     if (hasValue) {
         cart.forEach(cartItem => {
             if (cartItem.id == produto) {
                 cartItem.quantity+=1,
-                cartItem.sum+=cartItem.sum;
+                cartItem.sum+=prod[0].preco;
                 return
             }
         }) 
     } else {
-        let prod = produtos.filter(prod => prod.codProduto == produto);
         cart.push({
             id: prod[0].codProduto,
             quantity: 1,
