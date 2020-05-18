@@ -1,0 +1,44 @@
+<div id="box-mobile-filter" >
+    <p id="blusas-p-mobile">Blusas</p>
+    <div class="buscas-mobile">
+        <div class="filtrar-buscas-mobile">
+            <button onclick="toogleModal('abrirFiltrar')">Filtrar</button>
+        </div>
+        <div class="ordernar-buscas-mobile">
+            <button onclick="toogleModal('abrirOrdenar')">Ordenar</button>
+        </div>
+    </div>
+</div>
+
+<div id="modalFiltrar" class="modal">
+     <div class="modal-content">
+        <div class="header-modal">
+            <p >Filtrar</p>
+            <img onclick="toogleModal('closeFiltrar')" src="./imagens/close.svg"/>
+        </div>
+        <button type="button" onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Cor</p><img src="./imagens/plus.svg"/></div></button>
+        <div class="content">
+            @@include('./Cor.html')
+        </div>
+        <button type="button"  onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Tamanho</p><img src="./imagens/plus.svg"/></button>
+        <div class="content">
+            @@include('./Tamanho.html')
+        </div>
+        <button type="button"  onclick="changeImg(this)" class="collapsible"><div class="collapsible-div"><p>Preço</p><img src="./imagens/plus.svg"/></button>
+        <div class="content">
+            @@include('./Preco.html')
+        </div>
+    </div>
+</div>
+
+<div id="modalOrdenar" class="modal">
+     <div class="modal-content">
+        <div class="header-modal">
+            <p >Ordenar</p>
+            <img onclick="toogleModal('closeOrdenar')" src="./imagens/close.svg"/>
+        </div>
+        <button>Mais recentes</button>
+        <button onclick="selectActionPrice('crescente')">Menor preço</button>
+        <button onclick="selectActionPrice('decrescente')">Maior preço</button>
+    </div>
+</div>

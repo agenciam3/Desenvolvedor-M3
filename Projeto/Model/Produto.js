@@ -1,0 +1,21 @@
+class Produto{
+    constructor(
+        codProduto,
+        nome,
+        preco,
+        cor,
+        tamanho,
+        parcelas,
+        imagem,
+        value
+    ){
+        this.codProduto=codProduto;
+        this.nome=nome;
+        this.preco=preco;
+        this.cor=cor;
+        this.tamanho=tamanho;
+        this.parcelas=parcelas;
+        this.imagem=imagem;
+        this.value=value
+    }
+}

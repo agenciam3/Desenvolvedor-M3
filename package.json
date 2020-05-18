@@ -2,8 +2,11 @@
   "name": "desenvolvedor-m3",
   "version": "1.0.0",
   "description": "<p>Email: joaovitormunizlopes@gmail.com</p>",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
+    "servidor": "gulp serve",
+    "gulptasks": "gulp fileinclude && gulp js && gulp css && gulp img",
+    "serve": "browser-sync start --server --files 'Projeto/file-server/*' --startPath 'Projeto/file-server'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +20,14 @@
   },
   "homepage": "https://github.com/joaovitor32/Desenvolvedor-M3#readme",
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "gulp-file-include": "^2.2.2"
+  },
+  "dependencies": {
+    "gulp-middleware": "^0.1.0",
+    "gulp-serve": "^1.4.0",
+    "required": "^1.0.0"
   }
 }
