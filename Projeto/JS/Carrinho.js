@@ -4,21 +4,21 @@ export let addProdutoCarrinho = (event,produto) => {
     event.stopPropagation();
 
     let hasValue = cart.some(item => item.id == produto);
-    let prod = produtos.filter(prod => prod.codProduto == produto);    
+    let prod = arrayProdutos.filter(prod => prod.codProduto == produto)[0];    
     if (hasValue) {
         cart.forEach(cartItem => {
             if (cartItem.id == produto) {
                 cartItem.quantity+=1,
-                cartItem.sum+=prod[0].preco;
+                cartItem.sum+=prod.preco;
                 return
             }
         }) 
     } else {
         cart.push({
-            id: prod[0].codProduto,
+            id: prod.codProduto,
             quantity: 1,
-            sum: prod[0].preco,
-            nome: prod[0].nome
+            sum: prod.preco,
+            nome: prod.nome
         });
     }
     fetchCarrinho();

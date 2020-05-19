@@ -1,6 +1,6 @@
 import { cardEffects } from './Styles.js'
 
-export const fetchProduto = (arrayProduto) => {
+export const fetchProduto =(arrayProduto) => {
     let cardHtml = '';
     cardBox.removeAttribute('class');
     /*if(arrayProduto){
@@ -44,13 +44,14 @@ export const fetchProduto = (arrayProduto) => {
         cardHtml += '<div class="card-no-product">'
         cardHtml += "<div class='no-product'>Nenhum produto foi encontrado.</div>"
         cardHtml += '</div>'
+        loadProdutos();
         setTimeout(() => {
-            loadProdutos();
             fetchProduto(arrayProdutos)
         }, 3000);
         cardBox.innerHTML = cardHtml;
     }
 }
-export const loadProdutos=()=>{
-    arrayProdutos=produtos;
+export const loadProdutos=async()=>{
+    let response=await fetch('http://localhost:3000/file-server/js/produto.json');
+    arrayProdutos=await response.json();
 }

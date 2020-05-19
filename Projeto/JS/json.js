@@ -1,5 +1,5 @@
  
-let produtos=[
+/*let produtos=[
     {codProduto:1,nome:"CAMISETA MESCLA",preco:28,cor:"Branca",tamanho:'G',parcelas:3,imagem:"img_2",value:1},
     {codProduto:2,nome:"SAIA EM COURO",preco:398,cor:"Laranja",tamanho:'GG',parcelas:5,imagem:"img_3",value:4},
     {codProduto:3,nome:"CARDIGAN TIGRE",preco:398,cor:"Laranja",tamanho:'M',parcelas:5,imagem:"img_4",value:4},
@@ -9,7 +9,7 @@ let produtos=[
     {codProduto:7,nome:"CROPPED STRIPES",preco:120,cor:"Azu",tamanho:'40',parcelas:3,imagem:"img_8",value:3},
     {codProduto:8,nome:"CAMISA TRANSPARENTE",preco:398,cor:"Preta",tamanho:'42',parcelas:5,imagem:"img_9",value:4},
     {codProduto:9,nome:"POCHETE CLUTCH",preco:398,cor:"Preta",parcelas:3,tamanho:'46',imagem:"img_10",value:4},
-]
+]*/
 const cores=[
     {codCor:1,cor:"Azul"},
     {codCor:2,cor:"Branca"},

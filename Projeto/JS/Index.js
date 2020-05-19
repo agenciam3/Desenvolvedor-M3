@@ -26,10 +26,10 @@ window.carregarMais=carregarMais;
 
 
 
-window.onload = () => {
-    loadProdutos();
+window.onload = async() => {
+    await loadProdutos();
     fetchCarrinho();
-    fetchProduto(produtos);
+    fetchProduto(arrayProdutos);
     startCollapse();
     fetchPrecos();
     fetchCores();

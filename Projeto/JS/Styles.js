@@ -19,7 +19,7 @@ export const cardEffects = () => {
 
 export const carregarMais = () => {
   paginacao += 3;
-  fetchProduto(produtos)
+  fetchProduto(arrayProdutos)
   window.scrollTo({
     top: 0,
     behavior: 'smooth',
