@@ -8,12 +8,12 @@ gulp.task('serve',() => {
       server: {
           baseDir:"./",
       },
-      startPath: "/file-server/Index.html"
+      startPath: "/file-server/index.html"
   });
 });
 
 gulp.task('fileinclude', async ()=> {
-  await gulp.src(['./Projeto/Pages/Index.html'])
+  await gulp.src(['./Projeto/index.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
@@ -22,13 +22,18 @@ gulp.task('fileinclude', async ()=> {
 });
 
 gulp.task("js", () => {
-  return gulp.src("./Projeto/JS/**").pipe(gulp.dest("./file-server/js"))
+  return gulp.src("./Projeto/scripts/**").pipe(gulp.dest("./file-server/scripts"))
 });
+
+gulp.task("index", () => {
+  return gulp.src("./Projeto/index.html").pipe(gulp.dest("./file-server"))
+});
+
 
 gulp.task("img",() => {
   return gulp.src("./Projeto/imagens/**").pipe(gulp.dest("./file-server/imagens"))
 });
 
 gulp.task("css", () => {
-  return gulp.src("./Projeto/CSS/*").pipe(concat('style.css')).pipe(gulp.dest('./file-server'))
+  return gulp.src("./Projeto/css/**").pipe(concat('style.css')).pipe(gulp.dest('./file-server'))
 });

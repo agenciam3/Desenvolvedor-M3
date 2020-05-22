@@ -1,0 +1,6 @@
+[
+    {"codPreco":1,"preco":"R$ 0 até R$ 50","value":1},
+    {"codPreco":2,"preco":"R$ 51 até R$ 150","value":2},
+    {"codPreco":3,"preco":"R$ 151 até R$ 300","value":3},
+    {"codPreco":4,"preco":"R$ 301 até R$ 500","value":4}
+]

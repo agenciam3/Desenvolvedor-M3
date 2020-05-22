@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "servidor": "gulp serve",
-    "gulptasks": "gulp fileinclude && gulp js && gulp css && gulp img",
+    "gulptasks":"gulp fileinclude && gulp index && gulp js && gulp css && gulp img ",
     "serve": "browser-sync start --server --files 'Projeto/file-server/*' --startPath 'Projeto/file-server'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
