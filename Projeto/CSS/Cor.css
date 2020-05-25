@@ -1,0 +1,30 @@
+.box-cores {
+    margin: 2rem 0rem;
+}
+
+.box-cores>p {
+    font-weight: 1100;
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 1.1em;
+}
+
+.box-input-cores {
+    margin: 1rem 0rem;
+}
+
+.box-input-cores>div>label {
+    font-family: 'Monteserrat', sans-serif;
+    font-size: 0.8em;
+    margin-left:0.5rem;
+}
+@media only screen and (max-width: 600px) {
+    .box-cores>p {
+       display: none;
+    }
+    .box-cores {
+        margin: 0.25rem 2rem;
+    }
+    .box-input-cores {
+        margin: 0.25rem 0rem;
+    }
+}
