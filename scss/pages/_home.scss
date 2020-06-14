@@ -1,0 +1,29 @@
+.home{
+    padding: 4rem 0;
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        height: 3.7rem;
+        // align-items: baseline;
+        margin-bottom: 4rem;
+    }
+
+    &__content{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 847px){
+
+    .home{
+        &__header{
+            justify-content: center;
+            .select{
+                display: none;
+            }
+        }
+        
+    }
+    
+}

@@ -1,0 +1,28 @@
+.header{
+    box-shadow: 0 2px 0 0 #C7C7C7;
+    &__content{
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo{
+        display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 847px){
+    .header{
+        &__content{
+            padding: 1.5rem 2.4rem;
+        }
+    
+        &__logo{
+            width: 18.4rem;
+            img{
+                width: 100%;
+            }
+        }
+    }   
+}

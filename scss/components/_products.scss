@@ -1,0 +1,67 @@
+.products{
+    width: 74.14%;
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__item{
+        text-align: center;
+        margin-bottom: 4rem;
+        &:not(:nth-of-type(3n)){
+            margin-right: 3rem;
+        }
+
+        &__title{
+            margin-top: 1.5rem;
+        }
+
+        &__price{
+            margin-top: 1rem;
+        }
+
+        &__price-info{
+            margin: 0.3rem 0 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 847px){
+    .products {
+        width: 100%;
+        padding: 0 3rem;
+        &__content{
+            justify-content: space-between;
+        }
+        &__item{
+            text-align: center;
+            margin-bottom: 4rem;
+            &:not(:nth-of-type(3n)){
+                margin-right: unset;
+            }
+    
+            &__title{
+                margin-top: 1.5rem;
+            }
+    
+            &__price{
+                margin-top: 1rem;
+            }
+    
+            &__price-info{
+                margin: 0.3rem 0 1rem;
+            }
+        }
+    }
+}
+
+@include respond(phone){
+    .products {
+        &__item{
+            width: 47%;
+            &__title{
+               height: 26px;
+            font-size: 1.2rem;
+            }
+        }
+    }
+}   

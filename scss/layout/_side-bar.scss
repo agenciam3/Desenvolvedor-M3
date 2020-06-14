@@ -1,0 +1,64 @@
+.side-bar {
+  width: 20rem;
+  display: inline-block;
+
+  & > *{
+      margin-bottom: 2rem;
+  }
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__colors {
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__label {
+      cursor: pointer;
+      display: inline-block;
+      user-select: none;
+      margin-bottom: 9px;
+    }
+
+    .link{
+        margin-top: 1.7rem;
+    }
+  }
+
+  &__sizes {
+      
+    &__btns {
+      width: 15.4rem;
+      display: flex;
+      flex-wrap: wrap;
+      & > * {
+        margin-bottom: 0.8rem;
+        &:not(:nth-of-type(4n)) {
+          margin-right: 0.8rem;
+        }
+      }
+    }
+  }
+
+  &__prices{
+      display: flex;
+      flex-direction: column;
+
+      &__label {
+        cursor: pointer;
+        display: inline-block;
+        user-select: none;
+        margin-bottom: 9px;
+      }
+  }
+}
+
+
+@media only screen and (max-width: 847px){
+  .side-bar{
+    display: none;
+  }
+}

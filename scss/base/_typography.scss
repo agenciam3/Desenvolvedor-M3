@@ -1,0 +1,94 @@
+html{
+  font-family: "Open Sans Regular", sans-serif;
+  font-weight: 100;
+}
+
+.main-title {
+  font-family: "Open Sans Regular", sans-serif;
+  font-weight: 100;
+  font-size: 3.2rem;
+  // line-height: 3.2rem;
+}
+
+.tertiary-heading {
+  font-family: "Open Sans Regular", sans-serif;
+  font-size: 1.6rem;
+}
+
+label {
+  font-family: "Open Sans Regular", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.4rem;
+}
+
+.product {
+    &__title {
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    display: block;
+  }
+
+  &__price{
+      display: block;
+      font-family: "Open Sans Bold", sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+
+  }
+
+  &__info{
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 1.4rem;
+    // text-transform: uppercase;
+    display: block;
+
+  }
+}
+
+.footer__copyright{
+    font-family: "Open Sans Regular", sans-serif;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.link{
+    font-family: "Open Sans Regular", sans-serif;
+    color: #666666;
+    font-size: 1.4rem;
+    position: relative;
+    width: fit-content;
+
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #D8D8D8;
+    }
+
+    &--arrow{
+        .arrow-down{
+            display: inline-block;
+        }
+    }
+
+    &:hover{
+        color: #000;
+
+        &::after{
+            background: #000;
+        }
+
+        .arrow-down{
+            filter: brightness(0.1);
+        }
+    }
+}
+
+@media only screen and (max-width: 842px){
+  label{
+    line-height: 3.4rem;
+  }
+}

@@ -1,0 +1,40 @@
+.custom-checkbox{
+    height: 14px;
+    width: 14px;
+    border: 1px solid #7F7F7F;
+    display: inline-block;
+    position: relative;
+
+    &::after{
+        content: "";
+        display: none;
+        position: absolute;
+        height: 8px;
+        width: 8px;
+        background: #2BBFF2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &--mobile{
+        height: 30px;
+        width: 30px;
+        margin-right: 2rem;
+
+        &::after{
+            height: 20px;
+            width: 20px;
+        }
+    }
+}
+
+input[type="radio"], input[type="checkbox"]{
+    display: none;
+}
+
+input[type="radio"]:checked + .custom-checkbox, input[type="checkbox"]:checked + .custom-checkbox {
+    &::after{
+        display: block;
+    }
+}

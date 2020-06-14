@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dist/css/main.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="u-wrapper">
+        <div class="header__content">
+          <div class="header__logo">
+            <img src="/img/logo-m3.png" alt="M3 Logo" />
+          </div>
+          <div class="header__cart cart-btn">
+            <img src="/img/bag-icon.png" alt="Sacola" />
+            <div class="cart-btn__circle"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="catalog">
+      <div class="catalog__filters" >
+      <div class="catalog__top-bar">
+        <h4 class="catalog__title">
+          Filtrar 
+        </h4>
+        <img src="/img/close_x.svg" width="24" class="closeCatalog">
+      </div>
+      
+      <div class="catalog__content">
+        <div>
+          <span class="catalog__items-title">CORES</span>
+          <img class="catalog__items-icon" data-ref=".catalog__colors" data-status="closed" src="/img/plus.svg" >
+
+          <div class="catalog__item-box">
+            <div class="catalog__colors">
+              <label for="mobile-amarelo" class="catalog__colors__label">
+                  <input type="checkbox" name="color" id="mobile-amarelo" value="amarelo" />
+                  <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+                Amarelo
+              </label>
+              <label for="mobile-azul" class="catalog__colors__label">
+                  <input type="checkbox" name="color" id="mobile-azul" value="azul" /> 
+                  <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+                Azul
+              </label>
+              <label for="mobile-branco" class="catalog__colors__label">
+                  <input type="checkbox" name="color" id="mobile-branco"  value="branco"/>
+                  <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+                Branco
+              </label>
+              <label for="mobile-cinza" class="catalog__colors__label">
+                  <input type="checkbox" name="color" id="mobile-cinza"  value="cinza" />
+                  <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+                Cinza
+              </label>
+              <label for="mobile-laranja" class="catalog__colors__label">
+                  <input type="checkbox" name="color" id="mobile-laranja" value="laranja" />
+                  <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+                Laranja
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <span class="catalog__items-title">TAMANHO</span>
+          <img class="catalog__items-icon" data-ref=".catalog__sizes" data-status="closed" src="/img/plus.svg" >
+
+          <div class="catalog__item-box">
+          <div class="catalog__sizes">
+              <div class="catalog__sizes__btns">
+                
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-p" value="p">
+                  <label class="size-btn size-btn--mobile" for="mobile-p">
+                    <span>
+                      P
+                    </span>
+                  </label>
+                </div>
+                
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-m" value="m"> 
+                  <label class="size-btn size-btn--mobile" for="mobile-m">
+                    <span>
+                      M
+                    </span>
+                  </label>
+                </div>
+                
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-g" value="g"> 
+                  <label class="size-btn size-btn--mobile" for="mobile-g">
+                    <span>
+                      G
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-gg" value="gg">
+                  <label class="size-btn size-btn--mobile" for="mobile-gg">
+                    <span>
+                      GG
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-u" value="u"> 
+                  <label class="size-btn size-btn--mobile" for="mobile-u">
+                    <span>
+                      U
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-36" value="36">
+                  <label class="size-btn size-btn--mobile" for="mobile-36">
+                    <span>
+                      36
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-38" value="38">
+                  <label class="size-btn size-btn--mobile" for="mobile-38">
+                    <span>
+                      38
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-40" value="40">
+                  <label class="size-btn size-btn--mobile" for="mobile-40">
+                    <span>
+                      40
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-42" value="42">
+                  <label class="size-btn size-btn--mobile" for="mobile-42">
+                    <span>
+                      42
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-44" value="44">
+                  <label class="size-btn size-btn--mobile" for="mobile-44">
+                    <span>
+                      44
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="mobile-46" value="46">
+                  <label class="size-btn size-btn--mobile" for="mobile-46">
+                    <span>
+                      46
+                    </span>
+                  </label>
+                </div>
+
+              </div>
+           
+          </div>
+        </div>
+
+        </div>
+        <div>
+          <span class="catalog__items-title">FAIXA DE PREÇO</span>
+          <img class="catalog__items-icon" data-ref=".catalog__prices" data-status="closed" src="/img/plus.svg" >
+
+          <div class="catalog__item-box">
+            <div class="catalog__prices">
+              <label for="mobile-0-50" class="catalog__prices__label">
+                <input type="radio" name="range-price" id="mobile-0-50" value="0-50"/>
+                <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+                de R$0 até R$50 
+            </label>
+
+            <label for="mobile-51-150" class="catalog__prices__label">
+              <input type="radio" name="range-price" id="mobile-51-150" value="51-150"/>
+              <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+              de R$51 até R$150 
+          </label>
+
+          <label for="mobile-151-300" class="catalog__prices__label">
+            <input type="radio" name="range-price" id="mobile-151-300" value="151-300"/>
+            <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+            de R$151 até R$300
+          </label>
+
+          <label for="mobile-301-500" class="catalog__prices__label">
+            <input type="radio" name="range-price" id="mobile-301-500" value="301-500"/>
+            <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+            de R$301 até R$500
+          </label>
+
+          <label for="mobile-01" class="catalog__prices__label">
+            <input type="radio" name="range-price" id="mobile-01" value="01"/>
+            <div class="custom-checkbox custom-checkbox--mobile">&nbsp;</div>
+            a partir de R$ 01
+          </label>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog__order">
+      <div class="catalog__top-bar">
+        <h4 class="catalog__title">
+          Ordernar
+        </h4>
+        <img src="/img/close_x.svg" width="24" class="closeCatalog">
+      </div>
+      
+      <div class="catalog__content">
+        <div>
+          <span class="catalog__items-title mobile-order" data-value="latest">Mais recentes</span>
+        </div>
+        <div>
+          <span class="catalog__items-title mobile-order" data-value="price">Menor preço</span>
+        </div>
+        <div>
+          <span class="catalog__items-title mobile-order" data-value="expensive">Maior preço</span>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <section class="home">
+      <div class="u-wrapper">
+        <div class="home__header">
+          <h2 class="main-title">
+            Blusa
+          </h2>
+          <select class="select" id="order">
+            <option value="hide">Ordenar por:</option>
+            <option value="latest">Mais recentes</option>
+            <option value="price">Menor preço</option>
+            <option value="expensive">Maior preço</option>
+          </select>
+        </div>
+
+        <div class="options">
+          <div class="options__btn" id="mobile-filter-btn">
+            Filtrar
+          </div>
+          <div class="options__btn" id="mobile-order-btn">
+            Ordenar
+          </div>
+        </div>
+
+
+
+        <div class="home__content">
+          <aside class="side-bar">
+            
+            <div class="side-bar__colors">
+              <h4 class="side-bar__heading tertiary-heading">CORES</h4>
+              <div class="side-bar__colors__items">
+                <label for="amarelo" class="side-bar__colors__label">
+                    <input type="checkbox" name="color" value="amarelo" id="amarelo" />
+                    <div class="custom-checkbox">&nbsp;</div>
+                  Amarelo
+                </label>
+                <label for="azul" class="side-bar__colors__label">
+                    <input type="checkbox" name="color" value="azul" id="azul" />
+                    <div class="custom-checkbox">&nbsp;</div>
+                  Azul
+                </label>
+                <label for="branco" class="side-bar__colors__label">
+                    <input type="checkbox" name="color" value="branco" id="branco" />
+                    <div class="custom-checkbox">&nbsp;</div>
+                  Branco
+                </label>
+                <label for="cinza" class="side-bar__colors__label">
+                    <input type="checkbox" name="color" value="cinza" id="cinza" />
+                    <div class="custom-checkbox">&nbsp;</div>
+                  Cinza
+                </label>
+                <label for="laranja" class="side-bar__colors__label">
+                    <input type="checkbox" name="color" value="laranja" id="laranja" />
+                    <div class="custom-checkbox">&nbsp;</div>
+                  Laranja
+                </label>
+                <label for="transparente" class="side-bar__colors__label" style="display: none;">
+                  <input type="checkbox" name="color" value="transparente" id="transparente" />
+                  <div class="custom-checkbox">&nbsp;</div>
+                Transparente
+              </label>
+              <label for="colorido" class="side-bar__colors__label" style="display: none;">
+                <input type="checkbox" name="color" value="colorido" id="colorido" />
+                <div class="custom-checkbox">&nbsp;</div>
+              Colorido
+            </label>
+
+                <a class="link link--arrow" href="javascript:void(0)" id="showMoreColors">Ver Todas as cores <img class="arrow-down" src="/img/C6f.svg" width="8" ></a>
+              </div>
+            </div>
+
+            <div class="side-bar__sizes">
+              <h4 class="side-bar__heading tertiary-heading">TAMANHOS</h4>
+              <div class="side-bar__sizes__btns">
+
+                <div>
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="p" value="p">
+                  <label class="size-btn" for="p">
+                    <span>
+                      P
+                    </span>
+                  </label>
+                </div>
+                
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="m" value="m"> 
+                  <label class="size-btn" for="m">
+                    <span>
+                      M
+                    </span>
+                  </label>
+                </div>
+                
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="g" value="g"> 
+                  <label class="size-btn" for="g">
+                    <span>
+                      G
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="gg" value="gg">
+                  <label class="size-btn" for="gg">
+                    <span>
+                      GG
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="u" value="u"> 
+                  <label class="size-btn" for="u">
+                    <span>
+                      U
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="36" value="36">
+                  <label class="size-btn" for="36">
+                    <span>
+                      36
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="38" value="38">
+                  <label class="size-btn" for="38">
+                    <span>
+                      38
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="40" value="40">
+                  <label class="size-btn" for="40">
+                    <span>
+                      40
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="42" value="42">
+                  <label class="size-btn" for="42">
+                    <span>
+                      42
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="44" value="44">
+                  <label class="size-btn" for="44">
+                    <span>
+                      44
+                    </span>
+                  </label>
+                </div>
+
+                <div>
+
+                  <input class="size-btn__checkbox" type="checkbox" name="size" id="46" value="46">
+                  <label class="size-btn" for="46">
+                    <span>
+                      46
+                    </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="side-bar__prices">
+              <h4 class="side-bar__heading tertiary-heading">FAIXA DE PREÇO</h4>
+              <label for="0-50" class="side-bar__prices__label">
+                <input type="radio" name="range-price" id="0-50" value="0-50" />
+                <div class="custom-checkbox">&nbsp;</div>
+                de R$0 até R$50 
+            </label>
+
+            <label for="51-150" class="side-bar__prices__label">
+              <input type="radio" name="range-price" id="51-150" value="51-150" />
+              <div class="custom-checkbox">&nbsp;</div>
+              de R$51 até R$150 
+          </label>
+
+          <label for="151-300" class="side-bar__prices__label">
+            <input type="radio" name="range-price" id="151-300" value="151-300" />
+            <div class="custom-checkbox">&nbsp;</div>
+            de R$151 até R$300
+          </label>
+
+          <label for="301-500" class="side-bar__prices__label">
+            <input type="radio" name="range-price" id="301-500" value="301-500" />
+            <div class="custom-checkbox">&nbsp;</div>
+            de R$301 até R$500
+          </label>
+
+          <label for="01" class="side-bar__prices__label">
+            <input type="radio" name="range-price" id="01" value="01" />
+            <div class="custom-checkbox">&nbsp;</div>
+            a partir de R$ 01
+          </label>
+            
+            </div>
+          </aside>
+          <div class="products">
+            <div class="products__content">
+            
+          </div>
+          <a href="javascript:void(0)" class="btn btn--blue" id="loadMoreBtn">CARREGAR MAIS</a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="footer__copyright ">
+        Agência M3 - Agência de Performance Digital
+      </span class="footer__copyright ">
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/dist/js/app.min.js"></script>
+  </body>
+</html>
