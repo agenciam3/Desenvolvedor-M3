@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3 - Perfomace Digital</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="nav-top">
+            <div class="logo">
+                <img src="/layout/imagens/logo-m3.png" alt="logoM3">
+            </div>
+           <div class="bag">
+               <img src="/layout/imagens/bag.png" alt="bag">
+                <span id="cont" class="cont"></span>
+           </div>
+        </div>
+    </header>
+    <div class="control">
+        <div class="top">
+            <div class="type">
+                <h3>Blusas</h3>
+            </div>
+            <div class="type-itens">
+                <button class="filter">Filtrar</button>
+                <div class="select-order">
+                    <select  name="order" id="order">
+                        <option selected disabled hidden>Ordernar Por:</option>
+                        <option value="1">Mais recentes</option>
+                        <option value="2">Menor preço</option>
+                        <option value="3">Maior preço</option>
+                    </select>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <aside class="menu-type">
+                    <div id="colors" class="color">
+                        <h2>Cores</h2>
+                        <label class="type-color">Amarelo
+                        <input class="checkbox-color" type="checkbox" id="amarelo" value="amarelo"><br>
+                        <span class="checkmark"></span></label>
+                        
+                        <label class="type-color">Azul
+                        <input class="checkbox-color" type="checkbox"  id="azul" value="azul"><br>
+                        <span class="checkmark"></span></label>
+                        
+                        <label class="type-color">Branco
+                        <input class="checkbox-color" type="checkbox" id="branco" value="branco"><br>
+                        <span class="checkmark"></span> </label>
+                        
+                        <label class="type-color">Cinza
+                        <input class="checkbox-color" type="checkbox"  id="cinza" value="cinza"><br>
+                        <span class="checkmark"></span></label>
+                        
+                        <label class="type-color">Laranja
+                        <input class="checkbox-color" type="checkbox"  id="laranja" value="laranja"><br>
+                        <span class="checkmark"></span></label>
+
+                    </div>
+                    <div class="all-colors">
+                        <span id="role-color" class="role-color">Ver todas as cores</span>
+                    </div>
+                    <div class="size">
+                        <h2>Tamanhos</h2>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="pp" value="pp"><br>
+                            <span class="checkbox-style-size">PP</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="P" value="P"><br>
+                            <span class="checkbox-style-size">P</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="M" value="M"><br>
+                            <span class="checkbox-style-size">M</span>
+                            </label>
+                            <label class="type-size"> 
+                            <input class="checkbox-size" type="checkbox" id="g" value="g"><br>
+                            <span class="checkbox-style-size">G</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="gg" value="gg"><br>
+                            <span class="checkbox-style-size">GG</span>
+                            </label>
+                            <label class="type-size"> 
+                            <input class="checkbox-size" type="checkbox" id="u" value="u"><br>
+                            <span class="checkbox-style-size">U</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="36" value="36"><br>
+                            <span class="checkbox-style-size">36</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="38" value="38"><br>
+                            <span class="checkbox-style-size">38</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="40" value="40"><br>
+                            <span class="checkbox-style-size">40</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="42" value="42"><br>
+                            <span class="checkbox-style-size">42</span>
+                            </label>
+                            <label class="type-size">
+                            <input class="checkbox-size" type="checkbox" id="44" value="44"><br>
+                            <span class="checkbox-style-size">44</span>
+                            </label>
+                            <label class="type-size"> 
+                            <input class="checkbox-size" type="checkbox" id="46" value="46"><br>
+                            <span class="checkbox-style-size">46</span>
+                            </label>
+                    </div>
+
+                    <div class="price">
+                        <h2>Faixa de preços</h2>
+                            <label class="type-price">de R$0 até R$50
+                            <input class="checkbox-color" type="checkbox" id="0-50" value="0-50"><br>
+                            <span class="checkmark"></span></label>
+                            <label class="type-price">de R$51 até R$150
+                            <input class="checkbox-color" type="checkbox" id="51-150" value="51-150"><br>
+                            <span class="checkmark"></span></label>
+                            <label class="type-price">de R$151 até R$300
+                            <input class="checkbox-color" type="checkbox" id="151-300" value="151-300"><br>
+                            <span class="checkmark"></span></label>
+                            <label class="type-price">de R$301 até R$500
+                            <input class="checkbox-color" type="checkbox" id="301-500" value="301-500"><br>
+                            <span class="checkmark"></span></label>
+                            <label class="type-price">apartir de R$1
+                            <input class="checkbox-color" type="checkbox" id="1-500" value="1-500"><br>
+                            <span class="checkmark"></span></label>
+                    
+                    </div>
+                    <div class="opc">
+                        <button class="Apl">APLICAR</button>
+                        <button class="cle">LIMPAR</button>
+                    </div>
+        </aside>
+        <section>
+            <div id="iten" class="itens"></div>
+            <button id="more" class="more">CARREGAR MAIS</button>
+        </section>
+    </div>
+    
+    <script src="/script.js"></script>
+    <footer class="foot">Agência M3 - Agência de Performance Dgital</footer>
+</body>
+
+</html>
