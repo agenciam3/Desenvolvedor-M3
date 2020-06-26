@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor-M3</title>
+
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header_content">
+            <div class="header_logo">
+                <img src="/layout/imagens/logo-m3.png" alt="Logo M3">
+            </div>
+            <div class="header_cart">
+                <img src="/layout/imagens/bag-icon.png" alt="">
+            </div>
+        </div>
+        
+    </header>
+
+    <section class="home">
+        <div class="home_header">          
+            <span class="main_title">Blusas</span>
+
+            <select class="select" id="order" >
+                <option class="option" value="default" disabled selected hidden label="Ordenar por:"></option>
+                <option class="option" value="latest" >
+                    <span class="txt_option">
+                        Mais recentes
+                    </span>
+                </option>
+                <option class="option" value="lower_price" label="Menor preço"></option>
+                <option class="option" value="higher_price" label="Maior preço"></option>
+
+            </select>
+        </div>
+        
+        <aside class="side_bar">
+            <div class="side_bar_content">
+                <div>
+                    <span class="side_bar_items_title">Cores</span>
+                    <div class="side_bar_option_color">
+                        <div class="side_bar_colors">
+                            <input class="input_color" type="checkbox" name="color" id="color_amarelo" value= "amarelo">
+                            <label for="color_amarelo">Amarelo</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input type="checkbox" name="color" id="color_azul" value= "azul">
+                            <label for="color_azul">Azul</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_branco" value= "branco">
+                            <label for="color_branco">Branco</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_cinza" value= "cinza">
+                            <label for="color_cinza">Cinza</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_laranja" value= "laranja">
+                            <label for="color_laranja">Laranja</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_verde" value= "verde">
+                            <label for="color_verde">Verde</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_vermelho" value= "vermelho">
+                            <label for="color_vermelho">Vermelho</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_preto" value= "preto">
+                            <label for="color_preto">Preto</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_rosa" value= "rosa">
+                            <label for="color_rosa">Rosa</label>
+                        </div>
+                        <div class="side_bar_colors">
+                            <input  type="checkbox" name="color" id="color_vinho" value= "vinho">
+                            <label for="color_vinho">Vinho</label>
+                        </div>
+                        <a class="link link--arrow" href="javascript:void(0)" id="showMoreColors">Ver Todas as cores <img class="arrow-down" src="/layout/imagens/arrow.svg" width="8" ></a>
+                        <!-- VER ESSE LINK! -->
+                    </div>
+
+                </div>
+                <div>
+                    <span class="side_bar_items_title">Tamanhos</span>
+                    <div class="side_bar_option_size">
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="P">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="M">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="G">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="GG">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="U">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="36">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="38">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="40">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="42">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="44">
+                        </div>
+                        <div class="side_bar_sizes">
+                            <input class="side_bar_btn" type="button" value="46">
+                        </div>
+                    </div>               
+                </div>
+                <div>
+                    <span class="side_bar_items_title">Faixa de Preço</span>  
+                    <div class="side_bar_option_price"> 
+                        <div class="side_bar_prices">
+                            <input type="radio" name="price_range" id="0-50" value="0-50">
+                            <label for="0/50">de R$0 até R$50</label> 
+                        </div>
+                        <div class="side_bar_prices">
+                            <input type="radio" name="price_range" id="51-150" value="51-150">
+                            <label for="0/50">de R$51 até R$150</label> 
+                        </div>
+                        <div class="side_bar_prices">
+                            <input type="radio" name="price_range" id="151-300" value="151-300">
+                            <label for="0/50">de R$151 até R$300</label> 
+                        </div>
+                        <div class="side_bar_prices">
+                            <input type="radio" name="price_range" id="301-500" value="301-500">
+                            <label for="0/50">de R$301 até R$500</label> 
+                        </div>
+                        <div class="side_bar_prices">
+                            <input type="radio" name="price_range" id="01-" value="01-">
+                            <label for="0/50">a partir de R$ 01</label> 
+                        </div>
+                  </div>                 
+                </div>                
+            </div>
+        </aside>
+
+        <div class="products">
+            <div class="products__content">
+            
+            </div>
+            <a href="javascript:void(0)" class="btn btn--blue" id="loadMoreBtn">CARREGAR MAIS</a>
+            <!-- VER ESSE LINK! --> 
+        </div>
+    </section>
+
+    <footer class="footer">
+        <span class="footer_copyright_M3">
+            Agência M3 - Agência de Performance Digital
+        </span>
+
+
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+	COISAS PARA RESOLVER
+
+Terminar de configurar os option!
+
+Checkbox dps de selecionado!
+
+Botão dps de Selecionado!
+
+
+	A FAZER
+
+1- FAZER CSS SIDE_BAR
+-Cores
+-Tamanhos
+-Preços
+
+
+	VERIFICAR
+
+Botão de Tamanhos tem que ter como coincidir, 2 ou mais ao mesmo tempo!
+
+VER a tag <a> está igual do kadu linha:81
+
+Fazer o restante dos checkbox, chegar o mais próximo de terminar o layout
