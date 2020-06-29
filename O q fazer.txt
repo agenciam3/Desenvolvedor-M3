@@ -2,23 +2,35 @@
 
 Terminar de configurar os option!
 
-Checkbox dps de selecionado!
-
-Botão dps de Selecionado!
-
 
 	A FAZER
 
-1- FAZER CSS SIDE_BAR
--Cores
--Tamanhos
--Preços
+1 - FAZER MOBILE! (utilizar % para tamanhos)
+
+2 - Select Corrigir nomes das classes!
+(Estilizar o Select, meu)
+
+3 - Select tem que fechar ao clicar em algum item e não apenas quando clicar no "ORDENAR POR:"
+
+4 - CONFIGURAR O DESMARCAR RADIO!
+
+5 - Fazer o filtro JS
+
+6 - Mudar nomes das js/css, organizar por partes
 
 
 	VERIFICAR
 
-Botão de Tamanhos tem que ter como coincidir, 2 ou mais ao mesmo tempo!
 
-VER a tag <a> está igual do kadu linha:81
+CONFIGURAR O DESMARCAR RADIO!
 
-Fazer o restante dos checkbox, chegar o mais próximo de terminar o layout
+
+Alinhar txt footer com o home...
+
+
+	ESTILIZAR
+
+
+
+
+

@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvedor-M3</title>
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
     <header class="header">
         <div class="header_content">
             <div class="header_logo">
-                <img src="/layout/imagens/logo-m3.png" alt="Logo M3">
+                <img src="./layout/imagens/logo-m3.png" alt="Logo M3">
             </div>
             <div class="header_cart">
-                <img src="/layout/imagens/bag-icon.png" alt="">
+                <img src="./layout/imagens/bag-icon.png" alt="">
+                <span class="header_cart_count" id="header_cart_count">0</span>
             </div>
         </div>
         
@@ -24,142 +25,215 @@
         <div class="home_header">          
             <span class="main_title">Blusas</span>
 
-            <select class="select" id="order" >
-                <option class="option" value="default" disabled selected hidden label="Ordenar por:"></option>
-                <option class="option" value="latest" >
-                    <span class="txt_option">
-                        Mais recentes
-                    </span>
-                </option>
-                <option class="option" value="lower_price" label="Menor preço"></option>
-                <option class="option" value="higher_price" label="Maior preço"></option>
-
-            </select>
+            <div class="home_header_select">
+                <button class="select_title" id="order">Ordenar por:<span class="arrow_symbol">&#118;</span></button>
+                
+                <ul class="select_open_close" id="select_options">
+                    <li class="select_options">Mais recentes</li>
+                    <li class="select_options">Menor preço</li>
+                    <li class="select_options">Maior preço</li>
+                </ul>
+                
+            </div>
         </div>
-        
-        <aside class="side_bar">
-            <div class="side_bar_content">
-                <div>
-                    <span class="side_bar_items_title">Cores</span>
-                    <div class="side_bar_option_color">
-                        <div class="side_bar_colors">
-                            <input class="input_color" type="checkbox" name="color" id="color_amarelo" value= "amarelo">
-                            <label for="color_amarelo">Amarelo</label>
+
+        <div class="home_container">
+            <aside class="side_bar">
+                <div class="side_bar_content">
+                    <div>
+                        <span class="side_bar_items_title">Cores</span>
+                        <div class="side_bar_option_color">
+                            <label for="amarelo" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="amarelo" id="amarelo" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                              Amarelo
+                            </label>
+                            <label for="azul" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="azul" id="azul" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Azul
+                            </label>
+                            <label for="branco" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="branco" id="branco" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Branco
+                            </label>
+                            <label for="cinza" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="cinza" id="cinza" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Cinza
+                            </label>
+                            <label for="laranja" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="laranja" id="laranja" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Laranja
+                            </label>
+                            <label for="verde" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="verde" id="verde" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Verde
+                            </label>
+                            <label for="vermelho" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="vermelho" id="vermelho" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Vermelho
+                            </label>
+                            <label for="preto" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="preto" id="preto" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Preto
+                            </label>
+                            <label for="rosa" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="rosa" id="rosa" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Rosa
+                            </label>
+                            <label for="vinho" class="side_bar_colors">
+                                <input type="checkbox" name="color" value="vinho" id="vinho" />
+                                <div class="checkbox_checked">&nbsp;</div>
+                                Vinho
+                            </label>
+                            <div class="side_bar_more_colors" id="side_bar_more_colors" onclick="show_more_colors()">Ver Todas as cores <span class="color_arrow_down">&#118;</span> </div>
+                            
+                            <!-- VER ESSE LINK! -->
                         </div>
-                        <div class="side_bar_colors">
-                            <input type="checkbox" name="color" id="color_azul" value= "azul">
-                            <label for="color_azul">Azul</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_branco" value= "branco">
-                            <label for="color_branco">Branco</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_cinza" value= "cinza">
-                            <label for="color_cinza">Cinza</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_laranja" value= "laranja">
-                            <label for="color_laranja">Laranja</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_verde" value= "verde">
-                            <label for="color_verde">Verde</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_vermelho" value= "vermelho">
-                            <label for="color_vermelho">Vermelho</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_preto" value= "preto">
-                            <label for="color_preto">Preto</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_rosa" value= "rosa">
-                            <label for="color_rosa">Rosa</label>
-                        </div>
-                        <div class="side_bar_colors">
-                            <input  type="checkbox" name="color" id="color_vinho" value= "vinho">
-                            <label for="color_vinho">Vinho</label>
-                        </div>
-                        <a class="link link--arrow" href="javascript:void(0)" id="showMoreColors">Ver Todas as cores <img class="arrow-down" src="/layout/imagens/arrow.svg" width="8" ></a>
-                        <!-- VER ESSE LINK! -->
                     </div>
-
+                    <div>
+                        <span class="side_bar_items_title">Tamanhos</span>
+                        <div class="side_bar_option_size">
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="p" value="p">
+                                <label class="size_btn" for="p">
+                                    <span>
+                                        P
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="m" value="m">
+                                <label class="size_btn" for="m">
+                                    <span>
+                                        M
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="g" value="g">
+                                <label class="size_btn" for="g">
+                                    <span>
+                                        G
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="gg" value="gg">
+                                <label class="size_btn" for="gg">
+                                    <span>
+                                        GG
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="u" value="u">
+                                <label class="size_btn" for="u">
+                                    <span>
+                                        U
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="36" value="36">
+                                <label class="size_btn" for="36">
+                                    <span>
+                                        36
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="38" value="38">
+                                <label class="size_btn" for="38">
+                                    <span>
+                                        38
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="40" value="40">
+                                <label class="size_btn" for="40">
+                                    <span>
+                                        40
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="42" value="42">
+                                <label class="size_btn" for="42">
+                                    <span>
+                                        42
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="44" value="44">
+                                <label class="size_btn" for="44">
+                                    <span>
+                                        44
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="side_bar_sizes">
+                                <input class="side_bar_btn" type="checkbox" name="size" id="46" value="46">
+                                <label class="size_btn" for="46">
+                                    <span>
+                                        46
+                                    </span>
+                                </label>
+                            </div>
+                        </div>               
+                    </div>
+                    <div>
+                        <span class="side_bar_items_title">Faixa de Preço</span>  
+                        <div class="side_bar_option_price"> 
+                            <label for="0-50" class="side_bar_prices" ><!--onclick="radio_disable('0-50')"-->
+                                <input type="radio" name="price_range" id="0-50" value="0-50"/>
+                                <div class="radio_checked">&nbsp;</div>
+                                de R$0 até R$50 
+                            </label>
+                            <label for="51-150" class="side_bar_prices" >
+                                <input type="radio" name="price_range" id="51-150" value="51-150"/>
+                                <div class="radio_checked">&nbsp;</div>
+                                de R$51 até R$150 
+                            </label>
+                            <label for="151-300" class="side_bar_prices" >
+                                <input type="radio" name="price_range" id="151-300" value="151-300" />
+                                <div class="radio_checked">&nbsp;</div>
+                                de R$151 até R$300 
+                            </label>
+                            <label for="301-500" class="side_bar_prices" >
+                                <input type="radio" name="price_range" id="301-500" value="301-500" />
+                                <div class="radio_checked">&nbsp;</div>
+                                de R$301 até R$500 
+                            </label>
+                            <label for="01-" class="side_bar_prices" >
+                                <input type="radio" name="price_range" id="01-" value="01-" />
+                                <div class="radio_checked">&nbsp;</div>
+                                a partir de R$ 01
+                            </label>
+                      </div>                 
+                    </div>                
                 </div>
-                <div>
-                    <span class="side_bar_items_title">Tamanhos</span>
-                    <div class="side_bar_option_size">
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="P">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="M">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="G">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="GG">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="U">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="36">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="38">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="40">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="42">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="44">
-                        </div>
-                        <div class="side_bar_sizes">
-                            <input class="side_bar_btn" type="button" value="46">
-                        </div>
-                    </div>               
+            </aside>
+    
+            <div class="products">
+                <div class="products_content" id="products_content">
+                
                 </div>
-                <div>
-                    <span class="side_bar_items_title">Faixa de Preço</span>  
-                    <div class="side_bar_option_price"> 
-                        <div class="side_bar_prices">
-                            <input type="radio" name="price_range" id="0-50" value="0-50">
-                            <label for="0/50">de R$0 até R$50</label> 
-                        </div>
-                        <div class="side_bar_prices">
-                            <input type="radio" name="price_range" id="51-150" value="51-150">
-                            <label for="0/50">de R$51 até R$150</label> 
-                        </div>
-                        <div class="side_bar_prices">
-                            <input type="radio" name="price_range" id="151-300" value="151-300">
-                            <label for="0/50">de R$151 até R$300</label> 
-                        </div>
-                        <div class="side_bar_prices">
-                            <input type="radio" name="price_range" id="301-500" value="301-500">
-                            <label for="0/50">de R$301 até R$500</label> 
-                        </div>
-                        <div class="side_bar_prices">
-                            <input type="radio" name="price_range" id="01-" value="01-">
-                            <label for="0/50">a partir de R$ 01</label> 
-                        </div>
-                  </div>                 
-                </div>                
+                <div class="products_load_more" id="products_load_more" onclick="load_more()"> 
+                    CARREGAR MAIS
+                </div>
+                
             </div>
-        </aside>
-
-        <div class="products">
-            <div class="products__content">
-            
-            </div>
-            <a href="javascript:void(0)" class="btn btn--blue" id="loadMoreBtn">CARREGAR MAIS</a>
-            <!-- VER ESSE LINK! --> 
-        </div>
+        </div>   
     </section>
 
     <footer class="footer">
@@ -169,6 +243,8 @@
 
 
     </footer>
+    <script src="./scripts/select_order.js"></script>
+    <script src="./scripts/render_products.js"></script>
     
 </body>
 </html>
