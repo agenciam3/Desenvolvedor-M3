@@ -1,35 +1,30 @@
 	COISAS PARA RESOLVER
 
 Terminar de configurar os option!
+Refazer o js dos option
 
 
 	A FAZER
 
-1 - FAZER MOBILE! (utilizar % para tamanhos)
+1 - Select tem que fechar ao clicar em algum item e não apenas quando clicar no "ORDENAR POR:"
 
-2 - Select Corrigir nomes das classes!
-(Estilizar o Select, meu)
+2 - CONFIGURAR O DESMARCAR RADIO! final do render_products.js
 
-3 - Select tem que fechar ao clicar em algum item e não apenas quando clicar no "ORDENAR POR:"
+3 - Fazer o filtro JS
 
-4 - CONFIGURAR O DESMARCAR RADIO!
+4 - Mudar nomes das js/css, organizar por partes
 
-5 - Fazer o filtro JS
+5 - TROCAR NOMES DAS FUNCTION, não pode "_"
 
-6 - Mudar nomes das js/css, organizar por partes
 
 
 	VERIFICAR
 
-
 CONFIGURAR O DESMARCAR RADIO!
 
 
-Alinhar txt footer com o home...
 
-
-	ESTILIZAR
-
+	ATENÇÃO
 
 
 

@@ -90,6 +90,7 @@ var products = {
 
 function render_photos() {
     var products_div = document.getElementById("products_content");
+    var mb_products_div = document.getElementById("mb_products_content");
     var i;
     for (i = 0; i < 6; i++){
         var products_div_itens = document.createElement('div');
@@ -123,16 +124,30 @@ function render_photos() {
         }
         btn_buy.className = "products_div_itens_btn_buy";
         btn_buy.innerHTML = "COMPRAR"
+
+        var mb_products_div_itens = products_div_itens.cloneNode(true);
+
+        var mb_btn_buy = btn_buy.cloneNode(true)
+        mb_btn_buy.onclick = () => {
+            var header_cart_count = document.getElementById('header_cart_count');
+            cart_count += 1;
+            header_cart_count.innerHTML = cart_count;
+        }
+
         products_div_itens.appendChild(btn_buy);
+        mb_products_div_itens.appendChild(mb_btn_buy);
 
-
-        products_div.appendChild(products_div_itens);        
+        mb_products_div.appendChild(mb_products_div_itens);
+        products_div.appendChild(products_div_itens);    
     } 
 }
 
 function load_more(){
-    var products_div = document.getElementById("products_content");
+    var products_div = document.getElementById("products_content");  
+    var mb_products_div = document.getElementById("mb_products_content"); 
     var products_load_more = document.getElementById('products_load_more');
+    var mb_products_load_more = document.getElementById('mb_products_load_more');
+    
     for (products.products_loaded; products.products_loaded < products.products_list.length; products.products_loaded++){
         var products_div_itens = document.createElement('div');
         products_div_itens.className = "products_div_itens";
@@ -167,18 +182,22 @@ function load_more(){
         btn_buy.innerHTML = "COMPRAR"
         products_div_itens.appendChild(btn_buy);
 
+        
+        var mb_products_div_itens = products_div_itens.cloneNode(true);
 
-        products_div.appendChild(products_div_itens);  
+        mb_products_div.appendChild(mb_products_div_itens);
+        products_div.appendChild(products_div_itens);    
     }
     if (products.products_loaded = products.products_list.length){
-        products_load_more.style.display = 'none'
+        mb_products_load_more.style.display = 'none';
+        products_load_more.style.display = 'none';
     }
 }
 
 
-
+//      =====================================================================================================
 render_photos();
-
+//      =====================================================================================================
 
 //         TROCAR DE LUGAR DEPOIS!!!!!
 var colors_loaded;

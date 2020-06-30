@@ -1,250 +1,570 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desenvolvedor-M3</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvedor-M3</title>
 
-    <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/desktop/main.css">
+  <link rel="stylesheet" href="./styles/desktop/side_bar.css">
+  <link rel="stylesheet" href="./styles/desktop/products.css">
+  <link rel="stylesheet" href="./styles/mobile/mobile.css">
+  <link rel="stylesheet" href="./styles/mobile/mb_products.css">
+  
 </head>
+
 <body>
-    <header class="header">
-        <div class="header_content">
-            <div class="header_logo">
-                <img src="./layout/imagens/logo-m3.png" alt="Logo M3">
-            </div>
-            <div class="header_cart">
-                <img src="./layout/imagens/bag-icon.png" alt="">
-                <span class="header_cart_count" id="header_cart_count">0</span>
-            </div>
+  <header class="header">
+    <div class="header_content">
+      <div class="header_logo">
+        <img src="./layout/imagens/logo-m3.png" alt="Logo M3">
+      </div>
+      <div class="header_cart">
+        <img src="./layout/imagens/bag-icon.png" alt="">
+        <span class="header_cart_count" id="header_cart_count">0</span>
+      </div>
+    </div>
+
+  </header>
+
+  <section class="home">
+    <div class="desktop_home">
+      <div class="home_header">
+        <span class="main_title">Blusas</span>
+
+        <div class="home_header_accordion">
+          <button class="accordion_title" id="acc_order" onclick="open_accordion('acc_order')">Ordenar por:
+            <span class="arrow_symbol">&#118;</span>
+          </button>
+
+          <ul class="accordion_open_close" id="accordion_options">
+            <li class="accordion_options">Mais recentes</li>
+            <li class="accordion_options">Menor preço</li>
+            <li class="accordion_options">Maior preço</li>
+          </ul>
         </div>
-        
-    </header>
+      </div>
 
-    <section class="home">
-        <div class="home_header">          
-            <span class="main_title">Blusas</span>
+      <div class="home_container">
+        <aside class="side_bar">
+          <div class="side_bar_content">
+            <div>
+              <span class="side_bar_items_title">Cores</span>
+              <div class="side_bar_option_color">
+                <label for="amarelo" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="amarelo" id="amarelo" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Amarelo
+                </label>
+                <label for="azul" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="azul" id="azul" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Azul
+                </label>
+                <label for="branco" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="branco" id="branco" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Branco
+                </label>
+                <label for="cinza" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="cinza" id="cinza" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Cinza
+                </label>
+                <label for="laranja" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="laranja" id="laranja" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Laranja
+                </label>
+                <label for="verde" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="verde" id="verde" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Verde
+                </label>
+                <label for="vermelho" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="vermelho" id="vermelho" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Vermelho
+                </label>
+                <label for="preto" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="preto" id="preto" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Preto
+                </label>
+                <label for="rosa" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="rosa" id="rosa" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Rosa
+                </label>
+                <label for="vinho" class="side_bar_colors">
+                  <input type="checkbox" name="color" value="vinho" id="vinho" />
+                  <div class="checkbox_checked">&nbsp;</div>
+                  Vinho
+                </label>
+                <div class="side_bar_more_colors" id="side_bar_more_colors" onclick="show_more_colors()">
+                  Ver Todas as cores 
+                  <span class="color_arrow_down">&#118;</span> 
+                
+                </div>
 
-            <div class="home_header_select">
-                <button class="select_title" id="order">Ordenar por:<span class="arrow_symbol">&#118;</span></button>
-                
-                <ul class="select_open_close" id="select_options">
-                    <li class="select_options">Mais recentes</li>
-                    <li class="select_options">Menor preço</li>
-                    <li class="select_options">Maior preço</li>
-                </ul>
-                
+                <!-- VER ESSE LINK! -->
+              </div>
             </div>
+            <div>
+              <span class="side_bar_items_title">Tamanhos</span>
+              <div class="side_bar_option_size">
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="p" value="p">
+                  <label class="size_btn" for="p">
+                    <span>
+                      P
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="m" value="m">
+                  <label class="size_btn" for="m">
+                    <span>
+                      M
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="g" value="g">
+                  <label class="size_btn" for="g">
+                    <span>
+                      G
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="gg" value="gg">
+                  <label class="size_btn" for="gg">
+                    <span>
+                      GG
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="u" value="u">
+                  <label class="size_btn" for="u">
+                    <span>
+                      U
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="36" value="36">
+                  <label class="size_btn" for="36">
+                    <span>
+                      36
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="38" value="38">
+                  <label class="size_btn" for="38">
+                    <span>
+                      38
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="40" value="40">
+                  <label class="size_btn" for="40">
+                    <span>
+                      40
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="42" value="42">
+                  <label class="size_btn" for="42">
+                    <span>
+                      42
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="44" value="44">
+                  <label class="size_btn" for="44">
+                    <span>
+                      44
+                    </span>
+                  </label>
+                </div>
+                <div class="side_bar_sizes">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="46" value="46">
+                  <label class="size_btn" for="46">
+                    <span>
+                      46
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+
+            </div>
+            <div>
+              <span class="side_bar_items_title">Faixa de Preço</span>
+              <div class="side_bar_option_price">
+                <label for="0-50" class="side_bar_prices">
+                  <!--onclick="radio_disable('0-50')"-->
+                  <input type="radio" name="price_range" id="0-50" value="0-50" />
+                  <div class="radio_checked">&nbsp;</div>
+                  de R$0 até R$50
+                </label>
+                <label for="51-150" class="side_bar_prices">
+                  <input type="radio" name="price_range" id="51-150" value="51-150" />
+                  <div class="radio_checked">&nbsp;</div>
+                  de R$51 até R$150
+                </label>
+                <label for="151-300" class="side_bar_prices">
+                  <input type="radio" name="price_range" id="151-300" value="151-300" />
+                  <div class="radio_checked">&nbsp;</div>
+                  de R$151 até R$300
+                </label>
+                <label for="301-500" class="side_bar_prices">
+                  <input type="radio" name="price_range" id="301-500" value="301-500" />
+                  <div class="radio_checked">&nbsp;</div>
+                  de R$301 até R$500
+                </label>
+                <label for="01-" class="side_bar_prices">
+                  <input type="radio" name="price_range" id="01-" value="01-" />
+                  <div class="radio_checked">&nbsp;</div>
+                  a partir de R$ 01
+                </label>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="products">
+          <div class="products_content" id="products_content"  >
+
+          </div>
+          <div class="products_load_more" id="products_load_more" onclick="load_more()">
+            CARREGAR MAIS
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mobile_home">
+      <div class="mb_home_header">
+        <div class="mb_main_title">
+          Blusas
         </div>
 
-        <div class="home_container">
-            <aside class="side_bar">
-                <div class="side_bar_content">
-                    <div>
-                        <span class="side_bar_items_title">Cores</span>
-                        <div class="side_bar_option_color">
-                            <label for="amarelo" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="amarelo" id="amarelo" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                              Amarelo
-                            </label>
-                            <label for="azul" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="azul" id="azul" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Azul
-                            </label>
-                            <label for="branco" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="branco" id="branco" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Branco
-                            </label>
-                            <label for="cinza" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="cinza" id="cinza" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Cinza
-                            </label>
-                            <label for="laranja" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="laranja" id="laranja" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Laranja
-                            </label>
-                            <label for="verde" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="verde" id="verde" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Verde
-                            </label>
-                            <label for="vermelho" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="vermelho" id="vermelho" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Vermelho
-                            </label>
-                            <label for="preto" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="preto" id="preto" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Preto
-                            </label>
-                            <label for="rosa" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="rosa" id="rosa" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Rosa
-                            </label>
-                            <label for="vinho" class="side_bar_colors">
-                                <input type="checkbox" name="color" value="vinho" id="vinho" />
-                                <div class="checkbox_checked">&nbsp;</div>
-                                Vinho
-                            </label>
-                            <div class="side_bar_more_colors" id="side_bar_more_colors" onclick="show_more_colors()">Ver Todas as cores <span class="color_arrow_down">&#118;</span> </div>
-                            
-                            <!-- VER ESSE LINK! -->
-                        </div>
-                    </div>
-                    <div>
-                        <span class="side_bar_items_title">Tamanhos</span>
-                        <div class="side_bar_option_size">
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="p" value="p">
-                                <label class="size_btn" for="p">
-                                    <span>
-                                        P
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="m" value="m">
-                                <label class="size_btn" for="m">
-                                    <span>
-                                        M
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="g" value="g">
-                                <label class="size_btn" for="g">
-                                    <span>
-                                        G
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="gg" value="gg">
-                                <label class="size_btn" for="gg">
-                                    <span>
-                                        GG
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="u" value="u">
-                                <label class="size_btn" for="u">
-                                    <span>
-                                        U
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="36" value="36">
-                                <label class="size_btn" for="36">
-                                    <span>
-                                        36
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="38" value="38">
-                                <label class="size_btn" for="38">
-                                    <span>
-                                        38
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="40" value="40">
-                                <label class="size_btn" for="40">
-                                    <span>
-                                        40
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="42" value="42">
-                                <label class="size_btn" for="42">
-                                    <span>
-                                        42
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="44" value="44">
-                                <label class="size_btn" for="44">
-                                    <span>
-                                        44
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="side_bar_sizes">
-                                <input class="side_bar_btn" type="checkbox" name="size" id="46" value="46">
-                                <label class="size_btn" for="46">
-                                    <span>
-                                        46
-                                    </span>
-                                </label>
-                            </div>
-                        </div>               
-                    </div>
-                    <div>
-                        <span class="side_bar_items_title">Faixa de Preço</span>  
-                        <div class="side_bar_option_price"> 
-                            <label for="0-50" class="side_bar_prices" ><!--onclick="radio_disable('0-50')"-->
-                                <input type="radio" name="price_range" id="0-50" value="0-50"/>
-                                <div class="radio_checked">&nbsp;</div>
-                                de R$0 até R$50 
-                            </label>
-                            <label for="51-150" class="side_bar_prices" >
-                                <input type="radio" name="price_range" id="51-150" value="51-150"/>
-                                <div class="radio_checked">&nbsp;</div>
-                                de R$51 até R$150 
-                            </label>
-                            <label for="151-300" class="side_bar_prices" >
-                                <input type="radio" name="price_range" id="151-300" value="151-300" />
-                                <div class="radio_checked">&nbsp;</div>
-                                de R$151 até R$300 
-                            </label>
-                            <label for="301-500" class="side_bar_prices" >
-                                <input type="radio" name="price_range" id="301-500" value="301-500" />
-                                <div class="radio_checked">&nbsp;</div>
-                                de R$301 até R$500 
-                            </label>
-                            <label for="01-" class="side_bar_prices" >
-                                <input type="radio" name="price_range" id="01-" value="01-" />
-                                <div class="radio_checked">&nbsp;</div>
-                                a partir de R$ 01
-                            </label>
-                      </div>                 
-                    </div>                
+        <div class="mb_home_header_select">
+          <div class="mb_filter" id="mb_filter" onclick="mbSelectOpen('mb_filter')">
+            <span class="mb_filter_title">
+              Filtrar
+            </span>
+          </div>
+          <div class="mb_order" id="mb_order" onclick="mbSelectOpen('mb_order')">
+            <span class="mb_order_title">
+              Ordernar
+            </span>
+          </div>
+
+          <div class="mb_another_page">
+            <div class="mb_filter_open" id="mb_filter_open">
+              <div class="mb_filter_header">
+                <div class="mb_filter_header_content">
+                  <span class="mb_filter_main_title">FILTRAR</span>
+                  
+                  <span class="mb_filter_close" onclick="mbSelectOpen('mb_filter')">
+                    <img class="mb_filter_close_icon" src="./layout/imagens/close_icon.svg" alt="">
+                  </span>
+
                 </div>
-            </aside>
-    
-            <div class="products">
-                <div class="products_content" id="products_content">
-                
-                </div>
-                <div class="products_load_more" id="products_load_more" onclick="load_more()"> 
-                    CARREGAR MAIS
+              </div>
+
+              <div class="mb_filter_options">
+                <div class="mb_filter_options_accordion">
+                  <div class="mb_filter_accordion" id="mb_filter_acc_color" onclick="mbOpenAccordion('mb_filter_acc_color')">
+                    <span class="mb_filter_accordion_title">
+                      CORES
+                    </span>
+
+                    <img class="more_option_icon" id="more_option_icon_color" src="./layout/imagens/more_option.svg" alt="more_icon">
+
+                    <img class="less_option_icon" id="less_option_icon" src="./layout/imagens/less_option.svg" alt="less_icon">
+
+                  </div>
+
+                  <div class="mb_filter_options_controler">
+                    <div class="mb_filter_option_color">
+                      <label for="mb_amarelo" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_amarelo" id="mb_amarelo" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Amarelo
+                      </label>
+                      <label for="mb_azul" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_azul" id="mb_azul" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Azul
+                      </label>
+                      <label for="mb_branco" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_branco" id="mb_branco" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Branco
+                      </label>
+                      <label for="mb_cinza" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_cinza" id="mb_cinza" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Cinza
+                      </label>
+                      <label for="mb_laranja" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_laranja" id="mb_laranja" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Laranja
+                      </label>
+                      <label for="mb_verde" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_verde" id="mb_verde" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Verde
+                      </label>
+                      <label for="mb_vermelho" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_vermelho" id="mb_vermelho" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Vermelho
+                      </label>
+                      <label for="mb_preto" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_preto" id="mb_preto" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Preto
+                      </label>
+                      <label for="mb_rosa" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_rosa" id="mb_rosa" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Rosa
+                      </label>
+                      <label for="mb_vinho" class="mb_filter_colors">
+                        <input type="checkbox" name="color" value="mb_vinho" id="mb_vinho" />
+                        <div class="mb_checkbox_checked">&nbsp;</div>
+                        Vinho
+                      </label>
+                      
+                    </div>
+                  </div>
                 </div>
                 
+                <div class="mb_filter_options_accordion">
+                  <div class="mb_filter_accordion" id="mb_filter_acc_sizes" onclick="mbOpenAccordion('mb_filter_acc_sizes')">
+                    <span class="mb_filter_accordion_title">
+                      TAMANHOS
+                    </span>
+
+                    <img class="more_option_icon" id="more_option_icon" src="./layout/imagens/more_option.svg" alt="more_icon">
+
+                    <img class="less_option_icon" id="less_option_icon" src="./layout/imagens/less_option.svg" alt="less_icon">
+
+                  </div>
+
+                  <div class="mb_filter_options_controler">
+
+                    <div class="mb_filter_option_size">
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_p" value="p">
+                        <label class="mb_size_btn" for="mb_p">
+                          <span>
+                            P
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_m" value="m">
+                        <label class="mb_size_btn" for="mb_m">
+                          <span>
+                            M
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_g" value="g">
+                        <label class="mb_size_btn" for="mb_g">
+                          <span>
+                            G
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_gg" value="gg">
+                        <label class="mb_size_btn" for="mb_gg">
+                          <span>
+                            GG
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_u" value="u">
+                        <label class="mb_size_btn" for="mb_u">
+                          <span>
+                            U
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_36" value="36">
+                        <label class="mb_size_btn" for="mb_36">
+                          <span>
+                            36
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_38" value="38">
+                        <label class="mb_size_btn" for="mb_38">
+                          <span>
+                            38
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_40" value="40">
+                        <label class="mb_size_btn" for="mb_40">
+                          <span>
+                            40
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_42" value="42">
+                        <label class="mb_size_btn" for="mb_42">
+                          <span>
+                            42
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_44" value="44">
+                        <label class="mb_size_btn" for="mb_44">
+                          <span>
+                            44
+                          </span>
+                        </label>
+                      </div>
+                      <div class="mb_filter_sizes">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_46" value="46">
+                        <label class="mb_size_btn" for="mb_46">
+                          <span>
+                            46
+                          </span>
+                        </label>
+                      </div>
+                    </div>
+
+                  </div>
+                  
+                </div>
+
+                <div class="mb_filter_options_accordion">
+                  <div class="mb_filter_accordion" id="mb_filter_acc_prices" onclick="mbOpenAccordion('mb_filter_acc_prices')">
+                    <span class="mb_filter_accordion_title">
+                      FAIXA DE PREÇO
+                    </span>
+
+                    <img class="more_option_icon" id="more_option_icon" src="./layout/imagens/more_option.svg" alt="more_icon">
+
+                    <img class="less_option_icon" id="less_option_icon" src="./layout/imagens/less_option.svg" alt="less_icon">
+
+                  </div>
+
+                  <div class="mb_filter_options_controler">
+
+                    <div class="mb_filter_option_price">
+                      <label for="mb_0-50" class="mb_filter_prices">
+                        <!--onclick="radio_disable('0-50')"-->
+                        <input type="radio" name="price_range" id="mb_0-50" value="mb_0-50" />
+                        <div class="mb_radio_checked">&nbsp;</div>
+                        de R$0 até R$50
+                      </label>
+                      <label for="mb_51-150" class="mb_filter_prices">
+                        <input type="radio" name="price_range" id="mb_51-150" value="mb_51-150" />
+                        <div class="mb_radio_checked">&nbsp;</div>
+                        de R$51 até R$150
+                      </label>
+                      <label for="mb_151-300" class="mb_filter_prices">
+                        <input type="radio" name="price_range" id="mb_151-300" value="mb_151-300" />
+                        <div class="mb_radio_checked">&nbsp;</div>
+                        de R$151 até R$300
+                      </label>
+                      <label for="mb_301-500" class="mb_filter_prices">
+                        <input type="radio" name="price_range" id="mb_301-500" value="mb_301-500" />
+                        <div class="mb_radio_checked">&nbsp;</div>
+                        de R$301 até R$500
+                      </label>
+                      <label for="mb_01-" class="mb_filter_prices">
+                        <input type="radio" name="price_range" id="mb_01-" value="mb_01-" />
+                        <div class="mb_radio_checked">&nbsp;</div>
+                        a partir de R$ 01
+                      </label>
+                    </div>
+
+                  </div>       
+                </div>
+
+              </div>
             </div>
-        </div>   
-    </section>
 
-    <footer class="footer">
-        <span class="footer_copyright_M3">
-            Agência M3 - Agência de Performance Digital
-        </span>
+            <div class="mb_order_open" id="mb_order_open">
+              <div class="mb_order_header">
+                <div class="mb_order_header_content">
+                  <span class="mb_order_main_title">ORDERNAR</span>
+                  
+                  <span class="mb_order_close" onclick="mbSelectOpen('mb_order')">
+                    <img class="mb_order_close_icon" src="./layout/imagens/close_icon.svg" alt="">
+                  </span>
+
+                </div>
+              </div>
+              <div class="mb_order_options">
+                <span class="mb_order_options_title">
+                  Mais recentes
+                </span>
+                <span class="mb_order_options_title">
+                  Menor preço
+                </span>
+                <span class="mb_order_options_title">
+                  Maior preço
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="mb_products" id="mb_products">
+        <div class="mb_products_content" id="mb_products_content">
+
+        </div>
+      <div class="mb_products_load_more" id="mb_products_load_more" onclick="load_more()">
+          CARREGAR MAIS
+        </div>
+      </div>
 
 
-    </footer>
-    <script src="./scripts/select_order.js"></script>
-    <script src="./scripts/render_products.js"></script>
-    
+    </div>
+
+
+  </section>
+
+  <footer class="footer">
+    <span class="footer_copyright_M3">
+      Agência M3 - Agência de Performance Digital
+    </span>
+
+  </footer>
+  <script src="./scripts/mb_accordion.js"></script>
+  <script src="./scripts/mb_select_open.js"></script>
+  <script src="./scripts/open_accordion.js"></script>
+  <script src="./scripts/render_products.js"></script>
+
 </body>
+
 </html>
