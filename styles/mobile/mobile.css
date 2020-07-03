@@ -40,7 +40,7 @@
     
 }
 
-    /*  TELA FILTER */
+/*=================     FILTER       =================*/
 .mb_filter_open,
 .mb_order_open{
     position: absolute;
@@ -93,7 +93,7 @@
     
 }
 
-    /*  OPTIONS FILTER  */
+/*=================     OPTIONS FILTER       =================*/
 .mb_filter_accordion{
     display: flex;
     flex-direction: row;
@@ -126,7 +126,7 @@
 }
 
 
-/*=================     COLOR       =============================*/
+/*=================     COLOR       =================*/
 .mb_filter_options_controler{
     display: none;
 }
@@ -175,8 +175,7 @@
 }
 
 
-/*=================     SIZES       =============================*/
-
+/*=================     SIZES       =================*/
 
 .mb_filter_option_size{
     display: flex;
@@ -220,8 +219,8 @@
     transform: translate(-50%,-50%);
 }
 
-/*=================     PRICES       =============================*/
 
+/*=================     PRICE       =================*/
 
 .mb_filter_option_price{
     display: flex;
@@ -268,7 +267,7 @@
 }
 
 
-/*=============     ORDER       ============*/
+/*=================     ORDER       =============================*/
 
 .mb_order_options{
     display: flex;

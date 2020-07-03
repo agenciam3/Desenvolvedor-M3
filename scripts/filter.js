@@ -136,14 +136,14 @@ var selectOrder = (value) =>{
     var order_dic = {
         0:'Mais recentes',
         1:'Menor preço',
-        2:'Maior preço',
+        2:'Maior preço'
     }
 
     if(isMobile()){
         var mb_products = document.getElementById('mb_products_content');
         let mb_order = document.getElementById('mb_order_open');
         mb_order.style.display = 'none';
-        mb_products.style.display = 'flex'
+        mb_products.style.display = 'flex';
     }else{
         let accordion_tilte = document.getElementById('acc_order_title');
         accordion_tilte.innerText = `${order_dic[value]}`;
@@ -170,7 +170,6 @@ var activeFilter = () =>{
     products.products_filtered = [];
     
     products.products_filtered = products.products_list.filter((product) => {
-        // filtra cor
         if(color_list.length === 0){
             return true;
         }else{
@@ -179,12 +178,11 @@ var activeFilter = () =>{
                     return true;
                 }
             }
-            return false
+            return false;
         }
 
         
     }).filter((product) => {
-        // filtro tamanho
         if(size_list.length === 0){
             return true;
         }else{
@@ -197,7 +195,6 @@ var activeFilter = () =>{
         }
 
     }).filter((product) => {
-        // filtra preço
         if(price_select === null){
             return true;
         }else{
@@ -209,11 +206,10 @@ var activeFilter = () =>{
         }
     })
 
-    console.log(products.products_filtered)
     var products_div = document.getElementById("products_content");
     var mb_products_div = document.getElementById("mb_products_content");
-    products_div.innerHTML = ''
-    mb_products_div.innerHTML = ''
+    products_div.innerHTML = '';
+    mb_products_div.innerHTML = '';
 
     var load_more_btn = document.getElementById('products_load_more');
     var mb_load_more_btn = document.getElementById('mb_products_load_more');
@@ -295,14 +291,15 @@ var clearFilter = () =>{
     size_list = [];
 
     disableApplyClear();
+    activeFilter();
 }
 
 
 var disableApplyClear = () =>{
     var apply_clear = document.getElementById('filter_btn_content');
     if(color_list.length > 0 || size_list.length > 0 || price_select !== null){
-        apply_clear.style.display = 'flex'
+        apply_clear.style.display = 'flex';
     }else{
-        apply_clear.style.display = 'none'
+        apply_clear.style.display = 'none';
     }
 }

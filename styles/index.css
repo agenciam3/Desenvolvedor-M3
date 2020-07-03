@@ -1,0 +1,20 @@
+@media screen and ( max-width: 640px){
+
+    .desktop_home{
+        display: none;
+    }
+    .mobile_home{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 641px){
+
+    .desktop_home{
+        display: block;
+    }
+    .mobile_home{
+        display: none;
+    }
+
+}
