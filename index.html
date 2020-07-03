@@ -29,19 +29,20 @@
   </header>
 
   <section class="home">
-    <div class="desktop_home">
+    <div class="desktop_home" id="desktop_home" >
       <div class="home_header">
         <span class="main_title">Blusas</span>
 
         <div class="home_header_accordion">
-          <button class="accordion_title" id="acc_order" onclick="open_accordion('acc_order')">Ordenar por:
+          <button class="accordion_title" id="acc_order" onclick="openAccordion('acc_order')">
+            <span id="acc_order_title">Ordenar por:</span> 
             <span class="arrow_symbol">&#118;</span>
           </button>
 
-          <ul class="accordion_open_close" id="accordion_options">
-            <li class="accordion_options">Mais recentes</li>
-            <li class="accordion_options">Menor preço</li>
-            <li class="accordion_options">Maior preço</li>
+          <ul class="accordion_open_close" id="accordion_open_close">
+            <li class="accordion_options" onclick="selectOrder(0)">Mais recentes</li>
+            <li class="accordion_options" onclick="selectOrder(1)">Menor preço</li>
+            <li class="accordion_options" onclick="selectOrder(2)">Maior preço</li>
           </ul>
         </div>
       </div>
@@ -52,53 +53,53 @@
             <div>
               <span class="side_bar_items_title">Cores</span>
               <div class="side_bar_option_color">
-                <label for="amarelo" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="amarelo" id="amarelo" />
+                <label for="amarelo" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="amarelo" id="amarelo" onclick="setColor(0)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Amarelo
                 </label>
-                <label for="azul" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="azul" id="azul" />
+                <label for="azul" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="azul" id="azul" onclick="setColor(1)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Azul
                 </label>
-                <label for="branco" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="branco" id="branco" />
+                <label for="branco" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="branco" id="branco" onclick="setColor(2)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Branco
                 </label>
-                <label for="cinza" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="cinza" id="cinza" />
+                <label for="cinza" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="cinza" id="cinza" onclick="setColor(3)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Cinza
                 </label>
-                <label for="laranja" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="laranja" id="laranja" />
+                <label for="laranja" class="side_bar_colors"  >
+                  <input type="checkbox" name="color" value="laranja" id="laranja" onclick="setColor(4)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Laranja
                 </label>
-                <label for="verde" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="verde" id="verde" />
+                <label for="verde" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="verde" id="verde" onclick="setColor(5)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Verde
                 </label>
-                <label for="vermelho" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="vermelho" id="vermelho" />
+                <label for="vermelho" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="vermelho" id="vermelho" onclick="setColor(6)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Vermelho
                 </label>
-                <label for="preto" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="preto" id="preto" />
+                <label for="preto" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="preto" id="preto" onclick="setColor(7)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Preto
                 </label>
-                <label for="rosa" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="rosa" id="rosa" />
+                <label for="rosa" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="rosa" id="rosa" onclick="setColor(8)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Rosa
                 </label>
-                <label for="vinho" class="side_bar_colors">
-                  <input type="checkbox" name="color" value="vinho" id="vinho" />
+                <label for="vinho" class="side_bar_colors" >
+                  <input type="checkbox" name="color" value="vinho" id="vinho" onclick="setColor(9)" />
                   <div class="checkbox_checked">&nbsp;</div>
                   Vinho
                 </label>
@@ -115,7 +116,7 @@
               <span class="side_bar_items_title">Tamanhos</span>
               <div class="side_bar_option_size">
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="p" value="p">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="p" value="p" onclick="setSize(0)">
                   <label class="size_btn" for="p">
                     <span>
                       P
@@ -123,7 +124,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="m" value="m">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="m" value="m" onclick="setSize(1)">
                   <label class="size_btn" for="m">
                     <span>
                       M
@@ -131,7 +132,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="g" value="g">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="g" value="g" onclick="setSize(2)">
                   <label class="size_btn" for="g">
                     <span>
                       G
@@ -139,7 +140,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="gg" value="gg">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="gg" value="gg" onclick="setSize(3)">
                   <label class="size_btn" for="gg">
                     <span>
                       GG
@@ -147,7 +148,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="u" value="u">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="u" value="u" onclick="setSize(4)">
                   <label class="size_btn" for="u">
                     <span>
                       U
@@ -155,7 +156,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="36" value="36">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="36" value="36" onclick="setSize(5)">
                   <label class="size_btn" for="36">
                     <span>
                       36
@@ -163,7 +164,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="38" value="38">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="38" value="38" onclick="setSize(6)">
                   <label class="size_btn" for="38">
                     <span>
                       38
@@ -171,7 +172,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="40" value="40">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="40" value="40" onclick="setSize(7)">
                   <label class="size_btn" for="40">
                     <span>
                       40
@@ -179,7 +180,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="42" value="42">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="42" value="42" onclick="setSize(8)">
                   <label class="size_btn" for="42">
                     <span>
                       42
@@ -187,7 +188,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="44" value="44">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="44" value="44" onclick="setSize(9)">
                   <label class="size_btn" for="44">
                     <span>
                       44
@@ -195,7 +196,7 @@
                   </label>
                 </div>
                 <div class="side_bar_sizes">
-                  <input class="side_bar_btn" type="checkbox" name="size" id="46" value="46">
+                  <input class="side_bar_btn" type="checkbox" name="size" id="46" value="46" onclick="setSize(10)">
                   <label class="size_btn" for="46">
                     <span>
                       46
@@ -211,27 +212,27 @@
               <div class="side_bar_option_price">
                 <label for="0-50" class="side_bar_prices">
                   <!--onclick="radio_disable('0-50')"-->
-                  <input type="radio" name="price_range" id="0-50" value="0-50" />
+                  <input type="radio" name="price_range" id="0-50" value="0-50" onclick="setPrice(0)"/>
                   <div class="radio_checked">&nbsp;</div>
                   de R$0 até R$50
                 </label>
                 <label for="51-150" class="side_bar_prices">
-                  <input type="radio" name="price_range" id="51-150" value="51-150" />
+                  <input type="radio" name="price_range" id="51-150" value="51-150" onclick="setPrice(1)"/>
                   <div class="radio_checked">&nbsp;</div>
                   de R$51 até R$150
                 </label>
                 <label for="151-300" class="side_bar_prices">
-                  <input type="radio" name="price_range" id="151-300" value="151-300" />
+                  <input type="radio" name="price_range" id="151-300" value="151-300" onclick="setPrice(2)"/>
                   <div class="radio_checked">&nbsp;</div>
                   de R$151 até R$300
                 </label>
                 <label for="301-500" class="side_bar_prices">
-                  <input type="radio" name="price_range" id="301-500" value="301-500" />
+                  <input type="radio" name="price_range" id="301-500" value="301-500" onclick="setPrice(3)"/>
                   <div class="radio_checked">&nbsp;</div>
                   de R$301 até R$500
                 </label>
                 <label for="01-" class="side_bar_prices">
-                  <input type="radio" name="price_range" id="01-" value="01-" />
+                  <input type="radio" name="price_range" id="01-" value="01-" onclick="setPrice(4)"/>
                   <div class="radio_checked">&nbsp;</div>
                   a partir de R$ 01
                 </label>
@@ -244,7 +245,7 @@
           <div class="products_content" id="products_content"  >
 
           </div>
-          <div class="products_load_more" id="products_load_more" onclick="load_more()">
+          <div class="products_load_more" id="products_load_more" onclick="loadMore()">
             CARREGAR MAIS
           </div>
 
@@ -253,7 +254,7 @@
 
     </div>
 
-    <div class="mobile_home">
+    <div class="mobile_home" id="mobile_home">
       <div class="mb_home_header">
         <div class="mb_main_title">
           Blusas
@@ -300,52 +301,52 @@
                   <div class="mb_filter_options_controler">
                     <div class="mb_filter_option_color">
                       <label for="mb_amarelo" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_amarelo" id="mb_amarelo" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_amarelo" id="mb_amarelo"  onclick="setColor(0)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Amarelo
                       </label>
                       <label for="mb_azul" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_azul" id="mb_azul" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_azul" id="mb_azul" onclick="setColor(1)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Azul
                       </label>
                       <label for="mb_branco" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_branco" id="mb_branco" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_branco" id="mb_branco" onclick="setColor(2)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Branco
                       </label>
                       <label for="mb_cinza" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_cinza" id="mb_cinza" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_cinza" id="mb_cinza" onclick="setColor(3)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Cinza
                       </label>
                       <label for="mb_laranja" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_laranja" id="mb_laranja" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_laranja" id="mb_laranja" onclick="setColor(4)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Laranja
                       </label>
                       <label for="mb_verde" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_verde" id="mb_verde" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_verde" id="mb_verde" onclick="setColor(5)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Verde
                       </label>
                       <label for="mb_vermelho" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_vermelho" id="mb_vermelho" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_vermelho" id="mb_vermelho" onclick="setColor(6)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Vermelho
                       </label>
                       <label for="mb_preto" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_preto" id="mb_preto" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_preto" id="mb_preto" onclick="setColor(7)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Preto
                       </label>
                       <label for="mb_rosa" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_rosa" id="mb_rosa" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_rosa" id="mb_rosa" onclick="setColor(8)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Rosa
                       </label>
                       <label for="mb_vinho" class="mb_filter_colors">
-                        <input type="checkbox" name="color" value="mb_vinho" id="mb_vinho" />
+                        <input type="checkbox" class="mb_color_checkbox" name="color" value="mb_vinho" id="mb_vinho" onclick="setColor(9)"/>
                         <div class="mb_checkbox_checked">&nbsp;</div>
                         Vinho
                       </label>
@@ -370,7 +371,7 @@
 
                     <div class="mb_filter_option_size">
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_p" value="p">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_p" value="p" onclick="setSize(0)">
                         <label class="mb_size_btn" for="mb_p">
                           <span>
                             P
@@ -378,7 +379,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_m" value="m">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_m" value="m" onclick="setSize(1)">
                         <label class="mb_size_btn" for="mb_m">
                           <span>
                             M
@@ -386,7 +387,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_g" value="g">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_g" value="g" onclick="setSize(2)">
                         <label class="mb_size_btn" for="mb_g">
                           <span>
                             G
@@ -394,7 +395,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_gg" value="gg">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_gg" value="gg" onclick="setSize(3)">
                         <label class="mb_size_btn" for="mb_gg">
                           <span>
                             GG
@@ -402,7 +403,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_u" value="u">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_u" value="u" onclick="setSize(4)">
                         <label class="mb_size_btn" for="mb_u">
                           <span>
                             U
@@ -410,7 +411,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_36" value="36">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_36" value="36" onclick="setSize(5)">
                         <label class="mb_size_btn" for="mb_36">
                           <span>
                             36
@@ -418,7 +419,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_38" value="38">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_38" value="38" onclick="setSize(6)">
                         <label class="mb_size_btn" for="mb_38">
                           <span>
                             38
@@ -426,7 +427,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_40" value="40">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_40" value="40" onclick="setSize(7)">
                         <label class="mb_size_btn" for="mb_40">
                           <span>
                             40
@@ -434,7 +435,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_42" value="42">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_42" value="42" onclick="setSize(8)">
                         <label class="mb_size_btn" for="mb_42">
                           <span>
                             42
@@ -442,7 +443,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_44" value="44">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_44" value="44" onclick="setSize(9)">
                         <label class="mb_size_btn" for="mb_44">
                           <span>
                             44
@@ -450,7 +451,7 @@
                         </label>
                       </div>
                       <div class="mb_filter_sizes">
-                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_46" value="46">
+                        <input class="mb_filter_btn" type="checkbox" name="size" id="mb_46" value="46" onclick="setSize(10)">
                         <label class="mb_size_btn" for="mb_46">
                           <span>
                             46
@@ -480,35 +481,43 @@
                     <div class="mb_filter_option_price">
                       <label for="mb_0-50" class="mb_filter_prices">
                         <!--onclick="radio_disable('0-50')"-->
-                        <input type="radio" name="price_range" id="mb_0-50" value="mb_0-50" />
+                        <input type="radio" name="price_range" id="mb_0-50" value="mb_0-50" onclick="setPrice(0)"/>
                         <div class="mb_radio_checked">&nbsp;</div>
                         de R$0 até R$50
                       </label>
                       <label for="mb_51-150" class="mb_filter_prices">
-                        <input type="radio" name="price_range" id="mb_51-150" value="mb_51-150" />
+                        <input type="radio" name="price_range" id="mb_51-150" value="mb_51-150" onclick="setPrice(1)"/>
                         <div class="mb_radio_checked">&nbsp;</div>
                         de R$51 até R$150
                       </label>
                       <label for="mb_151-300" class="mb_filter_prices">
-                        <input type="radio" name="price_range" id="mb_151-300" value="mb_151-300" />
+                        <input type="radio" name="price_range" id="mb_151-300" value="mb_151-300" onclick="setPrice(2)"/>
                         <div class="mb_radio_checked">&nbsp;</div>
                         de R$151 até R$300
                       </label>
                       <label for="mb_301-500" class="mb_filter_prices">
-                        <input type="radio" name="price_range" id="mb_301-500" value="mb_301-500" />
+                        <input type="radio" name="price_range" id="mb_301-500" value="mb_301-500" onclick="setPrice(3)"/>
                         <div class="mb_radio_checked">&nbsp;</div>
                         de R$301 até R$500
                       </label>
                       <label for="mb_01-" class="mb_filter_prices">
-                        <input type="radio" name="price_range" id="mb_01-" value="mb_01-" />
+                        <input type="radio" name="price_range" id="mb_01-" value="mb_01-" onclick="setPrice(4)"/>
                         <div class="mb_radio_checked">&nbsp;</div>
                         a partir de R$ 01
                       </label>
                     </div>
 
-                  </div>       
+                  </div>   
                 </div>
 
+                <div class="filter_btn_content" id="filter_btn_content">
+                  <div class="filter_apply" onclick="activeFilter(); mbSelectOpen('mb_filter')">
+                    APLICAR
+                  </div>
+                  <div class="filter_clear" onclick="clearFilter()">
+                    LIMPAR
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -524,13 +533,13 @@
                 </div>
               </div>
               <div class="mb_order_options">
-                <span class="mb_order_options_title">
+                <span class="mb_order_options_title" onclick="selectOrder(0)">
                   Mais recentes
                 </span>
-                <span class="mb_order_options_title">
+                <span class="mb_order_options_title" onclick="selectOrder(1)">
                   Menor preço
                 </span>
-                <span class="mb_order_options_title">
+                <span class="mb_order_options_title" onclick="selectOrder(2)">
                   Maior preço
                 </span>
               </div>
@@ -543,7 +552,7 @@
         <div class="mb_products_content" id="mb_products_content">
 
         </div>
-      <div class="mb_products_load_more" id="mb_products_load_more" onclick="load_more()">
+      <div class="mb_products_load_more" id="mb_products_load_more" onclick="loadMore()">
           CARREGAR MAIS
         </div>
       </div>
@@ -560,10 +569,10 @@
     </span>
 
   </footer>
-  <script src="./scripts/mb_accordion.js"></script>
   <script src="./scripts/mb_select_open.js"></script>
   <script src="./scripts/open_accordion.js"></script>
   <script src="./scripts/render_products.js"></script>
+  <script src="./scripts/filter.js"></script>
 
 </body>
 

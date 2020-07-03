@@ -285,6 +285,29 @@
 
 }
 
+.filter_btn_content{
+    display: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
 
+.filter_apply,
+.filter_clear{
+    width: 35%;
+    padding: 15.5px 0px;
+    border: 1px solid #7F7F7F;
+    letter-spacing: 1px;
+    color: #5e5e5e;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    
+}
 
-
+.filter_apply{
+    background-color: #2BBFF2;
+    border: whitesmoke;
+    color: white;
+    
+}
