@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>teste</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+    <header class="filtro_titulo">
+        <div>
+        <P> FILTRAR </P>
+        </div>
+
+        <div class="equis">
+        <a href="./index.html"><img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjM2NS42OTZwdCIgdmlld0JveD0iMCAwIDM2NS42OTYgMzY1LjY5NiIgd2lkdGg9IjM2NS42OTZwdCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMjQzLjE4NzUgMTgyLjg1OTM3NSAxMTMuMTMyODEyLTExMy4xMzI4MTNjMTIuNS0xMi41IDEyLjUtMzIuNzY1NjI0IDAtNDUuMjQ2MDkzbC0xNS4wODIwMzEtMTUuMDgyMDMxYy0xMi41MDM5MDYtMTIuNTAzOTA3LTMyLjc2OTUzMS0xMi41MDM5MDctNDUuMjUgMGwtMTEzLjEyODkwNiAxMTMuMTI4OTA2LTExMy4xMzI4MTMtMTEzLjE1MjM0NGMtMTIuNS0xMi41LTMyLjc2NTYyNC0xMi41LTQ1LjI0NjA5MyAwbC0xNS4xMDU0NjkgMTUuMDgyMDMxYy0xMi41IDEyLjUwMzkwNy0xMi41IDMyLjc2OTUzMSAwIDQ1LjI1bDExMy4xNTIzNDQgMTEzLjE1MjM0NC0xMTMuMTI4OTA2IDExMy4xMjg5MDZjLTEyLjUwMzkwNyAxMi41MDM5MDctMTIuNTAzOTA3IDMyLjc2OTUzMSAwIDQ1LjI1bDE1LjA4MjAzMSAxNS4wODIwMzFjMTIuNSAxMi41IDMyLjc2NTYyNSAxMi41IDQ1LjI0NjA5MyAwbDExMy4xMzI4MTMtMTEzLjEzMjgxMiAxMTMuMTI4OTA2IDExMy4xMzI4MTJjMTIuNTAzOTA3IDEyLjUgMzIuNzY5NTMxIDEyLjUgNDUuMjUgMGwxNS4wODIwMzEtMTUuMDgyMDMxYzEyLjUtMTIuNTAzOTA2IDEyLjUtMzIuNzY5NTMxIDAtNDUuMjV6bTAgMCIvPjwvc3ZnPg==" /></a>
+        </div>
+    </header>
+
+    <div class="opcoes_filtros"> <p>CORES</p> 
+    <div class="equis" id="corrrrr"> <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0OHB0IiB2aWV3Qm94PSIwIDAgNDQ4IDQ0OCIgd2lkdGg9IjQ0OHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00MDggMTg0aC0xMzZjLTQuNDE3OTY5IDAtOC0zLjU4MjAzMS04LTh2LTEzNmMwLTIyLjA4OTg0NC0xNy45MTAxNTYtNDAtNDAtNDBzLTQwIDE3LjkxMDE1Ni00MCA0MHYxMzZjMCA0LjQxNzk2OS0zLjU4MjAzMSA4LTggOGgtMTM2Yy0yMi4wODk4NDQgMC00MCAxNy45MTAxNTYtNDAgNDBzMTcuOTEwMTU2IDQwIDQwIDQwaDEzNmM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4djEzNmMwIDIyLjA4OTg0NCAxNy45MTAxNTYgNDAgNDAgNDBzNDAtMTcuOTEwMTU2IDQwLTQwdi0xMzZjMC00LjQxNzk2OSAzLjU4MjAzMS04IDgtOGgxMzZjMjIuMDg5ODQ0IDAgNDAtMTcuOTEwMTU2IDQwLTQwcy0xNy45MTAxNTYtNDAtNDAtNDB6bTAgMCIvPjwvc3ZnPg=="> </div>
+
+        <ul id="cores"></ul>
+    </div>
+
+
+    <div class="opcoes_filtros"> <p>TAMANHOS</p> 
+    <div class="equis" onclick="demaispmenos()"> <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0OHB0IiB2aWV3Qm94PSIwIDAgNDQ4IDQ0OCIgd2lkdGg9IjQ0OHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00MDggMTg0aC0xMzZjLTQuNDE3OTY5IDAtOC0zLjU4MjAzMS04LTh2LTEzNmMwLTIyLjA4OTg0NC0xNy45MTAxNTYtNDAtNDAtNDBzLTQwIDE3LjkxMDE1Ni00MCA0MHYxMzZjMCA0LjQxNzk2OS0zLjU4MjAzMSA4LTggOGgtMTM2Yy0yMi4wODk4NDQgMC00MCAxNy45MTAxNTYtNDAgNDBzMTcuOTEwMTU2IDQwIDQwIDQwaDEzNmM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4djEzNmMwIDIyLjA4OTg0NCAxNy45MTAxNTYgNDAgNDAgNDBzNDAtMTcuOTEwMTU2IDQwLTQwdi0xMzZjMC00LjQxNzk2OSAzLjU4MjAzMS04IDgtOGgxMzZjMjIuMDg5ODQ0IDAgNDAtMTcuOTEwMTU2IDQwLTQwcy0xNy45MTAxNTYtNDAtNDAtNDB6bTAgMCIvPjwvc3ZnPg=="> </div>
+    </div>
+    
+    <div class="opcoes_filtros"> <p>FAIXA DE PRECO</p> 
+    <div class="equis" onclick="demaispmenos()"> <img src="data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjQ0OHB0IiB2aWV3Qm94PSIwIDAgNDQ4IDQ0OCIgd2lkdGg9IjQ0OHB0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00MDggMTg0aC0xMzZjLTQuNDE3OTY5IDAtOC0zLjU4MjAzMS04LTh2LTEzNmMwLTIyLjA4OTg0NC0xNy45MTAxNTYtNDAtNDAtNDBzLTQwIDE3LjkxMDE1Ni00MCA0MHYxMzZjMCA0LjQxNzk2OS0zLjU4MjAzMSA4LTggOGgtMTM2Yy0yMi4wODk4NDQgMC00MCAxNy45MTAxNTYtNDAgNDBzMTcuOTEwMTU2IDQwIDQwIDQwaDEzNmM0LjQxNzk2OSAwIDggMy41ODIwMzEgOCA4djEzNmMwIDIyLjA4OTg0NCAxNy45MTAxNTYgNDAgNDAgNDBzNDAtMTcuOTEwMTU2IDQwLTQwdi0xMzZjMC00LjQxNzk2OSAzLjU4MjAzMS04IDgtOGgxMzZjMjIuMDg5ODQ0IDAgNDAtMTcuOTEwMTU2IDQwLTQwcy0xNy45MTAxNTYtNDAtNDAtNDB6bTAgMCIvPjwvc3ZnPg=="> </div>
+    </div>
+
+
+</body>
+</html>

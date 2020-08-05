@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title> M3 - Perfomance digital </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='css/style.css'>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/data.json"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+        <header class="header">
+            <div>
+
+                <div class="logo">
+                    <img src="layout/imagens/logo-m3.png">
+                </div>
+
+                <div class="sacola">
+                <a href="carrinho.html"><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE3LjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDI3OSAyNzkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI3OSAyNzk7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGQ9Ik0yNjIuNDIxLDI3MC4zMzlMMjQ2LjQ2Niw3Mi44OTZDMjQ2LjE1MSw2OS4wMDEsMjQyLjg5OCw2NiwyMzguOTksNjZoLTQyLjgzM3YtOS40OTVDMTk2LjE1NywyNS4zNDgsMTcxLjE0MywwLDEzOS45ODUsMA0KCWgtMC45OWMtMzEuMTU3LDAtNTYuODM4LDI1LjM0OC01Ni44MzgsNTYuNTA1VjY2SDM5Ljk5Yy0zLjkwOCwwLTcuMTYxLDMuMDAxLTcuNDc2LDYuODk2bC0xNiwxOTgNCgljLTAuMTY5LDIuMDg4LDAuNTQzLDQuMTUsMS45NjMsNS42ODlTMjEuODk3LDI3OSwyMy45OSwyNzloMjMxYzAuMDA2LDAsMC4wMTQsMCwwLjAyLDBjNC4xNDMsMCw3LjUtMy4zNTcsNy41LTcuNQ0KCUMyNjIuNTEsMjcxLjEwNSwyNjIuNDgsMjcwLjcxNywyNjIuNDIxLDI3MC4zMzl6IE05Ny4xNTcsNTYuNTA1Qzk3LjE1NywzMy42MTksMTE2LjEwOSwxNSwxMzguOTk1LDE1aDAuOTkNCgljMjIuODg2LDAsNDEuMTcyLDE4LjYxOSw0MS4xNzIsNDEuNTA1VjY2aC04NFY1Ni41MDV6Ii8+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" ></a>
+                </div>
+            </div>
+            
+        </header>        
+
+        <div class="menu">
+
+            <h1> Blusas </h1>
+
+            <a href="./filtro.html"><button class="btn_filtros"> Filtrar </button></a> 
+            <a href="./ordenar.html"><button class="btn_filtros"> Ordenar </button></a>
+
+        </div>
+
+        <select id="Ordenar por:" class="ordenar_desktop">
+            <label for="Ordenar por:"> Ordenar por: </label> 
+            <option class="opcao"> Mais recentes </option>
+            <option class="opcao"> Menor preço </option>
+            <option class="opcao"> Maior preço  </option>
+        </select>
+
+    <div class="conjunto_menu_fotos">
+
+        <div class="filtro">
+            
+            <ul>
+
+                <div class="itens_filtro">
+                        <li>
+                            CORES 
+                                <ul class="cores">
+                                    <p><input type="checkbox" id="amarelo" class="box_azul" > <label for="amarelo"> Amarelo </label></p>
+                                    <p><input type="checkbox" name="Azul" class="box_azul"> <label for="amarelo"> Azul </label></p>
+                                    <p><input type="checkbox" name="Branco" class="box_azul"> <label for="amarelo"> Branco </label></p>
+                                    <p><input type="checkbox" name="Cinza" class="box_azul"> <label for="amarelo"> Cinza </label></p>
+                                    <p><input type="checkbox" name="Laranja" class="box_azul"> <label for="amarelo"> Laranja </label><br></p>
+                                    <p class="todas_cores"><a href=""> Ver todas as cores </a></p>
+                                </ul>
+                        </li>
+                </div>
+        
+                <div class="itens_filtro">
+                        <li>
+                            TAMANHOS
+                                <ul class="tamanho_filtro">
+                                    <button value="P" onclick="tamanho_filtro(value)" ><a>P</a></button>
+                                    <button value="M" onclick="tamanho_filtro(value)" ><a href="">M</a></button>
+                                    <button value="G" onclick="tamanho_filtro(value)" ><a href="">G</a></button>
+                                    <button value="GG" onclick="tamanho_filtro(value)" ><a href="">GG </a></button>
+                                    <button value="U" onclick="tamanho_filtro(value)" ><a href="">U</a></button>
+                                    <button value="36" onclick="tamanho_filtro(value)" ><a href="">36</a></button>
+                                    <button value="38" onclick="tamanho_filtro(value)" ><a href="">38</a></button>
+                                    <button value="40" onclick="tamanho_filtro(value)" ><a href="">40</a></button>
+                                    <button value="42" onclick="tamanho_filtro(value)" ><a href="">42</a></button>
+                                    <button value="44" onclick="tamanho_filtro(value)" ><a href="">44</a></button>
+                                    <button value="46" onclick="tamanho_filtro(value)" ><a href="">46</a></button>
+                                </ul>
+                        </li>
+                </div>
+
+                <div class="itens_filtro"> 
+                        <li>
+                            FAIXA DE PRECO
+                                <ul class="preco_filtro">
+                                    <p><input type="checkbox" name="faixa_1" > <label for="faixa_3"> De R$0 até R$50 </label></p>
+                                    <p><input type="checkbox" name="faixa_2" > <label for="faixa_3"> De R$51 até R$150 </label></p>
+                                    <p><input type="checkbox" name="faixa_3" > <label for="faixa_3"> De R$151 até R$300 </label></p>
+                                    <p><input type="checkbox" name="faixa_4" > <label for="faixa_4"> De R$301 até R$500 </label></p>
+                                    <p><input type="checkbox" name="faixa_5" > <label for="faixa_5"> A partir de R$1 </label></p>
+                                </ul>
+                        </li>
+                </div>
+
+            </ul>
+
+        </div>
+
+        <middle class="middle">
+            <div class="container">
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_2.png">
+                    <figcaption>
+                        <p class="produto"> CAMISETA MESCLA </p>
+                        <p class="preco"><b> R$ 28,00 </b> </p>
+                        <p class="didive_em"> ate 3x de R$9,33 </p>
+                        <button class="btn_comprar" value="camiseta_mescla" onclick="ad_carrionh(value)"> COMPRAR </button>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_3.png">
+                    <figcaption>
+                        <p class="produto"> SAIA EM COURO </p>
+                        <p class="preco"><b> R$ 398,00 </b></p>
+                        <p class="didive_em"> ate 5x de R$30,00 </p>
+                        <button class="btn_comprar"  value="saia_couro" onclick="ad_carrionh(value)"> COMPRAR </button>
+                    </figcaption>
+                </figure>
+                
+                <figure class="figure">
+                    <img src="layout/imagens/img_4.png">
+                    <figcaption>
+                        <p class="produto"> CARDIGAN TIGRE </p>
+                        <p class="preco"><b> R$ 398,00 </b></p>
+                        <p class="didive_em"> ate 5x de R$30,00 </p>
+                        <button class="btn_comprar"  value="cardigan_tigre" onclick="ad_carrionh(value)" > COMPRAR </button>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_5.png">
+                    <figcaption>
+                        <p class="produto"> CARDIGAM OFF WHITE </p>
+                        <p class="preco"><b>R$ 99,90</b>  </p>
+                        <p class="didive_em"> ate 3x de R$33,30 </p>
+                        <button class="btn_comprar"  value="cardigan_white" onclick="ad_carrionh(value)" > COMPRAR </button>
+                    </figcaption>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_6.png">
+                    <p class="produto"> BODY LEOPARDO </p>
+                    <p class="preco"><b> R$ 129,90 </b></p>
+                    <p class="didive_em"> ate 3x de R$43,43 </p>
+                    <button class="btn_comprar"  value="body_leopardo" onclick="ad_carrionh(value)"> COMPRAR </button>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_7.png">
+                    <p class="produto"> CASACO PELOS </p>
+                    <p class="preco"><b> R$ 398,00 </b></p>
+                    <p class="didive_em"> ate 5x de R$30,00 </p>
+                    <button class="btn_comprar" value="casaco_pelos" onclick="ad_carrionh(value)"> COMPRAR </button>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_8.png">
+                    <p class="produto"> CROPPED STRIPPES </p>
+                    <p class="preco"><b> R$ 120,00 </b></p>
+                    <p class="didive_em"> ate 3x de R$40,00 </p>
+                    <button class="btn_comprar" value="cropped_strippes" onclick="ad_carrionh(value)"> COMPRAR </button>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_9.png">
+                    <p class="produto"> CAMISA TRANSPARENTE </p>
+                    <p class="preco"><B> R$ 398,00 </B></p>
+                    <p class="didive_em"> ate 5x de R$30,00 </p>
+                    <button class="btn_comprar" value="camisa_transparente" onclick="ad_carrionh(value)"> COMPRAR </button>
+                </figure>
+
+                <figure class="figure">
+                    <img src="layout/imagens/img_10.png">
+                    <p class="produto"> POCHETE CLUTCH </p>
+                    <p class="preco"><B> R$ 99,00 </B></p>
+                    <p class="didive_em"> ate 3x de R$33,00 </p>
+                    <button class="btn_comprar" value="POCHETE" onclick="ad_carrionh(value)"> COMPRAR </button>
+                </figure>
+
+            </div>
+
+
+            <button class="btn_carregar"> CARREGAR MAIS </button>
+
+        </middle>
+
+        </div>
+
+        <footer class="footer">
+                <p> Agencia M3 - Agencia de Perfomance digital </p>
+        </footer>
+
+</body>
+
+</html>

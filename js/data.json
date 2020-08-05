@@ -1,0 +1,74 @@
+[   
+    {
+    "value" : "camiseta_mescla",
+    "preco" : 28,
+    "cor" : "cinza",
+    "tamanho" : "46",
+    "imagem" : "../layout/imagens/img_2.png"
+    },
+
+    {
+    "value" : "saia_couro",
+    "preco" : 398,
+    "cor" : "preto",
+    "tamanho" : "M",
+    "imagem" : "../layout/imagens/img_3.png"
+    },
+
+    {
+    "value" : "cardigan_tigre",
+    "preco" : 398,
+    "cor" : "laranja",
+    "tamanho" : "44",
+    "imagem" : "../layout/imagens/img_4.png"
+    },
+
+    {
+    "value" : "cardigan_white",
+    "preco" : 99,
+    "cor" : "branco",
+    "tamanho" : "G",
+    "imagem" : "../layout/imagens/img_5.png"
+    },
+
+    {
+    "value" : "body_leopardo",
+    "preco" : 129,
+    "cor" : "amarelo",
+    "tamanho" : "M",
+    "imagem" : "../layout/imagens/img_6.png"
+    },
+
+    {
+    "value" : "casaco_pelos",
+    "preco" : 398,
+    "cor" : "rosa",
+    "tamanho" : "P",
+    "imagem" : "../layout/imagens/img_7.png"
+    },
+
+    {
+    "value" : "cropped_strippes",
+    "preco" : 120,
+    "cor" : "azul",
+    "tamanho" : "U",
+    "imagem" : "../layout/imagens/img_8.png"
+    },
+
+    {
+    "value" : "camisa_transparente",
+    "preco" : 398,
+    "cor" : "preto",
+    "tamanho" : "M",
+    "imagem" : "../layout/imagens/img_9.png"
+    },
+
+    {
+    "value" : "POCHETE",
+    "preco" : 99,
+    "cor" : "preto",
+    "tamanho" : "42",
+    "imagem" : "../layout/imagens/img_10.png"
+    }
+
+]

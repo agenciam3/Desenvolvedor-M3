@@ -1,0 +1,291 @@
+/*  Reset  */
+html {
+    box-sizing: border-box;
+  }
+
+  a {
+    text-decoration: none;
+}
+
+body{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    border-bottom: black;
+}
+
+.header{
+    border-bottom: black;
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-width: 0.75px;
+    text-align: center;
+    padding-top: 1.5em;
+    column-count: 2;
+    width: 100vw;
+    height: 60px;
+}
+
+.logo img{
+    margin-left: 1.5em;  
+    height:35px; 
+    width: 120px; 
+}
+
+.sacola img{
+    height:30px; 
+    width: 30px; 
+}
+
+.btn_filtros{
+    background-color: white;
+    border-style: solid;
+    color: rgb(128, 127, 127);
+    font-size: 25px;
+    height: 65px;
+    width: 260px;
+}
+
+.btn_filtros:hover{
+    background-color: #2abff3;
+    color: white;
+}
+
+.filtro,
+.ordenar_desktop{
+    display: none;
+}
+
+.middle div{
+    column-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 260px);
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 550){
+
+}
+
+
+@media (min-width: 800px){
+
+    .btn_filtros{
+        display: none;
+    }
+    
+    .menu{
+        display: flex;
+        text-align: left;
+        justify-content: left;
+        margin-left: 1.5em;
+        margin-right: 2em;
+        width: 6em;
+    }
+
+    .ordenar_desktop{
+        display: inline;
+        text-align: right;
+        justify-content: right;
+        margin-right: 0px;
+        margin-left: 65em;
+        height: 2em;
+        border-radius: 0px;
+        border-width: 1px;
+        padding: 1px;
+    }
+
+    .opcao:hover{
+        background-color: #2abff3;
+        color: white;
+    }
+
+    .middle div{
+        column-gap: 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 260px);
+        margin-bottom: 10px;
+        padding-right: 0px;
+    }
+
+    .conjunto_menu_fotos{
+        display: grid;
+        width: 100vh;
+        grid-template-columns: 10em 80em;
+    }
+
+    .filtro{
+        display: flex;
+        width: 15em;
+        text-align: left;
+        justify-items: left;
+        margin-left: 0px;
+        justify-content: left;
+    }
+
+    .filtros li{
+        margin-top: 2em;
+        margin-bottom: 2em;
+    }
+
+    .itens_filtro{
+        list-style: none;
+        padding-top: 3em;
+    }
+
+    .cores{
+        display: block;
+        text-align: left;
+        justify-items: left;
+    }
+    
+    .preco_filtro p,
+    .cores p{
+        margin-block-end: 0.4em;
+        margin-block-start: 0.4em;
+    }
+
+    .tamanho_filtro,
+    .cores,
+    .preco_filtro{
+        padding-left: 0;
+    }
+  
+    .tamanho_filtro button{
+        background-color: white;
+        border-color: darkgrey;
+        border: 0.75px solid;
+        border-radius: 0px;
+        color: darkgrey;
+        margin: 3px;
+        justify-content: center;
+        text-align: center;
+        width: 3em;
+        padding: 1em;
+        padding-right: 1.3em;
+    }
+
+    .tamanho_filtro button:active{
+        border: 1px;
+        border-color: #2abff3;
+    }
+
+    .todas_cores a{
+        text-decoration: underline;
+        color: darkgrey;
+    }
+
+    .todas_cores::after{
+        content: "↓"
+    }
+}
+
+@media(min-width:900) and (max-width: 1000px){
+    .conjunto_menu_fotos{
+        display: grid;
+        grid-template-columns: 30em 80em;
+    }
+}
+
+.figure {
+    margin: 0 auto;
+    margin-top: 1.5em;
+}
+
+.middle figure{
+    border-top: 15px;
+    justify-content: center;
+}
+
+.middle img{
+    width: 260px;
+    height: 400px;
+}
+
+.middle p{
+    display: block;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.btn_comprar{
+    background-color: black;
+    border-top: 1.2em;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    height: 55px;
+    width: 260px;
+}
+
+.btn_carregar{
+    background-color: #2abff3;
+    border-color: #2abff3;
+    color: white;
+    height: 70px;
+    width: 250px;
+
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    text-align: center;
+    width: 100vw;
+
+}
+
+
+/* css para aba ordenar */
+.list_ordena button{
+    background-color: white;
+    border-style: none;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    height: 50px;
+    text-align: left;
+    width: 100vh;
+}
+
+.list_ordena button:hover{
+    background-color: #2abff3;
+    border: #2abff3;
+}
+
+.filtro_titulo{
+    border-bottom: rgb(114, 113, 113);
+    border-bottom-style: solid;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-width: 0.5px;
+    color: rgb(114, 113, 113);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    padding: 1px;
+    letter-spacing: 0.1rem;
+    text-align: center;
+    column-count: 2;
+    width: 100vw;
+}
+
+/* css filtro */
+.equis img{
+    margin-top: 1em;
+    padding-left: 0;
+    height: 20px;
+    width: 20px;
+}
+
+.opcoes_filtros{
+    display: block;
+    column-count: 2;
+    text-align: justify;
+    padding: 0.7em;
+}
