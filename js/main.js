@@ -102,7 +102,7 @@ const imprimir_produto =
 const imprimirproduto = document.querySelector("[data-conteudo-foto]");
 
 imprimirproduto.innerHTML = imprimir_produto*/
-
+/*
 var prec;
 
 function selec_prec(Element){
@@ -126,3 +126,4 @@ function cor_filtro(Element){
     const cor_filtrado = produtos.filter(produtos => (produtos.cor == cor));
     console.log(cor_filtrado);
 }
+*/
