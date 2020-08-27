@@ -1,0 +1,258 @@
+:root{
+    --white: #fff;
+    --black: #000;
+    --headerborder: #c7c7c7;
+    --blue: #00c0ee;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    font-family: 'Open Sans', sans-serif;
+    background: var(--white);
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: 400;
+}
+
+header{
+    width: 100vw;
+    height: 60px;
+    border-bottom: 2px solid var(--headerborder);
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 135px;
+    flex-direction: row;
+}
+
+.none{
+    display: none!important;
+}
+
+#bag{
+    font-size: 24px;
+    color: var(--black);
+}
+
+.cart{
+    display: flex;
+    flex-direction: row;
+}
+
+#circle{
+    width: 20px;
+    height: 20px;
+    background: var(--blue);
+    border-radius: 50%;
+    font-size: 12px;
+    color: white;
+    position: relative;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+main{
+    width: calc(100vw - 270px);
+    margin: auto;
+}
+
+.topProducts{
+    font-size: 32px;
+    margin-top: 42px;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+}
+
+#order{
+    height: 40px;
+    width: 135px;
+    border-radius: 0;
+    font-size: 12px;
+}
+
+.colors{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+}
+
+.squaresColors{
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    color: var(--black);
+}
+
+.colorSquares{
+    max-width: 20px;
+    max-height: 20px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    cursor: pointer;
+    margin-top: 5px;
+    text-indent: 25px;
+}
+
+.colors h3{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+#moreColors{
+    height: 20px;
+    width: 120px;
+    border-radius: 0;
+    font-size: 12px;
+    border: 0;
+    color: #666666;
+    border-bottom: 2px solid #d9d9d9;
+    margin-top: 10px;
+}
+
+.sizes{
+    margin: 40px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sizes h3{
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.squaresSizes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 160px;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    color: #e5e5e5;
+}
+
+.sizeSquare{
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e5e5e5;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.checkedSquare{
+    border: 1px solid var(--blue);
+}
+
+.prices{
+    display: flex;
+    flex-direction: column;
+}
+
+.prices h3{
+    text-transform: uppercase;
+}
+
+.squaresPrices{
+    font-size: 14px;
+    color: var(--black);
+}
+
+.priceSquares{
+    width: 20px;
+    height: 20px;
+    border: 1px solid #e5e5e5;
+    display: flex;
+    cursor: pointer;
+    margin-top: 5px;
+    text-indent: 25px;
+    margin-right: 5px;
+}
+
+.txtPrice{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.products{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+    flex-wrap: wrap;
+}
+
+.product{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 195px;
+    height: fit-content;
+    margin-left: 30px;
+    margin-bottom: 40px;
+}
+.product img{
+    margin-bottom: 5px;
+}
+.product h5{
+    font-size: 14px;
+}
+
+.product h4{
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+.product button{
+    border: 0;
+    background: var(--black);
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 700;
+}
+
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex: 1;
+    width: 100vw;
+    height: 35px;
+    color: var(--white);
+    background: var(--black);
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
