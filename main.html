@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style_main.css">
+		<script type="text/javascript" src="js_main.js"></script>
+		<title>Teste agência M3</title>
+	</head>
+
+	<body>
+
+		<header>
+			<div class="logo-container">					
+				<img src="layout/imagens/logo-m3.png">			<!-- M3 logo -->
+			</div>
+			<div id="line"></div>								<!-- Separating line -->
+		</header>
+
+		<div class='main-container'>
+			<div id="menu">
+				<div id='menutitle'>	Blusas	</div>
+				
+				<!-- Colors selection -->
+				<div class='menusubtitle'>	CORES	</div>
+				<form>
+					<input type="checkbox" name="ck1"> Amarelo <br>
+					<input type="checkbox" name="ck2"> Azul <br>
+					<input type="checkbox" name="ck3"> Branco <br>
+					<input type="checkbox" name="ck4"> Cinza <br>
+					<input type="checkbox" name="ck5"> Laranja <br>
+				</form>
+				<a href="">	Ver todas as cores ˅</a> 
+
+				<br><br><br><br>
+
+				<!-- Size selection -->
+				<div class='menusubtitle'>	TAMANHOS	</div>
+				<form></form>	<!-- just a skip line -->
+				<div class="square-container">
+					<input class="buttonstate" type="radio" name="tamanho" id="P"/>
+					<label class="square" for="P">	P	</label> 
+
+					<input class="buttonstate" type="radio" name="tamanho" id="M"/>
+				  	<label class="square" for="M">	M	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="G"/>
+				  	<label class="square" for="G">	G	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="GG"/>
+				  	<label class="square" for="GG">	GG	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="U"/>
+				  	<label class="square" for="U">	U	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="36"/>
+				  	<label class="square" for="36">	36	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="38"/>
+				  	<label class="square" for="38">	38	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="40"/>
+				  	<label class="square" for="40">	40	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="42"/>
+				  	<label class="square" for="42">	42	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="44"/>
+				  	<label class="square" for="44">	44	</label>
+
+				  	<input class="buttonstate" type="radio" name="tamanho" id="46"/>
+				  	<label class="square" for="46">	46	</label>
+				</div>
+
+				<br><br>
+
+				<!-- Price selection -->
+				<div class='menusubtitle'>
+					FAIXA DE PREÇO
+				</div>
+				<form id="price-filter"> 
+					<input type="checkbox" name="ck6" onclick="selectingByPrice('0')"> de R$0 até R$50 <br>
+					<input type="checkbox" name="ck7" onclick="selectingByPrice('1')"> de R$51 até R$150 <br>
+					<input type="checkbox" name="ck8" onclick="selectingByPrice('2')"> de R$151 até R$300 <br>
+					<input type="checkbox" name="ck9" onclick="selectingByPrice('3')"> de R$301 até R$500 <br>
+					<input type="checkbox" name="ck10" onclick="selectingByPrice('4')"> a partir de R$ 01 <br>
+				</form>
+			</div>
+
+			<!-- Selection bar -->
+			
+		  	<select class="selection">
+			    <option value="0" disabled selected hidden>Ordenar por:</option>
+			    <option value="1">Mais recentes</option>
+			    <option value="2">Menor preço</option>
+			    <option value="3">Maior preço</option>
+		  	</select>
+			
+
+			<!-- Products info -->
+			<!-- The filters are labeled as the index of the price checkbox (zero-index)-->
+			<div class="products-container">
+				<div class="filter 0">
+					<div class="product-container">
+						<img src="layout/imagens/img_2.png"> 
+						<div class="product-title">CAMISETA MESCLA</div>
+						<div class="product-price">R$ 28,00</div>
+						<div class="product-payment">até 3x de R$9,33</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 3">
+					<div class="product-container">
+						<img src="layout/imagens/img_3.png">
+						<div class="product-title">SAIA EM COURO</div>
+						<div class="product-price">R$ 398,00</div>
+						<div class="product-payment">até 5x de R$30,00</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 3">
+					<div class="product-container">
+						<img src="layout/imagens/img_4.png">
+						<div class="product-title">CARDIGAN TIGRE</div>
+						<div class="product-price">R$ 398,00</div>
+						<div class="product-payment">até 5x de R$30,00</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 1">
+					<div class="product-container">
+						<img src="layout/imagens/img_5.png"> 
+						<div class="product-title">CARDIGAN OFF WHITE</div>
+						<div class="product-price">R$ 99,90</div>
+						<div class="product-payment">até 3x de R$33,30</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 1">
+					<div class="product-container">
+						<img src="layout/imagens/img_6.png"> 
+						<div class="product-title">BODY LEOPARDO</div>
+						<div class="product-price">R$ 129,90</div>
+						<div class="product-payment">até 3x de R$43,43</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 3">
+					<div class="product-container">					
+						<img src="layout/imagens/img_7.png"> 
+						<div class="product-title">CASACO PELOS</div>
+						<div class="product-price">R$ 398,00</div>
+						<div class="product-payment">até 5x de R$30,00</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 1">
+					<div class="product-container">
+						<img src="layout/imagens/img_8.png"> 
+						<div class="product-title">CROPPED STRIPES</div>
+						<div class="product-price">R$ 120,00</div>
+						<div class="product-payment">até 3x de R$40,00</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 3">
+					<div class="product-container">
+						<img src="layout/imagens/img_9.png"> 
+						<div class="product-title">CAMISA TRANSPARENTE</div>
+						<div class="product-price">R$ 398,00</div>
+						<div class="product-payment">até 5x de R$30,00</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+				<div class="filter 1">
+					<div class="product-container">
+						<img src="layout/imagens/img_10.png"> 
+						<div class="product-title">POCHETE CLUTCH</div>	
+						<div class="product-price">R$ 99,00</div>	
+						<div class="product-payment">até 3x de R$33,00</div>
+						<div class="buying-button">COMPRAR</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Fixing the loadmor-button -->
+			<div class='load-grid'>
+				<div></div>		<!-- trash -->
+				<div class="loadmore-button">CARREGAR MAIS</div>
+				<div></div>		<!-- trash -->
+			</div>
+		</div>
+		
+	
+	</body>
+	<footer>	Agência M3 - Agência de Performance Digital	</footer>
+</html>

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+	font-family: "Open Sans";
+	font-size: 14px;
+}
+
+body{
+	background-color: #eee;
+	height: auto;
+}
+
+footer{
+	text-align: center;
+	text-shadow: 1px 1px 3px rgba(255,0,0, 0.5);
+	font-weight: 100;
+	font-size: 11px;
+	clear: both;
+	color: white;
+	background-color: black;
+	width: 100%;
+	padding-top: 0.4em;
+	padding-bottom:0.4em;
+}
+
+#main-container{
+	max-width: 900px;
+	margin: auto;
+	background-color: white;
+	box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1),
+    -30px 0px 40px rgba(0, 0, 0, 0.1);;
+}
+#main{
+	margin-right: 5vw;
+	margin-left: 5vw;
+	background-color:white;
+}
+
+#logo{
+	padding-bottom: 1.3vh;
+	padding-top: 2.3vh;
+	margin-left: 2.9vw;
+}
+
+#line{
+	width: 100%;
+	height: 1px;
+	margin-bottom: 2vh;
+	background-color: black;
+}
+
+#menu-title{
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 1.9vh;
+}
+
+#filter-button{
+	display: inline-block;
+	text-align: center;
+	letter-spacing: 2px;
+	color: rgb(50,50,50);
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+	width: 50%;
+	border:1px solid darkgray;
+	float: left;
+	cursor: pointer;
+	background-color: white;
+
+	
+}
+#sort-button{
+	display: inline-block;
+	text-align: center;
+	letter-spacing: 2px;
+	color: rgb(50,50,50);
+	padding-top: 2.5vh;
+	padding-bottom: 2.5vh;
+	width: 50%;
+	border:1px solid darkgray;
+	float: right;
+	cursor: pointer;
+	background-color: white;
+}
+#sort-button:active{
+	background-color: red;
+}
+
+#products-container{
+	clear: both;
+	display: grid;
+	grid-template-columns: 50% 50%;
+}
+.product-container{
+	margin-top: 4.8vh;
+	margin-bottom: 2.2vh;
+	text-align: center;
+}
+.product-container img{
+	display: inline;
+	width: 165px;
+}
+.product-title{
+	font-size: 12px;
+	letter-spacing: 2px;
+	margin-top: 1.4vh;
+	margin-bottom: 0.9vh;
+}
+.product-price{
+	margin-top: 1.6vh;
+	font-weight: 800;
+	margin-bottom: 0.6vh;
+}
+.product-payment{
+	font-size: 12px;
+	margin-bottom: 3.2vh;
+}
+.buying-button {
+	letter-spacing: 1px;
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 11px 50px;
+	text-align: center;
+	align-items: center;
+	text-decoration: none;
+	display: inline;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.loadmore-button{
+	background-color: #2CBFF2;
+	border: none;
+	color: white;
+	padding: 13px 1px;
+	margin: 5vh 32% 9vh 32%;
+	text-align: center;
+	align-items: center;
+	text-decoration: none;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+@media(min-width: 700px){
+	#products-container{
+		display: grid;
+		grid-template-columns: 33% 33% 33%;
+	}
+	
+}
