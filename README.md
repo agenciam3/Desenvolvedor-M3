@@ -1,3 +1,19 @@
+# Teste para Desenvolvedor M3
+
+Fork de Bernardo Almeida Vasconcellos de Souza para cadidatura à vaga de estágio.
+
+e-mail: bernardoavsouza@gmail.com
+
+Os presentes códigos foram desenvolvidos com a IDE Sublime Text 3 visando a responsividade, de forma que página não perca funcionalidade e estética ao redimensionar a tela. Os códigos foram estéticamente estruturados e comentados em inglês para que não haja problemas em sua compreensão. 
+
+Os arquivos "main.html", "style_main.css" e "js_main.js" são correspondentes à versão de computador. Enquanto que os aquivos "mobile.html" e "sytle_mobile.css" são correspondentes à versão para dispositivos portáteis.
+
+As funcionalidades dependentes de JavaScript não foram implementadas com exceção do filtro por preço da versão "main".
+
+As repectivas páginas foram testadas nos navegadores Google Chrome, Mozilla Firefox e Microsoft Edge, funcionando como o esperado.
+
+----
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
