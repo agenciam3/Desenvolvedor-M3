@@ -8,7 +8,8 @@ const produtos = [
         size: 'P',
         maxparcelas: 3,
         img: './imagens/img_',
-        quantidade: 0, 
+        quantidade: 0,
+        date: new Date('2019-06-28') 
     },
     {
         id: 3,
@@ -20,6 +21,7 @@ const produtos = [
         maxparcelas: 5,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('2020-06-28')
     },
     {
         id: 4,
@@ -31,6 +33,7 @@ const produtos = [
         maxparcelas: 5,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('2021-06-28')
     },
     {
         id: 5,
@@ -42,6 +45,7 @@ const produtos = [
         maxparcelas: 3,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('')
     },
     {
         id: 6,
@@ -53,6 +57,7 @@ const produtos = [
         maxparcelas: 3,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('')
     },
     {
         id: 7,
@@ -64,6 +69,7 @@ const produtos = [
         maxparcelas: 5,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('')
     },
     {
         id: 8,
@@ -75,6 +81,7 @@ const produtos = [
         maxparcelas: 3,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('')
     },
     {
         id: 9,
@@ -86,6 +93,7 @@ const produtos = [
         maxparcelas: 5,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('')
     },
     {
         id: 10,
@@ -97,6 +105,7 @@ const produtos = [
         maxparcelas: 3,
         img: './imagens/img_' ,
         quantidade: 0,
+        date: new Date('')
     },
 ]
 const carrinho = []
@@ -219,6 +228,21 @@ for(let i = 0; i < prices.length; i++){
 const order = document.getElementById("order");
 order.addEventListener("change", () =>{
 
+    if(order.value == 1){
+        const recents = `${produtos.sort((a, b) => b.date - a.date).map(produto => 
+            `<div class="product">
+                <img src="${produto.img}${produto.id}.png">
+                <h5>${produto.name}</h5>
+                <h4>R$${produto.price},${produto.cents}</h4>
+                <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+                <button key="${produto.id}">Comprar</button>
+            </div>
+            `
+         ).join('')}
+        ` 
+        produtosDiv.innerHTML = recents;
+    }
+
     if(order.value == 3){
         const descending = `${produtos.sort((a, b) => b.price - a.price).map(produto => 
             `<div class="product">
@@ -248,8 +272,7 @@ order.addEventListener("change", () =>{
         ` 
         produtosDiv.innerHTML = ascending;
     }     
-}
-)
+})
 
 document.querySelector(".cart").addEventListener("click", () => {
     document.querySelector(".cartOpen").classList.toggle("block")
