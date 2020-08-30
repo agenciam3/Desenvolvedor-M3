@@ -1,0 +1,233 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/*========Reset==========*/
+* {
+    padding:0;
+    margin:0;
+    list-style:none;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    
+}
+
+/*========Cabeçalho==========*/
+
+header.cabecalho{
+    height: 90px;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+header.cabecalho div#top-bar-container{
+    padding-left: 160px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+header.cabecalho div#top-bar-container #carrinho-compras{
+    padding-left: 860px;
+}
+
+/*========Menu==========*/
+
+nav.menu{
+    height: 120px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-left: 160px;
+    display: flex;
+   
+}
+
+nav.menu h1{
+    font-size: 25pt;
+    font-weight: normal;
+}
+nav.menu div.ordenar{
+    padding-left: 780px;
+
+}
+
+nav.menu div.ordenar select.ordenacao-preco{
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+}
+nav.menu div.ordenar select.ordenacao-preco option{
+    background-color: #fff;
+    padding: 10px;
+    margin: 5px;
+}
+
+/*select.ordenacao-preco  option#mais-recentes, option#maior-preco, option#menor-preco{
+    margin: 40px 0 ;
+    cursor: pointer;
+}
+
+select.ordenacao-preco option#mais-recentes:hover, option#maior-preco:hover, option#menor-preco:hover{
+    color: #5ccbe7;
+    transition: 0.5s;
+}
+/*========Filtros==========*/
+
+aside.filtros{
+    height: 0;
+    padding-left: 160px;
+    padding-top: 16px;
+    margin-right: 700px;
+
+}
+
+aside.filtros h4{
+    height: 30px;
+    margin-bottom: 4px;
+    font-size: 13pt;
+    font-weight: normal;
+}
+
+aside.filtros div#cores-option .cor-opcao{
+    font-size: 11pt;
+    padding: 0px;
+}
+aside.filtros div#tamanho-option{
+    margin-bottom: 30px;
+    font-size: 11pt;
+    
+}
+aside.filtros div#precos-container .preco-opcao{
+    font-size: 11pt;
+    padding: 0px;
+
+}
+
+aside.filtros .cor-opcao, .preco-opcao{
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+}
+
+aside.filtros .checkbox{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+aside.filtros .cor-selecionada, .preco-selecionado{
+    background-color: #5ccbe7;
+    width: 899px;
+    height: 78px;
+    display: none;
+}
+
+aside.filtros div#tamanho-option button.tamanhos{
+    width: 42px;
+    height: 42px;
+    margin:2px;
+    padding:10px;
+    border: 1px solid #ccc;
+    color:#ccc;
+    cursor: pointer;
+    text-align: center;
+
+
+}
+aside.filtros div#tamanho-option button.tamanhos:hover{
+    border: 2px solid #00bff3;
+    
+}
+
+.mostrar-mais{
+    
+}
+
+/*========Conteúdo principal==========*/
+
+main.conteudo{
+    height: 400px;
+    margin-left: 410px;
+    margin-bottom: 900px;
+    margin-top: -9px;
+
+}
+main.conteudo div{
+    
+    display: flex;
+    flex-direction: row;
+
+}
+main.conteudo figure.comprar{
+    padding: 20px;
+    height: 450px;
+    width: 250px;
+    margin-top: 9px;
+    margin-right: 19px;
+    
+}
+
+
+main.conteudo figure.comprar figcaption{
+    text-align: center;
+}
+main.conteudo figure.comprar figcaption h4{
+    font-weight: normal;
+    
+}
+
+main.conteudo figure.comprar figcaption button.button-comprar{
+    text-align: center;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 2px;
+    border: 0;
+}
+
+div#carregar{
+
+    text-align: center; 
+    padding: 10px;
+    border: 0;
+}
+div#carregar button.btn_carregar{
+    margin-top: 190px;
+    margin-bottom: 30px;
+    margin-left: 250px;
+    background-color: #00bff3;
+    color: #fff;
+    border: 0;
+    padding: 20px;
+    cursor: pointer;
+
+}
+
+div#carregar button.btn_carregar:hover{
+    background-color: #297e96;
+    transition: 0.5s;
+
+}
+
+/*========Footer==========*/
+
+footer{
+    height: 70px;
+    background-color: black;
+    height: 37px;
+}
+footer p{
+    color: #fff;
+    text-align: center;
+    padding: 12px;
+
+}
+
+
+
+

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>M3 - Performace Digital</title>
+    <link rel="stylesheet" href="style/style.css">
+    
+</head>
+<body>
+
+<header class="cabecalho">
+
+<div id="top-bar-container">
+    
+    <a href="index.html">
+        <img  id="logo" src="layout/imagens/logo-m3.png" alt="logo-m3"> 
+    </a>
+   
+    <a href="#">
+        <img id="carrinho-compras" src="layout/icone/carrinho_compras01.ico" alt="carrinho de compras">
+    </a>
+
+</div>
+
+</header>
+
+<nav class="menu">
+   
+    <h1>Blusas</h1>
+    <div class="ordenar">
+        <select name="valores" class="ordenacao-preco">
+            <option disabled selected>Ordernar Por: </option>
+            <option id="mais-recentes">Mais Recentes</option>
+            <option id="menor-preco">Menor Preço</option>
+            <option id="maior-preco">Maior Preço</option>
+        </select>
+    </div>
+
+</nav>
+
+<aside class="filtros">
+    
+    <div id="cores-container" class="esconder-elemento">
+
+    <div id="cores-option">
+        <h4>CORES</h4>
+        <div class="cor-opcao">
+            <div class="checkbox" id="amarelo">
+                <div class="cor-selecionada" id="amarelo"></div>
+            </div>
+            <label class="color" for="amarelo">Amarelo</label>
+        </div>
+
+        <div class="cor-opcao">
+            <div class="checkbox" id="azul">
+                <div class="cor-selecionada" id="azul"></div>
+            </div>
+            <label class="color" for="azul">Azul</label>
+        </div>
+
+        <div class="cor-opcao">
+            <div class="checkbox" id="branco">
+                <div class="cor-selecionada" id="branco"></div>
+            </div> 
+            <label class="color" for="branco">Branco</label>
+        </div>
+
+        <div class="cor-opcao">
+            <div class="checkbox" id="cinza">
+                <div class="cor-selecionada" id="cinza"></div>
+            </div>
+            <label class="color" for="cinza">Cinza</label>
+        </div>
+
+        <div class="cor-opcao">
+            <div class="checkbox" id="laranja">
+                <div class="cor-selecionada" id="laranja"></div>
+            </div> 
+            <label class="color" for="laranja">Laranja</label>
+        </div>
+        <div class="cores-escondidas">
+
+            <a class="mostar-mais" href="#">Ver todas as cores <img src="layout/icone/para_baixo.png"></a>
+
+            <div class="cor-opcao">
+                <div class="checkbox" id="verde">
+                    <div class="cor-selecionada" id="verde"></div>
+                </div> 
+                <label class="color" for="verde">Verde</label>
+            </div>
+
+            <div class="cor-opcao">
+                <div class="checkbox" id="vermelho">
+                    <div class="cor-selecionada" id="vermelho"></div>
+                </div> 
+                <label class="color" for="vermelho">Vermelho</label>
+            </div>
+
+            <div class="cor-opcao">
+                <div class="checkbox" id="preto">
+                    <div class="cor-selecionada" id="preto"></div>
+                </div> 
+                <label class="color" for="preto">Preto</label>
+            </div>
+
+            <div class="cor-opcao">
+                <div class="checkbox" id="rosa">
+                    <div class="cor-selecionada" id="rosa"></div>
+                </div> 
+                <label class="color" for="rosa">Rosa</label>
+            </div>
+
+            <div class="cor-opcao">
+                <div class="checkbox" id="vinho">
+                    <div class="cor-selecionada" id="vinho"></div>
+                </div> 
+                <label class="color" for="vinho">Vinho</label>
+            </div> 
+        </div>
+       <!-- <a class="mostar-menos" href="#">Ver Menos <img src="layout/icone/para_cima.png"></a> -->
+</div>
+    
+    <div id="tamanho-option">
+        <h4>TAMANHOS</h4>
+        <button value="p" class="tamanhos">P</button>
+        <button value="m" class="tamanhos">M</button>
+        <button value="g" class="tamanhos">G</button>
+        <button value="gg" class="tamanhos">GG</button><br/>
+        <button value="u" class="tamanhos">U</button>
+        <button value="36" class="tamanhos">36</button>
+        <button value="38" class="tamanhos">38</button>
+        <button value="40" class="tamanhos">40</button><br/>
+        <button value="42" class="tamanhos">42</button>
+        <button value="44" class="tamanhos">44</button>
+        <button value="46" class="tamanhos">46</button>
+    </div>
+
+    <div id="precos-option">
+        <h4>FAIXA DE PREÇO</h4>
+        <div id="precos-container">
+                <div class="preco-opcao">
+                    <div class="checkbox" id="preco-1">
+                        <div class="preco-selecionado" id="preco-1"></div>
+                    </div>
+                    <label class="preco" for="preco-1">de R$ 0 a R$ 50</label>
+                </div>
+
+                <div class="preco-opcao">
+                    <div class="checkbox" id="preco-2">
+                        <div class="preco-selecionado" id="preco-2"></div>
+                    </div>
+                    <label class="preco" for="preco-2">de R$ 51 a R$ 150</label>
+                </div>
+
+                <div class="preco-opcao">
+                    <div class="checkbox" id="preco-3">
+                        <div class="preco-selecionado" id="preco-3"></div>
+                    </div>
+                    <label class="preco" for="preco-3">de R$ 151 a R$ 300</label>
+                </div>
+
+                <div class="preco-opcao">
+                    <div class="checkbox" id="preco-4">
+                        <div class="preco-selecionado" id="preco-4"></div>
+                    </div>
+                    <label class="preco" for="preco-4">de R$ 301 a R$ 500</label>
+                </div>
+
+                <div class="preco-opcao">
+                    <div class="checkbox" id="preco-5">
+                        <div class="preco-selecionado" id="preco-5"></div>
+                    </div>
+                    <label class="preco" for="preco-5">a partir de R$ 501</label>
+                </div>
+    </div>
+
+</aside>
+
+<main class="conteudo">
+
+<div class="fila01">
+
+<figure class="comprar">
+    <img src="layout/imagens/img_2.png" alt="">
+    <figcaption>
+        <h4 class="produto">CAMISETA MESCLA</h4>
+        <p class="valor"><b>R$ 28,00</b></p>
+        <p class="parcelas">até 3x de R$9,33</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+    
+</figure>
+
+<figure class="comprar">
+    <img src="layout/imagens/img_3.png" alt="">
+    <figcaption>
+        <h4 class="produto">SAIA EM COURO</h4>
+        <p class="valor"><b>R$ 398,00</b></p>
+        <p class="parcelas">até 5x de R$30,00</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+
+<figure class="comprar">
+    <img src="layout/imagens/img_4.png" alt="">
+    <figcaption>
+        <h4 class="produto">CARDIGAN TIGRE</h4>
+        <p class="valor"><b>R$ 398,00</b></p>
+        <p class="parcelas">até 5x de R$30,00</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+</div>
+
+<div class="fila02">
+
+<figure class="comprar">
+    <img src="layout/imagens/img_5.png" alt="">
+    <figcaption>
+        <h4 class="produto">CARDIGAM OFF WHITE</h4>
+        <p class="valor"><b>R$ 99,90</b></p>
+        <p class="parcelas">até 3x de R$33,30</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+
+<figure class="comprar">
+    <img src="layout/imagens/img_6.png" alt="">
+    <figcaption>
+        <h4 class="produto">BODY LEOPARDO</h4>
+        <p class="valor"><b>R$ 129,90</b></p>
+        <p class="parcelas">até 3x de R$43,43</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+
+<figure class="comprar">
+    <img src="layout/imagens/img_7.png" alt="">
+    <figcaption>
+        <h4 class="produto">CASACO PELOS</h4>
+        <p class="valor"><b>R$ 398,00</b></p>
+        <p class="parcelas">até 5x de R$30,00</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+
+</div>
+
+<div class="fila03">
+
+<figure class="comprar">
+    <img src="layout/imagens/img_8.png" alt="">
+    <figcaption>
+        <h4 class="produto">CROPPED STRIPPES</h4>
+        <p class="valor"><b>R$ 120,00</b></p>
+        <p class="parcelas">até 3x de R$40,00</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+
+<figure class="comprar">
+    <img src="layout/imagens/img_9.png" alt="">
+    <figcaption>
+        <h4 class="produto">CAMISA TRANSPARENTE</h4>
+        <p class="valor"><b>R$ 398,00</b></p>
+        <p class="parcelas">até 5x de R$30,00</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+
+<figure class="comprar">
+    <img src="layout/imagens/img_10.png" alt="">
+    <figcaption>
+        <h4 class="produto">POCHETE CLUTCH</h4>
+        <p class="valor"><b>R$ 99,00</b></p>
+        <p class="parcelas">até 3x de R$33,00</p>
+        <button type="submit" class="button-comprar" name="button-comprar">COMPRAR</button>
+    </figcaption>
+
+</figure>
+</div>
+
+</main>
+</div>
+<div id="carregar">
+    <button class="btn_carregar"> CARREGAR MAIS </button>
+</div>
+
+<footer>
+    <p> Agência M3 - Agência de Perfomance Digital </p>
+
+</footer>    
+</body>
+</html>
