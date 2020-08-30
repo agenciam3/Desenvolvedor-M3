@@ -15,33 +15,45 @@
             <div class="cart">
                 <i class="fas fa-shopping-bag" id="bag"></i>
                 <div class="none" id="circle">1</div>
+                <div class="cartOpen">
+                    <div class="closeCart" style="position: relative;left: 175px;top: 5px; cursor: pointer;">X</div>
+                </div>
             </div>
+
         </header>
         <main>
-            <div class="topProducts">
-                <h3>Blusas</h3>
-                <select name="order" id="order">
-                    <option value="" selected disabled hidden>Ordenar por:</option>
-                    <option id="orderOption" value="recent">Mais recentes</option>
-                    <option id="orderOption" value="lowPrice">Menor preço</option>
-                    <option id="orderOption" value="highPrice">Maior preço</option>
-                  </select>
-            </div>
             <div class="container">
+                <div class="top">
+                <div class="topProducts">
+                    <h3>Blusas</h3>
+                    <select name="order" id="order">
+                        <option value="" selected disabled hidden>Ordenar por:</option>
+                        <option id="orderOption" value="1">Mais recentes</option>
+                        <option id="orderOption" value="2">Menor preço</option>
+                        <option id="orderOption" value="3">Maior preço</option>
+                      </select>
+                      <div class="filterMobile">
+                        <button>Filtrar</button>
+                        <button>Ordenar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
                 <div class="filters">
             <div class="colors">
                 <h3>Cores</h3>
                 <div class="squaresColors">
+                    <div class="colorSquares">Cinza</div>
                     <div class="colorSquares">Amarelo</div>
+                    <div class="colorSquares">Laranja</div>
                     <div class="colorSquares">Azul</div>
                     <div class="colorSquares">Branco</div>
-                    <div class="colorSquares">Cinza</div>
-                    <div class="colorSquares">Laranja</div>
                 </div>
                 <select name="moreColors" id="moreColors">
                     <option value="" selected disabled hidden>Ver mais cores</option>
                 </select>
             </div>
+
 
             <div class="sizes">
                 <h3>Tamanhos</h3>
@@ -63,11 +75,11 @@
             <div class="prices">
                 <h3>Faixa de preço</h3>
                 <div class="squaresPrices">
-                    <span class="txtPrice"><div class="priceSquares"></div>de R$0 até R$50</span>   
-                    <span class="txtPrice"><div class="priceSquares"></div>de R$51 até R$150</span>
-                    <span class="txtPrice"><div class="priceSquares"></div>de R$151 até R$300</span>
-                    <span class="txtPrice"><div class="priceSquares"></div>de R$301 até R$500</span>
-                    <span class="txtPrice"><div class="priceSquares"></div>de a partir de R$ 01</span>
+                    <span class="txtPrice" data-price="50"><div class="priceSquares"></div>de R$0 até R$50</span>   
+                    <span class="txtPrice" data-price="150"><div class="priceSquares"></div>de R$51 até R$150</span>
+                    <span class="txtPrice" data-price="300"><div class="priceSquares"></div>de R$151 até R$300</span>
+                    <span class="txtPrice" data-price="500"><div class="priceSquares"></div>de R$301 até R$500</span>
+                    <span class="txtPrice" data-price="1"><div class="priceSquares"></div>de a partir de R$ 01</span>
                 </div>
             </div>
             
@@ -75,11 +87,12 @@
                 <div class="products">
                     
                 </div>
-                
             </div>
-
+                  
+            </div>
+            <button class="loadMore">CARREGAR MAIS</button>  
         </main>
-        <center><button class="loadMore">CARREGAR MAIS</button></center>
+        
         <footer>Agência M3 - Agência de performance digital</footer>
     </div>
 

@@ -1,118 +1,58 @@
-// inicio da populacao de array e loadmore
-
 const produtos = [
     {
         id: 2,
         name: 'CAMISETA MESCLA',
         price: 99,
         cents: '00',
-        color: [],
+        color: 'Cinza',
         size: 'P',
         maxparcelas: 3,
-        img: './imagens/img_' 
+        img: './imagens/img_',
+        quantidade: 0, 
     },
     {
         id: 3,
         name: 'SAIA EM COURO',
         price: 398,
         cents: '00',
-        color: [],
+        color: 'Amarelo',
         size: 'M',
         maxparcelas: 5,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 4,
         name: 'CARDIGAN TIGRE',
         price: 398,
         cents: '00',
-        color: [],
+        color: 'Laranja',
         size: 'G',
         maxparcelas: 5,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 5,
         name: 'CARDIGAN OFFWHITE',
         price: 99,
         cents: '90',
-        color: [],
-        size: '',
+        color: 'Branco',
+        size: 'GG',
         maxparcelas: 3,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 6,
         name: 'BODY LEOPARDO',
         price: 129,
         cents: '90',
-        color: [],
-        size: '',
+        color: 'Laranja',
+        size: 'U',
         maxparcelas: 3,
-        img: './imagens/img_' 
-    },
-    {
-        id: 7,
-        name: 'CASACO PELOS',
-        price: 398,
-        cents: '00',
-        color: [],
-        size: '',
-        maxparcelas: 5,
-        img: './imagens/img_' 
-    },
-];
-
-const fullProducts = [
-    {
-        id: 2,
-        name: 'CAMISETA MESCLA',
-        price: 99,
-        cents: '00',
-        color: 'cinza',
-        size: 'P',
-        maxparcelas: 3,
-        img: './imagens/img_' 
-    },
-    {
-        id: 3,
-        name: 'SAIA EM COURO',
-        price: 398,
-        cents: '00',
-        color: '',
-        size: 'M',
-        maxparcelas: 5,
-        img: './imagens/img_' 
-    },
-    {
-        id: 4,
-        name: 'CARDIGAN TIGRE',
-        price: 398,
-        cents: '00',
-        color: 'laranja',
-        size: 'G',
-        maxparcelas: 5,
-        img: './imagens/img_' 
-    },
-    {
-        id: 5,
-        name: 'CARDIGAN OFFWHITE',
-        price: 99,
-        cents: '90',
-        color: '',
-        size: '',
-        maxparcelas: 3,
-        img: './imagens/img_' 
-    },
-    {
-        id: 6,
-        name: 'BODY LEOPARDO',
-        price: 129,
-        cents: '90',
-        color: '',
-        size: '',
-        maxparcelas: 3,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 7,
@@ -122,7 +62,8 @@ const fullProducts = [
         color: '',
         size: '',
         maxparcelas: 5,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 8,
@@ -132,7 +73,8 @@ const fullProducts = [
         color: '',
         size: '',
         maxparcelas: 3,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 9,
@@ -142,7 +84,8 @@ const fullProducts = [
         color: '',
         size: '',
         maxparcelas: 5,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
     {
         id: 10,
@@ -152,82 +95,166 @@ const fullProducts = [
         color: '',
         size: '',
         maxparcelas: 3,
-        img: './imagens/img_' 
+        img: './imagens/img_' ,
+        quantidade: 0,
     },
 ]
+const carrinho = []
 
 const produtosDiv = document.querySelector(".products")
-const loadMore = document.querySelector(".loadMore")
 
-const produtosInicial = `
-    ${produtos.map(produto => 
+const produtosArray = `
+    ${produtos.slice(0,5).map(produto => 
         `<div class="product">
             <img src="${produto.img}${produto.id}.png">
             <h5>${produto.name}</h5>
             <h4>R$${produto.price},${produto.cents}</h4>
             <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
-            <button>Comprar</button>
-            
+            <button data-quantidade="0" key="${produto.id}">Comprar</button>
         </div>`
      ).join('')}
-     
 `;
 
-const productsFull = `
-    ${fullProducts.map(produto => 
+produtosDiv.innerHTML = produtosArray
+
+const loadMore = document.querySelector(".loadMore")
+loadMore.addEventListener("click", () =>{
+    produtosFull = `${produtos.map(produto => 
         `<div class="product">
             <img src="${produto.img}${produto.id}.png">
             <h5>${produto.name}</h5>
             <h4>R$${produto.price},${produto.cents}</h4>
             <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
-            <button>Comprar</button>
-        </div>
-        `
-     ).join('')}
-`;
-
-
-loadMore.addEventListener("click", () =>{
-    produtosDiv.innerHTML = productsFull;
+            <button key="${produto.id}">Comprar</button>
+            
+        </div>`
+     ).join('')}`;
+     produtosDiv.innerHTML = produtosFull
 })
 
-produtosDiv.innerHTML = produtosInicial;
-
-// fim da populacao de array e loadmore
-
-
 const sizes = document.querySelectorAll(".sizeSquare")
-
 for (let i = 0; i < sizes.length; i++) {
      sizes[i].addEventListener("click", function() {
        sizes[i].classList.toggle("checkedSquare");
        const tamanho = produtos.filter(d => d.size == sizes[i].innerHTML);
+       produtosDiv.innerHTML = null
 
-       const produtosFiltrados = `
+       const produtosFiltradosTamanho = `
        ${tamanho.map(produto => 
            `<div class="product">
                <img src="${produto.img}${produto.id}.png">
                <h5>${produto.name}</h5>
                <h4>R$${produto.price},${produto.cents}</h4>
                <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
-               <button>Comprar</button>
+               <button key="${produto.id}">Comprar</button>
            </div>
            `
         ).join('')}
-      `
-        produtosDiv.innerHTML = produtosFiltrados
-       
-     });
+      ` 
+      if(document.querySelector(".checkedSquare")){
+        produtosDiv.innerHTML = produtosFiltradosTamanho
+    }else{
+        produtosDiv.innerHTML = produtosArray
+    }      
+  });
 }
 
-// const colors = document.querySelectorAll(".colorSquares")
-
-// for (let i = 0; i < colors.length; i++) {
-//        colors[i].addEventListener("click",() => {
-//        colors[i].classList.toggle("checkedColor");
-//        let cores = fullProducts.filter(d => d.color == colors[i].innerHTML);
-//        console.log(cores)
-//      });
-// }
 
 
+const colors = document.querySelectorAll(".colorSquares")
+for (let i = 0; i < colors.length; i++) {
+    colors[i].addEventListener("click", () => {
+      const cores = produtos.filter(d => d.color == colors[i].innerHTML);
+      colors[i].classList.toggle("checkedSquareColor");
+      produtosDiv.innerHTML = null
+
+      const produtosFiltradosCor = `
+      ${cores.map(produto => 
+          `<div class="product">
+              <img src="${produto.img}${produto.id}.png">
+              <h5>${produto.name}</h5>
+              <h4>R$${produto.price},${produto.cents}</h4>
+              <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+              <button key="${produto.id}">Comprar</button>
+          </div>
+          `
+       ).join('')}
+     ` 
+     if(document.querySelector(".checkedSquareColor")){
+       produtosDiv.innerHTML = produtosFiltradosCor
+   }else{
+       produtosDiv.innerHTML = produtosArray
+   }      
+ });
+}
+
+const prices = document.querySelectorAll(".txtPrice")
+const squarePrice = document.querySelectorAll(".priceSquares")
+for(let i = 0; i < prices.length; i++){
+    prices[i].addEventListener("click", () =>{
+        const precos = produtos.filter(d => d.price < prices[i].dataset.price);
+        squarePrice[i].classList.toggle("priceSquareChecked");
+        produtosDiv.innerHTML = null
+
+      const produtosFiltradosPreco = `
+      ${precos.map(produto => 
+          `<div class="product">
+              <img src="${produto.img}${produto.id}.png">
+              <h5>${produto.name}</h5>
+              <h4>R$${produto.price},${produto.cents}</h4>
+              <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+              <button key="${produto.id}">Comprar</button>
+          </div>
+          `
+       ).join('')}
+     ` 
+     if(document.querySelector(".checkedSquareColor")){
+       produtosDiv.innerHTML = produtosFiltradosPreco
+   }else{
+       produtosDiv.innerHTML = produtosArray
+   }      
+ });
+}
+
+const order = document.getElementById("order");
+order.addEventListener("change", () =>{
+
+    if(order.value == 3){
+        const descending = `${produtos.sort((a, b) => b.price - a.price).map(produto => 
+            `<div class="product">
+                <img src="${produto.img}${produto.id}.png">
+                <h5>${produto.name}</h5>
+                <h4>R$${produto.price},${produto.cents}</h4>
+                <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+                <button key="${produto.id}">Comprar</button>
+            </div>
+            `
+         ).join('')}
+        ` 
+        produtosDiv.innerHTML = descending;
+    }
+
+    if(order.value == 2){
+        const ascending = `${produtos.sort((a, b) => a.price - b.price).map(produto => 
+            `<div class="product">
+                <img src="${produto.img}${produto.id}.png">
+                <h5>${produto.name}</h5>
+                <h4>R$${produto.price},${produto.cents}</h4>
+                <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+                <button key="${produto.id}">Comprar</button>
+            </div>
+            `
+         ).join('')}
+        ` 
+        produtosDiv.innerHTML = ascending;
+    }     
+}
+)
+
+document.querySelector(".cart").addEventListener("click", () => {
+    document.querySelector(".cartOpen").classList.toggle("block")
+})
+
+document.querySelector(".closeCart").addEventListener("click", () => {
+    document.querySelector(".closeCart").classList.toggle("block")
+})

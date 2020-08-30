@@ -25,6 +25,7 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 400;
 }
 
+
 header{
     width: 100vw;
     height: 60px;
@@ -39,6 +40,10 @@ header{
 
 .none{
     display: none!important;
+}
+
+.block{
+    display: block!important;
 }
 
 #bag{
@@ -57,7 +62,7 @@ header{
     background: var(--blue);
     border-radius: 50%;
     font-size: 12px;
-    color: white;
+    color: var(--white);
     position: relative;
     right: 10px;
     top: 10px;
@@ -101,13 +106,22 @@ main{
 }
 
 .colorSquares{
-    max-width: 20px;
-    max-height: 20px;
-    border: 1px solid #e5e5e5;
+    max-width: 19px;
+    max-height: 19px;
+    outline: 1px solid #e5e5e5;
     display: flex;
     cursor: pointer;
     margin-top: 5px;
     text-indent: 25px;
+}
+
+.checkedSquareColor{
+    border: 5px solid #fff;
+    display: flex;
+    cursor: pointer;
+    background: var(--blue);
+    align-items: center;
+    text-indent: 20px;
 }
 
 .colors h3{
@@ -185,8 +199,19 @@ main{
     display: flex;
     cursor: pointer;
     margin-top: 5px;
-    text-indent: 25px;
     margin-right: 5px;
+}
+
+.priceSquareChecked{
+    width: 19px;
+    height: 19px;
+    border: 5px solid #fff;
+    outline: 1px solid #e5e5e5;
+    display: flex;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-right: 5px;
+    background: var(--blue);
 }
 
 .txtPrice{
@@ -197,20 +222,24 @@ main{
 
 .container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 40px;
+    flex-direction: column
+}
+
+.bottom{
+    display: flex;
+    align-items: start;
 }
 
 .filters{
-    width: 25%;
+    width: fit-content;
 }
 
-.products{
-    display: flex;
+.products {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     flex-direction: row;
-    flex-shrink: 1;
-    flex-wrap: wrap;
-    flex: 1;
     align-items: center;
 }
 
@@ -257,9 +286,23 @@ main{
     font-weight: 700;
     margin-bottom: 50px;
     font-size: 14px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin: 0px auto 60px auto;
 }
 
-
+.cartOpen{
+    width: 200px;
+    height: 150px;
+    background: var(--white);
+    border: 1px solid var(--blue);
+    z-index: 1;
+    margin-top: 150px;
+    display: none;
+    border-radius: 5px;
+}
 
 footer{
     position: fixed;
@@ -274,3 +317,96 @@ footer{
     justify-content: center;
     font-size: 12px;
 }
+
+.filterMobile{
+    display: none;
+}
+
+@media screen and (max-width: 888px) {
+    header{
+        padding: 0px 80px;
+    }
+    main {
+        width: calc(100vw - 145px);
+    }
+}
+@media screen and (max-width: 1600px) {
+.products {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 1400px) {
+    .products {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .products {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .products {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    #order{
+        display: none;
+    }
+    .topProducts {
+        font-size: 32px;
+        margin-top: 10px;
+        flex-direction: column;
+        display: flex;
+    }
+    .topProducts h3{
+        text-align: center;
+    }
+    .filterMobile{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .filterMobile button{
+        width: 205px;
+        height: 45px;
+        border: 1px solid #d9d9d9;
+        color: #e5e5e5;
+        background: var(--white);
+    }
+    .filters{
+        display:none;
+    }
+    main{
+        width: 100vw;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .products {
+        display: grid;
+        grid-template-columns: 200px 200px;
+    }
+    .product {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 195px;
+        height: fit-content;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        margin-top: 30px;
+    }
+    .loadMore{
+        margin: 10px auto 45px auto;
+    }
+}
+  
