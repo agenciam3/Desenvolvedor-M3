@@ -353,6 +353,8 @@ footer{
     }
 }
 
+
+
 @media screen and (max-width: 660px) {
     #order{
         display: none;
@@ -372,7 +374,7 @@ footer{
         justify-content: center;
     }
     .filterMobile button{
-        width: 205px;
+        width: 200px;
         height: 45px;
         border: 1px solid #d9d9d9;
         color: #e5e5e5;
@@ -409,4 +411,10 @@ footer{
         margin: 10px auto 45px auto;
     }
 }
-  
+
+@media screen and (max-width: 440px) {
+    .products {
+        grid-template-columns: 
+        minmax(100px, 1fr);
+    }
+}
