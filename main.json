@@ -1,0 +1,103 @@
+{
+    "produtos": [
+        {
+            "id":1,
+            "produto": "CAMISETA MESCLA",
+            "tamanho": ["p", "m" , "g"],
+            "cor": ["cinza", "laranja", "verde", "vermelho", "preto", "rosa", "vinho"],
+            "preco_vista": 28.00,
+            "preco_parcelado": 9.33,
+            "num_parcelas": 3,
+            "img": "img/img_2.png",
+            "createdAt": "2019-05-26"
+        },
+        {
+            "id":2,
+            "produto": "SAIA EM COURO",
+            "tamanho": ["36", "38", "40", "42", "44", "46"],
+            "cor": ["amarelo", "azul", "branco", "vermelho", "preto", "rosa", "vinho"],
+            "preco_vista": 398.00,
+            "preco_parcelado": 30.00,
+            "num_parcelas": 5,
+            "img": "img/img_3.png",
+            "createdAt": "2019-05-20"
+        },
+        {
+            "id":3,
+            "produto": "CARDIGAN TIGRE",
+            "tamanho": ["p", "m" , "g", "gg"],
+            "cor": ["amarelo", "azul", "branco", "cinza", "laranja", "verde", "preto", "rosa", "vinho"],
+            "preco_vista": 398.00,
+            "preco_parcelado": 30.00,
+            "num_parcelas": 5,
+            "img": "img/img_4.png",
+            "createdAt": "2019-05-21"
+        },
+        {
+            "id":4,
+            "produto": "CARDIGAN OFF WHITE",
+            "tamanho": ["p", "m" , "g", "gg"],
+            "cor": ["amarelo", "azul", "verde", "vermelho", "preto", "rosa", "vinho"],
+            "preco_vista": 99.90,
+            "preco_parcelado": 33.30,
+            "num_parcelas": 3,
+            "img": "img/img_5.png",
+            "createdAt": "2019-05-22"
+        },
+        {
+            "id":5,
+            "produto": "BODY LEOPARDO",
+            "tamanho": ["p", "m" , "g", "gg"],
+            "cor": ["amarelo", "azul", "branco", "cinza", "laranja", "verde"],
+            "preco_vista": 129.90,
+            "preco_parcelado": 43.43,
+            "num_parcelas": 3,
+            "img": "img/img_6.png",
+            "createdAt": "2019-05-19"
+        },
+        {
+            "id":6,
+            "produto": "CASACO PELOS",
+            "tamanho": ["p", "m" , "g", "gg"],
+            "cor": ["amarelo", "rosa", "vinho"],
+            "preco_vista": 398.00,
+            "preco_parcelado": 30.00,
+            "num_parcelas": 5,
+            "img": "img/img_7.png",
+            "createdAt": "2019-05-17"
+        },
+        {
+            "id":7,
+            "produto": "CROPPED STRIPES",
+            "tamanho": ["p", "m" , "g", "gg"],
+            "cor": ["amarelo", "azul", "branco", "cinza", "laranja", "verde", "vermelho", "preto"],
+            "preco_vista": 120.00,
+            "preco_parcelado": 40.00,
+            "num_parcelas": 3,
+            "img": "img/img_8.png",
+            "createdAt": "2019-04-26"
+        },
+        {
+            "id":8,
+            "produto": "CAMISA TRANSPARENTE",
+            "tamanho": ["p", "m" , "g", "gg"],
+            "cor": ["cinza", "laranja", "verde", "vermelho", "preto", "rosa", "vinho"],
+            "preco_vista": 398.00,
+            "preco_parcelado": 30.00,
+            "num_parcelas": 5,
+            "img": "img/img_9.png",
+            "createdAt": "2019-04-26"
+        },
+        {
+            "id":9,
+            "produto": "POCHETE CLUTCH",
+            "tamanho": ["u"],
+            "cor": ["amarelo", "azul", "branco", "laranja", "verde", "vermelho", "preto", "rosa", "vinho"],
+            "preco_vista": 99.00,
+            "preco_parcelado": 33.00,
+            "num_parcelas": 3,
+            "img": "img/img_10.png",
+            "createdAt": "2019-05-29"
+        }
+    ]
+}

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icon-m3.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,800;1,300;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Agência M3</title>
+</head>
+<body>
+
+    <header>
+        <div class="cabecalho container">
+            <div><img src="img/logo-m3.png" alt="Logo Agência M3"></div>
+             <div class="carrinho">
+                 <img class="sacola" src="img/bag.png" alt="Sacola de compras">
+                 <span id="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+    <div>
+        <div class="titulo container">
+            <div><h2>Blusas</h2></div>
+            <div class="ordenar">
+                <select name="order">
+                    <option value="">Ordenar por:</option>
+                    <option ordenar="recente">Mais recentes</option>
+                    <option ordenar="barato">Menor preço</option>
+                    <option ordenar="caro">Maior preço</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="botoes-mobile">
+
+            <button id="btn-filter">
+                <span>filtrar</span>        
+            </button>
+            <button id="btn-order">
+                <span>ordenar</span>        
+            </button>
+
+        </div>
+
+        <!-- MODAL MOBILE -->
+
+        <div class="content container">
+            <div id="modalOpen" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content animated zoomIn">
+                    <div class="modal-header">
+                        <h4 id="modal-title">ordenar</h4>
+                        <span class="close">X</span>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        <ul>
+                            <li onclick="orderByDesc()" class="modal-item order-item"><a href="#">Mais recentes</a></li>
+                            <li onclick="orderByPrice()" class="modal-item order-item"><a href="#">Menor preço</a></li>
+                            <li onclick="orderByPriceDesc()" class="modal-item order-item"><a href="#">Maior preço</a></li>
+                        </ul>
+                    </div>
+                    <div class='modal-footer'>
+                        <button id='botao-aplicar' class='btn-aplicar'>Aplicar</button>
+                        <button id='botao-limpar' class='btn-limpar'>Limpar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FILTRO LATERAL -->
+
+            <aside id="filter">
+
+                <!-- CORES -->
+
+                <div class="bloco">
+                    
+                    <fieldset class="cores">
+                        <div class="item">
+                            
+                            <input type="checkbox" id="A"/>
+                            <div>
+                                <label for="A">cores <span class="btn-open-close"></span></label>
+                            </div>
+                            
+                            <ul class="lista-cores">
+                                <li class="modal-item" onclick="filter('amarelo', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="amarelo">amarelo
+                                        <span></span>
+                                    </label>
+                                </li>
+                                <li class="modal-item" onclick="filter('azul', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="azul">azul
+                                        <span></span>
+                                    </label>
+                                </li>
+        
+                                <li class="modal-item" onclick="filter('branco', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="branco">branco
+                                        <span></span>
+                                    </label>
+                                </li>
+        
+                                <li class="modal-item" onclick="filter('cinza', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="cinza">cinza
+                                        <span></span>
+                                    </label>
+                                </li>
+        
+                                <li class="modal-item" onclick="filter('laranja', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="laranja">laranja
+                                        <span></span>
+                                    </label>
+                                </li>
+                                
+                                <li class="modal-item ver-todas-cores">
+                                    
+                                    <p id="ver-todas">Ver todas as cores <i class="fas fa-angle-down"></i></p>
+                                    
+                                </li>
+                                
+                                <li class="modal-item" onclick="filter('verde', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="verde">verde
+                                        <span></span>
+                                    </label>
+                                </li>
+
+                                <li class="modal-item" onclick="filter('vermelho', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="vermelho">vermelho
+                                        <span></span>
+                                    </label>
+                                </li>
+
+                                <li class="modal-item" onclick="filter('preto', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="preto">preto
+                                        <span></span>
+                                    </label>
+                                </li>
+
+                                <li class="modal-item" onclick="filter('rosa', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="rosa">rosa
+                                        <span></span>
+                                    </label>
+                                </li>
+
+                                <li class="modal-item" onclick="filter('vinho', 'isColorFilter')">
+                                    <label class="radio">
+                                        <input type="radio" name="cor" value="vinho">vinho
+                                        <span></span>
+                                    </label>
+                                </li>
+                                
+                            </ul>
+                        </div>   
+                    </fieldset>
+                </div>                       
+
+                <!-- TAMANHOS -->
+
+                <div class="bloco">
+
+                    <fieldset class="tamanho">
+                        <div class="item">
+
+                            <input type="checkbox" id="C"/>
+                            <div>
+                                <label for="C">tamanho <span class="btn-open-close"></span></label>
+                            </div>
+
+                            <ul id="tamanho">
+                                <li onclick="filter('p', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="p">
+                                        <span>P</span>
+                                    </label>
+                                </li>
+                                
+                                <li onclick="filter('m', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="m">
+                                        <span>m</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('g', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="g">
+                                        <span>g</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('gg', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="gg">
+                                        <span>gg</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('u', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="u">
+                                        <span>u</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('36', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="36">
+                                        <span>36</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('38', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="38">
+                                        <span>38</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('40', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="40">
+                                        <span>40</span>
+                                    </label>
+                                </li>
+                                
+                                <li onclick="filter('42', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="42">
+                                        <span>42</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('44', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="44">
+                                        <span>44</span>
+                                    </label>
+                                </li>
+        
+                                <li onclick="filter('46', 'isSizeFilter')">
+                                    <label class="radio2">
+                                        <input type="radio" name="tam" value="46">
+                                        <span>46</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- FAIXA DE PREÇO -->
+
+                <div class="bloco">
+    
+                    <fieldset class="faixa-preco">    
+                        <div class="item">
+
+                            <input type="checkbox" id="B"/>
+                            <div>
+                                <label for="B">faixa de preço <span class="btn-open-close"></span></label>
+                            </div>
+                            
+                            <ul>
+                                <li onclick="filter('A', 'isPriceFilter')">
+                                    <label class="radio modal-item">
+                                        <input type="radio" name="price" value="f1">de R$0 até R$50
+                                        <span></span>
+                                    </label>
+                                </li>
+
+                                <li onclick="filter('B', 'isPriceFilter')">
+                                    <label class="radio modal-item">
+                                        <input type="radio" name="price" value="f2">de R$51 até R$150
+                                        <span></span>
+                                    </label>
+                                </li>
+
+                                <li onclick="filter('C', 'isPriceFilter')">
+                                    <label class="radio modal-item">
+                                        <input type="radio" name="price" value="f3">de R$151 até R$300
+                                        <span></span>
+                                    </label>
+                                </li>
+                                
+                                <li onclick="filter('D', 'isPriceFilter')">
+                                    <label class="radio modal-item">
+                                        <input type="radio" name="price" value="f4">de R$301 até R$500
+                                        <span></span>
+                                    </label>
+                                </li>
+                                
+                                <li onclick="filter('E', 'isPriceFilter')">
+                                    <label class="radio modal-item">
+                                        <input type="radio" name="price" value="f5">a partir de R$01
+                                        <span></span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                        
+
+                    </fieldset>
+                   
+                </div>
+
+            </aside>
+
+            <!-- CONETÚDO PRINCIPAL -->
+
+            <main class="vitrine">
+
+                <div id="produtos" class="produtos"></div>
+
+                <div class="btn-modal">
+                    <button id="btnCarregarMais" class="btn-carregar">CARREGAR MAIS</button>
+                </div>
+
+            </main>
+        </div>
+
+        <!--RODAPÉ-->
+
+        <footer>
+            <p>Agência M3 - Agência de Performance Digital</p>
+        </footer>
+
+    </div>
+<script src="index.js"></script>
+</body>
+</html>
