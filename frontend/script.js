@@ -108,7 +108,12 @@ const produtos = [
         date: new Date('')
     },
 ]
-const carrinho = []
+
+const carrinho = [
+    {
+        id: [],
+    }
+]
 
 const produtosDiv = document.querySelector(".products")
 
@@ -201,9 +206,9 @@ const prices = document.querySelectorAll(".txtPrice")
 const squarePrice = document.querySelectorAll(".priceSquares")
 for(let i = 0; i < prices.length; i++){
     prices[i].addEventListener("click", () =>{
-        const precos = produtos.filter(d => d.price < prices[i].dataset.price);
+        const datasetValue = prices[i].dataset.price
+        const precos = produtos.filter(d => d.price < datasetValue);
         squarePrice[i].classList.toggle("priceSquareChecked");
-        produtosDiv.innerHTML = null
 
       const produtosFiltradosPreco = `
       ${precos.map(produto => 
@@ -274,10 +279,19 @@ order.addEventListener("change", () =>{
     }     
 })
 
-document.querySelector(".cart").addEventListener("click", () => {
-    document.querySelector(".cartOpen").classList.toggle("block")
+document.getElementById("btnFiltrar").addEventListener("click", () => {
+    document.querySelector(".filters").classList.add("flex")
+    document.querySelector("body").style.overflow = "hidden";
 })
 
-document.querySelector(".closeCart").addEventListener("click", () => {
-    document.querySelector(".closeCart").classList.toggle("block")
+
+document.getElementById("btnOrdenar").addEventListener("click", () => {
+    document.querySelector(".filterOrdenar").classList.add("flex")
+    document.querySelector("body").style.overflow = "hidden";
+    console.log("ordenar")
 })
+
+function closeFilter(){
+    document.querySelector(".filters").classList.remove("flex")
+    document.querySelector(".filterOrdenar").classList.remove("flex")
+}

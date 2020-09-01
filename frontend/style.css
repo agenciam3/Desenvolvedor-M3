@@ -46,6 +46,10 @@ header{
     display: block!important;
 }
 
+.flex{
+    display: flex!important;
+}
+
 #bag{
     font-size: 24px;
     color: var(--black);
@@ -54,6 +58,7 @@ header{
 .cart{
     display: flex;
     flex-direction: row;
+    transition: 500ms;
 }
 
 #circle{
@@ -223,13 +228,13 @@ main{
 .container{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
     flex-direction: column
 }
 
 .bottom{
     display: flex;
     align-items: start;
+    margin-top: 40px;
 }
 
 .filters{
@@ -302,6 +307,7 @@ main{
     margin-top: 150px;
     display: none;
     border-radius: 5px;
+    transition: 500ms;
 }
 
 footer{
@@ -319,6 +325,13 @@ footer{
 }
 
 .filterMobile{
+    display: none;
+}
+
+.filterMobileTitle{
+    display: none;
+}
+.filterOrdenar{
     display: none;
 }
 
@@ -409,6 +422,42 @@ footer{
     }
     .loadMore{
         margin: 10px auto 45px auto;
+    }
+    .filters {
+        display: none;
+        position: absolute;
+        background: #fff;
+        width: 100vw;
+        flex-direction: column;
+        top: 0;
+        height: 100vh;
+        left: 0;
+        align-items: center;
+    }
+    .filterOrdenar {
+        display: none;
+        position: absolute;
+        background: #fff;
+        width: 100vw;
+        flex-direction: column;
+        top: 0;
+        height: 100vh;
+        left: 0;
+    }
+    .filterOrdenar a{
+        margin: 10px 30px;
+        color: black;
+    }
+    .filterMobileTitle {
+        display: flex;
+        width: 100vw;
+        justify-content: space-around;
+        align-items: center;
+        border-bottom: 2px solid var(--headerborder);
+        height: 60px;
+    }
+    .colors{
+        margin-top: 50px;
     }
 }
 
