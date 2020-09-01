@@ -7,6 +7,7 @@ Feito no Live Server do Visual Studio Code.
 ----
   - 1º - Instalar um servidor HTTP qualquer (LiveServer do VSCode recomendado)
   - 2º - Rodar o servidor na pasta /frontend/
+  - 3º - Acessar o navegador na porta do servidor HTTP
   - 3º - Pronto!
 
 ##### Contato: [tauamota383@gmail.com](mailto:tauamota383@gmail.com)
