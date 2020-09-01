@@ -337,7 +337,7 @@ footer{
 
 @media screen and (max-width: 888px) {
     header{
-        padding: 0px 80px;
+        padding: 0px 30px;
     }
     main {
         width: calc(100vw - 145px);
@@ -447,6 +447,7 @@ footer{
     .filterOrdenar a{
         margin: 10px 30px;
         color: black;
+        cursor: pointer;
     }
     .filterMobileTitle {
         display: flex;

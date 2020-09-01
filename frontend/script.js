@@ -112,6 +112,7 @@ const produtos = [
 const carrinho = [
     {
         id: [],
+        quantidade: 0,
     }
 ]
 
@@ -231,6 +232,51 @@ for(let i = 0; i < prices.length; i++){
 }
 
 const order = document.getElementById("order");
+
+document.getElementById("recentsMobile").addEventListener("click", () => {
+    const recents = `${produtos.sort((a, b) => b.date - a.date).map(produto => 
+        `<div class="product">
+            <img src="${produto.img}${produto.id}.png">
+            <h5>${produto.name}</h5>
+            <h4>R$${produto.price},${produto.cents}</h4>
+            <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+            <button key="${produto.id}">Comprar</button>
+        </div>
+        `
+     ).join('')}
+    ` 
+    produtosDiv.innerHTML = recents;
+})
+document.getElementById("lowMobile").addEventListener("click", () => {
+    const ascending = `${produtos.sort((a, b) => a.price - b.price).map(produto => 
+        `<div class="product">
+            <img src="${produto.img}${produto.id}.png">
+            <h5>${produto.name}</h5>
+            <h4>R$${produto.price},${produto.cents}</h4>
+            <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+            <button key="${produto.id}">Comprar</button>
+        </div>
+        `
+     ).join('')}
+    ` 
+    produtosDiv.innerHTML = ascending;
+})
+document.getElementById("highMobile").addEventListener("click", () => {
+    const descending = `${produtos.sort((a, b) => b.price - a.price).map(produto => 
+        `<div class="product">
+            <img src="${produto.img}${produto.id}.png">
+            <h5>${produto.name}</h5>
+            <h4>R$${produto.price},${produto.cents}</h4>
+            <h5>até ${produto.maxparcelas}x de R${produto.price/produto.maxparcelas}</h5>
+            <button key="${produto.id}">Comprar</button>
+        </div>
+        `
+     ).join('')}
+    ` 
+    produtosDiv.innerHTML = descending;
+})
+
+
 order.addEventListener("change", () =>{
 
     if(order.value == 1){
