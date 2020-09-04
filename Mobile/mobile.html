@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>M3 - Performace Digital</title>
+    <link rel="stylesheet" href="style/mobile.css">
+    
+</head>
+<div id="principal-container">
+
+<body>
+
+<header class="cabecalho">
+
+<div id="top-bar-container">
+    
+    <a href="index.html">
+        <img  id="logo" src="../layout/imagens/logo-m3.png" alt="logo-m3"> 
+    </a>
+   
+    <a href="#">
+        <img id="carrinho-compras" src="../layout/icone/carrinho_compras01.ico" alt="carrinho de compras">
+    </a>
+
+</div>
+
+</header>
+
+<nav class="menu">
+
+    <h1>Blusas</h1>
+   
+    <div class="menu-botao">
+        <button class="filtrar-menu" value="filtrar">Filtrar</button>
+        <button class="ordenar-menu" value="ordenar">Ordenar</button>
+   
+    </div>
+</nav>
+
+<main class="conteudo">
+
+    <div id="popup" class="popup">
+        <div>
+            <p>Deseja adicionar esse Item ao carrinho?<br/> <img src="../layout/icone/adicionado.png"></p>
+            <div id="btn-confirmar" onclick="Confirmacao()">Ok</div>
+            <div id="btn-cancelar" onclick="Cancelar()">Cancelar</div>
+        </div>
+    </div>
+        
+    <div class="fila01">
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_2.png" alt="">
+        <figcaption>
+            <h4 class="produto">CAMISETA MESCLA</h4>
+            <p class="valor">R$ 28,00</p>
+            <p class="parcelas">até 3x de R$9,33</p>
+            <button type="submit" onclick="Comprar()"  class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+        
+    </figure>
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_3.png" alt="">
+        <figcaption>
+            <h4 class="produto">SAIA EM COURO</h4>
+            <p class="valor">R$ 398,00</p>
+            <p class="parcelas">até 5x de R$30,00</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+
+    </div>
+
+    <div class="fila02">
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_4.png" alt="">
+        <figcaption>
+            <h4 class="produto">CARDIGAN TIGRE</h4>
+            <p class="valor">R$ 398,00</p>
+            <p class="parcelas">até 5x de R$30,00</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>    
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_5.png" alt="">
+        <figcaption>
+            <h4 class="produto">CARDIGAM OFF WHITE</h4>
+            <p class="valor">R$ 99,90</p>
+            <p class="parcelas">até 3x de R$33,30</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+
+    </div>
+
+    <div class="fila03">
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_6.png" alt="">
+        <figcaption>
+            <h4 class="produto">BODY LEOPARDO</h4>
+            <p class="valor">R$ 129,90</p>
+            <p class="parcelas">até 3x de R$43,43</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_7.png" alt="">
+        <figcaption>
+            <h4 class="produto">CASACO PELOS</h4>
+            <p class="valor">R$ 398,00</p>
+            <p class="parcelas">até 5x de R$30,00</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+
+    </div>
+    
+    <div class="fila04">
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_8.png" alt="">
+        <figcaption>
+            <h4 class="produto">CROPPED STRIPPES</h4>
+            <p class="valor">R$ 120,00</p>
+            <p class="parcelas">até 3x de R$40,00</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_9.png" alt="">
+        <figcaption>
+            <h4 class="produto">CAMISA TRANSPARENTE</h4>
+            <p class="valor">R$ 398,00</p>
+            <p class="parcelas">até 5x de R$30,00</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+
+    </div>
+
+    
+    <figure class="comprar">
+        <img src="../layout/imagens/img_10.png" alt="">
+        <figcaption>
+            <h4 class="produto">POCHETE CLUTCH</h4>
+            <p class="valor">R$ 99,00</p>
+            <p class="parcelas">até 3x de R$33,00</p>
+            <button type="submit"  onclick="Comprar()" class="button-comprar" name="button-comprar">COMPRAR</button>
+        </figcaption>
+    
+    </figure>
+
+    </main>
+
+
+    <div id="carregar">
+        <button class="btn_carregar" onclick="carregar()"><p> CARREGAR MAIS </p> </button>
+    </div>
+    
+<footer>
+         <p> Agência M3 - Agência de Perfomance Digital </p>
+</footer>  
+    
+<script src="script/mobile.js">
+    
+</script>
+
+<!-- JQUERY --> 
+<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+<script>
+$(".filtrar-menu").click(function(){
+  $(".filtros").show();
+});
+$(".btn-close").click(function(){
+  $(".filtros").hide();
+});
+</script>
+    
+</body>
+</div>
+</html>

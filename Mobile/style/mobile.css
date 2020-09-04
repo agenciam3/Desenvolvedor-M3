@@ -1,0 +1,314 @@
+
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+
+@media screen and (min-width: 375px){
+
+
+/*========Reset==========*/
+* {
+    padding:0;
+    margin:0;
+    list-style:none;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    
+}
+
+/*========Cabeçalho==========*/
+
+header.cabecalho{
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;    
+}
+header.cabecalho div#top-bar-container {
+    padding-left: 30px;
+    box-sizing: border-box;
+    padding-top: 18px;
+}
+
+header.cabecalho div#top-bar-container img#carrinho-compras{
+    padding-left: 275px;
+}
+
+
+/*========Menu==========*/
+
+nav.menu{
+    height: 120px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+
+}
+nav.menu h1{
+    height: 40px;
+    font-weight: normal;
+    text-align: center;
+    font-size: 28pt;
+
+}
+nav.menu .menu-botao{
+    padding: 20px 0;
+    padding-left: 60px;
+    display: flex;
+}
+
+nav.menu button.filtrar-menu, button.ordenar-menu{
+    height: 50px;
+    width: 45%;
+    cursor: pointer;
+    background-color: #fff;
+    border: 1px solid #000;
+    outline: none;
+    
+
+}
+nav.menu button.filtrar-menu:hover, button.ordenar-menu:hover{
+    background-color: #5ccbe7;
+    border: 0;
+    color: #fff;
+}
+
+div.filtros{
+    height: 100%;
+    padding-left: 160px;
+    padding-top: 70px;
+    margin-right: 700px;
+    background-color: #129cc2;
+}
+
+div.filtros .btn-close{
+    font-size: 2em;
+    color: #000;
+    float: right;
+    cursor: pointer;
+    margin-right: 5%;
+}
+
+div.filtros h4.titulo{
+    height: 30px;
+    margin-bottom: 10px;
+    font-size: 13pt;
+    font-weight: normal;
+}
+
+
+div.filtros div#cores-option .cor-opcao{
+    font-size: 11pt;
+    padding: 0px;
+}
+div.filtros div#tamanho-option .opcao-tamanho{
+    color: #ccc;
+    display: flex;
+    max-width: 160px;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  
+}
+
+div.filtros div#precos-container .preco-opcao{
+    font-size: 11pt;
+    padding: 0px;
+
+}
+
+div.filtros  input{
+    all: unset;
+    border: 1px solid #ccc;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 3px;
+}
+
+div.filtros  input:checked{
+    background-color: #5ccbe7;
+    border: 5px solid #fff;
+    outline: 1px solid #ccc;
+    width: 10px;
+    height: 10px;
+
+}
+
+div.filtros div#tamanho-option .tamanhos{
+    width: 42px;
+    height: 42px;
+    margin:2px;
+    padding:10px;
+    border: 0.5px solid #ccc;
+    color:#ccc;
+    cursor: pointer;
+    text-align: center;
+
+}
+div.filtros div#tamanho-option .tamanhos:hover{
+    border: 0.5px solid #00c2f3;
+    color: #000;
+}
+
+.tamanhos:checked{
+    border: 1px solid #5ccbe7;
+
+}
+
+.btn-filtrar{
+    margin-top: 90px;
+    
+
+}
+.btn-aplicar{
+    height: 20px;
+   
+}
+
+
+
+/*========Conteúdo==========*/
+
+main.conteudo{
+    height: 2200px;
+    padding-left: 30px;
+    padding-top: 19px;
+}
+
+
+main.conteudo div#popup{
+    display: none;
+    height: 150px;
+    width: 300px;
+    margin-left: 100px;
+    position: fixed;
+
+    background-color: #5ccbe7;
+
+}
+
+main.conteudo div#popup p{
+    color: #fff;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 13pt;
+}
+
+main.conteudo div#popup div#btn-confirmar, div#btn-cancelar{
+    padding: 4px;
+    font-size: 12pt;
+    cursor: pointer;
+    color: #fff;
+    padding-top: 124px;
+    background-color: #000;
+
+}
+main.conteudo div#popup div#btn-confirmar:hover, div#btn-cancelar:hover{
+    color: #129cc2;
+
+}
+
+main.conteudo div{
+    display: flex;
+    flex-direction: row;
+}
+
+main.conteudo figure.comprar{
+    height: 430px;
+    width: 220px;
+    padding: 10px;
+    margin: 1px;
+}
+
+main.conteudo figure.comprar h4{
+    font-size: 12pt;
+    text-align: center;
+    font-weight: normal;
+
+}
+
+main.conteudo figure.comprar p{
+    font-size: 11pt;
+    text-align: center;
+
+}
+
+main.conteudo figure.comprar p.valor{
+    font-weight: 900;
+
+
+}
+
+main.conteudo figure.comprar figcaption button.button-comprar{
+    text-align: center;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 2px;
+    border: 0;
+}
+
+/*========Botão Carregar==========*/
+
+div#carregar{
+    padding: 10px;
+    border: 0;
+    padding-left: 200px;
+    margin: 0px;
+    margin-bottom: 50px;
+}
+div#carregar button.btn_carregar{
+    height: 40px;
+    background-color: #00c2f3;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+
+}
+
+div#carregar button.btn_carregar:hover{
+    background-color: #129cc2;
+    transition: 0.5s;
+
+}
+
+div#carregar button.btn_carregar p{
+    padding: 10px;
+    font-size: 10pt;
+}
+
+/*========Footer==========*/
+
+footer{
+    height: 30px;
+    background-color: black;
+}
+
+footer p{
+    font-size: 11pt;
+    color: #fff;
+    text-align: center;
+    padding: 4px;
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+

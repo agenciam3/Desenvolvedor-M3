@@ -14,28 +14,44 @@
 /*========Cabeçalho==========*/
 
 header.cabecalho{
+    position: fixed;
     height: 90px;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 header.cabecalho div#top-bar-container{
     padding-left: 160px;
     padding-top: 20px;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
 
 }
-header.cabecalho div#top-bar-container #carrinho-compras{
+div#top-bar-container #carrinho-compras{
     padding-left: 860px;
+    outline: none;
+}
+#carrinho div.comprar{
+    background-color: #5ccbe7;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    margin-left: 880px;
+    margin-top: -40px;
+
 }
 
 /*========Menu==========*/
 
 nav.menu{
     height: 120px;
-    padding-top: 40px;
+    padding-top: 120px;
     padding-bottom: 30px;
     padding-left: 160px;
     display: flex;
@@ -47,43 +63,83 @@ nav.menu h1{
     font-weight: normal;
 }
 nav.menu div.ordenar{
-    padding-left: 780px;
+    padding-left: 760px;
 
 }
-
-nav.menu div.ordenar select.ordenacao-preco{
+nav.menu .select-box{
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+}
+nav.menu .select-box .option-container{
     background-color: #fff;
-    padding: 10px;
-    margin: 5px;
-}
-nav.menu div.ordenar select.ordenacao-preco option{
-    background-color: #fff;
-    padding: 10px;
-    margin: 5px;
+    border-radius: 3px;
+    border: 0.2px solid #000;
+    color: #000;
+    width: 140px;
+    opacity: 0;
+    transition: all 0.4s;
+    overflow: hidden;
+
+    order: 1;
+
 }
 
-/*select.ordenacao-preco  option#mais-recentes, option#maior-preco, option#menor-preco{
-    margin: 40px 0 ;
+nav.menu .selected{
+    background: #fff;
     cursor: pointer;
+    border: 0.5px solid #000;
+    border-radius: 5px;
+    color: #000;
+    padding: 8px;
+    margin-right: 49px;
+
+    order: 0;
+}
+nav.menu .selected:hover{
+    background-color: #5ccbe7;
+    border: 0;
+    color: #fff;
 }
 
-select.ordenacao-preco option#mais-recentes:hover, option#maior-preco:hover, option#menor-preco:hover{
-    color: #5ccbe7;
-    transition: 0.5s;
+nav.menu .option-container.active{
+    max-width: 200px;
+    opacity: 1;
+    padding: 5px;
 }
+
+nav.menu .select-box .option .selected{
+    padding: 12px 24px;
+    cursor: pointer;
+
+}
+nav.menu .select-box .option:hover{
+    background-color: #01cbfd;
+    color: #fff;
+
+}
+
+nav.menu .select-box label{
+    cursor: pointer;
+
+}
+nav.menu .option .radio{
+    display: none;
+}
+  
 /*========Filtros==========*/
 
 aside.filtros{
     height: 0;
     padding-left: 160px;
-    padding-top: 16px;
+    padding-top: 70px;
     margin-right: 700px;
 
 }
 
 aside.filtros h4{
     height: 30px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     font-size: 13pt;
     font-weight: normal;
 }
@@ -92,58 +148,86 @@ aside.filtros div#cores-option .cor-opcao{
     font-size: 11pt;
     padding: 0px;
 }
-aside.filtros div#tamanho-option{
-    margin-bottom: 30px;
-    font-size: 11pt;
-    
+aside.filtros div#tamanho-option .opcao-tamanho{
+    color: #ccc;
+    display: flex;
+    max-width: 160px;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  
 }
+
 aside.filtros div#precos-container .preco-opcao{
     font-size: 11pt;
     padding: 0px;
 
 }
 
-aside.filtros .cor-opcao, .preco-opcao{
-    margin: 20px 0px;
-    display: flex;
-    align-items: center;
-}
-
-aside.filtros .checkbox{
-    width: 16px;
-    height: 16px;
+aside.filtros  input{
+    all: unset;
     border: 1px solid #ccc;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
     cursor: pointer;
     margin-right: 10px;
     padding: 3px;
 }
 
-aside.filtros .cor-selecionada, .preco-selecionado{
+aside.filtros  input:checked{
     background-color: #5ccbe7;
-    width: 899px;
-    height: 78px;
-    display: none;
+    border: 5px solid #fff;
+    outline: 1px solid #ccc;
+    width: 10px;
+    height: 10px;
+
 }
 
-aside.filtros div#tamanho-option button.tamanhos{
+aside.filtros div#tamanho-option .tamanhos{
     width: 42px;
     height: 42px;
     margin:2px;
     padding:10px;
-    border: 1px solid #ccc;
+    border: 0.5px solid #ccc;
     color:#ccc;
     cursor: pointer;
     text-align: center;
 
+}
+aside.filtros div#tamanho-option .tamanhos:hover{
+    border: 0.5px solid #00c2f3;
+    color: #000;
+}
+
+.tamanhos:checked{
+    border: 1px solid #5ccbe7;
 
 }
-aside.filtros div#tamanho-option button.tamanhos:hover{
-    border: 2px solid #00bff3;
+
+div.exibir-mais, div.exibir-menos{
+    height: 40px;
+    box-sizing: border-box;
+    margin-top: 8px;
     
 }
 
-.mostrar-mais{
+button.mostar-mais, button.mostrar-menos{
+    border: 0;
+    color: #bbb;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 12pt;
+    outline: none;
     
+}
+button.mostar-mais:hover, button.mostrar-menos:hover{
+    transition: 0.5s;
+    color: #00c2f3;
+
 }
 
 /*========Conteúdo principal==========*/
@@ -155,6 +239,75 @@ main.conteudo{
     margin-top: -9px;
 
 }
+
+main.conteudo div#popup{
+    display: none;
+    height: 150px;
+    width: 300px;
+    margin-left: 190px;
+    position: fixed;
+
+    background-color: #5ccbe7;
+
+}
+
+main.conteudo div#popup p{
+    color: #fff;
+    padding: 20px;
+    font-weight: 500;
+    font-size: 13pt;
+}
+
+main.conteudo div#popup div#btn-confirmar, div#btn-cancelar{
+    padding: 4px;
+    font-size: 12pt;
+    cursor: pointer;
+    color: #fff;
+    padding-top: 124px;
+    background-color: #000;
+
+}
+main.conteudo div#popup div#btn-confirmar:hover, div#btn-cancelar:hover{
+    color: #129cc2;
+
+}
+
+main.conteudo div#add_carrinho{
+    display: none;
+    height: 130px;
+    width: 420px;
+    position: fixed;
+    margin-left: 190px;
+    background-color: black;
+    
+
+}
+
+main.conteudo div#add_carrinho div#retorno {
+    padding: 3px;
+    background-color: #5ccbe7;
+    
+}
+
+main.conteudo div#add_carrinho div#retorno p{
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 12pt;
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+
+}
+
+main.conteudo div#add_carrinho .btn-close{
+    color: #fff;
+    cursor: pointer;
+    padding-left: 20px;
+}
+main.conteudo div#add_carrinho .btn-close:hover{
+    color: #129cc2
+}
+
 main.conteudo div{
     
     display: flex;
@@ -178,6 +331,9 @@ main.conteudo figure.comprar figcaption h4{
     font-weight: normal;
     
 }
+main.conteudo figure.comprar figcaption p.valor{
+    font-weight: 800;
+}
 
 main.conteudo figure.comprar figcaption button.button-comprar{
     text-align: center;
@@ -190,6 +346,8 @@ main.conteudo figure.comprar figcaption button.button-comprar{
     border: 0;
 }
 
+/*========Botão Carregar==========*/
+
 div#carregar{
 
     text-align: center; 
@@ -197,19 +355,20 @@ div#carregar{
     border: 0;
 }
 div#carregar button.btn_carregar{
-    margin-top: 190px;
+    margin-top: 140px;
     margin-bottom: 30px;
     margin-left: 250px;
-    background-color: #00bff3;
+    background-color: #00c2f3;
     color: #fff;
     border: 0;
     padding: 20px;
     cursor: pointer;
+    outline: none;
 
 }
 
 div#carregar button.btn_carregar:hover{
-    background-color: #297e96;
+    background-color: #129cc2;
     transition: 0.5s;
 
 }
@@ -217,17 +376,13 @@ div#carregar button.btn_carregar:hover{
 /*========Footer==========*/
 
 footer{
-    height: 70px;
+    height: 30px;
     background-color: black;
-    height: 37px;
 }
+
 footer p{
     color: #fff;
     text-align: center;
-    padding: 12px;
+    padding: 4px;
 
 }
-
-
-
-
