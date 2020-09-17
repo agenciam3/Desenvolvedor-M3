@@ -1,0 +1,97 @@
+[
+  {
+    "color": "gray",
+    "imgName": "img_2",
+    "price": 28,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "title": "camiseta mescla"
+  },
+  {
+    "color": "black",
+    "imgName": "img_3",
+    "price": 398,
+    "size": [
+      "36",
+      "42",
+      "46"
+    ],
+    "title": "saia em couro"
+  },
+  {
+    "color": "orange",
+    "imgName": "img_4",
+    "price": 398,
+    "size": [
+      "P",
+      "M",
+      "36",
+      "38"
+    ],
+    "title": "cardigan tigre"
+  },
+  {
+    "color": "white",
+    "imgName": "img_5",
+    "price": 99.9,
+    "size": [
+      "42",
+      "44",
+      "46"
+    ],
+    "title": "cardigan off white"
+  },
+  {
+    "color": "brown",
+    "imgName": "img_6",
+    "price": 129.9,
+    "size": [
+      "P",
+      "M",
+      "G",
+      "GG"
+    ],
+    "title": "body leopardo"
+  },
+  {
+    "color": "pink",
+    "imgName": "img_7",
+    "price": 398,
+    "size": [
+      "P",
+      "G"
+    ],
+    "title": "casaco pelos"
+  },
+  {
+    "color": "yellow",
+    "imgName": "img_8",
+    "price": 120,
+    "size": [
+      "36",
+      "42"
+    ],
+    "title": "cropped stripes"
+  },
+  {
+    "color": "black",
+    "imgName": "img_9",
+    "price": 398,
+    "size": [
+      "P",
+      "M"
+    ],
+    "title": "camisa transparente"
+  },
+  {
+    "color": "black",
+    "imgName": "img_10",
+    "price": 99,
+    "size": "U",
+    "title": "pochete clutch"
+  }
+]

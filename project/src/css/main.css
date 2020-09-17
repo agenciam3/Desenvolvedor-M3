@@ -1,0 +1,23 @@
+:root {
+  --cian: #00c0ee;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.title-and-order {
+  margin: 40px 0;
+}
+
+.type-title {
+  text-align: center;
+  display: inline;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.type-title.none {
+  display: none;
+}

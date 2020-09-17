@@ -1,0 +1,86 @@
+.navbar {
+  border-bottom: 2px solid #c7c7c7;
+  padding-top: 21px;
+  padding-bottom: 21px;
+}
+
+.navbar-onclick-btn {
+  border-bottom: 1px solid #c7c7c7;
+  padding: 16px 0;
+  margin: 0;
+}
+
+.navbar .none {
+  display: none;
+}
+
+.navbar-onclick-btn .none {
+  display: none;
+}
+  
+.logo-m3 {
+  display: inline;
+  text-decoration: none;
+}
+
+.cart {
+  background: var(--cian);
+  border-radius: 100%;
+  display: none;
+  float: right;
+  font-size: 14px;
+  padding: 0 5px;
+  margin-right: -36px;
+  margin-top: 14px;
+}
+
+.cart-number {
+  color: #fff;
+}
+
+.cart-show {
+  display: inline;
+}
+
+.icon {
+  color: #000;
+  float: right;
+  font-size: 1.5em;
+  margin: 3px;
+}
+
+.icon:hover {
+  color: var(--cian);
+  cursor: pointer;
+}
+
+.subtitle-btn .icon {
+  font-size: .9em;
+}
+
+.subtitle-header {
+  color: #666;  
+  display: inline-block;
+  font-weight: 300;
+  letter-spacing: 1.5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .navbar {
+    border-bottom: 1px solid #c7c7c7;
+    padding-top: 22px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar {
+    border-bottom: 1px solid #c7c7c7;
+    padding-top: 22px;
+    padding-bottom: 8px;
+  }
+}

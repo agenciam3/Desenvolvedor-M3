@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência M3</title>
+    <link rel="stylesheet" href="src/css/order-btn.css">
+    <link rel="stylesheet" href="src/css/main.css">
+    <link rel="stylesheet" href="src/css/container.css">
+    <link rel="stylesheet" href="src/css/header.css">
+    <link rel="stylesheet" href="src/css/filter-inputs.css">
+    <link rel="stylesheet" href="src/css/products.css">
+    <link rel="stylesheet" href="src/css/footer.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE%qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body onresize="getScreenSize(), productsMargin()">
+    <header class="navbar" id="navbar">
+      <nav class="container">
+        <a class="logo-m3" id="logo" href="">
+          <img src="src/img/logo-m3.png" alt="logo-m3">
+        </a>
+
+        <h2 class="subtitle-header none" id="filterTitle">Filtrar</h2>
+        <h2 class="subtitle-header none" id="orderTitle">Ordenar</h2>
+
+        <i class="icon fas fa-shopping-bag" id="bag"></i>
+        <div class="cart" id="cart">
+          <i class="cart-number" id="cart-number"></i>
+        </div>
+        <i class="icon none fas fa-times" id="times"></i>
+      </nav>
+    </header>
+
+    <main class="container" id="main">
+      <div class="title-and-order" id="title-and-order">
+        <h1 class="type-title">Blusas</h1>
+
+        <div class="dropdown-order" id="dropdown-order">
+          <button class="dropdown-order-btn" onclick="showDropdownBtn()">Ordernar por: <i class="fas fa-chevron-down"></i></button>
+          <div class="dropdown-order-content" id="dropdown-order-content">
+            <a class="dropdown-order-content-item" id="order-recents">Mais recentes</a>
+            <a class="dropdown-order-content-item" id="order-lowest">Menor preço</a>
+            <a class="dropdown-order-content-item" id="order-biggest">Maior preço</a>
+          </div>
+        </div>
+
+        <button class="mobile-order-btn" id="mobile-btn-filter">Filtrar</button>
+        <button class="mobile-order-btn" id="mobile-btn-order">Ordenar</button>
+      </div>
+
+      <div class="container-filters" id="container-filters">
+        <h2 class="subtitle" id="subtitle-color">Cores</h2>
+        <div class="colors" id="colors"></div>
+
+        <h2 class="subtitle" id="subtitle-size">Tamanhos</h2>
+        <div class="sizes" id="sizes"></div>
+
+        <h2 class="subtitle" id="subtitle-price">Faixa de preço</h2>
+        <div class="prices" id="prices"></div>
+
+        <div class="filter-btns none" id="filter-btns">
+          <button class="filter-apply-btn" id="apply-btn">Aplicar</button>
+          <button class="filter-apply-btn" id="clean-btn">Limpar</button>
+        </div>
+      </div>
+      
+      <div class="container-products" id="container-products"></div>
+
+      <div class="container-button">
+        <button onclick="productsMargin(true)" class="load-more-btn" id="load-more-btn">Carregar mais</button>
+      </div>
+    </main>
+
+    <footer class="footer" id="footer">Agência M3 - Agência de Performace Digital</footer>
+
+    <script src="src/js/color.js"></script>
+    <script src="src/js/size.js"></script>
+    <script src="src/js/price.js"></script>
+    <script src="src/js/mobile-btn-control.js"></script>
+    <script src="src/js/btn-control.js"></script>
+    <script src="src/js/products.json"></script>
+    <script src="src/js/product-control.js"></script>
+  </body>
+</html>

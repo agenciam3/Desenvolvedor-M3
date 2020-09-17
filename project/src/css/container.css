@@ -1,0 +1,136 @@
+:root {
+  --sm-breakpoint: 540px;
+  --md-breakpoint: 720px;
+  --lg-breakpoint: 900px;
+  --xl-breakpoint: 1160px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container-filters {
+  float: left;
+  width: 260px;
+}
+
+.container-products {
+  float: left;
+  width: 900px;
+}
+
+.show-container-filters {
+  background: #fff;
+  display: block;
+  width: 100%;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container {
+    width: 90%;
+  }
+
+  .container-filters {
+    display: none;
+  }
+  
+  .container-products {
+    width: 100%;
+  }
+
+  .dropdown-order {
+    display: none;
+  }
+
+  .type-title {
+    display: block;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .title-and-order {
+    margin-top: 16px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .container {
+    width: var(--sm-breakpoint);
+  }
+
+  .container-filters {
+    display: none;
+  }
+  
+  .container-products {
+    width: 100%;
+  }
+
+  .dropdown-order {
+    display: none;
+  }
+
+  .type-title {
+    display: block;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .title-and-order {
+    margin-top: 16px;
+
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .container {
+    width: var(--md-breakpoint); /* 720px */
+  }
+
+  .container-filters {
+    width: 200px;
+  }
+  
+  .container-products {
+    width: 520px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    width: var(--lg-breakpoint);
+  }
+
+  .container-filters {
+    width: 260;
+  }
+  
+  .container-products {
+    padding-left: 70px;
+    width: 570px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    width: var(--xl-breakpoint);
+  }
+
+  .container-filters {
+    width: 260px;
+  }
+  
+  .container-products {
+    width: 900px;
+  }
+}

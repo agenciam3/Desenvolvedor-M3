@@ -1,0 +1,163 @@
+.product {
+  float: left;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 260px;
+}
+
+.product-img {
+  width: 260px;
+}
+
+.product-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.product-price-divided {
+  margin-top: 0;
+}
+
+.btn-buy {
+  background: #000;
+  border: none;
+  color: #fff;
+  font-family: 'Open Sans';
+  font-weight: 800;
+  height: 56px;
+  padding: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.btn-buy:hover {
+  background: var(--cian);
+  color: #fff;
+  cursor: pointer;
+}
+
+.margin-left-zero {
+  margin-left: 0;
+}
+
+.margin-left-one {
+  float: right;
+  margin-left: 0;
+}
+
+.container-button {
+  display: block;
+  text-align: center;
+}
+
+.load-more-btn {
+  background: var(--cian);
+  border: none;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 300px;
+  margin-bottom: 32px;
+  padding: 16px 32px;
+  text-transform: uppercase;
+}
+
+.load-more-btn:hover {
+  background: #4cdbff;
+  cursor: pointer;
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .product {
+    font-size: 14px;
+    width: 200px;
+  }
+  
+  .product-img {
+    width: 200px;
+  }
+
+  .product-title {
+    margin-bottom: 7px;
+    margin-top: 7px;
+  }
+
+  .load-more-btn {
+    margin-left: 0;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {  
+  .product {
+    width: 215px;
+  }
+
+  .product-img {
+    width: 215px;
+  }
+
+  .margin-left-zero {
+    margin-left: 20px;
+  }
+  
+  .margin-left-one {
+    float: right;
+    margin-right: 20px;
+  }
+
+  .load-more-btn {
+    margin-left: 0;
+  }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .product {
+    margin-left: 30px;
+    width: 230px;
+  }
+  
+  .product-img {
+    width: 230px;
+  }
+
+  .load-more-btn {
+    margin-left: 250px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .product {
+    margin-left: 40px;
+    width: 230px;
+  }
+  
+  .product-img {
+    width: 230px;
+  }
+
+  .load-more-btn {
+    margin-left: 350px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .product {
+    margin-left: 40px;
+    width: 260px;
+  }
+  
+  .product-img {
+    width: 260px;
+  }
+}
