@@ -1,0 +1,238 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+header {
+    grid-area: cabecalho;
+    display:flex;
+    width: 100vw;
+    height: 10vh;
+    justify-content: center;
+    border-bottom: 2px solid #333;
+    overflow: hidden;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 30px;
+    width: 100%;
+    margin: 0vw 10vw 0vw 10vw;
+}
+
+.fa-shopping-bag {
+    display: flex;
+    align-self: center;
+}
+
+.logo {
+    display: flex;
+    align-self: center;
+}
+
+aside {
+    grid-area: aside;
+    display: flex;
+    justify-content: flex-start;
+    width: 20vw;
+}
+
+.aside-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.aside-content > div {
+    margin: 20px 0px;
+}
+
+.tipo-produto {
+    display: block;
+    font-size: 2.3rem;
+    padding: 30px 10px 30px 0px;
+}
+
+.forms {
+    display: none;
+}
+
+.form-cores {
+    padding: 10px 10px 10px 0px;
+}
+
+.maisCores > select {
+    border: none;
+    text-decoration: underline;
+    background-color: white;
+    padding-top: 10px;
+}
+
+.tipo-form {
+    font-size: 1.3rem;
+}
+
+.form-tamanhos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 10px 10px 10px 0px;
+    
+}
+
+.form-faixa-de-precos {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px 0px 20px 0px;
+}
+
+main {
+    grid-area: conteudo;
+}
+
+.ordenar-por {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+    align-items: center;
+    padding: 10px;
+}
+
+
+#ordenar {
+    padding: 10px;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.preco {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.nomeProduto {
+    color: #444;
+    width: 100%;
+    font-size: 1.2rem;
+    margin: 0px;
+    padding: 2px 0px 10px 0px;
+}
+
+.opcaoParcela {
+    padding-bottom: 10px;
+    margin: 0px;
+}
+
+.visually-hidden {
+    display: none;
+}
+
+.card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+.card .carregarMais {
+    background-color: turquoise;
+    margin: 40px 0px;
+    width: 50%;
+}
+
+.card button:hover {
+    opacity: 0.7;
+}
+
+.produtos {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+footer {
+    grid-area: rodape;
+    display: grid;
+    height: 5vh;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+    background-color: #222;
+    color: #ddd;
+    overflow: hidden;
+}
+
+.grid-container {
+    display: grid;
+    justify-items: center;
+    margin: 0vh 10vw 0vh 10vw;
+    min-height: 100vh;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 100px 1fr 10px;
+    grid-template-areas:    
+        'cabecalho cabecalho'
+        'aside conteudo'
+        'rodape rodape';
+}
+
+@media(max-width: 700px) {
+    .grid-container {
+        margin: 0;
+        flex-wrap: wrap;
+        justify-items: center;
+        align-items: center;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 80px 1fr 10px;
+        grid-template-areas:
+            'cabecalho'
+            'aside'
+            'conteudo'
+            'rodape';
+    }
+
+    .aside {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+    }
+
+    .aside-content {
+        display: none;
+    }
+
+    .forms {
+        display: flex;
+        flex-direction: column;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .mostrarFiltros {
+        display: flex;
+    }
+}
