@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>f</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="servidor.js"></script>
+    <script src="funcoes.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="carrinho animacaoCarrinho">
+        <h1 id="textCaixa">Meu Carrinho <button onclick="toogleCarrinho()">X</button></h1>
+        <div
+            style="background-color: lightgreen; position: sticky;top:5px;padding: 2%;vertical-align: middle;margin-bottom: 0px;">
+            <h1 id="total">Carrinho Vazio</h1>
+        </div>
+    </div>
+    <div id="main">
+
+        <header> <img height="30px" src="imagens/logo-m3.png" />
+            <div onclick="toogleCarrinho()" id="iconeCarrinho"></div>
+        </header>
+
+        <div class="box-blusas">
+            <h1 style="display:inline-block;">Blusas</h1>
+
+            <div class="menu-selecao">
+
+                <select onchange="selectionMudada(this.value)">
+                    <span class="focus"></span>
+                    <option value="0">Ordenar por:</option>
+                    <option value="1">Mais Recentes</option>
+                    <option value="2">Menor Preço</option>
+                    <option value="3">Maior Preço</option>
+                </select>
+            </div>
+        </div>
+        <section class="grid">
+            <div class="seletores">
+                <div class="box box-cores">
+                    <h3>Cores</h3>
+                    <div id="mostrar-opcoes" onclick='expandirCores()'>Ver todas cores ▼</div>
+
+                </div>
+                <div class="box box-tamanho">
+                    <h3>Tamanhos </h3>
+
+                </div>
+                <div class="box box-valor" id="">
+                    <h3>Faixa de preço</h3>
+                </div>
+            </div>
+            <div class="produtos">
+                <div id="btnFiltro" onclick="toogleCarrinho()">
+                    <h1>Filtrar</h1>
+                </div>
+                <div id="btnFiltro">
+                    <h1>Ordenar</h1>
+                </div>
+
+            </div>
+    </div>
+
+    </section>
+    </div>
+</body>
+
+</html>
