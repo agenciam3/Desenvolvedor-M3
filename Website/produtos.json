@@ -1,0 +1,102 @@
+{
+    "produtos":[
+{
+   "id":1,
+    "nome": "Camisa mescla",
+    "valor": 28,
+    "img": "img_2.png",
+    "tamanho": "p",
+    "cor": "Cinza"
+},
+{
+    "id":2,
+    "nome": "Saia em couro",
+    "valor": 398,
+    "img": "img_3.png",
+    "tamanho": "m",
+    "cor": "Preto"
+},
+{
+    "id":3,
+    "nome": "Cardigan tigre",
+    "valor": 398,
+    "img": "img_4.png",
+    "tamanho": "g",
+    "cor": "Textura Animal"
+},
+{
+    "id":4,
+    "nome": "Cardigan off White",
+    "valor": 99.9,
+    "img": "img_5.png",
+    "tamanho": "p",
+    "cor": "Branco"
+},
+{
+    "id":5,
+    "nome": "Body Leopardo",
+    "valor": 129.9,
+    "img": "img_6.png",
+    "tamanho": "p",
+    "cor": "Textura Animal"
+
+},
+{
+    "id":6,
+    "nome": "Casaco Pelos",
+    "valor": 398,
+    "img": "img_7.png",
+    "tamanho": "m",
+    "cor": "Rosa"
+},
+{
+    "id":7,
+    "nome": "Cropped Stripes",
+    "valor": 120,
+    "img": "img_8.png",
+    "tamanho": "p",
+    "cor": "Listras Coloridas"
+},
+{
+    "id":8,
+    "nome": "Camisa Transparente",
+    "valor": 398,
+    "img": "img_9.png",
+    "tamanho": "g",
+    "cor": "Preto"
+
+},
+{
+    "id":9,
+    "nome": "Pochete Clutch",
+    "valor": 99,
+    "img": "img_10.png",
+    "tamanho": "u",
+    "cor": "Preto"
+},
+{
+    "id":10,
+    "nome": "Camisa listrada",
+    "valor": 240,
+    "img": "img11.jpg",
+    "tamanho": "p",
+    "cor": "Listras Coloridas"
+},
+{
+    "id":11,
+    "nome": "Camisa Rosa",
+    "valor": 260,
+    "img": "img12.jpg",
+    "tamanho": "m",
+    "cor": "Rosa"
+},
+{
+    "id":12,
+    "nome": "Camisa verde",
+    "valor": 99,
+    "img": "img13.jpg",
+    "tamanho": "mm",
+    "cor": "Verde"
+}
+    ]
+}

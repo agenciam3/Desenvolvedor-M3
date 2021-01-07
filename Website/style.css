@@ -1,0 +1,266 @@
+body {
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#main {
+    padding-left: 11.5%;
+    padding-right: 11.5%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #c7c7c7;
+    height: 8.2%;
+    align-items: center;
+    /*padding-left: 11.84%;
+    padding-right: 11.84%;*/
+}
+
+.menu-selecao {
+    display: inline;
+    position: relative;
+    min-width: 15ch;
+    max-width: 30ch;
+    border: 1px solid black;
+    padding: 10px;
+    cursor: pointer;
+    line-height: 1.1;
+}
+
+select {
+    appearance: none;
+    border: none;
+    margin: 0;
+    width: 50%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    outline: none;
+    background-color: white;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+:root {
+    --select-border: black;
+    --select-focus: blue;
+    --select-arrow: var(--select-border);
+}
+
+.select-items {
+    position: absolute;
+    background-color: DodgerBlue;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+h1 {
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+h2 {
+    margin: 0px;
+}
+
+.carrinho {
+    background-color: white;
+    background-image: url(../imagens/back.png) ;
+    width: 29%;
+    height: 100%;
+    position: fixed;
+    right: 0px;
+    z-index: 99;
+    padding-left: 2%;
+    padding-right: 2%;
+    box-shadow: -10px 0px 25px gray;
+    border-left: 1px solid rgb(219, 219, 219);
+    opacity: 1;
+    animation-name: moveDireita;
+    animation-duration: 1s;
+    display: grid;
+    grid-template-columns: 1fr;
+    overflow-y:scroll; 
+}
+
+.carrinho>div {
+    margin-top: 10px;
+    border-top: 2px solid #c7c7c7;
+    border: 2px solid #c7c7c7;
+    margin-bottom: 10px;
+    padding: 4%;
+    max-height: 60px;
+    background-color: white;
+}
+.carrinho>div>h1{
+    margin: 0px;
+}
+#iconeCarrinho {
+    background-image: url('../imagens/cart.jpg');
+    width: 31px;
+    height: 36px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    margin: 0 auto;
+    gap: 3.95%;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    animation-name: move;
+    animation-duration: 2s;
+    max-width: 1024px;
+}
+
+@keyframes fade {
+    from {
+        /*  transform: translate(0px,50px);*/
+        opacity: 0;
+    }
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translate(0px, 50px);
+    }
+    to {
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes moveDireita {
+    from {
+        opacity: 0;
+        transform: translate(50%, 0px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+.produtos>div {
+    text-align: center;
+    margin-bottom: 2.8%;
+    transition: transform .2s;
+}
+
+.produtos>div:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 10px #e6e6e6;
+}
+
+.produtos>div>img {
+    width: 195px;
+    -webkit-user-drag: none;
+}
+
+.produtos>div>button {
+    width: 100%;
+    background-color: black;
+    height: 50px;
+    color: white;
+    border: none;
+    text-decoration: none;
+}
+
+.box {
+    background-color: r*ed;
+    margin-bottom: 2.8%;
+}
+
+.box-tamanho {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+h3 {
+    width: 100%;
+    margin: 0px;
+}
+
+.box-tamanho>div {
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+    margin: 5px;
+    text-align: center;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.box-cores {
+    overflow: hidden;
+    transition: height 0.8s;
+}
+
+#mostrar-opcoes {
+    border-bottom: 2px solid #c7c7c7;
+    margin-top: 6px;
+    font-size: 12px;
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+
+#btnFiltro {
+    display: none;
+    border: 2px solid black;
+}
+
+@media only screen and (max-width: 800px) {
+    #main {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .seletores {
+        display: none;
+    }
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 2%;
+    }
+    .produtos>div {
+        width: 48%;
+    }
+    .produtos>div>img {
+        width: 100%;
+    }
+    #carregar-mais {
+        display: none;
+    }
+    .menu-selecao {
+        display: none;
+    }
+    #btnFiltro {
+        display: grid;
+    }
+    .carrinho{width: 97%;}
+}
