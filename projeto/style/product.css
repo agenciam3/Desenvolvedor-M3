@@ -1,0 +1,98 @@
+.render-container{
+    margin: 20px 0;
+}
+
+.render-container .section-products{
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.render-container .section-products .product-container{
+    margin-left: 18px;
+    margin-bottom: 28px;
+}
+
+.render-container .section-products .product-container .img-product{
+    max-width: 100%;
+    display: block;
+}
+
+.render-container .section-products .product-container .title-container{
+    margin: 12px 0;
+}
+
+.render-container .section-products .product-container .title-container .title{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.render-container .section-products .product-container .price-container{
+    padding-top: 2px;
+}
+
+.render-container .section-products .product-container .price-container .title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.render-container .section-products .product-container .parcel-container{
+    margin: 7px 0;
+}
+
+.render-container .section-products .product-container .parcel-container .title{
+    text-align: center;
+    font-size: 14px;
+}
+
+.render-container .section-products .product-container .buy-container{
+    background-color: #000;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+.render-container .section-products .product-container .buy-container .title{
+    color: #FFF;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+    padding: 12px 0;
+}
+
+.render-container .load-more-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 85px;
+}
+
+.render-container .load-more-container .title{
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 10px;
+    background-color: #37bff2;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px){
+    .render-container .section-products{
+        justify-content: space-around;
+    }
+
+    .render-container .section-products .product-container{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .render-container .load-more-container{
+        margin-left: 0;
+    }
+}

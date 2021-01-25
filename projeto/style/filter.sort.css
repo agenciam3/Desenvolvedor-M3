@@ -1,0 +1,24 @@
+.filter-sort-container{
+    display: none;
+}
+
+.filter-sort-container .title-container{
+    width: 50%;
+    text-align: center;
+    padding: 20px 0;
+    border: 1px solid #7d7d7d;
+    cursor: pointer;
+}
+
+.filter-sort-container .title-container .title{
+    font-size: 20px;
+    font-weight: normal;
+    letter-spacing: 1.2px;
+    color: #7d7d7d;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-sort-container{
+        display: flex;
+    }
+}

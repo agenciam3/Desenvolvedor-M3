@@ -1,0 +1,33 @@
+.filter-price-container .container-secret .price-container {
+    display: block;
+    position: relative;
+    height: 17px;
+    padding-left: 28px;
+    padding-bottom: 1px;
+    margin-top: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 14px;
+}
+
+.filter-price-container .container-secret .price-container .checkmark .check {
+    height: 10px;
+    width: 10px;
+    margin: 3px auto;
+}
+
+.filter-price-container .container-secret .price-container:hover input ~ .checkmark .check {
+    background-color: #ccc;
+}
+
+.filter-price-container .container-secret .price-container input:checked ~ .checkmark .check {
+    background-color: #36bff2;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-price-container{
+        padding: 14px;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+    <html lang="pt-br">
+
+        <head>
+            <meta charset='utf-8'>
+            <title>Desenvolvedor M3</title>
+            <meta name='viewport' content='width=device-width, initial-scale=1'>
+            <meta name="author" content="Paloma Cruz">
+            <meta name="description" content="Teste para Empresa M3">
+            <meta name="keywords" content="HTML5, CSS3, JavaScript, JS">
+            <script src="https://kit.fontawesome.com/eca5ac81d6.js" crossorigin="anonymous"></script>  
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/index.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/header.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/main.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/filter.comum.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/filter.color.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/filter.size.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/filter.price.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/filter.sort.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/sort.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/product.css'>
+            <link rel='stylesheet' type='text/css' media='screen' href='./style/footer.css'>
+        </head>
+
+        <body>
+
+            <header class="header">
+                <div class="header-flex">
+                    <div class="logo-container">
+                        <img src="./images/logo-m3.png" alt="Logomarca M3" class="logomarca-m3"/>
+                    </div>
+                    <div class="sacola-container">
+                        <img src="./images//bag-icon.png" alt="Sacola" class="sacola-icon"/>
+                        <div class="number-item" id="bag">0</div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main">
+                <div class="filter-container">
+                    <div class="title-container">
+                        <h2 class="title">Blusas</h2>
+                    </div>
+                    <div class="filter-container-secret" id="filter-secret">
+                        <div class="title-container">
+                            <h2 class="title">Filtrar</h2>
+                            <i class="fas fa-times" id="close-filter"></i>
+                        </div>
+                        <aside class="filter-color-container">
+                            <div class="title-container" id="title-container-color">
+                                <h3 class="title" id="title-color">Cores</h3>
+                            </div>
+                            <div class="container-secret" id="container-color-secret">
+                                <label class="color-container">
+                                    Amarelo
+                                    <input type="checkbox" class="filter-color-input" value="Amarelo">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                <label class="color-container">
+                                    Azul
+                                    <input type="checkbox" class="filter-color-input" value="Azul">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                <label class="color-container">
+                                    Branco
+                                    <input type="checkbox" class="filter-color-input" value="Branco">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                <label class="color-container">
+                                    Cinza
+                                    <input type="checkbox" class="filter-color-input" value="Cinza">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                <label class="color-container">
+                                    Laranja
+                                    <input type="checkbox" class="filter-color-input" value="Laranja">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                <div class="title-link-container">
+                                    <a class="title" href="#" id="expansion-color">
+                                        Ver todas as cores
+                                        <i class="fas fa-angle-down"></i>
+                                    </a>
+                                </div>
+                                <div class="secret" id="color-secret">
+                                    <label class="color-container">
+                                        Verde
+                                        <input type="checkbox" class="filter-color-input" value="Verde">
+                                        <div class="checkmark">
+                                            <div class="check"></div>
+                                        </div>
+                                    </label>
+                                    <label class="color-container">
+                                        Vermelho
+                                        <input type="checkbox" class="filter-color-input" value="Vermelho">
+                                        <div class="checkmark">
+                                            <div class="check"></div>
+                                        </div>
+                                    </label>
+                                    <label class="color-container">
+                                        Preto
+                                        <input type="checkbox" class="filter-color-input" value="Preto">
+                                        <div class="checkmark">
+                                            <div class="check"></div>
+                                        </div>
+                                    </label>
+                                    <label class="color-container">
+                                        Rosa
+                                        <input type="checkbox" class="filter-color-input" value="Rosa">
+                                        <div class="checkmark">
+                                            <div class="check"></div>
+                                        </div>
+                                    </label>
+                                    <label class="color-container">
+                                        Vinho
+                                        <input type="checkbox" class="filter-color-input" value="Vinho">
+                                        <div class="checkmark">
+                                            <div class="check"></div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </aside>
+                        <aside class="filter-size-container">
+                            <div class="title-container" id="title-container-size">
+                                <h3 class="title" id="title-size">Tamanhos</h3>
+                            </div>
+                            <div class="container-secret" id="container-size-secret">
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="P">
+                                    <span class="check">P</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="M">
+                                    <span class="check">M</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="G">
+                                    <span class="check">G</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="GG">
+                                    <span class="check">GG</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="U">
+                                    <span class="check">U</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="36">
+                                    <span class="check">36</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="38">
+                                    <span class="check">38</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="40">
+                                    <span class="check">40</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="42">
+                                    <span class="check">42</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="44">
+                                    <span class="check">44</span>
+                                </label>
+                                <label class="size-container">
+                                    <input type="checkbox" class="filter-size-input" value="46">
+                                    <span class="check">46</span>
+                                </label>
+                            </div>
+                        </aside>
+                        <aside class="filter-price-container">
+                            <div class="title-container" id="title-container-price">
+                                <h3 class="title" id="title-price">Faixa de preço</h3>
+                            </div>
+                            <div class="container-secret" id="container-price-secret">
+                                <label class="price-container">de R$0 até R$50
+                                    <input type="radio" name="radio" class="filter-price-input" value="0-50">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+        
+                                <label class="price-container">de R$51 até R$150
+                                    <input type="radio" name="radio" class="filter-price-input" value="51-150">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                
+                                <label class="price-container">de R$151 até R$300
+                                    <input type="radio" name="radio" class="filter-price-input" value="151-300">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                                
+                                <label class="price-container">de R$301 até R$500
+                                    <input type="radio" name="radio" class="filter-price-input" value="301-500">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+        
+                                <label class="price-container">a partir de R$1
+                                    <input type="radio" name="radio" class="filter-price-input" value="1-999999999">
+                                    <div class="checkmark">
+                                        <div class="check"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </aside>
+                        <div class="filter-option">
+                            <div class="option-aplication" id="option-aplication">
+                                <p class="title">Aplicar</p>
+                            </div>
+                            <div class="option-clean" id="option-clean">
+                                <p class="title">Limpar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-sort-container">
+                    <div class="title-container" id="filter-mobile">
+                        <h2 class="title">Filtrar</h2>
+                    </div>
+                    <div class="title-container" id="sort-mobile">
+                        <h2 class="title">Ordenar</h2>
+                    </div>
+                </div>
+                <div class="sort-render-container">
+                    <div class="sort-container" id="sort-secret">
+                        <button class="accordion" id="accordion">Ordenar por:</button>
+                        <i class="fas fa-times" id="close-sort"></i>
+                        <ul class="sort-order" id="list-item">
+                            <li class="item-sort">Mais recentes</li>
+                            <li class="item-sort">Menor preço</li>
+                            <li class="item-sort">Maior preço</li>
+                        </ul>
+                    </div>
+                    <div class="render-container" id="render-container"></div>
+                </div>
+            </main>
+
+            <footer class="footer">
+                <div class="title-container">
+                    <p class="title">Agência M3 - Agência de Performance Digital</p>
+                </div>
+            </footer>
+        
+        </body>
+
+        <script type="text/javascript" src="./scripts/render.photos.js"></script>
+        <script type="text/javascript" src="./scripts/color.js"></script>
+        <script type="text/javascript" src="./scripts/size.js"></script>
+        <script type="text/javascript" src="./scripts/price.js"></script>
+        <script type="text/javascript" src="./scripts/sort.js"></script>
+        <script type="text/javascript" src="./scripts/open.close.filter.mobile.js"></script>
+        <script type="text/javascript" src="./scripts/open.close.sort.mobile.js"></script>
+        <script type="text/javascript" src="./scripts/buy.products.js"></script>
+        <script type="text/javascript" src="./scripts/filter.js"></script>
+
+    </html>
