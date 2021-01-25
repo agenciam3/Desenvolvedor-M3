@@ -1,0 +1,59 @@
+.filter-color-container .title-link-container {
+    margin: 10px 0;
+}
+
+.filter-color-container .title-link-container .title{
+    font-size: 14px;
+    color: #757575;
+    text-decoration: underline;
+}
+
+.filter-color-container .title-link-container .title .fa-angle-down{
+    text-decoration: underline;
+}
+
+.filter-color-container .secret{
+    display: none;
+    margin-bottom: 10px;
+}
+
+.filter-color-container .container-secret .color-container {
+    display: block;
+    position: relative;
+    height: 18px;
+    padding-left: 28px;
+    margin: 8px 0 0;
+    cursor: pointer;
+    user-select: none;
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 14px;
+}
+
+.filter-color-container .container-secret .color-container .checkmark .check {
+    height: 10px;
+    width: 10px;
+    margin: 3px auto;
+}
+
+.filter-color-container .container-secret .color-container:hover input ~ .checkmark .check {
+    background-color: #ccc;
+}
+
+.filter-color-container .container-secret .color-container input:checked ~ .checkmark .check {
+    background-color: #36bff2;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-color-container{
+        padding: 14px;
+        cursor: pointer;
+    }
+
+    .filter-color-container .title-link-container{
+        display: none;
+    }
+
+    .filter-color-container .secret{
+        display: block;
+    }
+}

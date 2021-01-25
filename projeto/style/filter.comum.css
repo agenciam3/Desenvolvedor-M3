@@ -1,0 +1,140 @@
+.filter-container{
+    margin: 10px 0;
+}
+
+.filter-container >.title-container{
+    padding: 20px 0;
+}
+
+.filter-container >.title-container .title{
+    font-weight: normal;
+    color: #313131;
+    letter-spacing: 0.5px;
+}
+
+.filter-container .filter-container-secret >.title-container{
+    display: none;
+}
+
+.filter-container .filter-container-secret .title-container {
+    padding: 6px 0;
+}
+
+.filter-container .filter-container-secret .title-container .title{
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #313131;
+    letter-spacing: 0.5px;
+}
+
+.filter-container .filter-container-secret input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px #838384 solid;
+    background-color: #fff;
+}
+
+.check:after, .checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+input:checked ~ .checkmark:after, input:checked ~ .check:after {
+    display: block;
+}
+
+.filter-container .filter-container-secret .filter-option{
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.filter-container .filter-container-secret .filter-option .option-aplication{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    background-color: #31ceea;
+    color: #fff;
+    padding: 10px 0;
+    border: 1px solid #31ceea;
+    width: 85px;
+    cursor: pointer;
+}
+
+.filter-container .filter-container-secret .filter-option .option-clean{
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 10px 0;
+    border: 1px solid #7d7d7d;
+    width: 85px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+    .filter-container .filter-container-secret .filter-color-container .title-container 
+    .title:after, .filter-container .filter-container-secret .filter-size-container 
+    .title-container .title:after, .filter-container .filter-container-secret 
+    .filter-price-container .title-container .title:after{
+        content: '\002B';
+        color: #000;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+    
+    .active:after {
+        content: "\2212" !important;
+    }
+
+    .filter-container >.title-container .title{
+        text-align: center;
+    }
+
+    .filter-container .filter-container-secret{
+        display: none;
+        position: absolute;
+        z-index: 9999999;
+        background: #fff;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+
+    .filter-container .filter-container-secret >.title-container {
+        display: flex;
+        box-shadow: 0px 2px 2px #ccc;
+        padding: 14px !important;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .filter-container .filter-container-secret .title-container .fa-times {
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .filter-container .filter-container-secret .container-secret{
+        display: none;
+    }
+
+    .filter-container .filter-container-secret .filter-option{
+        display: flex;
+    }
+}

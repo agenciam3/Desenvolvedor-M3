@@ -1,0 +1,93 @@
+.sort-container {
+   display: flex;
+   justify-content: flex-end;
+   flex-wrap: wrap;
+}
+
+.sort-container .fa-times{
+    display: none;
+}
+
+.sort-container .accordion {
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+    width: 145px;
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid black;
+    font-family: "Open Sans Regular", sans-serif;
+    background-color: #fff;
+    margin: 30px 0 0;
+}
+
+.sort-container .sort-order {
+    display: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    color: #000;
+    position: absolute;
+    top: 130px;
+    width: 143px;
+    border: 1px solid #000;
+}
+
+.sort-container .sort-order .item-sort{
+    padding: 10px;
+    text-align: left;
+    background-color: #fff;
+    font-family: "Open Sans Regular", sans-serif;
+    font-size: 14px;
+}
+
+.sort-container .sort-order .item-sort:hover{
+    background-color: #36bff2;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+    .sort-container{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        height: 100%;
+    }
+
+    .sort-container .fa-times {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .sort-container .accordion{
+        display: block;
+        margin: 0 0 2px;
+        border: 0;
+        width: 100%;
+        padding: 14px;
+        font-size: 20px;
+        text-transform: uppercase;
+        box-shadow: 2px 2px 2px #ccc;
+    }
+
+    .sort-container .sort-order{
+        position: initial;
+        border: 0;
+        display: block;
+        width: 100%;
+    }
+
+    .sort-container .sort-order .item-sort{
+        padding: 14px;
+        font-size: 20px;
+    }
+}

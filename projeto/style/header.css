@@ -1,0 +1,39 @@
+.header{
+    width: 100%;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+.header .header-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    padding: 10px 0;
+}
+
+.header .header-flex .logo-container{
+    padding: 5px;
+}
+
+.header .header-flex .sacola-container{
+    display: flex;
+}
+
+.header .header-flex .sacola-container .sacola-icon{
+    width: 24px;
+}
+
+.header .header-flex .sacola-container .number-item {
+    background-color: rgb(82, 225, 250);
+    width: 20px;
+    position: relative;
+    top: 17px;
+    right: 7px;
+    height: 20px;
+    border-radius: 56px;
+    color: #fff;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+}

@@ -1,0 +1,16 @@
+.footer{
+    background-color: #000;
+}
+
+.footer .title-container{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer .title-container .title{
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    font-family: sans-serif;
+}
