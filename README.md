@@ -15,9 +15,9 @@ E-mail: eduardoemc@outlook.com
 - [X] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
 - [ ] Responsividade
 
-Não achei o ícone da sacola de compras no github então utilizei um arquivo SVG.
-O layout da versão mobile não está 100% funcional.
-O botão 'Carregar Mais' não está funcionando direito com os filtros e com a ordenação.
+- Não achei o ícone da sacola de compras no github então utilizei um arquivo SVG.
+- O layout da versão mobile não está 100% funcional.
+- O botão 'Carregar Mais' não está funcionando direito com os filtros e com a ordenação.
 
 #Intruções para executar o projeto
 
