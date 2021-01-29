@@ -1,0 +1,85 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "CAMISETA MESCLA",
+      "valor": 28.00,
+      "tamanho": "P",
+      "cor": "CINZA",
+      "imagem": "img_2.png",
+      "adicionado": "1"
+    },
+    {
+      "id": 2,
+      "nome": "SAIA EM COURO",
+      "valor": 398.00,
+      "tamanho": "38",
+      "cor": "PRETO",
+      "imagem": "img_3.png",
+      "adicionado": "2"
+    },
+    {
+      "id": 3,
+      "nome": "CARDIGAN TIGRE",
+      "valor": 398.00,
+      "tamanho": "P",
+      "cor": "LARANJA",
+      "imagem": "img_4.png",
+      "adicionado": "3"
+    },
+    {
+      "id": 4,
+      "nome": "CARDIGAN OFF WHITE",
+      "valor": 99.00,
+      "tamanho": "P",
+      "cor": "BRANCO",
+      "imagem": "img_5.png",
+      "adicionado": "4"
+    },
+    {
+      "id": 5,
+      "nome": "BODY LEOPARDO",
+      "valor": 129.00,
+      "tamanho": "P",
+      "cor": "AMARELO",
+      "imagem": "img_6.png",
+      "adicionado": "5"
+    },
+    {
+      "id": 6,
+      "nome": "CASACO PELOS",
+      "valor": 398.00,
+      "tamanho": "M",
+      "cor": "ROSA",
+      "imagem": "img_7.png",
+      "adicionado": "6"
+    },
+    {
+      "id": 7,
+      "nome": "CROPPED STRIPES",
+      "valor": 120.00,
+      "tamanho": "G",
+      "cor": "LARANJA",
+      "imagem": "img_8.png",
+      "adicionado": "7"
+    },
+    {
+      "id": 8,
+      "nome": "CAMISA TRANSPARENTE",
+      "valor": 398.00,
+      "tamanho": "M",
+      "cor": "PRETO",
+      "imagem": "img_9.png",
+      "adicionado": "8"
+    },
+    {
+      "id": 9,
+      "nome": "POCHETE CLUTCH",
+      "valor": 99.00,
+      "tamanho": "U",
+      "cor": "PRETO",
+      "imagem": "img_10.png",
+      "adicionado": "9"
+    }
+  ]
+}

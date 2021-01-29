@@ -1,0 +1,204 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  border-color: rgb(199, 199, 199);
+  padding: 1rem;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  overflow: auto;
+  padding: 1rem;
+  text-align: center;
+  height: 94vh;
+  z-index: 1;
+}
+body{
+  font-family: Arial, sans-serif;
+}
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+div.content {
+  min-height: 86vh;
+  height: fit-content;
+  margin-left: 20vw;
+  padding: 1rem 16px;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    display: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  div.content {
+    margin-left: 0;
+  }
+}
+
+.menuOrdenacao{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.botaoCompra {
+	background-color:#000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding: 12px 60px;
+}
+
+.botaoCompra:active {
+	position:relative;
+	top:1px;
+}
+.tabelaProdutos {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.filtroTamanho {
+  display: inline-block;
+}
+
+.divTamanho {
+  margin-left: 6px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.filtroTamanho span {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #bababa;
+  cursor: pointer;
+  border-radius: 0;
+  font-family: Arial;
+  color: #bababa;
+  user-select: none;
+  margin: 6px
+}
+
+.filtroTamanho input {
+  display: none;
+}
+
+.filtroTamanho input:checked + span {
+  border: solid 1px rgb(43, 191, 242);
+  color: rgb(43, 191, 242);
+}
+
+.filtro{
+  user-select: none;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 14px;
+}
+
+.filtro input{
+  display: none;
+}
+
+.filtro span {
+  width: 1rem;
+  height: 1rem;
+  border: solid 1px #bababa;
+  user-select: none;
+  margin-right: 1rem;
+}
+
+.filtro input:checked + span {
+  background-color: rgba(43, 191, 242, 0.5);
+}
+
+.produtoSacola{
+  border: solid 1px #bababa;
+  margin: 6px;
+}
+
+.botaoCores {
+  display: flex;
+  align-items: flex-start;
+  font-size: 14px;
+  color: #bababa;
+  text-decoration: underline #bababa;
+  cursor: pointer;
+}
+
+.fonteFiltros {
+  display: flex;
+  font-size: 16px;
+  align-items: flex-start;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  overflow-y: auto;
+  height: fit-content;
+  max-height: 70vh;
+  right: 0;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.divCarregar{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.botaoCarregar {
+	background-color:rgb(43, 191, 242);
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding: 12px 60px;
+}
+
+.tamanhoSacola {
+  text-align: center;
+  margin-left: -1rem;
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  border: solid 2px rgb(43, 191, 242);
+  background-color: rgb(43, 191, 242);
+  font-size: 13px;
+  color: white;
+}
