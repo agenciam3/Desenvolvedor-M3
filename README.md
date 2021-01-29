@@ -13,7 +13,7 @@ E-mail: eduardoemc@outlook.com
 - [X] Funcionalidade: Adicionar produto ao carrinho.
 - [X] Funcionalidade: Carregar mais produtos.
 - [X] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- [-] Responsividade
+- [ ] Responsividade
 
 Não achei o ícone da sacola de compras no github então utilizei um arquivo SVG.
 O layout da versão mobile não está 100% funcional.
