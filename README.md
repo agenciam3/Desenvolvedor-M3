@@ -24,4 +24,4 @@ E-mail: eduardoemc@outlook.com
 - Para executar o projeto precisamos instalar o [Nodejs](https://nodejs.org/en/) e o [Express](https://expressjs.com/pt-br/).
 - Após a instalação do Node, basta instalar o Express na pasta atual da aplicação. (npm install express --save).
 - Agora precisamos deixar nosso Back-End online utilizando o comando: node app.js
-- Depois disso é só abrir o arquivo teste.html com o navegador de sua escolha.
+- Depois disso é só abrir o arquivo agenciam3.html com o navegador de sua escolha.
