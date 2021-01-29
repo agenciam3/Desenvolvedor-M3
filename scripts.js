@@ -119,7 +119,7 @@ async function receberProdutos() {
 //função para montar o layout html de um dado produto
 function htmlProduto(produto, index) {
   return `<div style="padding:10px">
-  <img src=./imagens/${produto.imagem}/><br>
+  <img src=.layout/imagens/${produto.imagem}/><br>
   <a>${produto.nome}</a><br>
   <a>R$ ${produto.valor},00</a><br>
   <a>até 3x de R$${(produto.valor / 3).toFixed(2)}</a>
