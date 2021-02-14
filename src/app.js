@@ -1,4 +1,3 @@
-
 let app = {
   paginaProdutos: {
     mock: {},

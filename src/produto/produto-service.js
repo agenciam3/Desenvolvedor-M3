@@ -1,5 +1,4 @@
 const produtosJSON = window.app.paginaProdutos.mock;
-//const _Produto = window.app.paginaProdutos.model;
 
 class Service{
 
@@ -9,8 +8,8 @@ class Service{
   constructor(itensPorRenderizacao){
     this.itensPorRenderizacao = itensPorRenderizacao;
 
-    if (!window.sessionStorage.getItem('carrinho')) {
-      window.sessionStorage.setItem('carrinho', JSON.stringify([]));
+    if (!window.localStorage.getItem('carrinho')) {
+      window.localStorage.setItem('carrinho', JSON.stringify([]));
     }
   };
 
@@ -114,7 +113,7 @@ class Service{
 
   carregarCarrinho() {
 
-    let carrinhoStorage = JSON.parse(window.sessionStorage.getItem('carrinho'));
+    let carrinhoStorage = JSON.parse(window.localStorage.getItem('carrinho'));
     this.carrinho = carrinhoStorage.map(i => new Produto(i.id, i.nome, i.cor, i.tamanho, i.preco, i.parcelas, i.imagem, i.uploadAt));
     return this.carrinho;
   }
@@ -128,13 +127,13 @@ class Service{
 
   adicionarAoCarrinho(produto) {
 
-    let carrinhoStorage = new Carrinho(JSON.parse(window.sessionStorage.getItem('carrinho')));
+    let carrinhoStorage = new Carrinho(JSON.parse(window.localStorage.getItem('carrinho')));
 
     console.log(carrinhoStorage.listaProdutos);
     if (!carrinhoStorage.listaProdutos.find(item => item.id == produto.id)) {//não permite itens repetidos
       carrinhoStorage.add(produto);
 
-      window.sessionStorage.setItem('carrinho', JSON.stringify(carrinhoStorage.listaProdutos));
+      window.localStorage.setItem('carrinho', JSON.stringify(carrinhoStorage.listaProdutos));
 
       carrinhoStorage.listaProdutos = carrinhoStorage.listaProdutos.map(i => new Produto(i.id, i.nome, i.cor, i.tamanho, i.preco, i.parcelas, i.imagem, i.uploadAt));
       this.carrinho = carrinhoStorage.listaProdutos;
@@ -145,12 +144,12 @@ class Service{
 
   removerDoCarrinho(id) {
 
-    let carrinhoStorage = new Carrinho(JSON.parse(window.sessionStorage.getItem('carrinho')));
+    let carrinhoStorage = new Carrinho(JSON.parse(window.localStorage.getItem('carrinho')));
 
     let item = carrinhoStorage.listaProdutos.find(item => item.id == id);
     carrinhoStorage.remove(item);
 
-    window.sessionStorage.setItem('carrinho', JSON.stringify(carrinhoStorage.listaProdutos));
+    window.localStorage.setItem('carrinho', JSON.stringify(carrinhoStorage.listaProdutos));
 
     carrinhoStorage = carrinhoStorage.listaProdutos.map(i => new Produto(i.id, i.nome, i.cor, i.tamanho, i.preco, i.parcelas, i.imagem, i.uploadAt));
     this.carrinho = carrinhoStorage;

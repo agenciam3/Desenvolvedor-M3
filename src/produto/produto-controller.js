@@ -142,7 +142,7 @@ class Controller{
       this.produtosHTML.innerHTML += `
       <div class="card-produto">
         <div class="card-img">
-          <img src="./layout/imagens/${p.imagem}">
+          <img src="../layout/imagens/${p.imagem}">
         </div>
         <div class="card-body">
           <h2 class="nome">${p.nome}</h2>
@@ -161,25 +161,40 @@ class Controller{
     this._atualizarTotalCarrinho();
 
     let carrinho;
-    if (this.mobile) carrinho = this.carrinhoHTML.querySelectorAll('.aside-body')[0];
-    else carrinho = this.carrinhoHTML.querySelectorAll('.modal-body')[0];
+    let carrinhoFooter;
+    if (this.mobile) {
+      carrinho = this.carrinhoHTML.querySelectorAll('.aside-body')[0];
+      carrinhoFooter = this.carrinhoHTML.querySelectorAll('.aside-footer')[0];
+    }
+    else {
+      carrinho = this.carrinhoHTML.querySelectorAll('.modal-body')[0];
+      carrinhoFooter = this.carrinhoHTML.querySelectorAll('.modal-footer')[0];
+    }
 
     if (limpar) carrinho.innerHTML = '';
 
-    produtos.forEach(p => {
-      carrinho.innerHTML += `
-      <div class="item-carrinho-produto">
-        <img src="./layout/imagens/${p.imagem}" width="50">
-        <div class="rowTop">
-          <b class="nome">${p.nome}</b>
-          <i class="fas fa-trash" onclick="window.app.paginaProdutos.controller._removerDoCarrinho(${p.id})"></i>
-        </div>
-        <div class="rowBottom">
-          <b>${p.toStringPreco()}</b><br>
-          <span>${p.toStringParcelas()}</span>
-        </div>
-      </div>`;
-    });
+    if (produtos.length <= 0) {
+      carrinho.innerHTML = '<i class="aviso">Seu carrinho está vazio...</i>';
+      carrinhoFooter.setAttribute('style', 'display: none;');
+    }
+    else{
+      carrinhoFooter.removeAttribute('style');
+
+      produtos.forEach(p => {
+        carrinho.innerHTML += `
+        <div class="item-carrinho-produto">
+          <img src="../layout/imagens/${p.imagem}" width="50">
+          <div class="rowTop">
+            <b class="nome">${p.nome}</b>
+            <i class="fas fa-trash" onclick="window.app.paginaProdutos.controller._removerDoCarrinho(${p.id})"></i>
+          </div>
+          <div class="rowBottom">
+            <b>${p.toStringPreco()}</b><br>
+            <span>${p.toStringParcelas()}</span>
+          </div>
+        </div>`;
+      });
+    }
   }
 
   projetarQuantCarrinho(quantidade){

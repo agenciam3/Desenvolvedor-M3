@@ -43,6 +43,33 @@ button{
     cursor: pointer;
   }
 }
+input[type="checkbox"]{
+  appearance: none;
+  background-color: $cor-default;
+  border: 1px solid $cor-terciaria;
+  padding: 6px;
+  display: inline-block;
+  :hover{
+    cursor: pointer;
+  }
+}
+input[type="checkbox"]:checked{
+  background-color: $cor-primaria;
+}
+input[type="radio"]{
+  appearance: none;
+  background-color: $cor-default;
+  border: 1px solid $cor-terciaria;
+  border-radius: 30px;
+  padding: 6px;
+  display: inline-block;
+  :hover{
+    cursor: pointer;
+  }
+}
+input[type="radio"]:checked{
+  background-color: $cor-primaria;
+}
 /* Botões */
 .b-checkbox{
   background-color: $cor-default;
@@ -210,6 +237,13 @@ footer{
     }
   }
 }
+.aviso{
+  color: $cor-terciaria-fonte;
+}
+.mobile .aviso{
+  position: relative;
+  top: 5vh;
+}
 /* Cards */
 .card-produto{
   @media (min-width: 768px){/*Desktop*/
@@ -368,6 +402,7 @@ aside{
       padding-bottom: 15px;
       .soma{
         font-size: 30px;
+        color: $cor-primaria;
       }
     }
   }
@@ -383,8 +418,10 @@ aside{
     .navbar{
       width: 70vw;
       padding: 2vh 0;
-      b{
-        font-size: 26px;
+      h1{
+        font-size: 28px;
+        margin: 0;
+        display: initial;
       }
       select{
         float: right;
@@ -457,6 +494,7 @@ aside{
         margin-right: 2vw;
         .soma{
           font-size: 30px;
+          color: $cor-primaria;
         }
       }
       .navbar{

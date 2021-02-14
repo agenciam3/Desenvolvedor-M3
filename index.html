@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/b85f0cafd8.js" crossorigin="anonymous"></script>
     <title>Desenvolvedor-M3</title>
-    <link rel="stylesheet" href="./dist/style/style.css">
+    <link rel="stylesheet" href="./style/style.css">
   </head>
   <body>
 
     <div class="wrap">
       <header>
         <div class="logo">
-          <img src="./layout/imagens/logo-m3.png" title="Agência M3" width="110vw">
+          <img src="../layout/imagens/logo-m3.png" title="Agência M3" width="110vw">
         </div>
         <div class="shopping" onclick="window.app.paginaProdutos.controller.abrirCarrinho()">
           <i class="fas fa-shopping-bag"></i>
@@ -27,7 +27,7 @@
             <button class="b-default" onclick="window.app.paginaProdutos.controller.abrirOrdens()">Ordenar</button>
           </div>
           <div class="produtos-mobile">
-
+            <!-- Inserção dos produtos -->
           </div>
           <div class="navbar2">
             <button class="b-primario" onclick="window.app.paginaProdutos.controller._carregarMais()">Carregar Mais</button>
@@ -133,18 +133,7 @@
             </div>
           </div>
           <div class="aside-body">
-
-            <!-- <div class="item-carrinho-produto">
-              <img src="./layout/imagens/img_2.png" width="50">
-              <div class="rowTop">
-                <b class="nome">Blusa de Moletom</b>
-                <i class="fas fa-trash" onclick="window.app.paginaProdutos.controller._removerDoCarrinho(3)"></i>
-              </div>
-              <div class="rowBottom">
-                <b>R$ 40,00</b><br>
-                <span>Á vista</span>
-              </div>
-            </div> -->
+            <!-- Inserção dos produtos -->
           </div>
           <div class="aside-footer">
             <div class="subtotal">
@@ -163,7 +152,7 @@
       <div class="template desktop">
         <section>
           <div class="navbar">
-            <b>Blusas</b>
+            <h1>Blusas</h1>
             <select onchange="window.app.paginaProdutos.controller._aplicarOrdens(this.value)">
               <option value="-1">Ordenar por:</option>
               <option value="0">Mais recente</option>
@@ -231,18 +220,7 @@
               </div>
             </div>
             <div class="modal-body">
-  
-              <!-- <div class="item-carrinho-produto">
-                <img src="./layout/imagens/img_2.png" width="50">
-                <div class="rowTop">
-                  <b class="nome">Blusa de Moletom</b>
-                  <i class="fas fa-trash" onclick="window.app.paginaProdutos.controller._removerDoCarrinho(3)"></i>
-                </div>
-                <div class="rowBottom">
-                  <b>R$ 40,00</b><br>
-                  <span>Á vista</span>
-                </div>
-              </div> -->
+              <!-- Inserção dos produtos -->
             </div>
             <div class="modal-footer">
               <div class="subtotal">
@@ -256,7 +234,7 @@
             </div>
           </div>
           <div class="produtos-desktop">
-
+            <!-- Inserção dos produtos -->
           </div>
           <div class="navbar2">
             <button class="b-primario" onclick="window.app.paginaProdutos.controller._carregarMais()">Carregar Mais</button>
