@@ -1,0 +1,25 @@
+{
+  "name": "desenvolvedor-m3",
+  "version": "1.0.0",
+  "description": "Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.",
+  "main": "index.html",
+  "scripts": {
+    "start": "gulp sass && index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ViniciusNogueiraS/Desenvolvedor-M3.git"
+  },
+  "author": "v.nog@outlook.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ViniciusNogueiraS/Desenvolvedor-M3/issues"
+  },
+  "homepage": "https://github.com/ViniciusNogueiraS/Desenvolvedor-M3#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^5.0.0"
+  }
+}
