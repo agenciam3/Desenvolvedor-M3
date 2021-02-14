@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/b85f0cafd8.js" crossorigin="anonymous"></script>
+    <title>Desenvolvedor-M3</title>
+    <link rel="stylesheet" href="./style/style.css">
+  </head>
+  <body>
+
+    <div class="wrap">
+      <header>
+        <div class="logo">
+          <img src="../layout/imagens/logo-m3.png" title="Agência M3" width="110vw">
+        </div>
+        <div class="shopping" onclick="window.app.paginaProdutos.controller.abrirCarrinho()">
+          <i class="fas fa-shopping-bag"></i>
+          <i class="fas fa-circle"><small>0</small></i>
+        </div>
+      </header>
+      <div class="template mobile">
+        <section>
+          <h1>Blusas</h1>
+          <div class="navbar">
+            <button class="b-default" onclick="window.app.paginaProdutos.controller.abrirFiltros()">Filtrar</button>
+            <button class="b-default" onclick="window.app.paginaProdutos.controller.abrirOrdens()">Ordenar</button>
+          </div>
+          <div class="produtos-mobile">
+            <!-- Inserção dos produtos -->
+          </div>
+          <div class="navbar2">
+            <button class="b-primario" onclick="window.app.paginaProdutos.controller._carregarMais()">Carregar Mais</button>
+          </div>
+        </section>
+        <aside class="filtros" style="left: -390px;">
+          <div class="aside-header">
+            <div class="titulo">
+              <span>FILTRAR</span>
+            </div>
+            <div class="controles">
+              <i class="fas fa-times" onclick="window.app.paginaProdutos.controller.fecharFiltros()"></i>
+            </div>
+          </div>
+          <div class="aside-body">
+            <ul>
+              <li class="aside-cores">
+                <span>CORES</span>
+                <i class="fas fa-minus" onclick="window.app.paginaProdutos.controller.fecharCores()" style="display: none;"></i>
+                <i class="fas fa-plus" onclick="window.app.paginaProdutos.controller.abrirCores()"></i>
+                <div class="dropdown" hidden>
+                  <ul class="f-cores">
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Amarelo</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Azul</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Branco</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Cinza</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Laranja</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Verde</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Vermelho</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Preto</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Rosa</p></label></li>
+                    <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem()"><p>Vinho</p></label></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="aside-tamanhos">
+                <span>TAMANHOS</span>
+                <i class="fas fa-minus" onclick="window.app.paginaProdutos.controller.fecharTamanhos()" style="display: none;"></i>
+                <i class="fas fa-plus" onclick="window.app.paginaProdutos.controller.abrirTamanhos()"></i>
+                <div class="f-tamanhos dropdown" hidden>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">P</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">M</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">G</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">GG</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">U</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">36</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">38</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">40</button>
+                  <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem()">42</button>
+                </div>
+              </li>
+              <li class="aside-precos">
+                <span>FAIXA DE PREÇO</span>
+                <i class="fas fa-minus" onclick="window.app.paginaProdutos.controller.fecharPrecos()" style="display: none;"></i>
+                <i class="fas fa-plus" onclick="window.app.paginaProdutos.controller.abrirPrecos()"></i>
+                <div class="dropdown" hidden>
+                  <ul class="f-precos">
+                    <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem()"><p>de R$ 0 até R$ 50</p></label></li>
+                    <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem()"><p>de R$ 51 até R$ 150</p></label></li>
+                    <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem()"><p>de R$ 151 até R$ 300</p></label></li>
+                    <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem()"><p>de R$ 301 até R$ 500</p></label></li>
+                    <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem()"><p>a partir de R$ 501</p></label></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <div class="navbar">
+              <button class="b-primario" onclick="window.app.paginaProdutos.controller._aplicarFiltros()">Filtrar</button>
+              <button class="b-default" onclick="window.app.paginaProdutos.controller.limparFiltros()">LIMPAR</button>
+            </div>
+          </div>
+        </aside>
+        <aside class="ordens" style="left: -390px;">
+          <div class="aside-header">
+            <div class="titulo">
+              <span>ORDENAR</span>
+            </div>
+            <div class="controles">
+              <i class="fas fa-times" onclick="window.app.paginaProdutos.controller.fecharOrdens()"></i>
+            </div>
+          </div>
+          <div class="aside-body">
+            <ul>
+              <li>
+                <p onclick="window.app.paginaProdutos.controller.checkText(this), window.app.paginaProdutos.controller._aplicarOrdens(0)">Mais recente</p>
+              </li>
+              <li>
+                <p onclick="window.app.paginaProdutos.controller.checkText(this), window.app.paginaProdutos.controller._aplicarOrdens(1)">Menor preço</p>
+              </li>
+              <li>
+                <p onclick="window.app.paginaProdutos.controller.checkText(this), window.app.paginaProdutos.controller._aplicarOrdens(2)">Maior preço</p>
+              </li>
+            </ul>
+          </div>
+        </aside>
+        <aside class="carrinho" style="left: -390px;">
+          <div class="aside-header">
+            <div class="titulo">
+              <span>CARRINHO</span>
+            </div>
+            <div class="controles">
+              <i class="fas fa-times" onclick="window.app.paginaProdutos.controller.fecharCarrinho()"></i>
+            </div>
+          </div>
+          <div class="aside-body">
+            <!-- Inserção dos produtos -->
+          </div>
+          <div class="aside-footer">
+            <div class="subtotal">
+              <b class="soma">R$ 0,00</b><br>
+              <span class="parcelamento">Ou X vezes de R$ Y,yy</span>
+            </div>
+            <div class="navbar">
+              <button class="b-secundario">Finalizar Compra</button>
+              <button class="b-default" onclick="window.app.paginaProdutos.controller.fecharCarrinho()">FECHAR</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+
+      <div class="template desktop">
+        <section>
+          <div class="navbar">
+            <h1>Blusas</h1>
+            <select onchange="window.app.paginaProdutos.controller._aplicarOrdens(this.value)">
+              <option value="-1">Ordenar por:</option>
+              <option value="0">Mais recente</option>
+              <option value="1">Menor preço</option>
+              <option value="2">Maior preço</option>
+            </select>
+          </div>
+          <aside class="filtros">
+            <div class="aside-body">
+              <ul>
+                <li class="aside-cores">
+                  <span>CORES</span>
+                  <div class="dropdown">
+                    <ul class="f-cores">
+                      <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>Amarelo</p></label></li>
+                      <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>Azul</p></label></li>
+                      <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>Branco</p></label></li>
+                      <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>Cinza</p></label></li>
+                      <li><label><input class="ipt" type="checkbox" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>Laranja</p></label></li>
+                    </ul>
+                  </div>
+                  <div class="infolink">
+                    <p onclick="window.app.paginaProdutos.controller.maisCores(this)">Ver todas as cores ﹀</p>
+                  </div>
+                </li>
+                <li class="aside-tamanhos">
+                  <span>TAMANHOS</span>
+                  <div class="f-tamanhos" class="dropdown">
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">P</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">M</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">G</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">GG</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">U</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">36</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">38</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">40</button>
+                    <button class="b-checkbox ipt" onclick="window.app.paginaProdutos.controller.checkButton(this), window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()">42</button>
+                  </div>
+                </li>
+                <li class="aside-precos">
+                  <span>FAIXA DE PREÇO</span>
+                  <div class="dropdown">
+                    <ul class="f-precos">
+                      <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>de R$ 0 até R$ 50</p></label></li>
+                      <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>de R$ 51 até R$ 150</p></label></li>
+                      <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>de R$ 151 até R$ 300</p></label></li>
+                      <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>de R$ 301 até R$ 500</p></label></li>
+                      <li><label><input class="ipt" type="radio" name="preco" onclick="window.app.paginaProdutos.controller.filtragem(), window.app.paginaProdutos.controller._aplicarFiltros()"><p>a partir de R$ 501</p></label></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+              <div class="infolink">
+                <p onclick="window.app.paginaProdutos.controller.limparFiltros()">Limpar filtros ↺</p>
+              </div>
+            </div>
+          </aside>
+          <div class="modal carrinho">
+            <div class="modal-header">
+              <div class="titulo">
+                <span>CARRINHO</span>
+              </div>
+              <div class="controles">
+                <i class="fas fa-times" onclick="window.app.paginaProdutos.controller.fecharCarrinho()"></i>
+              </div>
+            </div>
+            <div class="modal-body">
+              <!-- Inserção dos produtos -->
+            </div>
+            <div class="modal-footer">
+              <div class="subtotal">
+                <b class="soma">R$ 0,00</b><br>
+                <span class="parcelamento">Ou X vezes de R$ Y,yy</span>
+              </div>
+              <div class="navbar">
+                <button class="b-secundario">Finalizar Compra</button>
+                <button class="b-default" onclick="window.app.paginaProdutos.controller.fecharCarrinho()">FECHAR</button>
+              </div>
+            </div>
+          </div>
+          <div class="produtos-desktop">
+            <!-- Inserção dos produtos -->
+          </div>
+          <div class="navbar2">
+            <button class="b-primario" onclick="window.app.paginaProdutos.controller._carregarMais()">Carregar Mais</button>
+          </div>
+        </section>
+      </div>
+    </div>
+    <footer>
+      <small>Agência M3 - Agência de Performance Digital</small>
+    </footer>
+
+    <script src="./src/app.js"></script>
+    <script src="./src/produto/produto-mock.js"></script>
+    <script src="./src/produto/produto-model.js"></script>
+    <script src="./src/produto/produto-service.js"></script>
+    <script src="./src/produto/produto-controller.js"></script>
+    <script>
+      window.app.paginaProdutos.service = new window.app.paginaProdutos.service(6);
+      window.app.paginaProdutos.controller = new window.app.paginaProdutos.controller();
+
+      window.app.paginaProdutos.controller._carregarProdutos();
+    </script>
+
+  </body>
+</html>

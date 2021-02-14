@@ -1,3 +1,36 @@
+# Meu fork do repositório Desenvolvedor-M3
+
+Olá! Sou o **Vinícius**.
+
+Segui a risca os requisitos e instruções para o teste.
+Para executar este aplicativo em seu computador é bem simples.
+
+ - Baixe ou clone este repositório para sua máquina,
+ - Abra o terminal de comandos na pasta raiz,
+ - Execute o comando ``npm install`` e
+ - Por fim, execute ``npm start``.
+
+São uitilizadas apenas dependências de desenvolvimento, que são:
+  ``gulp``,
+  ``gulp-htmlmin``,
+  ``node-sass``,
+  ``gulp-sass`` e 
+  ``gulp-terser``.
+
+Estas dependências são responsáveis por:
+ - automatizar tarefas,
+ - minificar o HTML,
+ - compilar o Scss e
+ - comprimir o código JavaScript.
+
+O que irá melhorar a performance no carregamento da aplicação.
+
+> Meu email de contato é *v.nog@outlook.com* e o telefone é **(22) 99738-7803**.
+
+
+#
+>README Anterior
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
