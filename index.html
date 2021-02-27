@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/ef9823023f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="content">
+        <div class="headerItem">
+          <img src="/layout/imagens/logo-m3.png" />
+        </div>
+        <div class="spacer"></div>
+        <div class="headerItem headerItemBagCounter">
+          <img src="/layout/imagens/bag.png" />
+          <div class="bagCounter"><span id="bagCounter">0</span></div>
+        </div>
+      </div>
+    </header>
+    <div class="mob">
+      <div class="content categoryContent">
+        <h2 class="categoryName">Blusas</h2>
+      </div>
+    </div>
+    <div class="mob">
+      <div class="content subHeaderContent">
+        <div class="subHeaderItem" id="btnFiltersMob">
+          <button
+            class="modalButton"
+            data-target="filtersContainer"
+            data-open="modalOpen"
+            data-close="modalClose"
+          >
+            Filtrar
+          </button>
+        </div>
+        <div id="openOrder" class="subHeaderItem" id="btnOrderMob">
+          <button
+            class="modalButton"
+            data-target="ordersContainer"
+            data-open="modalOpen"
+            data-close="modalClose"
+          >
+            Ordenar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="desk">
+      <div class="content desk subHeaderContent">
+        <div class="subHeaderItem"><h2 class="categoryName">Blusas</h2></div>
+        <div class="spacer"></div>
+        <div class="subHeaderItem">
+          <select id="orderSelect" class="subHeaderSelect">
+            <option selected hidden>Ordenar por:</option>
+            <option value="moreRecents" selected>Mais recentes</option>
+            <option value="lesserPrices">Menor preço</option>
+            <option value="biggerPrices">Maior preço</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="content">
+      <div id="filtersContainer" class="filtersContainer modalClose">
+        <div class="filterHeader mob">
+          <h3>FILTRAR</h3>
+          <div class="spacer"></div>
+          <button
+            class="faButton modalButton"
+            data-target="filtersContainer"
+            data-open="modalOpen"
+            data-close="modalClose"
+          >
+            <i class="fas fa-times fa-lg"></i>
+          </button>
+        </div>
+
+        <div class="filterNameContent">
+          <h3 class="filterName">CORES</h3>
+          <div class="spacer"></div>
+          <button
+            class="faButton accordionMobileBtn mob"
+            data-id="accordionMobileColor"
+          >
+            <i class="fas fa-plus fa-lg"></i>
+          </button>
+        </div>
+        <div class="accordionMobileColor" id="accordionMobileColor">
+          <div id="filtersContentColor" class="filtersContentColor">
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-amarelo"
+                data-value="yellow"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-amarelo">Amarelo</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-azul"
+                data-value="blue"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-azul">Azul</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-branco"
+                data-value="white"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-branco">Branco</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-cinza"
+                data-value="gray"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-cinza">Cinza</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-laranja"
+                data-value="orange"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-laranja">Laranja</label>
+            </div>
+            <div class="custom-checkbox mob">
+              <input
+                id="checkbox-verde"
+                data-value="green"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-verde">Verde</label>
+            </div>
+            <div class="custom-checkbox mob">
+              <input
+                id="checkbox-vermelho"
+                data-value="red"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-vermelho">Vermelho</label>
+            </div>
+            <div class="custom-checkbox mob">
+              <input
+                id="checkbox-preto"
+                data-value="black"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-preto">Preto</label>
+            </div>
+            <div class="custom-checkbox mob">
+              <input
+                id="checkbox-rosa"
+                data-value="pink"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-rosa">Rosa</label>
+            </div>
+            <div class="custom-checkbox mob">
+              <input
+                id="checkbox-vinho"
+                data-value="wine"
+                data-filter="color"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-vinho">Vinho</label>
+            </div>
+            <!--  -->
+            <button id="btnColorAccordion" class="desk">
+              Ver todas as cores
+              <div class="arrow"><i class="fas fa-angle-down"></i></div>
+              <hr />
+            </button>
+            <div id="accordionContainer" class="accordionContainer">
+              <div class="custom-checkbox">
+                <input
+                  id="checkbox-verde-desk"
+                  data-value="green"
+                  data-filter="color"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-verde-desk">Verde</label>
+              </div>
+              <div class="custom-checkbox">
+                <input
+                  id="checkbox-vermelho-desk"
+                  data-value="red"
+                  data-filter="color"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-vermelho-desk">Vermelho</label>
+              </div>
+              <!--  -->
+              <div class="custom-checkbox">
+                <input
+                  id="checkbox-preto-desk"
+                  data-value="black"
+                  data-filter="color"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-preto-desk">Preto</label>
+              </div>
+              <div class="custom-checkbox">
+                <input
+                  id="checkbox-rosa-desk"
+                  data-value="pink"
+                  data-filter="color"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-rosa-desk">Rosa</label>
+              </div>
+              <div class="custom-checkbox">
+                <input
+                  id="checkbox-vinho-desk"
+                  data-value="wine"
+                  data-filter="color"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-vinho-desk">Vinho</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="filterNameContent">
+          <h3 class="filterName">TAMANHOS</h3>
+          <div class="spacer"></div>
+          <button
+            class="faButton accordionMobileBtn mob"
+            data-id="accordionMobileSize"
+          >
+            <i class="fas fa-plus fa-lg"></i>
+          </button>
+        </div>
+        <div class="accordionMobileSize" id="accordionMobileSize">
+          <div id="filtersContentSize" class="filtersContentSize">
+            <div class="filtersGridSize">
+              <div>
+                <input
+                  id="checkbox-p"
+                  data-value="p"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-p">P</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-m"
+                  data-value="m"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-m">M</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-g"
+                  data-value="g"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-g">G</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-gg"
+                  data-value="gg"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-gg">GG</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-u"
+                  data-value="u"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-u">U</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-36"
+                  data-value="36"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-36">36</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-38"
+                  data-value="38"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-38">38</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-40"
+                  data-value="40"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-40">40</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-42"
+                  data-value="42"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-42">42</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-44"
+                  data-value="44"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-44">44</label>
+              </div>
+              <div>
+                <input
+                  id="checkbox-46"
+                  data-value="46"
+                  data-filter="size"
+                  class="filtersCheckbox"
+                  type="checkbox"
+                />
+                <label for="checkbox-46">46</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filterNameContent">
+          <h3 class="filterName">FAIXA DE PREÇOS</h3>
+          <div class="spacer"></div>
+          <button
+            class="faButton accordionMobileBtn mob"
+            data-id="accordionMobilePrice"
+          >
+            <i class="fas fa-plus fa-lg"></i>
+          </button>
+        </div>
+        <div class="accordionMobilePrice" id="accordionMobilePrice">
+          <div id="filtersContentPrice" class="filtersContentPrice">
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-price1"
+                data-minValue="0"
+                data-maxValue="50"
+                data-filter="price"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-price1">de R$ 0 até R$ 50</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-price2"
+                data-minValue="51"
+                data-maxValue="150"
+                data-filter="price"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-price2">de R$ 51 até R$ 150</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-price3"
+                data-minValue="151"
+                data-maxValue="300"
+                data-filter="price"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-price3">de R$ 151 até R$ 300</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-price4"
+                data-minValue="301"
+                data-maxValue="500"
+                data-filter="price"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-price4">de R$ 301 até R$ 500</label>
+            </div>
+            <div class="custom-checkbox">
+              <input
+                id="checkbox-price5"
+                data-minValue="501"
+                data-maxValue="-1"
+                data-filter="price"
+                class="filtersCheckbox"
+                type="checkbox"
+              />
+              <label for="checkbox-price5">a partir de R$ 501</label>
+            </div>
+          </div>
+        </div>
+        <div class="filterFooter mob">
+          <button class="filterButtonApply" id="applyFilters">APLICAR</button>
+          <button class="filterButtonClear" id="clearFilters">LIMPAR</button>
+        </div>
+      </div>
+      <div class="mob">
+        <div id="ordersContainer" class="modalClose">
+          <div class="ordersHeader">
+            <h3>ORDENAR</h3>
+            <div class="spacer"></div>
+            <button
+              class="faButton modalButton"
+              data-target="ordersContainer"
+              data-open="modalOpen"
+              data-close="modalClose"
+            >
+              <i class="fas fa-times fa-lg"></i>
+            </button>
+          </div>
+          <div class="ordersContent">
+            <form id="orderForm">
+              <div class="custom-radio">
+                <input id="radio-recents" name="orderFilter" type="radio" />
+                <label for="radio-recents">Mais recentes</label>
+              </div>
+              <div class="custom-radio">
+                <input id="radio-lowestPrice" name="orderFilter" type="radio" />
+                <label for="radio-lowestPrice">Menor preço</label>
+              </div>
+              <div class="custom-radio">
+                <input
+                  id="radio-biggestPrice"
+                  name="orderFilter"
+                  type="radio"
+                />
+                <label for="radio-biggestPrice">Maior preço</label>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="verticalSpacer"></div>
+      <div class="productsContent">
+        <div id="productsContent" class="productsGrid"></div>
+      </div>
+    </div>
+    <div class="loadMore"><button id="loadMore">CARREGAR MAIS</button></div>
+    <footer>
+      <div class="footerContent">
+        <a href="https://agenciam3.com/"
+          ><p>Agência M3 - Agência de Performance Digital</p></a
+        >
+      </div>
+    </footer>
+    <script src="/scripts/main.js"></script>
+  </body>
+</html>

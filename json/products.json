@@ -1,0 +1,85 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "CAMISETA MESCLA",
+      "colors": ["gray"],
+      "price": 28.0,
+      "parcels": 3,
+      "sizes": ["p", "m"],
+      "image": "img_2.png"
+    },
+    {
+      "id": 2,
+      "name": "SAIA EM COURO",
+      "colors": ["black"],
+      "price": 398.0,
+      "parcels": 5,
+      "sizes": ["36", "38", "40"],
+      "image": "img_3.png"
+    },
+    {
+      "id": 3,
+      "name": "CARDIGAN TIGRE",
+      "colors": ["orange", "black"],
+      "price": 398.0,
+      "parcels": 5,
+      "sizes": ["u"],
+      "image": "img_4.png"
+    },
+    {
+      "id": 4,
+      "name": "CARDIGAN OFF WHITE",
+      "colors": ["white"],
+      "price": 99.0,
+      "parcels": 3,
+      "sizes": ["p", "m", "gg"],
+      "image": "img_5.png"
+    },
+    {
+      "id": 5,
+      "name": "BODY LEOPARD",
+      "colors": ["yellow"],
+      "price": 129.9,
+      "parcels": 3,
+      "sizes": ["p", "m", "g", "gg"],
+      "image": "img_6.png"
+    },
+    {
+      "id": 6,
+      "name": "CASACO PELOS",
+      "colors": ["pink"],
+      "price": 398.0,
+      "parcels": 5,
+      "sizes": ["m", "g"],
+      "image": "img_7.png"
+    },
+    {
+      "id": 7,
+      "name": "CROPPED STRIPES",
+      "colors": ["blue", "orange", "yellow", "green"],
+      "price": 120.0,
+      "parcels": 3,
+      "sizes": ["m", "g"],
+      "image": "img_8.png"
+    },
+    {
+      "id": 8,
+      "name": "CAMISA TRANSPARENTE",
+      "colors": ["black"],
+      "price": 398.0,
+      "parcels": 5,
+      "sizes": ["m", "gg"],
+      "image": "img_9.png"
+    },
+    {
+      "id": 9,
+      "name": "POCHETE CLUTCH",
+      "colors": ["black"],
+      "price": 99.0,
+      "parcels": 3,
+      "sizes": ["u"],
+      "image": "img_10.png"
+    }
+  ]
+}
