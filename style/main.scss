@@ -1,0 +1,533 @@
+            @import "./reset";
+            @import "./variables";
+            @import "./media-q";
+            header {
+                width: 100%;
+                height: 70px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 100px;
+                border-bottom: 2px solid $secondary-color;
+                .carrinho {
+                    position: relative;
+                    img {
+                        width: 25px;
+                    }
+                    p {
+                        color: $tertiary-color;
+                        display: none;
+                        position: absolute;
+                        justify-content: center;
+                        align-items: center;
+                        width: 20px;
+                        height: 20px;
+                        top: 15px;
+                        right: -8px;
+                        border-radius: 15px;
+                        background-color: $primary-color;
+                    }
+                }
+            }
+            
+            .menu-tipo {
+                width: 100%;
+                height: 100%;
+                padding: 30px 100px;
+                .nav-filter {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    h2 {
+                        font-size: 38px;
+                    }
+                    div {
+                        width: 30%;
+                        float: right;
+                        border: 1px solid #333;
+                        width: 125px;
+                        right: 30px;
+                        overflow: hidden;
+                        background: $tertiary-color;
+                        margin-right: 90px;
+                        select {
+                            padding: 10px 8px;
+                            width: 100%;
+                            border: none;
+                            box-shadow: none;
+                            background: $tertiary-color;
+                            appearance: none;
+                            -webkit-appearance: none;
+                        }
+                        select ::after {
+                            background-color: $primary-color;
+                        }
+                        option {
+                            width: 125px;
+                            right: 30px;
+                        }
+                    }
+                    .ord {
+                        display: none;
+                    }
+                }
+            }
+            
+            .container {
+                display: flex;
+                .btn-options {
+                    display: none;
+                }
+                .menu-filter {
+                    display: inline-block;
+                    min-width: 180px;
+                    h3 {
+                        font-size: 20px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                    }
+                    .btn-exit-filtro {
+                        display: none;
+                    }
+                    .title-cor {
+                        button {
+                            display: none;
+                        }
+                    }
+                    .title-tamanho {
+                        button {
+                            display: none;
+                        }
+                    }
+                    .title-preco {
+                        button {
+                            display: none;
+                        }
+                    }
+                    .fica {
+                        display: block;
+                    }
+                    .escode {
+                        display: none;
+                    }
+                    .tipo-cor {
+                        position: relative;
+                        padding-left: 28px;
+                        margin-bottom: 10px;
+                        width: 100px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        .checkbox1 {
+                            position: relative;
+                            padding-top: 2px;
+                            opacity: 0;
+                            cursor: pointer;
+                            height: 0;
+                            width: 0;
+                        }
+                        .checkmark {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 16px;
+                            width: 16px;
+                            background-color: $tertiary-color;
+                            border: 1px solid #333;
+                        }
+                        input:checked~.checkmark {
+                            background-color: $primary-color;
+                        }
+                    }
+                    .tamanho {
+                        width: 180px;
+                        .tipo-tamanho {
+                            display: inline-block;
+                            position: relative;
+                            margin-bottom: 3px;
+                            cursor: pointer;
+                            -webkit-user-select: none;
+                            -moz-user-select: none;
+                            -ms-user-select: none;
+                            user-select: none;
+                            input:checked~.checkboxbox {
+                                border: 1px solid $primary-color;
+                            }
+                            .checkboxbox {
+                                width: 30px;
+                                right: 30px;
+                                display: inline-block;
+                                background: $tertiary-color;
+                                font-size: 12px;
+                                color: #333;
+                                margin: 3px;
+                                text-align: center;
+                                line-height: 30px;
+                                border: 1px solid $secondary-color;
+                                cursor: pointer;
+                                user-select: none;
+                            }
+                            .checkbox2 {
+                                display: none;
+                            }
+                        }
+                    }
+                    .tipo-preco {
+                        display: block;
+                        position: relative;
+                        padding-left: 28px;
+                        margin-bottom: 10px;
+                        cursor: pointer;
+                        font-size: 13px;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                        .checkbox1 {
+                            position: relative;
+                            padding-top: 2px;
+                            opacity: 0;
+                            cursor: pointer;
+                            height: 0;
+                            width: 0;
+                        }
+                        .checkmark {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            height: 16px;
+                            width: 16px;
+                            background-color: $tertiary-color;
+                            border: 1px solid #333;
+                        }
+                        input:checked~.checkmark {
+                            background-color: $primary-color;
+                        }
+                    }
+                    .btn-opt-filtro {
+                        display: none;
+                        justify-content: space-between;
+                        button {
+                            background-color: $primary-color;
+                            border: none;
+                            color: $tertiary-color;
+                            padding: 15px 20px;
+                            text-align: center;
+                            text-decoration: none;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 48px;
+                            margin-top: 50px;
+                        }
+                        .limpar {
+                            background-color: $tertiary-color;
+                            color: $secondary-color;
+                            border: solid 1px $secondary-color;
+                        }
+                    }
+                }
+                .container-produtos {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    .produtos {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 220px;
+                        height: 100%;
+                        margin: 20px 20px;
+                        .nome {
+                            font-size: 14px;
+                            font-weight: normal;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            padding-top: 15px;
+                            padding-bottom: 5px;
+                        }
+                        .preco {
+                            font-size: 16px;
+                            font-weight: bolder;
+                            text-transform: uppercase;
+                            color: black;
+                        }
+                        h4 {
+                            font-size: 12px;
+                            font-weight: normal;
+                            margin: 8px;
+                        }
+                        button {
+                            background-color: black;
+                            border: none;
+                            color: $tertiary-color;
+                            padding: 15px 58px;
+                            text-align: center;
+                            text-decoration: none;
+                            font-size: 16px;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+            
+            .btn-carregar {
+                display: flex;
+                justify-content: center;
+                .button-mais {
+                    background-color: $primary-color;
+                    border: none;
+                    color: $tertiary-color;
+                    padding: 15px;
+                    text-align: center;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-bottom: 48px;
+                    margin-top: 50px;
+                }
+            }
+            
+            footer {
+                background-color: black;
+                font-family: sans-serif;
+                font-size: 12px;
+                text-align: center;
+                padding: 10px 0;
+                width: 100%;
+                height: 30px;
+                position: relative;
+                margin: 0 auto;
+                color: $tertiary-color;
+            }
+            
+            @media (max-width: $breakpoint-cellphone) {
+                header {
+                    padding: 0px 10px;
+                }
+                .menu-tipo {
+                    padding: 10px;
+                    .nav-filter {
+                        justify-content: center;
+                        align-items: center;
+                        h2 {
+                            margin: 5px;
+                            font-size: 30px;
+                        }
+                        select {
+                            display: none;
+                        }
+                        .ord {
+                            display: none;
+                            position: absolute;
+                            top: 0px;
+                            left: 0;
+                            padding-left: 10px;
+                            background-color: white;
+                            flex-direction: column;
+                            width: 100vw;
+                            height: 180vh;
+                            h5 {
+                                display: flex;
+                                justify-content: space-between;
+                                font-size: 22px;
+                                width: 100vw;
+                                color: $secondary-color;
+                                font-weight: 400;
+                                width: 90vw;
+                                padding-bottom: 15px;
+                                border-bottom: 1px solid $secondary-color;
+                                button {
+                                    display: block;
+                                    width: 20px;
+                                    height: 20px;
+                                    text-align: center;
+                                    background-color: white;
+                                    border: none;
+                                    font-size: 18px;
+                                    cursor: pointer;
+                                }
+                            }
+                            p {
+                                padding-bottom: 35px;
+                                font-size: 20px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+                .container {
+                    flex-direction: column;
+                    .btn-options {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        button {
+                            background-color: $tertiary-color;
+                            border: none;
+                            width: 200px;
+                            color: $secondary-color;
+                            border: solid 1px $secondary-color;
+                            padding: 15px 0px;
+                            text-align: center;
+                            text-decoration: none;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 48px;
+                            margin-top: 50px;
+                        }
+                    }
+                    .menu-filter {
+                        display: none;
+                        position: absolute;
+                        top: 0px;
+                        left: 0;
+                        padding-left: 10px;
+                        background-color: white;
+                        flex-direction: column;
+                        width: 100vw;
+                        height: 180vh;
+                        .btn-opt-filtro {
+                            display: flex;
+                            flex-direction: row;
+                            width: 100vw;
+                            justify-content: center;
+                            align-items: center;
+                            button {
+                                margin: 10px;
+                                padding: 15px 50px;
+                            }
+                        }
+                        .btn-exit-filtro {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            border-bottom: 2px solid $secondary-color;
+                            h4 {
+                                font-size: 22px;
+                                color: $secondary-color;
+                                font-weight: 400;
+                                width: 80vw;
+                            }
+                            button {
+                                display: block;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                        }
+                        .title-cor {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            h3 {
+                                font-size: 22px;
+                                width: 80vw;
+                            }
+                            #cor-escode {
+                                display: block;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                            #cor-escode2 {
+                                display: none;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                        }
+                        .title-tamanho {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            width: 100vw;
+                            h3 {
+                                font-size: 22px;
+                                width: 80vw;
+                            }
+                            #tamanho-escode {
+                                display: block;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                            #tamanho-escode2 {
+                                display: none;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                        }
+                        .title-preco {
+                            display: flex;
+                            justify-content: start;
+                            align-items: center;
+                            h3 {
+                                font-size: 22px;
+                                width: 80vw;
+                            }
+                            #preco-escode {
+                                display: block;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                            #preco-escode2 {
+                                display: none;
+                                width: 20px;
+                                height: 20px;
+                                text-align: center;
+                                background-color: white;
+                                border: none;
+                                font-size: 18px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    .container-produtos {
+                        .produtos {
+                            margin: 5px 5px;
+                            width: 160px;
+                            img {
+                                width: 160px;
+                            }
+                            .nome {
+                                font-size: 12px;
+                            }
+                            button {
+                                padding: 13px 40px;
+                            }
+                        }
+                    }
+                }
+            }

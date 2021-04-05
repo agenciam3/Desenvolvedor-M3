@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/main.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>M3</title>
+</head>
+
+<body>
+    <header>
+        <img src="./imagens/logo-m3.png" alt="logo-m3">
+        <div class="carrinho">
+            <img src="/imagens/bolsa.png" alt="bolsa">
+            <p class="contador">0</p>
+        </div>
+    </header>
+    <section class="menu-tipo">
+        <div class="nav-filter">
+            <h2>Blusas</h2>
+            <select name="ordenar" class="ordem" id="ordem"> 
+                    <option value="recentes">Ordernar por:</option>   
+                    <option value="recentes">Mais recentes</option>
+                    <option value="maior">Maior preço</option>
+                    <option value="menor">Menor preço</option>
+                </select>
+            <div class="ord" id="ord">
+                <h5>Ordernar <button type="button" id="ord-esconde" value="+" onclick="escondeOrd()">x</button></h5>
+                <p>Mais recentes</p>
+                <p>Maior preço</p>
+                <p>Menor preço</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="btn-options">
+                <button class="filtro" type="button" id="filtro" onclick="fil()">Filtro</button>
+                <button type="button" class="ordernar" id="ordernar" onclick="ord()">Ordernar</button>
+            </div>
+
+            <div class="menu-filter">
+                <div class="btn-exit-filtro">
+                    <h4>Filtrar</h4>
+                    <button type="button" id="filtrar-esconde" value="+" onclick="escondeFiltrar()">x</button>
+                </div>
+                <div id="cor" class="cor">
+                    <div class="title-cor">
+                        <h3>Cores</h3>
+                        <button type="button" id="cor-escode" value="+" onclick="apareceCor()">+</button>
+                        <button type="button" id="cor-escode2" value="+" onclick="escondeCor()">-</button>
+                    </div>
+                    <div class="cor-conteiner" id="cor-conteiner">
+                        <label class="tipo-cor fica">Amarelo
+                        <input class="checkbox1 check" type="checkbox"  name="filter" id="amarelo" value="amarelo"><br>
+                        <span class="checkmark"></span></label>
+
+                        <label class="tipo-cor fica">Azul
+                        <input class="checkbox1 check" type="checkbox"   name="filter" id="azul" value="azul"><br>
+                        <span class="checkmark"></span></label>
+
+                        <label class="tipo-cor fica">Branco
+                        <input class="checkbox1 check" type="checkbox"  name="filter" id="branco" value="branco"><br>
+                        <span class="checkmark"></span> </label>
+
+                        <label class="tipo-cor fica">Cinza
+                        <input class="checkbox1 check" type="checkbox"   name="filter" id="cinza" value="cinza"><br>
+                        <span class="checkmark"></span></label>
+
+                        <label class="tipo-cor fica">Laranja
+                        <input class="checkbox1 check" type="checkbox"   name="filter" id="laranja" value="laranja"><br>
+                        <span class="checkmark"></span></label>
+                        <label class="tipo-cor escode">Preto
+                            <input class="checkbox1 check" type="checkbox" style="display:none"  name="filter" id="preto" value="preto"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-cor escode">Rosa
+                            <input class="checkbox1 check" type="checkbox" style="display:none"  name="filter" id="rosa" value="rosa"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-cor escode">Verde
+                            <input class="checkbox1 check" type="checkbox" style="display:none"  name="filter" id="verde" value="verde"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-cor escode">Vermelo
+                            <input class="checkbox1 check" type="checkbox" style="display:none"  name="filter" id="vermelo" value="vermelo"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-cor escode">Marrom
+                            <input class="checkbox1 check" type="checkbox" style="display:none"  name="filter" id="marrom" value="marrom"><br>
+                            <span class="checkmark"></span></label>
+                        <div class="todas1">
+
+                            <a href="#" class="todas2" role="button" id="ver-cores" onclick="cor()">
+                                <i class="todas-cores">Ver todas as cores</i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tamanho">
+                    <div class="title-tamanho">
+                        <h3>Tamanho</h3>
+                        <button type="button" id="tamanho-escode" value="+" onclick="apareceTamanho()">+</button>
+                        <button type="button" id="tamanho-escode2" value="+" onclick="escondeTamanho()">-</button>
+                    </div>
+                    <div class="tamanho-conteiner">
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="pp" value="pp"><br>
+                            <span class="checkboxbox checkox">PP</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="P" value="P"><br>
+                            <span class="checkboxbox checkox">P</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="M" value="M"><br>
+                            <span class="checkboxbox checkox">M</span>
+                            </label>
+                        <label class="tipo-tamanho"> 
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="g" value="g"><br>
+                            <span class="checkboxbox checkox">G</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="gg" value="gg"><br>
+                            <span class="checkboxbox checkox">GG</span>
+                            </label>
+                        <label class="tipo-tamanho"> 
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="u" value="u"><br>
+                            <span class="checkboxbox checkox">U</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="36" value="36"><br>
+                            <span class="checkboxbox checkox">36</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="38" value="38"><br>
+                            <span class="checkboxbox checkox">38</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="40" value="40"><br>
+                            <span class="checkboxbox checkox">40</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="42" value="42"><br>
+                            <span class="checkboxbox checkox">42</span>
+                            </label>
+                        <label class="tipo-tamanho">
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="44" value="44"><br>
+                            <span class="checkboxbox checkox">44</span>
+                            </label>
+                        <label class="tipo-tamanho"> 
+                            <input class="checkbox2 check" type="checkbox"  name="filter" id="46" value="46"><br>
+                            <span class="checkboxbox checkox">46</span>
+                            </label>
+                    </div>
+                </div>
+
+                <div class="precos">
+                    <div class="title-preco">
+                        <h3>Faixa de preço</h3>
+                        <button type="button" id="preco-escode" value="+" onclick="aparecePreco()">+</button>
+                        <button type="button" id="preco-escode2" value="+" onclick="escondePreco()">-</button>
+                    </div>
+                    <div class="preco-conteiner">
+                        <label class="tipo-preco">de R$0 até R$50
+                            <input class="checkbox1 check" type="checkbox"  name="filter" id="0-50" value="0-50"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-preco">de R$51 até R$150
+                            <input class="checkbox1 check" type="checkbox"  name="filter" id="51-150" value="51-150"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-preco">de R$151 até R$300
+                            <input class="checkbox1 check" type="checkbox"  name="filter" id="151-300" value="151-300"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-preco">de R$301 até R$500
+                            <input class="checkbox1 check" type="checkbox"  name="filter" id="301-500" value="301-500"><br>
+                            <span class="checkmark"></span></label>
+                        <label class="tipo-preco">apartir de R$1
+                            <input class="checkbox1 check" type="checkbox"  name="filter" id="1-500" value=""><br>
+                            <span class="checkmark"></span></label>
+
+                    </div>
+                </div>
+                <div class="btn-opt-filtro">
+                    <button class="aplicar" type="button" id="aplicar" onclick="escondeFiltrar()">Aplicar</button>
+                    <button type="button" class="limpar" id="limpar" onclick="limpar()">Limpar</button>
+                </div>
+
+            </div>
+            <main id="main-container" class="container-produtos"></main>
+        </div>
+        <div class="btn-carregar">
+            <button class="button-mais" id="mais" type="button" onclick="mais()">CARREGAR MAIS</button>
+        </div>
+    </section>
+    <footer>Agência M3 - Agência de Performance Digital
+    </footer>
+
+    <script src="./scr/app.js"></script>
+    <script type="module" src="./scr/script.js"></script>
+
+</body>
+
+</html>
