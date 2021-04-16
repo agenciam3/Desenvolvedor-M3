@@ -1,6 +1,7 @@
 e-mail: douglasbrian369@hotmail.com
 
 ----------Instruções-------------
+
 O HTML se encontra na pasta page.
 
 O JSON vem através do JSON Server (simulando uma API).
