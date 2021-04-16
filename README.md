@@ -1,64 +1,30 @@
-# Venha ser um desenvolvedor da Digital M3
+e-mail: douglasbrian369@hotmail.com
 
-Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
+----------Instruções-------------
 
-Em Nova Friburgo estamos na: 
-> R. Helena Coutinho, 41 
-> Braunes, Nova Friburgo/RJ
-[https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
+O HTML se encontra na pasta page.
 
-Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos em HTML, CSS e JS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+O JSON vem através do JSON Server (simulando uma API).
+execute o npm install para instalar o json-server.
+depois execute o comando json-server db.json.
 
-## O que procuramos
+*caso o o JSON Server não rode execute: 
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
 
-### Requisitos Obrigatórios
+----------Sobre o Teste-----------
 
-- Html5, css3;
-- Javascript, jquery;
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
+Infelizmente aida faltam diversas funcionalidades que foram requeridas.
+os produtos que vem do JSON renderizam e os links funcionam perfeitamente,
+tem uma lista que recebe os produtos do carrinho, essa lista está sendo printada
+no console.
 
-### Desejáveis:
+a funcionalidade carregar mais não foi implementada, bem como os filtros requisitados.
+a funcionalidade ordenar. Não foi implementado um método que manipule o DOM para faze-lo
+porém se formos ao HTML e dentro da tag select trocarmos a primeira opção pelo value "maior", ao ser recarregada a página mostrará em ordem decrescente.
 
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- React
+----------Feedback a empresa--------
 
-----
+Agradeço a empresa pelo desafio, o mesmo deixou claro onde preciso focar meus estudos.
+Sei que tenho uma longa caminhada pela frente, e gostaria de um retorno sobre as funcionalidades que foram implementadas (otmização de código, boas práticas, etc...).
 
-## Como se candidatar a vaga
-
-- [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
-
-
-**obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
-
-### Instruções para o teste
-
-O layout se encontra na pasta "layout" em PSD e PNG.
-
-### Obrigatório
-
-- HTML5 e CSS3
-- Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
-- Interação com JSON para filtar os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
-
-#### Bônus
-
-- Javascript sem plugins e modular
-- Grunt, Gulp ou similar
-
-##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+-------------------------------------

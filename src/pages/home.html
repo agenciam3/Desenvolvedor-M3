@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3 Performace Digital</title>
+
+	<script src="https://kit.fontawesome.com/e122a958ba.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/index.css">
+
+
+</head>
+
+<body>
+    <div class="container">    
+        <header>
+            <img src="../../imagens/logo-m3.png" class="logo" />
+            <i class="fas fa-shopping-bag"></i>
+        </header>
+
+        <nav>
+            <h2 class="tittle">Blusas</h2>
+            
+            <h2>Cores</h2>
+            <div class="option">
+                <div>
+                    <input type="checkbox" id="amarelo" name="amarelo">
+                    <label for="amarelo">Amarelo</label>  
+                </div>
+
+                <div>
+                    <input type="checkbox" id="azul" name="azul">
+                    <label for="azul">Azul</label>  
+                </div>
+
+                <div>
+                    <input type="checkbox" id="branco" name="branco">
+                    <label for="azul">Branco</label>  
+                </div>
+
+                <div>
+                    <input type="checkbox" id="cinza" name="cinza">
+                    <label for="cinza">Cinza</label>  
+                </div>
+               
+                <div>
+                    <input type="checkbox" id="laranja" name="laranja">
+                    <label for="laranja">Laranja</label>  
+                </div>
+            </div>
+            
+            <h2>Tamanhos</h2>
+            <ul class="filter" style="list-style-type: none;">
+                <li>
+                    <button>P</button>
+                    <button>M</button>
+                    <button>G</button>
+                    <button>GG</button>
+                </li>
+                    <button>U</button>
+                    <button>36</button>
+                    <button>38</button>
+                    <button>40</button>
+                <li>
+                    <button>42</button>
+                    <button>44</button>
+                    <button>46</button>
+                </li>
+                <li>
+
+                </li>
+               
+
+
+            </ul>
+
+
+            <h2>Faixa de preço</h2>
+            <div class="option">
+                <div>
+                    <input type="checkbox" id="0a50" name="0a50">
+                    <label for="0a50">de R$0 a R$50</label>  
+                </div>
+
+                <div>
+                    <input type="checkbox" id="51a150" name="51a150">
+                    <label for="51a150">de R$51 a R$150</label>  
+                </div>
+
+                <div>
+                    <input type="checkbox" id="151a300" name="151a300">
+                    <label for="151a300">de R$151 a R$300</label>  
+                </div>
+
+                <div>
+                    <input type="checkbox" id="301a500" name="301a500">
+                    <label for="301a500">de R$301 a R$500</label>  
+                </div>
+               
+                <div>
+                    <input type="checkbox" id="ap01" name="ap01">
+                    <label for="ap01">a partir de R$ 01</label>  
+                </div>
+            </div>
+        </nav>
+        
+        <main>
+
+            <div class="div-order">
+                
+                <form id="formOrdenar">
+                    <select required id="ordenar" onChange="update()">
+                        <option value="maior">Ordenar por:</option>
+                        <option value="recentes">mais recentes</option>
+                        <option value="menor">menor preço</option>
+                        <option value="maior">maior preço</option>
+                    </select>
+                </form>
+            </div>
+
+            <ul  style="list-style-type: none;" id="products"></ul>
+        
+            <button id="carregar">Carregar mais</button>
+            
+        </main>
+
+        <footer>
+            <p>Agência M3 - Agência de Performace Digital</p>
+        </footer>
+    </div>    
+    
+    <script src="../js/render_products.js"></script>
+</body>
+
+</html>
