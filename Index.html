@@ -1,0 +1,77 @@
+<html>
+<head>
+    <meta charset="UTF-8" lang="pt-BR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/Style.css">
+    <link rel="stylesheet" href="./CSS/Reset.css">
+    <title>Index</title>
+</head>
+
+<body>
+    <header>
+        <section class="container-cabecalho" id="container-cabecalho">
+            <div class="cabecalho" id="cabecalho">
+                <div class="Logo" id="Logo">
+                    <a> <img class="logo" src="./layout/imagens/logo-m3.png" alt="Logo agência M3"></a>
+                </div>
+                <div class="Sacola" id="Sacola">
+                    <a><img class="sacola" src="./layout/imagens/sacola.png" alt="Sacola de itens"></a>
+                </div>   
+            </div>
+        </section>
+    </header>
+
+    <main> 
+        <section class="container-inicio" id="container-inicio">
+            <div class="titulo" id="titulo">
+                <h1>Blusas</h1>
+            </div>
+            <div class="ordenacao" id="ordenacao">
+                <!--<input type="search" id="procurar" placeholder="Buscar por:">-->
+                <select name="tipo-ordenacao" id="tipo-ordenacao" placeholder="Ordenar por:">
+                    <option value="maisRecente">Mais recentes</option>
+                    <option value="menorPreco">Menor preço</option>
+                    <option value="MaiorPreco">Maior preço</option>
+                </select>
+            
+            </div>
+        </section>
+        <section class="container-filtros" id="container-filtros">
+            <div class="cores" id="cores">
+                <fieldset>
+                    <Legend>Cores</Legend><br>
+                    <!-- <label class="label js-select-label slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0"> 
+                        <input class="input_checkbox js-input-sku" id="TAMM" type="radio" name="sku" value="551260706" tabindex="0">
+                
+                    <div class="content">
+                        <span class="name">M</span>	</div>	
+                    </label> -->
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Amarelo</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Azul</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Branco</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Cinza</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Laranja</label><br>
+                    <br>
+                    <a id="mais-cores" href="#">ver todas as cores</a>       
+                </fieldset>
+            </div>
+
+            <div class="tamanhos" id="tamanhos">
+
+            </div>
+
+            <div class="faixa-preco" id="faixa-preco">
+
+            </div>
+
+        </section>     
+    </main>
+
+    <footer>
+        <!-- <div class="rodape">
+            <p>Agência M3 Agência de Performace Digital</p>
+        </div> -->
+    </footer>
+</body>
+</html>

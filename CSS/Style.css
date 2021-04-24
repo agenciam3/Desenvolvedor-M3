@@ -1,0 +1,43 @@
+.container-cabecalho{
+    padding-top: 1em;
+    padding-bottom: 4em;
+    border-bottom: ridge;
+    border-color: rgba(240, 248, 255, 0.89);
+}
+.Logo{
+    float: left;
+    padding: 5px;
+    margin-left: 50px;
+}
+
+.Sacola{
+    float: right;
+    padding: 5px;
+    margin-right: 100px;
+}
+
+.container-inicio{
+    padding: 3em;
+    margin: 0 auto;
+    width: 950px;
+}
+
+.titulo{
+    float: left;
+    font-size: 3em;
+}
+
+.ordenacao{
+    float: right;
+    padding: 15px ;
+}
+
+.container-filtros{
+    margin-top: 2em;
+    margin-left: 10em;
+}
+
+#mais-cores{
+    text-decoration: underline;
+    color: rgb(112, 109, 109);
+}
