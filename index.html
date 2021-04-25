@@ -1,0 +1,261 @@
+<html>
+<head>
+    <title>Desafio M3 Performance Digital</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+        <header>
+        <a href=""><img src="layout/imagens/logo-m3.png" alt=""></a> 
+        <div class="menu-openner"><span>0</span><img src="layout/imagens/silhueta-preta-da-sacola-de-compras.png" alt=""></div>
+        
+        </header>
+
+        <div class="desc">
+            <h2>Blusas</h2>
+            <select name="" id="">
+                <option value="v0">Ordenar por: </option>
+                <option value="v1">Mais recentes</option>
+                <option value="v2">Menor preço</option>
+                <option value="v3">Maior preço</option>
+            </select>
+
+            <!--Criei os botões mobile para abrir as divs que se encontram abaixo referentes ao processo de filtragem e ordenação dos itens-->
+            <div onclick="openFiltrar()" class="filtragem">FILTRAR</div>
+            <div onclick="openOrder()" class="ordenar">ORDENAR</div>
+            
+            </div>
+        
+
+            <!--A Classe MODELS abaixo é referente aos itens dentro da div Grid que compõe o corpo do site.-->
+        <div class="models">
+            <div class="clothe-item">
+                <a href="">
+                    <div class="clothe-item--img"><img src="" /></div>
+                    
+                </a>
+                <div class="clothe-item--name">--</div>
+                <div class="clothe-item--price">R$ --</div>
+                <div class="clothe-item--desc">--</div><br>
+               
+                   <div class="clothe-item--add">Comprar</div>
+                
+            </div>
+            <div class="cart--item">
+                <img src="" />
+                <div class="cart--item-nome">--</div>
+                <div class="cart--item--qtarea">
+                    <button class="cart--item-qtmenos">-</button>
+                    <div class="cart--item--qt">1</div>
+                    <button class="cart--item-qtmais">+</button>
+                </div>
+            </div>
+        </div>
+        <!--Final da classe MODELS-->
+        
+        <!-- Classe do botão de ORDENAR MOBILE-->
+        <div class="ordener">
+            
+            <div class="ordener-head">
+                <h1>Ordenar</h1>
+                <div class="ordener-closer" onclick="closeOrder()">🗙</div>
+            </div>
+            <div class="ordener-content">
+                <div>Mais recentes</div>
+                <div>Menor preço</div>
+                <div>Maior preço</div>
+            </div>
+        </div>
+
+        <!-- Classe do botão de FILTRAR MOBILE-->
+        <div class="filter">
+            
+            <div class="filter-head">
+                <h1>Filtrar</h1>
+                <div class="filter-closer" onclick="closeFilter()">🗙</div>
+            </div>
+            <div class="filter-content">
+                <div class="color-content" onclick="openInputs()" onclick="closeInputs()"><p>Cores</p><span>➕</span></div>
+
+                <div >
+                    <ul class="filter-inputs">
+                        <input type="checkbox"> Amarelo <br>
+                        <input type="checkbox"> Azul <br>
+                        <input type="checkbox"> Branco <br>
+                        <input type="checkbox"> Cinza <br>
+                        <input type="checkbox"> Laranja <br>
+                        <input type="checkbox"> Verde <br>
+                        <input type="checkbox"> Vermelho <br>
+                        <input type="checkbox"> Preto <br>
+                        <input type="checkbox"> Rosa <br>
+                        <input type="checkbox"> Vinho
+                        
+                    </ul>
+                </div>
+                <div class="size-content" onclick="openSizes()"><p>Tamanho</p><span >➕</span></div>
+
+                <div>
+                    <ul class="filter-sizes">
+                        <input type="checkbox">P
+                        <input type="checkbox">M
+                        <input type="checkbox">G
+                        <input type="checkbox">GG<br>
+                        <input type="checkbox">U
+                        <input type="checkbox">36
+                        <input type="checkbox">38
+                        <input type="checkbox">40<br>
+                        <input type="checkbox">42
+                        <input type="checkbox">44
+                        <input type="checkbox">46
+                    </ul>
+                </div>
+
+                <div class="price-content" onclick="openPrices()"><p>Faixa de preço</p><span>➕</span></div>
+                
+                <div>
+                    <ul class="filter-prices">
+                        <input type="checkbox">de R$0 até R$50<br>
+                        <input type="checkbox">de R$51 até R$150<br>
+                        <input type="checkbox">de R$151 até R$300<br>
+                        <input type="checkbox">de R$301 até R$500<br>
+                        <input type="checkbox">a partir de R$ 01<br>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+        <!-- FINAL DA DIV DE FILTRAGEM MOBILE-->
+
+        <main>
+            <!-- classe dos FILTROS DESKTOP -->
+        <div class="filters">
+            
+            <div>
+                <h2>CORES</h2>
+        <ul>
+            <input type="checkbox"> Amarelo <br>
+            <input type="checkbox"> Azul <br>
+            <input type="checkbox"> Branco <br>
+            <input type="checkbox"> Cinza <br>
+            <input type="checkbox"> Laranja <br>
+            <a href="#" class="testando">Ver todas as cores ↡</a>
+        </ul>
+            </div>
+            
+            <div>
+                <h2>TAMANHOS</h2>
+                <ul>
+                    <input type="checkbox">P
+                    <input type="checkbox">M
+                    <input type="checkbox">G
+                    <input type="checkbox">GG<br>
+                    <input type="checkbox">U
+                    <input type="checkbox">36
+                    <input type="checkbox">38
+                    <input type="checkbox">40<br>
+                    <input type="checkbox">42
+                    <input type="checkbox">44
+                    <input type="checkbox">46
+                </ul>
+            </div>
+            
+            <div>
+                <h2>FAIXA DE PREÇO</h2>
+        <ul>
+            <input type="checkbox">de R$0 até R$50<br>
+            <input type="checkbox">de R$51 até R$150<br>
+            <input type="checkbox">de R$151 até R$300<br>
+            <input type="checkbox">de R$301 até R$500<br>
+            <input type="checkbox">a partir de R$ 01<br>
+        </ul>
+            </div>
+            
+        </div>
+        <!-- final da classe -->
+
+        <!-- Div Grid onde estão os itens do MODELS -->
+        <div class="clothe-area">
+            
+        </div>
+
+        <!-- Usei esse aside para fazer o carrinho de compras tanto mobile quanto desktop-->
+        <aside>
+            <div class="cart--area">
+                <div class="menu-closer">❌</div>
+                <h1>Suas peças</h1>
+                <div class="cart"></div>
+                <div class="cart--details">
+                    <div class="cart--totalitem subtotal">
+                        <span>Subtotal</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem desconto">
+                        <span>Desconto (-10%)</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--totalitem total big">
+                        <span>Total</span>
+                        <span>R$ --</span>
+                    </div>
+                    <div class="cart--finalizar">Finalizar a compra</div>
+                </div>
+            </div>
+        </aside>
+        <!--Final do Aside-->
+    </main>
+
+        <div class="more">
+            <button id="button" onclick="repetir()">Ver Mais</button> <!-- Botão do final da página, o qual não conseguir colocar a função a tempo de entregar -->
+        </div>
+
+        
+        <!-- É um MODAL com as informações do item escolhido bem como pode fazer alterações como selecionar tamanho e quantidade-->
+        <div class="clotheWindowArea">
+            <div class="clotheWindowBody">
+                <div class="clotheInfo--cancelMobileButton">Voltar</div>
+                <div class="clotheBig">
+                    <img src="" />
+                </div>
+                <div class="clotheInfo">
+                    <h1>--</h1>
+                    <div class="clotheInfo--desc">--</div>
+                    <div class="clotheInfo--sizearea">
+                        <div class="clotheInfo--sector">Tamanho</div>
+                        <div class="clotheInfo--sizes">
+                            <div data-key="0" class="clotheInfo--size">PEQUENA<span>--</span></div>
+                            <div data-key="1" class="clotheInfo--size selected">MÉDIA<span>--</span></div>
+                            <div data-key="2" class="clotheInfo--size">GRANDE<span>--</span></div>
+
+
+                        </div>
+                    </div>
+                    <div class="clotheInfo--pricearea">
+                        <div class="clotheInfo--sector">Preço</div>
+                        <div class="clotheInfo--price">
+                            <div class="clotheInfo--actualPrice">R$ --</div>
+                            <div class="clotheInfo--qtarea">
+                                <button class="clotheInfo--qtmenos">-</button>
+                                <div class="clotheInfo--qt">1</div>
+                                <button class="clotheInfo--qtmais">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clotheInfo--addButton">Adicionar ao carrinho</div>
+                    <div class="clotheInfo--cancelButton">Cancelar</div>
+                </div>
+            </div>
+        </div>
+        <!--FINAL DA DIV-->
+        
+
+<footer>
+    Agência M3 - Agência de performance digital
+</footer>
+
+<script src="clothes.js"></script>
+<script src="script.js"></script>
+</body>
+
+</html>
+

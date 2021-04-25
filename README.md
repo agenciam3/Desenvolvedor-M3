@@ -1,3 +1,8 @@
+link para acesso ao site no Netlify: https://hardcore-stonebraker-869239.netlify.app/
+link do video explicativo: https://youtu.be/tNDhIYnC3Z4 (me desculpem por estar tão baixo, o fone estava com problema e eu não sabia)
+
+
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
