@@ -33,10 +33,49 @@
 }
 
 .container-filtros{
+    display: block;
     margin-top: 2em;
     margin-left: 10em;
+    width: 35%;
 }
-
+.cores{
+    display: block;
+    width: 45%;
+}
+.container-produtos{
+    display: block;
+    margin-top: -12em;
+    margin-left: 10em;
+    width: 35%;
+}
+.produtos li{
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    /*border-color: #000000;
+    border-width: 2px ;
+    border-style: solid ;*/
+    /*é a mesma coisa que digitar separadamente*/
+}
+.produtos{
+    display: inline-block;
+    width: 185%;
+    margin-left: 9em;
+}
+.produtos h2{
+    font-size: 30px;
+    padding: 10px;
+}
+.preco{
+    font-weight: bold;
+}
+.parcelamento{
+    padding: 10px;
+}
 #mais-cores{
     text-decoration: underline;
     color: rgb(112, 109, 109);
