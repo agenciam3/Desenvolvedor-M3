@@ -1,0 +1,204 @@
+body {
+    font-family: 'Roboto', sans-serif, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 21px;
+    margin-left: 210px;
+    margin-right: 210px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 25 px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+hr {
+    max-width: 100%;
+    size: 11;
+}
+
+/* Imagem carrinho */
+#shopBag {
+    width: 25px;
+    height: 25px;
+}
+
+#logo {
+    width: 200px;
+    height: 50px;
+}
+
+/* Produtos */
+#products {
+    display: flex;
+    float: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
+.eachProd {
+    flex: 1 1 200px;
+    margin: 10px;   
+}
+
+a {
+    border: 1px solid black;
+    padding: 10px;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a:hover {
+    border-color: white;
+}
+
+/* Filtros */
+.sideFilter {
+    float: left;
+}
+
+/* Filtro cores */
+.eachLabelColor {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px;
+    text-transform: capitalize;
+}
+
+.eachLabelColor input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check {
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    border: solid grey;
+    border-width: 0.3px;
+    float: left;
+}
+
+.eachLabelColor .check:after {
+    top: 1.5px;
+    left: 1.5px;
+    width: 12px;
+    height: 12px;
+    background-color: #2BBFF2;
+    position: relative;
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.eachLabelColor,
+input:checked~.check:after {
+    display: block;
+}
+
+/* Filtro tamanhos */
+
+#sizes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+}
+
+.eachLabelSize {
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    border: 1px solid #bbbbbb;
+    color: #bbbbbb;
+    background: white;
+}
+
+.eachSize {
+    display: flex;
+}
+
+.eachSize input[type="checkbox"] {
+    display: none;
+}
+
+.eachSize label {
+    display: inline-block;
+    background-color: #ffff;
+    padding: 5px 5px;
+    font-family: Arial;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.eachSize input[type="checkbox"]:checked+label {
+    border-color: #2BBFF2;
+    color: black;
+}
+
+/* Filtro Preços */
+
+.eachLabelPrice {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px;
+}
+
+.eachLabelPrice input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.eachLabelPrice .check:after {
+    top: 1.5px;
+    left: 1.5px;
+    width: 12px;
+    height: 12px;
+    background-color: #2BBFF2;
+    position: relative;
+}
+
+/* Filtro Ordem */
+
+#order {
+    float: right;
+    width: 145px;
+    height: 40px;
+    border-width: 1px;
+    font-family: 'Roboto', sans-serif, "Segoe UI", Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    background-color: white;
+}
+
+.btn-load-more {
+    padding: 15px 5px;
+    text-align: center;
+    background-color: #2BBFF2;
+    color: white;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+    cursor:pointer;
+    border-color: #2BBFF2;
+    
+}

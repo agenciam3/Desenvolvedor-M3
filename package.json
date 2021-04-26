@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "json-server": "^0.16.3",
+    "npm-run-all": "^4.1.5",
+    "webpack": "^5.35.1",
+    "webpack-cli": "^4.6.0"
+  },
+  "name": "teste-M3",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack build",
+    "server_watch": "json-server ./api/database.json --watch",
+    "webpack_watch": "webpack --watch",
+    "start": "npm-run-all --parallel webpack_watch server_watch"
+  },
+  "keywords": [],
+  "author": "Pablo",
+  "license": "ISC",
+  "description": "This project was done to ..."
+}
