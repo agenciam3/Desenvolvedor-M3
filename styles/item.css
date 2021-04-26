@@ -1,0 +1,66 @@
+.produtos {
+    width: 80%;
+}
+
+.items-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    width: 30%;
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+.item img {
+    margin: auto;
+    max-width: 100%;
+}
+
+.nome-item {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.preco {
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+    display: block;
+}
+
+.parcelas {
+    text-align: center;
+    display: block;
+    padding: 5px;
+}
+
+.buy {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1200px) {
+    .items-list {
+        margin: auto;
+    }
+
+    .item {
+        width: 45%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .produtos {
+        width: 100%;
+    }
+}
