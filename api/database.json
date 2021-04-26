@@ -1,0 +1,13 @@
+{
+    "products": [
+      { "id":0, "name":"CAMISETA MESCLA", "img":"./src/Imagens/img_2.png", "color": "cinza", "sizes": ["p","m","36","38","40"], "price": 28 },
+      { "id":1, "name":"SAIA EM COURO", "img":"./src/Imagens/img_3.png", "color": "vinho", "sizes": ["p","m","g","38","40"], "price": 151 },
+      { "id":2, "name":"CARDIGAN TIGRE", "img":"./src/Imagens/img_4.png", "color": "laranja", "sizes": ["u"], "price": 398 },
+      { "id":3, "name":"CARDIGAN OFF WHITE", "img":"./src/Imagens/img_5.png", "color": "branco", "sizes": ["g","gg","42","44","46"], "price": 99.90 },
+      { "id":4, "name":"BODY LEOPARDO", "img":"./src/Imagens/img_6.png", "color": "vermelho", "sizes": ["p","m"], "price": 129.90 },
+      { "id":5, "name":"CASACO PELOS", "img":"./src/Imagens/img_7.png", "color": "rosa", "sizes": ["m","g","38","40","42"], "price": 398 },
+      { "id":6, "name":"CROPPED STRIPES", "img":"./src/Imagens/img_8.png", "color": "amarelo", "sizes": ["gg"], "price": 120 },
+      { "id":7, "name":"CAMISA TRANSPARENTE", "img":"./src/Imagens/img_9.png", "color": "preto", "sizes": ["p","m","36","38","40"], "price": 398 },
+      { "id":8, "name":"POCHETE CLUTCH", "img":"./src/Imagens/img_10.png", "color": "azul", "sizes": ["p","m","36","38","40"], "price": 99 }
+    ]
+  }

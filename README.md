@@ -1,64 +1,82 @@
-# Venha ser um desenvolvedor da Digital M3
-
-Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
-
-Em Nova Friburgo estamos na: 
-> R. Helena Coutinho, 41 
-> Braunes, Nova Friburgo/RJ
-[https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
-
-Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos em HTML, CSS e JS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
-
-## O que procuramos
-
-### Requisitos Obrigatórios
-
-- Html5, css3;
-- Javascript, jquery;
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
-
-### Desejáveis:
-
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- React
-
-----
-
-## Como se candidatar a vaga
-
-- [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
+<!--
+*** Thanks for checking out the Best-README-Template. If you have a suggestion
+*** that would make this better, please fork the repo and create a pull request
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Resumo de conteúdo</summary>
+  <ol>
+    <li>
+      <a href="#sobre-o-projeto">Sobre o Projeto</a>
+    </li>
+    <li>
+      <a href="#iniciando">Iniciando</a>
+      <ul>
+        <li><a href="#pre-requisitos">Pre requisitos</a></li>
+      </ul>
+    </li>
+    <li><a href="#rodando">Rodando</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ol>
+</details>
 
 
-**obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
 
-### Instruções para o teste
+<!-- ABOUT THE PROJECT -->
+## Sobre o Projeto
 
-O layout se encontra na pasta "layout" em PSD e PNG.
+Teste para desenvolvedor Front end na M3, feito em HTML CSS E JavaScript. O teste faz parte do processo seletivo da empresa e é uma reprodução de uma página de um e-commerce.
 
-### Obrigatório
+<!-- GETTING STARTED -->
+## Iniciando
 
-- HTML5 e CSS3
-- Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
-- Interação com JSON para filtar os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
+Iniciando o projeto.
 
-#### Bônus
+### Pre Requisitos
 
-- Javascript sem plugins e modular
-- Grunt, Gulp ou similar
+Esse projeto utiliza as dependências Live Server e JSON Server. Para instalar rode o comando abaixo.
+* npm
+  ```sh
+  npm install 
+  ```
 
-##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+<!-- USAGE EXAMPLES -->
+## Rodando
+
+Para rodar esse projeto rode o :
+* npm
+  ```sh
+  npm run start 
+  ```
+  Ele iniciará paralelo ao JSON Server o Webpack.(Esse último não foi finalizado)
+  
+
+<!-- ROADMAP -->
+## Roadmap
+
+Obrigatório
+- [X] HTML5 e CSS3
+- [x] Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
+- [X] Interação com JSON para filtar os produtos
+- [x] Funcionalidade: Filtrar produtos por cor, tamanho e preço.
+- [x] Funcionalidade: Adicionar produto ao carrinho.
+- [x] Funcionalidade: Carregar mais produtos.
+- [X] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes 
+- [ ] Responsividade
+
+Bônus
+- [X] Javascript sem plugins e modular
+- [ ] Grunt, Gulp ou similar
+
+Notas:
+No filtro por 'Faixa de Preço', a última opção está como 'a partir de R$ 01', fiz como o modelo, porém não sei se o correto seria 'a partir de R$ 501,00' ou como estava no modelo. 
+
+Usei no projeto, CSS: Flexbox, Grid. Javascript: Map, Filter, Promise, Fetch.
+
+<!-- CONTACT -->
+## Contato
+
+Pablo Marins - pablomouramarins@gmail.com
+
+
+
