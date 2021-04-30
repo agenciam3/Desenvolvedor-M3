@@ -77,10 +77,10 @@ footer{
     width: 200%;
     margin-left: 12em;
 }
-.produtos h2{
-    font-size: 30px;
+.produtos h5{
     padding: 10px;
 }
+
 .preco{
     font-weight: bold;
 }
