@@ -180,3 +180,9 @@ footer{
     color: dimgrey;
     border: solid 2px #bbbbbb;
 }
+.rodape{
+    background: black;
+    text-align: center;
+    color: white;
+    padding: 1em;
+}
