@@ -1,3 +1,12 @@
+header{
+    font-family: 'Open Sans', sans-serif;
+}
+main{
+    font-family: 'Open Sans', sans-serif;
+}
+footer{
+    font-family: 'Open Sans', sans-serif;
+}
 .container-cabecalho{
     padding-top: 1em;
     padding-bottom: 4em;
@@ -19,12 +28,13 @@
 .container-inicio{
     padding: 3em;
     margin: 0 auto;
-    width: 950px;
+    width: 1040px;
 }
 
 .titulo{
     float: left;
     font-size: 3em;
+    margin-left: 54px;
 }
 
 .ordenacao{
@@ -42,11 +52,16 @@
     display: block;
     width: 45%;
 }
+.faixa-preco{
+    display: block;
+    width: 45%;
+    margin-top: 9em;
+}
 .container-produtos{
     display: block;
-    margin-top: -12em;
+    margin-top: -32em;
     margin-left: 10em;
-    width: 35%;
+    width: 34%;
 }
 .produtos li{
     display: inline-block;
@@ -56,15 +71,11 @@
     margin: 0 1.5%;
     padding: 30px 20px;
     box-sizing: border-box;
-    /*border-color: #000000;
-    border-width: 2px ;
-    border-style: solid ;*/
-    /*é a mesma coisa que digitar separadamente*/
 }
 .produtos{
     display: inline-block;
-    width: 185%;
-    margin-left: 9em;
+    width: 200%;
+    margin-left: 12em;
 }
 .produtos h2{
     font-size: 30px;
@@ -79,4 +90,93 @@
 #mais-cores{
     text-decoration: underline;
     color: rgb(112, 109, 109);
+}
+.tamanhos{
+    display: block;
+    width: 45%;
+}
+.groupsize
+{
+    display: block;
+    width: 42%;
+    height: 0px;
+    margin-top: -8px;
+}
+
+.groupsize span {
+    width: 28px;
+    height: 15px;
+    margin: 2px;
+    padding: 8px 2px;
+    color: #989494;
+    font-size: 12px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #989494;
+    border-radius: 0px !important;
+    /* box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px; */
+}
+.groupsize span:hover{
+    border:#03a9f4
+}
+
+.groupsize span:hover 
+{
+    transition: transform 4s;
+    background-color: white;
+    color: #686464 !important;
+    border: 2px solid #43c5ff;
+}
+  
+.gender
+{
+    font-size: 13pt;
+    padding: 5px 0px;
+}
+
+.group_gender{margin-top: -9px;}
+
+.group_gender span
+{
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    padding: 8px;
+    color: #989494;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    border: 2px solid #ff9800;
+    border-radius: 50px !important;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+}
+
+.group_gender span:hover 
+{
+    transition: transform 4s;
+    background-color: white;
+    color: #686464 !important;
+    border: 2px solid #ffd000;
+  }
+
+.clicked_yellow
+{   
+    color: #686464 !important;
+    border: 2px solid #f04f05 !important;
+}
+
+.clicked_blue
+{
+    color: #686464 !important;
+    border: 2px solid #05597e !important;
+}
+
+.text-area
+{
+    width: 100%;
+    outline: none;
+    color: dimgrey;
+    border: solid 2px #bbbbbb;
 }

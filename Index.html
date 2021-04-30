@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/Style.css">
     <link rel="stylesheet" href="./CSS/Reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <title>Index</title>
 </head>
 
@@ -40,29 +42,44 @@
         <section class="container-filtros" id="container-filtros">
             <div class="cores" id="cores">
                 <fieldset>
-                    <Legend>Cores</Legend><br>
-                    <!-- <label class="label js-select-label slick-slide slick-active" data-slick-index="2" aria-hidden="false" tabindex="0"> 
-                        <input class="input_checkbox js-input-sku" id="TAMM" type="radio" name="sku" value="551260706" tabindex="0">
-                
-                    <div class="content">
-                        <span class="name">M</span>	</div>	
-                    </label> -->
+                    <legend>Cores</legend><br>
                     <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Amarelo</label><br>       
                     <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Azul</label><br>       
                     <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Branco</label><br>       
                     <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Cinza</label><br>       
                     <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Laranja</label><br>
                     <br>
-                    <a id="mais-cores" href="#">ver todas as cores</a>       
+                    <a id="mais-cores" href="#">ver todas as cores</a>
                 </fieldset>
-            </div>
-
-            <div class="tamanhos" id="tamanhos">
-
-            </div>
+            </div><br>
+            <fieldset>
+                <legend class="tamanhos" id="tamanhos">Tamanhos</legend><br>
+                <div class="groupsize">
+                    <span class="btn" unselectable="on" id="shirt_P" data-value="P" >P</span>
+                    <span class="btn" unselectable="on" id="shirt_M" data-value="M" >M</span>
+                    <span class="btn" unselectable="on" id="shirt_G" data-value="G" >G</span>
+                    <span class="btn" unselectable="on" id="shirt_GG" data-value="GG" >GG</span>
+                    <span class="btn" unselectable="on" id="shirt_U" data-value="XG" >U</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >36</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >38</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >40</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >42</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >44</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >46</span>
+                </div>
+            
+            </fieldset>
 
             <div class="faixa-preco" id="faixa-preco">
-
+                <fieldset>
+                    <legend>Faixa de preço</legend><br>
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$0 até R$51 </label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$51 até R$150</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$151 até R$300</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$301 até R$500</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> a partir R$ 01</label><br>
+                    <br>
+                </fieldset>
             </div>
 
         </section>
