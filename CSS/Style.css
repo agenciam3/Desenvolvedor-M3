@@ -74,7 +74,7 @@ footer{
 }
 .produtos{
     display: inline-block;
-    width: 200%;
+    width: 192%;
     margin-left: 12em;
 }
 .produtos h5{
@@ -83,6 +83,16 @@ footer{
 
 .preco{
     font-weight: bold;
+}
+.comprar{
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+    margin: 5px;
+    color: white;
+    background: black;
+    border: black;
 }
 .parcelamento{
     padding: 10px;
@@ -179,6 +189,20 @@ footer{
     outline: none;
     color: dimgrey;
     border: solid 2px #bbbbbb;
+}
+.botao{ 
+    display: block;
+    width: 230px;
+    margin-left: 40em;
+ }
+.mais-produtos{
+    width: 200px;
+    text-align: center;
+    padding: 1em;
+    margin: 1em;
+    border: #43c5ff;
+    background-color: #43c5ff;
+    font-size: 15px;
 }
 .rodape{
     background: black;
