@@ -1,0 +1,173 @@
+<html>
+<head>
+    <meta charset="UTF-8" lang="pt-BR">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/Style.css">
+    <link rel="stylesheet" href="./CSS/Reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <title>Index</title>
+</head>
+
+<body>
+    <header>
+        <section class="container-cabecalho" id="container-cabecalho">
+            <div class="cabecalho" id="cabecalho">
+                <div class="Logo" id="Logo">
+                    <a> <img class="logo" src="./imagens/logo-m3.png" alt="Logo agência M3"></a>
+                </div>
+                <div class="Sacola" id="Sacola">
+                    <a><img class="sacola" src="./imagens/sacola.png" alt="Sacola de itens"></a>
+                </div>   
+            </div>
+        </section>
+    </header>
+
+    <main> 
+        <section class="container-inicio" id="container-inicio">
+            <div class="titulo" id="titulo">
+                <h1>Blusas</h1>
+            </div>
+            <div class="ordenacao" id="ordenacao">
+                <select name="tipo-ordenacao" id="tipo-ordenacao" placeholder="Ordenar por:">
+                    <option value="maisRecente">Mais recentes</option>
+                    <option value="menorPreco">Menor preço</option>
+                    <option value="MaiorPreco">Maior preço</option>
+                </select>
+            
+            </div>
+        </section>
+        <section class="container-filtros" id="container-filtros">
+            <div class="cores" id="cores">
+                <fieldset>
+                    <legend>Cores</legend><br>
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Amarelo</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Azul</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Branco</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Cinza</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> Laranja</label><br>
+                    <br>
+                    <a id="mais-cores" href="#">ver todas as cores</a>
+                </fieldset>
+            </div><br>
+            <fieldset>
+                <legend class="tamanhos" id="tamanhos">Tamanhos</legend><br>
+                <div class="groupsize">
+                    <span class="btn" unselectable="on" id="shirt_P" data-value="P" >P</span>
+                    <span class="btn" unselectable="on" id="shirt_M" data-value="M" >M</span>
+                    <span class="btn" unselectable="on" id="shirt_G" data-value="G" >G</span>
+                    <span class="btn" unselectable="on" id="shirt_GG" data-value="GG" >GG</span>
+                    <span class="btn" unselectable="on" id="shirt_U" data-value="XG" >U</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >36</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >38</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >40</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >42</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >44</span>
+                    <span class="btn" unselectable="on" id="shirt_XGG" data-value="XGG" >46</span>
+                </div>
+            
+            </fieldset>
+
+            <div class="faixa-preco" id="faixa-preco">
+                <fieldset>
+                    <legend>Faixa de preço</legend><br>
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$0 até R$51 </label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$51 até R$150</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$151 até R$300</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> de R$301 até R$500</label><br>       
+                    <input type="checkbox" id="cor1" name="cor1" value="cor1"> <label for="cor1"> a partir R$ 01</label><br>
+                    <br>
+                </fieldset>
+            </div>
+
+        </section>
+
+        <section class="container-produtos" id="container-produtos">
+            <ul class="produtos" id="produtos">
+                <li>
+                    <img src="./imagens/img_2.png">
+                    <h5>CAMISETA MESCLA</h5>
+                    <p class="preco" id="preco">R$ 28,00</p>
+                    <p class="parcelamento" id="parcelamento">até 3X de R$9,33</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_3.png">
+                    <h5>SAIA EM COURO</h5>
+                    <p class="preco" id="preco">R$ 398,00</p>
+                    <p class="parcelamento" id="parcelamento">até 5X de R$30,00</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_4.png">
+                    <h5>CARDIGAN TIGRE</h5>
+                    <p class="preco" id="preco">R$ 398,00</p>
+                    <p class="parcelamento" id="parcelamento">até 5X de R$30,00</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_5.png">
+                    <h5>CARDIGAN OFF WHITE</h5>
+                    <p class="preco" id="preco">R$ 99,90</p>
+                    <p class="parcelamento" id="parcelamento">até 3X de R$ 33,30</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_6.png">
+                    <h5>BODY LEOPARDO</h5>
+                    <p class="preco" id="preco">R$ 129,90</p>
+                    <p class="parcelamento" id="parcelamento">até 3X de R$43,33</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_7.png">
+                    <h5>CASACO PELOS</h5>
+                    <p class="preco" id="preco">R$ 398,00</p>
+                    <p class="parcelamento" id="parcelamento">até 5X de R$30,00</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_8.png">
+                    <h5>CROPPED STRIPES</h5>
+                    <p class="preco" id="preco">R$ 120,00</p>
+                    <p class="parcelamento" id="parcelamento">até 3X de R$40,00</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_9.png">
+                    <h5>CAMISA TRANSPARENTE</h5>
+                    <p class="preco" id="preco">R$ 398,00</p>
+                    <p class="parcelamento" id="parcelamento">até 5X de R$30,00</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+                <li>
+                    <img src="./imagens/img_10.png">
+                    <h5>POCHETE CLUTCH</h5>
+                    <p class="preco" id="preco">R$ 99,00</p>
+                    <p class="parcelamento" id="parcelamento">até 3X de R$33,00</p>
+                    <input type="submit" value="COMPRAR" class="comprar">
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="botao">
+                <input type="submit" name="botao" value="CARREGAR MAIS" class="mais-produtos">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="rodape">
+            <p>Agência M3 Agência de Performace Digital</p>
+        </div>
+    </footer>
+</body>
+<script src="./JS/filtroCores.js"></script>
+<script src="./JS/filtroOrdenacao.js"></script>
+<script src="./JS/filtroPreco.js"></script>
+<script src="./JS/filtroTamanhos.js"></script>
+<script src="./JS/maisCores.js"></script>
+<script src="./JS/maisProdutos.js"></script>
+</html>
