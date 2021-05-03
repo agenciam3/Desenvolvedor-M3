@@ -1,0 +1,18 @@
+/*
+    Elementos da página
+*/
+
+
+//checkbox;
+input[type='checkbox']{
+    all: unset;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    &:checked{
+        background-color: #3fbff2;
+        width: 20px;
+        height: 20px;
+    }
+}

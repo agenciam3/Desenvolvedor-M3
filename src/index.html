@@ -23,15 +23,19 @@
         <div class="container">
             <section class="shopping-heading">
                 <label class="title">Blusas</label>
-                <select name="select-ordernation-filter" id="select-ordernation-filter">
-                    <option value="" disabled selected>Ordenar por:</option>
-                    <option value="recent">Mais recenter</option>
-                    <option value="cheap">Menor preço</option>
-                    <option value="expensive">Maior preço</option>
-                </select>
+                <div class="select-ordernation-filter-container">
+                    <select name="select-ordernation-filter" id="select-ordernation-filter">
+                        <option value="" disabled selected>Ordenar por:</option>
+                        <option value="recent">Mais recenter</option>
+                        <option value="cheap">Menor preço</option>
+                        <option value="expensive">Maior preço</option>
+                    </select>
+                </div>
             </section>
             <section class="shopping-filter-menu-container">
-                <div class="colors-filter-container"></div>
+                <div class="colors-filter-container">
+                    <input type="checkbox" value="0">
+                </div>
                 <div class="size-filter-container"></div>
                 <div class="price-range-filter-container"></div>
             </section>
