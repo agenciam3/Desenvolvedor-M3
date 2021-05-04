@@ -10,7 +10,7 @@ span.pricecheck{
     vertical-align: middle;
     display: flex;
     padding: 5px;
-    width: fit-content;
+    width: max-content;
     label{
         width: fit-content;
         line-height: 1;
@@ -20,10 +20,10 @@ span.pricecheck{
     }
     input[type='checkbox']{
         all: unset;
-        border: 1px solid black;
-        width: 14px;
-        height: 14px;
-        display: inline-block;
+        border: 1px solid rgb(141, 141, 141);
+        width: 14px!important;
+        height: 14px!important;
+        display: flex;
         &:checked{
             -webkit-box-shadow: 0 0 0 2.5px rgba(255,255,255,1) inset;
             box-shadow: 0 0 0 2.5px rgba(255,255,255,1) inset;
