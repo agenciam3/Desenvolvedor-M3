@@ -13,7 +13,7 @@
         <div class="container">
             <img class="logo" src="./images/logo-m3.png">
             <div class="shopping-cart-container">
-                <img src="./images/shopping-bag.svg" class="dois">
+                <img src="./images/shopping-bag.svg">
                 <div class="synalyzer-container">
                     <label>5</label>
                 </div>
@@ -28,7 +28,7 @@
                     <select name="select-ordernation-filter" id="select-ordernation-filter">
                         <option value="" disabled selected>Ordenar por:</option>
                         <option value="recent">Mais recenter</option>
-                        <option value="cheap">Menor preço</option>
+                        <option value="cheapest">Menor preço</option>
                         <option value="expensive">Maior preço</option>
                     </select>
                 </div>
@@ -36,13 +36,13 @@
             <div class="horizontal">
                 <section class="shopping-filter-menu-container">
                     <label class="section-title">Cores</label>
-                    <div class="colors-filter-container">
-                        <span class="pricecheck"><input type="checkbox" value="0"><label>Branca</label></span>
-                        <span class="pricecheck"><input type="checkbox" value="0"><label>Preta</label></span>
-                        <span class="pricecheck"><input type="checkbox" value="0"><label>Cinza</label></span>
-                        <span class="pricecheck"><input type="checkbox" value="0"><label>Laranja</label></span>
-                        <span class="pricecheck"><input type="checkbox" value="0"><label>Marrom</label></span>
-                        <span class="pricecheck"><input type="checkbox" value="0"><label>Verde</label></span>
+                    <div class="colors-filter-container" id="colors-filter-container-id">
+                        <span class="colorcheck"><input type="checkbox" value="0"><label>Branca</label></span>
+                        <span class="colorcheck"><input type="checkbox" value="0"><label>Preta</label></span>
+                        <span class="colorcheck"><input type="checkbox" value="0"><label>Cinza</label></span>
+                        <span class="colorcheck"><input type="checkbox" value="0"><label>Laranja</label></span>
+                        <span class="colorcheck"><input type="checkbox" value="0"><label>Marrom</label></span>
+                        <span class="colorcheck"><input type="checkbox" value="0"><label>Verde</label></span>
                         <label class="show-more">Ver todas as cores<img src="./images/arrow-down-sign-to-navigate.svg"></label>
                     </div>
                     <label class="section-title">Tamanhos</label>
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <label class="section-title">Faixa de Preço</label>
-                    <div class="price-range-filter-container">
+                    <div class="price-range-filter-container" id="price-range-filter-container-id">
                         <span class="pricecheck"><input type="checkbox" value="0"><label>de R$10 até R$300</label></span>
                         <span class="pricecheck"><input type="checkbox" value="0"><label>de R$10 até R$300</label></span>
                         <span class="pricecheck"><input type="checkbox" value="0"><label>de R$10 até R$300</label></span>

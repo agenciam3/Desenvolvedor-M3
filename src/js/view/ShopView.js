@@ -22,6 +22,33 @@ function createItemCard(id = '', image = '', name = '', price = 0, division_pric
             </div>`;
 }
 
+function loadColorsOptions(colors = []){
+    let container = document.getElementById('colors-filter-container-id');
+    container.innerHTML = '';
+    console.log(colors);
+    colors.forEach((color) => {
+        container.innerHTML += createColorOption(color);
+    })
+}
+function createColorOption(color = ''){
+    return `<span class="colorcheck"><input type="checkbox" value="${color}"><label>${color}</label></span>`
+}
+
+function loadPriceRangeOptions(prices = []){
+    console.log(prices);
+    let container = document.getElementById('price-range-filter-container-id');
+    container.innerHTML = '';
+    let diff = prices[1] - prices[0];
+    let percentage = diff * 0.33;
+    container.innerHTML += createPriceRangeOption(0, percentage);
+    for(let i = 0; i < 3; i++){
+        container.innerHTML += createPriceRangeOption(percentage * i, percentage * (i+1));
+    }
+}
+function createPriceRangeOption(minimum, maximum){
+    return `<span class="pricecheck"><input type="checkbox" name="pricerangebox" value="${[minimum, maximum]}"><label>entre R$${minimum.toFixed(2)} e R$${maximum.toFixed(2)}</label></span>`;
+}
+
 export default function ShopView(){
     return {
         loadMore: () => {
@@ -35,9 +62,26 @@ export default function ShopView(){
         },
         
         init: () => {
+            return new Promise((resolve, reject) => {
+                ProductService().load().then((list) => {
+                    loadItens(list.data);
+                    resolve(list);
+                })
+            });
+            
+        },
+
+        setFilter: (filters) => {
+            ProductService().setFilters(filters);
             ProductService().load().then((list) => {
                 loadItens(list.data);
             })
+        },
+        loadPricesOnView(prices_range = []){
+            loadPriceRangeOptions(prices_range);
+        },
+        loadColorsOnView(unique_colors = []){
+            loadColorsOptions(unique_colors);
         }
 
     }

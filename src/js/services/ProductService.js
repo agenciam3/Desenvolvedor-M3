@@ -29,6 +29,9 @@ export default function ProductService(){
         },
         hasMorePages: () => {
             return PRODUCTS_ELEMENTS.pagination.hasMorePages;
+        },
+        setFilters: (filters) => {
+            PAGE_FILTERS = filters;
         }
     }
 }

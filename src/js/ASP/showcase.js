@@ -17,7 +17,7 @@
  */
 var PRODUCTS_DATA = [];
 var LAST_FILTER = {};
-VAR LAST_FILTERED = [];
+var LAST_FILTERED = [];
 
 function generateID(){
   var dt = new Date().getTime();
@@ -85,9 +85,7 @@ function fillData(products = { products:[{image:null,color: [],price: [],name: n
 }
 
 function applyFilters(filters = {colors_name:[], sizes:[], price_range:[], orderBy:'cheapest'}){
-  if(LAST_FILTER == filters){
-    return LAST_FILTERED;
-  }
+  
   let filtered = [];
   
   //colors_filter;
@@ -106,9 +104,7 @@ function applyFilters(filters = {colors_name:[], sizes:[], price_range:[], order
   } else {
     filtered = PRODUCTS_DATA;
   }
-
   
-
   //sizes_filter;
   if(filters.sizes.length > 0){
     let sizes_filtered = []
@@ -202,6 +198,38 @@ function applyPagination(start = 0, range = 10, list = []){
   return null;
 }
 
+function extractExtraInfo(){
+  let extra = {
+    cheapest_price:1000,
+    expensive_price: 0,
+    unique_colors: [],
+    unique_sizes: []
+  }
+  PRODUCTS_DATA.forEach((product) => {
+    if(product.price > extra.expensive_price) 
+    extra.expensive_price = product.price;
+    if(product.price < extra.cheapest_price) 
+    extra.cheapest_price = product.price;
+    
+    product.color.map((color) => {
+      if(!extra.unique_colors.includes(color)){
+        extra.unique_colors.push(color);
+      }
+    })
+
+    product.sizes.map((size) => {
+      if(!extra.unique_sizes.includes(size)){
+        extra.unique_sizes.push(size);
+      }
+    })
+
+    extra.unique_colors.sort();
+    extra.unique_sizes.sort();
+
+  });
+  return extra;
+}
+
 export default function showcase(
   start_range, 
   end_range, 
@@ -219,8 +247,11 @@ export default function showcase(
         var JSONObject = JSON.parse(request.responseText);
         fillData(JSONObject);
         let filtered = applyFilters(filters);
-
-        resolve(applyPagination(start_range, end_range, filtered));
+        let paginated = applyPagination(start_range, end_range, filtered);
+        let extra = extractExtraInfo();
+        console.log(extra);
+        paginated.extra = extra;
+        resolve(paginated);
       } catch (err){
         console.log('Erro ao ler o arquivo JSON! Segue o erro abaixo:', err);
         reject(err);
