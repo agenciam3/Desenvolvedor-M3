@@ -9,14 +9,15 @@ span.pricecheck{
     align-items: center;
     vertical-align: middle;
     display: flex;
-    padding: 5px;
     width: max-content;
+    cursor: pointer;
     label{
         width: fit-content;
         line-height: 1;
-        margin-left: 5px;
+        margin-left: 8px;
         font-family: sans-serif;
         font-size: 16px;
+        color: rgb(19, 19, 19);
     }
     input[type='checkbox']{
         all: unset;
@@ -44,6 +45,7 @@ div.sizebox{
     align-content: center;
     vertical-align: middle;
     justify-content: center;
+    cursor: pointer;
     label{
         margin: auto;
         height: fit-content;
@@ -63,4 +65,49 @@ div.sizebox{
             color: rgb(177, 177, 177);
         }
     }
+}
+
+button{
+    display: inline-block;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    float: none;
+    z-index: auto;
+    width: auto;
+    height: auto;
+    position: static;
+    cursor: pointer;
+    opacity: 1;
+    margin: 0;
+    
+    text-transform: uppercase;
+    overflow: visible;
+    border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    
+    color: rgba(255,255,255,0.9);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    &.buy-black{
+        padding: 12px 35px;
+        background: #000000;
+        font-size: 14px;
+        font-weight: 600;
+        font-family: sans-serif;
+    }
+
+    &.show-more-blue{
+        padding: 12px 25px;
+        background: #3fbff2;
+        font-size: 14px;
+        font-weight: 800;
+        font-family: sans-serif;
+    }
+
+
 }
