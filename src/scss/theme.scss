@@ -24,10 +24,20 @@ body{
         height: auto;
         justify-content: center;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         vertical-align: flex-start;
-        
+        .horizontal{
+            display: flex;
+            flex-direction: row;
+            section{
+                display: flex;
+                flex: 0;
+                &:last-child{
+                    flex: 1;
+                }
+            }
+        }
     }
 }
 
