@@ -1,0 +1,60 @@
+{
+    "products":[
+        {
+            "image":"./images/img_2.png",
+            "color": ["off-white", "cinza"],
+            "price": [10, 69.90],
+            "name": "Blusa Off White"
+        },
+        {
+            "image":"./images/img_3.png",
+            "color": ["marrom", "vermelho"],
+            "price": [60, 99.99],
+            "name": "Blusa manga longa listrada"
+        },
+        {
+            "image":"./images/img_4.png",
+            "color": ["marrom", "vermelho"],
+            "price": [120, 250],
+            "name": "Blusa Onça marrom"
+        },
+        {
+            "image":"./images/img_5.png",
+            "color": ["branca"],
+            "price": [10, 60],
+            "name": "Blusa branca"
+        },
+        {
+            "image":"./images/img_6.png",
+            "color": ["marrom"],
+            "price": [100, 200],
+            "name": "Body leopardo"
+        },
+        {
+            "image":"./images/img_7.png",
+            "color": ["rosa"],
+            "price": [100, 200],
+            "name": "Casaco Pelos"
+        },
+        {
+            "image":"./images/img_8.png",
+            "color": ["azul", "laranja", "amarelo", "ciano"],
+            "price": [100, 200],
+            "name": "Cropped Stripes"
+        },
+        {
+            "image":"./images/img_9.png",
+            "color": ["preto"],
+            "price": [100, 200],
+            "name": "Camisa transparente"
+        },
+        {
+            "image":"./images/img_10.png",
+            "color": ["preto"],
+            "price": [100, 200],
+            "name": "Pochete Clutch"
+        }
+    ]
+        
+    
+}
