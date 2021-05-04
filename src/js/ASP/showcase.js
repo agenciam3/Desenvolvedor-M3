@@ -56,6 +56,7 @@ function randomSize(){
   }
   return sizes;
 }
+
 /**
  * Preenche o PRODUCTS_DATA com 100 produtos;
  * @param {*} products 
@@ -133,7 +134,6 @@ function applyFilters(filters = {colors_name:[], sizes:[], price_range:[]}){
     filtered = prices_filtered;
   }
 
-  console.log(filtered);
   return filtered;
 }
 
@@ -143,7 +143,15 @@ function applyPagination(start = 0, range = 10, list = []){
   (final_end > list.length) ? final_end = list.length : final_end;
 
   if(list.length >= start && final_end <= list.length){
-    return list.slice(start, final_end);
+    return {
+      data: list.slice(start, final_end), 
+      pagination:{
+        total_without_filters: PRODUCTS_DATA.length,
+        total_filtered: list.length,
+        range_start: start,
+        final_range: final_end
+      }
+    };
   }
   return null;
 }
