@@ -1,10 +1,3 @@
-/*
-    320px — 480px: Mobile devices
-    481px — 768px: iPads, Tablets
-    769px — 1024px: Small screens, laptops
-    1025px — 1200px: Desktops, large screens
-    1201px and more —  Extra large screens, TV
-*/
 *{
     box-sizing: border-box;
 }
@@ -49,8 +42,8 @@ body{
 .container{
     transition: width .245s ease-in-out;
     @media screen and (max-width: 899px) {
-        width: 80vw!important;
-        max-width: 80vw!important;
+        width: 90vw!important;
+        max-width: 90vw!important;
     }
 
     @media screen and (min-width: 900px) {
@@ -70,8 +63,7 @@ body{
 }
 
 
-
-@import "header.scss";
-@import "footer.scss";
-@import "elements.scss";
 @import "main.scss";
+@import "header.scss";
+@import "elements.scss";
+@import "footer.scss";

@@ -50,6 +50,7 @@ div.sizebox{
         margin: auto;
         height: fit-content;
         font-family: sans-serif;
+        cursor: pointer;
     }
 
     &.enabled{
@@ -65,6 +66,52 @@ div.sizebox{
             color: rgb(177, 177, 177);
         }
     }
+}
+
+.showcase-item{
+    display: flex;
+    flex-direction: column;
+    
+    width: 210px;
+    height: 400px;
+    //background-color: royalblue;
+    display: flex;
+    flex-direction: column;
+    vertical-align: middle;
+    
+    img{
+        height: 300px;
+        width: 100%;
+        object-fit: contain;
+        margin-bottom: 5px;
+    }
+
+    label{
+        margin-bottom: 5px;
+        text-align: center;
+
+        &:nth-of-type(1){
+            text-transform: uppercase;
+            font-size: 14px;
+            color: rgb(19, 19, 19);
+            margin-bottom: 10px;
+        }
+
+        &:nth-of-type(2){
+            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: bolder;
+            color: black;
+        }
+
+        &:nth-of-type(3){
+            text-transform: lowercase;
+            font-size: 14px;
+            color: rgb(141, 141, 141);
+            margin-bottom: 10px;
+        }
+    }
+
 }
 
 button{
@@ -107,6 +154,7 @@ button{
         font-size: 14px;
         font-weight: 800;
         font-family: sans-serif;
+        width: max-content;
     }
 
 

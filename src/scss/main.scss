@@ -16,14 +16,22 @@ main{
         justify-content: space-between;
         padding-top: 25px;
         padding-bottom: 25px;
+        @media screen and (max-width: 899px) {
+            justify-content: center;
+            align-content: center;
+            vertical-align: middle;
+            
+        }
         label.title{
             font-size: 40px;
             font-weight: 200;
         }
     
-        
         .select-ordernation-filter-container{
             overflow:hidden;
+            @media screen and (max-width: 899px) {
+                display: none!important;
+            }
             select {      
                 margin-top: 5px;
                 width: 150px;
@@ -36,6 +44,7 @@ main{
                 option{
                     height: 65px;
                 }
+
                 option:hover{
                     background-color: black!important;
                     box-shadow: 0 0 10px 100px #000 inset;
@@ -48,19 +57,45 @@ main{
         display: flex;
         flex-direction: column;
         width: 280px;
-        padding-right: 25px;
+        padding-right: 6%;
+
+        @media screen and (max-width: 899px) {
+            display: none!important;
+        }
 
         .colors-filter-container{
             display: flex;
             flex-direction: column;
+
             span{
                 margin-bottom: 10px;
+            }
+
+            label.show-more{
+                display: flex;
+                justify-content: flex-start;
+                vertical-align: middle;
+                line-height: 1;
+                width: max-content;
+                padding-right: 1px;
+                border-bottom: 1px solid #666666;
+                color: #666666;
+                font-size: 14px;
+                font-family: sans-serif;
+                img{
+                    margin-left: 8px;
+                    margin-top: 2px;
+                    fill: #666666;
+
+                    height: 10px;
+                }
             }
         }
 
         .price-range-filter-container{
             display: flex;
             flex-direction: column;
+
             span{
                 margin-bottom: 10px;
             }
@@ -70,8 +105,8 @@ main{
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
+
             .sizebox{
-                
                 margin-right: 8px!important;
                 margin-bottom: 8px!important;
             }
@@ -80,8 +115,49 @@ main{
 
     .shopping-showcase-container{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-direction: column;
+        .itens{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            @media screen and (max-width: 899px) {
+                justify-content: space-between;
+            }
+            align-content: stretch;
+            div{
+                display: flex;
+                
+                margin-bottom: 65px;
+                @media screen and (max-width: 899px) {
+                    margin-right: 3%;
+                }
+            
+                @media screen and (min-width: 900px) {
+                    margin-right: 9%;
+                    margin-left: 9%;
+                }
+            
+                @media screen and (min-width: 1200px) {
+                    margin-right: 3.2%;
+                    margin-left: 6%;
+                }
+            
+                @media screen and (min-width: 1500px) {
+                    margin-right: 0%;
+                    margin-left: 6%;
+                }
+            }
+        }
+
+        .shopping-showcase-load-more-container{
+            width: 100%;
+            display: flex;
+            align-content: center;
+            vertical-align: middle;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
     }
+   
     
 }
