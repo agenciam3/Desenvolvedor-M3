@@ -5,9 +5,14 @@
     1025px — 1200px: Desktops, large screens
     1201px and more —  Extra large screens, TV
 */
+*{
+    box-sizing: border-box;
+}
 body{
     margin: 0;
-
+    min-height: 120vh!important;
+    max-width: 100vw!important;
+    overflow-x: hidden;
     header{
         width: 100%;
         height: 80px;
