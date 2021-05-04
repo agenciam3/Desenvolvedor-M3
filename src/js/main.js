@@ -1,8 +1,23 @@
-'use strict';
-import showcase from "./ASP/showcase.js";
+import ShopView from "./view/ShopView.js";
 
-showcase(0, 900, {colors_name:[], sizes:[], price_range:[50, 100]} ).then((result)=>{
-    console.log(result);
-}, (error) => {
-    console.log(error);
-})
+function start(){
+    ShopView().init();
+}
+
+function addToCart(id){
+    
+}
+
+start();
+
+document.body.addEventListener('click', function (evt) {
+    if (evt.target.className === 'show-more-blue') {
+        ShopView().loadMore();
+    }
+
+    if (evt.target.className === 'buy-black') {
+        console.log("ADICIONAR:", evt.target.dataset.product, "AO CARRINHO")
+    }
+
+
+}, false);

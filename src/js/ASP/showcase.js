@@ -16,6 +16,8 @@
  *  - Retornar o objeto resultante; 
  */
 var PRODUCTS_DATA = [];
+var LAST_FILTER = {};
+VAR LAST_FILTERED = [];
 
 function generateID(){
   var dt = new Date().getTime();
@@ -64,7 +66,7 @@ function randomSize(){
 function fillData(products = { products:[{image:null,color: [],price: [],name: null}] }){
 
   if(!PRODUCTS_DATA.length){
-    while(PRODUCTS_DATA.length < 100){
+    while(PRODUCTS_DATA.length < 50){
       let base_product = products.products[Math.floor(Math.random() * products.products.length)];
       let new_price = randomPrice(base_product.price[0], base_product.price[1]);
       let new_product = {
@@ -74,14 +76,18 @@ function fillData(products = { products:[{image:null,color: [],price: [],name: n
         name: base_product.name,
         color: base_product.color,
         sizes: randomSize(),
-        division_price:divideUpTo3x(new_price)
+        division_price:divideUpTo3x(new_price),
+        creation_date: new Date()
       }
       PRODUCTS_DATA.push(new_product);
     }
   }
 }
 
-function applyFilters(filters = {colors_name:[], sizes:[], price_range:[]}){
+function applyFilters(filters = {colors_name:[], sizes:[], price_range:[], orderBy:'cheapest'}){
+  if(LAST_FILTER == filters){
+    return LAST_FILTERED;
+  }
   let filtered = [];
   
   //colors_filter;
@@ -134,22 +140,62 @@ function applyFilters(filters = {colors_name:[], sizes:[], price_range:[]}){
     filtered = prices_filtered;
   }
 
+  //orderBy_filter;
+  filtered.sort((a,b) => {
+
+    if(filters.orderBy == 'cheapest'){
+      if(a.price > b.price){
+        return 1;
+      }
+      return -1;
+    }
+
+    if(filters.orderBy == 'expensive'){
+      if(a.price < b.price){
+        return 1;
+      }
+      return -1;
+    }
+
+     //date_comparison;
+    if(filters.orderBy == 'recent'){
+      if(a.creation_date < b.creation_date){
+        return 1;
+      }
+      return -1;
+    }
+
+
+      
+  });
+
+  LAST_FILTER = filters;
+  LAST_FILTERED = filtered;
+
   return filtered;
 }
 
 function applyPagination(start = 0, range = 10, list = []){
+  
   let final_end = start + range;
+  let hasMorePages = true;
+  
+  if(final_end >= list.length){
+    hasMorePages = false;
+    final_end = list.length;
+  }
 
-  (final_end > list.length) ? final_end = list.length : final_end;
-
+  
   if(list.length >= start && final_end <= list.length){
+    
     return {
       data: list.slice(start, final_end), 
       pagination:{
         total_without_filters: PRODUCTS_DATA.length,
         total_filtered: list.length,
         range_start: start,
-        final_range: final_end
+        final_range: final_end,
+        hasMorePages: hasMorePages
       }
     };
   }
@@ -157,8 +203,8 @@ function applyPagination(start = 0, range = 10, list = []){
 }
 
 export default function showcase(
-  start_range = 0, 
-  end_range = 10, 
+  start_range, 
+  end_range, 
   filters = {
     colors_name:[],
     sizes:[],
