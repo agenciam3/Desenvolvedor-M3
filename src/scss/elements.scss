@@ -14,30 +14,39 @@ span.pricecheck, span.colorcheck{
     label{
         width: fit-content;
         line-height: 1;
-        margin-left: 8px;
+        
         font-family: sans-serif;
         font-size: 16px;
         color: rgb(19, 19, 19);
         cursor: pointer;
+        justify-content: flex-start;
+        align-items: center;
+        vertical-align: middle;
+        display: flex;
+        width: max-content;
+        cursor: pointer;
         &::first-letter{
             text-transform: uppercase;
         }
-    }
-    input[type='checkbox']{
-        all: unset;
-        border: 1px solid rgb(141, 141, 141);
-        width: 14px!important;
-        height: 14px!important;
-        display: flex;
-        cursor: pointer;
-        &:checked{
-            -webkit-box-shadow: 0 0 0 2.5px rgba(255,255,255,1) inset;
-            box-shadow: 0 0 0 2.5px rgba(255,255,255,1) inset;
-            background-color: #3fbff2;
-            width: 14px;
-            height: 14px;
+
+        input[type='checkbox']{
+            all: unset;
+            border: 1px solid rgb(141, 141, 141);
+            width: 14px!important;
+            height: 14px!important;
+            display: flex;
+            cursor: pointer;
+            margin-right: 8px;
+            &:checked{
+                -webkit-box-shadow: 0 0 0 2.5px rgba(255,255,255,1) inset;
+                box-shadow: 0 0 0 2.5px rgba(255,255,255,1) inset;
+                background-color: #3fbff2;
+                width: 14px;
+                height: 14px;
+            }
         }
     }
+    
 }
 
 
