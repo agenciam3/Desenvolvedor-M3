@@ -236,7 +236,8 @@ export default function showcase(
   filters = {
     colors_name:[],
     sizes:[],
-    price_range:[]
+    price_range:[],
+    orderBy:'recent'
   }
   ) {
     return new Promise((resolve, reject) => {
