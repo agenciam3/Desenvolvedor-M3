@@ -15,6 +15,8 @@ var filters = {
     last_page_end: 0
 }
 
+var data = [];
+
 var __first_init = true;
 
 function createPriceCBXs(){
@@ -46,6 +48,12 @@ function createSizeCBXs(){
     });
 }
 
+function loadShopItens(){
+    ProductsView().create('ShopCardItensContainer', data.data, ()=>{
+
+    })
+}
+
 
 
 function show(){
@@ -53,12 +61,14 @@ function show(){
         filters.price_range_available = [result.extra.cheapest_price, result.extra.expensive_price];
         filters.colors_available = result.extra.unique_colors;
         filters.size_available = result.extra.unique_sizes;
+        data = result;
         createColorCBXs();
         if(__first_init){
             createSizeCBXs();
             createPriceCBXs();
             __first_init = false;
         }
+        loadShopItens();
         console.log(result);
     })
 }
