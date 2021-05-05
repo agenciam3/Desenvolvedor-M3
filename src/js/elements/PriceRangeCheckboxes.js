@@ -38,7 +38,15 @@ function click(checkbox, allElements, multiple = false, callback){
     return;
 }
 
-export default function ColorsCheckboxes() {
+function hideOrShow(div_id, css_rule = 'none'){
+    let container = document.getElementById(div_id);
+    console.log('escondeu!', container)
+    if(container){
+        container.style.display = css_rule;
+    }
+}
+
+export default function PriceRangeCheckboxes() {
     return {
         create: (div_id = '', minimum_and_maximum_array, callback) => {
             let container = Generic().exists_id_on_document(div_id);
@@ -46,6 +54,11 @@ export default function ColorsCheckboxes() {
                 container.innerHTML = '';
                 let min = minimum_and_maximum_array[0];
                 let max = minimum_and_maximum_array[1];
+                console.log(min, max);
+                if((min > max) || (min < 10) || (max < 20)){
+                    hideOrShow(div_id);
+                }
+
                 let diff = max-min;
                 let part = (diff / 4);
                 for(let x = 0; x < 4; x++){
@@ -68,6 +81,12 @@ export default function ColorsCheckboxes() {
                 }
                 
             }
+        },
+        hide: (div_id = '') => {
+            hideOrShow(div_id);
+        },
+        show: (div_id = '') => {
+            hideOrShow(div_id, 'block');
         }
     }
 }

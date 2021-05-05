@@ -83,25 +83,25 @@ gulp.task('html', gulp.series(['clean-html'], function() {
         
 }));
 
-// gulp.task('data', gulp.series(['clean-data'], function() {
-//     var filesToMove = [
-//         './src/js/ASP/data/products.json'
-//     ];
-//     return gulp.src(filesToMove, { base: './src' })
-//     .pipe(gulp.dest('dist'));
+gulp.task('data', gulp.series(['clean-data'], function() {
+    var filesToMove = [
+        './src/js/ASP/data/products.json'
+    ];
+    return gulp.src(filesToMove, { base: './src' })
+    .pipe(gulp.dest('dist'));
         
-// }));
+}));
 
 
 
 // START SERVER: gulp
-    gulp.task('default', gulp.series(['js', 'sass', 'images', 'html'], function() {
+    gulp.task('default', gulp.series(['js', 'sass', 'images', 'html', 'data'], function() {
 
     gulp.watch("./src/scss/**/*.scss", gulp.series('sass'));
     gulp.watch("./src/images/**/*", gulp.series('images'));
     gulp.watch("./src/js/**/*.js", gulp.series('js'));
     gulp.watch("./src/**/*.html", gulp.series('html'));
-    //gulp.watch("./src/**/*.json", gulp.series('data'));
+    gulp.watch("./src/**/*.json", gulp.series('data'));
 
     browserSync.init({
         server: {

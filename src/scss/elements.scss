@@ -60,7 +60,7 @@ div.sizebox{
     vertical-align: middle;
     justify-content: center;
     cursor: pointer;
-    label{
+    span{
         margin: auto;
         height: fit-content;
         font-family: sans-serif;
@@ -69,14 +69,14 @@ div.sizebox{
 
     &.enabled{
         border-color: #3fbff2;
-        label{
+        span{
             color: rgb(19, 19, 19);
         }
     }
 
     &.disabled{
         border-color: rgb(177, 177, 177);
-        label{
+        span{
             color: rgb(177, 177, 177);
         }
     }
