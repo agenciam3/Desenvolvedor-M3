@@ -169,6 +169,13 @@ button{
         &:hover{
             background: #303030;
         }
+
+        &.clicked{
+            background-color: rgb(195, 50, 40);
+            &:hover{
+                background-color: rgb(228, 87, 77)!important;
+            }
+        }
     }
 
     &.show-more-blue{

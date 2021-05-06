@@ -43,7 +43,6 @@ export default function ColorsCheckboxes() {
         create: (div_id = '', array_of_string = [], callback) => {
             
             //verificar se existe antes de criar novos para fazer a marcação certa.
-            var elementsCreatedYet = document.getElementsByClassName("color_checkbox");
             if(document.getElementsByClassName("color_checkbox").length > 0){
                 return;
             }
@@ -56,7 +55,9 @@ export default function ColorsCheckboxes() {
                 });
                 var allElements = document.getElementsByClassName("color_checkbox");
                 for(let i=0; i < allElements.length; i++){
+                    console.log(allElements[i])
                     allElements[i].addEventListener("click", function() {
+                        console.log('added');
                         click(allElements[i], allElements, true, callback)
                     });
                 }
