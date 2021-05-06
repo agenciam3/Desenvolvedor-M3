@@ -33,12 +33,7 @@ function createColorCBXs(){
     console.log('called colors')
     ColorsCheckboxes().create('colors-filter-container-id', filters.colors_available, function (value) {
         filters.colors = value;
-        filters.price_range = [];
-        filters.size = [];
-        console.log('ACA!')
         show();
-        createSizeCBXs();
-        createPriceCBXs();
     });
 }
 
@@ -46,10 +41,7 @@ function createSizeCBXs(){
     console.log('called sizes')
     SizesBoxes().create('size-filter-container-id', filters.size_available, function (value) {
         filters.size = value;
-        filters.price_range = [];
-        createPriceCBXs();
         show();
-        
     });
 }
 
@@ -69,16 +61,19 @@ function loadShopItens(){
 
 function show(){
     showcase(filters.last_page_end, 10, { colors_name: filters.colors, sizes: filters.size, price_range: filters.price_range, orderBy: filters.orderBy}).then((result) => {
-        filters.price_range_available = [result.extra.cheapest_price, result.extra.expensive_price];
-        filters.colors_available = result.extra.unique_colors;
-        filters.size_available = result.extra.unique_sizes;
+        
         data = result;
 
         if(__first_init){
             __first_init = false;
+            filters.price_range_available = [result.extra.cheapest_price, result.extra.expensive_price];
+            filters.colors_available = result.extra.unique_colors;
+            filters.size_available = result.extra.unique_sizes;
             ShopCart().create('head-cart-icon-container');
             createColorCBXs();
+            createSizeCBXs();
             createOrdenationCBBX();
+            createPriceCBXs();
             
         }
 
