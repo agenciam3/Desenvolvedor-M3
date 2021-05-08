@@ -1,23 +1,50 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './components/header';
+import ColorFilter from './components/colorFilter';
+import SizeFilter from './components/sizeFilter';
+import PriceFilter from './components/priceFilter';
+import Main from './components/main';
+import Footer from './components/footer';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="divHeader">
+       <Header />
+      </div>
+
+      <div className="row">
+        <div className="column left">
+          <div className="divFilter">
+            <div className="divColorFilter">
+            <ColorFilter />
+            </div>
+
+            <div className="divSizeFilter">
+            <SizeFilter />
+            </div>
+
+            <div className="divPriceFilter">
+            <PriceFilter />
+            </div>
+          </div>
+        </div>
+        
+        <div className="column right">
+          <div className="divMain">
+            <Main />
+          </div>
+        </div>
+        
+      </div>
+
+      <div className="divFooter">
+       <Footer />
+      </div>
+
     </div>
   );
 }
