@@ -1,0 +1,17 @@
+.columns {
+    float: left;
+    width: 33%;
+  }
+  
+  /* Clear floats after the columns */
+  .rows:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  @media screen and (max-width: 600px) {
+    .columns {
+      width: 50%;
+    }
+  }

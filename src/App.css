@@ -27,19 +27,18 @@
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: center;
+  justify-content: right;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .divMain {
-  background-color: #2f3428;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(32, 32, 32);
 }
 
 

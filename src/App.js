@@ -4,8 +4,8 @@ import Header from './components/header';
 import ColorFilter from './components/colorFilter';
 import SizeFilter from './components/sizeFilter';
 import PriceFilter from './components/priceFilter';
-import Main from './components/main';
 import Footer from './components/footer';
+import Clothes from './components/clothes';
 
 
 function App() {
@@ -20,29 +20,29 @@ function App() {
         <div className="column left">
           <div className="divFilter">
             <div className="divColorFilter">
-            <ColorFilter />
+            <ColorFilter/>
             </div>
 
             <div className="divSizeFilter">
-            <SizeFilter />
+            <SizeFilter/>
             </div>
 
             <div className="divPriceFilter">
-            <PriceFilter />
+            <PriceFilter/>
             </div>
           </div>
         </div>
         
         <div className="column right">
           <div className="divMain">
-            <Main />
+            <Clothes/>
           </div>
         </div>
         
       </div>
 
       <div className="divFooter">
-       <Footer />
+       <Footer/>
       </div>
 
     </div>
