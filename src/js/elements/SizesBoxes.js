@@ -1,12 +1,20 @@
 import Generic from '../core/Generic.js';
 
+var __size_choosed;
+
 function getSizeBoxHTML(size){
     return `<div class="sizebox disabled" data-size="${size}">
                 <span>${size}</span>
             </div>`;
 }
 
+function getSizeChoosed(){
+    return __size_choosed;
+}
+
 function click(div, allElements, callback){
+
+    __size_choosed = div.dataset.size;
 
     for(let i = 0; i < allElements.length; i++){
         if(allElements[i] != div){
@@ -53,6 +61,7 @@ export default function SizesBoxes() {
                         click(allElements[i], allElements, callback)
                     });
                 }
+                click(allElements[0], allElements, callback);
                 
             }
         },
@@ -61,6 +70,9 @@ export default function SizesBoxes() {
         },
         show: (div_id = '') => {
             hideOrShow(div_id, 'block');
+        },
+        getSizeChoosed(){
+            return getSizeChoosed();
         }
     }
 }

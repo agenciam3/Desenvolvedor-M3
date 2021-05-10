@@ -40,7 +40,6 @@ function click(checkbox, allElements, multiple = false, callback){
 
 function hideOrShow(div_id, css_rule = 'none'){
     let container = document.getElementById(div_id);
-    console.log('escondeu!', container)
     if(container){
         container.style.display = css_rule;
     }
@@ -73,7 +72,6 @@ export default function PriceRangeCheckboxes() {
 
                 (dv < 1) ? dv = 1 : dv;
 
-                console.log('DIFF -> ', diff, 'DV -> ', dv)
                 let montante = min; 
                 for(let x = 0; x < dv; x++){
                     let novo_montante = montante + (diff/dv + x);

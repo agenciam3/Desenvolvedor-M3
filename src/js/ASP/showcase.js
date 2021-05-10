@@ -53,7 +53,7 @@ function divideUpTo3x(price){
 function randomSize(){
   let available_sizes = ["P", "M", "G", "GG", "U", "36", "38", "40", "42", "44", "46"];
   let sizes = [];
-  for(let i = 0; i < 3; i++){
+  for(let i = 0; i < 2; i++){
     sizes.push(available_sizes[Math.floor(Math.random() * available_sizes.length)]);
   }
   return sizes;
@@ -66,7 +66,7 @@ function randomSize(){
 function fillData(products = { products:[{image:null,color: [],price: [],name: null}] }){
 
   if(!PRODUCTS_DATA.length){
-    while(PRODUCTS_DATA.length < 50){
+    while(PRODUCTS_DATA.length < 250){
       let base_product = products.products[Math.floor(Math.random() * products.products.length)];
       let new_price = randomPrice(base_product.price[0], base_product.price[1]);
       let new_product = {

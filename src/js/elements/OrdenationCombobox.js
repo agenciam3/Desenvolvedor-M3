@@ -16,7 +16,6 @@ function click(value, callback){
 
 function hideOrShow(div_id, css_rule = 'none'){
     let container = document.getElementById(div_id);
-    console.log('escondeu!', container)
     if(container){
         container.style.display = css_rule;
     }

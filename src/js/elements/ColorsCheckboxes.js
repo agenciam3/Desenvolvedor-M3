@@ -55,9 +55,7 @@ export default function ColorsCheckboxes() {
                 });
                 var allElements = document.getElementsByClassName("color_checkbox");
                 for(let i=0; i < allElements.length; i++){
-                    console.log(allElements[i])
                     allElements[i].addEventListener("click", function() {
-                        console.log('added');
                         click(allElements[i], allElements, true, callback)
                     });
                 }

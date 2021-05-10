@@ -104,8 +104,9 @@ gulp.task('data', gulp.series(['clean-data'], function() {
     gulp.watch("./src/**/*.json", gulp.series('data'));
 
     browserSync.init({
+        notify: false,
         server: {
-            watch: true,
+            watch: false,
             baseDir: "./dist"
         }
     });

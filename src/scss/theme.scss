@@ -7,19 +7,6 @@ body{
     max-width: 100vw!important;
     overflow-x: hidden;
 
-    .shopping-cart{
-        position: fixed;
-        height: 1px;
-        transition: all .245s ease-in-out;
-        right: 0;
-        left: 0;
-        top: 0;
-        width: 100vw!important;
-        background-color: white;
-        z-index: -1;
-        opacity: 0;
-    }
-    
     header{
         width: 100%;
         height: 80px;
@@ -82,3 +69,4 @@ body{
 @import "header.scss";
 @import "elements.scss";
 @import "footer.scss";
+@import "shopcart.scss";

@@ -1,0 +1,165 @@
+.shopping-cart-backdrop{
+    background-color: rgba($color: #2e2e2e, $alpha: .2);
+    backdrop-filter: blur(15px);
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw!important;
+    height: 100vh!important;
+    opacity: 0;
+
+    &.opened{
+        z-index: 10;
+        opacity: 1;
+    }
+
+    &.closed{
+        z-index: -1;
+        opacity: 0;
+    }
+}
+.shopping-cart{
+    position: fixed;
+    height: 50vh;
+    transition: all .245s ease-in-out;
+    width: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    &.opened{
+        z-index: 10;
+        opacity: 1;
+        height: 50vh;
+    }
+
+    &.closed{
+        z-index: -1;
+        opacity: 0;
+    }
+    
+   
+    .container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: white;
+
+        .info-container{
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            vertical-align: baseline;
+            background-color: white;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            .heading{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                
+                label{
+                    font-weight: bold;
+                    font-size: 18px;
+                }
+                img{
+                    object-fit: contain;
+                    width: 14px;
+                    cursor: pointer;
+                    margin-right: 13px;
+                }
+            }
+
+            .itens-list{
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
+                flex-direction: column;
+                vertical-align: top;
+                flex: 1;
+                height: 100%;
+                width: 100%;
+                padding: 10px;
+                overflow-y: scroll;
+
+
+                .shop-cart-item{
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1 px solid black;
+
+                    img{
+                        object-fit: contain;
+                        &:nth-child(1){
+                            margin-right: 15px;
+                            max-width: 60px;
+                            flex: 1;
+                        }
+                        &.close-btn{
+                            height: 14px;
+                            width: 14px;
+                        }
+                    }
+                    .subdivision{
+                        display: flex;
+                        width: 80%;
+                        flex-direction: column;
+                        label{
+                            &:nth-child(1){
+                                font-weight: bold;
+                                font-size: 18px;
+                                flex-wrap: wrap;
+                            }
+
+                            &:nth-child(2){
+                                font-weight: 500;
+                                color: rgb(80, 80, 80);
+                            }
+                            &:nth-child(3){
+                                font-weight: 200;
+                                font-size: 14px;
+                                color: rgb(90, 90, 90);
+                            }
+                        }
+                    }
+                }
+            }
+            .info{
+                display: flex;
+                flex-direction: column;
+                height: max-content;
+                background-color: white;
+                flex-direction: column;
+                justify-content: flex-end;
+                align-items: center;
+                label{
+                    font-size: 25px;
+                    font-weight: 600;
+                    margin-bottom: 15px;
+                    text-align: center;
+                }
+            }
+            
+
+        }
+    }
+    
+    
+}
