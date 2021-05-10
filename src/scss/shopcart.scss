@@ -75,6 +75,7 @@
                 label{
                     font-weight: bold;
                     font-size: 18px;
+                    font-family: "Open Sans", sans-serif;
                 }
                 img{
                     object-fit: contain;
@@ -122,10 +123,12 @@
                         width: 80%;
                         flex-direction: column;
                         label{
+                            font-family: "Open Sans", sans-serif;
                             &:nth-child(1){
                                 font-weight: bold;
                                 font-size: 18px;
                                 flex-wrap: wrap;
+                                height: 35px;
                             }
 
                             &:nth-child(2){
@@ -151,6 +154,7 @@
                 align-items: center;
                 label{
                     font-size: 25px;
+                    font-family: "Open Sans", sans-serif;
                     font-weight: 600;
                     margin-bottom: 15px;
                     text-align: center;

@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 *{
     box-sizing: border-box;
+    label{
+        font-family: "Open Sans", sans-serif;
+    }
 }
 body{
     margin: 0;

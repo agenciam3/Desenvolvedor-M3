@@ -64,10 +64,6 @@ function createCart(){
                     <div class="itens-list">
                     </div>
                     <div class="info">
-                        <div class="total-container">
-                        <label>Total</label>
-                        <label>R$1560</label>
-                        </div>
                         <button class="show-more-blue">Finalizar Compra</button>
                     </div>
                 </div>

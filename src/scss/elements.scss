@@ -87,10 +87,11 @@ div.sizebox{
     flex-direction: column;
     
     width: 210px;
-    height: 400px;
+    height: 380px;
     display: flex;
     flex-direction: column;
     vertical-align: middle;
+    justify-content: space-between;
 
     -webkit-transition: opacity .5s ease-in-out;
     -moz-transition: opacity .5s ease-in-out;
@@ -99,7 +100,7 @@ div.sizebox{
     transition: opacity .5s ease-in-out;
         
     img{
-        height: 300px;
+        height: 250px;
         width: 100%;
         object-fit: contain;
         margin-bottom: 5px;
@@ -108,18 +109,30 @@ div.sizebox{
     label{
         margin-bottom: 5px;
         text-align: center;
-
+        font-family: "Open Sans", sans-serif;
         &:nth-of-type(1){
             text-transform: uppercase;
             font-size: 14px;
             color: rgb(19, 19, 19);
-            margin-bottom: 10px;
+            margin-top: 2px;
+            vertical-align: middle;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
         }
 
         &:nth-of-type(2){
             text-transform: uppercase;
-            font-size: 18px;
-            font-weight: bolder;
+            font-family: sans-serif;
+            font-style: normal;
+            font-size: 16px;
+            font-weight: 800;
             color: black;
         }
 
