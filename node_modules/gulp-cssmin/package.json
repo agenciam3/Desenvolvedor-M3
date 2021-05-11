@@ -1,0 +1,35 @@
+{
+  "name": "gulp-cssmin",
+  "version": "0.2.0",
+  "description": "minify css using gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "gulpjs",
+    "gulpplugin",
+    "min",
+    "css"
+  ],
+  "dependencies": {
+    "gulp-util": "~2.2.0",
+    "graceful-fs": "~4.1.4",
+    "filesize": "~2.0.0",
+    "temp-write": "~0.1.0",
+    "map-stream": "0.0.4",
+    "clean-css": "^3.1.9",
+    "gulp-rename": "~1.1.0"
+  },
+  "author": "chilijung",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "~1.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chilijung/gulp-cssmin"
+  },
+  "homepage": "https://github.com/chilijung/gulp-cssmin/",
+  "bugs": "https://github.com/chilijung/gulp-cssmin/issues/"
+}

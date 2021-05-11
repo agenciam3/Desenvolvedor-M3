@@ -1,64 +1,32 @@
-# Venha ser um desenvolvedor da Digital M3
+# Vaga de desenvolvedor front-end (Projeto Digital M3)!
 
-Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
+Ola, me chamo Tiago Corrêa e este é o projeto para avaliação concluído conforme solicitado. Utilizei uma ferramenta de automatização para minificação e transpilação dos arquivos fonte, o gulp. Para o Javascript busquei utilizar os recursos do ES6 sempre que achei viável. Não utilizei nenhuma biblioteca externa para tratamento dos elementos no DOM, e utilizei SCSS para estilização.
 
-Em Nova Friburgo estamos na: 
-> R. Helena Coutinho, 41 
-> Braunes, Nova Friburgo/RJ
-[https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
+## Instalação do projeto
+### Gulp
 
-Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos em HTML, CSS e JS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+Para inicialização do projeto, é necessário ter o GULP instalado, em sua versão 4.0.2 ou superior.
+Utilize os comandos abaixo para instalar as extensões necessárias:
 
-## O que procuramos
+>npm install node-sass
 
-### Requisitos Obrigatórios
+Se ao instalar o `node-saas` ocorrer algum erro durante a instalação, instale a versão 15 do NodeJS, e execute o seguinte comando:
 
-- Html5, css3;
-- Javascript, jquery;
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
+>npm install -g mirror-config-china --registry=http://registry.npm.taobao.org
 
-### Desejáveis:
+Esse plugin ainda não foi atualizado para versão atual, e estranhamente é necessário fazer o download de uma versão chinesa para utilização. Todavia, deixarei a pasta `/dist` incluída no projeto para caso haja algum impecílio na troca de versão do node do avaliador desse projeto.
 
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- React
+Os demais plugins não possuem observações, basta executar o comando:
+
+> npm install gulp-sass gulp-clean gulp-rename gulp-replace gulp-concat gulp-minify gulp-cssmin gulp-imagemin browser-sync
+
+### Execução:
+
+- Se estiver com o gulp instalado, basta entrar na pasta do projeto pelo terminal e executar o comando `gulp`.
+- Se optar pela execução direta, acesse a pasta `/dist` e execute o arquivo `index.html`
 
 ----
 
-## Como se candidatar a vaga
+## Contato
 
-- [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
-
-
-**obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
-
-### Instruções para o teste
-
-O layout se encontra na pasta "layout" em PSD e PNG.
-
-### Obrigatório
-
-- HTML5 e CSS3
-- Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
-- Interação com JSON para filtar os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
-
-#### Bônus
-
-- Javascript sem plugins e modular
-- Grunt, Gulp ou similar
-
-##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+Para contato, envie um e-mail para [tiagobc@live.com](mailto:tiagobc@live.com), você também pode enviar uma mensagem no [Whatsapp](https://wa.me/+5522997035254), ou se preferir, entre em contato através [deste número de telefone](tel:+5522997035254)

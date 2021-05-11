@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3 - Performance Digital</title>
+    <link rel="stylesheet" href="./css/theme.min.css">
+</head>
+<body>
+    <header>
+        <div class="container" id="header-container-id">
+            <img class="logo" src="./images/logo-m3.png">
+            <div id="head-cart-icon-container"></div>
+        </div>
+    </header>
+    <main>
+        
+        <div class="container">
+            <section class="shopping-heading">
+                <label class="title">Blusas</label>
+                <div class="select-ordernation-filter-container closed">
+                    <div class="filters-head">
+                        <label>Ordenar</label>
+                        <img class="img-cancel filterOpenOrClose" data-menuclass="ordernation" src="./images/cancel.svg">
+                    </div>
+                    <div class="content" id="select-ordernation-filter-container-id">
+
+                    </div>
+                </div>
+            </section>
+            <section class="shopping-mobile-heading-buttons-container">
+                <button class="main-filter filterOpenOrClose" data-menuclass="filters">Filtrar</button>
+                <button class="main-filter filterOpenOrClose" data-menuclass="ordernation">Ordenar</button>
+            </section>
+            <div class="horizontal">
+                <section class="shopping-filter-menu-container closed">
+
+                    <div class="filters-head">
+                        <label>Filtrar</label>
+                        <img class="img-cancel filterOpenOrClose" data-menuclass="filters" src="./images/cancel.svg">
+                    </div>
+
+                    <div class="filter-heading closed" data-headingof="colors-filter-container-id">
+                        <label class="section-title">Cores</label>
+                        <img class="img-plus" src="./images/plus.svg">
+                        <img class="img-remove" src="./images/remove.svg">
+                    </div>
+                    
+                    <div class="colors-filter-container" id="colors-filter-container-id">
+                        <label class="show-more">Ver todas as cores<img src="./images/arrow-down-sign-to-navigate.svg"></label>
+                    </div>
+                    
+
+
+                    <div class="filter-heading closed" data-headingof="size-filter-container-id">
+                        <label class="section-title">Tamanhos</label>
+                        <img class="img-plus" src="./images/plus.svg">
+                        <img class="img-remove" src="./images/remove.svg">
+                    </div>
+                    <div class="size-filter-container" id="size-filter-container-id">
+                    </div>
+                    <div class="filter-heading closed" data-headingof="price-range-filter-container-id">
+                        <label class="section-title">Faixa de Preço</label>
+                        <img class="img-plus" src="./images/plus.svg">
+                        <img class="img-remove" src="./images/remove.svg">
+                    </div>
+                    <div class="price-range-filter-container" id="price-range-filter-container-id">
+                    </div>
+                </section>
+                <section class="shopping-showcase-container">
+                    <div class="itens showing" id="ShopCardItensContainer">
+                        <!--cards de compra serão inseridos aqui-->                        
+                    </div>
+                </section>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <label>Agência M3 - Agência de Performance Digital</label>
+    </footer>
+    
+</body>
+
+<script type="module" src="./js/core.js"></script>
+</html>

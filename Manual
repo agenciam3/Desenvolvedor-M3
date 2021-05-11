@@ -1,0 +1,10 @@
+npm install -global gulp-cli
+npm install gulp --save-dev
+
+npm install node-sass
+mas se der problema: baixa a versão do node para o 15 e executa:
+npm install -g mirror-config-china --registry=http://registry.npm.taobao.org
+e depois é só repetir o install node-sass.
+
+Instalar as dependências usadas no gulpfile.
+sudo npm install gulp-sass gulp-clean gulp-rename gulp-replace gulp-concat gulp-minify gulp-cssmin gulp-imagemin browser-sync

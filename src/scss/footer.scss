@@ -1,0 +1,17 @@
+footer{
+    width: 100%;
+    padding: 15px;
+    background-color: black;
+    display: flex;
+    margin: 0;
+    bottom: 0;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    
+    label{
+        color: white;
+        line-height: 1;
+    }
+}
