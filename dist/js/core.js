@@ -6,6 +6,7 @@ import ProductsView from './elements/ProductsView.js';
 import showcase from './ASP/showcase.js';
 import OrdenationCombobox from './elements/OrdenationCombobox.js';
 import ShopCart from './elements/ShopCart.js';
+import Generic from './core/Generic.js';
 
 var filters = {
     colors:[],
@@ -23,12 +24,115 @@ var data = [];
 
 var __first_init = true;
 
-function createOrdenationCBBX(){
+var __mobile_mode = false;
+
+function windowResizeEvent(w){
+     //alterna o JS para o modo mobile;
+     if(window.innerWidth < 900){
+        __mobile_mode = true;
+    } else {
+        __mobile_mode = false;
+    }
+
+    createOrdenationCBBX();
+}
+
+windowResizeEvent();
+window.addEventListener('resize', windowResizeEvent);
+
+
+/**
+ * Funções para tratamento da interface no modo MOBILE;
+ */
+
+var __last_DOM_filterMenu;
+function openOrCloseFilterMenu(filtersMenu){
+    if(!filtersMenu){
+        filtersMenu = __last_DOM_filterMenu;
+    }
+    if(__mobile_mode){
+        
+        let ShopCardItensContainer = document.getElementById('ShopCardItensContainer');
+        console.log(filtersMenu.style.display);
+        if(filtersMenu.classList.contains('open')){
+            filtersMenu.classList.remove('open');
+            filtersMenu.classList.add('closed');
+            
+            ShopCardItensContainer.classList.remove('hide')
+            ShopCardItensContainer.classList.add('showing')
+        } else {
+            filtersMenu.classList.remove('closed');
+            filtersMenu.classList.add('open');
+            ShopCardItensContainer.classList.remove('showing')
+            ShopCardItensContainer.classList.add('hide')
+        }
+        if(filtersMenu){
+            __last_DOM_filterMenu = filtersMenu;
+        }
+    }
     
+}
+
+document.addEventListener("DOMContentLoaded", ()=>{
+
+    //Tratamento dos menu de filtros caso MOBILE
+    const buttons = document.querySelectorAll(".filterOpenOrClose")
+    for (const button of buttons) {
+      button.addEventListener('click', function(event) {
+          let filtersMenu;
+          
+          if(event.target.dataset.menuclass == "filters"){
+              filtersMenu = document.getElementsByClassName('shopping-filter-menu-container')[0];
+          }
+
+          if(event.target.dataset.menuclass == "ordernation"){
+            filtersMenu = document.getElementsByClassName('select-ordernation-filter-container')[0];
+        }
+
+        openOrCloseFilterMenu(filtersMenu);
+      })
+    }
+
+    const filter_headings = document.querySelectorAll(".filter-heading");
+    for(const fh of filter_headings){
+        fh.addEventListener("click", ()=>{
+            let content = document.getElementById(fh.dataset.headingof);
+            
+            if(content){
+                
+                if(fh.classList.contains('closed')){
+                    content.style.height = 'max-content';
+                    fh.classList.add('open');
+                    fh.classList.remove('closed');
+                } else {
+                    content.style.height = '0px';
+                    fh.classList.add('closed');
+                    fh.classList.remove('open');
+                }
+            }
+        })
+    }
+})
+
+
+/**
+ * Filtros e tratamento dos dados;
+ */
+function createOrdenationCBBX(){
+
+    let type;
+    (__mobile_mode) ? type = 'list' : type = 'combobox';
+
+    console.log(__mobile_mode);
+
     OrdenationCombobox().create('select-ordernation-filter-container-id', (value) => {
         filters.orderBy = value;
-        show();
-    })
+        if(__mobile_mode){
+            openOrCloseFilterMenu();
+        }
+        show(true);
+
+    }, type);
 }
 
 function createColorCBXs(){
@@ -36,7 +140,7 @@ function createColorCBXs(){
     ColorsCheckboxes().create('colors-filter-container-id', filters.colors_available, function (value) {
         filters.last_page_end = 0;
         filters.colors = value;
-        show();
+        show(true);
     });
 }
 
@@ -46,7 +150,7 @@ function createSizeCBXs(){
         filters.last_page_end = 0;
         filters.size = value;
         
-        show();
+        show(true);
     });
 }
 
@@ -55,7 +159,7 @@ function createPriceCBXs(){
     PriceRangeCheckboxes().create('price-range-filter-container-id', [filters.price_range_available[0], filters.price_range_available[1]], data.length, function (value) {
         filters.last_page_end = 0;
         filters.price_range = value;
-        show();
+        show(true);
     });
 }
 
@@ -92,7 +196,8 @@ function showMore(){
         }
     });
 }
-function show(){
+
+function show(escapeFinalRange = false){
     showcase(filters.last_page_end, 10, { colors_name: filters.colors, sizes: filters.size, price_range: filters.price_range, orderBy: filters.orderBy}).then((result) => {
         
        data = result;
@@ -112,7 +217,11 @@ function show(){
         }
 
         filters.hasMorePages = result.pagination.hasMorePages;
-        filters.last_page_end = result.pagination.final_range;
+
+        if(!escapeFinalRange){
+            filters.last_page_end = result.pagination.final_range;
+        }
+        
 
         loadShopItens();
         console.log(result);

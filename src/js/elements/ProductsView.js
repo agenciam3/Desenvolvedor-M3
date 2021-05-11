@@ -13,6 +13,14 @@ function createItemCard(id = '', image = '', name = '', price = 0, division_pric
             </div>`;
 }
 
+function emptyListHTML(){
+    return `
+        <div class="empty-list">
+            <label>Nenhum resultado encontrado para sua busca.<br>Experimente alterar os filtros para encontrar um resultado melhor!</label>
+        </div>
+    `;
+}
+
 function buyCartClick(id, size_choosed){
     let found_item;
     list_data.forEach((item) => {
@@ -126,6 +134,9 @@ export default function ProductsView() {
                     });
                 }
                 
+                if(list_data.length == 0){
+                    container.innerHTML =  emptyListHTML();
+                }
                 
             }
         }

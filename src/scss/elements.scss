@@ -98,6 +98,23 @@ div.sizebox{
     -ms-transition: opacity .5s ease-in-out;
     -o-transition: opacity .5s ease-in-out;
     transition: opacity .5s ease-in-out;
+
+    @media screen and (max-width: 770px) {
+        zoom: 1.3;
+    }
+
+
+    @media screen and (max-width: 500px) {
+        zoom: .8;
+    }
+
+    @media screen and (max-width: 400px) {
+        zoom: .7;
+    }
+
+    @media screen and (max-width: 370px) {
+        zoom: .65;
+    }
         
     img{
         height: 250px;
@@ -160,7 +177,6 @@ button{
     opacity: 1;
     margin: 0;
     
-    text-transform: uppercase;
     overflow: visible;
     border: none;
     -webkit-border-radius: 0;
@@ -173,6 +189,7 @@ button{
     -webkit-box-shadow: none;
     box-shadow: none;
     &.buy-black{
+        text-transform: uppercase;
         padding: 12px 35px;
         background: #000000;
         font-size: 14px;
@@ -197,9 +214,28 @@ button{
         font-weight: 800;
         font-family: sans-serif;
         width: max-content;
+        text-transform: uppercase;
         &:hover{
             background: #2997c2;
         }
+    }
+
+    &.main-filter{
+        padding: 10px 20px;
+        overflow: visible;
+        border: 1px solid rgb(90, 90, 90);
+        -webkit-border-radius: 0;
+        border-radius: 0;
+        font: normal 16px/normal "Open Sans", sans-serif;
+        color: rgb(90, 90, 90);
+        -o-text-overflow: clip;
+        text-overflow: clip;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        background: rgba(255,255,255,1);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        text-shadow: none;
     }
 
 

@@ -58,7 +58,7 @@ function createCart(){
             <div class="container">
                 <div class="info-container">
                     <div class="heading">
-                        <label class="info-title">Resumo</label>
+                        <label class="info-title">Carrinho de compras</label>
                         <img src="./images/cancel.svg" id="shopping-cart-close-button">
                     </div>
                     <div class="itens-list">
@@ -81,7 +81,7 @@ function getCartItemHTML(item){
             <label>R$${item.price.toFixed(2)} ou 3x de ${item.division_price.toFixed(2)}</label>
             <label>Tamanho escolhido: ${item.size_choosed}</label>
             </div>
-            <img src="./images/cancel.svg" class="close-btn" data-product="${item.id}">
+            <img src="./images/remove.svg" class="close-btn" data-product="${item.id}">
         </div>
     `;
 }
@@ -110,7 +110,13 @@ function updateVisualItensOnCartContainer(){
         }
         let price_tag = information_container.getElementsByTagName('label')[0];
         if(price_tag){
-            price_tag.innerText = `Suas compras totalizaram R$${valores}`;
+            if(cart_itens.length == 0){
+                itens_container.innerHTML = `<p class="no-itens">Nenhum item adicionado.</p>'`;
+                price_tag.innerText = `Carrinho de compras`;
+            } else {
+                price_tag.innerText = `Suas compras totalizaram R$${valores}`;
+            }
+            
         }
     }
 }

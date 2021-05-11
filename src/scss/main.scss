@@ -1,14 +1,31 @@
 main{
 
-    .section-title{
-        font-size: 18px;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-family: sans-serif;
-        line-height: 1;
-        margin-top: 25px;
-        margin-bottom: 12px;
+    .filters-head{
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 25px;
+        @media screen and (max-width: 899px) {
+            display: flex!important;
+            position: sticky;
+            background-color: white;
+            border-bottom: 1px solid gray;
+        }
+
+        label{
+            text-transform: uppercase;
+            color: rgb(59, 59, 59);
+            font-size: 18px;
+        }
+
+        img{
+            width: 16px;
+            object-fit: contain;
+            cursor: pointer;
+        }
+        
     }
+
     
     .shopping-heading{
         display: flex;
@@ -28,10 +45,49 @@ main{
         }
     
         .select-ordernation-filter-container{
+            display: flex;
+            flex-direction: column;
             overflow:hidden;
             @media screen and (max-width: 899px) {
-                display: none!important;
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 0;
+                height: 100%;
+                background-color: white;
+
+                &.open{
+                    display: flex;
+                    z-index: 99;
+
+                    .content{
+                        .select-ordenation-filter-list{
+                            width: 100%;
+                            height: auto;
+                            margin-top: 15px;
+                            .option{
+                                padding: 15px 25px;
+                                cursor: pointer;
+                                font-family: "Open Sans", sans-serif;
+                                &:hover{
+                                    background-color: whitesmoke;
+                                }
+
+                                &.selected{
+                                    background-color: #bee0eb;
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                &.closed{
+                    display: none;
+                }
+                
             }
+            
             select {      
                 margin-top: 5px;
                 width: 150px;
@@ -53,6 +109,25 @@ main{
         }
     }
 
+    .shopping-mobile-heading-buttons-container{
+        display: none;
+        @media screen and (max-width: 899px) {
+            display: flex;
+        }
+        vertical-align: middle;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 40px;
+        button{
+            width: 114px;
+            height: 28px;
+            margin: 0;
+            &:last-child{
+                margin-left: -5px;
+            }
+        }
+    }
+
     .shopping-filter-menu-container{
         display: flex;
         flex-direction: column;
@@ -60,20 +135,102 @@ main{
         padding-right: 6%;
 
         @media screen and (max-width: 899px) {
-            display: none!important;
+            &.closed{
+                display: none;
+            }
+
+            &.open{
+                display: flex;
+            }
+
+            
+            position: absolute;
+            background-color: white;
+            padding: 0!important;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            
         }
 
-        .section-title{
-            font-family: "Open Sans", sans-serif;
-            letter-spacing: 2px;
+        
+
+
+        .filter-heading{
+            width: 100%;
+            justify-content: flex-start;
+            margin-bottom: 12px;
+            margin-top: 20px;
+            cursor: pointer;
+            img{
+                display: none;
+            }
+            @media screen and (max-width: 899px) {
+                padding: 10px 25px;
+                margin-top: 13px;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+
+                &.closed{
+                    .img-plus{
+                        display: flex;
+                    }
+
+                    .img-remove{
+                        display: none;
+                    }
+                }
+
+                &.open{
+                    .img-plus{
+                        display: none;
+                    }
+
+                    .img-remove{
+                        display: flex;
+                    }
+                }
+            }
+
+            .section-title{
+                font-size: 18px;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-family: sans-serif;
+                line-height: 1;
+
+                font-family: "Open Sans", sans-serif;
+                letter-spacing: 2px;
+            }
+
+            img{
+                width: 18px;
+                object-fit: contain;
+            }
+
         }
+
+        
+
 
         .colors-filter-container{
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            @media screen and (max-width: 899px) {
+                margin-left: 25px;
+                height: 0;
+            }
 
             span{
                 margin-bottom: 10px;
+                label{
+                    text-transform: capitalize;
+                }
             }
 
             label.show-more{
@@ -98,8 +255,14 @@ main{
         }
 
         .price-range-filter-container{
+            overflow: hidden;
             display: flex;
             flex-direction: column;
+
+            @media screen and (max-width: 899px) {
+                margin-left: 25px;
+                height: 0;
+            }
 
             span{
                 margin-bottom: 10px;
@@ -107,10 +270,21 @@ main{
         }
         
         .size-filter-container{
+            overflow: hidden;
             width: 200px;
             display: flex;
             justify-content: flex-start;
             flex-wrap: wrap;
+
+            @media screen and (max-width: 899px) {
+                margin-left: 25px;
+                width: 80%;
+                justify-content: flex-start;
+                height: 0;
+                .sizebox{
+                    zoom: 1.2;
+                }
+            }
 
             .sizebox{
                 margin-right: 8px!important;
@@ -126,10 +300,19 @@ main{
             display: flex;
             flex-wrap: wrap;
             justify-content: flex-start;
+            align-content: stretch;
+
+            &.hide{
+                display: none;
+            }
+
+            &.showing{
+                display: flex;
+            }
             @media screen and (max-width: 899px) {
                 justify-content: space-between;
             }
-            align-content: stretch;
+            
             div{
                 display: flex;
                 
