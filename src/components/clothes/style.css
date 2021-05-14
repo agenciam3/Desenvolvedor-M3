@@ -1,17 +1,65 @@
-.columns {
-    float: left;
-    width: 33%;
-  }
-  
-  /* Clear floats after the columns */
-  .rows:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+* {
+  box-sizing: border-box;
+}
 
-  @media screen and (max-width: 600px) {
-    .columns {
-      width: 50%;
-    }
+.column {
+  float: left;
+  width: 50%;
+}
+
+.left {
+  width: 25%;
+  padding-left: 8%;
+}
+
+.right {
+  width: 75%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.filterStyle {
+  padding-bottom: 0px;
+}
+
+.button {
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
+}
+
+.columns {
+  float: left;
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+  
+.rows:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .columns {
+    width: 50%;
+  }
+}

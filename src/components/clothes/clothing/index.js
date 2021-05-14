@@ -1,14 +1,15 @@
 import React from 'react';
-import GrayImg from '../../shared/gray-img'
-
+import SharedImg from '../../shared/shared-img'
 
 const Clothing = (props) => {
+
     return (
         <div className="columns">
-            <GrayImg img_url={props.img_url}/>
-            <h4>{props.name}</h4>
-            <p>{props.price}</p>
-            <p>{props.installment}</p>
+            <SharedImg img_url={props.img_url}/>
+            <span>{props.name}</span>
+            <span><strong>{`R$ ${props.price}`}</strong></span>
+            <span>{props.installment}</span>
+            <button className ="button">COMPRAR</button>
         </div>
     )
 }

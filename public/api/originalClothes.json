@@ -1,0 +1,244 @@
+{
+"originalClothes": [
+    {
+        "name": "CAMISETA MESCLA",
+        "price": "28,00",
+        "img_url": "imagens/img_2.png",
+        "installment": "até 3x R$9,33",
+        "color": "green",
+        "size": "P"
+    },
+    {
+        "name": "SAIA EM COURO",
+        "price": "398,00",
+        "img_url": "imagens/img_3.png",
+        "installment": "até 5x R$30,00",
+        "color": "blue",
+        "size": "M"
+    },
+    {
+        "name": "CARDIGAN TIGRE",
+        "price": "398,00",
+        "img_url": "imagens/img_4.png",
+        "installment": "até 5x R$40",
+        "color": "white",
+        "size": "G"
+    },
+    {
+        "name": "CARDIGAN OFF WHITE",
+        "price": "99,90",
+        "img_url": "imagens/img_5.png",
+        "installment": "até 3x R$70",
+        "color": "gray",
+        "size": "GG"
+    },
+    {
+        "name": "BODY LEOPARDO",
+        "price": "129,90",
+        "img_url": "imagens/img_6.png",
+        "installment": "até 3x R$9,33",
+        "color": "orange",
+        "size": "U"
+    },
+    {
+        "name": "CASACO PELOS",
+        "price": "358,00",
+        "img_url": "imagens/img_7.png",
+        "installment": "até 5x R$40",
+        "color": "yellow",
+        "size": "36"
+    },
+    {
+        "name": "CROPPED STRIPES",
+        "price": "120,00",
+        "img_url": "imagens/img_8.png",
+        "installment": "até 3x R$9,33",
+        "color": "red",
+        "size": "38"
+    },
+    {
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398,00",
+        "img_url": "imagens/img_9.png",
+        "installment": "até 3x R$9,33",
+        "color": "black",
+        "size": "40"
+    },
+    {
+        "name": "POCHETE CLUTCH",
+        "price": "99,00",
+        "img_url": "imagens/img_10.png",
+        "installment": "até 3x R$9,33",
+        "color": "pink",
+        "size": "42"
+    },
+    {
+        "name": "CARDIGAN TIGRE",
+        "price": "398,00",
+        "img_url": "imagens/img_4.png",
+        "installment": "até 5x R$40",
+        "color": "wine",
+        "size": "44"
+    },
+    {
+        "name": "CAMISETA MESCLA",
+        "price": "28,00",
+        "img_url": "imagens/img_2.png",
+        "installment": "até 3x R$9,33",
+        "color": "blue",
+        "size": "46"
+    },
+    {
+        "name": "SAIA EM COURO",
+        "price": "398,00",
+        "img_url": "imagens/img_3.png",
+        "installment": "até 5x R$30,00",
+        "color": "white",
+        "size": "P"
+    },
+    {
+        "name": "CARDIGAN TIGRE",
+        "price": "398,00",
+        "img_url": "imagens/img_4.png",
+        "installment": "até 5x R$40",
+        "color": "green",
+        "size": "M"
+    },
+    {
+        "name": "CARDIGAN OFF WHITE",
+        "price": "99,90",
+        "img_url": "imagens/img_5.png",
+        "installment": "até 3x R$70",
+        "color": "yellow",
+        "size": "G"
+    },
+    {
+        "name": "BODY LEOPARDO",
+        "price": "129,90",
+        "img_url": "imagens/img_6.png",
+        "installment": "até 3x R$9,33",
+        "color": "gray",
+        "size": "GG"
+    },
+    {
+        "name": "CASACO PELOS",
+        "price": "358,00",
+        "img_url": "imagens/img_7.png",
+        "installment": "até 5x R$40",
+        "color": "orange",
+        "size": "U"
+    },
+    {
+        "name": "CROPPED STRIPES",
+        "price": "120,00",
+        "img_url": "imagens/img_8.png",
+        "installment": "até 3x R$9,33",
+        "color": "pink",
+        "size": "36"
+    },
+    {
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398,00",
+        "img_url": "imagens/img_9.png",
+        "installment": "até 3x R$9,33",
+        "color": "wine",
+        "size": "38"
+    },
+    {
+        "name": "POCHETE CLUTCH",
+        "price": "99,00",
+        "img_url": "imagens/img_10.png",
+        "installment": "até 3x R$9,33",
+        "color": "red",
+        "size": "40"
+    },
+    {
+        "name": "CARDIGAN TIGRE",
+        "price": "398,00",
+        "img_url": "imagens/img_4.png",
+        "installment": "até 5x R$40,00",
+        "color": "black",
+        "size": "42"
+    },
+    {
+        "name": "CAMISETA MESCLA",
+        "price": "28,00",
+        "img_url": "imagens/img_2.png",
+        "installment": "até 3x R$9,33",
+        "color": "black",
+        "size": "44"
+    },
+    {
+        "name": "SAIA EM COURO",
+        "price": "398,00",
+        "img_url": "imagens/img_3.png",
+        "installment": "até 5x R$30,00",
+        "color": "green",
+        "size": "46"
+    },
+    {
+        "name": "CARDIGAN TIGRE",
+        "price": "398,00",
+        "img_url": "imagens/img_4.png",
+        "installment": "até 5x R$40",
+        "color": "blue",
+        "size": "P"
+    },
+    {
+        "name": "CARDIGAN OFF WHITE",
+        "price": "99,90",
+        "img_url": "imagens/img_5.png",
+        "installment": "até 3x R$70",
+        "color": "white",
+        "size": "M"
+    },
+    {
+        "name": "BODY LEOPARDO",
+        "price": "129,90",
+        "img_url": "imagens/img_6.png",
+        "installment": "até 3x R$9,33",
+        "color": "gray",
+        "size": "G"
+    },
+    {
+        "name": "CASACO PELOS",
+        "price": "358,00",
+        "img_url": "imagens/img_7.png",
+        "installment": "até 5x R$40",
+        "color": "orange",
+        "size": "GG"
+    },
+    {
+        "name": "CROPPED STRIPES",
+        "price": "120,00",
+        "img_url": "imagens/img_8.png",
+        "installment": "até 3x R$9,33",
+        "color": "yellow",
+        "size": "U"
+    },
+    {
+        "name": "CAMISA TRANSPARENTE",
+        "price": "398,00",
+        "img_url": "imagens/img_9.png",
+        "installment": "até 3x R$9,33",
+        "color": "red",
+        "size": "36"
+    },
+    {
+        "name": "POCHETE CLUTCH",
+        "price": "99,00",
+        "img_url": "imagens/img_10.png",
+        "installment": "até 3x R$9,33",
+        "color": "wine",
+        "size": "38"
+    },
+    {
+        "name": "CARDIGAN TIGRE",
+        "price": "398,00",
+        "img_url": "imagens/img_4.png",
+        "installment": "até 5x R$40,00",
+        "color": "pink",
+        "size": "40"
+    }
+]
+}

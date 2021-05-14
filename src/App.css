@@ -3,72 +3,74 @@
 }
 
 .divHeader {
-  background-color: #283433;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.divFooter {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.divFilter {
-  background-color: #2b2834;
   display: flex;
   flex-direction: column;
   align-items: left;
-  justify-content: right;
-  font-size: calc(10px + 2vmin);
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+}
+
+.logo {
+  padding-left: 8%;
+  padding-top: 1%;
+}
+
+.blusa {
+  padding-left: 8%;
+}
+
+.dropbtn {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  min-width: 160px;
+  padding: 4px 16px;
+  font-size: 16px;
+  border: line;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 4px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #6dc9f3}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.divFooter {
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 0.5vmin);
   color: white;
 }
 
 .divMain {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: left;
+  justify-content: right;
+  font-size: calc(10px + 1vmin);
   color: rgb(32, 32, 32);
-}
-
-
-
-.column {
-  float: left;
-  width: 50%;
-}
-
-.left {
-  width: 25%;
-}
-
-.right {
-  width: 75%;
-}
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-    background-color: #a5acb9;
-  }
-}
-
-.App-link {
-  color: #61dafb;
 }
