@@ -3,7 +3,7 @@ import Clothes from '../components/clothes';
 
 const ClothesScreen = () => {
     return (
-        <Clothes/>
+        <Clothes />
     )
 }
 

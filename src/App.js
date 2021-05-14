@@ -14,7 +14,7 @@ function App() {
       </div>
 
       <div className="divMain">
-        <Routes/>
+        <Routes />
       </div>
 
       <div className="divFooter">
