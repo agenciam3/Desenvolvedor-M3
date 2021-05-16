@@ -1,3 +1,15 @@
+# Instruções necessárias para rodar o código:
+
+1 - Dar git clone neste projeto;
+2 - Dar npm install;
+3 - Dar npm start (rodar o projeto).
+
+Grato pela oportunidade!
+e-mail: pedrohefagundes@gmail.com
+
+
+
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
