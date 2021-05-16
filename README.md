@@ -1,8 +1,8 @@
 # Instruções necessárias para rodar o código:
 
-1 - Dar git clone neste projeto;
-2 - Dar npm install;
-3 - Dar npm start (rodar o projeto).
+1 - Dar git clone neste projeto;  
+2 - Dar npm install;  
+3 - Dar npm start (rodar o projeto).  
 
 Grato pela oportunidade!
 e-mail: pedrohefagundes@gmail.com
