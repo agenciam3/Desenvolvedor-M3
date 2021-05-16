@@ -33,92 +33,16 @@ const Clothes = () => {
         })
     }, [])
 
-    const filterByColorYellow = () => {
-        let yellowFilter = [...originalClothes].filter(x => x.color === 'yellow');
+    const filterByColor = (color) => {
+        let yellowFilter = [...originalClothes].filter(x => x.color === color);
         setClothes(yellowFilter);
     }
-    const filterByColorBlue = () => {
-        let blueFilter = [...originalClothes].filter(x => x.color === 'blue');
-        setClothes(blueFilter);
-    }
-    const filterByColorWhite = () => {
-        let whiteFilter = [...originalClothes].filter(x => x.color === 'white');
-        setClothes(whiteFilter);
-    }
-    const filterByColorGray = () => {
-        let grayFilter = [...originalClothes].filter(x => x.color === 'gray');
-        setClothes(grayFilter);
-    }
-    const filterByColorOrange = () => {
-        let orangeFilter = [...originalClothes].filter(x => x.color === 'orange');
-        setClothes(orangeFilter);
-    }
-    const filterByColorGreen = () => {
-        let greenFilter = [...originalClothes].filter(x => x.color === 'green');
-        setClothes(greenFilter);
-    }
-    const filterByColorRed = () => {
-        let redFilter = [...originalClothes].filter(x => x.color === 'red');
-        setClothes(redFilter);
-    }
-    const filterByColorBlack = () => {
-        let blackFilter = [...originalClothes].filter(x => x.color === 'black');
-        setClothes(blackFilter);
-    }
-    const filterByColorPink = () => {
-        let pinkFilter = [...originalClothes].filter(x => x.color === 'pink');
-        setClothes(pinkFilter);
-    }
-    const filterByColorWine = () => {
-        let wineFilter = [...originalClothes].filter(x => x.color === 'wine');
-        setClothes(wineFilter);
+
+    const filterBySize = (size) => {
+        let sizeFilter = [...originalClothes].filter(x => x.size === size);
+        setClothes(sizeFilter);
     }
 
-
-    const filterBySizeP = () => {
-        let pFilter = [...originalClothes].filter(x => x.size === 'P');
-        setClothes(pFilter);
-    }
-    const filterBySizeM = () => {
-        let mFilter = [...originalClothes].filter(x => x.size === 'M');
-        setClothes(mFilter);
-    }
-    const filterBySizeG = () => {
-        let gFilter = [...originalClothes].filter(x => x.size === 'G');
-        setClothes(gFilter);
-    }
-    const filterBySizeGG = () => {
-        let ggFilter = [...originalClothes].filter(x => x.size === 'GG');
-        setClothes(ggFilter);
-    }
-    const filterBySizeU = () => {
-        let uFilter = [...originalClothes].filter(x => x.size === 'U');
-        setClothes(uFilter);
-    }
-    const filterBySize36 = () => {
-        let filter36 = [...originalClothes].filter(x => x.size === '36');
-        setClothes(filter36);
-    }
-    const filterBySize38 = () => {
-        let filter38 = [...originalClothes].filter(x => x.size === '38');
-        setClothes(filter38);
-    }
-    const filterBySize40 = () => {
-        let filter40 = [...originalClothes].filter(x => x.size === '40');
-        setClothes(filter40);
-    }
-    const filterBySize42 = () => {
-        let filter42 = [...originalClothes].filter(x => x.size === '42');
-        setClothes(filter42);
-    }
-    const filterBySize44 = () => {
-        let filter44 = [...originalClothes].filter(x => x.size === '44');
-        setClothes(filter44);
-    }
-    const filterBySize46 = () => {
-        let filter46 = [...originalClothes].filter(x => x.size === '46');
-        setClothes(filter46);
-    }
 
     const filterByPrice50 = () => {
         let upTo50Filter = [...originalClothes].filter(x => x.price.value <= 50 && x.price >= 0);
@@ -148,51 +72,51 @@ const Clothes = () => {
                 <div className="column left">
                     <div>
                         <h3 className="filterStyle">CORES</h3>
-                        <input type="radio" name="filterByColor" onClick={filterByColorYellow} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("yellow")} />
                         <label htmlFor="yellow">Amarelo</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorBlue} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("blue")} />
                         <label htmlFor="blue">Azul</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorWhite} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("white")} />
                         <label htmlFor="white">Branco</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorGray} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("gray")} />
                         <label htmlFor="gray">Cinza</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorOrange} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("orange")} />
                         <label htmlFor="orange">Laranja</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorGreen} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("green")} />
                         <label htmlFor="green">Verde</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorRed} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("red")} />
                         <label htmlFor="red">Vermelho</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorBlack} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("black")} />
                         <label htmlFor="black">Preto</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorPink} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("pink")} />
                         <label htmlFor="pink">Rosa</label><br />
-                        <input type="radio" name="filterByColor" onClick={filterByColorWine} />
+                        <input type="radio" name="filterByColor" onClick={() => filterByColor("wine")} />
                         <label htmlFor="wine">Vinho</label><br />
                     </div>
 
                     <div>
                         <h3 className="filterStyle">TAMANHOS</h3>
-                        <input type="radio" name="filterBySize" onClick={filterBySizeP} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("P")} />
                         <label htmlFor="p">P</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySizeM} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("M")} />
                         <label htmlFor="m">M</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySizeG} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("G")} />
                         <label htmlFor="g">G</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySizeGG} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("GG")} />
                         <label htmlFor="gg">GG</label><br />
-                        <input type="radio" name="filterBySize" onClick={filterBySizeU} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("U")} />
                         <label htmlFor="u">U</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySize36} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("36")} />
                         <label htmlFor="36">36</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySize38} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("38")} />
                         <label htmlFor="38">38</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySize40} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("40")} />
                         <label htmlFor="40">40</label><br />
-                        <input type="radio" name="filterBySize" onClick={filterBySize42} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("42")} />
                         <label htmlFor="42">42</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySize44} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("44")} />
                         <label htmlFor="44">44</label>
-                        <input type="radio" name="filterBySize" onClick={filterBySize46} />
+                        <input type="radio" name="filterBySize" onClick={() => filterBySize("46")} />
                         <label htmlFor="46">46</label>
                     </div>
 
