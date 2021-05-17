@@ -3,13 +3,14 @@
 }
 body {
     font-family: Calibri;
+    margin: 0px;
 }
 #main_page {
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    min-width: calc(100vw - 24px);
+    min-width: calc(100vw - 20px);
 }
 #header {
     width: 100%;
