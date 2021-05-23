@@ -5,3 +5,5 @@
 - Execute npm install
 - Execute npm run start
 - Abra "localhost:3000" no navegador
+
+Email para contato: gabrielsilveira@id.uff.br
