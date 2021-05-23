@@ -1,0 +1,283 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Font Awesome Icons-->
+        <script src="https://kit.fontawesome.com/3b9081acb0.js"></script>
+
+        <link rel="stylesheet" href="styles/desktop.css" media="screen">
+        <link rel="stylesheet" href="styles/mobile.css" media="(max-width: 768px)">
+    </head>
+
+    <body>
+        
+        <header>
+            <img id="logo" src="imagens/logo-m3.png">
+            
+            <div id="bag">
+                <i id="shop-icon" class="fas fa-shopping-bag"></i>
+                <span id="bag-count">
+                    3
+                </span>
+            </div>
+
+        </header>
+
+        <div id="container">
+            
+            <aside id="sidebar">
+
+                <h1>Blusas</h1>
+
+                <div id="mobile-buttons">
+                    <button class="mobile-button" onclick="switchFilterTab(true)">Filtrar</button>
+                    <button class="mobile-button" onclick="switchOrderTab(true)">Ordenar</button>    
+                </div>
+
+                <div id="filters">
+
+                    <div class="mobile-header"><h1>FILTRAR</h1><i onclick="switchFilterTab(false)" class="fas fa-times"></i></div>
+
+                    <div class="filter-title" onclick="toggleFilter('select-color', this)"><h2>CORES</h2><i class="fas fa-plus"></i></div>
+                    
+                    <div id="select-color">
+                        
+                        <form id="fColor">
+                            <ul>
+                                
+                                <li>
+                                    <label for="amarelo">
+                                        <input type="checkbox" id="amarelo" name="amarelo" data-value="amarelo">
+                                        <span class="checkmark"></span>
+                                        Amarelo
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <label for="azul">
+                                        <input type="checkbox" id="azul" name="azul" data-value="azul">
+                                        <span class="checkmark"></span>
+                                        Azul
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <label for="branco">
+                                        <input type="checkbox" id="branco" name="branco" data-value="branco">
+                                        <span class="checkmark"></span>
+                                        Branco
+                                    </label>
+                                </li>
+
+                                <li>                                
+                                    <label for="cinza">
+                                        <input type="checkbox" id="cinza" name="cinza" data-value="cinza">
+                                        <span class="checkmark"></span>
+                                        Cinza
+                                    </label>
+                                </li>
+
+                                <li>
+                                    <label for="laranja">
+                                        <input type="checkbox" id="laranja" name="laranja" data-value="laranja">
+                                        <span class="checkmark"></span>
+                                        Laranja
+                                    </label>
+                                </li>
+
+                                <div id="more-colors">
+                                    <li>
+                                        <label for="verde">
+                                            <input type="checkbox" id="verde" name="verde" data-value="verde">
+                                            <span class="checkmark"></span>
+                                            Verde
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label for="vermelho">
+                                            <input type="checkbox" id="vermelho" name="vermelho" data-value="vermelho">
+                                            <span class="checkmark"></span>
+                                            Vermelho
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label for="preto">
+                                            <input type="checkbox" id="preto" name="preto" data-value="preto">
+                                            <span class="checkmark"></span>
+                                            Preto
+                                        </label>
+                                    </li>
+
+                                    <li>
+                                        <label for="rosa">
+                                            <input type="checkbox" id="rosa" name="rosa" data-value="rosa">
+                                            <span class="checkmark"></span>
+                                            Rosa
+                                        </label>
+                                    </li>
+                                    <li>
+                                        <label for="vinho">
+                                            <input type="checkbox" id="vinho" name="vinho" data-value="vinho">
+                                            <span class="checkmark"></span>
+                                            Vinho
+                                        </label>
+                                    </li>
+                                </div>
+
+                            </ul>
+                        </form>
+
+                        <p id="more-colors-btn" onclick="toggleColors()">Ver todas as cores <i class="fas fa-angle-down"></i></p>
+
+                    </div>
+                    
+                    <div class="filter-title" onclick="toggleFilter('select-size', this)"><h2>TAMANHOS</h2><i class="fas fa-plus"></i></div>
+
+                    <div id="select-size">
+                        <form id="fSize">
+
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="size-p" name="size-p" data-value="p">        
+                                    <label for="size-p">P</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-m" name="size-m" data-value="m">        
+                                    <label for="size-m">M</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-g" name="size-g" data-value="g">        
+                                    <label for="size-g">G</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-gg" name="size-gg" data-value="gg">        
+                                    <label for="size-gg">GG</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-u" name="size-u" data-value="u">        
+                                    <label for="size-u">U</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-36" name="size-36" data-value="36">        
+                                    <label for="size-36">36</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-38" name="size-38" data-value="38">        
+                                    <label for="size-38">38</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-40" name="size-40" data-value="40">        
+                                    <label for="size-40">40</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-42" name="size-42" data-value="42">        
+                                    <label for="size-42">42</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-44" name="size-44" data-value="44">        
+                                    <label for="size-44">44</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="size-46" name="size-46" data-value="46">        
+                                    <label for="size-46">46</label>
+                                </li>
+                            </ul>
+
+                        </form>
+                    </div>
+
+                    <div class="filter-title" onclick="toggleFilter('select-price', this)"><h2>FAIXA DE PREÇO</h2><i class="fas fa-plus"></i></div>
+                    <div id="select-price">
+                        <form id="fPrice">
+                            <ul>
+                                <li>
+                                    <label for="price1">
+                                        <input type="radio" id="price1" name="price">
+                                        <span class="checkmark"></span>
+                                        de R$0 até R$50
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="price2">
+                                        <input type="radio" id="price2" name="price">
+                                        <span class="checkmark"></span>
+                                        de R$51 até R$150
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="price3">
+                                        <input type="radio" id="price3" name="price">
+                                        <span class="checkmark"></span>
+                                        de R$151 até R$300
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="price4">
+                                        <input type="radio" id="price4" name="price">
+                                        <span class="checkmark"></span>
+                                        de R$301 até R$500
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="price5">
+                                        <input type="radio" id="price5" name="price">
+                                        <span class="checkmark"></span>
+                                        a partir de R$01
+                                    </label>
+
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
+                    <div id="filter-mobile-buttons">
+                        <button name="aplicar" onclick="switchFilterTab(false)">Aplicar</button>
+                        <button name="aplicar" onclick="clearFilters()">Limpar</button>
+                    </div>
+                </div>
+
+            </aside>
+
+            <div id="main">
+
+                <div id="order-container">
+                    <div id="order-desktop">
+                        <select class="order-select">
+                            <option value="0">Mais recentes</option>
+                            <option value="1">Menor preço</option>
+                            <option value="2">Maior preço</option>
+                        </select>
+                        <i class="fas fa-angle-down"></i>
+                    </div>
+                    <div id="order-mobile">
+                        <div class="mobile-header"><h1>ORDENAR</h1><i onclick="switchOrderTab(false)" class="fas fa-times"></i></div>
+                        
+                        <span>Mais recentes</span>
+                        <span>Menor preço</span>
+                        <span>Maior preço</span>
+
+                    </div>
+                </div>
+
+                <div id="products">
+                    <!--Carregamento Dinâmico dos Produtos-->
+                </div>
+
+                <button id="load-more" onclick="loadMore()">CARREGAR MAIS</button>
+
+            </div>
+
+        </div>
+
+        <footer>
+            Agência M3 - Agência de Performance Digital
+        </footer>
+
+    </body>
+
+    <script src="js/main.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="js/bag.js"></script>
+    
+
+</html>
