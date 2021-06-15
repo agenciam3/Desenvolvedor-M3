@@ -1,0 +1,86 @@
+{
+    "products":[
+        {
+            "id": "0",
+            "title": "Camiseta Mescla",
+            "price": 28.00,
+            "description": "até 3x de R$9.33",
+            "sizes": [ "P", "M", "G", "GG", "U"],
+            "colors": ["amarelo", "azul", "branco", "vermelho", "preto", "rosa", "vinho"],
+            "image_name": "img_2.png"
+        },
+        {
+            "id": "1",
+            "title": "Saia em couro",
+            "price": 398.00,
+            "description": "até 5x de R$30.00",
+            "sizes": [ "36","38","44"],
+            "colors": ["preto"],
+            "image_name": "img_3.png"
+        },
+        {
+            "id": "2",
+            "title": "Cardigan Tigre",
+            "price": 389.00,
+            "description": "até 5x de R$30.00",
+            "sizes": ["P", "M", "GG"],
+            "colors": ["laranja", "preto"],
+            "image_name": "img_4.png"
+        },
+        {
+            "id": "3",
+            "title": "Cardigan Off White",
+            "price": 99.90,
+            "description": "até 3x de R$33.30",
+            "sizes": ["P", "M", "G", "GG", "U"],
+            "colors": ["branco"],
+            "image_name": "img_5.png"
+        },
+        {
+            "id": "4",
+            "title": "Body Leopardo",
+            "price": 129.90,
+            "description": "até 3x de R$43.43",
+            "sizes": ["M","G","GG","U"],
+            "colors": ["laranja", "azul", "verde"],
+            "image_name": "img_6.png"
+        },
+        {
+            "id": "5",
+            "title": "Casaco Pelos",
+            "price": 398.00,
+            "description":"até 5x de R$30.00",
+            "sizes": ["P","M","G","GG","U"],
+            "colors": ["rosa", "vinho", "cinza", "preto"],
+            "image_name": "img_7.png"
+        },
+        {
+            "id":"5",
+            "title": "Cropped Stripes",
+            "price": 120.00,
+            "description": "até 3x de R$40.00",
+            "sizes": ["M", "GG"],
+            "colors": ["azul", "verde"],
+            "image_name": "img_8.png"
+        },
+        {
+            "id": "6",
+            "title": "Camisa Transparente",
+            "price": 389.00,
+            "description": "até 5x de R$30.00",
+            "sizes": ["P"],
+            "colors": ["preto", "branco"],
+            "image_name": "img_9.png"
+        },
+        {
+            "id": 7,
+            "title": "Pochete Clutch",
+            "price": 99.00,
+            "description":"até 3x de R$33.30",
+            "sizes": ["36","38", "40","44"],
+            "colors": ["preto"],
+            "image_name": "img_10.png"
+        }
+
+    ]
+}
