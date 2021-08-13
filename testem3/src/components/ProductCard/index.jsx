@@ -3,11 +3,13 @@ import './styles.css'
 const ProductCard = ({ item }) => {
     return (
         <div key={item.id} className="single-card">
-            {/* <image source={item.img}/> */}
+            <img src={item.img} />
             <span>{item.name.toLocaleUpperCase()}</span>
-            <span>R${item.price}</span>
-            <span>até {item.installment} de R$ {(parseFloat(item.price) / item.installment).toFixed(2)}</span>
-            <button>Comprar</button>
+            <div className="price-area">
+                <span className="full-price">R${item.price}</span>
+                <span>até {item.installment} de R$ {(parseFloat(item.price) / item.installment).toFixed(2)}</span>
+            </div>
+            <button className="btn-addCart">COMPRAR</button>
         </div>
     )
 }
