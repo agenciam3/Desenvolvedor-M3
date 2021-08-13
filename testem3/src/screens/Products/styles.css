@@ -1,24 +1,15 @@
 .container-products {
-  background-color: black;
   display: flex;
-  flex: 1;
   flex-direction: row;
 }
-
-.filters {
-  background-color: chartreuse;
-  flex: 1;
-}
-
-.color-filter {
-  display: flex;
-  flex-direction: column;
-}
-
 .cards-area {
-  background-color: cornflowerblue;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  flex: 4;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 1280px) {
+  .cards-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
