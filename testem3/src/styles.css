@@ -1,6 +1,11 @@
-.main-container {
-  padding: 6rem;
+.body-container {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 @media (max-width: 1280px) {
+  .body-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
 }

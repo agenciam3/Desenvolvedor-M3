@@ -1,6 +1,11 @@
 import './styles.css'
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, setCart }) => {
+
+    const handleAddCart = () => {
+        setCart(oldCart => [...oldCart, item])
+    }
+
     return (
         <div key={item.id} className="single-card">
             <img src={item.img} />
@@ -9,7 +14,7 @@ const ProductCard = ({ item }) => {
                 <span className="full-price">R${item.price}</span>
                 <span>até {item.installment} de R$ {(parseFloat(item.price) / item.installment).toFixed(2)}</span>
             </div>
-            <button className="btn-addCart">COMPRAR</button>
+            <button className="btn-addCart" onClick={() => handleAddCart()}>COMPRAR</button>
         </div>
     )
 }

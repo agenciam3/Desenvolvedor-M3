@@ -27,3 +27,9 @@
   font-weight: bolder;
   border: none;
 }
+
+@media (max-width: 1280px) {
+  .single-card {
+    padding: 1rem;
+  }
+}
