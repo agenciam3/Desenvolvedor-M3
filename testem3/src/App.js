@@ -18,7 +18,9 @@ const list = [
     name: "Camiseta Mescla",
     price: "28,00",
     color: "Cinza",
+    size: "P",
     installment: 3,
+    date: "Mar 12 2012 10:00:00 AM",
     img: img2
   },
   {
@@ -26,7 +28,9 @@ const list = [
     name: "Saia em couro",
     price: "398,00",
     color: "Azul",
+    size: "M",
     installment: 5,
+    date: "Mar 12 2013 10:00:00 AM",
     img: img3
   },
   {
@@ -34,7 +38,9 @@ const list = [
     name: "Cardigan tigre",
     price: "28,00",
     color: "Amarelo",
+    size: "G",
     installment: 5,
+    date: "Mar 12 2014 10:00:00 AM",
     img: img4
   },
   {
@@ -42,7 +48,9 @@ const list = [
     name: "Cardigan off white",
     price: "99,00",
     color: "Branco",
+    size: "GG",
     installment: 3,
+    date: "Mar 12 2015 10:00:00 AM",
     img: img5
   },
   {
@@ -50,7 +58,9 @@ const list = [
     name: "Body leopardo",
     price: "129,00",
     color: "Amarelo",
+    size: "GG",
     installment: 3,
+    date: "Mar 12 2016 10:00:00 AM",
     img: img6
   },
   {
@@ -58,7 +68,9 @@ const list = [
     name: "Casaco Pelos",
     price: "28,00",
     color: "Rosa",
+    size: "M",
     installment: 5,
+    date: "Mar 12 2017 10:00:00 AM",
     img: img7
   },
   {
@@ -66,7 +78,9 @@ const list = [
     name: "Cropped Stripes",
     price: "120,00",
     color: "Laranja",
+    size: "U",
     installment: 3,
+    date: "Mar 12 2018 10:00:00 AM",
     img: img8
   },
   {
@@ -74,7 +88,9 @@ const list = [
     name: "Camisa Transparente",
     price: "398,00",
     color: "Preto",
+    size: "P",
     installment: 5,
+    date: "Mar 12 2019 10:00:00 AM",
     img: img9
   },
   {
@@ -82,7 +98,9 @@ const list = [
     name: "Pochete clutch",
     price: "99,00",
     color: "Preto",
+    size: "40",
     installment: 3,
+    date: "Mar 12 2020 10:00:00 AM",
     img: img10
   }
 ]

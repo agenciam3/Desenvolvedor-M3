@@ -1,10 +1,90 @@
 import './styles.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-const ProductsFilters = ({ allColors, colors, list }) => {
+const ProductsFilters = ({ allColors, colors, setFilterList, filterList, products }) => {
     const [showAllColors, setShowAllColors] = useState(false)
+    const [colorFilter, setColorFilter] = useState([])
+    const [sizeFilter, setSizeFilter] = useState([])
+    const [priceFilter, setPriceFilter] = useState([])
     const [sizeSelect, setSizeSelect] = useState([])
     const sizes = ["P", "M", "G", "GG", "U", "36", "38", "40", "42", "44", "46"]
+
+    const handleSelectSize = (item) => {
+        if (sizeSelect.includes(item)) {
+            let filteredArr = sizeSelect.filter((size) => size !== item)
+            setSizeSelect(filteredArr)
+        } else {
+            setSizeSelect(oldArr => [...oldArr, item])
+        }
+
+    }
+    useEffect(() => {
+
+        let newFilters = []
+        if (colorFilter.length === 0) {
+            newFilters = products
+        } else {
+            newFilters = products.filter(value => colorFilter.includes(value.color))
+        }
+        if (sizeFilter.length != 0) {
+            newFilters = newFilters.filter(value => sizeFilter.includes(value.size))
+        }
+        console.log(priceFilter)
+        if (priceFilter.length != 0) {
+            newFilters = newFilters.filter((value) => {
+                let price
+                let productPrice = parseInt(value.price)
+                console.log(productPrice)
+                if (productPrice <= 50) {
+                    price = "50"
+                } else if (productPrice > 50 && productPrice <= 150) {
+                    price = "51"
+                } else if (productPrice > 150 && productPrice <= 300) {
+                    price = "151"
+                } else if (productPrice > 300 && productPrice <= 500) {
+                    price = "301"
+                } else if (productPrice > 500) {
+                    price = "501"
+                }
+                return priceFilter.includes(price)
+            })
+        }
+        setFilterList(newFilters)
+    }, [colorFilter.length, sizeFilter.length, priceFilter.length])
+
+    const handleColorFilter = (e) => {
+        let colorCheck = e.target.value
+        let newArr = []
+        if (colorFilter.includes(colorCheck)) {
+            newArr = colorFilter.filter((color) => colorCheck != color)
+            setColorFilter(newArr)
+        } else {
+            setColorFilter(oldList => [...oldList, colorCheck])
+        }
+    }
+
+    const handleSizeFilter = (newSize) => {
+
+        let newArr = []
+        if (sizeFilter.includes(newSize)) {
+            newArr = sizeFilter.filter((size) => newSize != size)
+            setSizeFilter(newArr)
+        } else {
+            setSizeFilter(oldList => [...oldList, newSize])
+        }
+    }
+
+    const handlePriceFilter = (e) => {
+        let price = e.target.value
+        let newArr = []
+        if (priceFilter.includes(price)) {
+            newArr = priceFilter.filter((newPrice) => price != newPrice)
+            setPriceFilter(newArr)
+        } else {
+            setPriceFilter(oldList => [...oldList, price])
+        }
+    }
+
 
     return (
         <>
@@ -13,14 +93,14 @@ const ProductsFilters = ({ allColors, colors, list }) => {
                 {showAllColors ? allColors.map((item, index) => {
                     return (
                         <label className="checkbox-label" key={index}>
-                            <input className="checkbox-filter" type="checkbox" />
+                            <input value={item} className="checkbox-filter" type="checkbox" onChange={(e) => handleColorFilter(e)} />
                             <span>{item}</span>
                         </label>
                     )
                 }) : colors.map((item, index) => {
                     return (
                         <label className="checkbox-label" key={index}>
-                            <input className="checkbox-filter" type="checkbox" />
+                            <input value={item} className="checkbox-filter" type="checkbox" onChange={(e) => handleColorFilter(e)} />
                             <span>{item}</span>
                         </label>
                     )
@@ -38,8 +118,8 @@ const ProductsFilters = ({ allColors, colors, list }) => {
                         return (
                             <button key={index} className={sizeSelect.includes(item) ? "btn-size-selected" : "btn-size-unselected"}
                                 onClick={() => {
-                                    sizeSelect.includes(item) ? setSizeSelect([]) : setSizeSelect(oldList => [...oldList, item])
-
+                                    handleSizeFilter(item)
+                                    handleSelectSize(item)
                                 }}>
                                 {item}
                             </button>
@@ -51,23 +131,23 @@ const ProductsFilters = ({ allColors, colors, list }) => {
                 <label className="filter-label">FAIXA DE PREÇO</label>
 
                 <label className="checkbox-label">
-                    <input className="checkbox-filter" type="checkbox" />
+                    <input value="50" className="checkbox-filter" type="checkbox" onClick={(e) => handlePriceFilter(e)} />
                     <span>de R$ 0 até R$50</span>
                 </label >
                 <label className="checkbox-label">
-                    <input className="checkbox-filter" type="checkbox" />
+                    <input value="51" className="checkbox-filter" type="checkbox" onClick={(e) => handlePriceFilter(e)} />
                     <span>de R$ 51 até R$150</span>
                 </label >
                 <label className="checkbox-label">
-                    <input className="checkbox-filter" type="checkbox" />
+                    <input value="151" className="checkbox-filter" type="checkbox" onClick={(e) => handlePriceFilter(e)} />
                     <span>de R$ 151 até R$300</span>
                 </label >
                 <label className="checkbox-label">
-                    <input className="checkbox-filter" type="checkbox" />
+                    <input value="301" className="checkbox-filter" type="checkbox" onClick={(e) => handlePriceFilter(e)} />
                     <span>de R$ 301 até R$500</span>
                 </label >
                 <label className="checkbox-label">
-                    <input className="checkbox-filter" type="checkbox" />
+                    <input value="501" className="checkbox-filter" type="checkbox" onClick={(e) => handlePriceFilter(e)} />
                     <span>a partir de R$501</span>
                 </label >
             </div>
