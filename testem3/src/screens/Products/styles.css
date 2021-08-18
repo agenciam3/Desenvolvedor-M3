@@ -4,6 +4,7 @@
 }
 .cards-area {
   display: grid;
+  padding: 0;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -11,10 +12,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .type-title {
   font-weight: normal;
+  margin: 0;
+}
+
+.mobile-filters {
+  display: none;
+}
+
+.btn-filter-mobile {
+  width: 150px;
+  height: 50px;
+  margin-top: 5px;
+  background-color: transparent;
+  border: 1px rgba(80, 80, 80, 0.5) solid;
+}
+
+.btn-filter-mobile:first-child {
+  border-right: none;
 }
 
 .organize-by-desktop {
@@ -75,5 +95,10 @@
 
   .product-type {
     justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .mobile-filters {
+    display: block;
   }
 }

@@ -1,7 +1,7 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
 
-const ProductsFilters = ({ allColors, colors, setFilterList, products }) => {
+const ProductsFilters = ({ allColors, colors, filterList, setFilterList, list }) => {
     const [showAllColors, setShowAllColors] = useState(false)
     const [colorFilter, setColorFilter] = useState([])
     const [sizeFilter, setSizeFilter] = useState([])
@@ -22,9 +22,9 @@ const ProductsFilters = ({ allColors, colors, setFilterList, products }) => {
 
         let newFilters = []
         if (colorFilter.length === 0) {
-            newFilters = products
+            newFilters = list
         } else {
-            newFilters = products.filter(value => colorFilter.includes(value.color))
+            newFilters = list.filter(value => colorFilter.includes(value.color))
         }
         if (sizeFilter.length != 0) {
             newFilters = newFilters.filter(value => sizeFilter.includes(value.size))
@@ -34,7 +34,6 @@ const ProductsFilters = ({ allColors, colors, setFilterList, products }) => {
             newFilters = newFilters.filter((value) => {
                 let price
                 let productPrice = parseInt(value.price)
-                console.log(productPrice)
                 if (productPrice <= 50) {
                     price = "50"
                 } else if (productPrice > 50 && productPrice <= 150) {
@@ -48,6 +47,10 @@ const ProductsFilters = ({ allColors, colors, setFilterList, products }) => {
                 }
                 return priceFilter.includes(price)
             })
+        }
+        console.log(filterList)
+        if (filterList.length === 0 && sizeFilter.length != 0) {
+            setFilterList(list)
         }
         setFilterList(newFilters)
     }, [colorFilter.length, sizeFilter.length, priceFilter.length])

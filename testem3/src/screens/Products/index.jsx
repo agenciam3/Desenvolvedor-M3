@@ -4,7 +4,6 @@ import ProductCard from '../../components/ProductCard';
 import ProductsFilters from '../../components/ProductsFilters';
 
 const Products = ({ list, setCart }) => {
-    const [products, setProducts] = useState(list)
     const [filterList, setFilterList] = useState([])
     const [colors, setColors] = useState([])
     const [allColors, setAllColors] = useState([])
@@ -23,19 +22,19 @@ const Products = ({ list, setCart }) => {
     }, [])
 
     const handleOrganize = (e) => {
-        let filteredArr = [...products]
+        let filteredArr = [...list]
         switch (e.target.value) {
             case "lower":
-                setProducts(filteredArr.sort((a, b) => parseInt(a.price) - parseInt(b.price)))
+                setFilterList(filteredArr.sort((a, b) => parseInt(a.price) - parseInt(b.price)))
                 break;
             case "highest":
-                setProducts(filteredArr.sort((a, b) => parseInt(a.price) - parseInt(b.price)).reverse())
+                setFilterList(filteredArr.sort((a, b) => parseInt(a.price) - parseInt(b.price)).reverse())
                 break;
             case "none":
-                setProducts(list)
+                setFilterList(list)
                 break;
             case "date":
-                setProducts(filteredArr.sort((a, b) => new Date(b.date) - new Date(a.date)))
+                setFilterList(filteredArr.sort((a, b) => new Date(b.date) - new Date(a.date)))
                 break;
 
             default:
@@ -53,28 +52,30 @@ const Products = ({ list, setCart }) => {
                     <option value="highest">Maior Valor</option>
                     <option value="date">Mais recentes</option>
                 </select>
+                <div className="mobile-filters">
+                    <button className="btn-filter-mobile">FILTRAR</button>
+                    <button className="btn-filter-mobile">ORDENAR</button>
+                </div>
             </div>
             <div className="container-products">
                 <div className="filters">
-                    <ProductsFilters allColors={allColors} colors={colors} filterList={filterList} setFilterList={setFilterList} products={products} />
+                    <ProductsFilters list={list}
+                        allColors={allColors}
+                        colors={colors}
+                        filterList={filterList}
+                        setFilterList={setFilterList} />
                 </div>
                 <div className="products-area">
-                    <div className="cards-area">
-                        {filterList.length === 0 ?
-                            products.map((item) => {
-                                return (
-                                    <ProductCard item={item} list={list} setCart={setCart} />
-                                )
-                            })
-                            : filterList.map((item) => {
-                                return (
-                                    <ProductCard item={item} list={list} setCart={setCart} />
-                                )
-                            })}
+                    <ul className="cards-area">
+                        {filterList.map((item) => {
+                            return (
+                                <ProductCard item={item} list={list} setCart={setCart} />
+                            )
+                        })}
 
-                    </div>
+                    </ul>
                     <div className="show-more">
-                        <button onClick={() => setProducts(products.concat(list))} className="btn-show-more"> CARREGAR MAIS</button>
+                        <button onClick={() => setFilterList(list.concat(list))} className="btn-show-more"> CARREGAR MAIS</button>
                     </div>
                 </div>
             </div>

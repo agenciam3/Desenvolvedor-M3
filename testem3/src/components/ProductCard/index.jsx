@@ -7,7 +7,7 @@ const ProductCard = ({ item, setCart }) => {
     }
 
     return (
-        <div key={item.id} className="single-card">
+        <li key={item.id} className="single-card">
             <img className="product-img" src={item.img} />
             <span className="product-name">{item.name.toLocaleUpperCase()}</span>
             <div className="price-area">
@@ -15,7 +15,7 @@ const ProductCard = ({ item, setCart }) => {
                 <span>até {item.installment} de R$ {(parseFloat(item.price) / item.installment).toFixed(2)}</span>
             </div>
             <button className="btn-addCart" onClick={() => handleAddCart()}>COMPRAR</button>
-        </div>
+        </li>
     )
 }
 
