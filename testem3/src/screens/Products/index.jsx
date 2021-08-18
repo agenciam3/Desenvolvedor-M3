@@ -7,6 +7,7 @@ const Products = ({ list, setCart }) => {
     const [filterList, setFilterList] = useState([])
     const [colors, setColors] = useState([])
     const [showFilter, setShowFilter] = useState(false)
+    const [showOrderBy, setShowOrderBy] = useState(false)
     const [allColors, setAllColors] = useState([])
     useEffect(() => {
         let cont = 1
@@ -55,9 +56,38 @@ const Products = ({ list, setCart }) => {
                 </select>
                 <div className="mobile-filters">
                     <button className="btn-filter-mobile" onClick={() => setShowFilter(oldBool => !oldBool)}>FILTRAR</button>
-                    <button className="btn-filter-mobile">ORDENAR</button>
+                    <button className="btn-filter-mobile" onClick={() => setShowOrderBy(oldBool => !oldBool)}>ORDENAR</button>
                 </div>
             </div>
+            {showOrderBy &&
+
+                <div className="modal-organize-mobile">
+                    <div className="mobile-filters-header">
+
+                        <span className="filter-title">ORDENAR</span>
+
+                        <button className="close-filters" onClick={() => setShowOrderBy(oldBool => !oldBool)}>
+                            <span className="filter-title">X</span>
+                        </button>
+                    </div>
+                    <div className="organize-by-mobile">
+                        <option className="organize-options" onClick={(e) => {
+                            setShowOrderBy(oldBool => !oldBool)
+                            handleOrganize(e)
+                        }}
+                            value="lower">Menor Valor</option>
+                        <option className="organize-options" onClick={(e) => {
+                            setShowOrderBy(oldBool => !oldBool)
+                            handleOrganize(e)
+                        }} value="highest">Maior Valor</option>
+                        <option className="organize-options" onClick={(e) => {
+                            setShowOrderBy(oldBool => !oldBool)
+                            handleOrganize(e)
+                        }} value="date">Mais recentes</option>
+                    </div>
+                </div >
+
+            }
             <div className="container-products">
                 <div className="filters">
                     <ProductsFilters list={list}

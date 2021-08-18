@@ -79,6 +79,25 @@
   width: 100%;
 }
 
+.modal-organize-mobile {
+  position: fixed;
+  overflow-y: scroll;
+  background-color: #fff;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.organize-by-mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.organize-options {
+  margin: 10px;
+}
+
 @media (max-width: 1400px) {
   .cards-area {
     grid-template-columns: repeat(3, 1fr);
