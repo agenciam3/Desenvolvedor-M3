@@ -25,6 +25,7 @@
 
 .btn-addCart {
   width: 100%;
+  max-width: 200px;
   height: 3rem;
   background-color: #000;
   color: #fff;

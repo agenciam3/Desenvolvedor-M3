@@ -6,6 +6,7 @@ import ProductsFilters from '../../components/ProductsFilters';
 const Products = ({ list, setCart }) => {
     const [filterList, setFilterList] = useState([])
     const [colors, setColors] = useState([])
+    const [showFilter, setShowFilter] = useState(false)
     const [allColors, setAllColors] = useState([])
     useEffect(() => {
         let cont = 1
@@ -22,7 +23,7 @@ const Products = ({ list, setCart }) => {
     }, [])
 
     const handleOrganize = (e) => {
-        let filteredArr = [...list]
+        let filteredArr = [...filterList]
         switch (e.target.value) {
             case "lower":
                 setFilterList(filteredArr.sort((a, b) => parseInt(a.price) - parseInt(b.price)))
@@ -31,7 +32,7 @@ const Products = ({ list, setCart }) => {
                 setFilterList(filteredArr.sort((a, b) => parseInt(a.price) - parseInt(b.price)).reverse())
                 break;
             case "none":
-                setFilterList(list)
+                setFilterList(filterList)
                 break;
             case "date":
                 setFilterList(filteredArr.sort((a, b) => new Date(b.date) - new Date(a.date)))
@@ -53,7 +54,7 @@ const Products = ({ list, setCart }) => {
                     <option value="date">Mais recentes</option>
                 </select>
                 <div className="mobile-filters">
-                    <button className="btn-filter-mobile">FILTRAR</button>
+                    <button className="btn-filter-mobile" onClick={() => setShowFilter(oldBool => !oldBool)}>FILTRAR</button>
                     <button className="btn-filter-mobile">ORDENAR</button>
                 </div>
             </div>
@@ -63,6 +64,8 @@ const Products = ({ list, setCart }) => {
                         allColors={allColors}
                         colors={colors}
                         filterList={filterList}
+                        showFilter={showFilter}
+                        setShowFilter={setShowFilter}
                         setFilterList={setFilterList} />
                 </div>
                 <div className="products-area">
