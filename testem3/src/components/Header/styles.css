@@ -21,10 +21,21 @@
   top: 40px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
   .header {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+  .cart-length {
+    right: 45px;
+    top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   .cart-length {
     right: 45px;

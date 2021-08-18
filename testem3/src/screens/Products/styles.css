@@ -4,7 +4,6 @@
 }
 .cards-area {
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -18,7 +17,7 @@
   font-weight: normal;
 }
 
-.organize-by {
+.organize-by-desktop {
   height: 3rem;
   padding: 10px;
   border: 1px solid #c7cace;
@@ -60,7 +59,7 @@
   width: 100%;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
   .cards-area {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -69,5 +68,12 @@
 @media (max-width: 768px) {
   .cards-area {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .organize-by-desktop {
+    display: none;
+  }
+
+  .product-type {
+    justify-content: center;
   }
 }

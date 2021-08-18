@@ -1,7 +1,7 @@
 import './styles.css'
 import { useState, useEffect } from 'react'
 
-const ProductsFilters = ({ allColors, colors, setFilterList, filterList, products }) => {
+const ProductsFilters = ({ allColors, colors, setFilterList, products }) => {
     const [showAllColors, setShowAllColors] = useState(false)
     const [colorFilter, setColorFilter] = useState([])
     const [sizeFilter, setSizeFilter] = useState([])
@@ -87,7 +87,7 @@ const ProductsFilters = ({ allColors, colors, setFilterList, filterList, product
 
 
     return (
-        <>
+        <div className="filter-container">
             <div className="color-filter">
                 <label className="filter-label">CORES</label>
                 {showAllColors ? allColors.map((item, index) => {
@@ -151,7 +151,7 @@ const ProductsFilters = ({ allColors, colors, setFilterList, filterList, product
                     <span>a partir de R$501</span>
                 </label >
             </div>
-        </>
+        </div>
     )
 }
 

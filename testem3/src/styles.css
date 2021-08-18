@@ -3,9 +3,19 @@
   padding-right: 6rem;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1400px) {
   .body-container {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-container {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

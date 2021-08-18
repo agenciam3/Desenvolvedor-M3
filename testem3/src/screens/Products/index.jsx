@@ -47,7 +47,7 @@ const Products = ({ list, setCart }) => {
         <div>
             <div className="product-type">
                 <h1 className="type-title">Blusas</h1>
-                <select onChange={(e) => handleOrganize(e)} className="organize-by">
+                <select onChange={(e) => handleOrganize(e)} className="organize-by-desktop">
                     <option value="none">Ordenar por</option>
                     <option value="lower">Menor Valor</option>
                     <option value="highest">Maior Valor</option>
