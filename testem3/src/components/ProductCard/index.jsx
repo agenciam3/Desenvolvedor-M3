@@ -8,7 +8,7 @@ const ProductCard = ({ item, setCart }) => {
 
     return (
         <li key={item.id} className="single-card">
-            <img className="product-img" src={item.img} />
+            <img className="product-img" src={item.img} alt="product-img" />
             <span className="product-name">{item.name.toLocaleUpperCase()}</span>
             <div className="price-area">
                 <span className="full-price">R${item.price}</span>

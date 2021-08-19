@@ -1,6 +1,8 @@
+import { useState } from "react";
+
 import Products from "./screens/Products";
-import './styles.css'
 import Header from "./components/Header";
+
 import img2 from './imagens/img_2.png'
 import img3 from './imagens/img_3.png'
 import img4 from './imagens/img_4.png'
@@ -10,7 +12,8 @@ import img7 from './imagens/img_7.png'
 import img8 from './imagens/img_8.png'
 import img9 from './imagens/img_9.png'
 import img10 from './imagens/img_10.png'
-import { useState } from "react";
+
+import './App.css'
 
 const list = [
   {

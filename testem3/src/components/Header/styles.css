@@ -8,6 +8,10 @@
   padding-right: 6rem;
 }
 
+.bag-logo {
+  cursor: pointer;
+}
+
 .cart-length {
   display: flex;
   justify-content: center;
@@ -85,6 +89,7 @@
   width: 70px;
   height: 40px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 @media (max-width: 1400px) {

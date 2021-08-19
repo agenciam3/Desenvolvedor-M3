@@ -6,16 +6,16 @@ const Header = ({ cart, setCart }) => {
     const [showCart, setShowCart] = useState(false)
 
     const handleDeleteItem = (product) => {
-        let newArr = cart.filter((p) => product != p)
+        let newArr = cart.filter((p) => product !== p)
         setCart(newArr)
     }
 
     return (
         <header className="header">
-            <img className="logo" src={Logo} />
+            <img className="logo" src={Logo} alt="logo" />
             <div>
-                <img src="https://img.icons8.com/ios-filled/40/000000/shopping-bag.png" className="bag-logo" onClick={() => setShowCart(oldBool => !oldBool)} />
-                {cart.length != 0 ? <span className="cart-length">{cart.length}</span> : <></>}
+                <img src="https://img.icons8.com/ios-filled/40/000000/shopping-bag.png" alt="icon-cart" className="bag-logo" onClick={() => setShowCart(oldBool => !oldBool)} />
+                {cart.length !== 0 ? <span className="cart-length">{cart.length}</span> : <></>}
             </div>
             <div onClick={() => setShowCart(oldBool => !oldBool)}
                 className={`modal-overlay ${showCart && "modal-overlay-opened"}`}>
@@ -35,7 +35,7 @@ const Header = ({ cart, setCart }) => {
                     {cart.map((item) => {
                         return (
                             <tr key={item.id}>
-                                <td className="table-td"><img src={item.img} className="img-table-product" /></td>
+                                <td className="table-td"><img alt="table-icon" src={item.img} className="img-table-product" /></td>
                                 <td className="table-td">{item.name}</td>
                                 <td className="table-td">{item.size}</td>
                                 <td className="table-td">R${item.price}</td>

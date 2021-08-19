@@ -18,7 +18,7 @@ const DesktopFilters = ({ allColors, handleColorFilter, handleSizeFilter, handle
                     )
                 })}
                 <button className="btn-more-colors" onClick={() => setShowAllColors(oldBool => !oldBool)}>
-                    {showAllColors ? "Ver menos cores " : "Ver mais cores"} <img className={`colors-icon ${!showAllColors && "active"}`} src="https://img.icons8.com/ios-glyphs/15/808080/chevron-up.png" />
+                    {showAllColors ? "Ver menos cores " : "Ver mais cores"} <img alt="colors-icon" className={`colors-icon ${!showAllColors && "active"}`} src="https://img.icons8.com/ios-glyphs/15/808080/chevron-up.png" />
                 </button>
             </div>
             <div className="sizes-filter">

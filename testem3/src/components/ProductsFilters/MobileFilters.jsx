@@ -19,7 +19,7 @@ const MobileFilters = ({ allColors, setShowFilter, handleColorFilter, handleSize
                 <div className="color-filter-mobile">
                     <div className="filter-label">
                         <label>CORES</label>
-                        <img onClick={() => setShowColorsMobile(oldBool => !oldBool)} src={`${!showColorsMobile ? 'https://img.icons8.com/material-rounded/20/000000/plus-math--v1.png' : 'https://img.icons8.com/material-rounded/20/000000/minus-math--v1.png'}`} />
+                        <img alt="icon-filter" onClick={() => setShowColorsMobile(oldBool => !oldBool)} src={`${!showColorsMobile ? 'https://img.icons8.com/material-rounded/20/000000/plus-math--v1.png' : 'https://img.icons8.com/material-rounded/20/000000/minus-math--v1.png'}`} />
                     </div>
                     {showColorsMobile &&
                         allColors.map((item, index) => {
@@ -34,7 +34,7 @@ const MobileFilters = ({ allColors, setShowFilter, handleColorFilter, handleSize
                 <div className="size-filter-mobile">
                     <div className="filter-label">
                         <label>TAMANHOS</label>
-                        <img onClick={() => setShowSizesMobile(oldBool => !oldBool)} src={`${!showSizesMobile ? 'https://img.icons8.com/material-rounded/20/000000/plus-math--v1.png' : 'https://img.icons8.com/material-rounded/20/000000/minus-math--v1.png'}`} />
+                        <img alt="icon-filter" onClick={() => setShowSizesMobile(oldBool => !oldBool)} src={`${!showSizesMobile ? 'https://img.icons8.com/material-rounded/20/000000/plus-math--v1.png' : 'https://img.icons8.com/material-rounded/20/000000/minus-math--v1.png'}`} />
                     </div>
                     <div className="btn-size-area">
                         {showSizesMobile &&
@@ -53,7 +53,7 @@ const MobileFilters = ({ allColors, setShowFilter, handleColorFilter, handleSize
                 <div className="prices-filter-mobile">
                     <div className="filter-label">
                         <label>FAIXA DE PREÇO</label>
-                        <img onClick={() => setShowPricesMobile(oldBool => !oldBool)} src={`${!showPricesMobile ? 'https://img.icons8.com/material-rounded/20/000000/plus-math--v1.png' : 'https://img.icons8.com/material-rounded/20/000000/minus-math--v1.png'}`} />
+                        <img alt="icon-filter" onClick={() => setShowPricesMobile(oldBool => !oldBool)} src={`${!showPricesMobile ? 'https://img.icons8.com/material-rounded/20/000000/plus-math--v1.png' : 'https://img.icons8.com/material-rounded/20/000000/minus-math--v1.png'}`} />
                     </div>
                     {showPricesMobile &&
                         <div className="prices-filter">

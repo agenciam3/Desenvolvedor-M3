@@ -18,10 +18,10 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
         } else {
             newFilters = list.filter(value => colorFilter.includes(value.color))
         }
-        if (sizeFilter.length != 0) {
+        if (sizeFilter.length !== 0) {
             newFilters = newFilters.filter(value => sizeFilter.includes(value.size))
         }
-        if (priceFilter.length != 0) {
+        if (priceFilter.length !== 0) {
             newFilters = newFilters.filter((value) => {
                 let price
                 let productPrice = parseInt(value.price)
@@ -39,16 +39,16 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
                 return priceFilter.includes(price)
             })
         }
-        if (filterList.length === 0 && sizeFilter.length != 0) {
+        if (filterList.length === 0 && sizeFilter.length !== 0) {
             setFilterList(list)
         }
         setFilterList(newFilters)
-    }, [colorFilter.length, sizeFilter.length, priceFilter.length])
+    }, [colorFilter.length, sizeFilter.length, priceFilter.length, colorFilter, filterList.length, list, setFilterList, sizeFilter, priceFilter])
 
     const handleColorFilter = (colorCheck) => {
         let newArr = []
         if (colorFilter.includes(colorCheck)) {
-            newArr = colorFilter.filter((color) => colorCheck != color)
+            newArr = colorFilter.filter((color) => colorCheck !== color)
             setColorFilter(newArr)
         } else {
             setColorFilter(oldList => [...oldList, colorCheck])
@@ -59,7 +59,7 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
 
         let newArr = []
         if (sizeFilter.includes(newSize)) {
-            newArr = sizeFilter.filter((size) => newSize != size)
+            newArr = sizeFilter.filter((size) => newSize !== size)
             setSizeFilter(newArr)
         } else {
             setSizeFilter(oldList => [...oldList, newSize])
@@ -70,7 +70,7 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
         let price = e.target.value
         let newArr = []
         if (priceFilter.includes(price)) {
-            newArr = priceFilter.filter((newPrice) => price != newPrice)
+            newArr = priceFilter.filter((newPrice) => price !== newPrice)
             setPriceFilter(newArr)
         } else {
             setPriceFilter(oldList => [...oldList, price])
