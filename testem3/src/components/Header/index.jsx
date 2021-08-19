@@ -34,7 +34,7 @@ const Header = ({ cart, setCart }) => {
                     </tr>
                     {cart.map((item) => {
                         return (
-                            <tr>
+                            <tr key={item.id}>
                                 <td className="table-td"><img src={item.img} className="img-table-product" /></td>
                                 <td className="table-td">{item.name}</td>
                                 <td className="table-td">{item.size}</td>

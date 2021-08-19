@@ -63,7 +63,7 @@ const Products = ({ list, setCart }) => {
                     <ul className="cards-area">
                         {filterList.map((item) => {
                             return (
-                                <ProductCard item={item} list={list} setCart={setCart} />
+                                <ProductCard key={item.id} item={item} list={list} setCart={setCart} />
                             )
                         })}
 

@@ -7,18 +7,9 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
     const [colorFilter, setColorFilter] = useState([])
     const [sizeFilter, setSizeFilter] = useState([])
     const [priceFilter, setPriceFilter] = useState([])
-    const [sizeSelect, setSizeSelect] = useState([])
     const sizes = ["P", "M", "G", "GG", "U", "36", "38", "40", "42", "44", "46"]
 
-    const handleSelectSize = (item) => {
-        if (sizeSelect.includes(item)) {
-            let filteredArr = sizeSelect.filter((size) => size !== item)
-            setSizeSelect(filteredArr)
-        } else {
-            setSizeSelect(oldArr => [...oldArr, item])
-        }
 
-    }
     useEffect(() => {
 
         let newFilters = []
@@ -30,7 +21,6 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
         if (sizeFilter.length != 0) {
             newFilters = newFilters.filter(value => sizeFilter.includes(value.size))
         }
-        console.log(priceFilter)
         if (priceFilter.length != 0) {
             newFilters = newFilters.filter((value) => {
                 let price
@@ -55,8 +45,7 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
         setFilterList(newFilters)
     }, [colorFilter.length, sizeFilter.length, priceFilter.length])
 
-    const handleColorFilter = (e) => {
-        let colorCheck = e.target.value
+    const handleColorFilter = (colorCheck) => {
         let newArr = []
         if (colorFilter.includes(colorCheck)) {
             newArr = colorFilter.filter((color) => colorCheck != color)
@@ -97,8 +86,11 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
                 handleSizeFilter={handleSizeFilter}
                 handlePriceFilter={handlePriceFilter}
                 sizes={sizes}
-                sizeSelect={sizeSelect}
-                handleSelectSize={handleSelectSize} />
+                sizeFilter={sizeFilter}
+                colorFilter={colorFilter}
+                priceFilter={priceFilter}
+
+            />
         )
     }
     return (
@@ -109,8 +101,12 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
             handleSizeFilter={handleSizeFilter}
             handlePriceFilter={handlePriceFilter}
             sizes={sizes}
-            sizeSelect={sizeSelect}
-            handleSelectSize={handleSelectSize}
+            sizeFilter={sizeFilter}
+            setSizeFilter={setSizeFilter}
+            colorFilter={colorFilter}
+            setColorFilter={setColorFilter}
+            priceFilter={priceFilter}
+            setPriceFilter={setPriceFilter}
         />
     )
 }
