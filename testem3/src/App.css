@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.body-container {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+@media (max-width: 1400px) {
+  .body-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .main-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .body-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

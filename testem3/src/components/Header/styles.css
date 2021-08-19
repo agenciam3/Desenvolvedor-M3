@@ -1,0 +1,116 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4.5rem;
+  border-bottom: 2.5px rgba(80, 80, 80, 0.4) solid;
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
+.bag-logo {
+  cursor: pointer;
+}
+
+.cart-length {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  background-color: #2bbff2;
+  right: 95px;
+  top: 40px;
+}
+
+.modal-cart {
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: clip;
+  width: 100%;
+  background: #fff;
+  max-width: 650px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s linear;
+  z-index: 2;
+  display: none;
+}
+
+.modal-cart.active {
+  display: block;
+}
+
+.modal-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.2s linear;
+  pointer-events: none;
+  display: none;
+}
+
+.modal-overlay-opened {
+  pointer-events: all;
+  display: block;
+}
+
+.img-table-product {
+  max-width: 75px;
+  max-height: 100px;
+}
+
+.cart-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+.table-th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.btn-delete {
+  background-color: rgb(243, 4, 4);
+  border: 0;
+  width: 70px;
+  height: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  .header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .cart-length {
+    right: 45px;
+    top: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .cart-length {
+    right: 45px;
+    top: 40px;
+  }
+}
