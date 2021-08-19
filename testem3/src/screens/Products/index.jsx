@@ -9,6 +9,7 @@ const Products = ({ list, setCart }) => {
     const [colors, setColors] = useState([])
     const [showFilter, setShowFilter] = useState(false)
     const [allColors, setAllColors] = useState([])
+    const [showAllProducts, setShowAllProducts] = useState(false)
     useEffect(() => {
         let cont = 1
         let colorsA = []
@@ -61,15 +62,18 @@ const Products = ({ list, setCart }) => {
                 </div>
                 <div className="products-area">
                     <ul className="cards-area">
-                        {filterList.map((item) => {
-                            return (
-                                <ProductCard key={item.id} item={item} list={list} setCart={setCart} />
-                            )
+                        {filterList.map((item, index) => {
+                            if (index >= 6 && !showAllProducts) {
+                                return <div key={index}></div>
+                            }
+                            return <ProductCard key={index} item={item} list={list} setCart={setCart} />
                         })}
 
                     </ul>
                     <div className="show-more">
-                        <button onClick={() => setFilterList(list.concat(list))} className="btn-show-more"> CARREGAR MAIS</button>
+                        <button onClick={() => {
+                            setShowAllProducts(oldBool => !oldBool)
+                        }} className={`btn-show-more ${showAllProducts && 'active'}`}> CARREGAR MAIS</button>
                     </div>
                 </div>
             </div>

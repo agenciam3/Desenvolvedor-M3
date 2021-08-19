@@ -28,6 +28,7 @@
 .modal-cart {
   position: absolute;
   overflow-y: scroll;
+  overflow-x: clip;
   width: 100%;
   background: #fff;
   max-width: 650px;

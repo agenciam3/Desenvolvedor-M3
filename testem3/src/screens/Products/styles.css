@@ -31,6 +31,10 @@
   font-weight: bold;
 }
 
+.btn-show-more.active {
+  display: none;
+}
+
 .products-area {
   width: 100%;
 }
