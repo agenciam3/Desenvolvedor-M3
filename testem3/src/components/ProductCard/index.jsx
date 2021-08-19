@@ -1,8 +1,10 @@
 import './styles.css'
 
-const ProductCard = ({ item, setCart }) => {
+const ProductCard = ({ item, setCart, setShowFeedback }) => {
 
     const handleAddCart = () => {
+        setShowFeedback(oldBool => !oldBool)
+        setTimeout(() => setShowFeedback(oldBool => !oldBool), 2000)
         setCart(oldCart => [...oldCart, item])
     }
 

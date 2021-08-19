@@ -46,6 +46,22 @@
   font-size: 20px;
 }
 
+.add-feedback-modal {
+  position: fixed;
+  margin: 48px;
+  padding: 22px;
+  border-radius: 6px;
+  background-color: #000;
+  color: #fff;
+  right: -100%;
+  top: 0;
+  transition: right 0.4s ease-in-out;
+}
+
+.add-feedback-modal.active {
+  right: 0;
+}
+
 @media (max-width: 1400px) {
   .cards-area {
     grid-template-columns: repeat(3, 1fr);

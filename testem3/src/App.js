@@ -12,7 +12,7 @@ function App() {
     <div className="main-container">
       <Header cart={cart} setCart={setCart} />
       <div className="body-container">
-        <Products list={list} setCart={setCart} />
+        <Products list={list} setCart={setCart} cart={cart} />
       </div>
     </div>
   );

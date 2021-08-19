@@ -30,9 +30,9 @@ const Header = ({ cart, setCart }) => {
                         <th className="table-th">Preço</th>
                         <th>&nbsp;</th>
                     </tr>
-                    {cart.map((item) => {
+                    {cart.map((item, index) => {
                         return (
-                            <tr key={item.id}>
+                            <tr key={index}>
                                 <td className="table-td"><img alt="table-icon" src={item.img} className="img-table-product" /></td>
                                 <td className="table-td">{item.name}</td>
                                 <td className="table-td">{item.size}</td>

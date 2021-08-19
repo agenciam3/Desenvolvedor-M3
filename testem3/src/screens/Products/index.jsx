@@ -4,12 +4,13 @@ import ProductsFilters from '../../components/ProductsFilters';
 import ProductType from '../../components/ProductType';
 import './styles.css'
 
-const Products = ({ list, setCart }) => {
+const Products = ({ list, setCart, cart }) => {
     const [filterList, setFilterList] = useState([])
     const [colors, setColors] = useState([])
     const [showFilter, setShowFilter] = useState(false)
     const [allColors, setAllColors] = useState([])
     const [showAllProducts, setShowAllProducts] = useState(false)
+    const [showFeedback, setShowFeedback] = useState(false)
     useEffect(() => {
         let cont = 1
         let colorsA = []
@@ -66,7 +67,7 @@ const Products = ({ list, setCart }) => {
                             if (index >= 6 && !showAllProducts) {
                                 return <div key={index}></div>
                             }
-                            return <ProductCard key={index} item={item} list={list} setCart={setCart} />
+                            return <ProductCard key={index} item={item} list={list} setCart={setCart} setShowFeedback={setShowFeedback} />
                         })}
 
                     </ul>
@@ -75,6 +76,9 @@ const Products = ({ list, setCart }) => {
                             setShowAllProducts(oldBool => !oldBool)
                         }} className={`btn-show-more ${showAllProducts && 'active'}`}> CARREGAR MAIS</button>
                     </div>
+                </div>
+                <div className={`add-feedback-modal ${showFeedback && 'active'}`}>
+                    Adicionado ao carrinho
                 </div>
             </div>
 
