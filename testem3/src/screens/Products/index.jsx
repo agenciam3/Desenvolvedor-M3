@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import './styles.css'
 import ProductCard from '../../components/ProductCard';
 import ProductsFilters from '../../components/ProductsFilters';
 import ProductType from '../../components/ProductType';
+import './styles.css'
 
 const Products = ({ list, setCart }) => {
     const [filterList, setFilterList] = useState([])

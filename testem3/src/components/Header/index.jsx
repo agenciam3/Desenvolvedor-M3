@@ -1,6 +1,6 @@
-import './styles.css'
-import Logo from '../../imagens/logo-m3.png';
 import { useState } from 'react';
+import Logo from '../../assets/img/logo-m3.png';
+import './styles.css'
 
 const Header = ({ cart, setCart }) => {
     const [showCart, setShowCart] = useState(false)
@@ -15,13 +15,11 @@ const Header = ({ cart, setCart }) => {
             <img className="logo" src={Logo} alt="logo" />
             <div>
                 <img src="https://img.icons8.com/ios-filled/40/000000/shopping-bag.png" alt="icon-cart" className="bag-logo" onClick={() => setShowCart(oldBool => !oldBool)} />
-                {cart.length !== 0 ? <span className="cart-length">{cart.length}</span> : <></>}
+                {cart.length !== 0 && <span className="cart-length">{cart.length}</span>}
             </div>
             <div onClick={() => setShowCart(oldBool => !oldBool)}
                 className={`modal-overlay ${showCart && "modal-overlay-opened"}`}>
             </div>
-
-
 
             <div className={`modal-cart ${showCart && "active"}`}>
                 <table className="cart-table">

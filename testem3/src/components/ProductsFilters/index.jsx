@@ -1,7 +1,7 @@
-import './styles.css'
 import { useState, useEffect } from 'react'
 import MobileFilters from './MobileFilters'
 import DesktopFilters from './DesktopFilters'
+import './styles.css'
 
 const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilter, setShowFilter }) => {
     const [colorFilter, setColorFilter] = useState([])
