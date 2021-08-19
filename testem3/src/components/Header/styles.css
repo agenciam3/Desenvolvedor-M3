@@ -21,6 +21,72 @@
   top: 40px;
 }
 
+.modal-cart {
+  position: absolute;
+  overflow-y: scroll;
+  width: 100%;
+  background: #fff;
+  max-width: 650px;
+  height: 400px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s linear;
+  z-index: 2;
+  display: none;
+}
+
+.modal-cart.active {
+  display: block;
+}
+
+.modal-overlay {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 0.2s linear;
+  pointer-events: none;
+  display: none;
+}
+
+.modal-overlay-opened {
+  pointer-events: all;
+  display: block;
+}
+
+.img-table-product {
+  max-width: 75px;
+  max-height: 100px;
+}
+
+.cart-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+  text-align: center;
+}
+
+.table-th {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.btn-delete {
+  background-color: rgb(243, 4, 4);
+  border: 0;
+  width: 70px;
+  height: 40px;
+  font-weight: bold;
+}
+
 @media (max-width: 1400px) {
   .header {
     padding-left: 3rem;

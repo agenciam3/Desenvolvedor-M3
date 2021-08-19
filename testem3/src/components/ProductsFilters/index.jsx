@@ -49,7 +49,6 @@ const ProductsFilters = ({ allColors, filterList, setFilterList, list, showFilte
                 return priceFilter.includes(price)
             })
         }
-        console.log(filterList)
         if (filterList.length === 0 && sizeFilter.length != 0) {
             setFilterList(list)
         }

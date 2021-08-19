@@ -109,7 +109,7 @@ function App() {
   const [cart, setCart] = useState([])
   return (
     <div className="main-container">
-      <Header cart={cart} />
+      <Header cart={cart} setCart={setCart} />
       <div className="body-container">
         <Products list={list} setCart={setCart} />
       </div>
