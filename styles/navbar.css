@@ -1,0 +1,42 @@
+#navbar {
+    padding: 20px 2rem;
+    border-bottom: 2px solid #ddd;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
+}
+
+#navbar nav {
+    max-width: 1200px;
+    width: 100%;
+
+    margin: 0 auto;
+    
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+}
+
+#bag {
+    margin: 0 5px;
+}
+
+#bag-counter {
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background-color: var(--primary-color);;
+    
+    color: white;
+    font-weight: bolder;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    right: -5px;
+    bottom: -5px;
+}

@@ -1,0 +1,113 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "image-source": "./assets/images/img_2.png",
+            "title": "camiseta mescla",
+            "price": 28.00,
+            "color": "gray",
+            "size": "M",
+            "date": "2000-05-15",
+            "installments": {
+                "times": 3,
+                "price": 9.33
+            }
+        }, {
+            "id": 2,
+            "image-source": "./assets/images/img_3.png",
+            "title": "saia em couro",
+            "price": 398.00,
+            "color": "black",
+            "size": "P",
+            "date": "2010-05-10",
+            "installments": {
+                "times": 5,
+                "price": 30.00
+            }
+        }, {
+            "id": 3,
+            "image-source": "./assets/images/img_4.png",
+            "title": "cardigan tigre",
+            "price": 398.00,
+            "color": "orange",
+            "size": "38",
+            "date": "2005-05-10",
+            "installments": {
+                "times": 5,
+                "price": 30.00
+            }
+        }, {
+            "id": 4,
+            "image-source": "./assets/images/img_5.png",
+            "title": "cardigan off white",
+            "price": 99.90,
+            "color": "white",
+            "size": "GG",
+            "date": "2015-05-10",
+            "installments": {
+                "times": 3,
+                "price": 33.30
+            }
+        }, {
+            "id": 5,
+            "image-source": "./assets/images/img_6.png",
+            "title": "body leopardo",
+            "price": 129.90,
+            "color": "orange",
+            "size": "44",
+            "date": "2000-05-05",
+            "installments": {
+                "times": 3,
+                "price": 43.43
+            }
+        }, {
+            "id": 6,
+            "image-source": "./assets/images/img_7.png",
+            "title": "casaco de pelos",
+            "price": 398.00,
+            "color": "pink",
+            "size": "U",
+            "date": "2000-04-10",
+            "installments": {
+                "times": 5,
+                "price": 30.00
+            }
+        }, {
+            "id": 7,
+            "image-source": "./assets/images/img_8.png",
+            "title": "cropped stripes",
+            "price": 120.00,
+            "color": "yellow",
+            "size": "P",
+            "date": "2000-05-10",
+            "installments": {
+                "times": 3,
+                "price": 40.00
+            }
+        }, {
+            "id": 8,
+            "image-source": "./assets/images/img_9.png",
+            "title": "camisa transparente",
+            "price": 398.00,
+            "color": "black",
+            "size": "42",
+            "date": "2000-05-10",
+            "installments": {
+                "times": 5,
+                "price": 30.00
+            }
+        }, {
+            "id": 9,
+            "image-source": "./assets/images/img_10.png",
+            "title": "pochete clutch",
+            "price": 99.00,
+            "color": "black",
+            "size": "M",
+            "date": "2000-05-10",
+            "installments": {
+                "times": 3,
+                "price": 33.00
+            }
+        }
+    ]
+}

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/filters.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/dropdown.css">
+    <link rel="stylesheet" href="styles/products.css">
+
+    <title>m3 - Performance Digital</title>
+</head>
+<body>
+
+    <header id="navbar">
+        <nav>
+            <a href="/index.html"><img src="assets/images/logo-m3.png" alt="logo m3" height="35px"></a>
+            <img src="assets/icons/shopping_bag_black_24dp.svg" alt="bolsa de compras" width="35px" id="bag">
+            <span id="bag-counter">0</span>
+        </nav>
+    </header>
+    
+    <main>
+        
+        <div id="mobile-menus">
+            <button onclick="showFilters()">Filtrar</button>
+            <button onclick="showSorts()">Ordenar</button>
+        </div>
+        
+        <nav class="filters">
+            <h3 class="category">Blusas</h3>
+
+            <header>
+                <h3>Filtrar</h3>
+                <button onclick="closeFilters()">
+                    <img src="assets/icons/close_black_24dp.svg" alt="Fechar">
+                </button>
+            </header>
+            
+            <div class="filter">
+                <h4 class="filter-title" onclick="expandFilter(0, this)">
+                    Cores
+                    <img src="assets/icons/add_black_24dp.svg" alt="expandir" class="expand-filters">
+                </h4>
+                <div class="input-container">
+                    <label>
+                        <input type="radio" name="color" value="yellow">
+                        <span class="checkmark"></span>
+                        Amarelo
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="black">
+                        <span class="checkmark"></span>
+                        Preto
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="white">
+                        <span class="checkmark"></span>
+                        Branco
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="gray">
+                        <span class="checkmark"></span>
+                        Cinza
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="orange">
+                        <span class="checkmark"></span>
+                        Laranja
+                    </label>
+                    <label>
+                        <input type="radio" name="color" value="pink">
+                        <span class="checkmark"></span>
+                        Rosa
+                    </label>
+                </div>
+            </div>
+            
+            <div class="filter" id="sizes">
+                <h4 class="filter-title" onclick="expandFilter(1, this)">
+                    Tamanhos
+                    <img src="assets/icons/add_black_24dp.svg" alt="expandir" class="expand-filters">
+                </h4>
+                <div class="input-container">
+                    <label>
+                        <input type="radio" name="size" value="P">
+                        P
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="M">
+                        M
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="G">
+                        G
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="GG">
+                        GG
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="U">
+                        U
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="36">
+                        36
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="38">
+                        38
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="40">
+                        40
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="42">
+                        42
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="44">
+                        44
+                    </label>
+                    <label>
+                        <input type="radio" name="size" value="46">
+                        46
+                    </label>
+                </div>
+            </div>
+            
+            <div class="filter">
+                <h4 class="filter-title" onclick="expandFilter(2, this)">
+                    Faixa de preço
+                    <img src="assets/icons/add_black_24dp.svg" alt="expandir" class="expand-filters">
+                </h4>
+                <div class="input-container">
+                    <label>
+                        <input type="radio" name="price" min="0" max="50">
+                        <span class="checkmark"></span>
+                        de R$0 até R$50
+                    </label>
+                    <label>
+                        <input type="radio" name="price" min="51" max="150">
+                        <span class="checkmark"></span>
+                        de R$51 até R$150
+                    </label>
+                    <label>
+                        <input type="radio" name="price" min="151" max="300">
+                        <span class="checkmark"></span>
+                        de R$151 até R$300
+                    </label>
+                    <label>
+                        <input type="radio" name="price" min="301" max="500">
+                        <span class="checkmark"></span>
+                        de R$301 até R$500
+                    </label>
+                    <label>
+                        <input type="radio" name="price" min="501" max="99999">
+                        <span class="checkmark"></span>
+                        a partir de R$501
+                    </label>
+                </div>
+            </div>
+        </nav>
+        
+        <section>
+            <div id="sort-container">
+                <div class="dropdown">
+                    <button class="dropdown-btn" onclick="toggleDropdown()">
+                        <div class="dropdown-value">
+                            Ordenar por:
+                        </div>
+                        <img src="assets/icons/expand_more_black_24dp.svg" alt="expandir">
+                    </button>
+                    
+                    <header>
+                        <h3>Ordenar</h3>
+                        <button onclick="closeSortMenu()">
+                            <img src="assets/icons/close_black_24dp.svg" alt="Fechar">
+                        </button>
+                    </header>
+
+                    <div class="dropdown-items">
+                        <div class="dropdown-item">Mais recentes</div>
+                        <div class="dropdown-item">Menor preço</div>
+                        <div class="dropdown-item">Maior preço</div>
+                    </div>
+                </div>
+            </div>
+            <div id="products"></div>
+            <div class="more-container">
+                <button id="load-more" onclick="addMore()">Carregar mais</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Agência M3 - Agência de Performance Digital</p>
+    </footer>
+
+    <script src="scripts/mobile.js"></script>
+    <script src="scripts/dropdown.js"></script>
+    <script src="scripts/loadcards.js"></script>
+    <script src="scripts/filters.js"></script>
+</body>
+</html>
