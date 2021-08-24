@@ -2,8 +2,8 @@
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
 
-Em Nova Friburgo estamos na: 
-> R. Helena Coutinho, 41 
+Em Nova Friburgo estamos na:
+> R. Helena Coutinho, 41
 > Braunes, Nova Friburgo/RJ
 [https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
 
@@ -22,7 +22,7 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 - Iniciativa, criatividade e colaboração;
 - Boas práticas: reutilização de código, semântica, organização, performance.
 
-### Desejáveis:
+### Desejáveis
 
 - Experiência com algum CMS
 - Conhecimento/Experiência em Vtex
@@ -37,7 +37,6 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 - Atualize o readme com as instruções necessárias para rodar o seu código;
 - Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
 - Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
-
 
 **obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
 
@@ -62,3 +61,30 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Grunt, Gulp ou similar
 
 ##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+
+----
+
+## Instruções
+
+### Tecnologias
+
+- HTML5
+- CSS3
+- JS (DOM)
+- NodeJS (json-server)
+
+### Executando
+
+Para simular uma API json utilizei o json-server. Para executá-lo você deverá ter o [NodeJS](https://nodejs.org/en/) instalado, abrir seu terminal na pasta ./data e executar o seguinte comando:
+
+```bash
+npx json-server products.json
+```
+
+Para ter uma visualização do projeto, basta abrir o arquivo [index](index.html) no seu navegador preferido.
+
+### Contato
+
+**E-mail:**     joelsonferreira@id.uff.br
+**Telefone:**   (22) 99899-7637
+[Github](https://github.com/JoelsonFerreira), [Linkedin](https://www.linkedin.com/in/joelson-ferreira-08364a160/)

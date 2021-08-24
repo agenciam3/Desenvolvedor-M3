@@ -1,0 +1,169 @@
+
+.filters {
+    width: 100%;
+    max-width: 200px;
+    align-self: flex-start;
+    position: sticky;
+    top: 111px;
+    background-color: white;
+}
+
+.filters header {
+    display: none;
+}
+
+.category {
+    font-size: 2.3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.filter {
+    margin: 30px 0;
+}
+
+.filter-title {
+    text-transform: uppercase;
+
+    font-size: 1.3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.filter-title img {
+    display: none;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    height: auto;
+}
+
+.input-container label {
+    position: relative;
+    padding-left: 30px;
+    margin: 5px 0;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+.input-container label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    padding: 3px;
+    transition: all 200ms;
+}
+
+.input-container label:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.input-container label input:checked ~ .checkmark {
+    background-clip: content-box;
+    background-color: var(--primary-color);
+}
+
+#sizes .input-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#sizes .input-container label {
+    width: 40px;
+    height: 40px;
+
+    padding-left: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #ccc;
+    color: #ccc;
+
+    transition: all 200ms;
+}
+
+#sizes .input-container label:hover {
+    background-color: #ccc;
+    color: white !important;
+}
+
+@media screen and (max-width: 600px) {
+    .category {
+        display: none;
+    }
+
+    .filters header {
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .filters header h3 {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+    }
+
+    .filters header button {
+        background-color: transparent;
+        border: none;
+    }
+
+    .filter-title {
+        cursor: pointer;
+        margin: 2.5rem 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .filter-title img {
+        display: block;
+    }
+
+    .filter {
+        margin: 0 2rem;
+    }
+
+    .filters {
+        display: none;
+        position: fixed;
+        height: 100vh;
+        overflow-y: scroll;
+        width: 100vw;
+        max-width: 100vw;
+        top: 0px;
+        left: 0;
+        z-index: 20;
+        padding-bottom: 2rem;
+    }
+
+    .input-container {
+        margin-left: 2rem;
+        display: none;
+    }
+}
