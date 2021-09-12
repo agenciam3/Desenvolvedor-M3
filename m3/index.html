@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> M3 </title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/12ad9131c6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header-principal">
+        <div class="container-lado-esquerdo">
+            <a href="index.html">
+                <img src="assets/logo-m3.png" alt="logo-m3">
+            </a>
+        </div>
+        <div class="container-lado-direito">
+            <div class="sacolinha-compra">
+                <img src="assets/bag-32pc.png" alt="sacola de compras" id="sacola-de-compras">
+            </div>
+            <div class="circulo-de-contagem" id="contador-item"></div>
+
+
+        </div>
+    </header>
+    <main>
+        <header class="container-header">
+            <div class="container-lado-esquerdo">
+                <h1>Blusas</h1>
+            </div>
+            <div class="container-lado-direito">
+                <section class="container-ordenacao">
+                    <select name="ordenacao" id="ordenacao" class="opcoes-filtros">
+                        <option selected hidden class="option-ordem">Ordenar por</option>
+                        <option value="op-1" class="option-ordem">Mais recentes</option>
+                        <option value="op-2" class="option-ordem">Menor preço</option>
+                        <option value="op-3" class="option-ordem">Maior preço</option>
+                    </select>
+                </section>
+            </div>
+        </header>
+        <nav class="menu">
+            <form action="#">
+                <h3>CORES</h3>
+                <section class="container-filtros-cores">
+                    <ul>
+                        <li>
+                            <label for="amarelo">
+                                <input type="checkbox" name="amarelo" id="amarelo"> Amarelo
+                            </label>
+                        </li>
+                        <li>
+                            <label for="azul">
+                                <input type="checkbox" name="azul" id="azul"> Azul
+                            </label>
+                        </li>
+                        <li>
+                            <label for="branco">
+                                <input type="checkbox" name="branco" id="branco"> Branco
+                            </label>
+                        </li>
+                        <li>
+                            <label for="cinza">
+                                <input type="checkbox" name="cinza" id="cinza"> Cinza
+                            </label>
+                        </li>
+                        <li>
+                            <label for="laranja">
+                                <input type="checkbox" name="laranja" id="laranja"> Laranja
+                            </label>
+                        </li>
+                        <li>
+                            <label for="verde">
+                                <input type="checkbox" name="verde" id="verde"> Verde
+                            </label>
+                        </li>
+                        <li>
+                            <label for="vermelho">
+                                <input type="checkbox" name="vermelho" id="vermelho"> Vermelho
+                            </label>
+                        </li>
+                        <li>
+                            <label for="preto">
+                                <input type="checkbox" name="preto" id="preto"> Preto
+                            </label>
+                        </li>
+                        <li>
+                            <label for="rosa">
+                                <input type="checkbox" name="rosa" id="rosa"> Rosa
+                            </label>
+                        </li>
+                        <li>
+                            <label for="vinho">
+                                <input type="checkbox" name="vinho" id="vinho"> Vinho
+                            </label>
+                        </li>
+                    </ul>
+
+                </section>
+                <h3>Tamanho</h3>
+                <section class="container-filtros-tamanhos">
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="P" id="P" />
+                            <label class="lab">P</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="M" id="M" />
+                            <label class="lab">M</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="G" id="G" />
+                            <label class="lab">G</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="GG" id="GG" />
+                            <label class="lab">GG</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="U" id="U" />
+                            <label class="lab">U</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="36" id="36" />
+                            <label class="lab">36</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="38" id="38" />
+                            <label class="lab">38</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="40" id="40" />
+                            <label class="lab">40</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="42" id="42" />
+                            <label class="lab">42</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="44" id="44" />
+                            <label class="lab">44</label>
+                        </div>
+                    </div>
+                    <div class="container-grid">
+                        <div class="check-estilos">
+                            <input type="checkbox" name="46" id="46" />
+                            <label class="lab">46</label>
+                        </div>
+                </section>
+                <section class="container-filtro-preco">
+                    <h3>FAIXA DE PREÇO</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="faixa-1" id="faixa-1">
+                            <label for=""> de R$0 até R$50</label>
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="faixa-2" id="faixa-2">
+                            <label for=""> de R$51 até R$150</label>
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="faixa-3" id="faixa-3">
+                            <label for=""> de R$151 até R$300</label>
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="faixa-4" id="faixa-4">
+                            <label for=""> de R$301 até R$500</label>
+                            </input>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="faixa-5" id="faixa-5">
+                            <label for="">Acima de 501</label>
+                            </input>
+                        </li>
+                    </ul>
+                </section>
+            </form>
+        </nav>
+        <section class="container-body-grid" id="items">
+<!--             
+            <section class="subcontainer-grid" id="0 ">
+
+                <div class="foto ">
+                    <img src="assets/img_2.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>CAMISA MESCLA</p>
+                    <p class="preco ">R$ 28,00</p>
+                    <p>até 3x de R$9,33</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section> 
+            <section class="subcontainer-grid " id="1 ">
+                                <div class="foto ">
+                    <img src="assets/img_3.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>SAIA EM COURO</p>
+                    <p class="preco ">R$ 398,00</p>
+                    <p>até 5x de R$30,00</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="2 ">
+                
+                <div class="foto ">
+                    <img src="assets/img_4.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>CARDIGAN TIGRE</p>
+                    <p class="preco ">R$ 398,00</p>
+                    <p>até 5x de R$30,00</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="3 ">
+            
+                <div class="foto ">
+                    <img src="assets/img_5.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>CARDIGAN OFF WHITE</p>
+                    <p class="preco ">R$ 99,00</p>
+                    <p>até 3x de R$33,30</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="4 ">
+    
+                <div class="foto ">
+                    <img src="assets/img_6.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>BODY LEOPARDO</p>
+                    <p class="preco ">R$ 129,90</p>
+                    <p>até 3x de R$43,43</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="5 ">
+            
+                <div class="foto ">
+                    <img src="assets/img_7.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>CASACO PELOS</p>
+                    <p class="preco ">R$ 398,00</p>
+                    <p>até 5x de R$30,00</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="6 ">
+            
+                <div class="foto ">
+                    <img src="assets/img_8.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>CROPPED STRIPES</p>
+                    <p class="preco ">R$ 120,00</p>
+                    <p>até 3x de R$40,00</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="7 ">
+            
+                <div class="foto ">
+                    <img src="assets/img_9.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>CAMISA TRANSPARENTE</p>
+                    <p class="preco ">R$ 398,00</p>
+                    <p>até 5x de R$30,00</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section>
+            <section class="subcontainer-grid " id="8 ">
+    
+                <div class="foto ">
+                    <img src="assets/img_10.png " alt="Blusas ">
+                </div>
+                <caption>
+                    <p>POCHETE CLUTCH</p>
+                    <p class="preco ">R$ 99,00</p>
+                    <p>até 3x de R$33,30</p>
+                    <button type="submit " class="botao-comprar ">comprar</button>
+                </caption>
+            </section> -->
+            <!-- <a href="# " class="botao-scroll ">CARREGAR MAIS</a> -->
+        </section>
+    </main>
+    <footer>
+        <h4>Agencia M3- Agencia de Perrformance digital</h4>
+    </footer>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
