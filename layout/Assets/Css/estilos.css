@@ -1,0 +1,26 @@
+#header{
+    /*Novamente definimos a largura da div*/
+    width:1000px;
+    /* altura da div */
+    height:100px;
+    /* Cor de fundo da div */
+    background-color:#00F;
+}
+
+#conteudo{
+    /*Novamente definimos a largura da div*/
+    width:1000px;
+    /* altura da div */
+    height:500px;
+    /* Cor de fundo da div */
+    background-color:#0F0;
+}
+
+#footer{
+    /*Novamente definimos a largura da div*/
+    width:1000px;
+    /* altura da div */
+    height:100px;
+    /* Cor de fundo da div */
+    background-color:#C3C;
+}
