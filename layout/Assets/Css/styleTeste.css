@@ -1,3 +1,8 @@
+.navM3{
+    height: 100px;
+    background-color: cadetblue;
+}
+
 #header{
     /*Novamente definimos a largura da div*/
     width:1000px;
