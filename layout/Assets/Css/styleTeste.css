@@ -99,6 +99,7 @@ select:focus-visible{
 label{
     display: inline;
 }
+
 .grid-container {
     display: flex;
     flex-wrap: wrap;
