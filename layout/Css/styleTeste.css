@@ -1,0 +1,176 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+/* -- HEADER -- */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 120px; 
+    border-bottom: 2px solid #C0C0C0;
+}
+
+/* -- NAV -- */
+
+.topnav {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.iconM3{
+    cursor: pointer; 
+    float: left;
+}
+
+.iconBagM3{
+    cursor: pointer; 
+    float: right;
+    width: 35px;
+}
+
+/* -- Container -- */
+
+.grid-container-filter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    width: 20%;
+    margin-right: 30px;
+}
+
+.grid-container-filter label{
+    font-size: 16px;
+}
+
+.grid-container-filter .center-text{
+    margin: 7px 0;
+}
+
+.Content-colors, .Content-tam, .Content-price{
+    margin: 0 0 30px;
+}
+
+.Content-filter{
+    margin: 30px 50px 0;
+}
+
+.Content h2{
+    font-weight: 500;
+    margin: 0 0 10px 0;
+}
+
+.TitleClothes{
+    display: flex;
+    justify-content: space-between;
+}
+
+.TitleClothes h1{
+    font-weight: 100;
+}
+
+.select_filter_type{
+    border: 1px solid #000;
+    font-size: 18px;
+    margin: 20px 0 20px 0;
+    padding: 5px;
+}
+
+select:focus-visible{
+    outline: none;
+}
+
+.Content{
+    display:flex;
+    flex-direction: row;
+}
+
+label{
+    display: inline;
+}
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    text-align: center;
+    justify-content: space-between;
+}
+.grid-container .box  {
+    margin: 0 15px 40px;
+}
+
+.grid-container p{
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+.box p:nth-child(3){
+    font-weight: bolder;
+}
+
+.box button{
+    cursor: pointer;
+    border: none;
+    background-color: #000;
+    width: 100%;
+    height: 40px;
+}
+
+.box button span{
+    color: #fff;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+
+/* -- FOOTER -- */
+footer{
+    background-color: black;
+    text-align:center;
+}
+
+footer > p{
+    color: #fff;
+    padding: 5px;
+    font-family: emoji;
+    font-weight: 600;
+}
+
+
+input[type=checkbox] {
+    position: relative;
+      cursor: pointer;
+}
+input[type=checkbox]:before {
+    content: "";
+    /* display: block; */
+    /* position: absolute; */
+    /* width: 16px;
+    height: 16px;
+    top: 0;
+    left: 0;
+    border: 2px solid #555555;
+    border-radius: 3px; */
+    background-color: #4EE1F9;
+}
+input[type=checkbox]:checked:after {
+    
+    /* display: block;
+    */
+    border: solid black;
+    /* border-width: 0 2px 2px 0; */
+    
+    background-color: #4EE1F9;
+    /* #4EE1F9 */
+}
