@@ -1,0 +1,71 @@
+{
+    "id":01,
+    "produto":"CAMISA MESCLA",
+    "informacoes":{
+         "preco": 28.00,
+         "cor": "Cinza"
+    }
+}, 
+{
+    "id":02,
+    "produto":"SAIA EM COURO",
+    "informacoes":{ 
+        "preco": 398.00,
+        "cor": "Laranja"
+    }
+},
+{
+    "id":03,
+    "produto":"CARDIGAN TIGRE",
+    "informacoes":{
+        "preco": 398.00,
+        "cor": "Laranja"
+    }
+},
+{ 
+    "id":04,
+    "produto":"CARDIGAN OFF WHITE",
+    "informacoes":{ 
+        "preco": 99.00,
+        "cor": "Branco"
+    }
+},
+{
+    "id":05,
+    "produto":"BODY LEOPARDO",
+    "informacoes":{
+        "preco": 129.00,
+        "cor": "Amarelo"
+    }
+},
+{
+    "id":06,
+    "produto":"CASACO PELOS",
+    "informacoes":{ 
+        "preco": 398.00,
+         "cor": "Rosa"
+    }
+},
+{
+    "id":07,
+    "produto":"CROPPED STRIPES",
+    "informacoes":{
+        "preco": 120.00,
+        "cor": "Vermelho"
+        }
+},
+{
+    "id":08,
+    "produto":"CAMISA TRANSPARENT",
+    "informacoes":{
+        "preco": 398.00,
+        "cor": "Preto"
+        }
+},
+{
+    "id":09,
+    "produto":"POCHETE CLUTCH",
+    "informacoes":{
+        "preco": 99.00,
+        "cor": "Branco"}
+},
