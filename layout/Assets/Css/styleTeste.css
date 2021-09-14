@@ -105,8 +105,10 @@ label{
     flex-wrap: wrap;
     width: 80%;
     text-align: center;
-    justify-content: space-between;
+    /* justify-content: center; botar no mobile */
+    /* align-items: center; botar no mobile  */
 }
+
 .grid-container .box  {
     margin: 0 15px 40px;
 }
