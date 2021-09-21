@@ -39,12 +39,12 @@ $(document).ready(function () {
   function populateEstoque(jsonObj) {
     var cores = jsonObj["Cores"];
     var tamanhos = jsonObj["Tamanhos"];
-    // var faixaPreco = jsonObj["Faixa"];
+    var faixa = jsonObj["Faixa"];
     var produtos = jsonObj["Produtos"];
   
     preenchendoCores(cores);
     preenchendoTamanhos(tamanhos);
-    preenchendoFaixaPreco(faixaPreco);
+    preenchendoFaixaPreco(faixa);
     gridProdutos(produtos);
   
     $("select").change(function () {
@@ -112,26 +112,24 @@ $(document).ready(function () {
     }
   }
 
-  // function preenchendoFaixaPreco(faixaPreco) { 
+  function preenchendoFaixaPreco(faixa){
+
+    for (var f = 0; f < faixa.length; f++) { 
+      var elementPrice = `<div>`;  
+      elementPrice +=`<input type="checkbox" class="checkbox-custom" name="faixa" value= ${faixa[f].preco} id=${faixa[f].preco}>`;
+      elementPrice +=`<label for=${faixa[f].preco} class="checkbox-custom-label"> ${faixa[f].legenda} </label>`;
+      elementPrice += `</div>`;
   
-  //   // name: nome do array do json --- value/id: cada item de informação do json
-  //   for (var f = 0; f < faixaPreco.length; f++) { 
-  //     var elementPrice =`<div>`;  
-  //     elementPrice +=`<input type="checkbox" class="checkbox-custom" name="cores" value= ${faixaPreco[f].preco} id=${cores[f].preco}>`;
-  //     elementPrice +=`<label for=${faixaPreco[f].preco} class="checkbox-custom-label"> ${faixaPreco[f].OptionColor} </label>`;
-  //     elementPrice +=`</div>`;
-  
-  //     //Mobile
-  //     if($(window).width() < 576){ 
-  //       $("#PanelPreco").append(elementPrice);
-  //     }  
-  //     //Desktop
-  //     else{ 
-  //       $("#Colors").append(elementPrice);
-  //     }  
-  //   }
-     
-  // }
+      //Mobile
+      if($(window).width() < 576){ 
+        $("#PanelPreco").append(elementPrice);
+      }  
+      //Desktop
+      else{ 
+        $("#Faixa_Preco").append(elementPrice);
+      }  
+    }
+  }
   
   function gridProdutos(produtos) {
   
