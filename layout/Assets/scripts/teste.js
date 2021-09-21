@@ -39,18 +39,18 @@ $(document).ready(function () {
   function populateEstoque(jsonObj) {
     var cores = jsonObj["Cores"];
     var tamanhos = jsonObj["Tamanhos"];
-    var faixaPreco = jsonObj["Faixa"];
+    // var faixaPreco = jsonObj["Faixa"];
     var produtos = jsonObj["Produtos"];
   
     preenchendoCores(cores);
     preenchendoTamanhos(tamanhos);
-    gridProdutos(produtos, cores, tamanhos);
+    preenchendoFaixaPreco(faixaPreco);
+    gridProdutos(produtos);
   
     $("select").change(function () {
       filtrarPreco(this.value, produtos);
     });
   
-    
     $('.checkbox-custom').on("click", function () {
       var filtros = [];
       var removeOn = [];
@@ -111,6 +111,27 @@ $(document).ready(function () {
       $("#Tamanhos").append(elementTamanhos);
     }
   }
+
+  // function preenchendoFaixaPreco(faixaPreco) { 
+  
+  //   // name: nome do array do json --- value/id: cada item de informação do json
+  //   for (var f = 0; f < faixaPreco.length; f++) { 
+  //     var elementPrice =`<div>`;  
+  //     elementPrice +=`<input type="checkbox" class="checkbox-custom" name="cores" value= ${faixaPreco[f].preco} id=${cores[f].preco}>`;
+  //     elementPrice +=`<label for=${faixaPreco[f].preco} class="checkbox-custom-label"> ${faixaPreco[f].OptionColor} </label>`;
+  //     elementPrice +=`</div>`;
+  
+  //     //Mobile
+  //     if($(window).width() < 576){ 
+  //       $("#PanelPreco").append(elementPrice);
+  //     }  
+  //     //Desktop
+  //     else{ 
+  //       $("#Colors").append(elementPrice);
+  //     }  
+  //   }
+     
+  // }
   
   function gridProdutos(produtos) {
   

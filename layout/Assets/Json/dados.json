@@ -156,19 +156,19 @@
     ],
     "Faixa": [
       {
-        "preco": 50 
+        "preco": "0/50" 
       },
       {
-        "preco": 150 
+        "preco": "51/150"
       },
       {
-        "preco": 300 
+        "preco": "151/300" 
       },
       {
-        "preco": 500 
+        "preco": "301/500" 
       },
       {
-        "preco": 999999 
+        "preco": "all" 
       }
     ]
   }
