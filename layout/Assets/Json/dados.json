@@ -1,71 +1,174 @@
 {
-    "id":01,
-    "produto":"CAMISA MESCLA",
-    "informacoes":{
-         "preco": 28.00,
-         "cor": "Cinza"
-    }
-}, 
-{
-    "id":02,
-    "produto":"SAIA EM COURO",
-    "informacoes":{ 
-        "preco": 398.00,
+    "Produtos": [
+      { 
+        "id": 1,
+        "image": "/layout/imagens/img_2.png",
+        "produto":"CAMISA MESCLA",
+        "valor": 28.50,
+        "parcela": 2,
+        "cor": "Cinza"
+
+      },
+      { 
+        "id": 2,
+        "image": "/layout/imagens/img_3.png",
+        "produto":"SAIA EM COURO",
+        "valor": 398.00,
+        "parcela": "até 3x de R$9,33",
         "cor": "Laranja"
-    }
-},
-{
-    "id":03,
-    "produto":"CARDIGAN TIGRE",
-    "informacoes":{
-        "preco": 398.00,
+      },
+      {
+        "id": 3,
+        "image": "/layout/imagens/img_4.png",
+        "produto":"CARDIGAN TIGRE",
+        "valor": 398.00,
+        "parcela": "até 3x de R$9,33",
         "cor": "Laranja"
-    }
-},
-{ 
-    "id":04,
-    "produto":"CARDIGAN OFF WHITE",
-    "informacoes":{ 
-        "preco": 99.00,
+      },
+      { 
+        "id": 4,
+        "image": "/layout/imagens/img_5.png",
+        "produto":"CARDIGAN OFF WHITE",
+        "valor": 99.00,
+        "parcela": "até 3x de R$9,33",
         "cor": "Branco"
-    }
-},
-{
-    "id":05,
-    "produto":"BODY LEOPARDO",
-    "informacoes":{
-        "preco": 129.00,
+      },
+      { 
+        "id": 5,
+        "image": "/layout/imagens/img_6.png",
+        "produto":"BODY LEOPARDO",
+        "valor": 129.00,
+        "parcela": "até 3x de R$9,33",
         "cor": "Amarelo"
-    }
-},
-{
-    "id":06,
-    "produto":"CASACO PELOS",
-    "informacoes":{ 
-        "preco": 398.00,
-         "cor": "Rosa"
-    }
-},
-{
-    "id":07,
-    "produto":"CROPPED STRIPES",
-    "informacoes":{
-        "preco": 120.00,
-        "cor": "Vermelho"
-        }
-},
-{
-    "id":08,
-    "produto":"CAMISA TRANSPARENT",
-    "informacoes":{
-        "preco": 398.00,
+      },
+      {
+        "id": 6,
+        "image": "/layout/imagens/img_7.png",
+        "produto":"CASACO PELOS",
+        "valor": 398.00,
+        "parcela": "até 3x de R$9,33",
+        "cor": "Rosa"
+      },
+      { 
+        "id": 7,
+        "image": "/layout/imagens/img_8.png",
+        "produto":"CROPPED STRIPES",
+        "valor": 120.00,
+        "parcela": "até 3x de R$9,33",
+        "cor": "Multicolor"
+      },
+      {
+        "id": 8,
+        "image": "/layout/imagens/img_9.png",
+        "produto":"CAMISA TRANSPARENT",
+        "valor": 398.00,
+        "parcela": "até 3x de R$9,33",
         "cor": "Preto"
-        }
-},
-{
-    "id":09,
-    "produto":"POCHETE CLUTCH",
-    "informacoes":{
-        "preco": 99.00,
-        "cor": "Branco"}
-},
+      },
+      {
+        "id": 9,
+        "image": "/layout/imagens/img_2.png",
+        "produto":"POCHETE CLUTCH",
+        "valor": 99.00,
+        "parcela": "até 3x de R$9,33",
+        "cor": "Branco"
+      }
+    ],
+    "Cores": [
+      { 
+        "id": "01AM",
+        "OptionColor": "Amarelo"
+      },
+      { 
+        "id": "02AZ",
+        "OptionColor": "Azul"
+      },
+      { 
+        "id": "03BC",
+        "OptionColor": "Branco"
+      },
+      { 
+        "id": "04CZ",
+        "OptionColor": "Cinza"
+      },
+      { 
+        "id": "05LJ",
+        "OptionColor": "Laranja"
+      },
+      { 
+        "id": "06VD",
+        "OptionColor": "Verde"
+      },
+      { 
+        "id": "07VM",
+        "OptionColor": "Vermelho"
+      },
+      { 
+        "id": "08PT",
+        "OptionColor": "Preto"
+      },
+      { 
+        "id": "09RS",
+        "OptionColor": "Rosa"
+      },
+      { 
+        "id": "010VO",
+        "OptionColor": "Vinho"
+      }
+    ],
+    "Tamanhos": [
+      {
+        "descricao": "PP"
+      },
+      {
+        "descricao": "P"
+      },
+      {
+        "descricao": "M"
+      },
+      { 
+        "descricao": "G"
+      },
+      { 
+        "descricao": "GG"
+      },
+      { 
+        "descricao": "40"
+      },
+      { 
+        "descricao": "41"
+      },
+      { 
+        "descricao": "42"
+      },
+      { 
+        "descricao": "43"
+      },
+      { 
+        "descricao": "44"
+      },
+      { 
+        "descricao": "45"
+      },
+      { 
+        "descricao": "46"
+      }
+    ],
+    "Faixa": [
+      {
+        "preco": 50 
+      },
+      {
+        "preco": 150 
+      },
+      {
+        "preco": 300 
+      },
+      {
+        "preco": 500 
+      },
+      {
+        "preco": 999999 
+      }
+    ]
+  }

@@ -58,8 +58,37 @@ header{
     margin: 7px 0;
 }
 
-.Content-colors, .Content-tam, .Content-price{
+.Content_colors, .Content_tam, .Content_price{
     margin: 0 0 30px;
+}
+
+.Content_tam > div{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.button-custom{
+    margin: 4px;
+    background: #fff;
+    border: 1px solid #000;
+    opacity: 0.6;
+    height: 35px;
+    width: 35px;
+}
+
+.button-custom:focus{
+    border: 2px solid #01C8FF;
+    color: #000;
+    opacity: 1;
+    font-size: unset;
+}
+
+.button-custom span{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: space-between;
 }
 
 .Content-filter{
@@ -96,15 +125,12 @@ select:focus-visible{
     flex-direction: row;
 }
 
-label{
-    display: inline;
-}
-
 .grid-container {
     display: flex;
     flex-wrap: wrap;
     width: 80%;
     text-align: center;
+    justify-content: space-evenly;
     /* justify-content: center; botar no mobile */
     /* align-items: center; botar no mobile  */
 }
@@ -136,7 +162,6 @@ label{
     font-size: 18px;
 }
 
-
 /* -- FOOTER -- */
 footer{
     background-color: black;
@@ -149,31 +174,231 @@ footer > p{
     font-family: emoji;
     font-weight: 600;
 }
+  
+/* end only demo styles */
 
+.checkbox-custom{
+    opacity: 0;
+    position: absolute;   
+}
 
-input[type=checkbox] {
+.checkbox-custom, .checkbox-custom-label{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.checkbox-custom-label {
     position: relative;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+    content: '';
+    background: #fff;
+    border: 1px solid #000;
+    display: inline-block;
+    vertical-align: middle;
+    width: 10px;
+    height: 10px;
+    padding: 2px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label:before {
+    background: #01C8FF;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+}
+
+.checkbox-custom:focus + .checkbox-custom-label {
+    outline: none;
+}
+
+
+  /* end only demo styles */
+/*   
+  .checkbox-custom {
+      opacity: 0;
+      position: absolute;   
+  }
+  
+  .checkbox-custom, .checkbox-custom-label{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 5px;
       cursor: pointer;
-}
-input[type=checkbox]:before {
-    content: "";
-    /* display: block; */
-    /* position: absolute; */
-    /* width: 16px;
-    height: 16px;
-    top: 0;
-    left: 0;
-    border: 2px solid #555555;
-    border-radius: 3px; */
-    background-color: #4EE1F9;
-}
-input[type=checkbox]:checked:after {
+  }
+  
+  .checkbox-custom-label{
+      position: relative;
+  }
+  
+  .checkbox-custom + .checkbox-custom-label:before, .radio-custom + .radio-custom-label:before {
+      content: '';
+      background: #fff;
+      border: 1px solid #000;
+      display: inline-block;
+      vertical-align: middle;
+      width: 20px;
+      height: 20px;
+      padding: 2px;
+      margin-right: 10px;
+      text-align: center;
+  }
+  
+  .checkbox-custom:checked + .checkbox-custom-label:before {
+      background: #01C8FF;
+      box-shadow: inset 0px 0px 0px 4px #fff;
+  }
+  
     
-    /* display: block;
-    */
-    border: solid black;
-    /* border-width: 0 2px 2px 0; */
-    
-    background-color: #4EE1F9;
-    /* #4EE1F9 */
+  .checkbox-custom:focus + .checkbox-custom-label {
+    outline: none; 
+  } */
+
+
+
+.accordion {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    padding-right: 18px;
+    padding-left: 18px;
+    padding-top: 18px;
+    padding-bottom: 10px; 
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: 0.4s;
+}
+  
+.accordion:after {
+    content: '\002B';
+    color: #000;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
+    padding: 0 35px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.FilterAccordion, .FilterOrder{
+    display: none;
+}
+
+.FilterAccordion .FilterTitle, .FilterOrder .FilterTitle {
+    font-size: 18px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px; 
+    border-bottom: 1px solid #C0C0C0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FilterTitle::after{ 
+    content: "\00d7";
+    font-size: 30px;
+}
+
+.FilterTitle p{
+    margin: 0;
+}
+
+
+.FilterOpen{
+    display: flex;
+}
+
+.FilterOrderBtn{
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+}
+
+.FilterOrderBtn button{
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    text-align: left;
+    background-color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    outline: none;
+}
+
+@media (max-width:576px){  
+
+    .grid-container-filter, .select_filter_type{
+        display: none;
+    }
+
+    .grid_container_filter_mobile{
+        display: block;
+        margin: 0 50px 30px 50px;
+        width: 100%;
+    }
+
+    .grid_container_filter_mobile .FilterOrder{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .grid_container_filter_mobile .FilterOpen button{
+        width: 100%;
+        background-color: #fff;
+        border: 0.5px solid black;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-top: 20px;
+        padding-bottom: 20px;  
+        cursor: pointer;   
+    }
+
+    .grid_container_filter_mobile .FilterOpen button span{
+        font-size: 20px;
+    }
+
+    .grid-container .box {
+        margin: 0 0 40px;
+        width: 80%;
+    }
+
+    .TitleClothes, .Content{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Content-filter {
+        margin: 30px 0 0;
+    }
+}
+
+
+@media (min-width:577px){
+
+    .grid-container-filter{
+        /* display: block; */
+    }
+
+    .grid_container_filter_mobile{
+        display: none;
+    }
 }
