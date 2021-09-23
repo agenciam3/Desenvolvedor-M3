@@ -4,19 +4,19 @@
     <meta charset="utf-8">
     <title>Teste</title>
 
-    <link type="text/css" rel="stylesheet" media="screen" href="/layout/Assets/Css/styleTeste.css"/>
+    <link type="text/css" rel="stylesheet" media="screen" href="../../layout/Assets/Css/styleTeste.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="/layout/Assets/scripts/teste.js"></script>
   </head>
 
 <body>    
+  <!-- Top bar -->
   <header>
     <img class="iconM3" src="/layout/imagens/logo-m3.png">
     <div class="position-itens">
       <a onclick="openModal()" >
         <img class="iconBagM3" src="/layout/Assets/Imgs/bagM3.png">
       </a>
-
       <div class="backSpan">
         <span>0</span>
       </div>
@@ -41,6 +41,7 @@
   
   </div>
 
+  <!--Filtros Mobile-->
   <div class="FilterAccordion" > 
     <div class="FilterTitle">
       <p>Filtrar</p>
@@ -61,6 +62,10 @@
       </div>
     </div>
 
+    <div class="butonAPL">
+      <button onclick="clearWin()">Aplicar</button>  
+      <button onclick="clearCheck()">Limpar</button>  
+    </div>
   </div>
 
   <div class="FilterOrder" >
@@ -75,7 +80,7 @@
     </div>
   </div>
 
-  <!--Filtros-->
+  <!--Filtros e produtos-->
   <div class="Content-filter">
       <div class="TitleClothes">
         <h1>Blusas</h1>
@@ -131,6 +136,7 @@
     
   </div>
 
+  <!-- Footer -->
   <footer id="footer">
     <p>Agência M3 - Agência de Performance Digital</p>
   </footer>

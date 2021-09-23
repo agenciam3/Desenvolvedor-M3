@@ -126,7 +126,7 @@ header{
     cursor: pointer;
 }
 
-/* -- Container -- */
+/* -- Filtros e produtos -- */
 
 .grid-container-filter{
     display: flex;
@@ -218,8 +218,6 @@ select:focus-visible{
     width: 80%;
     text-align: center;
     justify-content: space-evenly;
-    /* justify-content: center; botar no mobile */
-    /* align-items: center; botar no mobile  */
 }
 
 .grid-container .box  {
@@ -391,6 +389,32 @@ footer > p{
     justify-content: center;
 }
 
+.butonAPL{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 250px;
+}
+
+.butonAPL button:nth-child(1){
+    width: 140px;
+    height: 65px;
+    background-color: #01C8FF;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.butonAPL button:nth-child(2){
+    width: 140px;
+    height: 65px;
+    background-color: #ffff;
+    color: #C0C0C0;
+    border: 1px solid #C0C0C0;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .FilterAccordion, .FilterOrder{
     display: none;
 }
@@ -440,12 +464,24 @@ footer > p{
 
 
   
-
+/* Media query */
 
 @media (max-width:768px){  
 
     header {
         padding: 15px 50px;
+    }
+
+    .modal-content {
+        width: 85%;
+    }
+
+    .modalProduct {
+        width: 100%;
+    }
+
+    .imgModal{
+        display: none;
     }
 
     .grid-container-filter, .select_filter_type{
@@ -491,7 +527,7 @@ footer > p{
     }
 
     .FilterAccordion, .FilterOrder {
-        height: 530px;
+        min-height: 530px;
     }
     
     .Content-filter {

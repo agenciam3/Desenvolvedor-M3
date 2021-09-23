@@ -98,6 +98,17 @@
         "cor": "Branco",
         "tamanho": "M",
         "modal": 0
+      },
+      {
+        "id": 10,
+        "image": "/layout/imagens/img_7.png",
+        "produto":"CROPPED STRIPES",
+        "tag":"croppedstripes",
+        "valor": 120.00,
+        "parcela": "até 3x de R$40,00",
+        "cor": "Azul",
+        "tamanho": "M",
+        "modal": 0
       }
     ],
     "Cores": [

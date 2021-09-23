@@ -25,112 +25,112 @@
     }
 
     $(".FilterTitle").on("click", function () {
-      $(".FilterAccordion").hide( 1500 );
-      $( ".FilterOrder").hide( 1500 );
-      $(".Content-filter").show( 1500 );
+      $(".FilterAccordion").hide( 500 );
+      $( ".FilterOrder").hide( 500 );
+      $(".Content-filter").show( 500 );
     });    
     
     LoadQtdProduto();
     ContentModal();
   });
-    
+  
   //Funções chamadas 
-
   function populateEstoque(jsonObj) {
-    var cores = jsonObj["Cores"];
-    var tamanhos = jsonObj["Tamanhos"];
-    var faixa = jsonObj["Faixa"];
-    var produtos = jsonObj["Produtos"];
-  
-    preenchendoCores(cores);
-    preenchendoTamanhos(tamanhos);
-    preenchendoFaixaPreco(faixa);
-    gridProdutos(produtos);
-  
-    $("select").change(function () {
-      filtrarPreco(this.value, produtos);
-    });
-
-    $("FilterOrderBtn button").on('click', function(){
-      filtrarPrecoMob(this.value, produtos);
-    });
-
-    let Products = document.querySelectorAll('.add-product');
+      var cores = jsonObj["Cores"];
+      var tamanhos = jsonObj["Tamanhos"];
+      var faixa = jsonObj["Faixa"];
+      var produtos = jsonObj["Produtos"];
     
-    for (let i=0; i < Products.length; i++) {
-  
-      Products[i].addEventListener('click', () => {
-        QtdProduto(produtos[i]);
-        TotalProduto(produtos[i]);
-      })
-    }
+      preenchendoCores(cores);
+      preenchendoTamanhos(tamanhos);
+      preenchendoFaixaPreco(faixa);
+      gridProdutos(produtos);
+    
+      $("select").change(function () {
+        filtrarPreco(this.value, produtos);
+      });
 
-  var allCheckboxes = document.querySelectorAll("input[type=checkbox]");
-  var allClothes = Array.from(document.querySelectorAll(".box"));
-  var checked = {};
+      $("FilterOrderBtn button").on('click', function(){
+        filtrarPrecoMob(this.value, produtos);
+      });
 
-  getChecked("cores");
-  getChecked("tamanho");
-  getChecked("faixa");
-
-  Array.prototype.forEach.call(allCheckboxes, function (el) {
-    el.addEventListener("change", toggleCheckbox);
-  });
-
-  function toggleCheckbox(e) {
-    getChecked(e.target.name);
-    setVisibility();
-  }
-
-  function getChecked(name) {
-    checked[name] = Array.from(
-      document.querySelectorAll("input[name=" + name + "]:checked")
-    ).map(function (el) {
-      return el.value;
-    });
-  }
-
-  function setVisibility() {
-    var array1 = [];
-    for (var i = 0; i < checked.faixa.length; i++) {
-      var menor = Number(checked.faixa[i].split("/")[0]);
-      var maior = Number(checked.faixa[i].split("/")[1]);
-      array1.push(menor);
-      array1.push(maior);
-    }
-
-    allClothes.map(function (el) {
-      var cores = checked.cores.length
-        ? intersectArray(Array.from(el.classList), checked.cores).length
-        : true;
-      var tamanho = checked.tamanho.length
-        ? intersectArray(Array.from(el.classList), checked.tamanho).length
-        : true;
-      var faixa = checked.faixa.length ? true : false;
-
-      var limite = true;
-      if (faixa == true) {
-        var limite =
-          (el.classList[3] >= array1[0] && el.classList[3]) <= array1[array1.length - 1]
-            ? true
-            : false;
+      let Products = document.querySelectorAll('.add-product');
+      
+      for (let i=0; i < Products.length; i++) {
+    
+        Products[i].addEventListener('click', () => {
+          QtdProduto(produtos[i]);
+          TotalProduto(produtos[i]);
+        })
       }
 
-      if (cores && tamanho && limite) {
-        el.style.display = "block";
-      } else {
-        el.style.display = "none";
-      }
+    var allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+    var allClothes = Array.from(document.querySelectorAll(".box"));
+    var checked = {};
+
+    getChecked("cores");
+    getChecked("tamanho");
+    getChecked("faixa");
+
+    Array.prototype.forEach.call(allCheckboxes, function (el) {
+      el.addEventListener("change", toggleCheckbox);
     });
 
-    function intersectArray(arr1, arr2) {
-      const set = new Set(arr2);
-      const intersection = new Set(arr1.filter((elem) => set.has(elem)));
-      return Array.from(intersection);
+    function toggleCheckbox(e) {
+      getChecked(e.target.name);
+      setVisibility();
+    }
+
+    function getChecked(name) {
+      checked[name] = Array.from(
+        document.querySelectorAll("input[name=" + name + "]:checked")
+      ).map(function (el) {
+        return el.value;
+      });
+    }
+
+    function setVisibility() {
+      var array1 = [];
+      for (var i = 0; i < checked.faixa.length; i++) {
+        var menor = Number(checked.faixa[i].split("/")[0]);
+        var maior = Number(checked.faixa[i].split("/")[1]);
+        array1.push(menor);
+        array1.push(maior);
+      }
+
+      allClothes.map(function (el) {
+        var cores = checked.cores.length
+          ? intersectArray(Array.from(el.classList), checked.cores).length
+          : true;
+        var tamanho = checked.tamanho.length
+          ? intersectArray(Array.from(el.classList), checked.tamanho).length
+          : true;
+        var faixa = checked.faixa.length ? true : false;
+
+        var limite = true;
+        if (faixa == true) {
+          var limite =
+            (el.classList[3] >= array1[0] && el.classList[3]) <= array1[array1.length - 1]
+              ? true
+              : false;
+        }
+
+        if (cores && tamanho && limite) {
+          el.style.display = "block";
+        } else {
+          el.style.display = "none";
+        }
+      });
+
+      function intersectArray(arr1, arr2) {
+        const set = new Set(arr2);
+        const intersection = new Set(arr1.filter((elem) => set.has(elem)));
+        return Array.from(intersection);
+      }
     }
   }
-}
 
+//Populando filtro de cores 
   function preenchendoCores(cores) { 
 
     for (var c = 0; c < cores.length; c++) { 
@@ -151,6 +151,7 @@
      
   }
   
+  //Populando filtro de tamanhos 
   function preenchendoTamanhos(tamanhos) {
 
     for (var t = 0; t < tamanhos.length; t++) {
@@ -170,6 +171,7 @@
     }
   }
 
+  //Populando filtro de faixa de preço
   function preenchendoFaixaPreco(faixa){
 
     for (var f = 0; f < faixa.length; f++) { 
@@ -189,6 +191,7 @@
     }
   }
   
+  //Populando produtos 
   function gridProdutos(produtos) {
   
     for (var x = 0; x < produtos.length; x++) {
@@ -203,6 +206,7 @@
     }
   }
   
+  //Filtro do select de preço(Incompleto)
   function filtrarPreco(value, produtos) {
    
     if (value == "menor") {
@@ -219,6 +223,7 @@
     }
   }
 
+  //Filtro de preço mobile(Incompleto)
   function filtrarPrecoMob(value, produtos) {
    
     if (value == "menorMob") {
@@ -235,7 +240,7 @@
     }
   }
 
-  
+  //Sempre que carregar a tela ele vai pegar a última quantidade de itens colocados no carrinho e sinalizar no span
   function LoadQtdProduto(){
 
     let productItem = localStorage.getItem('QtdProduto');
@@ -245,6 +250,7 @@
     }
   }
 
+  //Sinalizar Quantidade de itens no carrinho 
   function QtdProduto(produtos){
 
     let productItem = localStorage.getItem('QtdProduto');
@@ -289,10 +295,8 @@
     localStorage.setItem("ProdutosModal", JSON.stringify(BoxItens));
   }
   
+  //Calcula o total dos produtos 
   function TotalProduto(produtos){
-
-    console.log(produtos.valor)
-
 
     let BoxPrice = localStorage.getItem('total');
 
@@ -306,6 +310,7 @@
 
   }
 
+  //Populando intens no modal
   function ContentModal() {
     
     BoxItens = localStorage.getItem("ProdutosModal");
@@ -313,8 +318,6 @@
     BoxItens = JSON.parse(BoxItens);
     
     let intemModal = document.querySelector(".modalProduct");
-
-    console.log(BoxItens)
 
     if(BoxItens && intemModal){
 
@@ -335,22 +338,37 @@
 
   }
 
+  //Abrindo modal
   function openModal(){
    document.getElementById("OpenModal").style.display = "block";
   }
   
+  //Fechando modal
   function closeModal(){
     document.getElementById("OpenModal").style.display = "none";
   }
 
+  //Abrindo filtros mobile
   function OpenFilters(){
-    $(".FilterAccordion").show( 1500 );
-    $(".Content-filter").hide( 1500 );
+    $(".FilterAccordion").show( 500 );
+    $(".Content-filter").hide( 500 );
   }
   
+  //Fechando filtros mobile
   function OpenOrder(){
-    $(".FilterOrder").show( 1500 );
-    $(".Content-filter").hide( 1500 );
+    $(".FilterOrder").show( 500 );
+    $(".Content-filter").hide( 500 );
   }
 
-  
+  function clearWin(){
+    $(".FilterAccordion").hide( 500 );
+    $(".Content-filter").show( 500 );
+  }
+
+  //Limpar input do mobile
+  function clearCheck(){
+    var inputs = $('input[type=checkbox]');
+    inputs.attr('checked', false);
+    inputs.prop('checked', false);
+    
+  }
