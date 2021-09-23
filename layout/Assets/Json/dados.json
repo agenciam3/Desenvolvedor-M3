@@ -5,73 +5,81 @@
         "image": "/layout/imagens/img_2.png",
         "produto":"CAMISA MESCLA",
         "valor": 28.50,
-        "parcela": 2,
-        "cor": "Cinza"
-
+        "parcela": "até 3x de R$9,33",
+        "cor": "Cinza",
+        "tamanho": "G"
       },
       { 
         "id": 2,
         "image": "/layout/imagens/img_3.png",
         "produto":"SAIA EM COURO",
         "valor": 398.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Laranja"
+        "parcela": "até 5x de R$30",
+        "cor": "Laranja",
+        "tamanho": "P"
       },
       {
         "id": 3,
         "image": "/layout/imagens/img_4.png",
         "produto":"CARDIGAN TIGRE",
         "valor": 398.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Laranja"
+        "parcela": "até 5x de R$30",
+        "cor": "Laranja",
+        "tamanho": "PP"
       },
       { 
         "id": 4,
         "image": "/layout/imagens/img_5.png",
         "produto":"CARDIGAN OFF WHITE",
         "valor": 99.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Branco"
+        "parcela": "até 3x de R$33,30",
+        "cor": "Branco",
+        "tamanho": "M"
       },
       { 
         "id": 5,
         "image": "/layout/imagens/img_6.png",
         "produto":"BODY LEOPARDO",
         "valor": 129.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Amarelo"
+        "parcela": "até 3x de R$43,43",
+        "cor": "Amarelo",
+        "tamanho": "GG"
       },
       {
         "id": 6,
         "image": "/layout/imagens/img_7.png",
         "produto":"CASACO PELOS",
         "valor": 398.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Rosa"
+        "parcela": "até 5x de R$30",
+        "cor": "Rosa",
+        "tamanho": "P"
       },
       { 
         "id": 7,
         "image": "/layout/imagens/img_8.png",
         "produto":"CROPPED STRIPES",
         "valor": 120.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Multicolor"
+        "parcela": "até 3x de R$40,00",
+        "cor": "Multicolor",
+        "tamanho": "M"
       },
       {
         "id": 8,
         "image": "/layout/imagens/img_9.png",
         "produto":"CAMISA TRANSPARENT",
         "valor": 398.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Preto"
+        "parcela": "até 5x de R$30",
+        "cor": "Preto",
+        "tamanho": "GG"
       },
       {
         "id": 9,
         "image": "/layout/imagens/img_2.png",
         "produto":"POCHETE CLUTCH",
         "valor": 99.00,
-        "parcela": "até 3x de R$9,33",
-        "cor": "Branco"
+        "parcela": "até 3x de R$33,00",
+        "cor": "Branco",
+        "tamanho": "M"
       }
     ],
     "Cores": [
@@ -156,19 +164,24 @@
     ],
     "Faixa": [
       {
-        "preco": "0/50" 
+        "preco": "0/50",
+        "legenda": "de R$0 até R$50"
       },
       {
-        "preco": "51/150"
+        "preco": "51/150",
+        "legenda": "de R$51 até R$150"
       },
       {
-        "preco": "151/300" 
+        "preco": "151/300",
+        "legenda": "de R$151 até R$300" 
       },
       {
-        "preco": "301/500" 
+        "preco": "301/500",
+        "legenda": "de R$301 até R$500" 
       },
       {
-        "preco": "all" 
+        "preco": "all",
+        "legenda": "a partir de R$01" 
       }
     ]
   }

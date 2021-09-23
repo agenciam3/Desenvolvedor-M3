@@ -8,14 +8,24 @@
     <link type="text/css" rel="stylesheet" media="screen" href="/layout/Assets/Css/styleTeste.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="/layout/Assets/scripts/teste.js"></script>
+
   </head>
 
 <body>    
   <header>
-    <!-- <img class="iconM3" src="/layout/imagens/logo-m3.png">-->
-    <img class="iconBagM3" src="/layout/Assets/Imgs/bagM3.png">   
+    <img class="iconM3" src="/layout/imagens/logo-m3.png">
+    <a onclick="openModal()" ><img class="iconBagM3" src="/layout/Assets/Imgs/bagM3.png"></a>
   </header>
   
+  <div id="OpenModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+      <p>Some text in the Modal..</p>
+    </div>
+  
+  </div>
+
   <div class="FilterAccordion" > 
     <div class="FilterTitle">
       <p>Filtrar</p>
@@ -27,37 +37,12 @@
       </div>
 
       <button class="accordion">Tamanhos</button>
-      <div id="PanelTam" class="panel">
+      <div id="PanelTam" class="panel panel-mobile">
       </div>
 
       <button class="accordion">Faixa de preços</button>
       <div id="PanelPreco" class="panel">
-        
-        <!-- <div>
-          <input type="checkbox" name="faixa" value="0/50" id="0/50" class="checkbox-custom" >
-          <label for="0/50" class="checkbox-custom-label">de R$0 até R$50</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="faixa" value="51/150" id="51/150" class="checkbox-custom" >
-          <label for="51/150" class="checkbox-custom-label">de R$51 até R$150</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="faixa" value="151/300" id="151/300" class="checkbox-custom" >
-          <label for="151/300" class="checkbox-custom-label">de R$151 até R$300</label>
-        </div>
-
-        <div>
-          <input type="checkbox" name="faixa" value="301/500" id="301/500" class="checkbox-custom" >
-          <label for="301/500" class="checkbox-custom-label">de R$301 até R$500</label>
-        </div>
-        
-        <div>
-          <input type="checkbox" name="faixa" value="all" id="all" class="checkbox-custom">
-          <label for="all" class="checkbox-custom-label">a partir de R$01</label>
-        </div> -->
-      
+              
       </div>
     </div>
 
@@ -98,7 +83,7 @@
 
           </div>
 
-           <!--Filtro de tamanhos-->
+          <!--Filtro de tamanhos-->
           <div class="Content_tam">  
             <h2>Tamanhos</h2>
             <div id="Tamanhos"> 
@@ -110,31 +95,6 @@
           <div id="Faixa_Preco" class="Content_price">
             <h2>Faixa de preço</h2>
             
-            <!-- <div>
-              <input type="checkbox" name="faixa" value="0/50Desk" id="0/50Desk" class="checkbox-custom" >
-              <label for="0/50Desk" class="checkbox-custom-label">de R$0 até R$50</label>
-            </div>
-    
-            <div>
-              <input type="checkbox" name="faixa" value="51/150Desk" id="51/150Desk" class="checkbox-custom" >
-              <label for="51/150Desk" class="checkbox-custom-label">de R$51 até R$150</label>
-            </div>
-    
-            <div>
-              <input type="checkbox" name="faixa" value="151/300Desk" id="151/300Desk" class="checkbox-custom" >
-              <label for="151/300Desk" class="checkbox-custom-label">de R$151 até R$300</label>
-            </div>
-    
-            <div>
-              <input type="checkbox" name="faixa" value="301/500Desk" id="301/500Desk" class="checkbox-custom" >
-              <label for="301/500Desk" class="checkbox-custom-label">de R$301 até R$500</label>
-            </div>
-            
-            <div>
-              <input type="checkbox" name="faixa" value="allDesk" id="allDesk" class="checkbox-custom">
-              <label for="allDesk" class="checkbox-custom-label">a partir de R$01</label>
-            </div> -->
-
           </div>
         </div>
 
