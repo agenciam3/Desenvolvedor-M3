@@ -30,24 +30,11 @@
       $(".Content-filter").show( 1500 );
     });    
     
-
-    
+    LoadQtdProduto();
+    ContentModal();
   });
     
-  //Funções chamadas
-  
-  let AddProduto = document.querySelectorAll('#addProduct');
-    
-    for(var i=0; i < AddProduto.length; i++){
-      AddProduto[i].addEventListener('click', () => {
-        // ProdutoNumber();
-        // console.log("EU");
-      })
-    }
-
-  // function ProdutoNumber(){
-  //   console.log("Eu aqui")
-  // }
+  //Funções chamadas 
 
   function populateEstoque(jsonObj) {
     var cores = jsonObj["Cores"];
@@ -64,7 +51,85 @@
       filtrarPreco(this.value, produtos);
     });
 
+    $("FilterOrderBtn button").on('click', function(){
+      filtrarPrecoMob(this.value, produtos);
+    });
+
+    let Products = document.querySelectorAll('.add-product');
+    
+    for (let i=0; i < Products.length; i++) {
+  
+      Products[i].addEventListener('click', () => {
+        QtdProduto(produtos[i]);
+        TotalProduto(produtos[i]);
+      })
+    }
+
+  var allCheckboxes = document.querySelectorAll("input[type=checkbox]");
+  var allClothes = Array.from(document.querySelectorAll(".box"));
+  var checked = {};
+
+  getChecked("cores");
+  getChecked("tamanho");
+  getChecked("faixa");
+
+  Array.prototype.forEach.call(allCheckboxes, function (el) {
+    el.addEventListener("change", toggleCheckbox);
+  });
+
+  function toggleCheckbox(e) {
+    getChecked(e.target.name);
+    setVisibility();
   }
+
+  function getChecked(name) {
+    checked[name] = Array.from(
+      document.querySelectorAll("input[name=" + name + "]:checked")
+    ).map(function (el) {
+      return el.value;
+    });
+  }
+
+  function setVisibility() {
+    var array1 = [];
+    for (var i = 0; i < checked.faixa.length; i++) {
+      var menor = Number(checked.faixa[i].split("/")[0]);
+      var maior = Number(checked.faixa[i].split("/")[1]);
+      array1.push(menor);
+      array1.push(maior);
+    }
+
+    allClothes.map(function (el) {
+      var cores = checked.cores.length
+        ? intersectArray(Array.from(el.classList), checked.cores).length
+        : true;
+      var tamanho = checked.tamanho.length
+        ? intersectArray(Array.from(el.classList), checked.tamanho).length
+        : true;
+      var faixa = checked.faixa.length ? true : false;
+
+      var limite = true;
+      if (faixa == true) {
+        var limite =
+          (el.classList[3] >= array1[0] && el.classList[3]) <= array1[array1.length - 1]
+            ? true
+            : false;
+      }
+
+      if (cores && tamanho && limite) {
+        el.style.display = "block";
+      } else {
+        el.style.display = "none";
+      }
+    });
+
+    function intersectArray(arr1, arr2) {
+      const set = new Set(arr2);
+      const intersection = new Set(arr1.filter((elem) => set.has(elem)));
+      return Array.from(intersection);
+    }
+  }
+}
 
   function preenchendoCores(cores) { 
 
@@ -132,15 +197,16 @@
       elementProduto += `<p>${produtos[x].produto}</p>`;
       elementProduto += `<p>R$ ${produtos[x].valor}</p>`;
       elementProduto += `<p>${produtos[x].parcela}</p>`;
-      elementProduto += `<button id="addProduct"><span>Comprar</span></button>`;
+      elementProduto += `<button class="add-product"><span>Comprar</span></button>`;
       elementProduto += `</div>`;
       $("#grid_produtos").append(elementProduto);
     }
   }
   
   function filtrarPreco(value, produtos) {
-    
+   
     if (value == "menor") {
+      console.log("ALo")
       produtos.sort(function (a, b) {
         return a.valor - b.valor;
       });
@@ -150,11 +216,125 @@
         return b.valor - a.valor;
       });
       gridProdutos(produtos);
-    } else {
-      console.log("Não foi possivel filtrar");
     }
   }
+
+  function filtrarPrecoMob(value, produtos) {
+   
+    if (value == "menorMob") {
+      console.log("ALo")
+      produtos.sort(function (a, b) {
+        return a.valor - b.valor;
+      });
+      gridProdutos(produtos);
+    } else if (value == "maiorMob") {
+      produtos.sort(function (a, b) {
+        return b.valor - a.valor;
+      });
+      gridProdutos(produtos);
+    }
+  }
+
   
+  function LoadQtdProduto(){
+
+    let productItem = localStorage.getItem('QtdProduto');
+
+    if(productItem){
+      document.querySelector('.backSpan span').textContent = productItem;
+    }
+  }
+
+  function QtdProduto(produtos){
+
+    let productItem = localStorage.getItem('QtdProduto');
+    productItem = parseInt(productItem);
+
+    if(productItem){
+      localStorage.setItem('QtdProduto', productItem + 1);
+      document.querySelector('.backSpan span').textContent = productItem + 1;
+    } 
+    else {
+      localStorage.setItem('QtdProduto', 1);
+      document.querySelector('.backSpan span').textContent = 1;
+    }
+
+    addProduto(produtos);
+  }
+
+  function addProduto(produtos){
+
+    let BoxItens = localStorage.getItem("ProdutosModal");
+
+    BoxItens = JSON.parse(BoxItens);
+
+    if(BoxItens != null){
+
+      if(BoxItens[produtos.tag] == undefined){
+
+        BoxItens = {
+          ...BoxItens,
+          [produtos.tag] : produtos
+        }
+      }
+      BoxItens[produtos.tag].modal += 1;
+    } 
+    else{ 
+      produtos.modal = 1
+      BoxItens = {
+        [produtos.tag] : produtos
+      }
+    }
+   
+    localStorage.setItem("ProdutosModal", JSON.stringify(BoxItens));
+  }
+  
+  function TotalProduto(produtos){
+
+    console.log(produtos.valor)
+
+
+    let BoxPrice = localStorage.getItem('total');
+
+    if(BoxPrice != null){
+      BoxPrice = parseInt(BoxPrice);
+      localStorage.setItem("total", BoxPrice + produtos.valor);
+    }
+    else{
+      localStorage.setItem("total", produtos.valor);
+    }
+
+  }
+
+  function ContentModal() {
+    
+    BoxItens = localStorage.getItem("ProdutosModal");
+
+    BoxItens = JSON.parse(BoxItens);
+    
+    let intemModal = document.querySelector(".modalProduct");
+
+    console.log(BoxItens)
+
+    if(BoxItens && intemModal){
+
+      Object.values(BoxItens).map( item =>{
+        intemModal.innerHTML += ` <div class="alinharModal" >
+          <div class="alinharItem">
+            <img class="imgModal" src=${item.image} >
+            <h5>${item.produto}</h5>
+          </div>
+          <h5>R$${item.valor}</h5>
+          <h5>${item.modal}</h5>
+         <h5> R$ ${item.modal * item.valor},00 </h5>
+          </div>
+        `
+      });
+
+    }
+
+  }
+
   function openModal(){
    document.getElementById("OpenModal").style.display = "block";
   }
@@ -164,14 +344,13 @@
   }
 
   function OpenFilters(){
-    $(".FilterAccordion").show( 500 );
-    $(".Content-filter").hide( 500 );
+    $(".FilterAccordion").show( 1500 );
+    $(".Content-filter").hide( 1500 );
   }
   
   function OpenOrder(){
-    $(".FilterOrder").show( 500 );
-    $(".Content-filter").hide( 500 );
+    $(".FilterOrder").show( 1500 );
+    $(".Content-filter").hide( 1500 );
   }
-
 
   

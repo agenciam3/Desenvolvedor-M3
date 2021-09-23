@@ -8,7 +8,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 120px; 
+    padding: 16px 120px; 
     border-bottom: 2px solid #C0C0C0;
 }
 
@@ -28,6 +28,25 @@ header{
     font-size: 17px;
 }
 
+.position-itens{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.backSpan{
+    background-color: #01C8FF;
+    color: #fff;
+    border-radius: 10px;
+    width: 22px;
+    height: 21px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 44px;
+}
+
 .iconM3{
     cursor: pointer; 
     float: left;
@@ -37,6 +56,74 @@ header{
     cursor: pointer; 
     float: right;
     width: 35px;
+}
+
+.modalProduct{
+    width: 95%;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #01C8FF;
+    width: 65%;
+    max-height: 460px;
+    overflow: inherit;
+}
+
+.modal-content p{
+    font-weight: 300;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 70px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+.modalheader{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #C0C0C0;
+}
+
+.alinharModal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alinharItem{
+    display: inline-block;
+    text-align: center;
+}
+
+.imgModal{
+    width: 60px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /* -- Container -- */
@@ -148,7 +235,8 @@ select:focus-visible{
     font-weight: bolder;
 }
 
-.box button{
+
+.box .add-product{
     cursor: pointer;
     border: none;
     background-color: #000;
@@ -156,7 +244,7 @@ select:focus-visible{
     height: 40px;
 }
 
-.box button span{
+.box .add-product span{
     color: #fff;
     font-weight: bolder;
     font-size: 18px;
@@ -350,43 +438,9 @@ footer > p{
     outline: none;
 }
 
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 140px; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-}
+
   
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 2px solid #01C8FF;
-    width: 65%;
-}
-  
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-  
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
+
 
 @media (max-width:768px){  
 
