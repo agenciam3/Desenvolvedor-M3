@@ -1,0 +1,27 @@
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid gainsboro;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: sticky;
+    top: 0;
+}
+
+.logo{
+    width: 80%;
+    height: 60%;
+}
+
+
+.navbar_left{
+    display: flex;
+    align-items: center;
+}
+
+.navbar_right{
+    display: flex;
+    align-items: center;
+}
