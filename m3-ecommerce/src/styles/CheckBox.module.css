@@ -27,6 +27,11 @@
     opacity: 0;
     position: absolute;
 }
+.menu_color{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 .check_item_box {
     position: relative;

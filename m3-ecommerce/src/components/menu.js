@@ -1,14 +1,14 @@
 import styles from "../styles/Menu.module.css"
 
-import ColorMenu from "./colorMenu"
-import PriceMenu from "./priceMenu"
+import ColorOptions from "./colorOptions"
+import PriceOptions from "./priceOptions"
 
 function Menu(){
     return(
         <div className = {styles.container}>
             <h4>Cores</h4>
 
-            <ColorMenu/>
+            <ColorOptions/>
 
             <h4>Tamanhos</h4>
             <div className = {styles.menu_tamanhos}>
@@ -19,7 +19,7 @@ function Menu(){
 
             <h4>Faixa de Preço</h4>
             
-            <PriceMenu/>
+            <PriceOptions/>
 
 
         </div>
