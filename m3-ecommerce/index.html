@@ -1,0 +1,211 @@
+<html>
+    <head>
+        
+        <title>m3 ecommerce</title>
+        <link rel="stylesheet" type="text/css" href="./src/styles/navbar.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/productsBody.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/filterHeader.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/productsMenu.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/menu.css"/>
+        <link rel="stylesheet" type="text/css" href="./src/styles/checkbox.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/sizeOptions.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/dropdown.css" media="screen" />
+
+        <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
+
+    </head>
+
+    <body>
+        <nav class = "nav_container">
+            <div class = "nav_content">
+                <div class = "nav_left">
+                    <img src = "./images/logo-m3.png" class = "nav_logo"></img>
+                </div>
+                
+                <div class = "nav_center"></div >
+
+                <div class = "nav_right">
+                    <img src = "./images/cart.png" class = "nav_cart_logo"></img>
+                </div>
+            </div>
+
+        </nav>
+
+
+        <div class = "products_body">
+
+            <header class = "header_container">
+                <h1>Blusas</h1>
+
+                <div class= "menu_buttons">
+                    
+                    <div class = "menu" >
+    
+                        <button class= "organize_button">
+                            <h1>Organizar Por: </h1>
+                        </button>
+
+                        <ul class = "dropdown_list">
+                            <label class = "dropdown_check_item">Mais recentes
+                                <input type="radio" name = "radio"/>
+                            </label>
+
+                            <label class = "dropdown_check_item">Menor Preço
+                                <input type="radio" name = "radio"/>
+                            </label>
+
+                            <label class = "dropdown_check_item">Maior Preço
+                                <input type="radio" name = "radio"/>
+                            </label>
+                        </ul>
+    
+                    </div>
+    
+                    <div class = "responsive_menu">
+    
+                        <button class = "filter_button" onclick="ToggleFilterMenu()">
+                            <h1>Filtrar </h1>
+                        </button>
+    
+                        <button class = "organize_button_responsive">
+                            <h1>Organizar</h1>
+                        </button>
+                        
+                    </div>
+
+                </div>
+            </header>
+            
+            <script>
+
+
+
+                function ToggleFilterMenu(){
+                    var x = document.getElementById('sidebar_menu');
+                    if (x.style.left === '-100%') {
+                        x.style.left = '0';
+                    } else {
+                        x.style.left = '-100%';
+                    }
+                }
+
+
+                function ToggleOptionsList(component_id){
+                    var x = document.getElementById(component_id);
+                    console.log(x)
+                    if (x.style.display === 'flex') {
+                        x.style.display = 'none';
+                    } else {
+                        x.style.display = 'flex';
+                    }
+                }
+            </script>
+
+            <div class = "productsMenu_container">
+
+
+                <div id  = "sidebar_menu">
+
+                    <button class = "menu_close_button" onclick="ToggleFilterMenu()">
+                        <h1>Filtrar</h1>
+                    </button>
+        
+    
+        
+                    <div class = "colorMenu_container">
+
+                        <h4 class = "menu_options_titles">Cores</h4>
+
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('cores_list')">
+                            <h4>Cores</h4>
+                        </button>
+                        
+
+                        <ul class = "check_list" id = "cores_list">
+                            <label class = "check_item">
+                                <input class = "check_item_input" type="checkbox" name="Amarelo"/>
+                                <span class = "check_item_box"></span>
+                                <span class = check_item_label>Amarelo</span>
+                            </label>
+                            <label class = check_item>
+                                <input class = check_item_input type="checkbox" name="Azul"/>
+                                <span class = check_item_box></span>
+                                <span class = check_item_label>Azul</span>
+                            </label>
+                            <label class = check_item>
+                                <input class = check_item_input type="checkbox" name="Branco"/>
+                                <span class = check_item_box></span>
+                                <span class = check_item_label>Branco</span>
+                            </label>
+                            <label class = check_item>
+                                <input class = check_item_input type="checkbox" name="Cinza"/>
+                                <span class = check_item_box></span>
+                                <span class = check_item_label>Cinza</span>
+                            </label>
+                            <label class = check_item>
+                                <input class = check_item_input type="checkbox" name="Laranja"/>
+                                <span class = check_item_box></span>
+                                <span class = check_item_label>Laranja</span>
+                            </label>
+                        </ul>
+                    </div>
+        
+                    <h4>Tamanhos</h4>
+        
+
+                    <div class = "sizeMenu_container">
+                        <div class = "sizeMenu_checkbox">
+                            <input type="checkbox" id = "radio1" name = "radio"/>
+                            <label for = "radio1" >P</label>
+                        </div>
+                    </div>
+                    
+                    <div class = "menu_price">
+
+                        <h4 class = "menu_options_titles">Faixa de Preço</h4>
+
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('price_list')">
+                            <h4>Faixa de Preço</h4>
+                        </button>
+
+                        <ul class = "check_list" id = "price_list">
+                            <label class = "check_item">
+                                <input class = "check_item_input" type="checkbox" name="price1"/>
+                                <span class = "check_item_box"></span>
+                                <span class = "check_item_label">de R$0 até R$50</span>
+                            </label>
+                            <label class = "check_item">
+                                <input class = "check_item_input" type="checkbox" name="price2"/>
+                                <span class = "check_item_box"></span>
+                                <span class = "check_item_label">de R$51 até R$150</span>
+                            </label>
+                            <label class = "check_item">
+                                <input class = "check_item_input" type="checkbox" name="price3"/>
+                                <span class = "check_item_box"></span>
+                                <span class = "check_item_label">de R$151 até R$300</span>
+                            </label>
+                            <label class = "check_item">
+                                <input class = "check_item_input" type="checkbox" name="price4"/>
+                                <span class = "check_item_box"></span>
+                                <span class = "check_item_label">de R$301 até R$500</span>
+                            </label>
+                            <label class = "check_item">
+                                <input class = "check_item_input" type="checkbox" name="price5"/>
+                                <span class = "check_item_box"></span>
+                                <span class = "check_item_label">a partir de R$ 01</span>
+                            </label>
+                        </ul>
+                    </div>
+        
+                </div>
+
+                <div class = "productsList_container"></div>
+
+            </div>
+            
+
+        </div>
+    </body>
+
+
+</html>

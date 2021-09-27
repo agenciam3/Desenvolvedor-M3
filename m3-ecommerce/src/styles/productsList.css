@@ -1,0 +1,15 @@
+
+.productsList_container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-items:center;
+    width: 100%;
+    gap: 20px;
+  }
+
+@media (max-width: 1255px) {
+    .productsList_container{
+        grid-template-columns: repeat(2, 0.3fr);
+    }
+}
+  

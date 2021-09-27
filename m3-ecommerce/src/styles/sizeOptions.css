@@ -1,0 +1,20 @@
+.checkbox{
+    position: relative;
+}
+
+.checkbox input::before {
+    content: ' ';
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  .checkbox input:checked::before {
+    border-color: #2bbff2;
+  }
+
+.h4{
+    position: absolute;
+}
