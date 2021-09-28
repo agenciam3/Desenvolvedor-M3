@@ -44,18 +44,14 @@ function ToggleOrganizeMenu(){
     let arrow = document.querySelector('.arrowup')
     arrow.classList.toggle('arrowdown')
 
-    var drop_list = document.querySelector('.dropdown_list');
+    let drop_list = document.querySelector('.dropdown_list');
     drop_list.classList.toggle('dropdown_list_on')
 }
 
 function ToggleFilterMenu(){
 
-    var x = document.getElementById('sidebar_menu');
-    if (x.style.left === '-100%') {
-        x.style.left = '0';
-    } else {
-        x.style.left = '-100%';
-    }
+    let menu = document.querySelector('.filter_menu')
+    menu.classList.toggle('filter_menu_off')
 }
 
 

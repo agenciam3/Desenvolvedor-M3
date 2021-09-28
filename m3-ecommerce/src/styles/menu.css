@@ -1,4 +1,4 @@
-#sidebar_menu{
+.filter_menu{
     display: flex;
     flex-direction: column;
     max-width: 250px;
@@ -42,7 +42,7 @@
     width: 100%;
 }
 
-#sidebar_menu h4{
+.filter_menu h4{
     margin: 0; 
     font-weight: 62;
     font-family: sans-serif;
@@ -59,7 +59,7 @@
 
 
 @media (max-width:900px) {
-   #sidebar_menu{
+   .filter_menu{
         position: fixed;
         width: 100%;
         max-width: none;
@@ -68,6 +68,10 @@
         left: -100%;
         transition-duration: 0.3s;
    }
+
+    .filter_menu_off{
+        left: 0;
+    }
 
     #cores_list, #price_list{
         display: none;
