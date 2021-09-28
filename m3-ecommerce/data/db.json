@@ -2,67 +2,18 @@
 {
     "products": [
     {
+        "name" : "Saia em couro",
+        "price" : 398.00,
+        "parcelamento" : 5,
+        "color" : "Preto",
+        "image" : "/products/img_3.png"
+    },
+    {
         "name" : "Camiseta Mescla",
         "price" : 28.80,
         "parcelamento" : 3,
         "color" : "Cinza",
         "image" : "/products/img_2.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
     }
     ]
 }

@@ -1,8 +1,9 @@
 const container = document.querySelector('.productsList_container')
 
+let products = []
 let cloths_color = []
 let cloths_prices = ''
-let products = []
+let current_products = []
 
 prices = {
     "R$0 até R$50": {low:0.0,high:50.0},
@@ -12,7 +13,64 @@ prices = {
     "R$ 01":{low:1.0,high:-1}
 }
 
+function SortByLowestPrice(){
+    current_products.sort(function (a, b) {
+        if (a.price > b.price) {
+          return 1;
+        }
+        if (a.price < b.price) {
+          return -1;
+        }
+        return 0;
+      });
+    updateProducts()
+}
+
+function SortByBiggestPrice(){
+
+    current_products.sort(function (a, b) {
+        if (a.price < b.price) {
+          return 1;
+        }
+        if (a.price > b.price) {
+          return -1;
+        }
+        return 0;
+      });
+    updateProducts()
+}
+
+function ToggleOrganizeMenu(){
+    let arrow = document.querySelector('.arrowup')
+    arrow.classList.toggle('arrowdown')
+
+    var drop_list = document.querySelector('.dropdown_list');
+    drop_list.classList.toggle('dropdown_list_on')
+}
+
+function ToggleFilterMenu(){
+
+    var x = document.getElementById('sidebar_menu');
+    if (x.style.left === '-100%') {
+        x.style.left = '0';
+    } else {
+        x.style.left = '-100%';
+    }
+}
+
+
+function ToggleOptionsList(component_id){
+    var x = document.getElementById(component_id);
+    if (x.style.display === 'flex') {
+        x.style.display = 'none';
+    } else {
+        x.style.display = 'flex';
+    }
+}
+
+
 function SetClothsByColor(){
+    console.log("aqui")
     cloths_color = [];
     var pacote = document.getElementsByName("color_list");
     for (var i = 0; i < pacote.length; i++){
@@ -26,10 +84,8 @@ function SetClothsByColor(){
 
 function SetClothsByPrice(){
     cloths_prices = document.querySelector('input[name="price_list"]:checked').value
-
     updateProducts()
 }
-
 
 
 function GetClothPriceCategory(prod){
@@ -63,7 +119,7 @@ function GetClothColorCategory(prod){
 function updateProducts(){
     template = ``
 
-    products.forEach(prod => {
+    current_products.forEach(prod => {
 
         if(GetClothPriceCategory(prod) && GetClothColorCategory(prod)){
             template += `
@@ -85,12 +141,11 @@ function updateProducts(){
 
 }
 
-
 const renderPosts = async() =>{
     let uri = "http://localhost:3000/products"
 
     const res = await fetch(uri)
-    products = await res.json()
+    products = current_products = await res.json()
 
     updateProducts()
     

@@ -14,6 +14,28 @@
     background-color: white;
 }
 
+.arrowup {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.arrowdown {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.sizeMenu_checkbox{
+    margin: 10px 0 10px 0;
+}
+
 .menu_price{
     display: flex;
     flex-direction: column;
@@ -21,7 +43,7 @@
 }
 
 #sidebar_menu h4{
-    margin: 20px 0px 10px 0; 
+    margin: 0; 
     font-weight: 62;
     font-family: sans-serif;
     text-transform: uppercase;
@@ -32,6 +54,7 @@
     background-color: transparent;
     border: 0;
     border-bottom: 1px solid black;
+    
 }
 
 
@@ -66,11 +89,4 @@
         margin: 0;
         background-color: white;
     }
-}
-
-@media (min-width:901px){
-    #cores_list, #price_list{
-        display: flex;
-    }
-
 }

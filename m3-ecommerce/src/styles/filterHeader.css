@@ -5,7 +5,6 @@
 
 .header_container{
     width: 100%;
-    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,6 +24,17 @@
     display: none;
 }
 
+.organize_button{
+    display:flex;
+    width: 150px;
+    height: 30px;
+    padding: 10px 10px 10px 20px;
+    justify-content: space-between;
+    padding-left: 20px;
+    align-items: center;
+    cursor: pointer;
+}
+
 .organize_button_responsive, .filter_button, .organize_button{
     width: 150px;
     height: 30px;
@@ -34,7 +44,7 @@
 }
 
 .filter_button, .organize_button h1{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 @media (max-width : 900px) {
@@ -44,7 +54,7 @@
         justify-content: center;
     }
 
-    .organize_button , .menu{
+    .organize_button{
         display: none;
     }
 

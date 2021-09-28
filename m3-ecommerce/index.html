@@ -41,20 +41,25 @@
                     
                     <div class = "menu" >
     
-                        <button class= "organize_button">
+                        <button class= "organize_button" onclick="ToggleOrganizeMenu()">
                             <h1>Organizar Por: </h1>
+                            <i class="arrowup"></i>
                         </button>
 
                         <ul class = "dropdown_list">
+                            <button class = "menu_close_button" onclick="ToggleOrganizeMenu()">
+                                <h1>Organizar </h1>
+                            </button>
+                            
                             <label class = "dropdown_check_item">Mais recentes
                                 <input type="radio" name = "radio"/>
                             </label>
 
-                            <label class = "dropdown_check_item">Menor Preço
+                            <label class = "dropdown_check_item" onchange="SortByLowestPrice()">Menor Preço
                                 <input type="radio" name = "radio"/>
                             </label>
 
-                            <label class = "dropdown_check_item">Maior Preço
+                            <label class = "dropdown_check_item" onchange="SortByBiggestPrice()">Maior Preço
                                 <input type="radio" name = "radio"/>
                             </label>
                         </ul>
@@ -67,7 +72,7 @@
                             <h1>Filtrar </h1>
                         </button>
     
-                        <button class = "organize_button_responsive">
+                        <button class = "organize_button_responsive" onclick="ToggleOrganizeMenu()">
                             <h1>Organizar</h1>
                         </button>
                         
@@ -75,30 +80,6 @@
 
                 </div>
             </header>
-            
-            <script>
-
-                function ToggleFilterMenu(){
-
-                    var x = document.getElementById('sidebar_menu');
-                    if (x.style.left === '-100%') {
-                        x.style.left = '0';
-                    } else {
-                        x.style.left = '-100%';
-                    }
-                }
-
-
-                function ToggleOptionsList(component_id){
-                    var x = document.getElementById(component_id);
-                    console.log(x)
-                    if (x.style.display === 'flex') {
-                        x.style.display = 'none';
-                    } else {
-                        x.style.display = 'flex';
-                    }
-                }
-            </script>
 
             <div class = "productsMenu_container">
 
@@ -109,8 +90,6 @@
                         <h1>Filtrar</h1>
                     </button>
         
-    
-        
                     <div class = "colorMenu_container">
 
                         <h4 class = "menu_options_titles">Cores</h4>
@@ -120,7 +99,7 @@
                         </button>
                         
 
-                        <ul class = "check_list" id = "cores_list">
+                        <ul class = "check_list">
                             <label class = "check_item">
                                 <input class = "check_item_input" type="checkbox" value="Amarelo" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = "check_item_box"></span>
@@ -148,11 +127,9 @@
                             </label>
                         </ul>
                     </div>
-        
-                    <h4>Tamanhos</h4>
-        
 
                     <div class = "sizeMenu_container">
+                        <h4>Tamanhos</h4>
                         <div class = "sizeMenu_checkbox">
                             <input type="checkbox" id = "radio1" name = "radio"/>
                             <label for = "radio1" >P</label>
@@ -167,7 +144,7 @@
                             <h4>Faixa de Preço</h4>
                         </button>
 
-                        <ul class = "check_list" id = "price_list">
+                        <ul class = "check_list">
                             <label class = "check_item">
                                 <input class = "check_item_input" type="radio" name="price_list" value = "R$0 até R$50" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
@@ -197,6 +174,7 @@
                     </div>
         
                 </div>
+                
                 <div class = "productsList_container"></div>
 
             </div>
