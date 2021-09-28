@@ -78,9 +78,8 @@
             
             <script>
 
-
-
                 function ToggleFilterMenu(){
+
                     var x = document.getElementById('sidebar_menu');
                     if (x.style.left === '-100%') {
                         x.style.left = '0';
@@ -123,27 +122,27 @@
 
                         <ul class = "check_list" id = "cores_list">
                             <label class = "check_item">
-                                <input class = "check_item_input" type="checkbox" name="Amarelo"/>
+                                <input class = "check_item_input" type="checkbox" value="Amarelo" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = "check_item_box"></span>
                                 <span class = check_item_label>Amarelo</span>
                             </label>
                             <label class = check_item>
-                                <input class = check_item_input type="checkbox" name="Azul"/>
+                                <input class = check_item_input type="checkbox" value="Azul" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = check_item_box></span>
                                 <span class = check_item_label>Azul</span>
                             </label>
                             <label class = check_item>
-                                <input class = check_item_input type="checkbox" name="Branco"/>
+                                <input class = check_item_input type="checkbox" value="Branco" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = check_item_box></span>
                                 <span class = check_item_label>Branco</span>
                             </label>
                             <label class = check_item>
-                                <input class = check_item_input type="checkbox" name="Cinza"/>
+                                <input class = check_item_input type="checkbox" value="Cinza" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = check_item_box></span>
                                 <span class = check_item_label>Cinza</span>
                             </label>
                             <label class = check_item>
-                                <input class = check_item_input type="checkbox" name="Laranja"/>
+                                <input class = check_item_input type="checkbox" value="Laranja" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = check_item_box></span>
                                 <span class = check_item_label>Laranja</span>
                             </label>
@@ -170,27 +169,27 @@
 
                         <ul class = "check_list" id = "price_list">
                             <label class = "check_item">
-                                <input class = "check_item_input" type="checkbox" name="price1"/>
+                                <input class = "check_item_input" type="radio" name="price_list" value = "R$0 até R$50" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
                                 <span class = "check_item_label">de R$0 até R$50</span>
                             </label>
                             <label class = "check_item">
-                                <input class = "check_item_input" type="checkbox" name="price2"/>
+                                <input class = "check_item_input" type="radio" name="price_list" value = "R$51 até R$150" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
                                 <span class = "check_item_label">de R$51 até R$150</span>
                             </label>
                             <label class = "check_item">
-                                <input class = "check_item_input" type="checkbox" name="price3"/>
+                                <input class = "check_item_input" type="radio" name="price_list" value = "R$151 até R$300" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
                                 <span class = "check_item_label">de R$151 até R$300</span>
                             </label>
                             <label class = "check_item">
-                                <input class = "check_item_input" type="checkbox" name="price4"/>
+                                <input class = "check_item_input" type="radio" name="price_list" value = "R$301 até R$500" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
                                 <span class = "check_item_label">de R$301 até R$500</span>
                             </label>
                             <label class = "check_item">
-                                <input class = "check_item_input" type="checkbox" name="price5"/>
+                                <input class = "check_item_input" type="radio" name="price_list" value = "R$ 01" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
                                 <span class = "check_item_label">a partir de R$ 01</span>
                             </label>
@@ -198,13 +197,13 @@
                     </div>
         
                 </div>
-
                 <div class = "productsList_container"></div>
 
             </div>
-            
 
         </div>
+
+        <script src="./src/js/index.js"></script>
     </body>
 
 

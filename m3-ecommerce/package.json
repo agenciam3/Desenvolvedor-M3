@@ -10,5 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.16.3"
-  }
+  },
+  "type" : "module"
 }
