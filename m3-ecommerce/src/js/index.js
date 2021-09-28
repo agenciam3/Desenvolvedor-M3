@@ -59,13 +59,9 @@ function ToggleFilterMenu(){
 }
 
 
-function ToggleOptionsList(component_id){
-    var x = document.getElementById(component_id);
-    if (x.style.display === 'flex') {
-        x.style.display = 'none';
-    } else {
-        x.style.display = 'flex';
-    }
+function ToggleOptionsList(component_id,component_id_off){
+    let list = document.querySelector(component_id)
+    list.classList.toggle(component_id_off)
 }
 
 

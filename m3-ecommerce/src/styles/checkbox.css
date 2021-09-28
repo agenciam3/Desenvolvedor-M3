@@ -1,4 +1,4 @@
-.check_list{
+.color_check_list, .price_check_list{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -65,10 +65,14 @@
 }
   
 @media (max-width:900px){
-    .check_list{
-        display: none;
+    .color_check_list, .price_check_list{
+        display: flex;
         width: 100%;
         padding: 0;
+    }
+
+    .color_check_list_off, .price_check_list_off{
+        display: none;
     }
 
 }

@@ -94,12 +94,12 @@
 
                         <h4 class = "menu_options_titles">Cores</h4>
 
-                        <button class = "menu_options_button" onclick="ToggleOptionsList('cores_list')">
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('.color_check_list','color_check_list_off')">
                             <h4>Cores</h4>
                         </button>
                         
 
-                        <ul class = "check_list">
+                        <ul class = "color_check_list">
                             <label class = "check_item">
                                 <input class = "check_item_input" type="checkbox" value="Amarelo" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = "check_item_box"></span>
@@ -140,11 +140,11 @@
 
                         <h4 class = "menu_options_titles">Faixa de Preço</h4>
 
-                        <button class = "menu_options_button" onclick="ToggleOptionsList('price_list')">
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('.price_check_list','price_check_list_off')">
                             <h4>Faixa de Preço</h4>
                         </button>
 
-                        <ul class = "check_list">
+                        <ul class = "price_check_list">
                             <label class = "check_item">
                                 <input class = "check_item_input" type="radio" name="price_list" value = "R$0 até R$50" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>
