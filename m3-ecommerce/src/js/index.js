@@ -1,10 +1,12 @@
-const container = document.querySelector('.productsList_container')
+const container = document.querySelector('.productList')
 
 let products = []
 let cloths_color = []
 let cloths_size = []
 let cloths_prices = ''
 let current_products = []
+
+let carrinho = []
 
 prices = {
     "R$0 até R$50": {low:0.0,high:50.0},
@@ -132,6 +134,17 @@ function GetClothSizeCategory(prod){
     return true
 }
 
+function AddProductCart(product_id){
+        let x = document.querySelector(".cart_counter")
+        //x.innerHTML = "foI"
+        if(carrinho.indexOf(product_id) <= -1){
+            carrinho.push(product_id);
+        }
+        x.innerHTML = `<h1>${carrinho.length}</h1>`
+       
+}
+
+
 function updateProducts(){
     template = ``
 
@@ -144,7 +157,7 @@ function updateProducts(){
                 <h2>${prod.name}</h2>
                 <h3>${"R$" + prod.price.toFixed(2).toString().replace(".", ",")}</h3>
                 <h4>${"Até " + prod.parcelamento + "x de R$" + (prod.price/prod.parcelamento).toFixed(2)}</h4>
-                <button>
+                <button onclick = "AddProductCart('${prod.id}')">
                     <h3>Comprar</h3>
                 </button>
             </div>

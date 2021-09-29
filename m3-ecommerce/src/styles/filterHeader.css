@@ -1,6 +1,5 @@
 .menu{
     width: 150px;
-    height: 30px;
 }
 
 .header_container{
@@ -12,12 +11,14 @@
 }
 
 .header_container h1{
-    font-weight: 62;
+    margin: 10px 0;
+    font-size: 28px;
     font-family: sans-serif;
 }
 
 .responsive_menu{
     display: none;
+    width: 100%;
 }
 
 .filter_button{
@@ -25,7 +26,7 @@
 }
 
 .organize_button{
-    display:flex;
+    display: flex;
     width: 150px;
     height: 30px;
     padding: 10px 10px 10px 20px;
@@ -40,17 +41,24 @@
     height: 30px;
     background-color: white;
     margin: 0;
-    border: 1 solid black;
+    border: 1px solid black;
 }
 
 .filter_button, .organize_button h1{
     font-size: 14px;
 }
 
+.organize_button_responsive h1, .filter_button h1{
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
 @media (max-width : 900px) {
+
     .organize_button_responsive , .filter_button{
         display: flex;
         align-items: center;
+        height: 40px;
         justify-content: center;
     }
 
