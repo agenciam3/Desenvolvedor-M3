@@ -2,6 +2,7 @@ const container = document.querySelector('.productsList_container')
 
 let products = []
 let cloths_color = []
+let cloths_size = []
 let cloths_prices = ''
 let current_products = []
 
@@ -49,7 +50,6 @@ function ToggleOrganizeMenu(){
 }
 
 function ToggleFilterMenu(){
-
     let menu = document.querySelector('.filter_menu')
     menu.classList.toggle('filter_menu_off')
 }
@@ -62,7 +62,6 @@ function ToggleOptionsList(component_id,component_id_off){
 
 
 function SetClothsByColor(){
-    console.log("aqui")
     cloths_color = [];
     var pacote = document.getElementsByName("color_list");
     for (var i = 0; i < pacote.length; i++){
@@ -79,6 +78,16 @@ function SetClothsByPrice(){
     updateProducts()
 }
 
+function SetClothsBySize(){
+    cloths_size = [];
+    var pacote = document.getElementsByName("size_list");
+    for (var i = 0; i < pacote.length; i++){
+        if ( pacote[i].checked ) {
+            cloths_size.push(pacote[i].value);
+        }
+    }
+    updateProducts()
+}
 
 function GetClothPriceCategory(prod){
     if(cloths_prices != ''){
@@ -108,18 +117,33 @@ function GetClothColorCategory(prod){
     return true
 }
 
+function GetClothSizeCategory(prod){
+    //let x = document.querySelector(".teste")
+    if(cloths_size.length > 0){
+        for (var i = 0; i < (prod.size).length; i++){
+            if(cloths_size.indexOf(prod.size[i])> -1){
+                //x.innerHTML = prod.size
+                //x.innerHTML = prod.size[i]
+                return true
+            }
+        }
+        return false
+    }
+    return true
+}
+
 function updateProducts(){
     template = ``
 
     current_products.forEach(prod => {
 
-        if(GetClothPriceCategory(prod) && GetClothColorCategory(prod)){
+        if(GetClothPriceCategory(prod) && GetClothColorCategory(prod) && GetClothSizeCategory(prod)){
             template += `
-            <div class = "prod">
+            <div class = "product_card">
                 <img src = ${"./images/" + prod.image}></img>
                 <h2>${prod.name}</h2>
-                <h3>${"R$" + prod.price}</h3>
-                <h4>${"Até " + prod.parcelamento + "x de R$" + prod.price/prod.parcelamento}</h4>
+                <h3>${"R$" + prod.price.toFixed(2).toString().replace(".", ",")}</h3>
+                <h4>${"Até " + prod.parcelamento + "x de R$" + (prod.price/prod.parcelamento).toFixed(2)}</h4>
                 <button>
                     <h3>Comprar</h3>
                 </button>

@@ -2,18 +2,82 @@
 {
     "products": [
     {
-        "name" : "Saia em couro",
-        "price" : 398.00,
-        "parcelamento" : 5,
-        "color" : "Preto",
-        "image" : "/products/img_3.png"
-    },
-    {
         "name" : "Camiseta Mescla",
         "price" : 28.80,
         "parcelamento" : 3,
         "color" : "Cinza",
-        "image" : "/products/img_2.png"
+        "image" : "/products/img_2.png",
+        "size" : ["M","GG"]
+    },
+    {
+        "name" : "Saia em couro",
+        "price" : 398.00,
+        "parcelamento" : 5,
+        "color" : "Preto",
+        "image" : "/products/img_3.png",
+        "size" : ["G","40"]
+    },
+    {
+        "name" : "Cardigan Tigre",
+        "price" : 398.80,
+        "parcelamento" : 5,
+        "color" : "Laranja",
+        "image" : "/products/img_4.png",
+        "size" : ["GG","44"]
+    }
+    ,
+    {
+        "name" : "Cardigan off white",
+        "price" : 99.90,
+        "parcelamento" : 3,
+        "color" : "Branco",
+        "image" : "/products/img_5.png",
+        "size" : ["U","46"]
+    }
+    ,
+    {
+        "name" : "Body Leopardo",
+        "price" : 129.90,
+        "parcelamento" : 3,
+        "color" : "Amarelo",
+        "image" : "/products/img_6.png",
+        "size" : ["M"]
+    }
+    ,
+    {
+        "name" : "Casaco Pelos",
+        "price" : 398.00,
+        "parcelamento" : 5,
+        "color" : "Rosa",
+        "image" : "/products/img_7.png",
+        "size" : ["GG","38"]
+    }
+    ,
+    {
+        "name" : "Cropped Stripes",
+        "price" : 120.00,
+        "parcelamento" : 3,
+        "color" : "Amarelo",
+        "image" : "/products/img_8.png",
+        "size" : ["36","U"]
+    }
+    ,
+    {
+        "name" : "Camisa Transparente",
+        "price" : 398.00,
+        "parcelamento" : 5,
+        "color" : "Preto",
+        "image" : "/products/img_9.png",
+        "size" : ["P"]
+    }
+    ,
+    {
+        "name" : "Pochete Clutch",
+        "price" : 99.00,
+        "parcelamento" : 3,
+        "color" : "Preto",
+        "image" : "/products/img_10.png",
+        "size" : ["M"]
     }
     ]
 }

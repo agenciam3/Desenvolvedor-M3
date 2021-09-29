@@ -1,3 +1,32 @@
+.product_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.product_card img{
+    width: 100%;
+}
+
+.product_card button{
+    width: 100%;
+    height: 50px;
+    border: 0;
+    background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.product_card h2{
+    text-transform: uppercase;
+    font-weight: 62;
+    font-size: 18px;
+}
+
+.product_card h3{
+    margin: 0;
+}
 
 .productsList_container {
     display: grid;

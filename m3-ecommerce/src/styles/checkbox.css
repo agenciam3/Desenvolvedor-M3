@@ -10,13 +10,8 @@
 }
 
 .check_item input {
-    box-sizing: border-box;
-    padding: 0;
     display: none;
-    opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
     position: absolute;
 }
 

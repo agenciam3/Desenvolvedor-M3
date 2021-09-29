@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="./src/styles/checkbox.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="./src/styles/sizeOptions.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="./src/styles/dropdown.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="./src/styles/productsList.css" media="screen" />
 
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=10, minimum-scale=1.0">
 
@@ -131,8 +132,73 @@
                     <div class = "sizeMenu_container">
                         <h4>Tamanhos</h4>
                         <div class = "sizeMenu_checkbox">
-                            <input type="checkbox" id = "radio1" name = "radio"/>
-                            <label for = "radio1" >P</label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="P" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>P</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="M" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>M</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="G" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>G</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="GG" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>GG</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="U" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>U</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="36" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>36</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="38" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>38</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="40" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>40</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="42" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>42</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="44" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>44</span>
+                                </span>
+                            </label>
+                            <label class = "size_item">
+                                <input class = "size_item_input" type="checkbox" value="46" name = "size_list" onchange="SetClothsBySize()"/>
+                                <span class = "size_item_box">
+                                    <span class = size_item_label>46</span>
+                                </span>
+                            </label>
+
                         </div>
                     </div>
                     
@@ -174,7 +240,7 @@
                     </div>
         
                 </div>
-                
+                <h1 class = "teste"></h1>
                 <div class = "productsList_container"></div>
 
             </div>
