@@ -11,7 +11,7 @@
   grid-template-rows: repeat(3, 30px);
   margin: 20px 0 20px 0;
   gap: 10px;
-
+  padding: 0;
 }
 
 .size_item{
@@ -51,3 +51,10 @@
 }
 
 
+  
+@media (max-width:900px){
+  .sizeMenu_checkbox_off{
+      display: none;
+  }
+
+}

@@ -8,6 +8,9 @@ let current_products = []
 
 let carrinho = []
 
+let currentProductsLength = 0
+let productsLimit = true
+
 prices = {
     "R$0 até R$50": {low:0.0,high:50.0},
     "R$51 até R$150":{low:51.0,high:150.0},
@@ -61,6 +64,14 @@ function ToggleOptionsList(component_id,component_id_off){
     let list = document.querySelector(component_id)
     list.classList.toggle(component_id_off)
 }
+
+function ToggleLoadButton(){
+    let button = document.querySelector('.loadButton')
+    button.classList.toggle('loadButton_off')
+
+    productsLimit = false;
+    updateProducts()
+} 
 
 
 function SetClothsByColor(){
@@ -134,6 +145,16 @@ function GetClothSizeCategory(prod){
     return true
 }
 
+function GetProductsLimitSize(){
+    if(productsLimit){
+        if(currentProductsLength < 9){
+            return true
+        }
+        return false
+    }
+    return true
+}
+
 function AddProductCart(product_id){
         let x = document.querySelector(".cart_counter")
         //x.innerHTML = "foI"
@@ -147,10 +168,11 @@ function AddProductCart(product_id){
 
 function updateProducts(){
     template = ``
+    currentProductsLength = 0
 
     current_products.forEach(prod => {
 
-        if(GetClothPriceCategory(prod) && GetClothColorCategory(prod) && GetClothSizeCategory(prod)){
+        if(GetProductsLimitSize() && GetClothPriceCategory(prod) && GetClothColorCategory(prod) && GetClothSizeCategory(prod)){
             template += `
             <div class = "product_card">
                 <img src = ${"./images/" + prod.image}></img>
@@ -161,7 +183,9 @@ function updateProducts(){
                     <h3>Comprar</h3>
                 </button>
             </div>
-            `   
+            `
+            currentProductsLength ++   
+
         }
 
         

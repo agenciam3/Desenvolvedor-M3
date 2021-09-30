@@ -50,7 +50,7 @@
     display: none;
     background-color: transparent;
     border: 0;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid gainsboro;
     
 }
 
@@ -77,8 +77,14 @@
    .menu_close_button{
        display: flex;
        justify-content: flex-start;
+       padding-left: 20px;
    }
 
+   .menu_close_button h1{
+        font-family: sans-serif;
+        font-size: 5vw;
+        color: #666666;
+    }
     .menu_options_titles{
         display: none;
     }

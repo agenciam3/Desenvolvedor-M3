@@ -53,7 +53,7 @@
 
                         <ul class = "dropdown_list">
                             <button class = "menu_close_button" onclick="ToggleOrganizeMenu()">
-                                <h1>Organizar </h1>
+                                <h1>Ordenar </h1>
                             </button>
                             
                             <label class = "dropdown_check_item">Mais recentes
@@ -134,8 +134,13 @@
                     </div>
 
                     <div class = "sizeMenu_container">
-                        <h4>Tamanhos</h4>
-                        <div class = "sizeMenu_checkbox">
+                        <h4 class = "menu_options_titles">Tamanhos</h4>
+
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('.sizeMenu_checkbox','sizeMenu_checkbox_off')">
+                            <h4>Tamanhos</h4>
+                        </button>
+
+                        <ul class = "sizeMenu_checkbox">
                             <label class = "size_item">
                                 <input class = "size_item_input" type="checkbox" value="P" name = "size_list" onchange="SetClothsBySize()"/>
                                 <span class = "size_item_box">
@@ -203,7 +208,7 @@
                                 </span>
                             </label>
 
-                        </div>
+                        </ul>
                     </div>
                     
                     <div class = "menu_price">
@@ -247,7 +252,7 @@
                 <h1 class = "teste"></h1>
                 <div class = "productsList_container">
                     <div class = "productList"></div>
-                    <button class = "loadButton"><h1>Carregar Mais</h1></button>
+                    <button class = "loadButton" onclick="ToggleLoadButton()"><h1>Carregar Mais</h1></button>
                 </div>
 
             </div>

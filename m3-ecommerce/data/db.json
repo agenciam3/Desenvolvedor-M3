@@ -87,6 +87,45 @@
         "color" : "Preto",
         "image" : "/products/img_10.png",
         "size" : ["M"]
+    },
+    {
+        "id": "9",
+        "name" : "Pochete Clutch",
+        "price" : 99.00,
+        "parcelamento" : 3,
+        "color" : "Preto",
+        "image" : "/products/img_10.png",
+        "size" : ["M"]
+    }
+    ,
+    {
+        "id": "9",
+        "name" : "Pochete Clutch",
+        "price" : 99.00,
+        "parcelamento" : 3,
+        "color" : "Preto",
+        "image" : "/products/img_10.png",
+        "size" : ["M"]
+    }
+    ,
+    {
+        "id": "9",
+        "name" : "Pochete Clutch",
+        "price" : 99.00,
+        "parcelamento" : 3,
+        "color" : "Preto",
+        "image" : "/products/img_10.png",
+        "size" : ["M"]
+    }
+    ,
+    {
+        "id": "9",
+        "name" : "Pochete Clutch",
+        "price" : 99.00,
+        "parcelamento" : 3,
+        "color" : "Preto",
+        "image" : "/products/img_10.png",
+        "size" : ["M"]
     }
     ]
 }
