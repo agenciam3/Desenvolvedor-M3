@@ -62,3 +62,29 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Grunt, Gulp ou similar
 
 ##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+
+----
+## Instruções para executar o site
+
+### Requisitos
+
+- NodeJs
+
+### Execução
+
+- Abra o terminal na pasta do projeto
+- Execute o comando:
+```bash 
+	npx json-server --watch ./data/db.json
+```
+- Abra o arquivo index.html pelo navegador
+
+### Observações
+
+- Caso queira adicionar mais alguma opção de cor basta adicionar uma string na lista 'colors' na index.js
+- Caso queira adicionar mais alguma opção de tamanho basta adicionar uma string na lista 'sizes' na index.js
+- Caso queira adicionar mais alguma opção de preço basta adicionar uma string na lista 'prices' na index.js, a string deve ter o formato "menorPreço/maiorPreço". O maior preço como '-1' significa que é do menor preço para cima(sem limite de preço).
+
+- Não existe uma página para o carrinho mas todos os produtos adicionados vão para a lista 'carrinho' dentro da classe 'ProductController'
+
+
