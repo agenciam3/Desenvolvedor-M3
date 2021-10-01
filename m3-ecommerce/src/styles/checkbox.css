@@ -1,8 +1,10 @@
-.color_check_list, .price_check_list{
+.color_check_list_on, .price_check_list_on{
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 0;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 .check_item {
@@ -24,13 +26,6 @@
     border-radius: 0;
     outline: 0;
     background-color: transparent;
-}
-
-
-.colorMenu_container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
 }
 
 .check_item_box {
@@ -60,14 +55,16 @@
 }
   
 @media (max-width:900px){
-    .color_check_list, .price_check_list{
-        display: flex;
+    .color_check_list_on, .price_check_list_on{
+        display: none;
         width: 100%;
         padding: 0;
+        margin-left: 0;
+        margin-left: 40px;
     }
 
     .color_check_list_off, .price_check_list_off{
-        display: none;
+        display: flex;
     }
 
 }

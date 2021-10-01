@@ -5,13 +5,14 @@
   position: absolute;
 }
 
-.sizeMenu_checkbox{
+.sizeMenu_checkbox_on{
   display: grid;
   grid-template-columns: repeat(4, 30px);
   grid-template-rows: repeat(3, 30px);
-  margin: 20px 0 20px 0;
   gap: 10px;
+  margin: 0;
   padding: 0;
+  padding-top: 10px;
 }
 
 .size_item{
@@ -53,8 +54,21 @@
 
   
 @media (max-width:900px){
-  .sizeMenu_checkbox_off{
+  .sizeMenu_checkbox_on{
       display: none;
+      grid-template-columns: repeat(4, 30px);
+      grid-template-rows: repeat(3, 30px);
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      padding-top: 10px;
+  }
+
+  .sizeMenu_checkbox_off{
+    display: grid;
+    padding-top: 20px;
+    margin:0;
+    padding-left: 40px;
   }
 
 }

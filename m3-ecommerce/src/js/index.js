@@ -9,7 +9,8 @@ let current_products = []
 let carrinho = []
 
 let currentProductsLength = 0
-let productsLimit = true
+let productsLimitStatus = true
+const productsLimit = 9
 
 prices = {
     "R$0 até R$50": {low:0.0,high:50.0},
@@ -30,6 +31,7 @@ function SortByLowestPrice(){
         return 0;
       });
     updateProducts()
+    ToggleOrganizeMenu()
 }
 
 function SortByBiggestPrice(){
@@ -44,6 +46,7 @@ function SortByBiggestPrice(){
         return 0;
       });
     updateProducts()
+    ToggleOrganizeMenu()
 }
 
 function ToggleOrganizeMenu(){
@@ -58,18 +61,29 @@ function ToggleFilterMenu(){
     let menu = document.querySelector('.filter_menu')
     menu.classList.toggle('filter_menu_off')
 }
+/*
+class Teste{
+    constructor(){
+        let teste = document.querySelector('.teste')
+        teste.innerHTML = ('_off')
+    }
 
-
-function ToggleOptionsList(component_id,component_id_off){
+}
+*/
+function ToggleOptionsList(component_id,component_id_off,sign_id){
     let list = document.querySelector(component_id)
     list.classList.toggle(component_id_off)
+
+    let sign = document.querySelector('.' + sign_id)
+    //let teste = document.querySelector('.teste')
+    //teste.innerHTML = (sign_id + '_off')
+    sign.classList.toggle(sign_id + '_minus')
+    //let t = new Teste()
+
 }
 
 function ToggleLoadButton(){
-    let button = document.querySelector('.loadButton')
-    button.classList.toggle('loadButton_off')
-
-    productsLimit = false;
+    productsLimitStatus = false;
     updateProducts()
 } 
 
@@ -145,14 +159,27 @@ function GetClothSizeCategory(prod){
     return true
 }
 
-function GetProductsLimitSize(){
-    if(productsLimit){
-        if(currentProductsLength < 9){
+function GetProductsLimitSizeStatus(){
+    if(productsLimitStatus){
+        if(currentProductsLength < productsLimit){
             return true
         }
         return false
     }
     return true
+}
+
+function ShowLoadButton(){
+    let button = document.querySelector('.loadButton')
+    if(currentProductsLength < productsLimit){
+        button.classList.add('loadButton_off')
+    }else{
+        if(productsLimitStatus){
+            button.classList.remove('loadButton_off')
+        }else{
+            button.classList.add('loadButton_off')
+        }
+    }
 }
 
 function AddProductCart(product_id){
@@ -172,7 +199,7 @@ function updateProducts(){
 
     current_products.forEach(prod => {
 
-        if(GetProductsLimitSize() && GetClothPriceCategory(prod) && GetClothColorCategory(prod) && GetClothSizeCategory(prod)){
+        if(GetProductsLimitSizeStatus() && GetClothPriceCategory(prod) && GetClothColorCategory(prod) && GetClothSizeCategory(prod)){
             template += `
             <div class = "product_card">
                 <img src = ${"./images/" + prod.image}></img>
@@ -184,12 +211,14 @@ function updateProducts(){
                 </button>
             </div>
             `
-            currentProductsLength ++   
+            currentProductsLength++   
 
         }
-
         
     });
+
+    ShowLoadButton()
+
     container.innerHTML = template;
 
 }

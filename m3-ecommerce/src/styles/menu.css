@@ -7,11 +7,25 @@
     background-color: white;
 }
 
+
+.optionsMenu_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
 .menu_options_button{
     display: none;
     border: none;
     margin: 0;
     background-color: white;
+}
+
+.menu_options_button h4{
+    font-size: clamp(1em, 1.2em + 1vw, 4em);
+    padding-left: 20px;
+    margin: 0;
 }
 
 .arrowup {
@@ -37,14 +51,16 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    margin: 20px 0;
 }
 
 .filter_menu h4{
-    margin: 0; 
-    font-weight: 62;
+    margin: 0;
+    font-weight: 100;
     font-family: sans-serif;
     text-transform: uppercase;
 }
+
 
 .menu_close_button{
     display: none;
@@ -64,26 +80,35 @@
         z-index: 1000;
         left: -100%;
         transition-duration: 0.3s;
+        overflow: auto;
    }
 
     .filter_menu_off{
         left: 0;
     }
 
-    #cores_list, #price_list{
-        display: none;
+    .menu_buttons{
+        width: 100%;
     }
 
    .menu_close_button{
        display: flex;
-       justify-content: flex-start;
+       justify-content: space-between;
+       align-items: center;
        padding-left: 20px;
+       padding: 10px 20px;
+   }
+
+   .menu_close_button span{
+        font-size: 24px;
    }
 
    .menu_close_button h1{
         font-family: sans-serif;
-        font-size: 5vw;
+        font-size: clamp(1em, 1.2em + 1vw, 4em);
         color: #666666;
+        font-weight: 100;
+        text-transform: uppercase;
     }
     .menu_options_titles{
         display: none;
@@ -91,8 +116,28 @@
 
     .menu_options_button{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         border: none;
-        margin: 0;
+        margin-top: 0;
+        padding: 0;
+        height: 70px;
         background-color: white;
     }
+
+    .menu_options_button_sign_color, .menu_options_button_sign_size , .menu_options_button_sign_price{
+        padding-right: 20px;
+        font-size: 48px 
+    }
+
+    .menu_options_button_sign_color::before, .menu_options_button_sign_size::before , .menu_options_button_sign_price::before{
+        content: '+';
+    }
+    
+
+    .menu_options_button_sign_color_minus::before, .menu_options_button_sign_size_minus::before , .menu_options_button_sign_price_minus::before{
+        content: "-";
+    }
+
+
 }

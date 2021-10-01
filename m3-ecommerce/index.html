@@ -54,10 +54,11 @@
                         <ul class = "dropdown_list">
                             <button class = "menu_close_button" onclick="ToggleOrganizeMenu()">
                                 <h1>Ordenar </h1>
+                                <span>X</span>
                             </button>
                             
                             <label class = "dropdown_check_item">Mais recentes
-                                <input type="radio" name = "radio"/>
+                                <input type="radio" name = "radio" onclick="ToggleOrganizeMenu()"/>
                             </label>
 
                             <label class = "dropdown_check_item" onchange="SortByLowestPrice()">Menor Preço
@@ -93,18 +94,20 @@
 
                     <button class = "menu_close_button" onclick="ToggleFilterMenu()">
                         <h1>Filtrar</h1>
+                        <span>X</button>
                     </button>
         
-                    <div class = "colorMenu_container">
+                    <div class = "optionsMenu_container">
 
                         <h4 class = "menu_options_titles">Cores</h4>
 
-                        <button class = "menu_options_button" onclick="ToggleOptionsList('.color_check_list','color_check_list_off')">
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('.color_check_list_on','color_check_list_off','menu_options_button_sign_color')">
                             <h4>Cores</h4>
+                            <span class = "menu_options_button_sign_color"></span>
                         </button>
                         
 
-                        <ul class = "color_check_list">
+                        <ul class = "color_check_list_on">
                             <label class = "check_item">
                                 <input class = "check_item_input" type="checkbox" value="Amarelo" name = "color_list" onchange="SetClothsByColor()"/>
                                 <span class = "check_item_box"></span>
@@ -133,14 +136,15 @@
                         </ul>
                     </div>
 
-                    <div class = "sizeMenu_container">
+                    <div class = "optionsMenu_container">
                         <h4 class = "menu_options_titles">Tamanhos</h4>
 
-                        <button class = "menu_options_button" onclick="ToggleOptionsList('.sizeMenu_checkbox','sizeMenu_checkbox_off')">
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('.sizeMenu_checkbox_on','sizeMenu_checkbox_off','menu_options_button_sign_size')">
                             <h4>Tamanhos</h4>
+                            <span class = "menu_options_button_sign_size"></span>
                         </button>
 
-                        <ul class = "sizeMenu_checkbox">
+                        <ul class = "sizeMenu_checkbox_on">
                             <label class = "size_item">
                                 <input class = "size_item_input" type="checkbox" value="P" name = "size_list" onchange="SetClothsBySize()"/>
                                 <span class = "size_item_box">
@@ -211,15 +215,16 @@
                         </ul>
                     </div>
                     
-                    <div class = "menu_price">
+                    <div class = "optionsMenu_container">
 
                         <h4 class = "menu_options_titles">Faixa de Preço</h4>
 
-                        <button class = "menu_options_button" onclick="ToggleOptionsList('.price_check_list','price_check_list_off')">
+                        <button class = "menu_options_button" onclick="ToggleOptionsList('.price_check_list_on','price_check_list_off','menu_options_button_sign_price')">
                             <h4>Faixa de Preço</h4>
+                            <span class = "menu_options_button_sign_price"></span>
                         </button>
 
-                        <ul class = "price_check_list">
+                        <ul class = "price_check_list_on">
                             <label class = "check_item">
                                 <input class = "check_item_input" type="radio" name="price_list" value = "R$0 até R$50" onchange="SetClothsByPrice()"/>
                                 <span class = "check_item_box"></span>

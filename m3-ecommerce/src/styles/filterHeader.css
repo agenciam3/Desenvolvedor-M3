@@ -4,6 +4,7 @@
 
 .header_container{
     width: 90%;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,6 +14,7 @@
 .header_container h1{
     margin: 10px 0;
     font-size: 28px;
+    font-weight: 100;
     font-family: sans-serif;
 }
 
@@ -60,6 +62,7 @@
         align-items: center;
         height: 40px;
         justify-content: center;
+        margin-bottom: 20px;
     }
 
     .organize_button{
@@ -68,6 +71,8 @@
 
     .responsive_menu{
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .header_container{

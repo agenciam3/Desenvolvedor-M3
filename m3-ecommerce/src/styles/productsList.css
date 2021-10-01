@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    text-align: center;
 }
 
 
@@ -22,12 +23,18 @@
 .product_card h2{
     text-transform: uppercase;
     font-weight: 62;
-    font-size: 18px;
+    font-size: clamp(1em,1vw, 1.5em);
 }
 
 .product_card h3{
     margin: 0;
+    font-size: clamp(1em, 0.5em + 1vw, 1.5em);
 }
+
+.product_card h4{
+    font-size: clamp(0.5em,1em, 1em);
+}
+
 
 .productsList_container{
     display: flex;
@@ -38,7 +45,7 @@
 
 .productList {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
@@ -67,7 +74,7 @@
 
 @media (max-width: 1255px) {
     .productList{
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
   
