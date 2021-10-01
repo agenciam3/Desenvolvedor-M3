@@ -59,6 +59,7 @@
     height: 40px;
     background-color: #2bbff2;
     border: 0;
+    cursor: pointer;
 }
 
 .loadButton_off{

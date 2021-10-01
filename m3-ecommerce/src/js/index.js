@@ -23,6 +23,10 @@ class ProductController{
 
     }
 
+    SetProductsLimitStatus(status){
+        this.productsLimitStatus = status
+    }
+
     GetClothPriceCategory(prod){
         if(this.cloths_prices != ''){
             if(this.prices[this.cloths_prices].high == -1){
@@ -167,7 +171,7 @@ class ProductController{
                     <h2>${prod.name}</h2>
                     <h3>${"R$" + prod.price.toFixed(2).toString().replace(".", ",")}</h3>
                     <h4>${"Até " + prod.parcelamento + "x de R$" + (prod.price/prod.parcelamento).toFixed(2)}</h4>
-                    <button onclick = "AddProductCart('${prod.id}')">
+                    <button onclick = "productsController.AddProductCart('${prod.id}')">
                         <h3>Comprar</h3>
                     </button>
                 </div>
@@ -200,8 +204,8 @@ function ToggleOptionsList(component_id,component_id_off,sign_id){
 }
 
 function ToggleLoadButton(){
-    productsLimitStatus = false;
-    updateProducts()
+    productsController.SetProductsLimitStatus(false);
+    productsController.UpdateProducts()
 } 
 
 function ToggleOrganizeMenu(){
