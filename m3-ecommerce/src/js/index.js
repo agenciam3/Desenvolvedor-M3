@@ -1,75 +1,192 @@
-const container = document.querySelector('.productList')
+class ProductController{
+    
+    constructor(products){
+        this.products = products
+        this.cloths_color = []
+        this.cloths_size = []
+        this.cloths_prices = ''
+        this.current_products = products
+        this.carrinho = []
 
-let products = []
-let cloths_color = []
-let cloths_size = []
-let cloths_prices = ''
-let current_products = []
+        this.currentProductsLength = 0
+        this.productsLimitStatus = true
+        this.productsLimit = 9
+        this.container = document.querySelector('.productList')
 
-let carrinho = []
-
-let currentProductsLength = 0
-let productsLimitStatus = true
-const productsLimit = 9
-
-prices = {
-    "R$0 até R$50": {low:0.0,high:50.0},
-    "R$51 até R$150":{low:51.0,high:150.0},
-    "R$151 até R$300":{low:151.0,high:300.0},
-    "R$301 até R$500":{low:301.0,high:500.0},
-    "R$ 01":{low:1.0,high:-1}
-}
-
-function SortByLowestPrice(){
-    current_products.sort(function (a, b) {
-        if (a.price > b.price) {
-          return 1;
+        this.prices = {
+            "R$0 até R$50": {low:0.0,high:50.0},
+            "R$51 até R$150":{low:51.0,high:150.0},
+            "R$151 até R$300":{low:151.0,high:300.0},
+            "R$301 até R$500":{low:301.0,high:500.0},
+            "R$ 01":{low:1.0,high:-1}
         }
-        if (a.price < b.price) {
-          return -1;
+
+    }
+
+    GetClothPriceCategory(prod){
+        if(this.cloths_prices != ''){
+            if(this.prices[this.cloths_prices].high == -1){
+                if(prod.price >= this.prices[this.cloths_prices].low){
+                    return true
+                }
+            }else{
+                if((prod.price >= this.prices[this.cloths_prices].low) && (prod.price <= this.prices[this.cloths_prices].high)){
+                    return true
+                }
+            }
+            return false
+        }else{
+            return true;
         }
-        return 0;
-      });
-    updateProducts()
-    ToggleOrganizeMenu()
-}
-
-function SortByBiggestPrice(){
-
-    current_products.sort(function (a, b) {
-        if (a.price < b.price) {
-          return 1;
+        return false
+    }
+    
+    GetClothColorCategory(prod){
+        if(this.cloths_color.length > 0){
+            if(this.cloths_color.indexOf(prod.color) > -1){
+                return true
+            }
+            return false
         }
-        if (a.price > b.price) {
-          return -1;
+        return true
+    }
+    
+     GetClothSizeCategory(prod){
+        //let x = document.querySelector(".teste")
+        if(this.cloths_size.length > 0){
+            for (var i = 0; i < (prod.size).length; i++){
+                if(this.cloths_size.indexOf(prod.size[i])> -1){
+                    //x.innerHTML = prod.size
+                    //x.innerHTML = prod.size[i]
+                    return true
+                }
+            }
+            return false
         }
-        return 0;
-      });
-    updateProducts()
-    ToggleOrganizeMenu()
-}
+        return true
+    }
 
-function ToggleOrganizeMenu(){
-    let arrow = document.querySelector('.arrowup')
-    arrow.classList.toggle('arrowdown')
+    AddProductCart(product_id){
+        let x = document.querySelector(".cart_counter")
+        //x.innerHTML = "foI"
+        if(this.carrinho.indexOf(product_id) <= -1){
+            this.carrinho.push(product_id);
+        }
+        x.innerHTML = `<h1>${this.carrinho.length}</h1>`
+       
+    }
 
-    let drop_list = document.querySelector('.dropdown_list');
-    drop_list.classList.toggle('dropdown_list_on')
-}
+    SetClothsByColor(){
+        this.cloths_color = [];
+        var pacote = document.getElementsByName("color_list");
+        for (var i = 0; i < pacote.length; i++){
+            if ( pacote[i].checked ) {
+                this.cloths_color += pacote[i].value;
+            }
+        }
+        this.UpdateProducts()
+    }
 
-function ToggleFilterMenu(){
-    let menu = document.querySelector('.filter_menu')
-    menu.classList.toggle('filter_menu_off')
-}
-/*
-class Teste{
-    constructor(){
-        let teste = document.querySelector('.teste')
-        teste.innerHTML = ('_off')
+    SetClothsByPrice(){
+        this.cloths_prices = document.querySelector('input[name="price_list"]:checked').value
+        this.UpdateProducts()
+    }
+
+    SetClothsBySize(){
+        this.cloths_size = [];
+        var pacote = document.getElementsByName("size_list");
+        for (var i = 0; i < pacote.length; i++){
+            if ( pacote[i].checked ) {
+                this.cloths_size.push(pacote[i].value);
+            }
+        }
+        this.UpdateProducts()
+    }
+
+    SortByLowestPrice(){
+        this.current_products.sort(function (a, b) {
+            if (a.price > b.price) {
+              return 1;
+            }
+            if (a.price < b.price) {
+              return -1;
+            }
+            return 0;
+          });
+        this.UpdateProducts()
+        ToggleOrganizeMenu()
+    }
+    
+    SortByBiggestPrice(){
+    
+        this.current_products.sort(function (a, b) {
+            if (a.price < b.price) {
+              return 1;
+            }
+            if (a.price > b.price) {
+              return -1;
+            }
+            return 0;
+          });
+        this.UpdateProducts()
+        ToggleOrganizeMenu()
+    }
+
+    GetProductsLimitSizeStatus(){
+        if(this.productsLimitStatus){
+            if(this.currentProductsLength < this.productsLimit){
+                return true
+            }
+            return false
+        }
+        return true
+    }
+
+    ShowLoadButton(){
+        let button = document.querySelector('.loadButton')
+        if(this.currentProductsLength < this.productsLimit){
+            button.classList.add('loadButton_off')
+        }else{
+            if(this.productsLimitStatus){
+                button.classList.remove('loadButton_off')
+            }else{
+                button.classList.add('loadButton_off')
+            }
+        }
+    }
+
+    UpdateProducts(){
+        let template = ``
+        this.currentProductsLength = 0
+        this.current_products.forEach(prod => {
+
+            if(this.GetProductsLimitSizeStatus() && this.GetClothPriceCategory(prod) && this.GetClothColorCategory(prod) && this.GetClothSizeCategory(prod)){
+                template += `
+                <div class = "product_card">
+                    <img src = ${"./images/" + prod.image}></img>
+                    <h2>${prod.name}</h2>
+                    <h3>${"R$" + prod.price.toFixed(2).toString().replace(".", ",")}</h3>
+                    <h4>${"Até " + prod.parcelamento + "x de R$" + (prod.price/prod.parcelamento).toFixed(2)}</h4>
+                    <button onclick = "AddProductCart('${prod.id}')">
+                        <h3>Comprar</h3>
+                    </button>
+                </div>
+                `
+                this.currentProductsLength++   
+
+            }
+            
+        });
+
+        this.ShowLoadButton()
+
+        this.container.innerHTML = template;
+
     }
 
 }
-*/
+
+
 function ToggleOptionsList(component_id,component_id_off,sign_id){
     let list = document.querySelector(component_id)
     list.classList.toggle(component_id_off)
@@ -87,149 +204,29 @@ function ToggleLoadButton(){
     updateProducts()
 } 
 
+function ToggleOrganizeMenu(){
+    let arrow = document.querySelector('.arrowup')
+    arrow.classList.toggle('arrowdown')
 
-function SetClothsByColor(){
-    cloths_color = [];
-    var pacote = document.getElementsByName("color_list");
-    for (var i = 0; i < pacote.length; i++){
-        if ( pacote[i].checked ) {
-            cloths_color += pacote[i].value;
-        }
-    }
-    updateProducts()
+    let drop_list = document.querySelector('.dropdown_list');
+    drop_list.classList.toggle('dropdown_list_on')
 }
 
-
-function SetClothsByPrice(){
-    cloths_prices = document.querySelector('input[name="price_list"]:checked').value
-    updateProducts()
+function ToggleFilterMenu(){
+    let menu = document.querySelector('.filter_menu')
+    menu.classList.toggle('filter_menu_off')
 }
 
-function SetClothsBySize(){
-    cloths_size = [];
-    var pacote = document.getElementsByName("size_list");
-    for (var i = 0; i < pacote.length; i++){
-        if ( pacote[i].checked ) {
-            cloths_size.push(pacote[i].value);
-        }
-    }
-    updateProducts()
-}
-
-function GetClothPriceCategory(prod){
-    if(cloths_prices != ''){
-        if(prices[cloths_prices].high == -1){
-            if(prod.price >= prices[cloths_prices].low){
-                return true
-            }
-        }else{
-            if((prod.price >= prices[cloths_prices].low) && (prod.price <= prices[cloths_prices].high)){
-                return true
-            }
-        }
-        return false
-    }else{
-        return true;
-    }
-    return false
-}
-
-function GetClothColorCategory(prod){
-    if(cloths_color.length > 0){
-        if(cloths_color.indexOf(prod.color) > -1){
-            return true
-        }
-        return false
-    }
-    return true
-}
-
-function GetClothSizeCategory(prod){
-    //let x = document.querySelector(".teste")
-    if(cloths_size.length > 0){
-        for (var i = 0; i < (prod.size).length; i++){
-            if(cloths_size.indexOf(prod.size[i])> -1){
-                //x.innerHTML = prod.size
-                //x.innerHTML = prod.size[i]
-                return true
-            }
-        }
-        return false
-    }
-    return true
-}
-
-function GetProductsLimitSizeStatus(){
-    if(productsLimitStatus){
-        if(currentProductsLength < productsLimit){
-            return true
-        }
-        return false
-    }
-    return true
-}
-
-function ShowLoadButton(){
-    let button = document.querySelector('.loadButton')
-    if(currentProductsLength < productsLimit){
-        button.classList.add('loadButton_off')
-    }else{
-        if(productsLimitStatus){
-            button.classList.remove('loadButton_off')
-        }else{
-            button.classList.add('loadButton_off')
-        }
-    }
-}
-
-function AddProductCart(product_id){
-        let x = document.querySelector(".cart_counter")
-        //x.innerHTML = "foI"
-        if(carrinho.indexOf(product_id) <= -1){
-            carrinho.push(product_id);
-        }
-        x.innerHTML = `<h1>${carrinho.length}</h1>`
-       
-}
-
-
-function updateProducts(){
-    template = ``
-    currentProductsLength = 0
-
-    current_products.forEach(prod => {
-
-        if(GetProductsLimitSizeStatus() && GetClothPriceCategory(prod) && GetClothColorCategory(prod) && GetClothSizeCategory(prod)){
-            template += `
-            <div class = "product_card">
-                <img src = ${"./images/" + prod.image}></img>
-                <h2>${prod.name}</h2>
-                <h3>${"R$" + prod.price.toFixed(2).toString().replace(".", ",")}</h3>
-                <h4>${"Até " + prod.parcelamento + "x de R$" + (prod.price/prod.parcelamento).toFixed(2)}</h4>
-                <button onclick = "AddProductCart('${prod.id}')">
-                    <h3>Comprar</h3>
-                </button>
-            </div>
-            `
-            currentProductsLength++   
-
-        }
-        
-    });
-
-    ShowLoadButton()
-
-    container.innerHTML = template;
-
-}
-
+// Fazendo a Requisição dos produtos para a Api
 const renderPosts = async() =>{
     let uri = "http://localhost:3000/products"
 
     const res = await fetch(uri)
-    products = current_products = await res.json()
+    let products = await res.json()
 
-    updateProducts()
+    productsController = new ProductController(products)
+    
+    productsController.UpdateProducts()
     
 }
 
