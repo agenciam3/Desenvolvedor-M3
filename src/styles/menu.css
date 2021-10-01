@@ -70,6 +70,30 @@
     
 }
 
+.color_loadButton{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    border: 0;
+    max-width: 150px;
+    padding-top: 5px;
+    background-color: white;
+    border-bottom: 1px solid #d9d9d9;
+    color: #d9d9d9;
+    cursor: pointer;
+}
+
+.color_arrowdown {
+    border: solid #d9d9d9;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    margin-bottom: 3px;
+}
+
 
 @media (max-width:900px) {
    .filter_menu{
