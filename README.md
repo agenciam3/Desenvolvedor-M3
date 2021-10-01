@@ -88,3 +88,7 @@ O layout se encontra na pasta "layout" em PSD e PNG.
 - Não existe uma página para o carrinho mas todos os produtos adicionados vão para a lista 'carrinho' dentro da classe 'ProductController'
 
 
+## E-mail de contato
+
+- davidpnora@outlook.com
+
