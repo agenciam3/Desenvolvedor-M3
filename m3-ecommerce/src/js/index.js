@@ -1,3 +1,22 @@
+const prices = [
+    "0/50",
+    "51/150",
+    "151/300",
+    "301/500",
+    "01/-1"
+]
+
+const colors = [
+    "Amarelo","Azul","Branco","Cinza","Laranja","Preto","Manjeta","Roxo"
+]
+
+const colors_max = 5
+let colors_max_status = true
+
+const sizes = [
+    "P","M","G","GG","U","36","38","40","42","44","46"
+]
+
 class ProductController{
     
     constructor(products){
@@ -28,13 +47,16 @@ class ProductController{
     }
 
     GetClothPriceCategory(prod){
+
         if(this.cloths_prices != ''){
-            if(this.prices[this.cloths_prices].high == -1){
-                if(prod.price >= this.prices[this.cloths_prices].low){
+            let value = this.cloths_prices.split("/");
+
+            if(value[1] == -1){
+                if(prod.price >= value[0]){
                     return true
                 }
             }else{
-                if((prod.price >= this.prices[this.cloths_prices].low) && (prod.price <= this.prices[this.cloths_prices].high)){
+                if((prod.price >= value[0]) && (prod.price <= value[1])){
                     return true
                 }
             }
@@ -170,7 +192,7 @@ class ProductController{
                     <img src = ${"./images/" + prod.image}></img>
                     <h2>${prod.name}</h2>
                     <h3>${"R$" + prod.price.toFixed(2).toString().replace(".", ",")}</h3>
-                    <h4>${"Até " + prod.parcelamento + "x de R$" + (prod.price/prod.parcelamento).toFixed(2)}</h4>
+                    <h4>${"Até " + prod.parcelamento[0] + "x de R$" + (prod.parcelamento[1]).toFixed(2)}</h4>
                     <button onclick = "productsController.AddProductCart('${prod.id}')">
                         <h3>Comprar</h3>
                     </button>
@@ -196,10 +218,7 @@ function ToggleOptionsList(component_id,component_id_off,sign_id){
     list.classList.toggle(component_id_off)
 
     let sign = document.querySelector('.' + sign_id)
-    //let teste = document.querySelector('.teste')
-    //teste.innerHTML = (sign_id + '_off')
     sign.classList.toggle(sign_id + '_minus')
-    //let t = new Teste()
 
 }
 
@@ -220,6 +239,111 @@ function ToggleFilterMenu(){
     let menu = document.querySelector('.filter_menu')
     menu.classList.toggle('filter_menu_off')
 }
+
+function GetLoadColorsStatus(colors_qnt){
+    if(colors_max_status){
+        if(colors_qnt < colors_max){
+            return true
+        }
+        return false
+    }
+    return true
+}
+
+function ToggleLoadMoreColor(){
+    colors_max_status = false
+    LoadColors()
+}
+
+
+//Carrega as opções de cores para colocar no menu
+
+function LoadColors(){
+    const container = document.querySelector('.color_check_list_on')
+    colors_qnt = 0
+    template = ''
+
+
+    colors.forEach(color =>{
+        if(GetLoadColorsStatus(colors_qnt)){
+            template += `
+                <label class = "check_item">
+                    <input class = "check_item_input" type="checkbox" value="${color}" name = "color_list" onchange="productsController.SetClothsByColor()"/>
+                    <span class = "check_item_box"></span>
+                    <span class = check_item_label>${color}</span>
+                </label>
+            `
+            colors_qnt++
+        }
+
+    })
+    
+    if(colors_max_status){
+        template += `
+        <button class="color_loadButton" onclick="ToggleLoadMoreColor()">
+            <p>Ver todas as cores</p>
+            <i class="color_arrowdown"></i>
+        </button>
+        `
+    }
+
+    container.innerHTML = template
+
+}
+
+function LoadSizes(){
+    const container = document.querySelector('.sizeMenu_checkbox_on')
+    template = ''
+
+    sizes.forEach(size =>{
+        template += `
+            <label class = "size_item">
+                <input class = "size_item_input" type="checkbox" value="${size}" name = "size_list" onchange="productsController.SetClothsBySize()"/>
+                <span class = "size_item_box">
+                    <span class = size_item_label>${size}</span>
+                </span>
+            </label>
+        `
+    })
+
+    container.innerHTML = template
+
+}
+
+function LoadPrices(){
+    const container = document.querySelector('.price_check_list_on')
+    template = ''
+    let value = []
+
+    prices.forEach(price =>{
+        value = price.split("/");
+        if(value[1] != -1){
+            template += `
+            <label class = "check_item">
+                <input class = "check_item_input" type="radio" name="price_list" value = "${price}" onchange="productsController.SetClothsByPrice()"/>
+                <span class = "check_item_box"></span>
+                <span class = "check_item_label">de R$${value[0]} até R$${value[1]}</span>
+            </label>
+            `
+        }else{
+            template += `
+            <label class = "check_item">
+                <input class = "check_item_input" type="radio" name="price_list" value = "${price}" onchange="productsController.SetClothsByPrice()"/>
+                <span class = "check_item_box"></span>
+                <span class = "check_item_label">a partir de R$${value[0]}</span>
+            </label>
+            `
+        }
+
+    })
+
+    container.innerHTML = template
+
+}
+
+LoadColors()
+LoadPrices()
+LoadSizes()
 
 // Fazendo a Requisição dos produtos para a Api
 const renderPosts = async() =>{

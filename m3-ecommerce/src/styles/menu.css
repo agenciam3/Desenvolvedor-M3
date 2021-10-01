@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .menu_options_button{
@@ -83,6 +83,10 @@
         overflow: auto;
    }
 
+   .optionsMenu_container{
+       margin-bottom: 10px;
+   }
+
     .filter_menu_off{
         left: 0;
     }
@@ -96,11 +100,13 @@
        justify-content: space-between;
        align-items: center;
        padding-left: 20px;
-       padding: 10px 20px;
+       padding: 0;
+       padding: 20px 20px;
    }
 
    .menu_close_button span{
         font-size: 24px;
+        text-align: center;
    }
 
    .menu_close_button h1{

@@ -51,7 +51,7 @@
 
 
 .dropdown_check_item input:checked ~.dropdown_check_item {
-    background-color: #2196F3;
+    background-color: #2bbff2;
 }
 
 .dropdown_check_item:hover{
@@ -59,7 +59,7 @@
 }
   
 .dropdown_check_item .dropdown_check_item input:checked ~ .checkmark {
-    background-color: #2196F3;
+    background-color: #2bbff2;
 }
   
 .dropdown_check_item .dropdown_check_item input:checked ~ .checkmark:after {
