@@ -158,6 +158,24 @@ class ProductController{
         ToggleOrganizeMenu()
     }
 
+    SortByMostRecent(){
+    
+        this.current_products.sort(function (a, b) {
+            const d1 = new Date(a.date)
+            const d2 = new Date(b.date)
+            if (d1 < d2) {
+              return 1;
+            }
+            if (d1 > d2) {
+              return -1;
+            }
+            return 0;
+          });
+
+        this.UpdateProducts()
+        ToggleOrganizeMenu()
+    }
+
     GetProductsLimitSizeStatus(){
         if(this.productsLimitStatus){
             if(this.currentProductsLength < this.productsLimit){

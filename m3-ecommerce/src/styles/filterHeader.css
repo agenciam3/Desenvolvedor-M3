@@ -33,7 +33,7 @@
     height: 30px;
     padding: 10px 10px 10px 20px;
     justify-content: space-between;
-    padding-left: 20px;
+    box-sizing: border-box;
     align-items: center;
     cursor: pointer;
 }

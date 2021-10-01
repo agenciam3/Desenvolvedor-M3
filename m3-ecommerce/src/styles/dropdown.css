@@ -5,11 +5,11 @@
     position: absolute;
     transform-origin: top;
     transition: 0.3s;
-    margin: 0;
     border: 1px solid black;
-    padding: 0;
+    border-top: 0;
     width: 150px;
     background-color: white;
+    box-sizing: border-box;
 }
 
 .dropdown_list_on{
@@ -56,6 +56,7 @@
 
 .dropdown_check_item:hover{
     background-color: #2bbff2;
+    color: white;
 }
   
 .dropdown_check_item .dropdown_check_item input:checked ~ .checkmark {
