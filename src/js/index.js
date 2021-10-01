@@ -78,12 +78,9 @@ class ProductController{
     }
     
      GetClothSizeCategory(prod){
-        //let x = document.querySelector(".teste")
         if(this.cloths_size.length > 0){
             for (var i = 0; i < (prod.size).length; i++){
                 if(this.cloths_size.indexOf(prod.size[i])> -1){
-                    //x.innerHTML = prod.size
-                    //x.innerHTML = prod.size[i]
                     return true
                 }
             }
@@ -94,7 +91,6 @@ class ProductController{
 
     AddProductCart(product_id){
         let x = document.querySelector(".cart_counter")
-        //x.innerHTML = "foI"
         if(this.carrinho.indexOf(product_id) <= -1){
             this.carrinho.push(product_id);
         }
