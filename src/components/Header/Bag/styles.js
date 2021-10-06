@@ -4,6 +4,7 @@ export const BagContainer = styled.div`
   position: relative;
   @media only screen and (min-width: 1025px) {
     margin-top: 25px;
+    margin-right: 180px;
     cursor: pointer;
     &:hover {
       .icon {
@@ -17,7 +18,7 @@ export const BagContainer = styled.div`
   }
   @media only screen and (max-width: 1024px) {
     display: flex;
-    top: 10%;
+    align-items: flex-end;
   }
 `;
 

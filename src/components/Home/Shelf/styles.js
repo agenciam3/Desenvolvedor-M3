@@ -87,6 +87,9 @@ export const CardContainer = styled.div`
         p {
             font-size: 15px;
         }
+        h2 {
+            text-transform: uppercase;
+        }
         button {
             width: 100%;
             background-color: black;
@@ -113,6 +116,7 @@ export const CardContainer = styled.div`
         }
         h2 {
             font-size: 14px;
+            text-transform: uppercase;
         }
         width: 50%;
         text-align: center;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Page = styled.div`
+    padding: 0 20px;
     height: 100%;
     width: 100%;
     background-color: white;

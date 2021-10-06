@@ -6,6 +6,8 @@ width: 100%;
 display: flex;
 z-index:2;
 border-bottom: 1px solid gray;
+padding-bottom: 10px;
+justify-content: space-between;
 @media only screen and (min-width: 1025px){
   top: 0px;
   position: fixed;
@@ -18,16 +20,11 @@ border-bottom: 1px solid gray;
 
 export const HeaderLoginRow = styled.div`
 max-width: 100%;
-width: 100%;
-display: grid;
-grid-auto-flow: column;
 `;
 
 export const HeaderBagRow = styled.div`
 max-width: 100%;
-width: 100%;
+display: flex;
 justify-content: center;
-display: grid;
-grid-auto-flow: column;
-margin-left: 40%;
+
 `;
