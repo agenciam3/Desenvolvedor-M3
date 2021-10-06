@@ -6,7 +6,6 @@ width: 100%;
 display: flex;
 z-index:2;
 border-bottom: 1px solid gray;
-
 @media only screen and (min-width: 1025px){
   top: 0px;
   position: fixed;
@@ -32,4 +31,3 @@ display: grid;
 grid-auto-flow: column;
 margin-left: 40%;
 `;
-

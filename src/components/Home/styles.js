@@ -29,7 +29,6 @@ export const MobileButtonsContainer = styled.div`
     margin-right: 5%;
     max-height: 100px;
     margin-top: 20px;
-
 `;
 
 export const MobileFilterButton = styled.button`

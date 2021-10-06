@@ -21,8 +21,6 @@ export const DropdownContainer = styled.div`
             display:none;
         }
     }
-
-
 `;
 export const DropdownOptions = styled.div`
     width: 80px;
@@ -40,7 +38,6 @@ export const DropdownOptions = styled.div`
     }
 `;
 export const ShelfContainer = styled.div`
-
 @media only screen and (min-width: 1025px){
     width: 70%;
 }
@@ -50,7 +47,6 @@ export const ShelfContainer = styled.div`
     flex-wrap: wrap;
     position: relative;
     justify-content: center;
-
     @media only screen and (max-width: 1024px){
         width: 100%;
     }
@@ -58,7 +54,6 @@ export const ShelfContainer = styled.div`
 `;
 
 export const LoadButton = styled.button`
-
     position: relative;
     display: block;
     cursor: pointer;
@@ -66,8 +61,6 @@ export const LoadButton = styled.button`
     background-color: #13DAD4;
     max-height: 60px;
     padding: 15px;
-
-
 @media only screen and (min-width: 1025px){
     font-size: 15px;
     border: none;
@@ -81,7 +74,6 @@ export const LoadButton = styled.button`
 `;
 
 export const CardContainer = styled.div`
-
 @media only screen and (min-width: 1025px){
     width: 100%;
     position: relative;
@@ -135,6 +127,4 @@ export const CardContainer = styled.div`
             border: none;
         }
     }
-
 `;
-

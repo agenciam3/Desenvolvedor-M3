@@ -1,10 +1,7 @@
-  import styled from "styled-components";
-
+import styled from "styled-components";
 
 export const BagContainer = styled.div`
-
   position: relative;
-
   @media only screen and (min-width: 1025px) {
     margin-top: 25px;
     cursor: pointer;
@@ -18,12 +15,10 @@ export const BagContainer = styled.div`
       }
     }
   }
-
   @media only screen and (max-width: 1024px) {
     display: flex;
     top: 10%;
   }
-
 `;
 
   export const BagCounter = styled.span`
@@ -44,7 +39,6 @@ export const BagContainer = styled.div`
       z-index: 1;
       position: absolute;
     }
-
     @media only screen and (max-width: 1024px){
       background: #13DAD4;
       height: 15px;
@@ -59,4 +53,3 @@ export const BagContainer = styled.div`
       z-index: 1;
     }
   `;
-

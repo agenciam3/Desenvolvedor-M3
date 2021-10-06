@@ -14,24 +14,19 @@ export const MainContainer = styled.div`
         padding-top: 30px;
         color: black;
     };
-
     li{
         list-style-type: none;
     };
-
     .color-hidden{
         display: none;
     };
-
     .trigger{
         color: gray;
         cursor: pointer;
     };
-
     input {
         margin-right: 3%;
     }
-
     button{
         background-color: white;
         border: 1px solid;
@@ -45,14 +40,12 @@ export const MainContainer = styled.div`
         opacity: 1;
         border-color:#13DAD4;
     }
-
 }
 @media (max-width: 1024px){
     position: relative;
     width: 100%;
     height: 100%;
     background-color: white;
-
     li{
         list-style-type: none;
         font-size: 15px;
@@ -111,12 +104,10 @@ export const PriceContainer = styled.div`
     @media (min-width: 1025px){
         width: auto;
     }
-
     @media (max-width: 1024px){
         width: 100%;
         margin-top: 50px;
     }
-
 `;
 
 export const TitleContainer = styled.div`
@@ -146,6 +137,4 @@ export const TitleButtonContainer = styled.div`
 export const ContentContainer = styled.div`
     margin-left: 10%;
     margin-right: 10%;
-
 `;
-

@@ -4,9 +4,7 @@ export default createGlobalStyle`
     
 * {
     box-sizing: border-box;
-
 }
-
 body {
     width: 100%;
     height: 100%;
@@ -21,11 +19,9 @@ body {
     display: flex;
     flex-direction: column;
 }
-
  button {
     outline: none;
     border: none;
     background: none;
 }
-
 `;
