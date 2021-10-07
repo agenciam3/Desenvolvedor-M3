@@ -7,7 +7,7 @@ class Catalogo{
         this.#listaProdutos = listaProdutos;
     }
 
-    mostrarProdutos(lista){
+    mostrarProdutos(lista = this.#listaProdutos){
         for (const produto in lista) {
             let id = lista[produto].id;
             let nome = lista[produto].nome;
