@@ -1,6 +1,6 @@
 
 const container = document.getElementById('se-div-produtos');
-class Catalogo{
+export default class Catalogo{
     #listaProdutos;
 
     constructor(listaProdutos){
@@ -52,7 +52,7 @@ class Catalogo{
     }
 
     filtrarCores(){
-        
+
     }
 
     filtrarTamanhos(){

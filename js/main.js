@@ -1,4 +1,16 @@
+import Catalogo from "./catalogo.js";
+
+
+var dadosProdutos; 
 
 //pegar json
-//transformar em obj
+await fetch("../produtos.json")
+    .then((resp) =>{
+        return resp.json();
+    })
+    .then((data) => {
+        dadosProdutos = data;
+    })
+
+console.log(dadosProdutos);
 //instanciar catalogo
