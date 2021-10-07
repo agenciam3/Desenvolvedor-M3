@@ -1,11 +1,12 @@
 ### HTML
-- Ver todas as cores
+- [X] Ver todas as cores
 
 
 ### CSS
-- Select ordenar
+- [ ] Select ordenar
+- [ ] Colocar Fonts
 
 ### JS
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
+- [ ] Funcionalidade: Filtrar produtos por cor, tamanho e preço.
+- [ ] Funcionalidade: Adicionar produto ao carrinho.
+- [ ] Funcionalidade: Carregar mais produtos.
