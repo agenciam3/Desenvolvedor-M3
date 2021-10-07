@@ -10,7 +10,9 @@ await fetch("../produtos.json")
     })
     .then((data) => {
         dadosProdutos = data;
-    })
+    }) 
+
 
 console.log(dadosProdutos);
 //instanciar catalogo
+const catalogo = new Catalogo(dadosProdutos)
