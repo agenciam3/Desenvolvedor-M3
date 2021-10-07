@@ -1,40 +1,188 @@
 [
     {
-        "id" : "",
-        "nome" : "",
-        "preco" : "",
-        "parcelamento" : "",
-        "cores" : [
-
+        "id" : "001",
+        "nome" : "CAMISETA MESCLA",
+        "preco" : 28,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "AMARELO", 
+            "AZUL",
+            "BRANCO",
+            "CINZA",
+            "LARANJA"
         ],
         "tamanhos" : [
-
+            "P",
+            "M",
+            "G",
+            "GG",
+            "U",
+            "36",
+            "38",
+            "40",
+            "42",
+            "44",
+            "46"
         ],
         "dataLancamento" : ""
     },
     {
-        "id" : "",
-        "nome" : "",
-        "preco" : "",
-        "parcelamento" : "",
+        "id" : "002",
+        "nome" : "SAIA EM COURO",
+        "preco" : 398,
+        "parcelamento" : 5,
         "cores" : [
-
+            "AMARELO",
+            "BRANCO"
         ],
         "tamanhos" : [
-
+            "P",
+            "M",
+            "G",
+            "36",
+            "38",
+            "40"
         ],
         "dataLancamento" : ""
     },
     {
-        "id" : "",
-        "nome" : "",
-        "preco" : "",
-        "parcelamento" : "",
+        "id" : "003",
+        "nome" : "CARDIGAN TIGRE",
+        "preco" : 398,
+        "parcelamento" : 5,
         "cores" : [
-
+            "AMARELO",
+            "LARANJA",
+            "CINZA"
         ],
         "tamanhos" : [
-
+            "G",
+            "GG",
+            "U",
+            "36",
+            "38",
+            "40"
+        ],
+        "dataLancamento" : ""
+    },
+    {
+        "id" : "004",
+        "nome" : "CARDIGAN OFF WHITE",
+        "preco" : 99,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "AZUL",
+            "BRANCO",
+            "LARANJA"
+        ],
+        "tamanhos" : [
+            "P",
+            "M",
+            "G"
+        ],
+        "dataLancamento" : ""
+    },
+    {
+        "id" : "005",
+        "nome" : "BODY LEOPARDO",
+        "preco" : 128,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "AZUL",
+            "BRANCO"
+        ],
+        "tamanhos" : [
+            "40",
+            "42",
+            "44",
+            "46"
+        ],
+        "dataLancamento" : ""
+    },
+     {
+        "id" : "006",
+        "nome" : "CASACO PELOS",
+        "preco" : 398,
+        "parcelamento" : 5,
+        "cores" : [ 
+            "AMARELO", 
+            "AZUL",
+            "BRANCO",
+            "CINZA",
+            "LARANJA"
+        ],
+        "tamanhos" : [
+            "P",
+            "M",
+            "G",
+            "GG",
+            "U",
+            "36",
+            "38",
+            "40",
+            "42",
+            "44",
+            "46"
+        ],
+        "dataLancamento" : ""
+    },
+    {
+        "id" : "007",
+        "nome" : "CROPED STRIPES",
+        "preco" : 120,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "AMARELO", 
+            "AZUL",
+            "BRANCO",
+            "CINZA",
+            "LARANJA"
+        ],
+        "tamanhos" : [
+            "P",
+            "M",
+            "G",
+            "GG",
+            "U",
+            "36",
+            "38"
+        ],
+        "dataLancamento" : ""
+    },
+    {
+        "id" : "008",
+        "nome" : "CAMISA TRANSPARENTE",
+        "preco" : 398,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "AZUL"
+        ],
+        "tamanhos" : [
+            "P",
+            "M",
+            "G",
+            "GG",
+            "U",
+            "36",
+            "38",
+            "40",
+            "42",
+            "44",
+            "46"
+        ],
+        "dataLancamento" : ""
+    },
+    {
+        "id" : "009",
+        "nome" : "POCHETE CLUTCH",
+        "preco" : 99,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "CINZA",
+            "LARANJA"
+        ],
+        "tamanhos" : [
+            "P"
         ],
         "dataLancamento" : ""
     }
