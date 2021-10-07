@@ -16,3 +16,5 @@ await fetch("../produtos.json")
 console.log(dadosProdutos);
 //instanciar catalogo
 const catalogo = new Catalogo(dadosProdutos)
+
+catalogo.mostrarProdutos();

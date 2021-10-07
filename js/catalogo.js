@@ -1,5 +1,8 @@
 
 const container = document.getElementById('se-div-produtos');
+
+console.log("1111111111111111111111");
+console.log(container);
 export default class Catalogo{
     #listaProdutos;
 
@@ -8,11 +11,13 @@ export default class Catalogo{
     }
 
     mostrarProdutos(quantidadeParaExibir = 6){
+        let lista = this.#listaProdutos;
         for (const produto in lista) {
             let contador = document.getElementsByClassName('div-produto').length;
             if (contador < quantidadeParaExibir) {
                 let id = lista[produto].id;
                 let nome = lista[produto].nome;
+                let preco = lista[produto].preco;
                 let parcelamento = lista[produto].parcelamento;
                 let imagem = lista[produto].imagem;
                 

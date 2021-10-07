@@ -24,7 +24,8 @@
             "44",
             "46"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_2.png"
     },
     {
         "id" : "002",
@@ -43,7 +44,8 @@
             "38",
             "40"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_3.png"
     },
     {
         "id" : "003",
@@ -63,7 +65,8 @@
             "38",
             "40"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_4.png"
     },
     {
         "id" : "004",
@@ -80,7 +83,8 @@
             "M",
             "G"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_5.png"
     },
     {
         "id" : "005",
@@ -97,7 +101,8 @@
             "44",
             "46"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_6.png"
     },
      {
         "id" : "006",
@@ -124,7 +129,8 @@
             "44",
             "46"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_7.png"
     },
     {
         "id" : "007",
@@ -147,7 +153,8 @@
             "36",
             "38"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_8.png"
     },
     {
         "id" : "008",
@@ -170,7 +177,8 @@
             "44",
             "46"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_9.png"
     },
     {
         "id" : "009",
@@ -184,6 +192,7 @@
         "tamanhos" : [
             "P"
         ],
-        "dataLancamento" : ""
+        "dataLancamento" : "",
+        "imagem" : "../img/img_10.png"
     }
 ]
