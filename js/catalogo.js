@@ -12,9 +12,12 @@ export default class Catalogo{
 
     mostrarProdutos(quantidadeParaExibir = 6){
         let lista = this.#listaProdutos;
-        for (const produto in lista) {
-            let contador = document.getElementsByClassName('div-produto').length;
-            if (contador < quantidadeParaExibir) {
+        let listaProdutosVisiveis = document.getElementsByClassName('div-produto');
+        
+        console.log(listaProdutosVisiveis.length)
+        for (let produto = listaProdutosVisiveis.length; produto < lista.length; produto++) {
+            console.log("entrou");
+            if (produto < quantidadeParaExibir) {
                 let id = lista[produto].id;
                 let nome = lista[produto].nome;
                 let preco = lista[produto].preco;
@@ -23,7 +26,7 @@ export default class Catalogo{
                 
                 let valorParcelamento = lista[produto].preco / lista[produto].parcelamento;
 
-                container.innerHTML += `<div class="div-produto">
+                container.innerHTML += `<div class="div-produto" data-index="${id}">
                                             <img class="img-produto" src="${imagem}" alt="Demonstração ${nome}">
                                             <h3 class="tit-produto">${nome}</h3>
                                             <span class="preco-produto">R$${preco.toFixed(2)}</span>

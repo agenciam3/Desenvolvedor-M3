@@ -14,3 +14,7 @@
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
 - [ ] Responsividade
+
+
+## Rascunho
+

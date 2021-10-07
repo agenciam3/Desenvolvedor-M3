@@ -16,5 +16,10 @@ await fetch("../produtos.json")
 console.log(dadosProdutos);
 //instanciar catalogo
 const catalogo = new Catalogo(dadosProdutos)
+const btCarregarMais = document.getElementById('id-carregar-mais');
 
 catalogo.mostrarProdutos();
+
+btCarregarMais.addEventListener('click', ()=>{
+    catalogo.carregarMais();
+});
