@@ -29,6 +29,11 @@ class Catalogo{
 
     addCarrinho(idProduto){
         console.log(idProduto);
+        let spanCarrinho = document.getElementById('id-bag-quatidade');
+        spanCarrinho.style.display = "inline";
+        numeroNoCarrinho = parseInt(spanCarrinho.innerText, 10);
+        numeroNoCarrinho++;
+        spanCarrinho.innerText = numeroNoCarrinho;
     }
 
     filtrarCores(){
