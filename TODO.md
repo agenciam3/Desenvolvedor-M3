@@ -1,5 +1,6 @@
 ### HTML
 - [ ] add Ver todas as cores
+- [ ] label check boxes relacionar aos check boxes
 
 
 ### CSS

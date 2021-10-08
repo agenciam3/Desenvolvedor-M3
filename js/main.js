@@ -15,9 +15,10 @@ await fetch("../produtos.json")
 
 const catalogo = new Catalogo(dadosProdutos)
 const btCarregarMais = document.getElementById('id-carregar-mais');
-const checkAmarelo = document.getElementById('id-amarelo');
+const areaCores = document.getElementById('id-div-cores');
 
 catalogo.mostrarProdutos();
+tratarCheckBoxes(areaCores, "COR");
 
 btCarregarMais.addEventListener('click', ()=>{
     if (!listaFiltrada) {
@@ -31,9 +32,64 @@ btCarregarMais.addEventListener('click', ()=>{
     
 });
 
-checkAmarelo.addEventListener('click', async ()=>{
-    let coresSelecionadas = ["LARANJA"];
-    listaFiltrada = await catalogo.filtrarCores(coresSelecionadas);
-    console.log('asaas', listaFiltrada.length)
-    catalogo.mostrarProdutos(6, listaFiltrada, true);
-})
+function tratarCheckBoxes(div, area) {
+    switch (area) {
+        case "COR":
+            div.addEventListener('click', async ()=>{
+                let coresSelecionadas = await getCoresSelecionadas();
+                console.log(coresSelecionadas)
+                listaFiltrada = await catalogo.filtrarCores(coresSelecionadas);
+                console.log('asaas', listaFiltrada.length)
+                if (listaFiltrada.length > 0) {
+                   catalogo.mostrarProdutos(6, listaFiltrada, true); 
+                }
+                else{
+                    console.log("lista vazia")
+                    catalogo.mostrarProdutos();
+                }
+                
+            })
+            break;
+        case "TAMANHO":
+            
+            break;
+        case "PRECO":
+            
+            break;
+
+        default:
+            break;
+    }    
+}
+
+function getCoresSelecionadas() {
+/*     let todasAsCores = ["AMARELO", "AZUL", "BRANCO", "CINZA", "LARANJA"]; */
+    return new Promise((resolve)=>{
+        let coresSelecionadas = [];
+
+        const checkAmarelo = document.getElementById('id-amarelo');
+        const checkAzul = document.getElementById('id-azul');
+        const checkBranco = document.getElementById('id-branco');
+        const checkCinza = document.getElementById('id-cinza');
+        const checkLaranja = document.getElementById('id-laranja');
+
+        if (checkAmarelo.checked && coresSelecionadas.indexOf("AMARELO") == -1) {
+            coresSelecionadas.push('AMARELO')
+        }
+        if (checkAzul.checked && coresSelecionadas.indexOf("AZUL") == -1) {
+            coresSelecionadas.push('AZUL')
+        }
+        if (checkBranco.checked && coresSelecionadas.indexOf("BRANCO") == -1) {
+            coresSelecionadas.push('BRANCO')
+        }
+        if (checkCinza.checked && coresSelecionadas.indexOf("CINZA") == -1) {
+            coresSelecionadas.push('CINZA')
+        }
+        if (checkLaranja.checked && coresSelecionadas.indexOf("LARANJA") == -1) {
+            coresSelecionadas.push('LARANJA')
+        } 
+
+        resolve(coresSelecionadas);
+    });
+    
+}
