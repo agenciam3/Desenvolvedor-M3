@@ -10,8 +10,7 @@ export default class Catalogo{
         this.#listaProdutos = listaProdutos;
     }
 
-    mostrarProdutos(quantidadeParaExibir = 6){
-        let lista = this.#listaProdutos;
+    mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos){
         let listaProdutosVisiveis = document.getElementsByClassName('div-produto');
         
         console.log(listaProdutosVisiveis.length)
@@ -41,9 +40,10 @@ export default class Catalogo{
     carregarMais(){
         let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
         let botaoCarregarMais = document.getElementById('id-carregar-mais');
+        let qtdParaCarregar = 3;
 
         if (qtdProdutosVisiveis < this.#listaProdutos.length) {
-            this.mostrarProdutos((qtdProdutosVisiveis + 3));
+            this.mostrarProdutos((qtdProdutosVisiveis + qtdParaCarregar));
         }
         else{
             botaoCarregarMais.style.opacity = '0.5';
@@ -59,8 +59,20 @@ export default class Catalogo{
         spanCarrinho.innerText = numeroNoCarrinho;
     }
 
-    filtrarCores(){
+    filtrarCores(coresSelecionadas){
+        let listaAuxiliar;
 
+        for (let i = 0; i < coresSelecionadas.length; i++) {
+            for (let j = 0; j < this.#listaProdutos.length; j++) {
+                for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
+                    if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
+                        listaAuxiliar.push(this.#listaProdutos[j]);
+                    } 
+                }
+            }
+        }
+
+        this.mostrarProdutos(6, listaAuxiliar);
     }
 
     filtrarTamanhos(){
