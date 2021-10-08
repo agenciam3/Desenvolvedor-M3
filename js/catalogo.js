@@ -1,8 +1,6 @@
 
 const container = document.getElementById('se-div-produtos');
 
-console.log("1111111111111111111111");
-console.log(container);
 export default class Catalogo{
     #listaProdutos;
 
@@ -13,9 +11,7 @@ export default class Catalogo{
     mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos){
         let listaProdutosVisiveis = document.getElementsByClassName('div-produto');
         
-        console.log(listaProdutosVisiveis.length)
         for (let produto = listaProdutosVisiveis.length; produto < lista.length; produto++) {
-            console.log("entrou");
             if (produto < quantidadeParaExibir) {
                 let id = lista[produto].id;
                 let nome = lista[produto].nome;
@@ -51,7 +47,6 @@ export default class Catalogo{
     }
 
     addCarrinho(idProduto){
-        console.log(idProduto);
         let spanCarrinho = document.getElementById('id-bag-quatidade');
         spanCarrinho.style.display = "inline";
         numeroNoCarrinho = parseInt(spanCarrinho.innerText, 10);
@@ -60,20 +55,27 @@ export default class Catalogo{
     }
 
     filtrarCores(coresSelecionadas){
-        let listaAuxiliar;
+        let listaAuxiliar = [];
 
         for (let i = 0; i < coresSelecionadas.length; i++) {
             for (let j = 0; j < this.#listaProdutos.length; j++) {
                 for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
                     if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
-                        listaAuxiliar.push(this.#listaProdutos[j]);
+                        let idProdutoAtual = this.#listaProdutos[j].id;
+                        if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                            listaAuxiliar.push(this.#listaProdutos[j]);
+                            break;
+                        }
                     } 
                 }
             }
         }
+        console.log(listaAuxiliar);
 
         this.mostrarProdutos(6, listaAuxiliar);
     }
+
+
 
     filtrarTamanhos(){
 
