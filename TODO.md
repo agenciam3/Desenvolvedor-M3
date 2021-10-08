@@ -9,16 +9,18 @@
 - [ ] Responsividade
 - [ ] Carregar mais transition
 - [ ] Diminuir botões comprar
+- [ ] Imagem hover zoom *Segundo plano*
 
 ### JS
-- [ ] Funcionalidade: Filtrar produtos por cor
+- [X] Funcionalidade: Filtrar produtos por cor
 - [ ] Funcionalidade: Filtrar produtos por tamanho
-- [ ] Funcionalidade: Filtrar produtos por preço
+- [X] Funcionalidade: Filtrar produtos por preço
 - [X] Funcionalidade: Adicionar produto ao carrinho.
 - [ ] minicart *Segundo plano*
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
 - [ ] Responsividade
+- [ ] Opacidade botão carregar mais
 
 
 ## Rascunho

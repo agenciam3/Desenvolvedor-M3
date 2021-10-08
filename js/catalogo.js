@@ -95,11 +95,83 @@ export default class Catalogo{
 
 
     filtrarTamanhos(){
+        return new Promise((resolve)=>{
+             let listaAuxiliar = [];
 
+            for (let i = 0; i < coresSelecionadas.length; i++) {
+                for (let j = 0; j < this.#listaProdutos.length; j++) {
+                    for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
+                        if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
+                            if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                listaAuxiliar.push(this.#listaProdutos[j]);
+                                break;
+                            }
+                        } 
+                    }
+                }
+            }
+            console.log(listaAuxiliar);
+            resolve(listaAuxiliar);
+        })
     }
 
-    filtrarPrecos(){
-
+    filtrarPrecos(precosSelecionados){
+        return new Promise((resolve)=>{
+            let listaAuxiliar = [];
+            for (let i = 0; i < precosSelecionados.length; i++) {
+                switch (precosSelecionados[i]) {
+                    case "0>50":
+                        for (let j = 0; j < this.#listaProdutos.length; j++) {
+                            if (this.#listaProdutos[j].preco >=0 && this.#listaProdutos[j].preco <=50) {
+                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                                }
+                            }
+                        }
+                        break;
+                    case "51>150":
+                        for (let j = 0; j < this.#listaProdutos.length; j++) {
+                            if (this.#listaProdutos[j].preco >=51 && this.#listaProdutos[j].preco <=150) {
+                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                                }
+                            }
+                        }
+                        break;
+                    case "151>300":
+                        for (let j = 0; j < this.#listaProdutos.length; j++) {
+                            if (this.#listaProdutos[j].preco >=151 && this.#listaProdutos[j].preco <=300) {
+                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                                }
+                            }
+                        }
+                        break;
+                    case "301>500":
+                        for (let j = 0; j < this.#listaProdutos.length; j++) {
+                            if (this.#listaProdutos[j].preco >=301 && this.#listaProdutos[j].preco <=500) {
+                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                                }
+                            }
+                        }
+                        break;
+                    case ">=01":
+                        for (let j = 0; j < this.#listaProdutos.length; j++) {
+                            if (this.#listaProdutos[j].preco >=0) {
+                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                                }
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            console.log(listaAuxiliar);
+            resolve(listaAuxiliar);
+        })
     }
 
     ordenarData(){
