@@ -14,7 +14,7 @@
 - [ ] Funcionalidade: Filtrar produtos por tamanho
 - [ ] Funcionalidade: Filtrar produtos por preço
 - [X] Funcionalidade: Adicionar produto ao carrinho.
-- [ ] Quick kart *Segundo plano*
+- [ ] minicart *Segundo plano*
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
 - [ ] Responsividade

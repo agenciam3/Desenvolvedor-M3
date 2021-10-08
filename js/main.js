@@ -1,7 +1,8 @@
 import Catalogo from "./catalogo.js";
 
 
-var dadosProdutos; 
+var dadosProdutos;
+var listaFiltrada; 
 
 //pegar json
 await fetch("../produtos.json")
@@ -19,11 +20,20 @@ const checkAmarelo = document.getElementById('id-amarelo');
 catalogo.mostrarProdutos();
 
 btCarregarMais.addEventListener('click', ()=>{
-    catalogo.carregarMais();
+    if (!listaFiltrada) {
+       catalogo.carregarMais(); 
+    }
+    else{
+        console.log("filtrado")
+        console.log(listaFiltrada)
+        catalogo.carregarMais(listaFiltrada);
+    }
+    
 });
 
-checkAmarelo.addEventListener('click', ()=>{
-    let coresSelecionadas = ["CINZA"];
-
-    catalogo.filtrarCores(coresSelecionadas);
+checkAmarelo.addEventListener('click', async ()=>{
+    let coresSelecionadas = ["LARANJA"];
+    listaFiltrada = await catalogo.filtrarCores(coresSelecionadas);
+    console.log('asaas', listaFiltrada.length)
+    catalogo.mostrarProdutos(6, listaFiltrada, true);
 })

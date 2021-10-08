@@ -8,10 +8,18 @@ export default class Catalogo{
         this.#listaProdutos = listaProdutos;
     }
 
-    mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos){
-        let listaProdutosVisiveis = document.getElementsByClassName('div-produto');
+    mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
+        let qtdProdutosVisiveis;
+        console.log(lista);
+        if (!limparContainer) {
+            qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
+        } else {
+            qtdProdutosVisiveis = 0;
+            container.innerHTML = "";
+        }
         
-        for (let produto = listaProdutosVisiveis.length; produto < lista.length; produto++) {
+        for (let produto = qtdProdutosVisiveis; produto < lista.length; produto++) {
+            console.log("entrei")
             if (produto < quantidadeParaExibir) {
                 let id = lista[produto].id;
                 let nome = lista[produto].nome;
@@ -33,13 +41,22 @@ export default class Catalogo{
         }
     }
 
-    carregarMais(){
+    carregarMais(listaFiltrada = null){
         let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
         let botaoCarregarMais = document.getElementById('id-carregar-mais');
         let qtdParaCarregar = 3;
 
-        if (qtdProdutosVisiveis < this.#listaProdutos.length) {
-            this.mostrarProdutos((qtdProdutosVisiveis + qtdParaCarregar));
+        if (qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada == null) {
+            console.log('sou a flor silvestre')
+            let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
+            this.mostrarProdutos(totalCarregar);
+        }
+        else if(qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada != null){
+            console.log("que perfuma os campos")
+            console.log(listaFiltrada)
+            console.log('qtdpdvs', qtdProdutosVisiveis)
+            let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
+            this.mostrarProdutos(totalCarregar, listaFiltrada);
         }
         else{
             botaoCarregarMais.style.opacity = '0.5';
@@ -55,24 +72,24 @@ export default class Catalogo{
     }
 
     filtrarCores(coresSelecionadas){
-        let listaAuxiliar = [];
+        return new Promise((resolve)=>{
+             let listaAuxiliar = [];
 
-        for (let i = 0; i < coresSelecionadas.length; i++) {
-            for (let j = 0; j < this.#listaProdutos.length; j++) {
-                for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
-                    if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
-                        let idProdutoAtual = this.#listaProdutos[j].id;
-                        if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                            listaAuxiliar.push(this.#listaProdutos[j]);
-                            break;
-                        }
-                    } 
+            for (let i = 0; i < coresSelecionadas.length; i++) {
+                for (let j = 0; j < this.#listaProdutos.length; j++) {
+                    for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
+                        if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
+                            if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                listaAuxiliar.push(this.#listaProdutos[j]);
+                                break;
+                            }
+                        } 
+                    }
                 }
             }
-        }
-        console.log(listaAuxiliar);
-
-        this.mostrarProdutos(6, listaAuxiliar);
+            console.log(listaAuxiliar);
+            resolve(listaAuxiliar);
+        })
     }
 
 
