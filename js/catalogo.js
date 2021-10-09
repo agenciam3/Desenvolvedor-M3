@@ -94,14 +94,14 @@ export default class Catalogo{
 
 
 
-    filtrarTamanhos(){
+    filtrarTamanhos(tamanhosSelecionados){
         return new Promise((resolve)=>{
              let listaAuxiliar = [];
 
-            for (let i = 0; i < coresSelecionadas.length; i++) {
+            for (let i = 0; i < tamanhosSelecionados.length; i++) {
                 for (let j = 0; j < this.#listaProdutos.length; j++) {
-                    for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
-                        if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
+                    for (let k = 0; k < this.#listaProdutos[j].tamanhos.length; k++) {
+                        if (tamanhosSelecionados[i] == this.#listaProdutos[j].tamanhos[k]) {
                             if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
                                 listaAuxiliar.push(this.#listaProdutos[j]);
                                 break;

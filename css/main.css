@@ -97,6 +97,16 @@ aside h2{
     color: gray;
 }
 
+.box-tam-selected{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--ciano-padrao);
+    color: black;
+}
+
 section{
     display: inline-block;
     width: 80%;

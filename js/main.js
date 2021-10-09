@@ -21,6 +21,7 @@ const areaPrecos = document.getElementById('id-div-precos')
 catalogo.mostrarProdutos();
 tratarCheckBoxes(areaCores, "COR");
 tratarCheckBoxes(areaPrecos, "PRECO");
+tratarTamanhoBoxes();
 
 btCarregarMais.addEventListener('click', ()=>{
     console.log(listaFiltrada)
@@ -52,9 +53,6 @@ function tratarCheckBoxes(div, area) {
                 }    
             })
             break;
-        case "TAMANHO":
-            
-            break;
         case "PRECO":
             div.addEventListener('click', async ()=>{
                 let precosSelecionados = await getPrecosSelecionados();
@@ -74,6 +72,28 @@ function tratarCheckBoxes(div, area) {
         default:
             break;
     }    
+}
+
+function tratarTamanhoBoxes(){
+    let divTamanhos = document.getElementById('id-div-tamanhos');
+
+    divTamanhos.addEventListener('click', async (event)=>{
+       let elementoClicado =  event.target;
+       if (elementoClicado.classList.contains('box-tam') || elementoClicado.classList.contains('span-tam')){
+           await alterarDataset(elementoClicado);
+
+           let tamanhosSelecionados = await getTamanhosSelecionados();
+           listaFiltrada = await catalogo.filtrarTamanhos(tamanhosSelecionados);
+           console.log("lista filtrada", listaFiltrada)
+           if (listaFiltrada.length > 0) {
+                catalogo.mostrarProdutos(6, listaFiltrada, true); 
+            }
+            else{
+                console.log("lista vazia")
+                catalogo.mostrarProdutos(undefined,undefined,true);
+            }   
+       }
+    });
 }
 
 function getCoresSelecionadas() {
@@ -135,4 +155,41 @@ function getPrecosSelecionados() {
 
         resolve(precosSelecionados);
     });
+}
+
+function getTamanhosSelecionados() {
+    return new Promise((resolve)=>{
+        let listaTamanhosSelecionados = [];
+        let listaBoxTamanho = document.getElementsByClassName('box-tam');
+
+        for (let box = 0; box < listaBoxTamanho.length; box++) {
+            if (listaBoxTamanho[box].dataset.selected == 1) {
+                listaTamanhosSelecionados.push(listaBoxTamanho[box].dataset.tamanho);
+                console.log(listaTamanhosSelecionados)
+            }
+            else{
+
+            }
+        }
+        console.log(listaTamanhosSelecionados)
+        resolve(listaTamanhosSelecionados);
+    });
+}
+
+function alterarDataset(elemClicado){
+    return new Promise((resolve)=>{
+        if (elemClicado.classList.contains('span-tam')){
+                elemClicado = elemClicado.parentNode;
+            }
+
+        elemClicado.classList.toggle('box-tam-selected');
+        if (elemClicado.dataset.selected == 0) {
+            elemClicado.dataset.selected = 1;
+        }
+        else{
+            elemClicado.dataset.selected = 0;
+        }
+        
+        resolve();
+    })
 }
