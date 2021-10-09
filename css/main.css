@@ -36,6 +36,7 @@ header{
 }
 
 .bag-quantidade{
+    display: none;
     background-color: var(--ciano-padrao);
     color: white;
     font-size: 18px;

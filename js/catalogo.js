@@ -1,14 +1,16 @@
 
 const container = document.getElementById('se-div-produtos');
 
+
 export default class Catalogo{
     #listaProdutos;
+    #numeroNoCarrinho = 0;
 
     constructor(listaProdutos){
         this.#listaProdutos = listaProdutos;
     }
 
-    mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
+    async mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
         let qtdProdutosVisiveis;
         console.log(lista);
         if (!limparContainer) {
@@ -18,28 +20,48 @@ export default class Catalogo{
             container.innerHTML = "";
         }
         
-        for (let produto = qtdProdutosVisiveis; produto < lista.length; produto++) {
-            console.log("entrei")
-            if (produto < quantidadeParaExibir) {
-                let id = lista[produto].id;
-                let nome = lista[produto].nome;
-                let preco = lista[produto].preco;
-                let parcelamento = lista[produto].parcelamento;
-                let imagem = lista[produto].imagem;
-                
-                let valorParcelamento = lista[produto].preco / lista[produto].parcelamento;
+        await this.#adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir);
+        const botoesComprar = document.getElementsByClassName('bt-comprar');
 
-                container.innerHTML += `<div class="div-produto" data-index="${id}">
-                                            <img class="img-produto" src="${imagem}" alt="Demonstração ${nome}">
-                                            <h3 class="tit-produto">${nome}</h3>
-                                            <span class="preco-produto">R$${preco.toFixed(2)}</span>
-                                            <span class="parcelamento">até ${parcelamento}x de R$${valorParcelamento.toFixed(2)}</span>
-                                            <button id="id-comprar-${id}" class="bt-comprar">Comprar</button>
-                                        </div>`
-            }
-            else{break}
-        }
+        this.#escutarCompras(botoesComprar);
+
     }
+
+    #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){
+        return new Promise((resolve)=>{
+            for (let produto = qtdProdutosVisiveis; produto < lista.length; produto++) {
+                console.log("entrei")
+                if (produto < quantidadeParaExibir) {
+                    let id = lista[produto].id;
+                    let nome = lista[produto].nome;
+                    let preco = lista[produto].preco;
+                    let parcelamento = lista[produto].parcelamento;
+                    let imagem = lista[produto].imagem;
+                    
+                    let valorParcelamento = lista[produto].preco / lista[produto].parcelamento;
+
+                    container.innerHTML += `<div class="div-produto" data-index="${id}">
+                                                <img class="img-produto" src="${imagem}" alt="Demonstração ${nome}">
+                                                <h3 class="tit-produto">${nome}</h3>
+                                                <span class="preco-produto">R$${preco.toFixed(2)}</span>
+                                                <span class="parcelamento">até ${parcelamento}x de R$${valorParcelamento.toFixed(2)}</span>
+                                                <button id="id-comprar-${id}" class="bt-comprar">Comprar</button>
+                                            </div>`
+                }
+                else{break}
+            } 
+            resolve();   
+        });
+        
+    }
+
+    #escutarCompras(btsComprar) {
+    for (let botao = 0; botao < btsComprar.length; botao++) {
+        btsComprar[botao].addEventListener('click', ()=>{
+            this.#numeroNoCarrinho = this.#addCarrinho(this.#numeroNoCarrinho);
+        })
+    }
+}
 
     carregarMais(listaFiltrada = null){
         let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
@@ -63,12 +85,12 @@ export default class Catalogo{
         }
     }
 
-    addCarrinho(idProduto){
+    #addCarrinho(numeroNoCarrinho){
         let spanCarrinho = document.getElementById('id-bag-quatidade');
-        spanCarrinho.style.display = "inline";
-        numeroNoCarrinho = parseInt(spanCarrinho.innerText, 10);
         numeroNoCarrinho++;
         spanCarrinho.innerText = numeroNoCarrinho;
+        spanCarrinho.style.display = "inline";
+        return numeroNoCarrinho;
     }
 
     filtrarCores(coresSelecionadas){

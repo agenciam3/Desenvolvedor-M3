@@ -14,11 +14,12 @@ await fetch("../produtos.json")
     });
 
 const catalogo = new Catalogo(dadosProdutos)
-const btCarregarMais = document.getElementById('id-carregar-mais');
+const btCarregarMais = document.getElementById('id-carregar-mais'); 
 const areaCores = document.getElementById('id-div-cores');
 const areaPrecos = document.getElementById('id-div-precos')
 
 catalogo.mostrarProdutos();
+
 tratarCheckBoxes(areaCores, "COR");
 tratarCheckBoxes(areaPrecos, "PRECO");
 tratarTamanhoBoxes();
@@ -36,6 +37,7 @@ btCarregarMais.addEventListener('click', ()=>{
     
 });
 
+
 function tratarCheckBoxes(div, area) {
     switch (area) {
         case "COR":
@@ -50,7 +52,7 @@ function tratarCheckBoxes(div, area) {
                 else{
                     console.log("lista vazia")
                     catalogo.mostrarProdutos();
-                }    
+                }  
             })
             break;
         case "PRECO":
@@ -71,7 +73,7 @@ function tratarCheckBoxes(div, area) {
 
         default:
             break;
-    }    
+    }  
 }
 
 function tratarTamanhoBoxes(){

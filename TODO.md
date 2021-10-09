@@ -13,9 +13,10 @@
 
 ### JS
 - [X] Funcionalidade: Filtrar produtos por cor
-- [ ] Funcionalidade: Filtrar produtos por tamanho
+- [X] Funcionalidade: Filtrar produtos por tamanho
 - [X] Funcionalidade: Filtrar produtos por preço
-- [X] Funcionalidade: Adicionar produto ao carrinho.
+- [ ] Integrar os filtros
+- [ ] Funcionalidade: Adicionar produto ao carrinho.
 - [ ] minicart *Segundo plano*
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
