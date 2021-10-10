@@ -60,7 +60,7 @@ asideFiltros.addEventListener('click', async (e)=>{
 
 btCarregarMais.addEventListener('click', ()=>{
     console.log('LISTA ATUAL', listaFiltradaAtual)
-    if (listaFiltradaAtual.length == 0) {
+    if (listaFiltradaAtual == undefined || listaFiltradaAtual.length == 0) {
         catalogo.carregarMais(); 
     }
     else{
