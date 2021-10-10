@@ -133,7 +133,17 @@ section{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    align-content: flex-start;
     row-gap: 1.8rem;
+}
+
+@media screen and (max-width: 1080px) {
+    .se-div-produtos{
+        grid-template-columns: 1fr 1fr;
+    }
+    main{
+        width: 90%;
+    }
 }
 
 .div-produto{
@@ -200,4 +210,25 @@ footer{
 
 footer h4{
     padding: .5%;
+}
+
+@media screen and (max-width: 750px) {
+    aside,
+    .se-div-ordenacao{
+        display: none;
+    }
+
+    section,
+    main {
+        width: 100%;
+    }
+
+    .div-produto{
+        width: 90%;
+    }
+
+    .tit-produto {
+        font-size: .9rem;
+    }
+    
 }
