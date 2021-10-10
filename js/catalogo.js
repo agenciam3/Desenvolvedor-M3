@@ -12,10 +12,10 @@ export default class Catalogo{
 
     async mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
         let qtdProdutosVisiveis;
-        console.log(lista);
         if (!limparContainer) {
             qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
         } else {
+            console.log('entrei');
             qtdProdutosVisiveis = 0;
             container.innerHTML = "";
         }
@@ -30,7 +30,6 @@ export default class Catalogo{
     #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){
         return new Promise((resolve)=>{
             for (let produto = qtdProdutosVisiveis; produto < lista.length; produto++) {
-                console.log("entrei")
                 if (produto < quantidadeParaExibir) {
                     let id = lista[produto].id;
                     let nome = lista[produto].nome;
@@ -38,6 +37,12 @@ export default class Catalogo{
                     let parcelamento = lista[produto].parcelamento;
                     let imagem = lista[produto].imagem;
                     
+                    console.log('id',id)
+                    console.log('nome',nome)
+                    console.log('preco',preco)
+                    console.log('parc',parcelamento)
+                    console.log('img',imagem)
+
                     let valorParcelamento = lista[produto].preco / lista[produto].parcelamento;
 
                     container.innerHTML += `<div class="div-produto" data-index="${id}">
@@ -69,14 +74,10 @@ export default class Catalogo{
         let qtdParaCarregar = 3;
 
         if (qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada == null) {
-            console.log('sou a flor silvestre')
             let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
             this.mostrarProdutos(totalCarregar);
         }
         else if(qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada != null){
-            console.log("que perfuma os campos")
-            console.log(listaFiltrada)
-            console.log('qtdpdvs', qtdProdutosVisiveis)
             let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
             this.mostrarProdutos(totalCarregar, listaFiltrada);
         }
@@ -109,7 +110,6 @@ export default class Catalogo{
                     }
                 }
             }
-            console.log(listaAuxiliar);
             resolve(listaAuxiliar);
         })
     }
@@ -132,7 +132,6 @@ export default class Catalogo{
                     }
                 }
             }
-            console.log(listaAuxiliar);
             resolve(listaAuxiliar);
         })
     }

@@ -2,7 +2,6 @@ import Catalogo from "./catalogo.js";
 
 
 var dadosProdutos;
-var listaFiltrada; 
 
 //pegar json
 await fetch("../produtos.json")
@@ -15,87 +14,59 @@ await fetch("../produtos.json")
 
 const catalogo = new Catalogo(dadosProdutos)
 const btCarregarMais = document.getElementById('id-carregar-mais'); 
-const areaCores = document.getElementById('id-div-cores');
-const areaPrecos = document.getElementById('id-div-precos')
+const asideFiltros = document.getElementById('filtros');
 
 catalogo.mostrarProdutos();
 
-tratarCheckBoxes(areaCores, "COR");
-tratarCheckBoxes(areaPrecos, "PRECO");
-tratarTamanhoBoxes();
+
+
+asideFiltros.addEventListener('click', async (e)=>{
+    let listaFiltrada = [];
+    let elementoClicado =  e.target;
+    if (elementoClicado.classList.contains('box-tam') || elementoClicado.classList.contains('span-tam')){
+        await alterarDataset(elementoClicado);
+    }
+
+    let listaDeCores = await getCoresSelecionadas();
+    let listaDePrecos = await getPrecosSelecionados(); 
+    let listaDeTamanhos = await getTamanhosSelecionados();
+   
+    console.log('cores',listaDeCores);
+    console.log('precos',listaDePrecos);
+    console.log('tamanhos',listaDeTamanhos);
+
+    let filtroCores = await catalogo.filtrarCores(listaDeCores); 
+    let filtroPrecos = await catalogo.filtrarPrecos(listaDePrecos);
+    let filtroTamanhos = await catalogo.filtrarTamanhos(listaDeTamanhos)
+
+    console.log('filtroCores',filtroCores);
+    console.log('filtroPrecos', filtroPrecos);
+    console.log('filtroTamanhos', filtroTamanhos);
+
+    listaFiltrada = listaFiltrada.concat(filtroCores,filtroPrecos,filtroTamanhos);
+    listaFiltrada = removerDuplicidade(listaFiltrada);
+
+    console.log('----------------');
+    console.log('lista filtrada', listaFiltrada);
+    if (listaFiltrada.length == 0) {
+        listaFiltrada = undefined;        
+    }
+
+    catalogo.mostrarProdutos(undefined, listaFiltrada, true)
+
+});
 
 btCarregarMais.addEventListener('click', ()=>{
-    console.log(listaFiltrada)
     if (listaFiltrada.length == 0) {
-        console.log("não filtrado")
         catalogo.carregarMais(); 
     }
     else{
-        console.log("filtrado")  
         catalogo.carregarMais(listaFiltrada);
     }
-    
 });
 
-
-function tratarCheckBoxes(div, area) {
-    switch (area) {
-        case "COR":
-            div.addEventListener('click', async ()=>{
-                let coresSelecionadas = await getCoresSelecionadas();
-                console.log(coresSelecionadas)
-                listaFiltrada = await catalogo.filtrarCores(coresSelecionadas);
-                console.log('asaas', listaFiltrada.length)
-                if (listaFiltrada.length > 0) {
-                   catalogo.mostrarProdutos(6, listaFiltrada, true); 
-                }
-                else{
-                    console.log("lista vazia")
-                    catalogo.mostrarProdutos();
-                }  
-            })
-            break;
-        case "PRECO":
-            div.addEventListener('click', async ()=>{
-                let precosSelecionados = await getPrecosSelecionados();
-                console.log(precosSelecionados)
-                listaFiltrada = await catalogo.filtrarPrecos(precosSelecionados);
-                console.log('asaas', listaFiltrada.length)
-                if (listaFiltrada.length > 0) {
-                   catalogo.mostrarProdutos(6, listaFiltrada, true); 
-                }
-                else{
-                    console.log("lista vazia")
-                    catalogo.mostrarProdutos();
-                }    
-            })
-            break;
-
-        default:
-            break;
-    }  
-}
-
-function tratarTamanhoBoxes(){
-    let divTamanhos = document.getElementById('id-div-tamanhos');
-
-    divTamanhos.addEventListener('click', async (event)=>{
-       let elementoClicado =  event.target;
-       if (elementoClicado.classList.contains('box-tam') || elementoClicado.classList.contains('span-tam')){
-           await alterarDataset(elementoClicado);
-
-           let tamanhosSelecionados = await getTamanhosSelecionados();
-           listaFiltrada = await catalogo.filtrarTamanhos(tamanhosSelecionados);
-           console.log("lista filtrada", listaFiltrada)
-           if (listaFiltrada.length > 0) {
-                catalogo.mostrarProdutos(6, listaFiltrada, true); 
-            }
-            else{
-                console.log("lista vazia")
-                catalogo.mostrarProdutos(undefined,undefined,true);
-            }   
-       }
-    });
+function removerDuplicidade(lista) {
+    return lista.filter((este, i) => lista.indexOf(este) === i)
 }
 
 function getCoresSelecionadas() {
@@ -167,13 +138,12 @@ function getTamanhosSelecionados() {
         for (let box = 0; box < listaBoxTamanho.length; box++) {
             if (listaBoxTamanho[box].dataset.selected == 1) {
                 listaTamanhosSelecionados.push(listaBoxTamanho[box].dataset.tamanho);
-                console.log(listaTamanhosSelecionados)
             }
             else{
-
+                /* excluirIndexDaLista(listaTamanhosSelecionados, listaBoxTamanho[box].dataset.tamanho);
+                console.log("excluido", listaBoxTamanho[box].dataset.tamanho) */
             }
         }
-        console.log(listaTamanhosSelecionados)
         resolve(listaTamanhosSelecionados);
     });
 }
