@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Desenvolvedor-M3</title>
+
+      <link rel="stylesheet" href="./assets/css/styles.css">
+
+      <script src="./assets/js/jquery-3.5.1.min.js"></script>
+      <script src="./assets/db/produtosJson.js"></script>
+      <script src="./assets/js/produtos.js"></script>
+      <script src="./assets/js/filtros.js"></script>
+      <script src="./assets/js/ordenacao.js"></script>
+      <script src="./assets/js/script.js"></script>
+  </head>
+
+  <body>
+
+    <div class='header_content'>
+
+      <div class='header_content_box'>
+        <div class='header_content_logo'>
+          <img src="./img/logo-m3.png" alt="Agência M3 - Logo">
+        </div>
+
+        <div class='header_content_cart'>
+          <div class='header_content_cart_box'>
+            <img src="./icons/bag.png" alt="Carrinho ícone">
+            <div class='header_content_cart_box_counter'>
+              <span>0</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class='body_content'>
+      <div class='body_content_box'>
+
+        <div class='body_content_header'>
+
+          <div class='body_content_header_title'>
+            <h2> Blusas</h2>
+          </div>
+
+          <div class='body_content_header_options'>
+            <div class='body_content_header_order_product'>
+              <div class='body_content_custom_select'>
+                <div class='body_content_custom_select_box'>
+                  <span> <p>Ordenar por:</p> <img src='./icons/arrow.svg' /> </span>
+                </div>
+                <div data-order='' class='body_content_custom_select_options'>
+                  <div class=''>
+                    <span data-order='new'> Mais recentes </span>
+                  </div>
+                  <div class=''>
+                    <span data-order='value_asc'> Menor preço </span>
+                  </div>
+                  <div class=''>
+                    <span data-order='value_desc'> Maior preço </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class='body_content_header_order_products_mobile'>
+
+          <div class="body_sidebar_header_order_mobile">
+            <div class="body_sidebar_header_order_mobile_box">
+              <div class="header_order_mobile_title">
+                <span> ORDENAR </span>
+              </div>
+              <div class="header_order_mobile_close">
+                <span> x </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="body_sidebar_content_order">
+            <div class='body_sidebar_content_order_option'>
+              <span data-order='new'>Mais Recentes</span>
+            </div>
+            <div class='body_sidebar_content_order_option'>
+              <span data-order='value_asc'>Menor preço</span>
+            </div>
+            <div class='body_sidebar_content_order_option'>
+              <span data-order='value_desc'>Maior preço</span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class='body_content_header_mobile'>
+
+          <div class='body_content_header_mobile_box'>
+            <div class='body_content_header_mobile_filter'>
+              <span> Filtrar </span>
+            </div>
+            <div class='body_content_header_mobile_ordenar'>
+              <span> Ordenar </span>
+            </div>
+          </div>
+
+        </div>
+
+        <div class='body_sidebar_filters'>
+
+          <form id='form_filters'>
+
+            <div class='body_sidebar_header_filter_mobile'>
+              <div class='body_sidebar_header_filter_mobile_box'>
+                <div class='header_filter_mobile_title'>
+                  <span> FILTRAR </span>
+                </div>
+                <div class='header_filter_mobile_close'>
+                  <span> x </span>
+                </div>
+              </div>
+            </div>
+
+            <div class='body_sidebar_content_filter'>
+
+              <div class='body_sidebar_filters_colors'>
+
+                <div class='body_siderbar_filters_title filter_color'>
+                  <h3> CORES </h3>
+                  <div class="circle-plus icon_drop_mobile_color">
+                    <div class="circle">
+                      <div class="horizontal"></div>
+                      <div class="vertical"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class='body_sidebar_filters_list_color'>
+                  <label class="input_checkbox_filter">
+                    <p> Amarelo </p>
+                    <input name="color" value="amarelo" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> Azul </p>
+                    <input name="color" value="azul" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> Branco </p>
+                    <input name="color" value="branco" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> Cinza </p>
+                    <input name="color" value="cinza" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> Laranja </p>
+                    <input name="color" value="laranja" type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <div class='body_sidebar_drop_color'>
+                    <label class="input_checkbox_filter">
+                      <p> Preto </p>
+                      <input name="color" value="preto" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="input_checkbox_filter">
+                      <p> Rosa </p>
+                      <input name="color" value="rosa" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="input_checkbox_filter">
+                      <p> Verde </p>
+                      <input name="color" value="verde" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                    <label class="input_checkbox_filter">
+                      <p> Vermelho </p>
+                      <input name="color" value="vermelho" type="checkbox">
+                      <span class="checkmark"></span>
+                    </label>
+                  </div>
+                  <div class='body_sidebar_show_all_colors'>
+                        <span> Ver todas as cores </span>
+                        <img src="./icons/arrow.svg">
+                      </div>
+                </div>
+
+              </div>
+
+              <div class='body_sidebar_filters_sizes'>
+
+                <div class='body_siderbar_filters_title filter_size'>
+                  <h3> TAMANHOS </h3>
+                  <div class="circle-plus icon_drop_mobile_size">
+                    <div class="circle">
+                      <div class="horizontal"></div>
+                      <div class="vertical"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class='body_sidebar_filters_grid_sizes_box'>
+                  <div class='body_sidebar_filters_grid_sizes'>
+                    <input type="checkbox" name="size" id="tamanho_p"  value="P" >
+                    <input type="checkbox" name="size" id="tamanho_m"  value="M" >
+                    <input type="checkbox" name="size" id="tamanho_g"  value="G" >
+                    <input type="checkbox" name="size" id="tamanho_gg" value="GG">
+                    <input type="checkbox" name="size" id="tamanho_u"  value="U" >
+                    <input type="checkbox" name="size" id="tamanho_36" value="36">
+                    <input type="checkbox" name="size" id="tamanho_38" value="38">
+                    <input type="checkbox" name="size" id="tamanho_40" value="40">
+                    <input type="checkbox" name="size" id="tamanho_44" value="44">
+                    <input type="checkbox" name="size" id="tamanho_46" value="46">
+                    <label for="tamanho_p"><span> P </span></label>
+                    <label for="tamanho_m"><span>M</span></label>
+                    <label for="tamanho_g"><span>G</span></label>
+                    <label for="tamanho_gg"><span>GG</span></label>
+                    <label for="tamanho_u"><span>U</span></label>
+                    <label for="tamanho_36"><span>36</span></label>
+                    <label for="tamanho_38"><span>38</span></label>
+                    <label for="tamanho_40"><span>40</span></label>
+                    <label for="tamanho_44"><span>44</span></label>
+                    <label for="tamanho_46"><span>46</span></label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class='body_sidebar_filters_price'>
+
+                <div class='body_siderbar_filters_title filter_range'>
+                  <h3> FAIXA DE PREÇO </h3>
+                  <div class="circle-plus icon_drop_mobile_range">
+                    <div class="circle">
+                      <div class="horizontal"></div>
+                      <div class="vertical"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class='body_sidebar_filters_list_price'>
+                  <label class="input_checkbox_filter">
+                    <p> de R$0 até R$50 </p>
+                    <input name="range_price" value='0-50' type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> de R$51 até R$150 </p>
+                    <input name="range_price" value='51-150' type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> de R$151 até R$ 300 </p>
+                    <input name="range_price" value='151-300' type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> de R$301 até R$500 </p>
+                    <input name="range_price" value='301-500' type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="input_checkbox_filter">
+                    <p> a partir de R$501</p>
+                    <input name="range_price" value='501' type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  </div>
+
+              </div>
+
+              <div class='body_sidebar_buttons_actions'>
+                <div class='body_sidebar_clear_mobile'>
+                  <a> Limpar </a>
+                </div>
+                <div class='body_sidebar_submit_filter_box'>
+                  <div class='body_sidebar_submit_filter'>
+                    <input type='submit' value='Filtrar'/>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </form>
+
+        </div>
+
+        <div class='body_products'>
+
+          <div class='body_products_box'>
+            <!-- <div class='body_products_item'>
+              <div class='body_products_item_image'>
+                <img src="./img/img_2.png" alt="">
+              </div>
+              <div class='body_products_item_info'>
+                <div class='body_products_item_info_title'>
+                  <h4> CAMISETA MESCLA</h4>
+                </div>
+                <div class='body_products_item_info_price'>
+                  <span> R$ 9,99 </span>
+                </div>
+                <div class='body_products_item_info_parcelas'>
+                  <span> até 3x de R$ 3,33 </span>
+                </div>
+                <div class='body_products_item_info_buy_button'>
+                  <span> COMPRAR </span>
+                </div>
+                </div>
+              </div> -->
+          </div>
+
+          <div class='body_products_load_more'>
+            <div class='body_products_load_more_box'>
+              <span> CARREGAR MAIS </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class='footer_content'>
+      <div class='footer_content_box'>
+        <p> Agência M3 - Agência de Performance Digital </p>
+      </div>
+    </div>
+
+</body>
+
+</html>
