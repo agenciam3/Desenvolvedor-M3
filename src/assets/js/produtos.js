@@ -6,7 +6,7 @@ function listaProdutos(produtos) {
     var preco_parcelas = (produtos[i].price/produtos[i].parcelas).toFixed(2).replace('.',',')
     var html_produtos = `<div class='body_products_item'>
                           <div class='body_products_item_image'>
-                            <img src="src/img/${produtos[i].img} " alt="">
+                            <img src="./img/${produtos[i].img} " alt="">
                           </div>
                           <div data-id='${produtos[i].id}' class='body_products_item_info'>
                             <div class='body_products_item_info_title'>
