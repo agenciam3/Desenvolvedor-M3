@@ -12,4 +12,4 @@ wdiasjunior@gmail.com
 
 - Abrir o arquivo index.html, que está na pasta src, em um navegador ou acessar o link abaixo.
 
-wdiasjunior.github.io/Desenvolvedor-M3/src/index.html
+http://wdiasjunior.github.io/Desenvolvedor-M3/src/
