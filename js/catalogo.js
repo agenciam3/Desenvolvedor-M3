@@ -37,11 +37,11 @@ export default class Catalogo{
                     let parcelamento = lista[produto].parcelamento;
                     let imagem = lista[produto].imagem;
                     
-                    console.log('id',id)
+                    /* console.log('id',id)
                     console.log('nome',nome)
                     console.log('preco',preco)
                     console.log('parc',parcelamento)
-                    console.log('img',imagem)
+                    console.log('img',imagem) */
 
                     let valorParcelamento = lista[produto].preco / lista[produto].parcelamento;
 
@@ -113,8 +113,6 @@ export default class Catalogo{
             resolve(listaAuxiliar);
         })
     }
-
-
 
     filtrarTamanhos(tamanhosSelecionados){
         return new Promise((resolve)=>{

@@ -2,6 +2,7 @@ import Catalogo from "./catalogo.js";
 
 
 var dadosProdutos;
+var listaFiltradaAtual = [];
 
 //pegar json
 await fetch("../produtos.json")
@@ -22,6 +23,7 @@ catalogo.mostrarProdutos();
 
 asideFiltros.addEventListener('click', async (e)=>{
     let listaFiltrada = [];
+
     let elementoClicado =  e.target;
     if (elementoClicado.classList.contains('box-tam') || elementoClicado.classList.contains('span-tam')){
         await alterarDataset(elementoClicado);
@@ -53,15 +55,16 @@ asideFiltros.addEventListener('click', async (e)=>{
     }
 
     catalogo.mostrarProdutos(undefined, listaFiltrada, true)
-
+    listaFiltradaAtual = listaFiltrada;
 });
 
 btCarregarMais.addEventListener('click', ()=>{
-    if (listaFiltrada.length == 0) {
+    console.log('LISTA ATUAL', listaFiltradaAtual)
+    if (listaFiltradaAtual.length == 0) {
         catalogo.carregarMais(); 
     }
     else{
-        catalogo.carregarMais(listaFiltrada);
+        catalogo.carregarMais(listaFiltradaAtual);
     }
 });
 
