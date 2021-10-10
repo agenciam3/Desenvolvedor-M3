@@ -50,6 +50,40 @@ header{
     
 }
 
+.container-filtros{
+    display: none;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.container-filtros h2{
+    margin-bottom: 1rem;
+}
+
+.container-botoes{
+    display: inline-flex;
+    width: 90%;
+}
+
+.bt-opcoes{
+    width: 50%;
+    display: inline-block;
+    padding: 1rem 3rem;
+    margin: 0;
+    color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0,0,0, 0.7);
+    font-size: 1rem;
+    background-color: white;
+}
+
+.abrir-filtro{
+    border-radius: 1px 0px 0px 1px;
+}
+
+.abrir-ordenar{
+    border-radius: 0px 1px 1px 0px;
+}
+
 main{
     display: flex;
     width: 75%;
@@ -65,7 +99,7 @@ aside{
     /* background-color: lightsalmon; */
 }
 
-aside h2{
+h2{
     font-size: 2rem;
 }
 
@@ -208,14 +242,16 @@ footer{
     background-color: black;
 }
 
-footer h4{
-    padding: .5%;
-}
+
 
 @media screen and (max-width: 750px) {
     aside,
     .se-div-ordenacao{
         display: none;
+    }
+
+    .container-filtros{
+        display: block;
     }
 
     section,
@@ -224,11 +260,19 @@ footer h4{
     }
 
     .div-produto{
-        width: 90%;
+        width: 85%;
     }
 
     .tit-produto {
-        font-size: .9rem;
+        font-size: .8rem;
+    }
+    footer h4 {
+        padding: .5rem;
     }
     
+}
+@media screen and (max-width: 325px) {
+    .tit-produto {
+        font-size: .7rem;
+    }
 }
