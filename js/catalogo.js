@@ -61,12 +61,12 @@ export default class Catalogo{
     }
 
     #escutarCompras(btsComprar) {
-    for (let botao = 0; botao < btsComprar.length; botao++) {
-        btsComprar[botao].addEventListener('click', ()=>{
-            this.#numeroNoCarrinho = this.#addCarrinho(this.#numeroNoCarrinho);
-        })
+        for (let botao = 0; botao < btsComprar.length; botao++) {
+            btsComprar[botao].addEventListener('click', ()=>{
+                this.#numeroNoCarrinho = this.#addCarrinho(this.#numeroNoCarrinho);
+            })
+        }
     }
-}
 
     carregarMais(listaFiltrada = null){
         let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
@@ -114,72 +114,87 @@ export default class Catalogo{
         })
     }
 
-    filtrarTamanhos(tamanhosSelecionados){
+    filtrarTamanhos(tamanhosSelecionados, listaDeElem){
         return new Promise((resolve)=>{
-             let listaAuxiliar = [];
+            let listaElementosDiminuida = listaDeElem;
+            console.log('parametros tamanho', tamanhosSelecionados);
+            console.log('parametros lista elem', listaDeElem);
 
             for (let i = 0; i < tamanhosSelecionados.length; i++) {
-                for (let j = 0; j < this.#listaProdutos.length; j++) {
-                    for (let k = 0; k < this.#listaProdutos[j].tamanhos.length; k++) {
-                        if (tamanhosSelecionados[i] == this.#listaProdutos[j].tamanhos[k]) {
-                            if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                listaAuxiliar.push(this.#listaProdutos[j]);
-                                break;
-                            }
-                        } 
+                console.log('tamanho', i);
+                let listaAuxiliar = [];
+                for (let j = 0; j < listaElementosDiminuida.length; j++) {
+                    for (let k = 0; k < listaElementosDiminuida[i].tamanhos.length; k++) {
+                        console.log(`entrei ${listaElementosDiminuida[j].tamanhos[k]}`);
+                       if (listaElementosDiminuida[j].tamanhos[k] == tamanhosSelecionados[i]) {
+                            console.log(listaElementosDiminuida[j].tamanhos[k], '=', tamanhosSelecionados[i]);
+                            listaAuxiliar.push(listaElementosDiminuida[j]);
+                            break;
+                        }   
                     }
+                    console.log(listaAuxiliar);
+                                    
+                }
+                if (listaAuxiliar.length > 0) {
+                    listaElementosDiminuida = listaAuxiliar;  
                 }
             }
-            resolve(listaAuxiliar);
+            if (listaElementosDiminuida.length <= 0) {
+                resolve(listaDeElem);
+            }
+            else{
+                console.log('lista aux precos',listaElementosDiminuida);
+                resolve(listaElementosDiminuida); 
+            }
         })
     }
 
-    filtrarPrecos(precosSelecionados){
+    filtrarPrecos(precosSelecionados, listaDeElem){
         return new Promise((resolve)=>{
             let listaAuxiliar = [];
             for (let i = 0; i < precosSelecionados.length; i++) {
                 switch (precosSelecionados[i]) {
                     case "0>50":
-                        for (let j = 0; j < this.#listaProdutos.length; j++) {
-                            if (this.#listaProdutos[j].preco >=0 && this.#listaProdutos[j].preco <=50) {
-                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                        for (let j = 0; j < listaDeElem.length; j++) {
+                            if (listaDeElem[j].preco >=0 && listaDeElem[j].preco <=50) {
+                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                    listaAuxiliar.push(listaDeElem[j]);
                                 }
                             }
                         }
                         break;
                     case "51>150":
-                        for (let j = 0; j < this.#listaProdutos.length; j++) {
-                            if (this.#listaProdutos[j].preco >=51 && this.#listaProdutos[j].preco <=150) {
-                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                        for (let j = 0; j < listaDeElem.length; j++) {
+                            if (listaDeElem[j].preco >=51 && listaDeElem[j].preco <=150) {
+                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                    listaAuxiliar.push(listaDeElem[j]);
                                 }
                             }
                         }
                         break;
                     case "151>300":
-                        for (let j = 0; j < this.#listaProdutos.length; j++) {
-                            if (this.#listaProdutos[j].preco >=151 && this.#listaProdutos[j].preco <=300) {
-                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                        for (let j = 0; j < listaDeElem.length; j++) {
+                            if (listaDeElem[j].preco >=151 && listaDeElem[j].preco <=300) {
+                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                    listaAuxiliar.push(listaDeElem[j]);
                                 }
                             }
                         }
                         break;
                     case "301>500":
-                        for (let j = 0; j < this.#listaProdutos.length; j++) {
-                            if (this.#listaProdutos[j].preco >=301 && this.#listaProdutos[j].preco <=500) {
-                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                        for (let j = 0; j < listaDeElem.length; j++) {
+                            if (listaDeElem[j].preco >=301 && listaDeElem[j].preco <=500) {
+                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                    listaAuxiliar.push(listaDeElem[j]);
                                 }
                             }
                         }
                         break;
                     case ">=01":
-                        for (let j = 0; j < this.#listaProdutos.length; j++) {
-                            if (this.#listaProdutos[j].preco >=0) {
-                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                        for (let j = 0; j < listaDeElem.length; j++) {
+                            if (listaDeElem[j].preco >=0) {
+                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                    listaAuxiliar.push(listaDeElem[j]);
                                 }
                             }
                         }
@@ -188,8 +203,13 @@ export default class Catalogo{
                         break;
                 }
             }
-            console.log(listaAuxiliar);
-            resolve(listaAuxiliar);
+            if (listaAuxiliar.length <= 0) {
+                resolve(listaDeElem);
+            }
+            else{
+                console.log('lista aux precos',listaAuxiliar);
+                resolve(listaAuxiliar); 
+            }
         })
     }
 

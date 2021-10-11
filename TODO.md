@@ -36,3 +36,15 @@
 
 ## Rascunho
 
+for (let i = 0; i < tamanhosSelecionados.length; i++) {
+                for (let j = 0; j < this.#listaProdutos.length; j++) {
+                    for (let k = 0; k < this.#listaProdutos[j].tamanhos.length; k++) {
+                        if (tamanhosSelecionados[i] == this.#listaProdutos[j].tamanhos[k]) {
+                            if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1 && listaDeElem.indexOf(this.#listaProdutos[j]) == -1) {
+                                listaAuxiliar.push(this.#listaProdutos[j]);
+                                break;
+                            }
+                        } 
+                    }
+                }
+            }

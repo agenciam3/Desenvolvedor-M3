@@ -156,33 +156,34 @@ function lerFiltros() {
     return new Promise(async (resolve) =>{
         let listaFiltrada = [];
 
-    let listaDeCores = await getCoresSelecionadas();
-    let listaDePrecos = await getPrecosSelecionados(); 
-    let listaDeTamanhos = await getTamanhosSelecionados();
-   
-    console.log('cores',listaDeCores);
-    console.log('precos',listaDePrecos);
-    console.log('tamanhos',listaDeTamanhos);
+        let listaDeCores = await getCoresSelecionadas();
+        let listaDeTamanhos = await getTamanhosSelecionados();
+        let listaDePrecos = await getPrecosSelecionados(); 
+    
+        console.log('cores',listaDeCores);        
+        console.log('tamanhos',listaDeTamanhos);
+        console.log('precos',listaDePrecos);
 
-    let filtroCores = await catalogo.filtrarCores(listaDeCores); 
-    let filtroPrecos = await catalogo.filtrarPrecos(listaDePrecos);
-    let filtroTamanhos = await catalogo.filtrarTamanhos(listaDeTamanhos)
+        let filtroCores = await catalogo.filtrarCores(listaDeCores); 
+        let filtroTamanhosMaisCores = await catalogo.filtrarTamanhos(listaDeTamanhos, filtroCores);
+        let filtroTotal = await catalogo.filtrarPrecos(listaDePrecos, filtroTamanhosMaisCores);
 
-    console.log('filtroCores',filtroCores);
-    console.log('filtroPrecos', filtroPrecos);
-    console.log('filtroTamanhos', filtroTamanhos);
 
-    listaFiltrada = listaFiltrada.concat(filtroCores,filtroPrecos,filtroTamanhos);
-    listaFiltrada = removerDuplicidade(listaFiltrada);
+        /* console.log('filtroCores',filtroCores);
+        console.log('filtroTamanhos', filtroTamanhos);
+        console.log('filtroPrecos', filtroPrecos); */
 
-    console.log('----------------');
-    console.log('lista filtrada', listaFiltrada);
-    if (listaFiltrada.length == 0) {
-        listaFiltrada = undefined;        
-    }
+        listaFiltrada = filtroTotal;
+        listaFiltrada = removerDuplicidade(listaFiltrada);
 
-    catalogo.mostrarProdutos(undefined, listaFiltrada, true)
-    listaFiltradaAtual = listaFiltrada;
+        console.log('----------------');
+        console.log('lista filtrada', listaFiltrada);
+        if (listaFiltrada.length == 0) {
+            listaFiltrada = undefined;        
+        }
+
+        catalogo.mostrarProdutos(undefined, listaFiltrada, true)
+        listaFiltradaAtual = listaFiltrada;
         resolve();
     })
        
