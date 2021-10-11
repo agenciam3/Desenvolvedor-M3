@@ -14,7 +14,10 @@
 - [ ] Diminuir botões comprar
 - [ ] Imagem hover zoom *Segundo plano*
 - [ ] Checkbox customizar
-- [ ] Transition produtos
+- [ ] Transition: produtos
+- [ ] Transition: aba filtros
+- [ ] Transition: aba ordenar
+- [ ] Transition: categorias filtros
 
 ### JS
 - [X] Funcionalidade: Filtrar produtos por cor
@@ -28,6 +31,7 @@
 - [ ] Responsividade
 - [ ] Opacidade botão carregar mais
 - [ ] Alterar o parametro de carregar mais para 2 por carregamento
+- [ ] Tratar espaço em branco do filtro
 
 
 ## Rascunho

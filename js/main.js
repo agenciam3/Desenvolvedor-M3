@@ -13,21 +13,148 @@ await fetch("../produtos.json")
         dadosProdutos = data;
     });
 
-const catalogo = new Catalogo(dadosProdutos)
+const catalogo = new Catalogo(dadosProdutos);
+
 const btCarregarMais = document.getElementById('id-carregar-mais'); 
 const asideFiltros = document.getElementById('filtros');
+const divOrdenar = document.getElementById('ordenar');
+
+const btAbrirFiltro = document.getElementById('id-abrir-filtro'); 
+
+const listaCores = document.getElementById('id-lista-cores');
+const headCores = document.getElementById('head-cores');
+const coresMais = document.getElementById('id-cores-mais');
+const coresMenos = document.getElementById('id-cores-menos');
+
+const gridTamanhos = document.getElementById('id-grid-tamanho');
+const headTamanhos = document.getElementById('head-tamanhos');
+const tamanhosMais = document.getElementById('id-tamanhos-mais');
+const tamanhosMenos = document.getElementById('id-tamanhos-menos');
+
+const listaPrecos = document.getElementById('id-lista-tamanhos');
+const headPrecos = document.getElementById('head-precos');
+const precosMais = document.getElementById('id-precos-mais');
+const precosMenos = document.getElementById('id-precos-menos');
+
+const botaoFiltroAplicar = document.getElementById('id-bt-aplicar');
+const botaoFiltroLimpar = document.getElementById('id-bt-limpar');
+const iconeFecharFiltro = document.getElementById('id-fechar-filtro');
+
+const btAbrirOrdenar = document.getElementById('id-abrir-ordenar');
+
+const divMaisRecentes = document.getElementById('id-mais-recentes');
+const divMaiorPreco = document.getElementById('id-maior-preco');
+const divMenorPreco = document.getElementById('id-menor-preco');
+const iconeFecharOrdenacao = document.getElementById('id-fechar-ordenacao');
+
 
 catalogo.mostrarProdutos();
 
 
+btAbrirFiltro.addEventListener('click', ()=>{
+    abrirFiltroOrdenacao(asideFiltros);
+});
 
-asideFiltros.addEventListener('click', async (e)=>{
-    let listaFiltrada = [];
+headCores.addEventListener('click', ()=>{
+    if (window.screen.width < 750) {
+       if (headCores.dataset.aberto == '0') {
+            listaCores.style.display = 'block';
+            coresMenos.style.setProperty('display', 'inline-block', 'important');
+            coresMais.style.display = 'none';
+            headCores.dataset.aberto = '1';
+        }
+        else{
+            listaCores.style.display = 'none';
+            coresMais.style.setProperty('display', 'inline-block', 'important');
+            coresMenos.style.display = 'none';
+            headCores.dataset.aberto = '0';
+        } 
+    }  
+});
 
+headTamanhos.addEventListener('click', ()=>{
+    if (headTamanhos.dataset.aberto == '0') {
+        gridTamanhos.style.display = 'grid';
+        tamanhosMenos.style.setProperty('display', 'inline-block', 'important');
+        tamanhosMais.style.display = 'none';
+        headTamanhos.dataset.aberto = '1';
+    }
+    else{
+        gridTamanhos.style.display = 'none';
+        tamanhosMais.style.setProperty('display', 'inline-block', 'important');
+        tamanhosMenos.style.display = 'none';
+        headTamanhos.dataset.aberto = '0';
+    }
+    
+});
+
+headPrecos.addEventListener('click', ()=>{
+    if (headPrecos.dataset.aberto == '0') {
+        listaPrecos.style.display = 'block';
+        precosMenos.style.setProperty('display', 'inline-block', 'important');
+        precosMais.style.display = 'none';
+        headPrecos.dataset.aberto = '1';
+    }
+    else{
+        listaPrecos.style.display = 'none';
+        precosMais.style.setProperty('display', 'inline-block', 'important');
+        precosMenos.style.display = 'none';
+        headPrecos.dataset.aberto = '0';
+    }
+});
+
+asideFiltros.addEventListener('click', async ()=>{
+    const windowSize = window.screen.width;
+
+    if (windowSize > 750) {
+        await lerFiltros();
+    }
+
+});
+
+gridTamanhos.addEventListener('click', async (e)=>{
     let elementoClicado =  e.target;
     if (elementoClicado.classList.contains('box-tam') || elementoClicado.classList.contains('span-tam')){
         await alterarDataset(elementoClicado);
     }
+});
+
+botaoFiltroAplicar.addEventListener('click', async(e)=>{
+    await lerFiltros();
+    fecharFiltroOrdenacao(asideFiltros);
+});
+
+botaoFiltroLimpar.addEventListener('click', ()=>{
+    limparCheckBoxes();
+    limparDivTamanhos();
+});
+
+iconeFecharFiltro.addEventListener('click', async ()=>{
+    await lerFiltros();
+    fecharFiltroOrdenacao(asideFiltros);
+});
+
+btAbrirOrdenar.addEventListener('click', ()=>{
+    abrirFiltroOrdenacao(divOrdenar);
+});
+
+iconeFecharOrdenacao.addEventListener('click', ()=>{
+    fecharFiltroOrdenacao(divOrdenar);
+})
+
+btCarregarMais.addEventListener('click', ()=>{
+    console.log('LISTA ATUAL', listaFiltradaAtual)
+    if (listaFiltradaAtual == undefined || listaFiltradaAtual.length == 0) {
+        catalogo.carregarMais(); 
+    }
+    else{
+        catalogo.carregarMais(listaFiltradaAtual);
+    }
+});
+
+function lerFiltros() {
+    return new Promise(async (resolve) =>{
+        let listaFiltrada = [];
 
     let listaDeCores = await getCoresSelecionadas();
     let listaDePrecos = await getPrecosSelecionados(); 
@@ -56,17 +183,37 @@ asideFiltros.addEventListener('click', async (e)=>{
 
     catalogo.mostrarProdutos(undefined, listaFiltrada, true)
     listaFiltradaAtual = listaFiltrada;
-});
+        resolve();
+    })
+       
+}
 
-btCarregarMais.addEventListener('click', ()=>{
-    console.log('LISTA ATUAL', listaFiltradaAtual)
-    if (listaFiltradaAtual == undefined || listaFiltradaAtual.length == 0) {
-        catalogo.carregarMais(); 
+function abrirFiltroOrdenacao(elem) {
+    elem.style.display = 'block';
+}
+
+function limparCheckBoxes() {
+    let checkBoxes = document.getElementsByClassName('checkbox');
+    for (let i = 0; i < checkBoxes.length; i++) {
+        checkBoxes[i].checked = false;        
     }
-    else{
-        catalogo.carregarMais(listaFiltradaAtual);
+}
+
+function limparDivTamanhos() {
+    console.log('entrou')
+    let tamanhoBoxes = document.getElementsByClassName('box-tam');
+    console.log(tamanhoBoxes);
+    for (let i = 0; i < tamanhoBoxes.length; i++) {
+        if (tamanhoBoxes[i].dataset.selected == 1) {
+            tamanhoBoxes[i].classList.toggle('box-tam-selected');
+            tamanhoBoxes[i].dataset.selected = 0;
+        }
     }
-});
+}
+
+function fecharFiltroOrdenacao(elem) {
+    elem.style.display = "none";
+}
 
 function removerDuplicidade(lista) {
     return lista.filter((este, i) => lista.indexOf(este) === i)

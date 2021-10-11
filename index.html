@@ -21,34 +21,46 @@
     <div class="container-filtros">
         <h2>Blusas</h2>
         <div class="container-botoes">
-            <button class="bt-opcoes abrir-filtro">Filtrar</button>
-            <button class="bt-opcoes abrir-ordenar">Ordenar</button>
+            <div id="id-abrir-filtro" class="bt-opcoes abrir-filtro">Filtrar</div>
+            <div id="id-abrir-ordenar" class="bt-opcoes abrir-ordenar">Ordenar</div>
         </div>  
+    
     </div>
+
     <main>
         <aside id="filtros">
             <h2>Blusas</h2>
-            <div id="id-div-cores" class="as-div-cores">
-                <h4 class="tit-categorias">CORES</h4>
-                <ul>
+            <div class="div-tit-filtrar">
+                <h3>Filtrar</h3>
+                <i id="id-fechar-filtro" class="fas fa-times"></i>
+            </div>
+            
+            <div id="id-div-cores" class="as-div-checkbox as-div-cores">
+                <div id="head-cores" class="head-categorias-filtro" data-aberto="0">
+                    <h4 class="tit-categorias">CORES</h4>
+                    <i id="id-cores-mais" class="fas fa-plus"></i>
+                    <i id="id-cores-menos" class="fas fa-minus"></i>
+                </div>
+                
+                <ul id="id-lista-cores" class="lista-cores">
                     <li>
-                        <input class="checkbox-cor" type="checkbox" name="amarelo" id="id-amarelo">
+                        <input class="checkbox checkbox-cor" type="checkbox" name="amarelo" id="id-amarelo">
                         <label for="amarelo">Amarelo</label>
                     </li>
                     <li>
-                        <input class="checkbox-cor" type="checkbox" name="azul" id="id-azul">
+                        <input class="checkbox checkbox-cor" type="checkbox" name="azul" id="id-azul">
                         <label for="azul">Azul</label>
                     </li>
                     <li>
-                        <input class="checkbox-cor" type="checkbox" name="branco" id="id-branco">
+                        <input class="checkbox checkbox-cor" type="checkbox" name="branco" id="id-branco">
                         <label for="branco">Branco</label>
                     </li>
                     <li>
-                        <input class="checkbox-cor" type="checkbox" name="cinza" id="id-cinza">
+                        <input class="checkbox checkbox-cor" type="checkbox" name="cinza" id="id-cinza">
                         <label for="cinza">Cinza</label>
                     </li>
                     <li>
-                        <input class="checkbox-cor" type="checkbox" name="laranja" id="id-laranja">
+                        <input class="checkbox checkbox-cor" type="checkbox" name="laranja" id="id-laranja">
                         <label for="laranja">Laranja</label>
                     </li>
                 </ul>
@@ -56,8 +68,13 @@
             </div>
 
             <div id="id-div-tamanhos" class="as-div-tamanhos">
-                <h4 class="tit-categorias">TAMANHOS</h4>
-                <div class="grid-tamanho">
+                <div id="head-tamanhos" class="head-categorias-filtro" data-aberto="0">
+                    <h4 class="tit-categorias">TAMANHOS</h4>
+                    <i id="id-tamanhos-mais" class="fas fa-plus"></i>
+                    <i id="id-tamanhos-menos" class="fas fa-minus"></i>
+                </div>
+
+                <div id='id-grid-tamanho' class="grid-tamanho">
                     <div class="box-tam div-m-tamanho" data-selected="0" data-tamanho = "M"><span class="span-tam">M</span></div>
                     <div class="box-tam div-g-tamanho" data-selected="0" data-tamanho = "G"><span class="span-tam">G</span></div>
                     <div class="box-tam div-gg-tamanho" data-selected="0" data-tamanho = "GG"><span class="span-tam">GG</span></div>
@@ -72,33 +89,61 @@
                 </div>
             </div>
 
-            <div id="id-div-precos" class="as-div-faixa-precos">
-                <h4 class="tit-categorias">FAIXA DE PREÇOS</h4>
-                <ul>
+            <div id="id-div-precos" class="as-div-checkbox as-div-faixa-precos">
+                <div id="head-precos" class="head-categorias-filtro" data-aberto="0">
+                    <h4 class="tit-categorias">FAIXA DE PREÇOS</h4>
+                    <i id="id-precos-mais" class="fas fa-plus"></i>
+                    <i id="id-precos-menos" class="fas fa-minus"></i>
+                </div>
+                <ul id="id-lista-tamanhos" class="lista-tamanhos">
                     <li>
-                        <input type="checkbox" name="preco-0-50" id="id-preco-0-50">
+                        <input class="checkbox" type="checkbox" name="preco-0-50" id="id-preco-0-50">
                         <label for="preco-0-50">de R$0 até R$50</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="preco-51-150" id="id-preco-51-150">
+                        <input class="checkbox" type="checkbox" name="preco-51-150" id="id-preco-51-150">
                         <label for="preco-51-150">de R$51 até R$150</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="preco-151-300" id="id-preco-151-300">
+                        <input class="checkbox" type="checkbox" name="preco-151-300" id="id-preco-151-300">
                         <label for="preco-151-300">de R$151 até R$300</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="preco-301-500" id="id-preco-301-500">
+                        <input class="checkbox" type="checkbox" name="preco-301-500" id="id-preco-301-500">
                         <label for="preco-301-500">de R$301 até R$500</label>
                     </li>
                     <li>
-                        <input type="checkbox" name="preco-acima-01" id="id-preco-acima-01">
+                        <input class="checkbox" type="checkbox" name="preco-acima-01" id="id-preco-acima-01">
                         <label for="preco-acima-01">a partir de R$01</label> 
                     </li>
                 </ul> 
                 
             </div>
+
+            <div class="as-div-botoes-aplicar-limpar">
+                <button id="id-bt-aplicar" class="bt-acao-filtro bt-aplicar">Aplicar</button>
+                <button id="id-bt-limpar" class="bt-acao-filtro bt-limpar">Limpar</button>
+            </div>
         </aside>
+
+        <div id="ordenar" class="div-ordenar">
+            <div class="div-tit-filtrar">
+                <h3>Ordenar</h3>
+                <i id="id-fechar-ordenacao" class="fas fa-times"></i>
+            </div>
+            <div class="div-tipos-ordenacao">
+                <div id="id-mais-recentes" class="tipo-ordenacao div-por-recente">
+                    <span>Mais recentes</span>
+                </div>
+                <div id="id-maior-preco" class="tipo-ordenacao div-por-maior-preco">
+                    <span>Menor preço</span>
+                </div>
+                <div id="id-menor-preco" class="tipo-ordenacao div-por-menor-preco">
+                    <span>Maior preco</span>                           
+                </div>
+            </div>
+
+        </div>
 
         <section>
             <div class="se-div-ordenacao">
