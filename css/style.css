@@ -1,0 +1,98 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+html{
+    overflow-x: hidden;
+}
+.logo{
+    margin: 0px 150px;
+    padding: 20px 0px;
+}
+#sacola{
+    width: 30px;
+    float: right;
+}
+#barra_inferior{
+    margin: 0px 150px;
+    padding: 20px 0px 30px 0px;
+}
+.ordenar{
+    float: right;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+}
+h1{
+    float: left;
+    font-size: 2.4em;
+}
+article{
+    font-size: 1.0em;
+    margin: 0px 150px;
+    padding: 20px 0px;
+}
+.filtros{
+    width: 183px;
+    float: left;
+}
+#cores, #tamanhos, #faixa-de-preco{
+    margin-bottom: 20px;
+}
+h2{
+    margin-bottom: 10px;
+}
+.produtos{
+    width: 826px;
+    float: left;
+    margin: 0px 0px 0px 40px;
+}
+.produto{
+    float: left;
+    text-align: center;
+    width: 220px;
+    margin-left: 55px;
+    height: auto;
+}
+span{
+    margin: 10px 0px 10px 0px;
+}
+button {
+    margin: 10px 0px 40px 0px;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+  }
+button:hover{
+    background-color: rgb(0, 195, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+}
+#botao button{
+    margin: 30px 360px 60px 360px;
+    padding: 10px;
+    width: 170px;
+    height: 45px;
+    background-color: rgb(0, 195, 255);
+    color: white;
+    border: none;
+    font-weight: 700;
+}
+#botao button:hover{
+    background-color: rgb(2, 71, 92);
+}
+#footer{
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 8px;
+    float: left;
+    text-align: center;
+}
