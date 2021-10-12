@@ -19,6 +19,9 @@ html{
 }
 .ordenar{
     float: right;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
 }
 h1{
     float: left;
@@ -54,13 +57,23 @@ h2{
 span{
     margin: 10px 0px 10px 0px;
 }
-button{
+button {
     margin: 10px 0px 40px 0px;
-    padding: 10px;
-    width: 100%;
     background-color: black;
-    color: white;
     border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+  }
+button:hover{
+    background-color: rgb(0, 195, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
 }
 #botao button{
     margin: 30px 360px 60px 360px;
@@ -71,6 +84,9 @@ button{
     color: white;
     border: none;
     font-weight: 700;
+}
+#botao button:hover{
+    background-color: rgb(2, 71, 92);
 }
 #footer{
     width: 100%;
