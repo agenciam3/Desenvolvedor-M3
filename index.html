@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 
@@ -12,7 +16,7 @@
 </head>
 <body>
     <header>
-        <h1 class="tit-logo"><img src="img/logo-m3.png" alt=""></h1>
+        <h1 id='teste' class="tit-logo"><img src="img/logo-m3.png" alt=""></h1>
         <div class="he-bag">
             <i class="fas fa-shopping-bag"></i>
             <span id="id-bag-quatidade" class="bag-quantidade">0</span>
@@ -45,26 +49,49 @@
                 <ul id="id-lista-cores" class="lista-checkboxes lista-cores">
                     <li>
                         <input class="checkbox checkbox-cor" type="checkbox" name="amarelo" id="id-amarelo">
-                        <label for="amarelo">Amarelo</label>
+                        <label for="id-amarelo">Amarelo</label>
                     </li>
                     <li>
                         <input class="checkbox checkbox-cor" type="checkbox" name="azul" id="id-azul">
-                        <label for="azul">Azul</label>
+                        <label for="id-azul">Azul</label>
                     </li>
                     <li>
                         <input class="checkbox checkbox-cor" type="checkbox" name="branco" id="id-branco">
-                        <label for="branco">Branco</label>
+                        <label for="id-branco">Branco</label>
                     </li>
                     <li>
                         <input class="checkbox checkbox-cor" type="checkbox" name="cinza" id="id-cinza">
-                        <label for="cinza">Cinza</label>
+                        <label for="id-cinza">Cinza</label>
                     </li>
                     <li>
                         <input class="checkbox checkbox-cor" type="checkbox" name="laranja" id="id-laranja">
-                        <label for="laranja">Laranja</label>
+                        <label for="id-laranja">Laranja</label>
                     </li>
+                    <div id="id-hidden-cores" class="hidden-cores">
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="verde" id="id-verde">
+                            <label for="id-verde">Verde</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="vermelho" id="id-vermelho">
+                            <label for="id-vermelho">Vermelho</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="preto" id="id-preto">
+                            <label for="id-preto">Preto</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="rosa" id="id-rosa">
+                            <label for="id-rosa">Rosa</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="vinho" id="id-vinho">
+                            <label for="vinho">Vinho</label>
+                        </li>
+                    </div>
                 </ul>
-
+                <span id="id-ver-mais" class="mais-cores">Ver mais cores <span>&#9663</span></span>
+                <span id="id-ver-menos" class="menos-cores">Ver menos cores <span>&#9653</span></span>
             </div>
 
             <div id="id-div-tamanhos" class="as-div-tamanhos">
@@ -98,23 +125,23 @@
                 <ul id="id-lista-tamanhos" class="lista-checkboxes ista-tamanhos">
                     <li>
                         <input class="checkbox" type="checkbox" name="preco-0-50" id="id-preco-0-50">
-                        <label for="preco-0-50">de R$0 até R$50</label>
+                        <label for="id-preco-0-50">de R$0 até R$50</label>
                     </li>
                     <li>
                         <input class="checkbox" type="checkbox" name="preco-51-150" id="id-preco-51-150">
-                        <label for="preco-51-150">de R$51 até R$150</label>
+                        <label for="id-preco-51-150">de R$51 até R$150</label>
                     </li>
                     <li>
                         <input class="checkbox" type="checkbox" name="preco-151-300" id="id-preco-151-300">
-                        <label for="preco-151-300">de R$151 até R$300</label>
+                        <label for="id-preco-151-300">de R$151 até R$300</label>
                     </li>
                     <li>
                         <input class="checkbox" type="checkbox" name="preco-301-500" id="id-preco-301-500">
-                        <label for="preco-301-500">de R$301 até R$500</label>
+                        <label for="id-preco-301-500">de R$301 até R$500</label>
                     </li>
                     <li>
                         <input class="checkbox" type="checkbox" name="preco-acima-01" id="id-preco-acima-01">
-                        <label for="preco-acima-01">a partir de R$01</label> 
+                        <label for="id-preco-acima-01">a partir de R$01</label> 
                     </li>
                 </ul> 
                 
@@ -148,7 +175,7 @@
         <section>
             <div class="se-div-ordenacao">
                 <select class="select-sort" name="sort" id="id-sort">
-                    <option value="ordenar-por">Ordenar por:</option>
+                    <option value="" disabled selected hidden>Ordenar por:</option>
                     <option value="mais-recentes">Mais recentes</option>
                     <option value="menor-preco">Menor preço</option>
                     <option value="maior-preco">Maior preço</option>
@@ -170,5 +197,6 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/18d6c9162d.js" crossorigin="anonymous"></script>
     <script type="module" src="./js/main.js"></script>
+
 </body>
 </html>

@@ -36,17 +36,13 @@ export default class Catalogo{
                     let preco = lista[produto].preco;
                     let parcelamento = lista[produto].parcelamento;
                     let imagem = lista[produto].imagem;
-                    
-                    /* console.log('id',id)
-                    console.log('nome',nome)
-                    console.log('preco',preco)
-                    console.log('parc',parcelamento)
-                    console.log('img',imagem) */
 
                     let valorParcelamento = lista[produto].preco / lista[produto].parcelamento;
 
                     container.innerHTML += `<div class="div-produto" data-index="${id}">
-                                                <img class="img-produto" src="${imagem}" alt="Demonstração ${nome}">
+                                                <div id="div-img" class="div-img">
+                                                    <img class="img-produto" src="${imagem}" alt="Demonstração ${nome}">
+                                                </div>
                                                 <h3 class="tit-produto">${nome}</h3>
                                                 <span class="preco-produto">R$${preco.toFixed(2)}</span>
                                                 <span class="parcelamento">até ${parcelamento}x de R$${valorParcelamento.toFixed(2)}</span>
@@ -54,7 +50,7 @@ export default class Catalogo{
                                             </div>`
                 }
                 else{break}
-            } 
+            }            
             resolve();   
         });
         
@@ -72,6 +68,10 @@ export default class Catalogo{
         let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
         let botaoCarregarMais = document.getElementById('id-carregar-mais');
         let qtdParaCarregar = 3;
+
+        if (window.screen.width < 750) {
+            qtdParaCarregar = 4;
+        }
 
         if (qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada == null) {
             let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
@@ -116,7 +116,12 @@ export default class Catalogo{
 
     filtrarTamanhos(tamanhosSelecionados, listaDeElem){
         return new Promise((resolve)=>{
+            if (listaDeElem.length == 0){
+                listaDeElem = this.#listaProdutos;
+            }
+    
             let listaElementosDiminuida = listaDeElem;
+
             console.log('parametros tamanho', tamanhosSelecionados);
             console.log('parametros lista elem', listaDeElem);
 
@@ -151,6 +156,9 @@ export default class Catalogo{
 
     filtrarPrecos(precosSelecionados, listaDeElem){
         return new Promise((resolve)=>{
+            if (listaDeElem.length == 0){
+                listaDeElem = this.#listaProdutos;
+            }
             let listaAuxiliar = [];
             for (let i = 0; i < precosSelecionados.length; i++) {
                 switch (precosSelecionados[i]) {

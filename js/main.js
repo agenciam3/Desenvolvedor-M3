@@ -25,6 +25,9 @@ const listaCores = document.getElementById('id-lista-cores');
 const headCores = document.getElementById('head-cores');
 const coresMais = document.getElementById('id-cores-mais');
 const coresMenos = document.getElementById('id-cores-menos');
+const hiddenCores = document.getElementById('id-hidden-cores')
+const verMaisCores = document.getElementById('id-ver-mais');
+const verMenosCores = document.getElementById('id-ver-menos');
 
 const gridTamanhos = document.getElementById('id-grid-tamanho');
 const headTamanhos = document.getElementById('head-tamanhos');
@@ -60,13 +63,13 @@ headCores.addEventListener('click', ()=>{
        if (headCores.dataset.aberto == '0') {
             listaCores.style.display = 'block';
             coresMenos.style.setProperty('display', 'inline-block', 'important');
-            coresMais.style.display = 'none';
+            coresMais.style.setProperty('display', 'none', 'important');
             headCores.dataset.aberto = '1';
         }
         else{
             listaCores.style.display = 'none';
             coresMais.style.setProperty('display', 'inline-block', 'important');
-            coresMenos.style.display = 'none';
+            coresMenos.style.setProperty('display', 'none', 'important');
             headCores.dataset.aberto = '0';
         } 
     }  
@@ -76,13 +79,13 @@ headTamanhos.addEventListener('click', ()=>{
     if (headTamanhos.dataset.aberto == '0') {
         gridTamanhos.style.display = 'grid';
         tamanhosMenos.style.setProperty('display', 'inline-block', 'important');
-        tamanhosMais.style.display = 'none';
+        tamanhosMais.style.setProperty('display', 'none', 'important');
         headTamanhos.dataset.aberto = '1';
     }
     else{
         gridTamanhos.style.display = 'none';
         tamanhosMais.style.setProperty('display', 'inline-block', 'important');
-        tamanhosMenos.style.display = 'none';
+        tamanhosMenos.style.setProperty('display', 'none', 'important');;
         headTamanhos.dataset.aberto = '0';
     }
     
@@ -92,13 +95,13 @@ headPrecos.addEventListener('click', ()=>{
     if (headPrecos.dataset.aberto == '0') {
         listaPrecos.style.display = 'block';
         precosMenos.style.setProperty('display', 'inline-block', 'important');
-        precosMais.style.display = 'none';
+        precosMais.style.setProperty('display', 'none', 'important');
         headPrecos.dataset.aberto = '1';
     }
     else{
         listaPrecos.style.display = 'none';
         precosMais.style.setProperty('display', 'inline-block', 'important');
-        precosMenos.style.display = 'none';
+        precosMenos.style.setProperty('display', 'none', 'important');
         headPrecos.dataset.aberto = '0';
     }
 });
@@ -110,6 +113,18 @@ asideFiltros.addEventListener('click', async ()=>{
         await lerFiltros();
     }
 
+});
+
+verMaisCores.addEventListener('click', ()=>{
+    hiddenCores.style.display = 'block';
+    verMaisCores.style.display = 'none';
+    verMenosCores.style.display = 'block';
+});
+
+verMenosCores.addEventListener('click', ()=>{
+    hiddenCores.style.display = 'none';
+    verMenosCores.style.display = 'none';
+    verMaisCores.style.display = 'block';
 });
 
 gridTamanhos.addEventListener('click', async (e)=>{
@@ -229,6 +244,11 @@ function getCoresSelecionadas() {
         const checkBranco = document.getElementById('id-branco');
         const checkCinza = document.getElementById('id-cinza');
         const checkLaranja = document.getElementById('id-laranja');
+        const checkVerde = document.getElementById('id-verde');
+        const checkVermelho = document.getElementById('id-vermelho');
+        const checkPreto = document.getElementById('id-preto');
+        const checkRosa = document.getElementById('id-rosa');
+        const checkVinho = document.getElementById('id-vinho');
 
         if (checkAmarelo.checked && coresSelecionadas.indexOf("AMARELO") == -1) {
             coresSelecionadas.push('AMARELO')
@@ -244,6 +264,21 @@ function getCoresSelecionadas() {
         }
         if (checkLaranja.checked && coresSelecionadas.indexOf("LARANJA") == -1) {
             coresSelecionadas.push('LARANJA')
+        }
+        if (checkVerde.checked && coresSelecionadas.indexOf("VERDE") == -1) {
+            coresSelecionadas.push('VERDE')
+        }
+        if (checkVermelho.checked && coresSelecionadas.indexOf("VERMELHO") == -1) {
+            coresSelecionadas.push('VERMELHO')
+        }
+        if (checkPreto.checked && coresSelecionadas.indexOf("PRETO") == -1) {
+            coresSelecionadas.push('PRETO')
+        }
+        if (checkRosa.checked && coresSelecionadas.indexOf("ROSA") == -1) {
+            coresSelecionadas.push('ROSA')
+        }
+        if (checkVinho.checked && coresSelecionadas.indexOf("VINHO") == -1) {
+            coresSelecionadas.push('VINHO')
         } 
 
         resolve(coresSelecionadas);

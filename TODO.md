@@ -1,21 +1,22 @@
 ### JSON
 - [ ] Lembrar de tirar os produtos adicionais
+- [ ] Adicionar novas cores no json
 
 ### HTML
-- [ ] add Ver todas as cores
+- [X] add Ver todas as cores
 - [ ] label check boxes relacionar aos check boxes
 
 
 ### CSS
 - [ ] Select ordenar customizar
-- [ ] Colocar Fonts
-- [ ] Responsividade
+- [X] Colocar Fonts
+- [X] Responsividade
 - [ ] Carregar mais transition
-- [ ] Diminuir botões comprar
-- [ ] Imagem hover zoom *Segundo plano*
+- [X] Diminuir botões comprar
+- [X] Imagem hover zoom *Segundo plano*
 - [ ] Checkbox customizar
 - [ ] Transition: produtos
-- [ ] Transition: aba filtros
+- [ ] Transition: aba filtros (usar translate OU heigth + display)
 - [ ] Transition: aba ordenar
 - [ ] Transition: categorias filtros
 
@@ -28,23 +29,10 @@
 - [ ] minicart *Segundo plano*
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
-- [ ] Responsividade
+- [X] Responsividade
 - [ ] Opacidade botão carregar mais
-- [ ] Alterar o parametro de carregar mais para 2 por carregamento
-- [ ] Tratar espaço em branco do filtro
+- [X] Alterar o parametro de carregar mais para 2 por carregamento
+- [ ] Tratar espaço em branco do filtro *Segundo plano*
 
 
 ## Rascunho
-
-for (let i = 0; i < tamanhosSelecionados.length; i++) {
-                for (let j = 0; j < this.#listaProdutos.length; j++) {
-                    for (let k = 0; k < this.#listaProdutos[j].tamanhos.length; k++) {
-                        if (tamanhosSelecionados[i] == this.#listaProdutos[j].tamanhos[k]) {
-                            if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1 && listaDeElem.indexOf(this.#listaProdutos[j]) == -1) {
-                                listaAuxiliar.push(this.#listaProdutos[j]);
-                                break;
-                            }
-                        } 
-                    }
-                }
-            }
