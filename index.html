@@ -10,8 +10,180 @@
     </head>
 
     <body>
-        <header></header>
-        <article></article>
-        <footer></footer>
+        <header>
+            <div id='barra_superior'>
+                <div class='logo'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/logo-m3.png">
+                    <img id="sacola" src="./Desenvolvedor-M3/layout/imagens/sacola.png">
+                </div>
+            </div>
+            <hr>
+            <div id='barra_inferior'>
+                <div><h1>Blusas</h1></div>
+                <div><label for="ordernar" class="ordenar">Ordenar por:</label></br>
+                    <select class="ordenar" name="ordenar">
+                    <option value="mais_recentes">Mais recentes</option>
+                    <option value="menor_preco">Menor preço</option>
+                    <option value="maior_preco">Maior preço</option>
+                    </select> </div>
+            </div>
+        </header>
+    </br>
+        <article>
+            <div class='filtros'>
+                <div id='cores'>
+                    <h2>CORES</h2>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Amarelo">
+                    <label for="vehicle1"> Amarelo</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Azul">
+                    <label for="vehicle2"> Azul</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Branco">
+                    <label for="vehicle3"> Branco</label><br>
+                    <input type="checkbox" id="vehicle4" name="vehicle4" value="Cinza">
+                    <label for="vehicle4"> Cinza</label><br>
+                    <input type="checkbox" id="vehicle5" name="vehicle5" value="Laranja">
+                    <label for="vehicle5"> Laranja</label><br>
+                    <input type="checkbox" id="vehicle6" name="vehicle6" value="Verde">
+                    <label for="vehicle6"> Verde</label><br>
+                    <input type="checkbox" id="vehicle7" name="vehicle7" value="Vermelho">
+                    <label for="vehicle7"> Vermelho</label><br>
+                    <input type="checkbox" id="vehicle8" name="vehicle8" value="Preto">
+                    <label for="vehicle8"> Preto</label><br>
+                    <input type="checkbox" id="vehicle9" name="vehicle9" value="Rosa">
+                    <label for="vehicle9"> Rosa</label><br>
+                    <input type="checkbox" id="vehicle10" name="vehicle10" value="Vinho">
+                    <label for="vehicle10"> Vinho</label><br>
+                </div>
+                <div id='tamanhos'>
+                    <h2>TAMANHOS</h2>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="P">
+                    <label for="vehicle1"> P</label>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="M">
+                    <label for="vehicle2"> M</label>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="G">
+                    <label for="vehicle3"> G</label>
+                    <input type="checkbox" id="vehicle4" name="vehicle4" value="G">
+                    <label for="vehicle4"> GG</label><br>
+                    <input type="checkbox" id="vehicle5" name="vehicle5" value="U">
+                    <label for="vehicle5"> U</label>
+                    <input type="checkbox" id="vehicle6" name="vehicle6" value="36">
+                    <label for="vehicle6"> 36</label>
+                    <input type="checkbox" id="vehicle7" name="vehicle7" value="38">
+                    <label for="vehicle7"> 38</label>
+                    <input type="checkbox" id="vehicle8" name="vehicle8" value="40">
+                    <label for="vehicle8"> 40</label><br>
+                    <input type="checkbox" id="vehicle9" name="vehicle9" value="42">
+                    <label for="vehicle9"> 42</label>
+                    <input type="checkbox" id="vehicle10" name="vehicle10" value="44">
+                    <label for="vehicle10"> 44</label>
+                    <input type="checkbox" id="vehicle11" name="vehicle11" value="46">
+                    <label for="vehicle11"> 46</label><br>
+                </div>
+                <div id='faixa_de_preco'>
+                    <h2>FAIXA DE PREÇO</h2>
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="0-50">
+                    <label for="vehicle1"> de R$ 0 até R$ 50</label><br>
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="51-150">
+                    <label for="vehicle2"> de R$ 51 até R$ 150</label><br>
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="151-300">
+                    <label for="vehicle3"> de R$ 151 até R$ 300</label><br>
+                    <input type="checkbox" id="vehicle4" name="vehicle4" value="301-500">
+                    <label for="vehicle4"> de R$ 301 até R$ 500</label><br>
+                    <input type="checkbox" id="vehicle5" name="vehicle5" value="501">
+                    <label for="vehicle5"> a partir de R$ 501</label><br>
+                </div>
+            </div>
+            <div class="produtos">
+                <div class="produto" id='produto01'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_2.png"></br>
+                    <span>CAMISETA MESCLA</span>
+                    <h6>R$ 28,00</h6>
+                    <span>até 3x de R$9,33</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto02'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_3.png"></br>
+                    <span>SAIA EM COURO</span>
+                    <h6>R$ 398,00</h6>
+                    <span>até 5x de R$30,00</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto03'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_4.png"></br>
+                    <span>CARDIGAN TIGRE</span>
+                    <h6>R$ 398,00</h6>
+                    <span>até 5x de R$30,00</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto04'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_5.png"></br>
+                    <span>CARDIGAN OF WHITE</span>
+                    <h6>R$ 99,90</h6>
+                    <span>até 3x de R$33,33</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto05'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_6.png"></br>
+                    <span>BODY LEOPARDO</span>
+                    <h6>R$ 129,90</h6>
+                    <span>até 3x de R$43,43</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto06'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_7.png"></br>
+                    <span>CASACO PELOS</span>
+                    <h6>R$ 398,00</h6>
+                    <span>até 5x de R$30,00</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto07'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_8.png"></br>
+                    <span>CROPPED STRIPES</span>
+                    <h6>R$ 120,00</h6>
+                    <span>até 3x de R$40,00</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto08'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_9.png"></br>
+                    <span>CAMISA TRANSPARENTE</span>
+                    <h6>R$ 398,00</h6>
+                    <span>até 5x de R$30,00</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div class="produto" id='produto09'>
+                    <img src="./Desenvolvedor-M3/layout/imagens/img_10.png"></br>
+                    <span>POCHETE CLUTCH</span>
+                    <h6>R$ 99,00</h6>
+                    <span>até 3x de R$33,00</span>
+                    <div>
+                        <button>COMPRAR</button>
+                    </div>
+                </div>
+                <div id="botao">
+                    <button>CARREGAR MAIS</button>
+                </div>
+            </div>
+        </article>
+        <footer>
+            <div id="footer">
+                <p>Agência M3 - Agência de Performance Digital</p>
+            </div>
+        </footer>
     </body>
 </html>
