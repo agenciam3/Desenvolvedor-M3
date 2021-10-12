@@ -1,0 +1,31 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+html{
+    overflow-x: hidden;
+}
+.logo{
+    margin: 0px 150px;
+    padding: 20px 0px;
+}
+#sacola{
+    width: 30px;
+    float: right;
+}
+#barra_inferior{
+    margin: 0px 150px;
+    padding: 20px 0px 30px 0px;
+}
+.ordenar{
+    float: right;
+}
+h1{
+    float: left;
+    font-size: 2.4em;
+}
+article{
+    font-size: 1.0em;
+    margin: 0px 150px;
+    padding: 20px 0px;
+}
