@@ -11,23 +11,31 @@ export default class Catalogo{
     }
 
     async mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
-        let qtdProdutosVisiveis;
-        if (!limparContainer) {
-            qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
-        } else {
-            console.log('entrei');
-            qtdProdutosVisiveis = 0;
+        if (lista.length != 0) {
+            let qtdProdutosVisiveis;
+            if (!limparContainer) {
+                qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
+            } else {
+                qtdProdutosVisiveis = 0;
+                container.innerHTML = "";
+            }
+            
+            console.log("lista para mostrar", lista)
+
+            await this.#adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir);
+            const botoesComprar = document.getElementsByClassName('bt-comprar');
+
+            this.#escutarCompras(botoesComprar);
+        }
+        else{
             container.innerHTML = "";
         }
         
-        await this.#adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir);
-        const botoesComprar = document.getElementsByClassName('bt-comprar');
-
-        this.#escutarCompras(botoesComprar);
 
     }
 
     #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){
+        console.log("lista para mostrar", lista)
         return new Promise((resolve)=>{
             for (let produto = qtdProdutosVisiveis; produto < lista.length; produto++) {
                 if (produto < quantidadeParaExibir) {
@@ -96,119 +104,132 @@ export default class Catalogo{
 
     filtrarCores(coresSelecionadas){
         return new Promise((resolve)=>{
-             let listaAuxiliar = [];
+            if (coresSelecionadas.length != 0) {
+                let listaAuxiliar = [];
 
-            for (let i = 0; i < coresSelecionadas.length; i++) {
-                for (let j = 0; j < this.#listaProdutos.length; j++) {
-                    for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
-                        if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
-                            if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
-                                listaAuxiliar.push(this.#listaProdutos[j]);
-                                break;
-                            }
-                        } 
+                for (let i = 0; i < coresSelecionadas.length; i++) {
+                    for (let j = 0; j < this.#listaProdutos.length; j++) {
+                        for (let k = 0; k < this.#listaProdutos[j].cores.length; k++) {
+                            if (coresSelecionadas[i] == this.#listaProdutos[j].cores[k]) {
+                                if (listaAuxiliar.indexOf(this.#listaProdutos[j]) == -1) {
+                                    listaAuxiliar.push(this.#listaProdutos[j]);
+                                    break;
+                                }
+                            } 
+                        }
                     }
                 }
+                resolve(listaAuxiliar);
             }
-            resolve(listaAuxiliar);
+            else{
+                resolve(this.#listaProdutos);
+            }
+            
         })
     }
 
     filtrarTamanhos(tamanhosSelecionados, listaDeElem){
         return new Promise((resolve)=>{
-            if (listaDeElem.length == 0){
-                listaDeElem = this.#listaProdutos;
-            }
-            let listaAuxiliar = [];            
-
-            console.log('parametros tamanho', tamanhosSelecionados);
-            console.log('parametros lista elem', listaDeElem);
-
-            for (let i = 0; i < tamanhosSelecionados.length; i++) {    
-                for (let j = 0; j < listaDeElem.length; j++) {
-                    for (let k = 0; k < listaDeElem[i].tamanhos.length; k++) {
-                       if (listaDeElem[j].tamanhos[k] == tamanhosSelecionados[i]) {
-                            console.log(listaDeElem[j].tamanhos[k], '=', tamanhosSelecionados[i]);
-                            listaAuxiliar.push(listaDeElem[j]);
-                            break;
-                        }   
-                    }                                    
+            if (tamanhosSelecionados.length !=0) {
+               if (listaDeElem.length == 0){
+                    listaDeElem = this.#listaProdutos;
                 }
-            }
-            if (listaAuxiliar.length <= 0) {
-                resolve(listaDeElem);
-            }
-            else{
+                let listaAuxiliar = [];            
+
+                console.log('parametros tamanho', tamanhosSelecionados);
+                console.log('parametros lista elem', listaDeElem);
+
+                for (let i = 0; i < tamanhosSelecionados.length; i++) {    
+                    for (let j = 0; j < listaDeElem.length; j++) {
+                        for (let k = 0; k < listaDeElem[i].tamanhos.length; k++) {
+                        if (listaDeElem[j].tamanhos[k] == tamanhosSelecionados[i]) {
+                                console.log(listaDeElem[j].tamanhos[k], '=', tamanhosSelecionados[i]);
+                                listaAuxiliar.push(listaDeElem[j]);
+                                break;
+                            }   
+                        }                                    
+                    }
+                }
                 console.log('lista aux precos',listaAuxiliar);
                 resolve(listaAuxiliar); 
             }
+            else{
+                resolve(listaDeElem);
+            }
+            
         })
     }
 
     filtrarPrecos(precosSelecionados, listaDeElem){
         return new Promise((resolve)=>{
-            if (listaDeElem.length == 0){
-                listaDeElem = this.#listaProdutos;
-            }
-            let listaAuxiliar = [];
-            for (let i = 0; i < precosSelecionados.length; i++) {
-                switch (precosSelecionados[i]) {
-                    case "0>50":
-                        for (let j = 0; j < listaDeElem.length; j++) {
-                            if (listaDeElem[j].preco >=0 && listaDeElem[j].preco <=50) {
-                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
-                                    listaAuxiliar.push(listaDeElem[j]);
-                                }
-                            }
-                        }
-                        break;
-                    case "51>150":
-                        for (let j = 0; j < listaDeElem.length; j++) {
-                            if (listaDeElem[j].preco >=51 && listaDeElem[j].preco <=150) {
-                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
-                                    listaAuxiliar.push(listaDeElem[j]);
-                                }
-                            }
-                        }
-                        break;
-                    case "151>300":
-                        for (let j = 0; j < listaDeElem.length; j++) {
-                            if (listaDeElem[j].preco >=151 && listaDeElem[j].preco <=300) {
-                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
-                                    listaAuxiliar.push(listaDeElem[j]);
-                                }
-                            }
-                        }
-                        break;
-                    case "301>500":
-                        for (let j = 0; j < listaDeElem.length; j++) {
-                            if (listaDeElem[j].preco >=301 && listaDeElem[j].preco <=500) {
-                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
-                                    listaAuxiliar.push(listaDeElem[j]);
-                                }
-                            }
-                        }
-                        break;
-                    case ">=01":
-                        for (let j = 0; j < listaDeElem.length; j++) {
-                            if (listaDeElem[j].preco >=0) {
-                                if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
-                                    listaAuxiliar.push(listaDeElem[j]);
-                                }
-                            }
-                        }
-                        break;
-                    default:
-                        break;
+            if (precosSelecionados.length != 0) {
+                if (listaDeElem.length == 0){
+                    listaDeElem = this.#listaProdutos;
                 }
-            }
-            if (listaAuxiliar.length <= 0) {
-                resolve(listaDeElem);
-            }
-            else{
+                let listaAuxiliar = [];
+                for (let i = 0; i < precosSelecionados.length; i++) {
+                    switch (precosSelecionados[i]) {
+                        case "0>50":
+                            for (let j = 0; j < listaDeElem.length; j++) {
+                                if (listaDeElem[j].preco >=0 && listaDeElem[j].preco <=50) {
+                                    if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                        listaAuxiliar.push(listaDeElem[j]);
+                                    }
+                                }
+                            }
+                            break;
+                        case "51>150":
+                            for (let j = 0; j < listaDeElem.length; j++) {
+                                if (listaDeElem[j].preco >=51 && listaDeElem[j].preco <=150) {
+                                    if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                        listaAuxiliar.push(listaDeElem[j]);
+                                    }
+                                }
+                            }
+                            break;
+                        case "151>300":
+                            for (let j = 0; j < listaDeElem.length; j++) {
+                                if (listaDeElem[j].preco >=151 && listaDeElem[j].preco <=300) {
+                                    if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                        listaAuxiliar.push(listaDeElem[j]);
+                                    }
+                                }
+                            }
+                            break;
+                        case "301>500":
+                            for (let j = 0; j < listaDeElem.length; j++) {
+                                if (listaDeElem[j].preco >=301 && listaDeElem[j].preco <=500) {
+                                    if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                        listaAuxiliar.push(listaDeElem[j]);
+                                    }
+                                }
+                            }
+                            break;
+                        case ">=01":
+                            for (let j = 0; j < listaDeElem.length; j++) {
+                                if (listaDeElem[j].preco >=0) {
+                                    if (listaAuxiliar.indexOf(listaDeElem[j]) == -1) {
+                                        listaAuxiliar.push(listaDeElem[j]);
+                                    }
+                                }
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+               /*  if (listaAuxiliar.length <= 0) {
+                    listaAuxiliar = listaDeElem;
+                } */
+                
                 console.log('lista aux precos',listaAuxiliar);
                 resolve(listaAuxiliar); 
+                
             }
+            else{
+                resolve(listaDeElem);
+            }
+            
         })
     }
 
