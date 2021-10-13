@@ -119,37 +119,28 @@ export default class Catalogo{
             if (listaDeElem.length == 0){
                 listaDeElem = this.#listaProdutos;
             }
-    
-            let listaElementosDiminuida = listaDeElem;
+            let listaAuxiliar = [];            
 
             console.log('parametros tamanho', tamanhosSelecionados);
             console.log('parametros lista elem', listaDeElem);
 
-            for (let i = 0; i < tamanhosSelecionados.length; i++) {
-                console.log('tamanho', i);
-                let listaAuxiliar = [];
-                for (let j = 0; j < listaElementosDiminuida.length; j++) {
-                    for (let k = 0; k < listaElementosDiminuida[i].tamanhos.length; k++) {
-                        console.log(`entrei ${listaElementosDiminuida[j].tamanhos[k]}`);
-                       if (listaElementosDiminuida[j].tamanhos[k] == tamanhosSelecionados[i]) {
-                            console.log(listaElementosDiminuida[j].tamanhos[k], '=', tamanhosSelecionados[i]);
-                            listaAuxiliar.push(listaElementosDiminuida[j]);
+            for (let i = 0; i < tamanhosSelecionados.length; i++) {    
+                for (let j = 0; j < listaDeElem.length; j++) {
+                    for (let k = 0; k < listaDeElem[i].tamanhos.length; k++) {
+                       if (listaDeElem[j].tamanhos[k] == tamanhosSelecionados[i]) {
+                            console.log(listaDeElem[j].tamanhos[k], '=', tamanhosSelecionados[i]);
+                            listaAuxiliar.push(listaDeElem[j]);
                             break;
                         }   
-                    }
-                    console.log(listaAuxiliar);
-                                    
-                }
-                if (listaAuxiliar.length > 0) {
-                    listaElementosDiminuida = listaAuxiliar;  
+                    }                                    
                 }
             }
-            if (listaElementosDiminuida.length <= 0) {
+            if (listaAuxiliar.length <= 0) {
                 resolve(listaDeElem);
             }
             else{
-                console.log('lista aux precos',listaElementosDiminuida);
-                resolve(listaElementosDiminuida); 
+                console.log('lista aux precos',listaAuxiliar);
+                resolve(listaAuxiliar); 
             }
         })
     }

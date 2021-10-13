@@ -7,6 +7,7 @@ body {
     width: 100%;
     height: 100vh;
     font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
 }
 
 :root{
@@ -114,9 +115,33 @@ h2{
     font-size: 2rem;
 }
 
+label{
+    margin-left: .5rem;
+}
+
 input:hover,
 label:hover{
     cursor: pointer;
+}
+
+input[type='checkbox']{
+    appearance: none;
+    -webkit-appearance: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 0;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+}
+
+input[type='checkbox']:after{
+    content: url("../img/square-full-solid.svg");
+    display: none;
+}
+
+input[type='checkbox']:checked::after{
+    display: block;
 }
 
 .as-div-cores,
@@ -133,6 +158,8 @@ label:hover{
 
 .lista-checkboxes li{
     padding: 0.4rem 0;
+    display: flex;
+    align-items: center;
 }
 
 .div-tit-filtrar{
@@ -212,8 +239,7 @@ label:hover{
 }
 
 .box-tam:hover {
-    border: 1px solid var(--ciano-padrao);
-    color: black;
+ 
     cursor: pointer;
 }
 
@@ -259,16 +285,13 @@ section{
     text-align: right;
 }
 
-.select-sort {
-    font-size: 1.2rem;
-}
-
-option:hover {
-    background-color: yellowgreen;
-}
-
 .select-sort{
     padding: 0.6rem;
+    font-size: 1.2rem;
+    border-radius: 0;
+}
+option:hover{
+    background-color: green !important;
 }
 
 .se-div-produtos{

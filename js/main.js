@@ -179,9 +179,10 @@ function lerFiltros() {
         console.log('tamanhos',listaDeTamanhos);
         console.log('precos',listaDePrecos);
 
-        let filtroCores = await catalogo.filtrarCores(listaDeCores); 
-        let filtroTamanhosMaisCores = await catalogo.filtrarTamanhos(listaDeTamanhos, filtroCores);
-        let filtroTotal = await catalogo.filtrarPrecos(listaDePrecos, filtroTamanhosMaisCores);
+        let filtroCores = await catalogo.filtrarCores(listaDeCores); //roupas que tenham cor A "OU" cor B...
+        let filtroTamanhosMaisCores = await catalogo.filtrarTamanhos(listaDeTamanhos, filtroCores); // dessas roupas quero os tamanhos C "OU" D.. filtro tamanho esta aplicando E quando deveria ser OU
+                                                                                        //                                                                                  (roupas que tenham p E g, mas o certo é roupas que tenham p OU g)                                
+        let filtroTotal = await catalogo.filtrarPrecos(listaDePrecos, filtroTamanhosMaisCores); // de todos eles quero com preço X "OU" Y
 
 
         /* console.log('filtroCores',filtroCores);
