@@ -18,7 +18,7 @@
 - [ ] Transition: produtos
 - [X] Transition: aba filtros (usar translate OU heigth + display)
 - [X] Transition: aba ordenar
-- [ ] Ver questão do footer
+- [X] Ver questão do footer
 
 ### JS
 - [X] Funcionalidade: Filtrar produtos por cor
@@ -30,7 +30,7 @@
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
 - [X] Responsividade
-- [ ] Opacidade botão carregar mais
+- [X] Opacidade botão carregar mais
 - [X] Alterar o parametro de carregar mais para 2 por carregamento
 
 

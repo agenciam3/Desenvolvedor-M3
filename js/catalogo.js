@@ -11,8 +11,8 @@ export default class Catalogo{
     }
 
     async mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
-        /* this.#sectionProdutosToggle(); */
-        document.getElementById('se-div-produtos').style.maxHeight = "0";
+        this.#sectionProdutosToggle();
+        await this.#sleeper(500);
         let qtdProdutosVisiveis;
         if (lista.length != 0) {
             if (!limparContainer) {
@@ -33,14 +33,13 @@ export default class Catalogo{
             container.innerHTML = "<h2> Não há produtos com essas características";
         }
         this.#mostrarOuOcultarBtCarregarMais(lista);
-        /* this.#sectionProdutosToggle(); */
-        document.getElementById('se-div-produtos').style.maxHeight = "0px";
-        document.getElementById('se-div-produtos').style.maxHeight = "2000px";
+        
+        this.#sectionProdutosToggle();
     }
 
     #sectionProdutosToggle(){
         let section = document.getElementById('se-div-produtos');
-        section.classList.toggle('se-div-produtos-toggle');
+        section.classList.toggle('toggle');
     }
 
     #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){
@@ -118,7 +117,6 @@ export default class Catalogo{
         spanCarrinho.style.display = "inline";
         return numeroNoCarrinho;
     }
-
 
     filtrarCores(coresSelecionadas){
         return new Promise((resolve)=>{
@@ -258,5 +256,12 @@ export default class Catalogo{
     ordenarPreco(maior){
 
     }
-}
 
+    #sleeper(ms){
+        return new Promise((resolve) => {
+            setTimeout(() => {
+            resolve();
+            }, ms);
+        });
+    }
+}

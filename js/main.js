@@ -3,6 +3,7 @@ import Catalogo from "./catalogo.js";
 
 var dadosProdutos;
 var listaFiltradaAtual = [];
+var carrinho = [];
 
 //pegar json
 await fetch("../produtos.json")
@@ -34,7 +35,7 @@ const headTamanhos = document.getElementById('head-tamanhos');
 const tamanhosMais = document.getElementById('id-tamanhos-mais');
 const tamanhosMenos = document.getElementById('id-tamanhos-menos');
 
-const listaPrecos = document.getElementById('id-lista-tamanhos');
+const listaPrecos = document.getElementById('id-lista-precos');
 const headPrecos = document.getElementById('head-precos');
 const precosMais = document.getElementById('id-precos-mais');
 const precosMenos = document.getElementById('id-precos-menos');
@@ -61,13 +62,13 @@ btAbrirFiltro.addEventListener('click', ()=>{
 headCores.addEventListener('click', ()=>{
     if (window.screen.width < 750) {
        if (headCores.dataset.aberto == '0') {
-            listaCores.style.display = 'block';
+            listaCores.classList.toggle('ativo');
             coresMenos.style.setProperty('display', 'inline-block', 'important');
             coresMais.style.setProperty('display', 'none', 'important');
             headCores.dataset.aberto = '1';
         }
         else{
-            listaCores.style.display = 'none';
+            listaCores.classList.toggle('ativo');
             coresMais.style.setProperty('display', 'inline-block', 'important');
             coresMenos.style.setProperty('display', 'none', 'important');
             headCores.dataset.aberto = '0';
@@ -77,13 +78,13 @@ headCores.addEventListener('click', ()=>{
 
 headTamanhos.addEventListener('click', ()=>{
     if (headTamanhos.dataset.aberto == '0') {
-        gridTamanhos.style.display = 'grid';
+        gridTamanhos.classList.toggle('ativo');
         tamanhosMenos.style.setProperty('display', 'inline-block', 'important');
         tamanhosMais.style.setProperty('display', 'none', 'important');
         headTamanhos.dataset.aberto = '1';
     }
     else{
-        gridTamanhos.style.display = 'none';
+        gridTamanhos.classList.toggle('ativo');
         tamanhosMais.style.setProperty('display', 'inline-block', 'important');
         tamanhosMenos.style.setProperty('display', 'none', 'important');;
         headTamanhos.dataset.aberto = '0';
@@ -93,13 +94,13 @@ headTamanhos.addEventListener('click', ()=>{
 
 headPrecos.addEventListener('click', ()=>{
     if (headPrecos.dataset.aberto == '0') {
-        listaPrecos.style.display = 'block';
+        listaPrecos.classList.toggle('ativo');
         precosMenos.style.setProperty('display', 'inline-block', 'important');
         precosMais.style.setProperty('display', 'none', 'important');
         headPrecos.dataset.aberto = '1';
     }
     else{
-        listaPrecos.style.display = 'none';
+        listaPrecos.classList.toggle('ativo');
         precosMais.style.setProperty('display', 'inline-block', 'important');
         precosMenos.style.setProperty('display', 'none', 'important');
         headPrecos.dataset.aberto = '0';
@@ -116,13 +117,13 @@ asideFiltros.addEventListener('click', async ()=>{
 });
 
 verMaisCores.addEventListener('click', ()=>{
-    hiddenCores.style.display = 'block';
+    hiddenCores.classList.toggle('mostrar');
     verMaisCores.style.display = 'none';
     verMenosCores.style.display = 'block';
 });
 
 verMenosCores.addEventListener('click', ()=>{
-    hiddenCores.style.display = 'none';
+    hiddenCores.classList.toggle('mostrar');
     verMenosCores.style.display = 'none';
     verMaisCores.style.display = 'block';
 });

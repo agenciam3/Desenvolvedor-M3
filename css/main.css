@@ -34,13 +34,13 @@ header{
 
 .tit-logo{
     display: inline-block;
-    margin-left: 12.7%;
+    margin-left: 14.5%;
 }
 
 .he-bag{
     display: inline-block;
     position: relative;
-    margin-right: 13%;
+    margin-right: 14.5%;
     width: 20px;
     height: 20px;
     font-size: 20px;
@@ -99,8 +99,8 @@ header{
 main{
     display: flex;
     width: 75%;
-    margin: auto;
-    
+    margin: 0 10% 0 14.5%;
+    justify-self: center;
 }
 
 aside{
@@ -214,9 +214,19 @@ input[type='checkbox']:checked::after{
     font-size: 1.3rem;
 }
 
-.menos-cores,
-.hidden-cores{
+.menos-cores{
     display: none;
+}
+
+.hidden-cores{
+    max-height: 0;
+    overflow: hidden;
+    transition: all .7s;
+    transition-delay: 0s;
+}
+
+.hidden-cores.mostrar{
+    max-height: 200px;
 }
 
 .grid-tamanho{
@@ -259,6 +269,7 @@ input[type='checkbox']:checked::after{
 
 .div-ordenar {
     display: none;
+    
 }
 
 .tipo-ordenacao{
@@ -289,9 +300,7 @@ section{
     padding: 0.6rem;
     font-size: 1.2rem;
     border-radius: 0;
-}
-option:hover{
-    background-color: green !important;
+    margin-right: 7%;
 }
 
 .se-div-produtos{
@@ -300,14 +309,13 @@ option:hover{
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-content: flex-start;
-    max-height: 0px;
-    overflow-y: hidden;
+    opacity: 1;
     row-gap: 1.8rem;
-    transition: max-height 1s;
+    transition: all .5s ease;
 }
 
-.se-div-produtos-toggle{
-    max-height : 2000px;
+.se-div-produtos.toggle{
+    opacity: 0;
 }
 
 @media screen and (max-width: 1080px) {
@@ -397,6 +405,7 @@ option:hover{
 }
 
 footer{
+    width: 100%;
     margin-top:auto;
     text-align: center;
     color: white;
@@ -412,7 +421,13 @@ footer h4 {
     .se-div-ordenacao{
         display: none;
     }
+    header{
+        margin-bottom: 2rem;
+    }
 
+    main{
+        margin: 0 auto;
+    }
     aside{
         display: block;
         transform: translate(-100%);
@@ -423,6 +438,8 @@ footer h4 {
         height: 100%;
         background-color: white;
         transition: transform .5s;
+        max-height: 100%;
+        overflow: scroll;
     }
 
     aside h2{
@@ -452,7 +469,7 @@ footer h4 {
     }
 
     .hidden-cores{
-        display: block;
+        max-height: 100%;
     }
 
     .mais-cores,
@@ -460,18 +477,25 @@ footer h4 {
         display: none;
     }
 
-    .lista-tamanhos,
+    .grid-tamanho,
     .lista-checkboxes {
-        display: none;
+        width: 90%;
+        max-height: 0px;
+        overflow-x: hidden;
+        transition: all .5s ease;
     }
 
-    .grid-tamanho {
-        display: none;
+    .lista-checkboxes.ativo {
+        max-height: 700px;
+    }
+
+    .grid-tamanho.ativo{
+        max-height: 300px;
     }
 
     .box-tam{
-        width: 2.3rem;
-        height: 2.3rem;
+        width: 3rem;
+        height: 3rem;
         transition: border 0.3s;
     }
 
@@ -508,6 +532,12 @@ footer h4 {
         background-color: white;
     }
 
+    .bt-acao-filtro:hover{
+        border: none;
+        background-color: black;
+        color: white;
+    }
+
     .div-ordenar{
         display: block;
         transform: translate(-100%);
@@ -518,6 +548,8 @@ footer h4 {
         height: 100%;
         background-color: white;
         transition: .5s;
+        max-height: 100%;
+        overflow: scroll;
     }
 
     .as-div-botoes-aplicar-limpar {
