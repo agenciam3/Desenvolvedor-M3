@@ -4,21 +4,21 @@
 
 ### HTML
 - [X] add Ver todas as cores
-- [ ] label check boxes relacionar aos check boxes
+- [X] label check boxes relacionar aos check boxes
 
 
 ### CSS
-- [ ] Select ordenar customizar
+- [X] Select ordenar customizar
 - [X] Colocar Fonts
 - [X] Responsividade
 - [ ] Carregar mais transition
 - [X] Diminuir botões comprar
 - [X] Imagem hover zoom *Segundo plano*
-- [ ] Checkbox customizar
+- [X] Checkbox customizar
 - [ ] Transition: produtos
-- [ ] Transition: aba filtros (usar translate OU heigth + display)
-- [ ] Transition: aba ordenar
-- [ ] Transition: categorias filtros
+- [X] Transition: aba filtros (usar translate OU heigth + display)
+- [X] Transition: aba ordenar
+- [ ] Ver questão do footer
 
 ### JS
 - [X] Funcionalidade: Filtrar produtos por cor
@@ -26,13 +26,12 @@
 - [X] Funcionalidade: Filtrar produtos por preço
 - [X] Integrar os filtros
 - [X] Funcionalidade: Adicionar produto ao carrinho.
-- [ ] minicart *Segundo plano*
+- [ ] Minicart *Segundo plano*
 - [ ] Funcionalidade: Ordenar *Segundo plano*
 - [X] Funcionalidade: Carregar mais produtos.
 - [X] Responsividade
 - [ ] Opacidade botão carregar mais
 - [X] Alterar o parametro de carregar mais para 2 por carregamento
-- [ ] Tratar espaço em branco do filtro *Segundo plano*
 
 
 ## Rascunho

@@ -11,6 +11,8 @@ export default class Catalogo{
     }
 
     async mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
+        /* this.#sectionProdutosToggle(); */
+        document.getElementById('se-div-produtos').style.maxHeight = "0";
         let qtdProdutosVisiveis;
         if (lista.length != 0) {
             if (!limparContainer) {
@@ -28,9 +30,17 @@ export default class Catalogo{
             this.#escutarCompras(botoesComprar);
         }
         else{
-            container.innerHTML = "";
+            container.innerHTML = "<h2> Não há produtos com essas características";
         }
         this.#mostrarOuOcultarBtCarregarMais(lista);
+        /* this.#sectionProdutosToggle(); */
+        document.getElementById('se-div-produtos').style.maxHeight = "0px";
+        document.getElementById('se-div-produtos').style.maxHeight = "2000px";
+    }
+
+    #sectionProdutosToggle(){
+        let section = document.getElementById('se-div-produtos');
+        section.classList.toggle('se-div-produtos-toggle');
     }
 
     #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){

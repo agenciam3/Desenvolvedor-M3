@@ -300,9 +300,14 @@ option:hover{
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-content: flex-start;
-    height: auto;
+    max-height: 0px;
     overflow-y: hidden;
     row-gap: 1.8rem;
+    transition: max-height 1s;
+}
+
+.se-div-produtos-toggle{
+    max-height : 2000px;
 }
 
 @media screen and (max-width: 1080px) {
