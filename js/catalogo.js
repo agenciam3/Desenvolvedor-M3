@@ -11,8 +11,8 @@ export default class Catalogo{
     }
 
     async mostrarProdutos(quantidadeParaExibir = 6, lista = this.#listaProdutos, limparContainer = false){
+        let qtdProdutosVisiveis;
         if (lista.length != 0) {
-            let qtdProdutosVisiveis;
             if (!limparContainer) {
                 qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
             } else {
@@ -31,6 +31,14 @@ export default class Catalogo{
             container.innerHTML = "";
         }
         
+        qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
+        if (qtdProdutosVisiveis == lista.length) {
+            document.getElementById('id-carregar-mais').style.display = 'none';
+        }
+        else{
+            document.getElementById('id-carregar-mais').style.display = 'block';
+        }
+
 
     }
 
@@ -72,7 +80,7 @@ export default class Catalogo{
         }
     }
 
-    carregarMais(listaFiltrada = null){
+    carregarMais(listaFiltrada = []){
         let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
         let botaoCarregarMais = document.getElementById('id-carregar-mais');
         let qtdParaCarregar = 3;
@@ -81,17 +89,15 @@ export default class Catalogo{
             qtdParaCarregar = 4;
         }
 
-        if (qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada == null) {
+        if (qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada.length == 0) {
             let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
             this.mostrarProdutos(totalCarregar);
         }
-        else if(qtdProdutosVisiveis < this.#listaProdutos.length && listaFiltrada != null){
+        else if(qtdProdutosVisiveis < listaFiltrada.length && listaFiltrada.length != 0){
             let totalCarregar = qtdProdutosVisiveis + qtdParaCarregar;
             this.mostrarProdutos(totalCarregar, listaFiltrada);
         }
-        else{
-            botaoCarregarMais.style.opacity = '0.5';
-        }
+
     }
 
     #addCarrinho(numeroNoCarrinho){

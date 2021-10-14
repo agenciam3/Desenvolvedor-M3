@@ -300,6 +300,8 @@ option:hover{
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-content: flex-start;
+    height: auto;
+    overflow-y: hidden;
     row-gap: 1.8rem;
 }
 
