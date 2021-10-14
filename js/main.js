@@ -203,8 +203,8 @@ function lerFiltros() {
     })
 }
 
-function abrirFiltroOrdenacao(elem) {
-    elem.style.display = 'block';
+async function abrirFiltroOrdenacao(elem) {
+    elem.style.transform = 'translateX(0%)';
 }
 
 function limparCheckBoxes() {
@@ -227,7 +227,7 @@ function limparDivTamanhos() {
 }
 
 function fecharFiltroOrdenacao(elem) {
-    elem.style.display = "none";
+    elem.style.transform = 'translateX(-100%)';
 }
 
 function removerDuplicidade(lista) {
