@@ -30,16 +30,7 @@ export default class Catalogo{
         else{
             container.innerHTML = "";
         }
-        
-        qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
-        if (qtdProdutosVisiveis == lista.length) {
-            document.getElementById('id-carregar-mais').style.display = 'none';
-        }
-        else{
-            document.getElementById('id-carregar-mais').style.display = 'block';
-        }
-
-
+        this.#mostrarOuOcultarBtCarregarMais(lista);
     }
 
     #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){
@@ -100,6 +91,16 @@ export default class Catalogo{
 
     }
 
+    #mostrarOuOcultarBtCarregarMais(lista){
+        let qtdProdutosVisiveis = document.getElementsByClassName('div-produto').length;
+        if (qtdProdutosVisiveis == lista.length) {
+            document.getElementById('id-carregar-mais').style.display = 'none';
+        }
+        else{
+            document.getElementById('id-carregar-mais').style.display = 'block';
+        }
+    }
+
     #addCarrinho(numeroNoCarrinho){
         let spanCarrinho = document.getElementById('id-bag-quatidade');
         numeroNoCarrinho++;
@@ -107,6 +108,7 @@ export default class Catalogo{
         spanCarrinho.style.display = "inline";
         return numeroNoCarrinho;
     }
+
 
     filtrarCores(coresSelecionadas){
         return new Promise((resolve)=>{
