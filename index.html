@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>Teste Desenvolvedor M3</title>
+</head>
+<body>
+    <header>
+        <h1 id='teste' class="tit-logo"><img src="img/logo-m3.png" alt=""></h1>
+        <div id="id-he-bag" class="he-bag">
+            <i class="fas fa-shopping-bag icon-bag"></i>
+            <span id="id-bag-quatidade" class="bag-quantidade">0</span>
+        </div>
+    </header>
+    <div class="container-filtros">
+        <h2>Blusas</h2>
+        <div class="container-botoes">
+            <div id="id-abrir-filtro" class="bt-opcoes abrir-filtro">Filtrar</div>
+            <div id="id-abrir-ordenar" class="bt-opcoes abrir-ordenar">Ordenar</div>
+        </div>  
+    
+    </div>
+
+    <main>
+        <aside id="filtros">
+            <h2>Blusas</h2>
+            <div class="div-tit-filtrar">
+                <h3>Filtrar</h3>
+                <i id="id-fechar-filtro" class="fas fa-times"></i>
+            </div>
+            
+            <div id="id-div-cores" class="as-div-checkbox as-div-cores">
+                <div id="head-cores" class="head-categorias-filtro" data-aberto="0">
+                    <h4 class="tit-categorias">CORES</h4>
+                    <i id="id-cores-mais" class="fas fa-plus filtro-mais mostrar-filtro"></i>
+                    <i id="id-cores-menos" class="fas fa-minus filtro-menos mostrar-filtro"></i>
+                </div>
+                
+                <ul id="id-lista-cores" class="lista-checkboxes lista-cores">
+                    <li>
+                        <input class="checkbox checkbox-cor" type="checkbox" name="amarelo" id="id-amarelo">
+                        <label for="id-amarelo">Amarelo</label>
+                    </li>
+                    <li>
+                        <input class="checkbox checkbox-cor" type="checkbox" name="azul" id="id-azul">
+                        <label for="id-azul">Azul</label>
+                    </li>
+                    <li>
+                        <input class="checkbox checkbox-cor" type="checkbox" name="branco" id="id-branco">
+                        <label for="id-branco">Branco</label>
+                    </li>
+                    <li>
+                        <input class="checkbox checkbox-cor" type="checkbox" name="cinza" id="id-cinza">
+                        <label for="id-cinza">Cinza</label>
+                    </li>
+                    <li>
+                        <input class="checkbox checkbox-cor" type="checkbox" name="laranja" id="id-laranja">
+                        <label for="id-laranja">Laranja</label>
+                    </li>
+                    <div id="id-hidden-cores" class="hidden-cores">
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="verde" id="id-verde">
+                            <label for="id-verde">Verde</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="vermelho" id="id-vermelho">
+                            <label for="id-vermelho">Vermelho</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="preto" id="id-preto">
+                            <label for="id-preto">Preto</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="rosa" id="id-rosa">
+                            <label for="id-rosa">Rosa</label>
+                        </li>
+                        <li>
+                            <input class="checkbox checkbox-cor" type="checkbox" name="vinho" id="id-vinho">
+                            <label for="id-vinho">Vinho</label>
+                        </li>
+                    </div>
+                </ul>
+                <span id="id-ver-mais" class="mais-cores">Ver mais cores &#9663</span>
+                <span id="id-ver-menos" class="menos-cores">Ver menos cores &#9653</span>
+            </div>
+
+            <div id="id-div-tamanhos" class="as-div-tamanhos">
+                <div id="head-tamanhos" class="head-categorias-filtro" data-aberto="0">
+                    <h4 class="tit-categorias">TAMANHOS</h4>
+                    <i id="id-tamanhos-mais" class="fas fa-plus filtro-mais mostrar-filtro"></i>
+                    <i id="id-tamanhos-menos" class="fas fa-minus filtro-menos mostrar-filtro"></i>
+                </div>
+
+                <div id='id-grid-tamanho' class="grid-tamanho">
+                    <div class="box-tam div-m-tamanho" data-selected="0" data-tamanho = "M"><span class="span-tam">M</span></div>
+                    <div class="box-tam div-g-tamanho" data-selected="0" data-tamanho = "G"><span class="span-tam">G</span></div>
+                    <div class="box-tam div-gg-tamanho" data-selected="0" data-tamanho = "GG"><span class="span-tam">GG</span></div>
+                    <div class="box-tam div-p-tamanho" data-selected="0" data-tamanho = "P"><span class="span-tam">P</span></div>
+                    <div class="box-tam div-u-tamanho" data-selected="0" data-tamanho = "U"><span class="span-tam">U</span></div>
+                    <div class="box-tam div-36-tamanho" data-selected="0" data-tamanho = "36"><span class="span-tam">36</span></div>
+                    <div class="box-tam div-38-tamanho" data-selected="0" data-tamanho = "38"><span class="span-tam">38</span></div>
+                    <div class="box-tam div-40-tamanho" data-selected="0" data-tamanho = "40"><span class="span-tam">40</span></div>
+                    <div class="box-tam div-42-tamanho" data-selected="0" data-tamanho = "42"><span class="span-tam">42</span></div>
+                    <div class="box-tam div-44-tamanho" data-selected="0" data-tamanho = "44"><span class="span-tam">44</span></div>
+                    <div class="box-tam div-46-tamanho" data-selected="0" data-tamanho = "46"><span class="span-tam">46</span></div>
+                </div>
+            </div>
+
+            <div id="id-div-precos" class="as-div-checkbox as-div-faixa-precos">
+                <div id="head-precos" class="head-categorias-filtro" data-aberto="0">
+                    <h4 class="tit-categorias">FAIXA DE PREÇOS</h4>
+                    <i id="id-precos-mais" class="fas fa-plus filtro-mais mostrar-filtro"></i>
+                    <i id="id-precos-menos" class="fas fa-minus filtro-menos mostrar-filtro"></i>
+                </div>
+                <ul id="id-lista-precos" class="lista-checkboxes lista-precos">
+                    <li>
+                        <input class="checkbox" type="checkbox" name="preco-0-50" id="id-preco-0-50">
+                        <label for="id-preco-0-50">de R$0 até R$50</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" name="preco-51-150" id="id-preco-51-150">
+                        <label for="id-preco-51-150">de R$51 até R$150</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" name="preco-151-300" id="id-preco-151-300">
+                        <label for="id-preco-151-300">de R$151 até R$300</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" name="preco-301-500" id="id-preco-301-500">
+                        <label for="id-preco-301-500">de R$301 até R$500</label>
+                    </li>
+                    <li>
+                        <input class="checkbox" type="checkbox" name="preco-acima-01" id="id-preco-acima-01">
+                        <label for="id-preco-acima-01">a partir de R$01</label> 
+                    </li>
+                </ul> 
+                
+            </div>
+
+            <div class="as-div-botoes-aplicar-limpar">
+                <button id="id-bt-aplicar" class="bt-acao-filtro bt-aplicar">Aplicar</button>
+                <button id="id-bt-limpar" class="bt-acao-filtro bt-limpar">Limpar</button>
+            </div>
+        </aside>
+
+        <div id="ordenar" class="div-ordenar">
+            <div class="div-tit-filtrar">
+                <h3>Ordenar</h3>
+                <i id="id-fechar-ordenacao" class="fas fa-times"></i>
+            </div>
+            <div class="div-tipos-ordenacao">
+                <div id="id-mais-recentes" class="tipo-ordenacao div-por-recente">
+                    <span>Mais recentes</span>
+                </div>
+                <div id="id-maior-preco" class="tipo-ordenacao div-por-maior-preco">
+                    <span>Menor preço</span>
+                </div>
+                <div id="id-menor-preco" class="tipo-ordenacao div-por-menor-preco">
+                    <span>Maior preco</span>                           
+                </div>
+            </div>
+
+        </div>
+
+        <section>
+            <div class="se-div-ordenacao">
+                <select class="select-sort" name="sort" id="id-sort">
+                    <option value="" disabled selected hidden>Ordenar por:</option>
+                    <option value="mais-recentes">Mais recentes</option>
+                    <option value="menor-preco">Menor preço</option>
+                    <option value="maior-preco">Maior preço</option>
+                </select>
+            </div>
+
+            <!-- Cada produto será preenchido pelo javascript por json -->
+            <!-- Todos os itens vão ser adicionados por js -->
+            <div id="se-div-produtos" class="se-div-produtos">
+                
+            </div>
+            <div class="se-div-carregar-mais">
+                <button id="id-carregar-mais" class="bt-carregar-mais">CARREGAR MAIS</button>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <h4>Agência M3 - Agência de Performance Digital - Desenvolvido por <a href="https://hugolc.github.io/Portfolio/" target="_blank">Hugo Correia</a> </h4>
+    </footer>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/18d6c9162d.js" crossorigin="anonymous"></script>
+    <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>
