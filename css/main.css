@@ -19,6 +19,112 @@ body {
     background: var(--ciano-padrao);
 }
 
+.container-carrinho{
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.container-carrinho.show{
+    display: block;
+}
+
+.card-carrinho{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    opacity: 1;
+    width: 40%;
+}
+
+.card-fechar{
+    /* background-color: green; */
+    text-align: right;
+    padding: .7rem 2rem;
+    font-size: 1.5rem;
+}
+
+.card-fechar:hover{
+    cursor: pointer;
+}
+
+.lista-produtos-carrinho{
+    display: flex;
+    align-items: center;
+    margin: 1rem auto;
+    width: 90%;
+    font-size: 2rem;
+   /*  background-color: greenyellow; */
+    padding: .5rem;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+.img-produto-carrinho{
+    width: 70px;
+}
+
+.nome-produto-carrinho{
+    display: inline-block;
+    width: 50%;
+    padding: 0 2rem;
+}
+
+.add-ou-subtrair{
+    display: flex;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.bt-add-sub-qtd{
+    font-size: 1rem;
+    border-radius: 50%;
+    padding: .3rem;
+    background-color: var(--ciano-padrao);
+    color: white;
+}
+
+#id-quantidade{
+    display: inline-block;
+    font-size: 2rem;
+    width: 3rem;
+    text-align: center;
+    /* background-color: yellow; */
+    border: none;
+    margin: .5rem;
+}
+
+.finalizar-container{
+    margin: 1rem;
+    text-align: center;
+}
+
+.bt-finalizar {
+    width: 40%;
+    padding: 1rem 0;
+    border-radius: 0;
+    border: none;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background .3s;
+}
+
+.bt-finalizar:hover {
+    background-color: var(--ciano-padrao);
+    cursor: pointer;
+}
+
+
+
 header{
     display: flex;
     justify-content: space-between;
@@ -43,9 +149,14 @@ header{
     margin-right: 14.5%;
     width: 20px;
     height: 20px;
-    font-size: 20px;
+    font-size: 1.5rem;
     /* background-color:darkorange; */
 }
+
+.he-bag:hover{
+    cursor: pointer;
+}
+
 
 .bag-quantidade{
     display: none;
@@ -187,11 +298,11 @@ input[type='checkbox']:checked::after{
     font-size: 1.2rem;
 }
 
-.fa-minus{
+#id-cores-mais{
     display: none !important;
 }
 
-.fa-plus{
+#id-cores-menos{
     display: none !important;
 }
 

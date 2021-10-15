@@ -5,6 +5,7 @@ const container = document.getElementById('se-div-produtos');
 export default class Catalogo{
     #listaProdutos;
     #numeroNoCarrinho = 0;
+    #listaCarrinho = [];
 
     constructor(listaProdutos){
         this.#listaProdutos = listaProdutos;
@@ -74,10 +75,42 @@ export default class Catalogo{
 
     #escutarCompras(btsComprar) {
         for (let botao = 0; botao < btsComprar.length; botao++) {
-            btsComprar[botao].addEventListener('click', ()=>{
-                this.#numeroNoCarrinho = this.#addCarrinho(this.#numeroNoCarrinho);
+            btsComprar[botao].addEventListener('click', async ()=>{
+                this.#numeroNoCarrinho = this.#addNumeroCarrinho(this.#numeroNoCarrinho);
+                let idProduto = btsComprar[botao].parentElement.dataset.index;
+                console.log(idProduto);
+                let elemProduto = await this.#getProdutoSelecionado(idProduto);
+                this.#addHTMLCarrinho(elemProduto);
             })
         }
+    }
+
+    #getProdutoSelecionado(idProduto){
+        return new Promise((resolve) => {
+            let produtoSelecionado;
+            for (let i = 0; i < this.#listaProdutos.length; i++) {
+                if (this.#listaProdutos[i].id == idProduto) {
+                    produtoSelecionado = this.#listaProdutos[i];
+                    break;
+                }            
+            }
+            resolve(produtoSelecionado);
+        })  
+    }
+
+    #addHTMLCarrinho(elem){
+        let divProdCarrinho = document.getElementById('id-container-produtos');
+        divProdCarrinho.innerHTML += `
+        <div class="lista-produtos-carrinho">
+        <img src="${elem.imagem}" class="img-produto-carrinho" alt="Imagem do produto">
+                <span class="nome-produto-carrinho">${elem.nome}</span>
+                <div class="add-ou-subtrair">
+                    <i id="id-add-qtd-car" class="fas fa-minus bt-add-sub-qtd"></i>
+                    <span id="id-quantidade">1</span>
+                    <i id="id-rem-qtd-car" class="fas fa-plus bt-add-sub-qtd"></i>
+                </div>
+                <i id="id-excluir-carrinho" class="fas fa-trash-alt"></i>
+                </div>`;
     }
 
     carregarMais(listaFiltrada = []){
@@ -110,7 +143,7 @@ export default class Catalogo{
         }
     }
 
-    #addCarrinho(numeroNoCarrinho){
+    #addNumeroCarrinho(numeroNoCarrinho){
         let spanCarrinho = document.getElementById('id-bag-quatidade');
         numeroNoCarrinho++;
         spanCarrinho.innerText = numeroNoCarrinho;

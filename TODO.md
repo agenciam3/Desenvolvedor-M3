@@ -11,11 +11,11 @@
 - [X] Select ordenar customizar
 - [X] Colocar Fonts
 - [X] Responsividade
-- [ ] Carregar mais transition
+- [X] Carregar mais transition
 - [X] Diminuir botões comprar
 - [X] Imagem hover zoom *Segundo plano*
 - [X] Checkbox customizar
-- [ ] Transition: produtos
+- [X] Transition: produtos
 - [X] Transition: aba filtros (usar translate OU heigth + display)
 - [X] Transition: aba ordenar
 - [X] Ver questão do footer
