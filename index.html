@@ -12,22 +12,9 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main.css">
 
-    <title>Document</title>
+    <title>Teste Desenvolvedor M3</title>
 </head>
 <body>
-    <div id="id-container-carrinho" class="container-carrinho">
-        <div class="card-carrinho">
-            <div class="card-fechar">
-                <i id="id-fechar-carrinho" class="fas fa-times"></i>
-            </div>
-            <div id="id-container-produtos" class="container-produtos">
-                <!-- Inserido por JS -->
-            </div>  
-            <div class="finalizar-container">
-                <button id="id-bt-finalizar" class="bt-finalizar">Finalizar compra</button>
-            </div>
-        </div>
-    </div>
     <header>
         <h1 id='teste' class="tit-logo"><img src="img/logo-m3.png" alt=""></h1>
         <div id="id-he-bag" class="he-bag">
@@ -55,8 +42,8 @@
             <div id="id-div-cores" class="as-div-checkbox as-div-cores">
                 <div id="head-cores" class="head-categorias-filtro" data-aberto="0">
                     <h4 class="tit-categorias">CORES</h4>
-                    <i id="id-cores-mais" class="fas fa-plus"></i>
-                    <i id="id-cores-menos" class="fas fa-minus"></i>
+                    <i id="id-cores-mais" class="fas fa-plus filtro-mais mostrar-filtro"></i>
+                    <i id="id-cores-menos" class="fas fa-minus filtro-menos mostrar-filtro"></i>
                 </div>
                 
                 <ul id="id-lista-cores" class="lista-checkboxes lista-cores">
@@ -99,7 +86,7 @@
                         </li>
                         <li>
                             <input class="checkbox checkbox-cor" type="checkbox" name="vinho" id="id-vinho">
-                            <label for="vinho">Vinho</label>
+                            <label for="id-vinho">Vinho</label>
                         </li>
                     </div>
                 </ul>
@@ -110,8 +97,8 @@
             <div id="id-div-tamanhos" class="as-div-tamanhos">
                 <div id="head-tamanhos" class="head-categorias-filtro" data-aberto="0">
                     <h4 class="tit-categorias">TAMANHOS</h4>
-                    <i id="id-tamanhos-mais" class="fas fa-plus"></i>
-                    <i id="id-tamanhos-menos" class="fas fa-minus"></i>
+                    <i id="id-tamanhos-mais" class="fas fa-plus filtro-mais mostrar-filtro"></i>
+                    <i id="id-tamanhos-menos" class="fas fa-minus filtro-menos mostrar-filtro"></i>
                 </div>
 
                 <div id='id-grid-tamanho' class="grid-tamanho">
@@ -132,8 +119,8 @@
             <div id="id-div-precos" class="as-div-checkbox as-div-faixa-precos">
                 <div id="head-precos" class="head-categorias-filtro" data-aberto="0">
                     <h4 class="tit-categorias">FAIXA DE PREÇOS</h4>
-                    <i id="id-precos-mais" class="fas fa-plus"></i>
-                    <i id="id-precos-menos" class="fas fa-minus"></i>
+                    <i id="id-precos-mais" class="fas fa-plus filtro-mais mostrar-filtro"></i>
+                    <i id="id-precos-menos" class="fas fa-minus filtro-menos mostrar-filtro"></i>
                 </div>
                 <ul id="id-lista-precos" class="lista-checkboxes lista-precos">
                     <li>
@@ -206,7 +193,9 @@
         </section>
     </main>
     
-    <footer><h4>Agência M3 - Agência de Performance Digital</h4></footer>
+    <footer>
+        <h4>Agência M3 - Agência de Performance Digital - Desenvolvido por <a href="https://hugolc.github.io/Portfolio/" target="_blank">Hugo Correia</a> </h4>
+    </footer>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/18d6c9162d.js" crossorigin="anonymous"></script>
     <script type="module" src="./js/main.js"></script>

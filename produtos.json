@@ -92,7 +92,8 @@
         "parcelamento" : 3,
         "cores" : [ 
             "AZUL",
-            "BRANCO"
+            "BRANCO",
+            "ROSA"
         ],
         "tamanhos" : [
             "40",
@@ -105,115 +106,6 @@
     },
     {
         "id" : "006",
-        "nome" : "CASACO PELOS",
-        "preco" : 398,
-        "parcelamento" : 5,
-        "cores" : [ 
-            "AMARELO", 
-            "AZUL",
-            "BRANCO",
-            "CINZA",
-            "LARANJA"
-        ],
-        "tamanhos" : [
-            "P",
-            "M",
-            "G",
-            "GG",
-            "U",
-            "36",
-            "38",
-            "40",
-            "42",
-            "44",
-            "46"
-        ],
-        "dataLancamento" : "",
-        "imagem" : "../img/img_7.png"
-    },
-    {
-        "id" : "007",
-        "nome" : "CROPED STRIPES",
-        "preco" : 120,
-        "parcelamento" : 3,
-        "cores" : [ 
-            "AMARELO", 
-            "AZUL",
-            "BRANCO",
-            "CINZA",
-            "LARANJA"
-        ],
-        "tamanhos" : [
-            "P",
-            "M",
-            "G",
-            "GG",
-            "U",
-            "36",
-            "38"
-        ],
-        "dataLancamento" : "",
-        "imagem" : "../img/img_8.png"
-    },
-    {
-        "id" : "008",
-        "nome" : "CAMISA TRANSPARENTE",
-        "preco" : 398,
-        "parcelamento" : 3,
-        "cores" : [ 
-            "AZUL"
-        ],
-        "tamanhos" : [
-            "P",
-            "M",
-            "G",
-            "GG",
-            "U",
-            "36",
-            "38",
-            "40",
-            "42",
-            "44",
-            "46"
-        ],
-        "dataLancamento" : "",
-        "imagem" : "../img/img_9.png"
-    },
-    {
-        "id" : "009",
-        "nome" : "POCHETE CLUTCH",
-        "preco" : 99,
-        "parcelamento" : 3,
-        "cores" : [ 
-            "CINZA",
-            "LARANJA"
-        ],
-        "tamanhos" : [
-            "P"
-        ],
-        "dataLancamento" : "",
-        "imagem" : "../img/img_10.png"
-    },
-    {
-        "id" : "010",
-        "nome" : "BODY LEOPARDO",
-        "preco" : 128,
-        "parcelamento" : 3,
-        "cores" : [ 
-            "AZUL",
-            "BRANCO"
-        ],
-        "tamanhos" : [
-            "40",
-            "42",
-            "44",
-            "46"
-        ],
-        "dataLancamento" : "",
-        "imagem" : "../img/img_6.png"
-    },
-    {
-        "id" : "011",
         "nome" : "CASACO PELOS",
         "preco" : 398,
         "parcelamento" : 5,
@@ -242,7 +134,7 @@
         "imagem" : "../img/img_7.png"
     },
     {
-        "id" : "012",
+        "id" : "007",
         "nome" : "CROPED STRIPES",
         "preco" : 120,
         "parcelamento" : 3,
@@ -252,7 +144,7 @@
             "BRANCO",
             "CINZA",
             "LARANJA",
-            "PRETA"
+            "VERMELHO"
         ],
         "tamanhos" : [
             "P",
@@ -265,5 +157,46 @@
         ],
         "dataLancamento" : "",
         "imagem" : "../img/img_8.png"
+    },
+    {
+        "id" : "008",
+        "nome" : "CAMISA TRANSPARENTE",
+        "preco" : 398,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "AZUL",
+            "VERDE"
+        ],
+        "tamanhos" : [
+            "P",
+            "M",
+            "G",
+            "GG",
+            "U",
+            "36",
+            "38",
+            "40",
+            "42",
+            "44",
+            "46"
+        ],
+        "dataLancamento" : "",
+        "imagem" : "../img/img_9.png"
+    },
+    {
+        "id" : "009",
+        "nome" : "POCHETE CLUTCH",
+        "preco" : 99,
+        "parcelamento" : 3,
+        "cores" : [ 
+            "CINZA",
+            "LARANJA",
+            "VINHO"
+        ],
+        "tamanhos" : [
+            "P"
+        ],
+        "dataLancamento" : "",
+        "imagem" : "../img/img_10.png"
     }
 ]

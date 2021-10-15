@@ -94,7 +94,7 @@ body {
     cursor: pointer;
 }
 
-#id-quantidade{
+.valor-qtd{
     display: inline-block;
     font-size: 2rem;
     width: 3rem;
@@ -254,6 +254,10 @@ input[type='checkbox']{
     justify-content: center;
 }
 
+.mostrar-filtro{
+    display: none !important;
+}
+
 input[type='checkbox']:after{
     content: url("../img/square-full-solid.svg");
     display: none;
@@ -304,14 +308,6 @@ input[type='checkbox']:checked::after{
     display: inline-block;
     margin-bottom: 1rem;
     font-size: 1.2rem;
-}
-
-#id-cores-mais{
-    display: none !important;
-}
-
-#id-cores-menos{
-    display: none !important;
 }
 
 .mais-cores,
@@ -535,6 +531,12 @@ footer h4 {
     padding: .5rem;
 }
 
+footer a:visited,
+footer a{
+    color: white;
+    
+}
+
 
 @media screen and (max-width: 750px) {
     .se-div-ordenacao{
@@ -568,7 +570,8 @@ footer h4 {
     .div-tit-filtrar {
         display: flex;
     }
-    .fa-plus {
+
+    .filtro-mais{
         display: inline-block !important;
     }
 

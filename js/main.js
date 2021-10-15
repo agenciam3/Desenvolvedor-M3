@@ -15,17 +15,6 @@ await fetch("../produtos.json")
 
 const catalogo = new Catalogo(dadosProdutos);
 
-const bagCarrinho = document.getElementById('id-he-bag');
-const containerCarrinho = document.getElementById('id-container-carrinho');
-const iconFecharCarrinho = document.getElementById('id-fechar-carrinho');
-const containerProdutos = document.getElementById('id-container-produtos');
-const maisQtdCarrinho = document.getElementById('id-add-qtd-car');
-const menoQtdCarrinho = document.getElementById('id-rem-qtd-car');
-const excluirItemCarrinho = document.getElementById('id-excluir-carrinho');
-const quantidadeCarrinho = document.getElementById('id-quantidade');
-const botaoFinalizarCompra = document.getElementById('id-bt-finalizar');
-
-
 const btCarregarMais = document.getElementById('id-carregar-mais'); 
 const asideFiltros = document.getElementById('filtros');
 const divOrdenar = document.getElementById('ordenar');
@@ -63,27 +52,6 @@ const iconeFecharOrdenacao = document.getElementById('id-fechar-ordenacao');
 
 
 catalogo.mostrarProdutos();
-
-bagCarrinho.addEventListener('click', ()=>{
-    fecharAbrirCardCarrinho();
-    if (!containerProdutos.innerHTML) {
-        const listaBtsAdd = document.getElementsByClassName('bt-add');
-        for (let i = 0; i < listaBtsAdd.length; i++) {
-            listaBtsAdd[i].addEventListener('click', ()=>{
-                
-            })
-            
-        }
-    }
-});
-
-iconFecharCarrinho.addEventListener('click', ()=>{
-    fecharAbrirCardCarrinho();
-});
-
-botaoFinalizarCompra.addEventListener('click', ()=>{
-    fecharAbrirCardCarrinho();
-});
 
 btAbrirFiltro.addEventListener('click', ()=>{
     abrirFiltroOrdenacao(asideFiltros);
@@ -197,10 +165,6 @@ btCarregarMais.addEventListener('click', ()=>{
         catalogo.carregarMais(listaFiltradaAtual);
     }
 });
-
-function fecharAbrirCardCarrinho(){
-    containerCarrinho.classList.toggle('show');
-}
 
 function lerFiltros() {
     return new Promise(async (resolve) =>{
