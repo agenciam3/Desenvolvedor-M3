@@ -3,7 +3,6 @@ import Catalogo from "./catalogo.js";
 
 var dadosProdutos;
 var listaFiltradaAtual = [];
-var carrinho = [];
 
 //pegar json
 await fetch("../produtos.json")
@@ -19,6 +18,7 @@ const catalogo = new Catalogo(dadosProdutos);
 const bagCarrinho = document.getElementById('id-he-bag');
 const containerCarrinho = document.getElementById('id-container-carrinho');
 const iconFecharCarrinho = document.getElementById('id-fechar-carrinho');
+const containerProdutos = document.getElementById('id-container-produtos');
 const maisQtdCarrinho = document.getElementById('id-add-qtd-car');
 const menoQtdCarrinho = document.getElementById('id-rem-qtd-car');
 const excluirItemCarrinho = document.getElementById('id-excluir-carrinho');
@@ -66,6 +66,15 @@ catalogo.mostrarProdutos();
 
 bagCarrinho.addEventListener('click', ()=>{
     fecharAbrirCardCarrinho();
+    if (!containerProdutos.innerHTML) {
+        const listaBtsAdd = document.getElementsByClassName('bt-add');
+        for (let i = 0; i < listaBtsAdd.length; i++) {
+            listaBtsAdd[i].addEventListener('click', ()=>{
+                
+            })
+            
+        }
+    }
 });
 
 iconFecharCarrinho.addEventListener('click', ()=>{

@@ -90,6 +90,10 @@ body {
     color: white;
 }
 
+.bt-add-sub-qtd:hover{
+    cursor: pointer;
+}
+
 #id-quantidade{
     display: inline-block;
     font-size: 2rem;
@@ -98,6 +102,10 @@ body {
     /* background-color: yellow; */
     border: none;
     margin: .5rem;
+}
+
+.fa-trash-alt:hover{
+    cursor: pointer;
 }
 
 .finalizar-container{

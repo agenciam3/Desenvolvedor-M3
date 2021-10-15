@@ -105,9 +105,9 @@ export default class Catalogo{
         <img src="${elem.imagem}" class="img-produto-carrinho" alt="Imagem do produto">
                 <span class="nome-produto-carrinho">${elem.nome}</span>
                 <div class="add-ou-subtrair">
-                    <i id="id-add-qtd-car" class="fas fa-minus bt-add-sub-qtd"></i>
-                    <span id="id-quantidade">1</span>
-                    <i id="id-rem-qtd-car" class="fas fa-plus bt-add-sub-qtd"></i>
+                    <i class="fas fa-minus bt-add bt-add-sub-qtd"></i>
+                    <span class="valor-qtd">1</span>
+                    <i class="fas fa-plus bt-sub bt-add-sub-qtd"></i>
                 </div>
                 <i id="id-excluir-carrinho" class="fas fa-trash-alt"></i>
                 </div>`;
