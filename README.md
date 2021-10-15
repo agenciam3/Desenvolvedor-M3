@@ -15,7 +15,7 @@
 ### Instruções de uso:
 
 - Utilizar um live server para atender a política CORS. Recomendo o live server do visual studio.
-- Rodar em um navegador o arquivo index.html encontrado na raiz do da pasta principal.
+- Rodar em um navegador o arquivo index.html encontrado na raiz da pasta principal.
 
 ### About me
 - Hugo Lindoso Correia
