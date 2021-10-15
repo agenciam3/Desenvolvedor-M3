@@ -157,7 +157,6 @@ iconeFecharOrdenacao.addEventListener('click', ()=>{
 })
 
 btCarregarMais.addEventListener('click', ()=>{
-    console.log('LISTA ATUAL', listaFiltradaAtual)
     if (listaFiltradaAtual == undefined || listaFiltradaAtual.length == 0) {
         catalogo.carregarMais(); 
     }
@@ -173,13 +172,8 @@ function lerFiltros() {
         let listaDeCores = await getCoresSelecionadas();
         let listaDeTamanhos = await getTamanhosSelecionados();
         let listaDePrecos = await getPrecosSelecionados(); 
-    
-        console.log('cores',listaDeCores);        
-        console.log('tamanhos',listaDeTamanhos);
-        console.log('precos',listaDePrecos);
 
         if (listaDeCores.length == 0 && listaDeTamanhos.length == 0 && listaDePrecos.length == 0) {
-            console.log("Mostrando todos os produtos");
             catalogo.mostrarProdutos(undefined,undefined,true);
             listaFiltradaAtual = [];
             resolve();
@@ -191,9 +185,6 @@ function lerFiltros() {
 
             listaFiltrada = filtroTotal;
             listaFiltrada = removerDuplicidade(listaFiltrada);
-
-            console.log('----------------');
-            console.log('lista filtrada', listaFiltrada);
 
             catalogo.mostrarProdutos(undefined, listaFiltrada, true)
             listaFiltradaAtual = listaFiltrada;
@@ -214,9 +205,7 @@ function limparCheckBoxes() {
 }
 
 function limparDivTamanhos() {
-    console.log('entrou')
     let tamanhoBoxes = document.getElementsByClassName('box-tam');
-    console.log(tamanhoBoxes);
     for (let i = 0; i < tamanhoBoxes.length; i++) {
         if (tamanhoBoxes[i].dataset.selected == 1) {
             tamanhoBoxes[i].classList.toggle('box-tam-selected');
@@ -324,8 +313,7 @@ function getTamanhosSelecionados() {
                 listaTamanhosSelecionados.push(listaBoxTamanho[box].dataset.tamanho);
             }
             else{
-                /* excluirIndexDaLista(listaTamanhosSelecionados, listaBoxTamanho[box].dataset.tamanho);
-                console.log("excluido", listaBoxTamanho[box].dataset.tamanho) */
+
             }
         }
         resolve(listaTamanhosSelecionados);

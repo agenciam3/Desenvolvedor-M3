@@ -23,8 +23,6 @@ export default class Catalogo{
                 container.innerHTML = "";
             }
             
-            console.log("lista para mostrar", lista)
-
             await this.#adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir);
             const botoesComprar = document.getElementsByClassName('bt-comprar');
 
@@ -44,7 +42,6 @@ export default class Catalogo{
     }
 
     #adicionarProdutoHTML(qtdProdutosVisiveis, lista, quantidadeParaExibir){
-        console.log("lista para mostrar", lista)
         return new Promise((resolve)=>{
             for (let produto = qtdProdutosVisiveis; produto < lista.length; produto++) {
                 if (produto < quantidadeParaExibir) {
@@ -153,21 +150,16 @@ export default class Catalogo{
                 }
                 let listaAuxiliar = [];            
 
-                console.log('parametros tamanho', tamanhosSelecionados);
-                console.log('parametros lista elem', listaDeElem);
-
                 for (let i = 0; i < tamanhosSelecionados.length; i++) {    
                     for (let j = 0; j < listaDeElem.length; j++) {
                         for (let k = 0; k < listaDeElem[i].tamanhos.length; k++) {
                         if (listaDeElem[j].tamanhos[k] == tamanhosSelecionados[i]) {
-                                console.log(listaDeElem[j].tamanhos[k], '=', tamanhosSelecionados[i]);
                                 listaAuxiliar.push(listaDeElem[j]);
                                 break;
                             }   
                         }                                    
                     }
                 }
-                console.log('lista aux precos',listaAuxiliar);
                 resolve(listaAuxiliar); 
             }
             else{
@@ -235,11 +227,7 @@ export default class Catalogo{
                             break;
                     }
                 }
-               /*  if (listaAuxiliar.length <= 0) {
-                    listaAuxiliar = listaDeElem;
-                } */
-                
-                console.log('lista aux precos',listaAuxiliar);
+            
                 resolve(listaAuxiliar); 
                 
             }
