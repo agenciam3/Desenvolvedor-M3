@@ -13,5 +13,12 @@
 - [X] Responsividade
 
 ### Instruções de uso:
+
 - Utilizar um live server para atender a política CORS. Recomendo o live server do visual studio.
 - Rodar em um navegador o arquivo index.html encontrado na raiz do da pasta principal.
+
+### About me
+- Hugo Lindoso Correia
+- hugolindoso.c@gmail.com
+- 11 984287291
+- Portfólio https://hugolc.github.io/Portfolio/
