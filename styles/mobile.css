@@ -1,0 +1,122 @@
+#order_mobile, #filter_mobile{
+  display: none;
+  background-color : #fff;
+  font-size: .7rem;
+  width: 100%;
+  align-items: center;
+  cursor: pointer;
+  border: 1px solid #666666;
+  color: #666666;
+  padding: 20px;
+}
+
+#order_mobile:hover, #filter_mobile:hover{
+  border: 1px solid #2c2c2c;
+  background-color: #f5f4f4;
+  color: #2c2c2c;
+}
+
+.buttons_mobile{
+  display: flex;
+  justify-content: space-between;
+  padding: 60px 30px 10px 10px;
+}
+
+.mobile_btn{
+  display: none;
+}
+
+.plus_icon{
+  display: none;
+}
+
+.title_filter_mobile, .title_order_mobile{
+  display: none;
+}
+
+.close_filter, .close_order{
+  display: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width:900px) {
+  .mobile{
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    padding-top: 14px;
+  }
+
+  #order_mobile, #filter_mobile{
+    display: inline;
+  }
+
+  .mobile_btn_show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background-color: #fff;
+    width: 40%;
+    height: 40px;
+    cursor: pointer;
+  }
+
+  .mobile_btn_show:hover{
+    background-color: #2bbff2;
+    color: #fff;
+  }
+
+  .icon_mobile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 0 40px;
+    cursor: pointer;
+  }
+
+  .plus_icon{
+    display: inline;
+    cursor: pointer;
+    width: 10%;
+    justify-content: center;
+  }
+
+  .plus_icon img{
+    width: 60%;
+    height: 10%;
+  }
+
+  .close_filter, .close_order{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #666666;
+    align-items: center;
+  }
+
+  .title_filter_mobile, .title_order_mobile{
+    display: inline;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #666666;
+    margin-left: 40px;
+    padding: 13px 0px;
+    text-transform: uppercase;
+   }
+
+   .icon_close_filter, .icon_close_order{
+    margin-right: 5px;
+    padding: 13px 0;
+    width: 10%;
+  }
+  
+  .icon_close_filter img ,.icon_close_order img{
+    width: 60%;
+    height: 10%;
+    cursor: pointer;
+  }
+}
