@@ -1,7 +1,5 @@
 ## Murilo Gabriel Ferreira
 
-Primeiramente, gostaria de agradecer a oportunidade de realizar o teste, foi bem desafiador e sei que testei meus limites como o estagiário que sou,e vejo que ainda possuo um longo caminho a frente como desenvolvedor e preciso aprender muitas outras coisas. Apesar de não ter finalizado 100% do teste, estou disposto a novos desafios nesta grande empresa e tenho certeza possívelmente serei de grande ajuda na equipe M3 !
-
 ### Itens finalizados 
 
 - Todas as telas possíveis como pedido no Readme.
