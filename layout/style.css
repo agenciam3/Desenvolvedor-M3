@@ -1,0 +1,107 @@
+/*tag*/
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffcbdb;
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    height: 50px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgba(34, 31, 31, 0.9);
+}
+nav a img {
+    height: 30px;
+}
+
+ul {
+   list-style: none;
+}
+
+li {
+    margin-left: 80px;
+}
+footer {
+    background-color: #f4d9d0;
+}
+
+button {
+    background-color: #f4d9d0;
+}
+/*id*/
+#copy {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+}
+
+#colunas {
+    float: right;
+}
+#organizar {
+    clear: both;
+}
+#copy img {
+    padding-left: 5px;
+}
+
+/*class*/
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.blusa {
+    display: flex;
+    width: 70%;
+}
+
+.filtro-container {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    width: 25%;
+}
+
+.cores-container {
+    display: none;
+    flex-direction: column;
+}
+
+.tamanhos-container {
+    display: none;
+    flex-direction: column;
+}
+
+.faixa-container {
+    display: none;
+    flex-direction: column; 
+}
+
+.filtro-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-filtro-container {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 4px;
+} 
+
+.texto {
+   margin: 3px;
+}
+
+.retrair {
+    display: none;
+}
