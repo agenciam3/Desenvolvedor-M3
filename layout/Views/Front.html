@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Teste</title>
+
+    <link type="text/css" rel="stylesheet" media="screen" href="../../layout/Assets/Css/styleTeste.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/layout/Assets/scripts/teste.js"></script>
+  </head>
+
+<body>    
+  <!-- Top bar -->
+  <header>
+    <img class="iconM3" src="/layout/imagens/logo-m3.png">
+    <div class="position-itens">
+      <a onclick="openModal()" >
+        <img class="iconBagM3" src="/layout/Assets/Imgs/bagM3.png">
+      </a>
+      <div class="backSpan">
+        <span>0</span>
+      </div>
+    </div>
+  </header>
+  
+  <div id="OpenModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span onclick="closeModal()" class="close">&times;</span>
+        <div class="modalheader">
+          <h5>PRODUTO</h5>
+          <h5>PRICE</h5>
+          <h5>QUANTITY</h5>
+          <h5>TOTAL</h5>
+        </div>
+        <div>
+          <div class="modalProduct">
+        </div>
+      </div>
+    </div>
+  
+  </div>
+
+  <!--Filtros Mobile-->
+  <div class="FilterAccordion" > 
+    <div class="FilterTitle">
+      <p>Filtrar</p>
+    </div>   
+
+    <div class="AccordionContainer">
+      <button class="accordion">Cores</button>
+      <div id="PanelCores" class="panel">
+      </div>
+
+      <button class="accordion">Tamanhos</button>
+      <div id="PanelTam" class="panel panel-mobile">
+      </div>
+
+      <button class="accordion">Faixa de preços</button>
+      <div id="PanelPreco" class="panel">
+              
+      </div>
+    </div>
+
+    <div class="butonAPL">
+      <button onclick="clearWin()">Aplicar</button>  
+      <button onclick="clearCheck()">Limpar</button>  
+    </div>
+  </div>
+
+  <div class="FilterOrder" >
+    <div class="FilterTitle">
+      <p>Ordenar</p>
+    </div>  
+
+    <div class="FilterOrderBtn"> 
+      <button value="recente">Mais recentes</button>
+      <button value="menorMob">Menor preço</button>
+      <button value="maiorMob">Maior preço</button>
+    </div>
+  </div>
+
+  <!--Filtros e produtos-->
+  <div class="Content-filter">
+      <div class="TitleClothes">
+        <h1>Blusas</h1>
+
+        <select class="select_filter_type">
+          <option value="">Ordenar por:</option>
+          <option value="recente">Mais recentes</option>
+          <option value="menor">Menor preço</option>
+          <option value="maior">Maior preço</option>
+        </select>
+
+      </div>
+      
+      <div class="Content">
+        <div class="grid-container-filter">
+          
+          <!--Filtro de cores-->
+          <div id="Colors" class="Content_colors ">
+            <h2>Cores</h2>     
+
+          </div>
+
+          <!--Filtro de tamanhos-->
+          <div class="Content_tam">  
+            <h2>Tamanhos</h2>
+            <div id="Tamanhos"> 
+           
+            </div>            
+          </div>
+
+          <!--Filtro de preços-->
+          <div id="Faixa_Preco" class="Content_price">
+            <h2>Faixa de preço</h2>
+            
+          </div>
+        </div>
+
+        <div class="grid_container_filter_mobile">
+         
+          <div class="FilterOpen">
+            <button onclick="OpenFilters()" ><span>Filtrar</span></button>
+            <button onclick="OpenOrder()" ><span>Ordenar</span></button>
+          </div>
+
+        </div>        
+        
+         <!--Conteúdo dos produtos-->
+        <div id="grid_produtos" class="grid-container"> 
+         
+        </div>
+        
+      </div>
+    
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <p>Agência M3 - Agência de Performance Digital</p>
+  </footer>
+    
+</body>
+
+</html>
+

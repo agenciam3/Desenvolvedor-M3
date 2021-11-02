@@ -1,0 +1,216 @@
+{
+    "Produtos": [
+      { 
+        "id": 1,
+        "image": "/layout/imagens/img_2.png",
+        "produto":"CAMISA MESCLA",
+        "tag":"camisamescla",
+        "valor": 28.50,
+        "parcela": "até 3x de R$9,33",
+        "cor": "Cinza",
+        "tamanho": "G",
+        "modal": 0
+      },
+      { 
+        "id": 2,
+        "image": "/layout/imagens/img_3.png",
+        "produto":"SAIA EM COURO",
+        "tag":"saiaemcouro",
+        "valor": 398.00,
+        "parcela": "até 5x de R$30",
+        "cor": "Verde",
+        "tamanho": "P",
+        "modal": 0
+      },
+      {
+        "id": 3,
+        "image": "/layout/imagens/img_4.png",
+        "produto":"CARDIGAN TIGRE",
+        "tag":"cardigantigre",
+        "valor": 398.00,
+        "parcela": "até 5x de R$30",
+        "cor": "Laranja",
+        "tamanho": "PP",
+        "modal": 0
+      },
+      { 
+        "id": 4,
+        "image": "/layout/imagens/img_5.png",
+        "produto":"CARDIGAN OFF WHITE",
+        "tag":"cardiganoffwhite",
+        "valor": 99.00,
+        "parcela": "até 3x de R$33,30",
+        "cor": "Branco",
+        "tamanho": "M",
+        "modal": 0
+      },
+      { 
+        "id": 5,
+        "image": "/layout/imagens/img_6.png",
+        "produto":"BODY LEOPARDO",
+        "tag":"bodyleopardo",
+        "valor": 129.00,
+        "parcela": "até 3x de R$43,43",
+        "cor": "Amarelo",
+        "tamanho": "GG",
+        "modal": 0
+      },
+      {
+        "id": 6,
+        "image": "/layout/imagens/img_7.png",
+        "produto":"CASACO PELOS",
+        "tag":"casacopelos",
+        "valor": 398.00,
+        "parcela": "até 5x de R$30",
+        "cor": "Rosa",
+        "tamanho": "P",
+        "modal": 0
+      },
+      { 
+        "id": 7,
+        "image": "/layout/imagens/img_8.png",
+        "produto":"CROPPED STRIPES",
+        "tag":"croppedstripes",
+        "valor": 120.00,
+        "parcela": "até 3x de R$40,00",
+        "cor": "Azul",
+        "tamanho": "M",
+        "modal": 0
+      },
+      {
+        "id": 8,
+        "image": "/layout/imagens/img_9.png",
+        "produto":"CAMISA TRANSPARENT",
+        "tag":"camisatransparent",
+        "valor": 398.00,
+        "parcela": "até 5x de R$30",
+        "cor": "Preto",
+        "tamanho": "GG",
+        "modal": 0
+      },
+      {
+        "id": 9,
+        "image": "/layout/imagens/img_2.png",
+        "produto":"POCHETE CLUTCH",
+        "tag":"pocheteclutch",
+        "valor": 99.00,
+        "parcela": "até 3x de R$33,00",
+        "cor": "Branco",
+        "tamanho": "M",
+        "modal": 0
+      },
+      {
+        "id": 10,
+        "image": "/layout/imagens/img_7.png",
+        "produto":"CROPPED STRIPES",
+        "tag":"croppedstripes",
+        "valor": 120.00,
+        "parcela": "até 3x de R$40,00",
+        "cor": "Azul",
+        "tamanho": "M",
+        "modal": 0
+      }
+    ],
+    "Cores": [
+      { 
+        "id": "01AM",
+        "OptionColor": "Amarelo"
+      },
+      { 
+        "id": "02AZ",
+        "OptionColor": "Azul"
+      },
+      { 
+        "id": "03BC",
+        "OptionColor": "Branco"
+      },
+      { 
+        "id": "04CZ",
+        "OptionColor": "Cinza"
+      },
+      { 
+        "id": "05LJ",
+        "OptionColor": "Laranja"
+      },
+      { 
+        "id": "06VD",
+        "OptionColor": "Verde"
+      },
+      { 
+        "id": "07VM",
+        "OptionColor": "Vermelho"
+      },
+      { 
+        "id": "08PT",
+        "OptionColor": "Preto"
+      },
+      { 
+        "id": "09RS",
+        "OptionColor": "Rosa"
+      },
+      { 
+        "id": "010VO",
+        "OptionColor": "Vinho"
+      }
+    ],
+    "Tamanhos": [
+      {
+        "descricao": "PP"
+      },
+      {
+        "descricao": "P"
+      },
+      {
+        "descricao": "M"
+      },
+      { 
+        "descricao": "G"
+      },
+      { 
+        "descricao": "GG"
+      },
+      { 
+        "descricao": "40"
+      },
+      { 
+        "descricao": "41"
+      },
+      { 
+        "descricao": "42"
+      },
+      { 
+        "descricao": "43"
+      },
+      { 
+        "descricao": "44"
+      },
+      { 
+        "descricao": "45"
+      },
+      { 
+        "descricao": "46"
+      }
+    ],
+    "Faixa": [
+      {
+        "preco": "0/50",
+        "legenda": "de R$0 até R$50"
+      },
+      {
+        "preco": "51/150",
+        "legenda": "de R$51 até R$150"
+      },
+      {
+        "preco": "151/300",
+        "legenda": "de R$151 até R$300" 
+      },
+      {
+        "preco": "301/500",
+        "legenda": "de R$301 até R$500" 
+      },
+      {
+        "preco": "all",
+        "legenda": "a partir de R$01" 
+      }
+    ]
+  }
