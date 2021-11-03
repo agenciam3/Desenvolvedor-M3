@@ -1,393 +1,79 @@
-<!doctype html>
-<html lang="pt-br">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./style.css">
-    <title>New collection</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100&family=Open+Sans:wght@300&family=Poppins:wght@600;700;900&family=Roboto+Mono:wght@100&family=Zen+Antique&family=Zen+Antique+Soft&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>M3 - Ecommerce Website</title>
 </head>
-<body style="min-width:372px;">
-    <nav>
-        <a><img src="./imagens/logo-m3.png" alt="logo"></a>
-        <a href="#">
-            <svg class="bi" width="24" height="24" fill="curreentcolor">
-                <use xlink:href="bi.svg#cart3" />
-            </svg>
-        </a>
-    </nav>
-    <header class="container">
-        <hr class="mt-3" />
+<body>
+    
+    <header id="home" class="header">
+        <nav class="nav">
+
+            <div class="navigation container">
+                <div class="logo">
+                    <img src="./imagens/logo-m3.png">
+                </div>
+                <div class="menu">
+                    <div class="top-nav">
+                        <div class="logo">
+                            <img src="./imagens/logo-m3.png">
+                        </div>
+                        <div class="close">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </div>
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="#home" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="product.html" class="nav-link">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#about" class="nav-link">Quem somos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#account" class="nav-link">Conta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cart.html" class="nav-link icon">
+                                <i class="fas fa-shopping-cart"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="cart.html" class="car-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+
+                    <div class="hamburger">
+                        <i class="bx bx-menu"></i>
+                    </div>   
+                </div>
+            </nav>
+        <div class="hero-content">
+            <h2><span class="discount">70%</span> SALE OFF </h2>
+            <h1>
+                <span>Summer Vibes</span>
+                <span>mode on</span>
+            </h1>
+            <a href="#" class="btn">shop now</a>
+        </div>
     </header>
-    <main class="mb-5 pb-5 mb-md-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-5">
-                    <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
-                        <div class="input-group input-group-sm">
-                            <input type="text" class="form-control" placeholder="Digite aqui o que procura">
-                            <button>
-                                Buscar
-                            </button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12 col-md-7">
-                    <div class="d-flex flex-row-reverse justify-content-center
-                        justify-content-md-start">
-                        <form class="ml-3 d-inline-block">
-                            <select class="form-select form-select-sm">
-                                <option>Ordenar pelo mais recente</option>
-                                <option>Ordenar pelo menor preço</option>
-                                <option>Ordenar pelo maior preço</option>
-                            </select>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3">
-            <div class="filtro-container">
-                <div class="sub-filtro-container">
-                    <div  class="filtro-titulo">
-                        <h6 class="texto">CORES</h6>
-                        <div>
-                            <button class="expandir">+</button>
-                            <button class="retrair">-</button>
-                        </div>
-                    </div>
-                    <div class="cores-container"> 
-                        <label>
-                            <input type="checkbox">
-                            amarelo
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            azul
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            branco
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            cinza
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            laranja
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            verde
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            vermelho
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            preto
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            rosa
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            vinho
-                        </label>
-                    </div>
-                </div>
-                <p></p>
-                <div class="sub-filtro-container">
-                    <div class="filtro-titulo">
-                        <h6 class="texto">TAMANHOS</h6>
-                        <div>
-                            <button class="expandir">+</button>
-                            <button class="retrair">-</button>
-                        </div>
-                    </div>
-                    <div class="tamanhos-container">
-                        <button type="checkbox">P</button>
-                        <button type="checkbox">M</button>
-                        <button type="checkbox">G</button>
-                        <button type="checkbox">GG</button>
-                        <div></div>
-                        <button type="checkbox">u</button>
-                        <button type="checkbox">36</button>
-                        <button type="checkbox">38</button>
-                        <button type="checkbox">40</button>
-                        <div></div>
-                        <button type="checkbox">42</button>
-                        <button type="checkbox">44</button>
-                        <button type="checkbox">46</button>
-                    </div>
-                </div>
-                <p></p>
-                <div class="sub-filtro-container">
-                    <div class="filtro-titulo">
-                        <h6 class="texto">FAIXA DE PREÇO</h6>
-                        <div>
-                            <button class="expandir">+</button>
-                            <button class="retrair">-</button>
-                        </div>
-                    </div>
-                    <div class="faixa-container">
-                        <label>
-                            <input type="checkbox">
-                            de R$ 0 até R$ 50
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            de R$ 51 até R$ 150
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            de R$ 151 até R$ 300
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            de R$ 301 até R$ 500
-                        </label>
-                        <label>
-                            <input type="checkbox">
-                            a parti de 501
-                        </label>
-                    </div>
-                </div>
-                <div>
-                    <br>
-                    <button>
-                        APLICAR
-                    </button>
-                    <button>
-                        LIMPAR
-                    </button>
-                </div>
-            </div>
-            <div class="row g-3 blusa" id="colunas">
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_2.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 28,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">CAMISETA MESCLA</h5>
-                            <P class="card-text">
-                                até 3x R$ 9,33
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_3.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 398,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">SAIA DE COURO</h5>
-                            <P class="card-text">
-                                até 5x R$ 30,00
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_4.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 398,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">CARDIGAN TIGRE</h5>
-                            <P class="card-text">
-                                até 5x R$ 30,00
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_5.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 99,90
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">CARDIGAN OFF WHITE</h5>
-                            <P class="card-tex">
-                                até 3x R$ 33,30
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_6.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 129,90
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">BODY LEOPARDO</h5>
-                            <P class="card-tex">
-                                até 3x R$ 43,43
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_7.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 398,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">CASACO PELOS</h5>
-                            <P class="card-text">
-                                até 5x R$ 30,00
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_8.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 120,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">CROPPED STRIPES</h5>
-                            <P class="card-text">
-                                até 3x R$ 40,00
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_9.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 398,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">CAMISA TRANSPARENTE</h5>
-                            <P class="card-text">
-                                até 5x R$ 30,00
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-x2 col-lg-3 col-md-4 col-sm-6 d-flex align-items-stretch">
-                    <div class="card text-center bg-light">
-                        <img src="./imagens/img_10.png" class="card-img-top">
-                        <div class="card-header">
-                            R$ 99,00
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">POCHETE CLUTCH</h5>
-                            <P class="card-text">
-                                até 3x R$ 33,00
-                            </P>
-                        </div>
-                        <div class="card-footer">
-                            <form class="d-block">
-                                <button>
-                                    COMPRAR
-                                </button>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-3" id="organizar">
-            <div class="row g-3 text-center">
-                <form class="d-block">
-                    <button>
-                        CARREGAR MAIS
-                    </button>
-            </div>
-            <hr class="mt-3">
-        </div>
-    </main>
-    <footer class="border-top fixed-bottom text-muted">
-        <div class="container">
-            <div class="row py-3">
-                <div class="col-12 col-md-4 text-center" id="copy">
-                    &copy; 2021 - <img src="./imagens/logo-m3.png" alt="logo">
-                </div>
-                <div class="col-12 col-md-4 text-center text-md-left">
-                    <a href="#" class="text-decoration-none text-dark">Política de Privacidade</a>
-                </div>
-                <div class="col-12 col-md-4 text-center text-md-right">
-                    <a href="#" class="text-decoration-none text-dark">Administrar</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <script src="./index.js"></script>
 </body>
 </html>
