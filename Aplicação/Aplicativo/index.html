@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>M3 - Teste Técnico</title>
+		<link rel="stylesheet" href="css/style.css"/>
+		<link rel="shortcut icon" sizes="16x16" href="imagens/favicon.png"/>
+	</head>
+
+	<body onload="start()">
+		<div id="loading" class="loading">
+			<img src="imagens/loading.gif"/>
+		</div>
+		<div class="header centralize sidetoside">
+			<a href="/">
+				<img src="imagens/logo-m3.png"/>
+			</a>
+			<div id="bag" class="bag" onclick="displayBag(event)">
+				<img class="bagIMG" src="imagens/bag.png" class="buy"/>
+				<span id="cartqnt"></span>
+				<div id="cartPreview" class="cartPreview">
+					<div class="contentCart">
+						<p id="emptyCart">Seu carrinho está vazio</p>
+						<img src="imagens/loading.gif"/>
+						<div class="cartViewport">
+							
+							
+						</div>
+						<div id="checkout" class="checkout">
+							<div class="sidetoside">
+								<span>Subtotal:</span>
+								<strong id="subtotal"></strong>
+							</div>
+							<span id="installments"></span>
+							
+							<button class="load smaller">Finalizar Compra</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		<hr>
+		<div class="mobile subheader">
+			<h2 class="mtitle">Blusas</h2>
+			<div class="filters">
+				<div class="left button" onclick="showFilters()">Filtrar</div>
+				<div class="right button" onclick="showOrders()">Ordenar</div>
+			</div>
+		</div>
+		
+		<div class="content centralize">
+			<ul class="menu">
+				<li class="title desktop">Blusas</li>
+				<li class="title mobile sidetoside"><span>FILTRAR</span><a onclick="closeFilters()">X</a></li>
+				<div class="mobile sepline"></div>
+				<li onclick="dropItems(this,'.colorlist')" class="filter sidetoside"><h2 class="subtitle">CORES</h2> <span id="colors">+</span></li>
+				<ul class="colorlist" id="colorlist">
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" id="yellow" name="yellow" class="checkbox">
+						<span class="checksquare"></span>
+						<label class="legend" for="yellow">Amarelo</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" id="blue" name="blue" class="checkbox" >
+						<span class="checksquare"></span>
+						<label class="legend" for="blue">Azul</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" id="white" name="white"class="checkbox">
+						<span class="checksquare"></span>
+						<label class="legend" for="white">Branco</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="gray" name="gray">
+						<span class="checksquare"></span>
+						<label class="legend" for="gray">Cinza</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="orange" name="orange">
+						<span class="checksquare"></span>
+						<label class="legend" for="orange">Laranja</label>
+					</li>
+
+					<li class="checkContainer chkh">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="green" name="green">
+						<span class="checksquare"></span>
+						<label class="legend" for="green">Verde</label>
+					</li>
+					<li class="checkContainer chkh">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="red" name="red">
+						<span class="checksquare"></span>
+						<label class="legend" for="red">Vermelho</label>
+					</li>
+					<li class="checkContainer chkh">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="black" name="black">
+						<span class="checksquare"></span>
+						<label class="legend" for="black">Preto</label>
+					</li>
+					<li class="checkContainer chkh">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="pink" name="pink">
+						<span class="checksquare"></span>
+						<label class="legend" for="pink">Rosa</label>
+					</li>
+					<li class="checkContainer chkh">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="wine" name="wine">
+						<span class="checksquare"></span>
+						<label class="legend" for="wine">Vinho</label>
+					</li>
+					
+				</ul>
+				<a id="show-colors" class="desktop" onclick="changeColorView();"><span>Ver todas as cores</span><span id="colorArrow" class="arrow_down rightAlign">&gt;</span></a>
+				<li onclick="dropItems(this,'.sizelist')" class="filter sidetoside"><h2 class="subtitle">TAMANHOS</h2> <span id="sizes">+</span></li>
+				<ul class="sizelist" id="sizelist">
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="P" name="P">
+						<label for="P">P</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="M" name="M">
+						<label for="M">M</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="G" name="G">
+						<label for="G">G</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="GG" name="GG">
+						<label for="GG">GG</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="U" name="U">
+						<label for="U">U</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="t36" name="t36">
+						<label for="t36">36</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="t38" name="t38">
+						<label for="t38">38</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="t40" name="t40">
+						<label for="t40">40</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="t42" name="t42">
+						<label for="t42">42</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="t44" name="t44">
+						<label for="t44">44</label>
+					</li>
+					<li class="size">
+						<input onchange="updateFilter(this)" type="checkbox" hidden="" id="t46" name="t46">
+						<label for="t46">46</label>
+					</li>
+					
+				</ul>
+				
+				<li onclick="dropItems(this,'.pricerangelist')" class="filter sidetoside"><h2 class="subtitle">FAIXA DE PREÇO</h2> <span id="prices">+</span></li>
+				<ul class="pricerangelist" id="pricerangelist">
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="bt0" name="bt0">
+						<span class="checksquare"></span>
+						<label class="legend" for="bt0">de R$ 0 a R$ 50</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="bt50" name="bt50">
+						<span class="checksquare"></span>
+						<label class="legend" for="bt50">de R$ 51 a R$ 150</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="bt150" name="bt150">
+						<span class="checksquare"></span>
+						<label class="legend" for="bt150">de R$ 151 a R$ 300</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="bt300" name="bt300">
+						<span class="checksquare"></span>
+						<label class="legend" for="bt300">de R$ 301 a R$ 500</label>
+					</li>
+					<li class="checkContainer">
+						<input onchange="updateFilter(this)" type="checkbox" class="checkbox" id="any" name="any">
+						<span class="checksquare"></span>
+						<label class="legend" for="any">a partir de R$ 1</label>
+					</li>
+					
+				</ul>
+			
+				<div class="mobile filterButtons">
+					<div onclick="applyFilters()" class="apply fButton">APLICAR</div>
+					<div onclick="clearFilters()" class="clear fButton">LIMPAR</div>
+				</div>
+			</ul>
+			
+			<div class="mainframe">
+				<div class="order">
+					<div class="dropdown">
+						<button onclick="showDrop()" class="dropbtn sidetoside">Ordenar por:
+						<span id="dropArrow" class="arrow_down">&gt;</span>
+						</button>
+						<div id="dropMenu" class="dropMenu">
+							<div class="title mobile sidetoside"><span>ORDENAR</span><a onclick="closeOrder()">X</a></div>
+							<div class="mobile sepline"></div>
+							<a class="dropItem" onclick="orderNew()">Mais recentes</a>
+							<a class="dropItem" onclick="orderMPrice()">Menor preço</a>
+							<a class="dropItem" onclick="orderHPrice()">Maior preço</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="viewport" id="viewport">
+
+				</div>
+			
+				<button class="load" id="load" onclick="getMoreProducts()">CARREGAR MAIS</button>
+			</div>
+		</div>
+		
+		<div class="footer">
+			<h2 class="footer content">Agência M3 - Agência de Performance Digital</h2>
+		</div>
+	</body>
+	<script src="js/source.js"></script> 
+</html>
