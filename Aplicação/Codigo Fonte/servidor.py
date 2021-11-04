@@ -18,7 +18,7 @@ listItems = [
 
 @app.route("/", methods=["GET"])
 def index():
-    with open("D:/M3/index.html", encoding="utf-8") as file:
+    with open("index.html", encoding="utf-8") as file:
         if request.method == "GET":
             return file.read()
 
