@@ -214,3 +214,72 @@ li {
     text-transform: uppercase;
     margin-top: 3rem;
 }
+
+@media only screen and (max-width: 1200px) {
+    .header .hero-img{
+        right: -20%;
+    }
+
+    .hero-content {
+        transform: translate(20%, -50%);
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .hero-content h1 span {
+        font-size: 5rem;
+    }
+}
+
+@media only screen and (max-width: 996px) {
+    .header {
+        min-height: 70vh;
+    }
+    .header .hero-img{
+        height: 40rem;
+        right: -10%;
+    }
+}
+
+@media only screen and (max-width: 567px) {
+    .header{
+        min-height: 100vh;
+    }
+    .header .hero-img{
+        bottom: -15%;
+        right: 0;
+    }
+
+    .hero-content {
+        transform: translate(15%, -50%);
+    }
+
+    .hero-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h1 span {
+        font-size: 4rem;
+    }
+
+    .hero-content a {
+        padding: 1rem 3rem;
+
+    }
+}
+
+/* Advert */
+
+.section {
+    padding: 10rem 0 5rem 0;
+}
+
+/* colocar uma foto do lado da outra */
+
+.advert-center {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem,  1fr));
+    gap: 3rem;
+}
