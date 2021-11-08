@@ -1,0 +1,31 @@
+{
+  "name": "desenvolvedor-m3",
+  "version": "1.0.0",
+  "description": "Desafio da agencia m3 para novos colaboradores",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agenciam3/Desenvolvedor-M3.git"
+  },
+  "author": "Heraldo Ecard Roque Filho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agenciam3/Desenvolvedor-M3/issues"
+  },
+  "homepage": "https://github.com/agenciam3/Desenvolvedor-M3#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-sass": "^5.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "sass": "^1.43.4",
+    "webpack": "^5.62.1"
+  }
+}
