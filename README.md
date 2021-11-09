@@ -1,64 +1,66 @@
-# Venha ser um desenvolvedor da Digital M3
+# Teste Prático - Agência Digital M3
 
-Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
+Conforme instruído por e-mail no dia 22/10/2021 por Vanessa Gomes, estou submetendo o projeto codado dentro do prazo de 10 dias cumprindo os requisitos dispostos no link [https://github.com/agenciam3/Desenvolvedor-M3]( https://github.com/agenciam3/Desenvolvedor-M3 ).
 
-Em Nova Friburgo estamos na: 
-> R. Helena Coutinho, 41 
-> Braunes, Nova Friburgo/RJ
-[https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
+## Desenvolvimento Realizado
 
-Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos em HTML, CSS e JS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+### Requisitos Atendidos
 
-## O que procuramos
-
-### Requisitos Obrigatórios
-
-- Html5, css3;
-- Javascript, jquery;
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
-
-### Desejáveis:
-
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- React
-
-----
-
-## Como se candidatar a vaga
-
-- [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
-
-
-**obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
-
-### Instruções para o teste
-
-O layout se encontra na pasta "layout" em PSD e PNG.
-
-### Obrigatório
-
-- HTML5 e CSS3
-- Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
-- Interação com JSON para filtar os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
+- HTML5 e CSS3;
+- Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado);
+- Interação com JSON para filtar os produtos;
+- Funcionalidade: Filtrar produtos por cor, tamanho e preço;
+- Funcionalidade: Adicionar produto ao carrinho;
+- Funcionalidade: Carregar mais produtos;
+- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes;
+- Responsividade.
 
 #### Bônus
 
 - Javascript sem plugins e modular
-- Grunt, Gulp ou similar
 
-##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+#### Outras Funcionalidades Desenvolvidas
+
+- Micro servidor utilizando Python e Flask para emular um ambiente real;
+- Container para apresentação dos itens no carrinho, cálculo de parcelas totais e preço total (Desktop apenas);
+- Telas de carregamento e animações enquanto aguarda resposta do servidor;
+- Desenvolvimento sem quaisquer framework e/ou biblioteca que não fossem nativas do CSS, Javascript e HTML.
+
+#### Funcionalidades Idealizadas Porém Não Realizadas Neste Commit
+
+- Container para apresentação dos itens no carrinho, cálculo de parcelas totais e preço total (Mobile);
+- Documentação do código;
+- Reorganização das funções de forma mais clara.
+
+#### Dificuldades Encontradas
+
+- Pouco tempo para desenvolvimento em minha rotina (efetivamente só pude codar durante 3 dias);
+- Consequentemente, pouco tempo para realização de mais testes unitários.
+
+## Instruções de Utilização
+
+### Sem utilizar o executável criado
+
+- Instalar o [interpretador python]( https://github.com/agenciam3/Desenvolvedor-M3 ) (Testado na versão 3.9.5);
+- Clonar este repositório;
+- Abrir a pasta principal deste repositório;
+- Abrir o Terminal/CMD e rodar o seguinte comando: *pip install -r requirements.txt*;
+- Ainda no Terminal/CMD, rodar o seguinte comando: *cd 'Aplicação/Codigo Fonte'*;
+- Executar no Terminal/CMD o seguindo comando: *py servidor.py*;
+- Por fim, abrir o navegador e acessar o ip: [http://127.0.0.1:7777]( http://127.0.0.1:7777 ).
+
+### Utilizando o executável criado
+
+- Clonar este repositório;
+- Acessar a pasta *Aplicação*;
+- Acessar a pasta *Aplicativo*;
+- Executar o arquivo *servidor.exe*; 
+- Por fim, abrir o navegador e acessar o ip: [http://127.0.0.1:7777]( http://127.0.0.1:7777 ).
+> **Observação**: Aplicativo gerado utilizando Python 3.9.5, ou seja, terá compatibilidade com Windows 8+.
+
+----
+
+Desde já agradeço a atenção
+Att,
+
+Contato: [wallace13@hotmail.com.br](mailto:wallace13@hotmail.com.br)
