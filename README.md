@@ -1,8 +1,6 @@
 # Venha ser um desenvolvedor da Digital M3
 
-Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ e um escritório comercial na cidade de São Paulo.
-
-Em Nova Friburgo estamos na: 
+Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ. Mas contratamos pessoas de todo o pais, visto que trabalhamos 100% home office.  
 > R. Helena Coutinho, 41 
 > Braunes, Nova Friburgo/RJ
 [https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
@@ -15,6 +13,7 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 
 - Html5, css3;
 - Javascript, jquery;
+- Consumo de APIs.
 - Versionamento Git;
 - Grunt/gulp;
 - Sass/less;
@@ -26,6 +25,8 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 
 - Experiência com algum CMS
 - Conhecimento/Experiência em Vtex
+- Nodejs
+- Typescript
 - React
 
 ----
@@ -43,13 +44,12 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 
 ### Instruções para o teste
 
-O layout se encontra na pasta "layout" em PSD e PNG.
+O layout se encontra na pasta "layout" em PNG e pode ser acessado pelo [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1).
 
 ### Obrigatório
 
 - HTML5 e CSS3
-- Interação com JSON para renderizar os produtos (fique livre para criar o JSON no formato que achar mais adequado)
-- Interação com JSON para filtar os produtos
+- Requisição a API para obter os produtos
 - Funcionalidade: Filtrar produtos por cor, tamanho e preço.
 - Funcionalidade: Adicionar produto ao carrinho.
 - Funcionalidade: Carregar mais produtos.

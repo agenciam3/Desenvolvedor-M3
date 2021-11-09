@@ -88,7 +88,6 @@ function img() {
 
 const build = series(clean, parallel(styles, scripts, html, img));
 const dev = () => {
-  server();
   watch(paths.scripts.watch, { ignoreInitial: false }, scripts).on(
     "change",
     browserSync.reload
@@ -99,6 +98,7 @@ const dev = () => {
     "change",
     browserSync.reload
   );
+  server();
 };
 
 exports.build = build;
