@@ -1,0 +1,26 @@
+.carrito {
+    width: 80%;
+    position: absolute;
+    margin: auto;
+    background: rgba(16, 147, 223, 0.61);
+    transform: translate(24%);
+    transition: all 0.5s;
+}
+
+.carrito--disabled {
+    max-height: 0;
+    opacity: 0;
+}
+
+.carrito li {
+    display: block;
+    color: white;
+    height: 50px;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 225, 0.3);
+}
+
+.carrito li:hover {
+    color: black;
+    background: white;
+}

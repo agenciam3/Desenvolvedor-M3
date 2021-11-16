@@ -1,0 +1,15 @@
+#carrito {
+    display: none;
+}
+
+header span {
+    float: right;
+    font-size: 30px;
+    margin: 6px;
+    cursor: pointer;
+}
+
+header img {
+    float: left;
+    margin: 3px;
+}
