@@ -232,19 +232,19 @@ p:last-child{
     position: relative;
 }
 
-#menu__car{
+#car{
     text-align: center;
 }
- .menu #menu__car{
+ .menu #car{
     display: none;
  }
 
- .menu:hover #menu__car{
+ .menu:hover #car{
     display: block;
     position: absolute;
     top: 100%;
 
-    right: 0;
+    right: -8rem;
     z-index: 1;
     background-color: #4DE1F9;
     padding: 20px;
@@ -255,6 +255,12 @@ p:last-child{
 .list-car{
     width: 100%;
 }
+
+td{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
  th,  td{
      border-bottom: 1px solid #e1e1e1;
      padding: 12px 15px;
@@ -288,6 +294,15 @@ p:last-child{
      width: 100%;
  }
 
+ .btn-delete{
+     color: white;
+     text-decoration: none;
+     font-size: 1.2em;
+     font-weight: 500;
+     background-color: red;
+     border-radius: 100%;
+     padding: .4rem .8rem;
+ }
 
 
 

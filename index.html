@@ -27,22 +27,21 @@
                     <ul>
                         <li class="menu">
                             <span class="header__icon"><i class="fas fa-shopping-bag"></i></span>
-                                <div id="menu__car"> 
-                                        <table id="list" class="list-car">
-                                            <thead>
-                                                <tr>
-                                                    <th>Imagen</th>
-                                                    <th>Nombre</th>
-                                                    <th>Precio</th>
-                                                    <th>Cantidad</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody></tbody>
-                                        </table>
-
-                                        <a href="#" id="empty__cart" class="btn__empty">Vaciar Carrito</a>
-                                </div>
+                            <div id="car">
+                                <table id="list" class="list-car">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="items"></tbody>
+                                </table>
+                                <a href="#" id="empty__cart" class="btn__empty">Vaciar Carrito</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -126,166 +125,24 @@
                     </select>
                 </article>
 
-                <article class="content__container" id="items">
-                    <!-- <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__img">
-                            <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
-                        </div>
-                        <div class="card__footer">
-                            <p class="card__title">
-                                camiseta mescla
-                            </p>
-                            <h3 class="card__price">R$ 28,00</h3>
-                            <P>at&eacute; 3x de R$9,33</P>
-                        </div>
-                        <div class="card__btn">
-                            <a href="#" class="card__button">
-                                COMPRAR
-                            </a>
-                        </div>
-                    </div> -->
+                <article class="content__container" id="cards">
+
                 </article>
                 <button class="content__btn">CARREGAR MAIS</button>
             </section>
         </main>
 
     </div>
+
+    <template id="template-items">
+        <tr>
+            <td><img src="" width="70" height="80"></td>
+            <td>title</td>
+            <td>precio</td>
+            <td>cantidad</td>
+            <td><a href="#" class="btn-delete">x</a></td>
+        </tr>
+    </template>
 
     <template id="template__card">
         <div class="card">
@@ -297,7 +154,7 @@
                     camiseta mescla
                 </p>
                 <h3 class="card__price">R$ 28,00</h3>
-                <P id="description">at&eacute; 3x de R$9,33</P>
+                <P class="description">at&eacute; 3x de R$9,33</P>
             </div>
             <div class="card__btn">
                 <a href="#" class="card__button">
