@@ -7,7 +7,7 @@
   <!--Me, the author-->
   <meta name="author" content="Pedro Santos">
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Desenvolvedor M3</title>
@@ -17,52 +17,96 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-  <header class = "header">
+  <header id = "header">
+    <div id = "header-content">
+      <a id = "header-content-brand" href="#"><img src = "img/logo-m3.png"></a>
+      
+      <div id = "header-content-bag-items">
           
-    <a class = "header-brand" href="#"><img src = "img/logo-m3.png"></a>
-    
-    <div class = "header-bag-items">
-        
-    </div>
+      </div>
 
-    <i class="fas fa-shopping-bag fa-2x"></i>    
+      <i class="fas fa-shopping-bag fa-2x"></i>   
+    </div> 
   </header>
   <main>
-      <div class = "content">
-          <div class = "content-section">
-              <div class = "content-section-title">
-
+      <div id = "content">
+          <div id = "content-section">
+              <div id = "content-section-title">
+                <h2 id = "content-section-title-h2">Blusas</h2>
               </div>
-              <div class = "content-section-sort">
-
-              </div>
-          </div>
-          <div class = "content-filters">
-              <div class = "content-filters-colors">
-
-              </div>
-              <div class = "content-filters-sizes">
-
-              </div>
-              <div class="content-filters-prices">
-
+              <div id = "content-section-order-by">
+                <div id = "dropdown-select">
+                  <span class="select">Ordenar por:</span>
+                  <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-list">
+                  <div class="dropdown-list-item"><a id = "mais-recente" href ="#">Mais recente</a></div>
+                  <div class="dropdown-list-item"><a id = "menor-preco" href ="#">Menor preço</a></div>
+                  <div class="dropdown-list-item"><a id = "maior-preco" href ="#">Maior preço</a></div>
+                </div>
               </div>
           </div>
-          <div class="content-products">
-              
+          <div id = "content-main">
+            <div id = "content-main-filters">
+                <h4 class = "filter-title">CORES</h4>
+                <div id = "content-main-filters-colors">
+                  
+                </div>
+                <h4 class = "filter-title">TAMANHOS</h4>
+                <div id = "content-main-filters-sizes">
+                  
+                </div>
+                <h4 class = "filter-title">FAIXA DE PREÇO</h4>
+                <div id="content-main-filters-prices">
+                  
+                  <div class="filter">
+                    <input type = "checkbox" id = "content-main-filters-prices-range-1" name = "price-range">
+                    <label for = "content-main-filters-prices-range-1">de R$0 até R$50</label>
+                  </div>
+                  <div class="filter">
+                    <input type = "checkbox" id = "content-main-filters-prices-range-2" name = "price-range">
+                    <label for = "content-main-filters-prices-range-2">de R$51 até R$150</label>
+                  </div>
+                  <div class="filter">
+                    <input type = "checkbox" id = "content-main-filters-prices-range-3" name = "price-range">
+                    <label for = "content-main-filters-prices-range-3">de R$151 até R$300</label>
+                  </div>
+                  <div class="filter">
+                    <input type = "checkbox" id = "content-main-filters-prices-range-4" name = "price-range">
+                    <label for = "content-main-filters-prices-range-4">de R$301 até R$500</label>
+                  </div>
+                  <div class="filter">
+                    <input type = "checkbox" id = "content-main-filters-prices-range-5" name = "price-range">
+                    <label for = "content-main-filters-prices-range-5">a partir de R$1</label>
+                  </div>
+                </div>
+            </div>
+            <div id="content-main-products">
+              <div id="content-main-products-area">
+
+              </div>
+              <div id="content-main-products-button">
+                <a href = "#content-main-products-button" id = "btn-more">CARREGAR MAIS</a>
+              </div>
+            </div>
+            
           </div>
-          <a href = "">CARREGAR MAIS</a>
       </div>  
   </main>
   <footer>
       <p>Agência M3 - Agência de Performance Digital</p>
   </footer>
 </body>
-<h1>Desafio m3</h1>
+<!--<h1>Desafio m3</h1>-->
 
 <script src="bundle.js"></script>
 
