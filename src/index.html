@@ -26,15 +26,22 @@
 </head>
 
 <body>
-  <header id = "header">
-    <div id = "header-content">
-      <a id = "header-content-brand" href="#"><img src = "img/logo-m3.png"></a>
+  <header class = "header">
+    <div class = "header-content">
+      <a class = "header-content-brand" href="#"><img src = "img/logo-m3.png"></a>
       
-      <div id = "header-content-bag-items">
-          
-      </div>
+      
+      <div class = "header-content-bag">
+        <i class="fas fa-shopping-bag fa-2x"></i> 
+        <div class="header-content-bag-circle" id="number-of-items">
 
-      <i class="fas fa-shopping-bag fa-2x"></i>   
+        </div>
+        <div class = "header-content-bag-items" id = "header-content-bag-items">
+          <div class="header-content-bag-items-triangle"></div>
+          <p id = "bolsa-vazia">Bolsa Vazia :(</p>
+        </div>
+      </div>
+       
     </div> 
   </header>
   <main>
@@ -42,6 +49,14 @@
           <div id = "content-section">
               <div id = "content-section-title">
                 <h2 id = "content-section-title-h2">Blusas</h2>
+              </div>
+              <div id = "content-section-mobile">
+                <div id="content-section-mobile-filter">
+                  <p>Filtrar</p>
+                </div>
+                <div id="content-section-mobile-order-by">
+                  <p>Ordenar</p>
+                </div>
               </div>
               <div id = "content-section-order-by">
                 <div id = "dropdown-select">
@@ -86,7 +101,7 @@
                   </div>
                   <div class="filter">
                     <input type = "checkbox" id = "content-main-filters-prices-range-5" name = "price-range">
-                    <label for = "content-main-filters-prices-range-5">a partir de R$1</label>
+                    <label for = "content-main-filters-prices-range-5">a partir de R$501</label>
                   </div>
                 </div>
             </div>
