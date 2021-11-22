@@ -18,24 +18,23 @@ function renderAll (data){
     renderProducts (data);
     renderFilterColors (data);
     renderFilterSizes (data);
-    
+    console.log(data);
 }
 
 document.getElementById('btn-more').onclick = function (){
     if(cardsPerTime <= 14){
         cardsPerTime += 3;
     }
-    console.log(cardsPerTime);
+    
     getJSON('http://localhost:5000/products', function (getData) {  renderProducts (getData); });
 
 };
 
 function renderProducts (data){
-
-    
+  
     const contentProducts = document.getElementById("content-main-products-area");
     contentProducts.innerHTML = "";
-
+    
     data.slice(0,cardsPerTime).forEach (function (value, i) {
         let div = "";
         
@@ -44,10 +43,12 @@ function renderProducts (data){
         div += "<p class = 'name' id = 'content-products-card-area-"+ value.id +"-name'>"+value.name+"</p>"
         div += "<p class = 'price' id = 'content-products-card-area-"+ value.id +"-price'>"+value.price.toLocaleString('pt-br', {style:'currency', currency:'BRL'})+"</p>"
         div += "<p class = 'parcelamento' id = 'content-products-card-area-"+ value.id +"-parcelamento'> até "+value.parcelamento[0]+"x de "+value.parcelamento[1].toLocaleString('pt-br', {style:'currency', currency:'BRL'})+"</p>"
-        div += "<a class = 'btn-buy' href = '#' id = '"+ value.id +"'>COMPRAR<a>"
+        div += "<a class = 'btn-buy'  id = 'product-"+ value.id +"'>COMPRAR<a>"
         div += "</div>"
-        contentProducts.innerHTML += div; 
+        contentProducts.innerHTML += div;
     });
+    return document.getElementsByClassName('btn-buy');
+    
 }
 
 function renderFilterColors (data) {
@@ -84,13 +85,13 @@ function renderFilterSizes (data) {
 }
 
 function renderFilters(data, id, name){
-    let arrayLenght = Object.keys(data).length;
+    let arrayLength = Object.keys(data).length;
 
-    for (let i = 0; i < arrayLenght; i++) {
+    for (let i = 0; i < arrayLength; i++) {
         
         const contentFilter = document.getElementById(id);
         contentFilter.innerHTML += "<div class = 'filter'> <input type ='checkbox' id = '"+ data[i] +"' name = '"+ name +"' > <label for = '" + data[i]+ "' >" + data[i]+ "</label> </div>";
-        
+
     };
 }
 
@@ -98,9 +99,9 @@ function renderFilters(data, id, name){
 function removeDuplicates (arr){
     
     let unique = [];
-    let arrayLenght = Object.keys(arr).length;
+    let arrayLength = Object.keys(arr).length;
     
-    for (let i=0; i<arrayLenght; i++){
+    for (let i=0; i<arrayLength; i++){
         if (!unique.includes(arr[i])){
             unique.push(arr[i]);
         };
@@ -155,48 +156,7 @@ function sortProducts (data, direction, criteria){
     renderProducts(data);
 };
 
-/*
-document.getElementById('content-main-filters-sizes').onclick = function () {
-    var filtros = [];
-    let arr = [];  
-    var markedCheckbox = document.getElementsByName('size-filter');  
-    for (var checkbox of markedCheckbox) {  
-      if (checkbox.checked) { 
-        arr.push(checkbox.id);
-      }
-    }
-    
-    getJSON('http://localhost:5000/products', function (getData) {  filterProducts (getData, arr); });
-} 
 
-
-document.getElementById('content-main-filters-colors').onclick = function () {
-    var filtros = [];
-    let arr = [];  
-    var markedCheckbox = document.getElementsByName('color-filter');  
-    for (var checkbox of markedCheckbox) {  
-        if (checkbox.checked){  
-            arr.push(checkbox.id);
-            
-        }
-    }
-    getJSON('http://localhost:5000/products', function (getData) {  filterProducts (getData, arr); });
-    
-    
-} 
-var filtros = [];
-
-function filterProducts (data, filters){
-    
-    var res = data.filter(function(item){
-        return filters.includes(item.color)
-    });
-    console.log(filters[1]);
-    
-    console.log(res);
-    
-}
-*/
 
 document.getElementById('content-main-filters-sizes').onclick = function () {
     getFilters();
@@ -292,7 +252,7 @@ function filterProducts (data, filters, sizeFilterActive, colorFilterActive, pri
                 return item.price >= 301 && item.price <=500;
             }
             if (filters.includes('content-main-filters-prices-range-5')){
-                return item.price > 1
+                return item.price > 501
             }
 
         });
@@ -302,36 +262,60 @@ function filterProducts (data, filters, sizeFilterActive, colorFilterActive, pri
     console.log(data);
 }
 
-document.getElementById('btn-buy').onclick = function (){
-    getJSON('http://localhost:5000/products', function (getData) {  addProductsToBag (getData); });
 
-};
-
-function addProductsToBag (data) {
+var cart = [];
+function addProductsToBag (data, index) {
     
+    index = (index.replace('product-', ""))-1;
+    console.log(data[index].name);
+    cart.push(data[index]);
+    console.log(cart);
     var div = document.getElementById('header-content-bag-items');
     var item = "";
 
-    item += "<div class = 'bag-item'>"
-    item += "<img id = 'bag-item-image"+data.id+"'>"
-    item += "<div class = 'bag-item'>"
-    item += "<div class = 'bag-item'>"
+    item += "<div class = 'header-content-bag-items-item' id = 'bag-item-"+data[index].id+"' >"
+    item += "<img id = 'bag-item-image"+data[index].id+"' src = '"+ data[index].image +"'>"
+    item += "<p id = 'bag-item-"+data[index].id+"-name'>"+data[index].name+"  -  </p>"
+    item += "<p id = 'bag-item-"+data[index].id+"-price'>"+data[index].price.toLocaleString('pt-br', {style:'currency', currency:'BRL'})+"</p>"
+    item += "<i class='fas fa-minus-circle'></i>"
     item += "</div>"
+    div.innerHTML += item;
+    if(cart.length === 1)
+    document.getElementById('bolsa-vazia').remove();
 
+    numberOfItems(cart);
 };
 
 
-/*
-document.getElementById('content-main-filters-colors').onclick = function() {
-    let arr = [];  
-    var markedCheckbox = document.getElementsByName('color-filter');  
-    for (var checkbox of markedCheckbox) {  
-      if (checkbox.checked)  
-        arr.push(checkbox.id);
-        
-    } 
-    console.log(arr);
-}  */
+
+
+function getButtons (){
+    return document.getElementsByClassName('btn-buy');    
+};
+
+ document.getElementById('content-main-products-area').onclick =  function teste () {
+     
+    elements = getButtons();
+    console.log(elements.length);
+    for(var i = 0, len = elements.length; i < len; i++) {
+        elements[i].onclick = function () {
+            var index = this.id;
+            console.log(this.id);
+            getJSON('http://localhost:5000/products', function (getData) {  addProductsToBag (getData, index); });
+        }
+    }
+ }
+
+
+function numberOfItems(cart){
+    var div = document.getElementById('number-of-items');
+    console.log("cart length"+cart.length)
+    div.innerHTML = "<p>"+cart.length+"</p>"
+}
+
+document.getElementById('content-section-mobile-filter').onclick = function (){
+    document.getElementById('content-main-filters').setAttribute("style", "visibility: visible;");
+}
+
 
 main();
-
