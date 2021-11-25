@@ -21,6 +21,11 @@ const modal = document.querySelector('#modal');
 // EventListener
 document.addEventListener('DOMContentLoaded', () => {
     obtenerProductos();
+
+    if(localStorage.getItem('carrito')){
+        cart = JSON.parse(localStorage.getItem('carrito'))
+        paintShoppingCart();
+    }
 });
 
 cards.addEventListener('click', e =>{
@@ -178,7 +183,16 @@ const paintShoppingCart = () =>{
         fragment.appendChild(clone);
     })
     items.appendChild(fragment)
+
+    // Agrego carrito a Localstorage
+    almacenarStorage();
 }
+
+const almacenarStorage = () =>{
+    localStorage.setItem('carrito', JSON.stringify(cart))
+}
+
+
 // Clean HTML shopping cart
 const limpiarCart = () =>{
     while(items.firstChild){
