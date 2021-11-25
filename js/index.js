@@ -41,20 +41,23 @@ function hideOrdenar() {
     
     menu.style.display = "none";
 
-    if ( options.style.display != "none" ) {
+    let isMobile = window.getComputedStyle(document.getElementById('options')).display != "none";
+
+    if (isMobile) {
         leftOptions.style.display = "none";
     }
 }
 
-function hideCategories(){
-    let menu = document.getElementById("category");
-    let options = document.getElementById("options");
-    let leftOptions = document.getElementById("left-options");
+function hideCategories() {
+    let options = document.getElementById("options");           // movil
+    let leftOptions = document.getElementById("left-options");  // desktop
 
-    menu.style.display = "none";
-    
-    if ( options.style.display != "none" ) {
-        leftOptions.style.display = "none";
+    let category = document.getElementById("category");         // menu
+
+    let isMobile = window.getComputedStyle(document.getElementById('options')).display != "none";
+
+    if (isMobile) {
+        category.style.display = "none";
     }
 }
 
@@ -290,6 +293,7 @@ function getProducts() {
 
     clearProductList();
     printProducts();
+
     hideCategories();
 
     readTextFile("../products.json", function(text) {

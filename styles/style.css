@@ -232,15 +232,15 @@ body {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    height: 0px;
+    width: 0px;
   }
   
   /* Create a custom checkbox */
   .checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     height: 25px;
     width: 25px;
     background-color: #fff;
@@ -358,13 +358,13 @@ body {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    height: 0;
-    width: 0;
+    height: 0px;
+    width: 0px;
 }
 .checkmark {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 0px;
+    left: 0px;
     height: 25px;
     width: 25px;
     background-color: #fff;
@@ -430,6 +430,8 @@ body {
 }
 
 
+/*desktop view*/
+
 @media screen and (min-width: 800px) {
     .main-title {
         text-align: left;
@@ -452,6 +454,7 @@ body {
     }
     .left-options {
         display: block;
+        height: 1000px;
     }
     .color-list {
         display: block;
@@ -462,7 +465,7 @@ body {
     .menu {
         position: relative;
         display: block;
-        height: 0;
+        height: 0px;
         width: 100%;
         background-color:white;
     }
@@ -518,6 +521,12 @@ body {
         justify-content: center;
         align-items: center;
         margin-left: 370px;
+    }
+    .apply-btn {
+        height: 40px;
+        width: 140px;
+        font-size: 15px;
+        padding: 0px;
     }
 
 }
