@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desemvolvedor M3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:ital,wght@0,400;0,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="header__container">
+                <div class="header__logo">
+                    <img src="./layout/imagens/logo-m3.png" alt="logo m3" class="header__image">
+                </div>
+
+                <div class="container__car">
+                    <ul>
+                        <li class="menu">
+                            <span class="header__icon"><i class="fas fa-shopping-bag"></i></span>
+                            <div id="car">
+                                <table id="list" class="list-car">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th>Cantidad</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="items"></tbody>
+                                </table>
+                                <a href="#" id="empty__cart" class="btn__empty">Vaciar Carrito</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main class="main">
+            <div class="nav">
+                <p class="nav__title">Blusas</p>
+                <ul class="nav__menu">
+                    <li onclick="openModal()" class="nav__list">
+                        Filtrar
+                    </li>
+                    <li class="nav__list nav__list-border">
+                        Ordenar
+                    </li>
+                </ul>
+               
+            </div>
+            <section class="modal" id="modal">
+                <div class="modal__container">
+                    <div class="modal__text">
+                        <h2 class="modal__title">Filtrar</h2>
+                        <button onclick="closeModal()" class="modal__close">
+                            x
+                        </button>
+                    </div>
+                    <div class="accordion">
+                        <div class="accordion__content">
+                            <div class="accordion__label">CORES</div>
+                            <div class="conten">
+                                <form class="form">
+                                    <label class="menu__label">
+                                        <input type="checkbox"
+                                        name="color"
+                                        value="amarelo"
+                                        id="amarelo"
+                                        class="colors">
+                                        Amarelo
+                                    </label><br>
+                                    <label>
+                                        <input type="checkbox"
+                                        name="color"
+                                        value="azul"
+                                        id="azul"
+                                        class="colors">
+                                        Azul
+                                    </label><br>
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="cinza"
+                                        id="cinza"
+                                        class="colors">
+                                        Cinza
+                                    </label><br />
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="laranja"
+                                        id="laranja"
+                                        class="colors">
+                                        Laranja
+                                    </label><br />
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="verde"
+                                        id="verde"
+                                        class="colors">
+                                        Verde
+                                    </label><br />
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="vermelho"
+                                        id="vermelho"
+                                        class="colors">
+                                        Vermelho
+                                    </label><br />
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="preto"
+                                        id="preto"
+                                        class="colors">
+                                        preto
+                                    </label><br />
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="rosa"
+                                        id="rosa"
+                                        class="colors">
+                                        Rosa
+                                    </label><br />
+                                    <label><input type="checkbox"
+                                        name="color"
+                                        value="vinho"
+                                        id="vinho"
+                                        class="colors">
+                                        Vinho
+                                    </label><br />
+                                    
+                                </form>
+                            </div>
+                        </div>
+                        <div class="accordion__content">
+                            <div class="accordion__label">TAMANHOS</div>
+                            <div class="conten">
+                                <article class="sizes">
+                                    <div class="sizes__item">
+                                        <span class="sizes__items">P</span>
+                                        <span class="sizes__items">M</span>
+                                        <span class="sizes__items">G</span>
+                                        <span class="sizes__items">GG</span>
+                                    </div>
+                                    <div class="sizes__item">
+                                        <span class="sizes__items">U</span>
+                                        <span class="sizes__items">36</span>
+                                        <span class="sizes__items">38</span>
+                                        <span class="sizes__items">40</span>
+                                    </div>
+                                    <div class="sizes__item">
+                                        <span class="sizes__items">42</span>
+                                        <span class="sizes__items">44</span>
+                                        <span class="sizes__items">46</span>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="accordion__content">
+                            <div class="accordion__label">FAIXA DE PRECO</div>
+                            <div class="conten">
+                                <article class="price">
+                                    <form>
+                                        <label><input type="checkbox" class="check__price"
+                                            value="50"> de R$0 at&eacute; R$50
+                                        </label> <br />
+                                        <label><input type="checkbox" class="check__price"
+                                            value="150"> de R$51 at&eacute; R$150
+                                        </label> <br />
+                                        <label><input type="checkbox" class="check__price"
+                                            value="300"> de R$151 at&eacute; R$300
+                                        </label><br />
+                                        <label><input type="checkbox" class="check__price"
+                                            value="500"> de R$301 at&eacute; R$500
+                                        </label> <br />
+                                        <label><input type="checkbox" class="check__price"
+                                            value="1"> a partir de R$01
+                                        </label> <br />
+                                    </form>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside class="options">
+                <nav class="options__color">
+                    <h3 class="form__title">Blusas</h3>
+                    <form class="form__color">
+                        <p>Cores</p>
+                        <label>
+                            <input type="checkbox"
+                            name="color"
+                            value="amarelo"
+                            id="amarelo"
+                            class="colors">
+                            Amarelo
+                        </label><br>
+                        <label><input type="checkbox"
+                            name="color"
+                            value="rosa"
+                            id="rosa"
+                            class="colors">
+                            Rosa
+                        </label><br />
+                        <label><input type="checkbox"
+                            name="color"
+                            value="branco"
+                            id="branco"
+                            class="colors">
+                            Branco
+                        </label><br />
+                        <label><input type="checkbox"
+                            name="color"
+                            value="cinza"
+                            id="sinza"
+                            class="colors">
+                            Cinza
+                        </label><br />
+                        <label><input type="checkbox"
+                            name="color"
+                            value="laranja"
+                            id="laranja"
+                            class="colors">
+                            Laranja
+                        </label><br />
+                    </form>
+                    <p class="option__mas">
+                        <u>Ver todas as cores
+                            <span><i class="fas fa-chevron-down"></i></span>
+                        </u>
+                    </p>
+                </nav>
+
+                <article class="sizes">
+                    <p class="sizes__title">TAMANHOS</p>
+                    <div class="sizes__item">
+                        <span class="sizes__items">P</span>
+                        <span class="sizes__items">M</span>
+                        <span class="sizes__items">G</span>
+                        <span class="sizes__items">GG</span>
+                    </div>
+                    <div class="sizes__item">
+                        <span class="sizes__items">U</span>
+                        <span class="sizes__items">36</span>
+                        <span class="sizes__items">38</span>
+                        <span class="sizes__items">40</span>
+                    </div>
+                    <div class="sizes__item">
+                        <span class="sizes__items">42</span>
+                        <span class="sizes__items">44</span>
+                        <span class="sizes__items">46</span>
+                    </div>
+                </article>
+
+                <article class="price">
+                    <p class="price__title">
+                        FAIXA DE PRECO
+                    </p>
+                    <form>
+                        <label><input type="checkbox" class="check__price"
+                            value="50"> de R$0 at&eacute; R$50
+                        </label> <br />
+                        <label><input type="checkbox" class="check__price"
+                            value="150"> de R$51 at&eacute; R$150
+                        </label> <br />
+                        <label><input type="checkbox" class="check__price"
+                            value="300"> de R$151 at&eacute; R$300
+                        </label><br />
+                        <label><input type="checkbox" class="check__price"
+                            value="500"> de R$301 at&eacute; R$500
+                        </label> <br />
+                        <label><input type="checkbox" class="check__price"
+                            value="1"> a partir de R$01
+                        </label> <br />
+                    </form>
+                </article>
+            </aside>
+            <section class="content">
+                <article class="selection">
+                    <select name="select" id="orden">
+                        <option selected>Ordenar por:</option>
+                        <option value="value2">Mais recentes</option>
+                        <option value="value2">Menor preco</option>
+                        <option value="value2">Maior preco</option>
+                    </select>
+                </article>
+
+                <article class="content__container" id="cards">
+
+                </article>
+                <button class="content__btn">CARREGAR MAIS</button>
+            </section>
+        </main>
+    </div>
+
+    <template id="template-items">
+        <tr>
+            <td><img src="" width="50" height="70"></td>
+            <td>title</td>
+            <td>precio</td>
+            <td>cantidad</td>
+            <td><a href="#" class="btn-delete">x</a></td>
+        </tr>
+    </template>
+
+    <template id="template__card">
+        <div class="card">
+            <div class="card__img">
+                <img src="./layout/imagens/img_2.png" class="card__image" alt="image producto" width="100%">
+            </div>
+            <div class="card__footer">
+                <p class="card__title">
+                    camiseta mescla
+                </p>
+                <h3 class="card__price">R$ 28,00</h3>
+                <P class="description">at&eacute; 3x de R$9,33</P>
+            </div>
+            <div class="card__btn">
+                <a href="#" class="card__button">
+                    COMPRAR
+                </a>
+            </div>
+        </div>
+    </template>
+
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>

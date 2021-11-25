@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "image":"./layout/imagens/img_2.png",
+        "product": "camiseta mescla",
+        "price": 28.00,
+        "description": "ate 3x de R$9.33",
+        "color": "cinza",
+        "size": "m"
+    },
+    {
+        "id": 2,
+        "image":"./layout/imagens/img_3.png",
+        "product": "saia em couro",
+        "price": 398.00,
+        "description": "ate 5x de R$30,00",
+        "color": "vinho",
+        "size": "p"
+    },
+    {
+        "id": 3,
+        "image":"./layout/imagens/img_4.png",
+        "product": "cardigan tigre",
+        "price": 398.00,
+        "description": "ate 5x de R$30,00",
+        "color": "branco",
+        "size": "gg"
+    },
+    {
+        "id": 4,
+        "image":"./layout/imagens/img_5.png",
+        "product": "cardigan of white",
+        "price": 99.90,
+        "description": "ate 3x de R$33,30",
+        "color": "branco",
+        "size": "u"
+    },
+    {
+        "id": 5,
+        "image":"./layout/imagens/img_6.png",
+        "product": "body leopardo",
+        "price": 129.90,
+        "description": "ate 3x de R$43,43",
+        "color": "amarelo",
+        "size": "p"
+    },
+    {
+        "id": 6,
+        "image":"layout/imagens/img_7.png",
+        "product": "casaco pelos",
+        "price": 398.90,
+        "description": "ate 5x de R$30,00",
+        "color": "rosa",
+        "size": "36"
+    },
+    {
+        "id": 7,
+        "image":"./layout/imagens/img_8.png",
+        "product": "cropped stripes",
+        "price": 120.90,
+        "description": "ate 3x de R$40,00",
+        "color": "laranja",
+        "size": 38
+    },
+    {
+        "id": 8,
+        "image":"./layout/imagens/img_9.png",
+        "product": "camisa transparente",
+        "price": 398.00,
+        "description": "ate 5x de R$30,00",
+        "color": "preto",
+        "size": "m"
+    },
+    {
+        "id": 9,
+        "image":"./layout/imagens/img_10.png",
+        "product": "pochete clutch",
+        "price": 99.90,
+        "description": "ate 3x de R$33,00",
+        "color": "white",
+        "size": "38"
+    }
+    
+]
