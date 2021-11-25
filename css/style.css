@@ -66,6 +66,7 @@ body {
 
 .nav__list{
     color: rgba(0, 0, 0, 0.651);
+    cursor: pointer;
     font-size: 0.8em;
     list-style: none;
     padding: 0.8em;
@@ -196,14 +197,24 @@ p:last-child{
  }
 
  .sizes__item span{
-     border: 1px solid rgb(238, 234, 234);
-     color: rgb(177, 170, 170);
-     font-size: 1.2rem;
-     margin: 0.5rem;
-     display: grid;
-     align-items: center;
-     justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    display: grid;
+    font-size: 1.2rem;
+    justify-content: center;
+    margin: 0.5rem;
  }
+
+ .sizes__items{
+    border: 1px solid rgb(238, 234, 234);
+    color: rgb(177, 170, 170);
+ }
+
+ .sizes__new{
+    border: 1px solid #677fec;
+    color: rgba(0, 0, 0, 0.829);
+}
+
  .price{
     font-size: 0.7em;
     width: 100%;
@@ -244,12 +255,13 @@ p:last-child{
     position: absolute;
     top: 100%;
 
-    right: -8rem;
+    right: 0;
     z-index: 1;
     background-color: #4DE1F9;
-    padding: 20px;
-    min-height: 400px;
-    min-width: 300px;
+    padding: 18px;
+    /* width: 200px; */
+    min-height: 300px;
+    min-width: 100px;
  }
 
 .list-car{
@@ -257,19 +269,19 @@ p:last-child{
 }
 
 td{
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: capitalize;
 }
 
  th,  td{
      border-bottom: 1px solid #e1e1e1;
-     padding: 12px 15px;
+     padding: 10px 4px;
      text-align: left;
  }
 
  th{
      display: table-cell;
-     font-size: 1.4rem;
+     font-size: 1rem;
      font-family: 'poppins', sans-serif;
      vertical-align: inherit;
  }
@@ -301,12 +313,107 @@ td{
      font-weight: 500;
      background-color: red;
      border-radius: 100%;
-     padding: .4rem .8rem;
+     padding: .4rem .7rem;
  }
 
+ .modal{
+     background-color: red;
+     display: none;
+     width: 100vw;
+     height: 100vh;
+     top: 0;
+     left: 0;
+     position: fixed;
+     justify-content: center;
+     z-index: 100;
 
+ }
 
+ .modal__container{
+     background-color: white;
+     width: 100%;
+     height: 100%;
+     padding: 1rem;
+ }
 
+ .modal__text{
+     display: flex;
+     justify-content: space-between;
+     border-bottom: 1px solid rgba(14, 13, 13, 0.205);
+     margin-bottom: 2rem;
+ }
+
+ .modal__close{
+     align-items: center;
+     cursor: pointer;
+     display: flex;
+     font-size: 3rem;
+     height: 3.5rem;
+     justify-content: center;
+     width: 3.5rem;
+ }
+
+ .modal__title{
+    color: rgba(14, 13, 13, 0.637);
+    font-size: 1.3em;
+    font-weight: 400;
+ }
+
+ .modal__close{
+     border: none;
+     background-color: transparent;
+     font-size: 1.7em;
+     font-weight: 500;
+
+ }
+
+ .accordion{
+     max-width: 800px;
+ }
+ .accordion__content{
+     position: relative;
+     margin: 2rem 0.5rem;
+ }
+
+ .accordion__label{
+     position: relative;
+     padding: 0.5rem 0;
+     color: #000;
+     cursor: pointer;
+ }
+
+ .accordion__label::before{
+    content: '+';
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    font-size: 1.4em;
+ }
+
+ .accordion__content.active .accordion__label::before{
+     content: '-';
+ } 
+
+ .conten{
+     position: relative;
+     padding: 0;
+     background-color: #fff;
+     height: 0;
+     overflow: hidden;
+     transition: 0.5s;
+     overflow-y: auto;
+     text-align: left;
+ } 
+
+ .accordion__content.active .conten{
+     height: 180px;
+     padding: 10px;
+ }
+
+ .menu__label{
+     padding-bottom: 5rem;
+ }
 
 @media (min-width: 48em) {
     .header__container{
@@ -326,6 +433,10 @@ td{
 }
 
 @media (min-width: 48em) {
+
+    .modal{
+        display: none;
+    }
 
     .options{
         color: rgb(128, 120, 120);
