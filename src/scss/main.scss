@@ -1,1 +1,357 @@
 @import "reset";
+
+html, body{
+    width: 100%;
+}
+
+header{
+    position: relative;
+    height: 62px;
+    border: 2px solid #C7C7C7;
+}
+
+header .logo-m3{
+    position: absolute;
+    width: 119px;
+    height: 30px;
+    left: 162px;
+    top: 16px;    
+}
+
+header div{
+    position: absolute;
+    width: 17px;
+    height: 20px;
+    right: 183px;
+    top: 20px;
+}
+header div span{
+    display: none;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 13px;    
+    left: 15px;
+
+    background: #00C0EE;
+    border-radius: 16px;
+    
+}
+header div span p{
+    color: #FFFFFF;   
+    width: 7px;
+    height: 12px;
+    margin: auto;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+}
+main .title{
+    color: #333333;
+
+    position: absolute;
+    width: 97px;
+    height: 44px;
+    left: 162px;
+    top: 104px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;   
+
+    color: #333333;
+}
+main #order{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 142px;
+    height: 42px;
+    right: 154px;
+    top: 117px;
+
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+main #order span{
+    position: absolute;
+    width: 98px;
+    height: 22px;
+    margin-left: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+
+    color: #000000;
+}
+main #order svg{
+    margin-left: auto;
+    margin-right: 8px;
+}
+main #options{
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 142px;
+    height: 107px;
+    right: 154px;
+    top: 158px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+main #options span{
+    cursor: pointer;
+    width: 130px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+main #options span:hover{
+    background: #00C0EE;
+}
+
+main #filter{
+    padding: 2px;
+    position: absolute;
+    width: 157px;
+    height: 648px;
+    left: 157px;
+    top: 213px;
+
+}
+main #filter h2{
+
+    color: #333333;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 15px;
+
+}
+main #filter #colors .color-options{
+    display: flex;
+    margin-bottom: 10px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+
+
+color: #000000;
+}
+main #filter #colors .ocult{
+    display: none;
+}
+main #filter #colors .color-options .square{
+    display: flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+main #filter #colors .color-options .square-print{    
+    width: 11px;
+    height: 11px;    
+    margin: auto;
+    background: #00C0EE;
+}
+main #filter #colors  #verTodos{ 
+    cursor: pointer;   
+    display: flex;    
+    align-items: center;
+    height: 16px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+
+    text-decoration-line: underline;
+
+    color: #666666;
+}
+main #filter #colors  #verTodos svg{    
+    margin-left: 5px;
+}
+main #filter #sizes{
+    margin-top: 20px;    
+}
+main #filter #sizes .linha{
+    display: flex;
+    margin-bottom: 6px;
+}
+
+main #filter #sizes .sizes-options{    
+    display: flex;
+    width: 34px;
+    height: 32px;
+    margin-right: 6px;
+
+    border: 1px solid rgba(0, 0, 0, 0.267);
+
+    color: rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+}
+main #filter #sizes .sizes-options .option{
+    margin: auto;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+main #filter #sizes .select{
+    border: 1px solid #00C0EE;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+main #filter #prices{
+
+} 
+main #filter #prices h2{
+    margin-top: 20px;
+}
+main #filter .prices-options{
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    margin-bottom: 10px;
+}
+main #filter .prices-options .square{
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+main #products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    padding: 0px;
+    
+
+    position: absolute;
+    width: 976px;
+    height: 426px;
+    left: 362px;
+    top: 213px;
+}
+
+main #products .product{
+    display: flex;
+    flex-direction: column;
+    width: 195.25px;
+    height: 424px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 30px;
+
+}
+
+main #products .product img{
+    width: 195px;
+    height: 293px;    
+    top: 0px;
+}
+main #products .product .product-title{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    height: 19px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px
+}
+main #products .product .product-title span{
+    margin: auto;
+}
+main #products .product .product-price{
+    display: flex;
+    width: 100%;
+    height: 22px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 22px;
+
+    margin-top: 10px;
+}
+main #products .product .product-price span{
+    margin: auto;
+}
+main #products .product .product-parcel{
+    display: flex;
+    width: 100%;
+    height: 22px;
+
+    color: #666666;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+main #products .product .product-parcel span{
+    margin: auto;
+}
+main #products .product button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 49px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 33px;
+    border: 1px solid #000000;
+    background: #000000;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    margin-top: 10px;
+}
+
+
