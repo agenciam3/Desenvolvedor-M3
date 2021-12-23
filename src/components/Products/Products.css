@@ -1,0 +1,100 @@
+main #products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    padding: 0px;
+    
+
+    position: absolute;
+    width: 976px;
+    height: 426px;
+    left: 362px;
+    top: 213px;
+}
+
+main #products .product{
+    display: flex;
+    flex-direction: column;
+    width: 195.25px;
+    height: 424px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 30px;
+    margin-bottom: 40px;
+
+}
+
+main #products .product img{
+    width: 195px;
+    height: 293px;    
+    top: 0px;
+}
+main #products .product .product-title{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    height: 19px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px
+}
+main #products .product .product-title span{
+    margin: auto;
+}
+main #products .product .product-price{
+    display: flex;
+    width: 100%;
+    height: 22px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 16px;
+    line-height: 22px;
+
+    margin-top: 10px;
+}
+main #products .product .product-price span{
+    margin: auto;
+}
+main #products .product .product-parcel{
+    display: flex;
+    width: 100%;
+    height: 22px;
+
+    color: #666666;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+main #products .product .product-parcel span{
+    margin: auto;
+}
+main #products .product button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 7px 49px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 33px;
+    border: 1px solid #000000;
+    background: #000000;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+
+    margin-top: 10px;
+}

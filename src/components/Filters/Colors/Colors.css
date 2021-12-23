@@ -1,0 +1,24 @@
+
+main #filter #colors .ocult{
+    display: none;
+}
+main #filter #colors  #verTodos{ 
+    cursor: pointer;   
+    display: flex;    
+    align-items: center;
+    height: 16px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+
+    text-decoration-line: underline;
+
+    color: #666666;
+}
+main #filter #colors  #verTodos svg{    
+    margin-left: 5px;
+}
+

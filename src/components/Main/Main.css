@@ -1,0 +1,17 @@
+main .title{
+    color: #333333;
+
+    position: absolute;
+    width: 97px;
+    height: 44px;
+    left: 162px;
+    top: 104px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 44px;   
+
+    color: #333333;
+}

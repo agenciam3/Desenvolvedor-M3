@@ -1,0 +1,42 @@
+main #filter{
+    padding: 2px;
+    position: absolute;
+    width: 157px;
+    height: 648px;
+    left: 157px;
+    top: 213px;
+
+}
+main #filter h2{
+
+    color: #333333;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 15px;
+
+}
+
+main #filter #prices h2{
+    margin-top: 20px;
+}
+main #filter .prices-options{
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    margin-bottom: 10px;
+}
+main #filter .prices-options .square{
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+    margin-right: 10px;
+}

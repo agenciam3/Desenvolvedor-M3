@@ -1,0 +1,31 @@
+main #options{
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    width: 142px;
+    height: 107px;
+    /* right: 154px;
+    top: 158px; */
+    z-index: 1000;
+
+    margin-top: 36px;
+
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+main #options span{
+    cursor: pointer;
+    width: 130px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+main #options span:hover{
+    background: #00C0EE;
+}
+
+main .hidden{
+    display: none !important;
+}

@@ -1,0 +1,47 @@
+header{
+    position: relative;
+    height: 62px;
+    border-bottom: 2px solid #C7C7C7;
+}
+
+header .logo-m3{
+    position: absolute;
+    width: 119px;
+    height: 30px;
+    left: 162px;
+    top: 16px;    
+}
+
+header div{
+    position: absolute;
+    width: 17px;
+    height: 20px;
+    right: 183px;
+    top: 20px;
+}
+header div span{
+    display: none;
+    align-items: center;
+    text-align: center;
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 13px;    
+    left: 15px;
+
+    background: #00C0EE;
+    border-radius: 16px;
+    
+}
+header div span p{
+    color: #FFFFFF;   
+    width: 7px;
+    height: 12px;
+    margin: auto;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+}

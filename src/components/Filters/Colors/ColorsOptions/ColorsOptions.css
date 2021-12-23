@@ -1,0 +1,35 @@
+
+main #filter #colors .color-options{
+    display: flex;
+    margin-bottom: 10px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+
+
+    color: #000000;
+}
+
+main #filter #colors .color-options .square{
+    cursor: pointer;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+main #filter #colors .color-options .square-print{    
+    width: 11px;
+    height: 11px;    
+    margin: auto;
+    background: #00C0EE;
+}
+
+main #filter #colors .ocult{
+    display: none;
+}
