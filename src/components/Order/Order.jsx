@@ -11,8 +11,7 @@ class Order extends Component{
           close: true
         }
     }
-    openOptions(){
-        
+    openOptions(){ 
         if (this.state.close!==true){
             const novoEstado={
                 close: true
@@ -24,7 +23,12 @@ class Order extends Component{
             }
             this.setState(novoEstado)
         }
-        
+    }
+    closeOptions(){
+        const novoEstado={
+            close: true
+        }
+        this.setState(novoEstado)
     }
     render(){
         return(    
@@ -35,7 +39,7 @@ class Order extends Component{
                         <path d="M1 1L7 10L13 1.00935" stroke="#666666" strokeLinecap="round"/>
                     </svg>          
                 </div>
-                <Options close={this.state.close} openOptions={this.openOptions}/>
+                <Options close={this.state.close} closeOptions={this.closeOptions.bind(this)}/>
             </div>        
         )
     }
