@@ -7,7 +7,7 @@ class Colors extends Component {
 
     constructor(){
         super()
-        this.colors=['Amarelo', 'Azul','Branco','Cinza','Laranja']
+        this.colors=['amarelo', 'azul','branco','cinza','laranja']
         this.colorsOcult=['Violeta']
 
         this.state={
@@ -19,6 +19,20 @@ class Colors extends Component {
             ocult: false
         }
         this.setState(novoEstado)
+    }
+    marker(e){
+        if (this.state.marked!==true){
+            const novoEstado={
+                marked: true                
+            }
+            this.setState(novoEstado)
+            this.props.filterColor(e.target.id)
+        }else{
+            const novoEstado={
+                marked: false
+            }
+            this.setState(novoEstado)
+        }  
     }
     render() { 
         return (

@@ -47,6 +47,7 @@ main #products .product .product-title{
 }
 main #products .product .product-title span{
     margin: auto;
+    text-transform: uppercase;
 }
 main #products .product .product-price{
     display: flex;
@@ -80,6 +81,7 @@ main #products .product .product-parcel span{
     margin: auto;
 }
 main #products .product button{
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -97,4 +99,7 @@ main #products .product button{
     text-transform: uppercase;
 
     margin-top: 10px;
+}
+main #products .product button:active{
+    background-color: rgb(26, 25, 25);
 }

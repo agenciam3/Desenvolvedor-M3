@@ -21,9 +21,10 @@ class ColorsOptions extends Component {
     marker(e){
         if (this.state.marked!==true){
             const novoEstado={
-                marked: true
+                marked: true                
             }
             this.setState(novoEstado)
+            this.props.filterColor(e.target.id)
         }else{
             const novoEstado={
                 marked: false

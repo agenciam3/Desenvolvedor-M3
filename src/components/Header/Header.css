@@ -20,15 +20,14 @@ header div{
     top: 20px;
 }
 header div span{
-    display: none;
+    display: flex;
     align-items: center;
     text-align: center;
     position: absolute;
     width: 12px;
     height: 12px;
     top: 13px;    
-    left: 15px;
-
+    left: 15px;    
     background: #00C0EE;
     border-radius: 16px;
     
@@ -44,4 +43,8 @@ header div span p{
     font-weight: normal;
     font-size: 10px;
     line-height: 12px;
+}
+
+.hidden{
+    display: none;
 }

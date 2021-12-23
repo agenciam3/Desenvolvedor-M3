@@ -8,11 +8,13 @@ class Header extends Component{
     render(){
         return(
             <header>
-                <img className="logo-m3" src={logoM3} alt=""/>
+                <a href="/">
+                    <img className="logo-m3" src={logoM3} alt=""/>
+                </a>
                 <div>
                     <img src={bag} alt=""/>
-                    <span id="bag-counter">
-                        <p>0</p>
+                    <span id="bag-counter" className={ this.props.cart ? null : 'hidden'}>
+                        <p>{this.props.unidade}</p>
                     </span>
                 </div>
             </header>
