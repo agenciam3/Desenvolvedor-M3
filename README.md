@@ -1,6 +1,6 @@
 # Teste prático p/ empresa M3
 
-O layout deste projeto se encontra no [https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=2%3A3][figma].
+O layout deste projeto se encontra no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=2%3A3).
 
 O objetivo desse teste é avaliar meus conhecimentos fundamentais de front end, por isso não utilizo nenhum framework além do React.
 
