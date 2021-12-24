@@ -2,15 +2,13 @@
 main #filter #colors .color-options{
     display: flex;
     margin-bottom: 10px;
-
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 100%;
     /* identical to box height, or 14px */
-
-
+    text-transform: capitalize;
     color: #000000;
 }
 
@@ -23,6 +21,7 @@ main #filter #colors .color-options .square{
     border: 1px solid rgba(0, 0, 0, 0.4);
     box-sizing: border-box;
 }
+
 main #filter #colors .color-options .square-print{    
     width: 11px;
     height: 11px;    

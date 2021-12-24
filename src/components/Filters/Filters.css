@@ -20,23 +20,3 @@ main #filter h2{
 
 }
 
-main #filter #prices h2{
-    margin-top: 20px;
-}
-main #filter .prices-options{
-    display: flex;
-    align-items: center;
-    font-family: Open Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 100%;
-    margin-bottom: 10px;
-}
-main #filter .prices-options .square{
-    width: 16px;
-    height: 16px;
-    border: 1px solid rgba(0, 0, 0, 0.400);
-    box-sizing: border-box;
-    margin-right: 10px;
-}

@@ -11,10 +11,11 @@ class Products extends Component {
     render() {             
         return (            
             <section id="products">                
-                {this.props.pr.map((objeto) => {
-                    console.log(objeto)
+                {this.props.pr.map((objeto, index) => {
                     return (
-                        <Product objeto={objeto} addCart={this.props.addCart.bind(this)} />          
+                        <span key={index}>
+                        <Product objeto={objeto} addCart={this.props.addCart.bind(this)} />   
+                        </span>       
                     )})
                 }  
                                       

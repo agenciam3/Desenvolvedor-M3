@@ -1,35 +1,40 @@
 import { Component } from 'react';
 import './Colors.css'
-import ColorsOptions from './ColorsOptions'
 import HiddenColorsOptions from './HiddenColorsOptions'
+import MarkedSquare from './ColorsOptions/ColorsOptions';
 
 class Colors extends Component {
-
+    static choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};             
     constructor(){
-        super()
-        this.colors=['amarelo', 'azul','branco','cinza','laranja']
-        this.colorsOcult=['Violeta']
+        super()        
+        this.colorsOcult=['violeta']
 
         this.state={
-            ocult: true
+            ocult: true,
+            choice: Colors.choices
         }
     }
     moreColors(){
         const novoEstado={
-            ocult: false
+            ocult: false,
+            choice: this.state.choice
         }
         this.setState(novoEstado)
     }
     marker(e){
-        if (this.state.marked!==true){
+        if (this.state.choice[e.target.id]!==true && e.target.className==='square'){
+            Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};
+            Colors.choices[e.target.id]=true
             const novoEstado={
-                marked: true                
+                ocult: this.state.ocult,
+                choice: Colors.choices 
             }
             this.setState(novoEstado)
-            this.props.filterColor(e.target.id)
         }else{
+            Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};             
             const novoEstado={
-                marked: false
+                ocult: this.state.ocult,
+                choice: Colors.choices 
             }
             this.setState(novoEstado)
         }  
@@ -39,18 +44,38 @@ class Colors extends Component {
             <div>
                 <h2>CORES</h2>
                 <div id="colors">
-                    {this.colors.map((color) => {
-                        return (
-                            <ColorsOptions color={color}/>
-                        )
-                        })
-                    }
-                    {this.colorsOcult.map((colorOcult) => {
-                        return (
-                            <HiddenColorsOptions color={colorOcult} ocult={this.state.ocult}/>
-                        )
-                        })
-                    }
+                    <div className="color-options">
+                        <div id='amarelo' className="square" onClick={this.marker.bind(this)}>
+                            <MarkedSquare marked={this.state.choice.amarelo}  />
+                        </div>
+                    <div>Amarelo</div>
+                </div>
+                <div className="color-options">
+                        <div id='azul' className="square" onClick={this.marker.bind(this)}>
+                            <MarkedSquare marked={this.state.choice.azul}  />
+                        </div>
+                    <div>Azul</div>
+                </div>
+                <div className="color-options">
+                        <div id='branco' className="square" onClick={this.marker.bind(this)}>
+                            <MarkedSquare marked={this.state.choice.branco}  />
+                        </div>
+                    <div>Branco</div>
+                </div>
+                <div className="color-options">
+                        <div id='cinza' className="square" onClick={this.marker.bind(this)}>
+                            <MarkedSquare marked={this.state.choice.cinza}  />
+                        </div>
+                    <div>Cinza</div>
+                </div>
+                <div className="color-options">
+                        <div id='laranja' className="square" onClick={this.marker.bind(this)}>
+                            <MarkedSquare marked={this.state.choice.laranja}  />
+                        </div>
+                    <div>Laranja</div>
+                </div>
+                    <HiddenColorsOptions marked={this.state.choice['violeta']} color={'violeta'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
+
                     <div id="verTodos" className={this.state.ocult ? null : 'hidden'} onClick={this.moreColors.bind(this)}>
                         <span>
                         Ver todas as cores

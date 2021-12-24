@@ -12,10 +12,8 @@ class Main extends Component{
         this.state={
             products_l: []
         }
-
     }
     att(){
-        console.log(this.props.product_list.length)
         if (this.props.product_list.length>0)
         {            
             const novoEstado={

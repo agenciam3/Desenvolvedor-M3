@@ -10,31 +10,12 @@ class MarkedSquare extends Component{
 }
 
 class HiddenColorsOptions extends Component {
-    constructor(){   
-        super()     
-        this.state={
-            marked: false
-        }
-    }
-    marker(e){
-        if (this.state.marked!==true){
-            const novoEstado={
-                marked: true
-            }
-            this.setState(novoEstado)
-        }else{
-            const novoEstado={
-                marked: false
-            }
-            this.setState(novoEstado)
-        }
-        
-    }
+
     render() { 
         return (
-            <div className={this.props.ocult ? 'color-options ocult' : 'color-options'} onClick={this.marker.bind(this)}>
-                <div className="square">
-                    <MarkedSquare marked={this.state.marked} />
+            <div className={this.props.ocult ? 'color-options ocult' : 'color-options'} onClick={this.props.marker.bind(this)}>
+                <div id={this.props.color} className="square">
+                    <MarkedSquare marked={this.props.marked} />
                 </div>
                 <div>{this.props.color}</div>
             </div>

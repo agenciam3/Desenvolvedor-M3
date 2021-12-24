@@ -6,18 +6,18 @@ main #filter #sizes .linha{
     margin-bottom: 6px;
 }
 
-main #filter #sizes .sizes-options{    
+main #filter #sizes .sizes-options{  
+    cursor: pointer;  
     display: flex;
     width: 34px;
     height: 32px;
     margin-right: 6px;
-
     border: 1px solid rgba(0, 0, 0, 0.267);
-
     color: rgba(0, 0, 0, 0.400);
     box-sizing: border-box;
 }
 main #filter #sizes .sizes-options .option{
+    
     margin: auto;
     font-family: Open Sans;
     font-style: normal;
@@ -27,10 +27,12 @@ main #filter #sizes .sizes-options .option{
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    z-index: 2;
 }
 
 main #filter #sizes .select{
     border: 1px solid #00C0EE;
     box-sizing: border-box;
     color: #000000;
+    z-index: 1000;
 }

@@ -26,7 +26,6 @@ class App extends Component{
       product_list: response.data
     }
     this.setState(novoEstado)
-    console.log(this.state.product_list)
   }
   async getProducts(){
     const response =  await api.get('')
@@ -37,7 +36,6 @@ class App extends Component{
       product_list: response.data
     }
     this.setState(novoEstado)
-    console.log(this.state.product_list)
   }
   async filterColor(teste){
     // const list=[]
