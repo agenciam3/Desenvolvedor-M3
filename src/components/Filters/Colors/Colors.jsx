@@ -25,12 +25,14 @@ class Colors extends Component {
         if (this.state.choice[e.target.id]!==true && e.target.className==='square'){
             Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};
             Colors.choices[e.target.id]=true
+            this.props.filtro.setColor(e.target.id)
             const novoEstado={
                 ocult: this.state.ocult,
                 choice: Colors.choices 
             }
             this.setState(novoEstado)
         }else{
+            this.props.filtro.resetFiltro()
             Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};             
             const novoEstado={
                 ocult: this.state.ocult,

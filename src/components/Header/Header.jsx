@@ -4,7 +4,23 @@ import logoM3 from "./logo-m3.png"
 import bag from "./bag.png"
 
 class Header extends Component{
-
+    constructor(){
+        super();
+        this.state={
+            cart: {'unidades': 0}
+        }
+    }
+    componentDidMount(){
+        this.props.cart.inscrever(this._attCart.bind(this));        
+    }
+    componentWillUnmount(){        
+        this.props.cart.desinscrever(this._attCart.bind(this));
+    }
+    _attCart(){
+        this.setState({
+            cart: {'unidades': this.props.cart.get()}
+        })
+    }
     render(){
         return(
             <header>
@@ -13,8 +29,8 @@ class Header extends Component{
                 </a>
                 <div>
                     <img src={bag} alt=""/>
-                    <span id="bag-counter" className={ this.props.cart ? null : 'hidden'}>
-                        <p>{this.props.unidade}</p>
+                    <span id="bag-counter" className={ this.state.cart.unidades!==0 ? null : 'hidden'}>
+                        <p>{this.state.cart.unidades}</p>
                     </span>
                 </div>
             </header>

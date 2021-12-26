@@ -8,9 +8,9 @@ class Filters extends Component {
     render() { 
         return (
             <section id="filter">
-                <Colors/>
-                <Sizes/>
-                <Prices/>
+                <Colors filtro={this.props.filtro}/>
+                <Sizes filtro={this.props.filtro}/>
+                <Prices filtro={this.props.filtro}/>
             </section>
         )
     }
