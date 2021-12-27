@@ -5,8 +5,8 @@ import "./Options.css"
 class Options extends Component {
 
 
-    selecionar(e){                    
-        console.log(e.target.innerHTML)
+    selecionar(e){        
+        this.props.filtro.setOrder(e.target.innerHTML)        
         this.props.closeOptions()
     }
     

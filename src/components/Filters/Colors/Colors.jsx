@@ -4,7 +4,7 @@ import HiddenColorsOptions from './HiddenColorsOptions'
 import MarkedSquare from './ColorsOptions/ColorsOptions';
 
 class Colors extends Component {
-    static choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};             
+    static choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'verde': false, 'vermelho': false, 'preto': false, 'rosa': false, 'vinho': false};
     constructor(){
         super()        
         this.colorsOcult=['violeta']
@@ -21,24 +21,26 @@ class Colors extends Component {
         }
         this.setState(novoEstado)
     }
-    marker(e){
-        if (this.state.choice[e.target.id]!==true && e.target.className==='square'){
-            Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};
+    marker(e){        
+        if (this.state.choice[e.target.id]===false && e.target.className==='square'){
+            Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'verde': false, 'vermelho': false, 'preto': false, 'rosa': false, 'vinho': false};
             Colors.choices[e.target.id]=true
             this.props.filtro.setColor(e.target.id)
+            this.props.filtro.filtrar()
             const novoEstado={
                 ocult: this.state.ocult,
                 choice: Colors.choices 
             }
             this.setState(novoEstado)
-        }else{
-            this.props.filtro.resetFiltro()
-            Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'violeta': false};             
+        }else{            
+            Colors.choices = {'amarelo': false, 'azul': false, 'branco': false,'cinza': false, 'laranja': false, 'verde': false, 'vermelho': false, 'preto': false, 'rosa': false, 'vinho': false};
             const novoEstado={
                 ocult: this.state.ocult,
                 choice: Colors.choices 
             }
-            this.setState(novoEstado)
+            this.setState(novoEstado)            
+            this.props.filtro.setColor('')
+            this.props.filtro.filtrar()
         }  
     }
     render() { 
@@ -76,7 +78,11 @@ class Colors extends Component {
                         </div>
                     <div>Laranja</div>
                 </div>
-                    <HiddenColorsOptions marked={this.state.choice['violeta']} color={'violeta'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
+                    <HiddenColorsOptions marked={this.state.choice['verde']} color={'verde'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
+                    <HiddenColorsOptions marked={this.state.choice['vermelho']} color={'vermelho'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
+                    <HiddenColorsOptions marked={this.state.choice['preto']} color={'preto'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
+                    <HiddenColorsOptions marked={this.state.choice['rosa']} color={'rosa'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
+                    <HiddenColorsOptions marked={this.state.choice['vinho']} color={'vinho'} ocult={this.state.ocult} marker={this.marker.bind(this)}/>
 
                     <div id="verTodos" className={this.state.ocult ? null : 'hidden'} onClick={this.moreColors.bind(this)}>
                         <span>

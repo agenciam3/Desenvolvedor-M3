@@ -10,21 +10,25 @@ class Prices extends Component {
             choice: Prices.choices
         }
     }
-    marker(e){        
-        if (this.state.choice[parseInt(e.target.id)]!==true){
-            Prices.choices = {1: false,2: false,3: false,4: false,5: false,6: false,7: false,8: false,9: false,10: false,11: false}
+    marker(e){              
+        console.log('marcado:'+this.state.choice[e.target.id])
+        if (this.state.choice[e.target.id]===false){
+            Prices.choices = {'50': false, '150':false,'300':false,'500':false,'>500':false}
             Prices.choices[e.target.id]=true
+            this.props.filtro.setPrice(e.target.id)
+            this.props.filtro.filtrar()
             const novoEstado={
                 choice: Prices.choices 
             }
-            this.setState(novoEstado)
-            this.forceUpdate()
-        }else{
-            Prices.choices = {1: false,2: false,3: false,4: false,5: false,6: false,7: false,8: false,9: false,10: false,11: false}
+            this.setState(novoEstado)                        
+        }else{              
+            Prices.choices = {'50': false, '150':false,'300':false,'500':false,'>500':false}
+            this.props.filtro.setPrice('')
+            this.props.filtro.filtrar()            
             const novoEstado={
                 choice: Prices.choices 
-            }
-            this.setState(novoEstado)
+            }                        
+            this.setState(novoEstado)                        
         }  
     }
     render() { 

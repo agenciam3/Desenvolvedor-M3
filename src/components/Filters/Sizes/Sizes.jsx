@@ -23,10 +23,12 @@ class Sizes extends Component {
 
     }
     marker(e){
+        console.log(this.state.choice[parseInt(e.target.id)])
         if (this.state.choice[parseInt(e.target.id)]!==true){
             Sizes.choices = {1: false,2: false,3: false,4: false,5: false,6: false,7: false,8: false,9: false,10: false,11: false}
             Sizes.choices[e.target.id]=true
-            this.props.filtro.setSize(e.target.id);
+            this.props.filtro.setSize(e.target.id);            
+            this.props.filtro.filtrar()
             const novoEstado={
                 choice: Sizes.choices 
             }
@@ -38,7 +40,8 @@ class Sizes extends Component {
                 choice: Sizes.choices 
             }
             this.setState(novoEstado)
-            this.props.filtro.resetFiltro()
+            this.props.filtro.setSize(0);            
+            this.props.filtro.filtrar()
         }  
     }
     render() { 

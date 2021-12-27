@@ -13,7 +13,7 @@ class Main extends Component{
                 <h1 className="title">
                     Blusas
                 </h1>
-                <Order/>
+                <Order filtro={this.props.produtos}/>
                 <Filters filtro={this.props.produtos}/>
                 <Products cart={this.props.cart} produtos={this.props.produtos}/>                
             </main>
