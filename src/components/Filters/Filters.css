@@ -1,3 +1,9 @@
+@media (max-width: 800px)
+{
+    main #filter{    
+        display: none;
+    }
+}
 main #filter{
     padding: 2px;
     position: absolute;

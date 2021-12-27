@@ -10,9 +10,10 @@ class Produtos{
         this.order=''
         this.count=0
         this.price=[false,false]
-        this._inscritos=[]        
+        this._inscritos=[]             
     }
 
+    
     inscrever(func){     
         this.historico.push(this.produtos)
         this.filtrado=this.produtos
@@ -26,10 +27,83 @@ class Produtos{
         this._inscritos.forEach(func =>{            
             func(this.filtrado)
         } );
-    }   
+    }
+ 
+    setOrder(valor){        
+        this.order=valor
+        this.ordenar()
+        this.notificar()  
+    }
+
+    ordenar(){
+        if(this.order==='Menor preço'){
+            this.menorPreco()
+        }else if(this.order==='Maior preço'){
+            this.maiorPreco()
+        }else{
+            this.maisRecente()
+        }
+    }
+    maisRecente(){
+        let n = this.filtrado.length
+        for (let i = 0; i < n - 1; i++){
+            let min_idx = i
+
+            for (let j = i + 1; j < n; j++){
+                let data = new Date(this.filtrado[j].date)
+                let data2 =  new Date(this.filtrado[min_idx].date)
+                if (data < data2){
+                    min_idx = j;
+                }
+            }
+            let temp = this.filtrado[min_idx];
+            this.filtrado[min_idx] = this.filtrado[i];
+            this.filtrado[i] = temp;            
+        }
+        this.filtrado.forEach(element => {
+            console.log(element.date)
+        });              
+    }
+    menorPreco(){
+        let n = this.filtrado.length
+        for (let i = 0; i < n - 1; i++){
+            let min_idx = i
+
+            for (let j = i + 1; j < n; j++){
+                if (this.filtrado[j].price < this.filtrado[min_idx].price)
+                    min_idx = j;
+            }
+            let temp = this.filtrado[min_idx];
+            this.filtrado[min_idx] = this.filtrado[i];
+            this.filtrado[i] = temp;            
+        }
+        this.filtrado.forEach(element => {
+            console.log(element.price)
+        });              
+    }
+    maiorPreco(){
+        let n = this.filtrado.length
+        for (let i = 0; i < n - 1; i++){
+            let max_idx = i
+
+            for (let j = i + 1; j < n; j++){
+                if (this.filtrado[j].price > this.filtrado[max_idx].price)
+                    max_idx = j;
+            }
+            let temp = this.filtrado[max_idx];
+            this.filtrado[max_idx] = this.filtrado[i];
+            this.filtrado[i] = temp;            
+        }
+        this.filtrado.forEach(element => {
+            console.log(element.price)
+        });              
+    }
     setProdutos(valor){
         this.produtos=valor
-    }    
+    }  
+    changeTop(){
+        this.notificar()
+    }  
     filtrar(){    
         this.filtrado=this.produtos                      
         if(this.color!==''){
@@ -52,30 +126,12 @@ class Produtos{
         if(this.price[0]!==false){            
             this.filtrado=this.filtrado.filter(produto => produto.price >= this.price[0] && produto.price <= this.price[1])
         }        
-    
+        if(this.order!==''){
+            this.ordenar();
+        }
         this.notificar();  
     }
 
-    // OLD
-    resetFiltro(){  
-        if(this.resetColor===true){            
-            this.resetColor=false
-        }
-        if(this.resetSize===true){            
-            this.resetSize=false
-        }        
-        this.count=this.count-1        
-        this.filtrado=this.historico[this.historico.length-1]     
-        this.historico.pop()
-        // if(this.count===0){       
-        //     this.filtrado=this.historico[this.historico.length-1]     
-        // }else if(this.count>=1){       
-        //     this.filtrado=this.historico[this.historico.length-1]     
-        //     this.historico.pop()
-        // }
-        
-        this.notificar()
-    }
     setColor(color){            
         this.color=color.charAt(0).toUpperCase() + color.slice(1);                            
     }
@@ -140,9 +196,6 @@ class Produtos{
                 this.price=[false,false] 
                 break;                                    
         }                                   
-    }
-    setOrder(valor){        
-        console.log(valor)
-    }
+    }    
 }
 export default Produtos;

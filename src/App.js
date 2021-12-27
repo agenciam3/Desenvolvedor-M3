@@ -9,6 +9,7 @@ import api from './services/api'
 
 import Cart from './dados/Cart'
 import Produtos from './dados/Produtos';
+import Footer from './components/Footer';
 
 class App extends Component{
   
@@ -27,7 +28,7 @@ class App extends Component{
         <Main           
           cart={this.cart}        
           produtos={this.produtos}      
-        />
+        />        
       </div>
     )
   }

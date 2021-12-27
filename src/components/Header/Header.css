@@ -48,3 +48,21 @@ header div span p{
 .hidden{
     display: none;
 }
+
+@media (max-width: 800px){
+    header .logo-m3{
+        position: absolute;
+        width: 119px;
+        height: 30px;
+        left: 5%;
+        top: 16px;    
+    }
+    
+    header div{
+        position: absolute;
+        width: 17px;
+        height: 20px;
+        right: 10%;
+        top: 20px;
+    }
+}

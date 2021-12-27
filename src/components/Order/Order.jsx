@@ -39,7 +39,7 @@ class Order extends Component{
                         <path d="M1 1L7 10L13 1.00935" stroke="#666666" strokeLinecap="round"/>
                     </svg>          
                 </div>
-                <Options filtro={this.props.produtos} close={this.state.close} closeOptions={this.closeOptions.bind(this)}/>
+                <Options produtos={this.props.produtos} close={this.state.close} closeOptions={this.closeOptions.bind(this)}/>
             </div>        
         )
     }

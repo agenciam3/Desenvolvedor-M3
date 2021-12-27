@@ -1,17 +1,17 @@
+
 main #products{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
     justify-content: center;
-    padding: 0px;
-    
+    padding: 0px 0px 170px 0px;    
 
     position: absolute;
-    width: 976px;
-    height: 426px;
+    width: 976px;    
     left: 362px;
     top: 213px;
+    
 }
 
 main #products .product{
@@ -102,4 +102,77 @@ main #products .product button{
 }
 main #products .product button:active{
     background-color: rgb(26, 25, 25);
+}
+#comprar{
+    cursor: pointer;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 31px;
+    top: 1641px;
+    left: 729px;
+    margin-bottom: 50px;
+    border: none;
+
+    background: #00C0EE;    
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 19px;    
+
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+.hidden{
+    display: none !important;
+}
+@media (max-width: 800px)
+{
+    #comprar{
+        left: 21.5%;
+        top: 2260px;
+    }
+    main  #products{
+        position: absolute;
+        width: 100%;
+        height: 731.96px;
+        left: 0%;
+        top: 227.39px;
+    }
+    main #products .product{
+        display: flex;
+        flex-direction: column;
+        width: 160px;
+        height: 357.14px;        
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 0px 5px;
+        margin-bottom: 40px;
+    }
+    main #products .product img{
+        width: 160px;
+        height: 293px;    
+    }
+}
+@media (min-width: 525px){
+    #comprar{
+        left: 27.5%;
+        top: 1450px;
+    }
+}
+@media (min-width: 800px){
+    #comprar{
+        top: 1641px;
+        left: 729px;
+    }
 }

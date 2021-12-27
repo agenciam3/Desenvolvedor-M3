@@ -1,0 +1,18 @@
+.footer{
+    position: absolute;
+    display: flex;
+    height: 33px;
+    width: 99.4vw;
+    background-color: black;
+    color: white;    
+    top: 100%;  
+    left: 0;  
+    margin-left: -27vw ;
+    z-index: 1000;
+}
+.footer span{
+    margin: auto;
+}
+.load{
+    top: 2000px;
+}

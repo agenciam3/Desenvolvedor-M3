@@ -15,3 +15,58 @@ main .title{
 
     color: #333333;
 }
+.mobile{
+    display: none;
+}
+@media (max-width: 800px)
+{
+    main{
+        display: flex !important;        
+        width: 100% !important;
+        height: 800px !important;
+    }
+    main .title{ 
+        color: #333333;        
+        position: absolute;
+        width: 97px;
+        height: 44px;           
+        top: 94px;
+        left: 39.5%;
+        margin: 0 auto;
+    
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 44px;   
+    
+        color: #333333;
+    }
+    main .mobile{    
+        display: flex;
+        width: 343px;
+        height: 49px;        
+        margin: 84px auto 0px auto;        
+        border: 1px solid #666666;
+        box-sizing: border-box;
+    }
+    .mobile div{        
+        display: flex;    
+        width: 50%;
+        height: 100%;
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 33px;
+    /* identical to box height */
+        color: #666666;
+    }
+    .mobile div:first-child{    
+        border-right: 1px solid #666666;
+    }    
+    .mobile div span{
+        margin: auto;
+        cursor: pointer;  
+    }
+}

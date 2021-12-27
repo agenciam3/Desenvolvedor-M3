@@ -43,3 +43,9 @@ main #order svg{
     margin-left: auto;
     margin-right: 8px;
 }
+@media (max-width: 800px)
+{
+    #d-order-options{
+        display: none !important;
+    }
+}

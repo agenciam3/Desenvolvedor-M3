@@ -12,21 +12,25 @@ import img10 from '../../assets/img/img_10.png'
 import "./Products.css"
 import Produtos from '../../dados/Produtos';
 import api from '../../services/api';
+import Footer from '../Footer';
 
 
 class Products extends Component {
     constructor(props){        
         super(props)
+        this.number=9
         this.produtos=[]        
         this.state={
-            produtos: this.produtos,            
+            produtos: this.produtos,  
+            number: this.number          
         }
     }   
     async componentDidMount(){  
         const response =  await api.get('')
         this.produtos = response.data 
         this.setState({
-            produtos: this.produtos,                
+            produtos: this.produtos,   
+            number: this.number                
         })
         this.props.produtos.setProdutos(this.produtos)        
         this.props.produtos.inscrever(this._filtrar.bind(this));                                         
@@ -35,26 +39,40 @@ class Products extends Component {
     _filtrar(valor){        
         this.produtos=valor
          this.setState({
-            produtos: this.produtos,                
+            produtos: this.produtos, 
+            number: this.number               
         })
     }
 
     componentWillUnmount(){        
         "/img/img_2.png"
     }
-    
+    loadMore(){        
+        this.number=14
+        this.setState({
+            produtos: this.produtos,                
+            number: this.number
+        })
+    }
     render() {             
-        return (            
+        return (  
+            <span>          
             <section id="products">                
                 {this.state.produtos.map((objeto, index) => {                    
-                    return (
-                        <span key={index}>
-                        <Product objeto={objeto} cart={this.props.cart} />   
-                        </span>       
-                    )})
+                    if(index<this.number){
+                        return (
+                            <span key={index}>
+                            <Product objeto={objeto} cart={this.props.cart} />                         
+                            </span>       
+                        )}
+                    }, this)
+                    
                 }  
-                                      
             </section>
+                <button onClick={this.loadMore.bind(this)} id='comprar' className={ this.number===9 ? null : 'hidden'}>CARREGAR MAIS</button>
+            </span>
+                                      
+            
         );
     }
 }
@@ -80,7 +98,8 @@ class Product extends Component {
                 </span>
                 <button id="" onClick={this._addCart.bind(this)}> 
                 COMPRAR
-                </button>
+                </button>  
+                <Footer/>                              
             </div> 
             );
     }

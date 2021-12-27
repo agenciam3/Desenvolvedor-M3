@@ -6,7 +6,7 @@ class Options extends Component {
 
 
     selecionar(e){        
-        this.props.filtro.setOrder(e.target.innerHTML)        
+        this.props.produtos.setOrder(e.target.innerHTML)        
         this.props.closeOptions()
     }
     
