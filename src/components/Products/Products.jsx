@@ -19,10 +19,10 @@ class Products extends Component {
     constructor(props){        
         super(props)
         this.number=9
-        this.produtos=[]        
+        this.produtos=[]              
         this.state={
             produtos: this.produtos,  
-            number: this.number          
+            number: this.number,                 
         }
     }   
     async componentDidMount(){  
@@ -70,6 +70,7 @@ class Products extends Component {
                 }  
             </section>
                 <button onClick={this.loadMore.bind(this)} id='comprar' className={ this.number===9 ? null : 'hidden'}>CARREGAR MAIS</button>
+                <Footer number={this.number}/>   
             </span>
                                       
             
@@ -98,8 +99,7 @@ class Product extends Component {
                 </span>
                 <button id="" onClick={this._addCart.bind(this)}> 
                 COMPRAR
-                </button>  
-                <Footer/>                              
+                </button>                                             
             </div> 
             );
     }

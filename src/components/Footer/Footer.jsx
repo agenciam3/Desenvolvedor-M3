@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import { Component, useEffect, useState } from 'react';
 import './Footer.css'
-class Footer extends React.Component {
-    render() { 
-        return (
-            <div className='footer'>
+
+class Footer extends Component {    
+
+    render() {       
+        console.log(this.props.number)  
+        return (            
+            <div className={ this.props.number===9 ? 'footer' : 'footer move'}>
                 <span>
-                    M3: Implantação de E-commerce VTEX {this.top}
-                </span>
+                    M3: Implantação de E-commerce VTEX                 
+                </span>                
             </div>
         );
     }

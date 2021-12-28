@@ -4,14 +4,14 @@ import './mobileOrder.css'
 class Options extends Component {
     order(e){        
         this.props.produtos.setOrder(e.target.innerHTML)
-        // this.props.mobile.closeOrder.bind(this.props.mobile)
+        this.props.mobile.closeOrder()
     }
     render() {
         return (
             <div id="options" className={ this.props.close ? 'hidden' : null}>
                 <span onClick={this.order.bind(this)}>Mais recentes</span>
-                <span onClick={this.props.mobile.closeOrder.bind(this.props.mobile)}>Menor preço</span>
-                <span onClick={this.props.mobile.closeOrder.bind(this.props.mobile)}>Maior preço</span>
+                <span onClick={this.order.bind(this)}>Menor preço</span>
+                <span onClick={this.order.bind(this)}>Maior preço</span>
             </div>
         )
     }

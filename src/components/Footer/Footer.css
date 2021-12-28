@@ -7,7 +7,7 @@
     color: white;    
     top: 100%;  
     left: 0;  
-    margin-left: -27vw ;
+    
     z-index: 1000;
 }
 .footer span{
@@ -15,4 +15,34 @@
 }
 .load{
     top: 2000px;
+}
+@media (max-width: 800px){
+    .footer{
+        margin: 0;
+        width: 100vw;
+        top: 370%;  
+    }
+    .move{
+        top: 480% !important;  
+    }
+}
+
+@media (min-width: 525px){
+    .footer{
+        margin: 0;
+        width: 100vw;
+        top: 230%;  
+    }
+    .move{
+        top: 350% !important;  
+    }
+}
+@media (min-width: 800px){
+    .footer{
+        width: 100vw;        
+        top: 261%;  
+    }
+    .move{
+        top: 400% !important;  
+    }
 }

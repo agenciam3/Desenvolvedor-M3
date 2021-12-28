@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Filtros from './Filtros/Filtro';
+import Filtros from './Filtros/Filtros';
 import './mobileFilter.css'
 
 class MobileFilter extends Component {
@@ -16,8 +16,7 @@ class MobileFilter extends Component {
         this.setState(novoEstado)
     }
 
-    _openMobileFilter(valor){
-        console.log('teste')
+    _openMobileFilter(valor){        
         const novoEstado={
             close: valor
         }
@@ -29,8 +28,7 @@ class MobileFilter extends Component {
     closeFilter(){
         this.props.mobile.closeFilter()
     }
-    render(){ 
-        console.log(this.state.close)
+    render(){         
         return (
             <div id='mobileFilter' className={ this.state.close ? 'hidden' : null}>
                 <div className="title">
@@ -44,7 +42,7 @@ class MobileFilter extends Component {
                         </svg>
                     </span>
                 </div>                
-                <Filtros/>                           
+                <Filtros filtro={this.props.filtro} close={this.closeFilter.bind(this)}/>                           
             </div>
         );
     }

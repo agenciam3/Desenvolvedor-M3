@@ -1,33 +1,183 @@
-#mobileFiltros{
-    margin-top: 130px;
-    padding: 2px;
+#mfilter{    
+    margin-top: 100px;    
     position: absolute;
-    width: 157px;
+    width: 100%;
     height: 648px;
-    
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 28px;
+    line-height: 38px;    
 }
 
-#mobileFiltros div{   
-    display: flex; 
-    justify-content: space-between;
+#mfilter .mainTitle{
+    cursor: pointer;
     width: 100%;
-    height: 33px;
-    padding-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0  16px;   
+    margin-top: 30px;
+}
+#mfilter .mainTitle span{
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
     line-height: 33px;
-    margin: 40px 0;
     /* identical to box height */
+    
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    
+    color: #666666;   
+
+}
+#mfilter .mainTitle svg{
+    margin: auto 36px auto auto;    
+}
+
+#mfilter #colors .color-options{
+    display: flex;
+    margin-bottom: 10px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+    
+    
+    color: #000000;
+    /* identical to box height, or 14px */
+    text-transform: capitalize;
+    color: #000000;
+}
+#cores{
+    padding-left: 16px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+#tamanhos{
+    padding-left: 16px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+#precos{
+    padding-left: 16px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+#mfilter  #colors .color-options .square{
+    cursor: pointer;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+#mfilter #colors .color-options .square-print{    
+    width: 11px;
+    height: 11px;    
+    margin: auto;
+    background: #00C0EE;
+}
+
+.rotate{
+    transform: rotate(180deg);
+}
+
+#mfilter #tamanhos .linha{
+    display: flex;
+    margin-bottom: 6px;
+}
+
+#mfilter #tamanhos .sizes-options{  
+    cursor: pointer;  
+    display: flex;
+    width: 34px;
+    height: 32px;
+    margin-right: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    color: rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+}
+#mfilter #tamanhos .sizes-options .option{    
+    margin: auto;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
 
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    z-index: 2;
+}
+#mfilter #tamanhos .select{
+    border: 1px solid #00C0EE;
+    box-sizing: border-box;
+    color: #000000;
+    z-index: 1000;
+}
 
+#mfilter #prices h2{
+    margin-top: 20px;
+}
+#mfilter .prices-options{
+    display: flex;
+    align-items: center;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 100%;
+    margin-bottom: 10px;
+}
+#mfilter .prices-options .square{
+    cursor: pointer;
+    display: flex;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.400);
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+#mfilter .prices-options .square .square-print{    
+    width: 11px;
+    height: 11px;    
+    margin: auto;
+    background: #00C0EE;
+}
+#mfilter .secButtons{
+    display: flex;
+}
+#mfilter .secButtons span{
+    display: flex;
+    margin: 10px auto;
+}
+#mfilter .secButtons button{    
+    margin-top: 40px;    
+    display: flex;
+    text-transform: uppercase;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 31px;
+    width: 150px;margin: auto;
+    height: 35px;
+}
+
+#mfilter .secButtons button:first-of-type{
+    color: white;
+    border: 1px solid #00C0EE;
+    background-color: #00C0EE;
+    margin-right: 23px;
+}
+#mfilter .secButtons button:last-of-type{
     color: #666666;
+    border: 1px solid black;
+    background-color: white;
 }
-#mobileFiltros div svg{  
-    margin-right: 50px;
-}
-
-

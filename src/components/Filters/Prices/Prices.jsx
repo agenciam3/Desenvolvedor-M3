@@ -10,8 +10,7 @@ class Prices extends Component {
             choice: Prices.choices
         }
     }
-    marker(e){              
-        console.log('marcado:'+this.state.choice[e.target.id])
+    marker(e){                      
         if (this.state.choice[e.target.id]===false){
             Prices.choices = {'50': false, '150':false,'300':false,'500':false,'>500':false}
             Prices.choices[e.target.id]=true

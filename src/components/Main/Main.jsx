@@ -19,7 +19,7 @@ class Main extends Component{
         return(            
             <main>
                 <MobileOrder produtos={this.props.produtos} mobile={this.mobileOrder}/>
-                <MobileFilter mobile={this.mobileFilter}/>
+                <MobileFilter mobile={this.mobileFilter} filtro={this.props.produtos}/>
                 <h1 className="title">
                     Blusas
                 </h1>
@@ -30,9 +30,7 @@ class Main extends Component{
                 <Order produtos={this.props.produtos}/>
                 <Filters filtro={this.props.produtos}/>
                 <Products cart={this.props.cart} produtos={this.props.produtos}/>                    
-            </main>
-            
-        
+            </main>                    
         )
     }
 }

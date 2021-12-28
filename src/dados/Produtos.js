@@ -59,10 +59,7 @@ class Produtos{
             let temp = this.filtrado[min_idx];
             this.filtrado[min_idx] = this.filtrado[i];
             this.filtrado[i] = temp;            
-        }
-        this.filtrado.forEach(element => {
-            console.log(element.date)
-        });              
+        }              
     }
     menorPreco(){
         let n = this.filtrado.length
@@ -76,10 +73,7 @@ class Produtos{
             let temp = this.filtrado[min_idx];
             this.filtrado[min_idx] = this.filtrado[i];
             this.filtrado[i] = temp;            
-        }
-        this.filtrado.forEach(element => {
-            console.log(element.price)
-        });              
+        }             
     }
     maiorPreco(){
         let n = this.filtrado.length
@@ -93,10 +87,7 @@ class Produtos{
             let temp = this.filtrado[max_idx];
             this.filtrado[max_idx] = this.filtrado[i];
             this.filtrado[i] = temp;            
-        }
-        this.filtrado.forEach(element => {
-            console.log(element.price)
-        });              
+        }             
     }
     setProdutos(valor){
         this.produtos=valor
@@ -175,7 +166,7 @@ class Produtos{
                 break;       
         }                                                         
     }
-    setPrice(valor){               
+    setPrice(valor){                     
         switch (valor) {
             case '50':
                 this.price=[0,50]
