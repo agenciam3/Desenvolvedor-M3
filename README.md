@@ -14,3 +14,7 @@ Uma vez que o comando é dado ele irá levantar 2 servidores de desenvolvimento,
 
 * http://localhost:3000 para acessar o front-end.
 * http://localhost:5000/products para acessar o json-server que irá export uma api com a lista de produtos.
+
+####Email para contato
+Enviar para: eduardo.pmnf@gmail.com
+Cópia para: luiseduardo@id.uff.br
