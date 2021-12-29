@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+   <link rel="stylesheet" href="style.css">
+	<title>M3 Store</title>
+</head>
+<body>
+<header>
+		<h1 class ="logo"> <img src="logo-m3.png" alt="logo"> </h1>
+        <div class ="compras">
+            <i class ="compras-loja"></i>
+            <span id="id-compras" class="compra-quantidade">0</span>
+    
+        </div>
+    </header>
+    <div class="filtros-container">
+        <h2>Blusas </h2>
+        <div class="botoes-container">
+            <button class="abrir-botoes">Filtrar</button>
+            <button class="abrir-ordenar">Ordenar</button>
+        </div>
+    </div>
+    <main>
+
+        <aside id="filtros">
+            <h2>Blusas</h2>
+            <div id="div-cores" class="div-cores">
+                <h4 class="categorias">Cores</h4>
+                <ul>
+                    <li>
+                        <input class="checkbox-cor" type="checkbox" name="amarelo">
+                        <label for="amarelo">Amarelo</label>
+                    </li>
+                    <li>
+                        <input class="checkbox-cor" type="checkbox" name="azul">
+                        <label for="azul">Azul</label>
+                    </li>
+                    <li>
+                        <input class="checkbox-cor" type="checkbox" name="branco">
+                        <label for="branco">Branco</label>
+                    </li>
+                    <li>
+                        <input class="checkbox-cor" type="checkbox" name="cinza">
+                        <label for="cinza">Cinza</label>
+                        <li>
+                            <input class="checkbox-cor" type="checkbox" name="laranja">
+                            <label for="laranja">Laranja</label>
+                        </li>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div id="div-tamanhos" class="div-tamanhos">
+                <h4 class="categorias">Tamanhos</h4>
+                <div class="n-tamanho">
+                    <div class="tam m-tamanho" data-selected="0" data-tamanho ="M"><span class="span-tam">M</span></div>
+                    <div class="tam g-tamanho" data-selected="0" data-tamanho ="G"><span class="span-tam">G</span></div>
+                    <div class="tam gg-tamanho" data-selected="0" data-tamanho ="GG"><span class="span-tam">GG</span></div>
+                    <div class="tam p-tamanho" data-selected="0" data-tamanho ="P"><span class="span-tam">P</span></div>
+                    <div class="tam u-tamanho" data-selected="0" data-tamanho ="U"><span class="span-tam">U</span></div>
+                    <div class="tam m-tamanho" data-selected="0" data-tamanho ="M"><span class="span-tam">M</span></div>
+                    <div class="tam 36-tamanho" data-selected="0" data-tamanho ="36"><span class="span-tam">36</span></div>
+                    <div class="tam 38-tamanho" data-selected="0" data-tamanho ="38"><span class="span-tam">38</span></div>
+                    <div class="tam 40-tamanho" data-selected="0" data-tamanho ="40"><span class="span-tam">40</span></div>
+                    <div class="tam 42-tamanho" data-selected="0" data-tamanho ="42"><span class="span-tam">42</span></div>
+                    <div class="tam 44-tamanho" data-selected="0" data-tamanho ="44"><span class="span-tam">44</span></div>
+                    <div class="tam 46-tamanho" data-selected="0" data-tamanho ="46"><span class="span-tam">46</span></div>
+                </div>
+            </div>
+            <div id="div-precos" class="faixa-precos">
+                <h4 class="categorias">Faixa de Preços</h4>
+                <ul>
+                    <li>
+                        <input type="checkbox" name="preco-0-50" id="preco-0-50">
+                        <label for="preco-0-50">de R$O até R$50</label>
+                    </li>
+                    <li>
+                        <input type="checkbox" name="preco-51-150" id="preco-51-150">
+                        <label for="preco-51-150">de R$51 até R$150</label>
+                        <li>
+                            <input type="checkbox" name="preco-151-300" id="preco-151-300">
+                            <label for="preco-151-300">de R$151 até R$300</label>
+                            <li>
+                                <input type="checkbox" name="preco-301-500" id="preco-301-500">
+                                <label for="preco-301-500">de R$301 até R$500</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" name="preco-acima01" id="preco-acima01">
+                                <label for="preco-acima01"> a partir de R$01</label>
+                            </li>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        
+        <section>
+            <div class="div-ordenacao">
+                <select class="select" name="select" id="select">
+                    <option value="ordenar-por">Ordenar por:</option>
+                    <option value="mais-recentes">Mais recentes</option>
+                    <option value="menor-preco">Menor preço</option>
+                    <option value="maior-preco">Maior Preço</option>
+
+                </select>
+            </div>
+    
+        </section>
+        
+        <section class="itens-1">
+        
+            <div class=item-1>
+                <img src="images/img_2.png" >  
+                <h4>CAMISETA MESCLA</h4>
+                <h4>R$ 28.00</h4>
+                <h6> até 3x de R$9,33</h6>
+                <botton class="bt-1">COMPRAR</botton>
+                     </div>
+        <div class=item-2>
+            <img src="images/img_3.png" >  
+            <h4>SAIA EM COURO</h4>
+            <h4>R$ 398.00</h4>
+            <h6> até 5x de R$30,00</h6>
+            <botton class="bt-1">COMPRAR</botton>
+                 </div>
+        <div class=item-3>
+            <img src="images/img_4.png" >  
+            <h4>CARDIGAN TIGRE</h4>
+            <h4>R$ 398.00</h4>
+            <h6> até 5x de R$30,00</h6>
+            <botton class="bt-1">COMPRAR</botton>
+        </div>
+        </section>
+    
+        <section class="itens-2">
+        <div class=item-4>
+            <img src="images/img_5.png" >  
+            <h4>CARDIGAN OFF WHITE</h4>
+            <h4>R$ 99.90</h4>
+            <h6> até 3x de R$33,30</h6>
+            <botton class="bt-1">COMPRAR</botton>
+                 </div>
+        <div class=item-5>
+            <img src="images/img_6.png" >  
+            <h4>BODY LEOPARDO</h4>
+            <h4>R$129.00</h4>
+            <h6> até 3x de R$43,43</h6>
+            <botton class="bt-1">COMPRAR</botton>
+        </div>
+   
+        <div class=item-5>
+            <img src="images/img_7.png">  
+            <h4>CASACO PELOS</h4>
+            <h4>R$ 398.00</h4>
+            <h6> até 5x de R$30,00</h6>
+            <botton class="bt-1">COMPRAR</botton>
+        </div>
+        </section>
+        
+        <section>
+        <div class=item-6>
+            <img src="images/img_8.png" >  
+            <h4>CROPPED STRIPES</h4>
+            <h4>R$ 120.00</h4>
+            <h6> até 3x de R$40,00</h6>
+            <botton class="bt-1">COMPRAR</botton>
+                 </div>
+    
+        <div class=item-7>
+            <img src="images/img_9.png" >  
+            <h4>CAMISA TRANSPARENTE</h4>
+            <h4>R$ 398.00</h4>
+            <h6> até 5x de R$30,00</h6>
+            <botton class="bt-1">COMPRAR</botton>
+                 </div>
+   
+        <div class=item-8>
+            <img src="images/img_10.png">  
+            <h4>POCHETE CHUTCH</h4>
+            <h4>R$ 99.00</h4>
+            <h6> até 3x de R$33,00</h6>
+            <botton class="bt-1">COMPRAR</botton>
+                 </div>
+    </section>
+    
+    </main>
+   
+    <div class="div-carregarmais">
+        <p>
+        <button class="carregarmais"> Carregar mais </button>  
+        </p>
+
+    </div>
+
+    <footer>
+        <h4>Agência M3- Agência de performace digital</h4>
+    </footer>
+    <script type="text/javascript" src="./itens.js"></script>
+</body>
+</html>
