@@ -1,1 +1,37 @@
 @import "reset";
+
+.order_by_select {
+    width: min-content;
+
+    #selected {
+        display: flex;
+        align-items: center;
+        border: solid;
+        border-width: 0.5px;
+    }
+
+    #options_container {
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        border: solid;
+        border-width: 0.5px;
+
+    }
+
+    .option {
+        min-height: 25px;
+        min-width: 110px;
+        display: flex;
+        align-items: center;
+        .radio {
+            display: none;
+        }
+    }
+
+    #options_container.active {
+        max-height: 75px;
+        opacity: 1;
+    }
+}
+

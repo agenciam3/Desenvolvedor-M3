@@ -1,3 +1,25 @@
+(function () {
+    //para js que intereage juntamente com o html/css na inicialização
+    let selected = document.getElementById("selected");
+    let options_container = document.getElementById("options_container");
+    let options_list = document.getElementsByClassName("option");
+
+    selected.onclick = (function() {
+        options_container.classList.toggle("active");
+    });
+
+    for (let element of options_list) {
+        element.onclick = (function() {
+            let swap_text = selected.innerHTML 
+            selected.innerHTML = element.firstChild.nextSibling.innerText;
+            element.firstChild.nextSibling.innerHTML = swap_text;
+            options_container.classList.remove("active");
+        });
+    }
+
+
+})();
+
 function processProducts(data) {
     var product = {
         products: data,
@@ -49,7 +71,6 @@ function processProducts(data) {
                 //price_range
                 if (!isNaN(user_input.price_range[0])) {
                     if (element.price>= user_input.price_range[0] && element.price < user_input.price_range[1]) {
-                        console.log("is");
                         price = true;
                     }
                 } else price = true;
@@ -77,27 +98,47 @@ function processProducts(data) {
             let last_select_checked = setLastChecked();
             
             function uncheck () {
-            var current_checked = Array.prototype.slice.call(document.getElementsByName("price_range")).filter(function(element){
-                return element.checked;
-            });
-            if (current_checked[0].nextSibling.textContent === last_select_checked[0].nextSibling.textContent) {
-                current_checked[0].checked = false;
-                last_select_checked = setLastChecked();
-            } else {
-                last_select_checked = current_checked;
+                var current_checked = Array.prototype.slice.call(document.getElementsByName("price_range")).filter(function(element){
+                    return element.checked;
+                });
+                if (current_checked[0].nextSibling.textContent === last_select_checked[0].nextSibling.textContent) {
+                    current_checked[0].checked = false;
+                    last_select_checked = setLastChecked();
+                } else {
+                    last_select_checked = current_checked;
+                }
             }
 
-            }
+            
 
-            document.getElementById("wrapper").onclick = (function(event) {
+            document.getElementById("container").onclick = (function(event) {
                 //uncheck select if selected
-                if (event.target.type == 'radio') {
+                if (event.target.name == "price_range") {
                     uncheck();
                 }
-
+                console.log(event.target.type);
+                // if (event.path[2] === "div.order_by_select" ) {
+                //     let selected = document.getElementById("selected");
+                //     let options_container = document.getElementById("options_container");
+                //     let options_list = document.getElementsByClassName("option");
+                
+                //     selected.onclick = (function() {
+                //         options_container.classList.toggle("active");
+                //     });
+                
+                //     for (let element of options_list) {
+                //         element.onclick = (function() {
+                //             let swap_text = selected.innerHTML 
+                //             selected.innerHTML = element.firstChild.nextSibling.innerText;
+                //             element.firstChild.nextSibling.innerHTML = swap_text;
+                //             options_container.classList.remove("active");
+                //         });
+                //     }
+                // }
                 //only run for child elements
-                if(event.target.type == 'checkbox' || event.target.type == 'radio'){
+                if(event.target.type == 'checkbox' || event.target.type == 'radio'){ //|| event.target.name == 'order_by'
                     let filter_data = document.getElementsByClassName("filters");
+                    // console.log(filter_data);
                     product.processUserInput(filter_data);
                   }
             })
@@ -108,13 +149,13 @@ function processProducts(data) {
                 color: [],
                 size: [],
                 price_range: [],
+                order_by: [],
                 
             }
             
             for (let item of filter_data) {
                 if (item.checked) {
-                    let option = item.defaultValue;
-                    user_input[option].push(item.nextSibling.textContent.trim());
+                    user_input[item.defaultValue].push(item.nextSibling.textContent.trim());
                 }
             }
 
@@ -143,7 +184,7 @@ function getProducts () {
                 }
             }
         };
-    request.open('get', 'http://localhost:5500/products', true);
+    request.open('get', 'http://localhost:5000/products', true);
     request.send();
 }
 

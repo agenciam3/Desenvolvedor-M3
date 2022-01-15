@@ -12,35 +12,8 @@
 <body>
 
 </body>
-<h1>Desafio m2</h1>
-<br><br>
-<div id="wrapper">
-  <div id="sizes">
-    <label>
-      <input type="checkbox" class="filters" value="size">P</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">M</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">G</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">GG</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">U</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">36</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">38</input>
-    </label>
-    <label>
-      <input type="checkbox" class="filters" value="size">40</input>
-    </label>
-  </div>
+<div id="container">
+  <h3>Cores: </h3>
   <br>
   <div id="colors">
     <label>
@@ -74,6 +47,37 @@
       <input type="checkbox" class="filters" value="color">Vinho</input>
     </label>
   </div>
+  <br><br>
+  <h3>Tamanhos: </h3>
+  <br>
+  <div id="sizes">
+    <label>
+      <input type="checkbox" class="filters" value="size">P</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">M</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">G</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">GG</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">U</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">36</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">38</input>
+    </label>
+    <label>
+      <input type="checkbox" class="filters" value="size">40</input>
+    </label>
+  </div>
+  <br><br>
+  <h3>Faixa de preço: </h3>
   <br>
   <div id="prices">
     <label>
@@ -91,6 +95,32 @@
     <label>
       <input type="radio" class="filters" value="price_range" name="price_range">a partir de R$500</input>
     </label>
+  </div>
+  <br>
+  <div class="order_by_select">
+    <div id="selected">
+      <p>Ordenar por: </p>
+    </div>
+    <div class="select_box"> 
+      <div class="" id="options_container">
+
+        <div class="option">
+          <label>
+            <input type="radio" class="filters radio" value = "order_by" name="order_by">Mais Recentes
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="radio" class="filters radio" value = "order_by" name="order_by">Menor Preço
+          </label>
+        </div>
+        <div class="option">
+          <label>
+            <input type="radio" class="filters radio" value = "order_by" name="order_by">Maior Preço
+          </label>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
