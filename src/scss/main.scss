@@ -1,7 +1,8 @@
 @import "reset";
 
-.order_by_select {
+#order_by_select {
     width: min-content;
+    margin: 0px;
 
     #selected {
         display: flex;
