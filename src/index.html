@@ -10,9 +10,136 @@
 </head>
 
 <body>
+  <header>
+    <div id="navbar">
+      <img src="../img/logo-m3.png" alt="M3">
+      <div id="cart">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V6l-3-4H6zM3.8 6h16.4M16 10a4 4 0 1 1-8 0"/></svg>
+        <span class="badge" id="cart_count">0</span>
+      </div>
+    </div>
+  </header>
+  <div id="container">
+    <h3>Cores: </h3>
+    <br>
+    <div id="colors">
+      <label>
+        <input type="checkbox" class="filters" value="color">Amarelo</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Branco</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Azul</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Cinza</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Laranja</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Verde</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Vermelho</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Preto</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Rosa</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="color">Vinho</input>
+      </label>
+    </div>
+    <br><br>
+    <h3>Tamanhos: </h3>
+    <br>
+    <div id="sizes">
+      <label>
+        <input type="checkbox" class="filters" value="size">P</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">M</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">G</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">GG</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">U</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">36</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">38</input>
+      </label>
+      <label>
+        <input type="checkbox" class="filters" value="size">40</input>
+      </label>
+    </div>
+    <br><br>
+    <h3>Faixa de preço: </h3>
+    <br>
+    <div id="prices">
+      <label>
+        <input type="radio" class="filters" value="price_range" name="price_range">de R$0 até R$50</input>
+      </label>
+      <label>
+        <input type="radio" class="filters" value="price_range" name="price_range">de R$51 até R$150</input>
+      </label>
+      <label>
+        <input type="radio" class="filters" value="price_range" name="price_range">de R$151 até R$300</input>
+      </label>
+      <label>
+        <input type="radio" class="filters" value="price_range" name="price_range">de R$301 até R$500</input>
+      </label>
+      <label>
+        <input type="radio" class="filters" value="price_range" name="price_range">a partir de R$500</input>
+      </label>
+    </div>
+    <br>
+    <div id="order_by_select">
+      <div id="selected">
+        <p>Ordenar por: </p>
+      </div>
+      <div id="select_box"> 
+        <div class="" id="options_container">
+  
+          <div class="option" type="radio">
+            <label>
+              <input type="radio" class="radio option" value = "order_by" name="order_by">Mais Recentes
+            </label>
+          </div>
+          <div class="option">
+            <label>
+              <input type="radio" class="radio option" value = "order_by" name="order_by">Menor Preço
+            </label>
+          </div>
+          <div class="option">
+            <label>
+              <input type="radio" class="radio option" value = "order_by" name="order_by">Maior Preço
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div id="content">
+    <div id="products">
+      <!-- js input here -->
+    </div>
+     <div>
+       <button id="load_more">Carregar mais</button>
+     </div>
+  </div>
 </body>
-<h1>Desafio m3</h1>
 
 <script src="bundle.js"></script>
 
