@@ -1,5 +1,48 @@
 @import "reset";
 
+header {
+    border-bottom: solid;
+    border-color: gray;
+    
+    #navbar{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-height: 55px;
+        
+        img {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            padding-top: 11px;
+        }
+
+        #cart {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            padding-top: 15px;
+            
+            .badge {
+                padding-left: 9px;
+                padding-right: 9px;
+                border-radius: 9px;
+              }
+
+              #cart_count {
+                font-size: 13px;
+                background: #00C0EE;
+                color: #fff;
+                padding: 2px 6px;
+                vertical-align: bottom;
+                margin-left: -15px; 
+            }
+        }
+    }
+}
+
 #order_by_select {
     width: min-content;
     margin: 0px;
