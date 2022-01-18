@@ -1,31 +1,26 @@
-(function () {
-    //p=para js que intereage juntamente com o html/css na inicialização
-    
-
-
-})();
-
 function processProducts(data) {
     var product = {
         products: data,
+        current_shown_items: 0,
+        tmp_products: undefined,
         
         init: function () {
-            product.bindEvent();
-            //product.render(this.products);
-            
+            this.bindEvent();
+            this.tmp_products = this.products;
+            this.load();            
         },
 
-        render: function (products, found=true) {
-            //cria e exibe os elementos | recebe a array de elemetos
-
+        render: function (products, found) {
+            // create and display elements | get the array of elements
             console.log(products);
+
             if (!found) {
                 console.log("Can't find any products with current selection");
             }
         },
 
         filter: function (user_input) {
-            // inicializa/reseta a temporary products
+            // initialize/reset temporary products
             let tmp_products = [];
 
             //varre todos os elementos
@@ -62,7 +57,7 @@ function processProducts(data) {
                     }
                 } else price = true;
                 
-                //verifica se o produto atende os requisitos
+                // checks if the product meets the requirements
                 if (size && color && price) 
                     tmp_products.push(element);
                 
@@ -94,17 +89,20 @@ function processProducts(data) {
                 }
             }
 
-            //caso o temporary esteja vazio verifica se pelo menos um filtro foi ativado
-            //caso verdadeiro significa que nenhum produto foi encontrado
+            // if the temporary is empty check if at least one filter has been activated
+            // true case means no product was found
             if (tmp_products.length !== 0) {
-                this.render(tmp_products);
+                this.tmp_products = tmp_products;
+                this.load();
             } else if (user_input.size.length !== 0 || user_input.color.length !== 0 || !isNaN(user_input.price_range[0])) {
-                this.render(this.products, false)
+                this.load(false)
             }
 
         },
  
         bindEvent: function () {
+
+            // allows the radio to be deselected
             function setLastChecked () {
                 //set last checked for further loop become automatic
                 return {0: {nextSibling: {textContent: ""}}};
@@ -123,10 +121,12 @@ function processProducts(data) {
                 }
             }
             
+            // open the order select
             selected.onclick = (function() {
                 options_container.classList.toggle("active");
             });
 
+            // close the order select and assign selected value
             let order = document.getElementById("selected");                 
             let options_container = document.getElementById("options_container");
             let options_list = document.getElementsByClassName("option");
@@ -141,7 +141,7 @@ function processProducts(data) {
             }
             
             
-
+            // properly the event that captures de user input 
             document.getElementById("container").onclick = (function(event) { 
                 //only run for child elements
                 if(event.target.type === 'checkbox' || event.path.filter(element => element.id === "order_by_select").length !== 0 && event.path.filter(element => element.id === "options_container").length !== 0 || event.target.type === 'radio' ) { //(event.path.filter(element => element.id === "order_by_select") !== [] && event.path.filter(element => element.id === "options_container") !== [] )||
@@ -150,13 +150,28 @@ function processProducts(data) {
                         uncheck();
                     }
                     
-
-
                     let filter_data = document.getElementsByClassName("filters");
-                    //filter_data = selected;
+                    
+                    // reset shown items
+                    product.current_shown_items = 0;
+                    
+                    // enable load more again
+                    load_more_btn.textContent = "Carregar mais";
+                    load_more_btn.disabled = false;
+                    
+                    // send to process
                     product.processUserInput(filter_data, order);
                 }
             })
+
+            load_more_btn = document.getElementById("load_more")
+            load_more_btn.onclick = (function() {
+                 if(product.load()) {
+                    load_more_btn.textContent = "fim da lista";
+                    load_more_btn.disabled = true;
+                 }
+            });
+            
         },
 
         processUserInput: function (filter_data, order) {
@@ -184,6 +199,35 @@ function processProducts(data) {
             tmp_price_array.push(parseInt(tmp_price.substring(index).replace(/[^0-9]/g,'')));
             user_input.price_range = tmp_price_array;
             this.filter(user_input);
+        },
+
+        load: function (found=true) {
+            if (found) {
+                var products = this.tmp_products;
+            } else {
+                var products = this.products;
+            }
+            let current_shown_items = this.current_shown_items;
+            let sliced = undefined;
+            let   device = window.innerWidth;
+            switch (true) {
+                case (device>=320 && device<600) :
+                    sliced = products.slice(current_shown_items,(current_shown_items+4));
+                    this.current_shown_items += sliced.length;
+                    break;
+                case (device>=600) :
+                    sliced = products.slice(current_shown_items,(current_shown_items+9));
+                    this.current_shown_items += sliced.length;
+                    break;
+                default:
+                    break;
+            }
+            this.render(sliced, found);
+            console.log(this.current_shown_items);
+            console.log(products.length);
+            if (this.current_shown_items == products.length) {
+                return true;
+            }
         },
     }
     product.init();
