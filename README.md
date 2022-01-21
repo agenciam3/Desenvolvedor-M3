@@ -1,3 +1,4 @@
+
 # Venha ser um desenvolvedor da Digital M3
 
 Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ. Mas contratamos pessoas de todo o pais, visto que trabalhamos 100% home office.  
@@ -77,3 +78,12 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 - Adição de processo no gulp para otimizar imagens
 
 ##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+
+
+#### Instruções para executar meu código
+
+Basta executar o comando `npm start ` que o localhost será levantado com as configurações padrão
+
+#### Email para contato
+
+pedromarquesnf@gmail.com

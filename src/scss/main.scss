@@ -1,1 +1,454 @@
 @import "reset";
+
+$container-width : 1176px;
+$filters-width: 157px;
+$products-width: 900px;
+$font-family : 'Open Sans';
+$primary-color : #00C0EE;
+$border-color : rgba(0,0,0,0.5);
+$small : 425px;
+
+
+@mixin container{
+    max-width : $container-width;
+    padding: 0 0.2em;
+    margin: 0 auto;
+}
+
+@mixin remove-appearance{
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+@mixin mobile{
+    @media (max-width: $small) {
+        @content
+    }
+}
+
+
+body{
+    font-family: 'Open Sans';
+    @include mobile{
+        width: 425px;
+        
+    }
+    
+    .header{
+        @include mobile{
+            width: 425px;
+            
+        }
+        border-bottom: 2px solid $border-color;
+    
+        &-content{
+            
+            @include container;
+            display : flex;
+            justify-content : space-between;
+            padding: 1.03em 0.2em;
+            &-bag{
+                position: relative;
+                width: 250px;
+
+                i{
+                    position: absolute;
+                    right:0px;
+                    cursor: pointer;
+                }
+
+                &-circle{
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 10px;
+                    background-color: $primary-color;
+                    position: absolute;
+                    right: -3px;
+                    top: 1.3rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    p{
+                        font-size: 14px;
+                        font-weight: bold;
+                        color: white;
+                    }
+                }
+
+                &-items{
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    position: absolute;
+                    top: 1.6rem;
+                    background-color: white;
+                    z-index: 10;
+                    visibility: hidden;
+                    box-shadow: 2px 2px 5px $border-color;                    
+
+                    &-triangle{
+                        width: 0;
+                        height: 0;
+                        border-left: 8px solid transparent;
+                        border-right: 8px solid transparent;
+                        border-bottom: 8px solid white;
+                        position: absolute;
+                        right: 0.4rem;
+                        top: -8px;
+                    }
+
+                    #bolsa-vazia{
+                        padding: 1rem 2rem;
+                    }
+
+                    &-item{
+                        padding:0.5rem;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        font-size: 10pt;
+                        
+                        img{
+                            max-width: 30px;
+                        }
+
+                        p{
+                            padding: 0.2rem 0 0.2rem 0.2rem;
+                        }
+
+                        i{
+                            padding-right: 0.8rem;
+                            font-size: 20px;
+                        }
+                    }
+                }
+
+            }
+            &-bag:hover .header-content-bag-items{
+                visibility: visible;
+            }
+        }
+
+        
+    }
+    #content{
+        @include mobile{
+            width: 425px;
+            //position: absolute;
+        }
+        @include container;
+        &-section{
+            @include mobile{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+            }
+            
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem 0;
+
+            
+
+            &-title-h2{
+                font-size: 32px;
+            }
+            &-order-by:hover .dropdown-list{
+                visibility: visible;
+            }
+
+            
+
+            &-mobile{
+                @include mobile{
+                    visibility: visible;
+                }
+                margin-top: 1rem;
+                visibility: hidden;
+                display: flex;
+                flex-direction: row;
+                
+                p:active{
+                    background-color: $border-color;
+                }
+
+                p{
+                    font-size: 19px;
+                    display: flex;
+                    justify-content: center;    
+                    width: 10rem;
+                    padding: 1rem 0;
+                    border: 1px solid $border-color;
+                }
+
+            }
+
+            &-order-by{
+
+                @include mobile{
+                    visibility: hidden;
+                    position: absolute;
+                    background-color: white;
+                    height: 100%;
+                    padding:0 17rem 0 0;
+                }
+                width: 9rem;
+                
+                #dropdown-select{
+                    border: 1px solid $border-color;
+                    padding: 10px ;
+                    font-size: 16px;
+                    cursor:pointer;
+                    position: relative;
+                }
+
+                .dropdown-list{
+                    visibility: hidden;
+                    position:absolute;
+                    border : 1px solid black;
+                    background-color: white;
+
+                    .dropdown-list-item{
+                        a{
+                            text-decoration: none;
+                            color: black;
+                        }
+                        
+                        padding: 10px 35px 10px 10px;
+                        font-size: 16px;
+                    }
+                    .dropdown-list-item:hover{
+                        background-color: $primary-color;
+                    }
+                }
+
+                
+            }
+        }
+        
+        &-main{
+            @include mobile{
+                width: 100%;
+            }
+            display: flex;
+            justify-content: space-between;
+
+            &-filters{
+                
+                @include mobile{
+                    visibility: hidden;
+                    position: absolute;
+                    background-color: white;
+                    height: 100%;
+                    padding:0 16.6rem 100% 0.5rem;
+                    // left: 0px;
+                    top: 5rem;
+                }
+
+                max-width: $filters-width;
+                display: flex;
+                flex-direction: column;
+
+                .filter-title{
+                    font-size: 16px;
+                    margin-top: 1rem;
+                }
+
+                &-colors, &-prices{
+                    display: flex;
+                    flex-direction: column; 
+                    
+                    margin: 1rem 0rem;
+
+                    input {
+
+                        @include remove-appearance;
+                        height: 16px;
+                        width: 16px;
+                        background-color: white;
+                        border: solid 1px rgba(0, 0, 0, 0.5);
+                        border-radius: 0px;
+                        cursor: pointer;
+                        
+                    }
+
+                    label{
+                        font-size: 14px;
+                    }
+
+                    input:after{
+                        
+                        font-family: "Font Awesome 6 Free";
+                        content : "\f45c";
+                        font-weight: 900;
+                        font-size: 10px;
+                        color: $primary-color;                        
+                        display: none;
+                        padding: 0.1rem 0.15rem;
+                        
+                    }
+                    
+                    input:checked:after{
+                        display: flex;
+                    }
+
+                    
+                }
+
+                &-sizes{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 1rem 0rem;
+                    input{
+                        @include remove-appearance;
+                        position: relative;
+
+                        height: 32px;
+                        width: 32px;
+                        background-color: white;
+                        border: solid 1px $border-color;
+                        border-radius: 0px;
+                        cursor: pointer;
+                        
+                        
+                    }
+                    
+                    
+                    label{
+                        position: absolute;
+                        font-size: 16px;
+                        padding: 0.7rem;
+                        color: $border-color;
+                        font-weight: 400;
+                        cursor: pointer;
+                        pointer-events: none;
+                    }
+
+                    input:checked{
+                        display: flex;
+                        border: solid 1px $primary-color;
+                        
+                    }
+                    
+                    input:checked + label{
+                        color: black;
+                    }
+                    
+                    
+                    
+                    
+                }
+
+                .filter{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+        
+                    
+                }
+            }
+
+            &-products-area{
+
+                @include mobile{
+                    max-width: $small;
+                    
+
+                }
+                
+
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: $products-width;
+                
+                .card{
+                    @include mobile{
+                        width: 50%;
+                    }
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 33%;
+                    
+
+                    img{
+                        @include mobile{
+                            width: 100%
+                        }
+                        width: 195px;
+                        margin: 1rem;
+                    }
+
+                    .name{
+                        @include mobile {
+                            font-size: 18px;
+                        }
+                        text-transform: uppercase;
+                        font-size: 19px;
+                        margin: 0 0 0.7rem 0;
+                    }
+
+                    .price{
+                        font-size: 19px;
+                        font-weight: bold;
+                        margin: 0 0 0.7rem 0;
+                    }
+
+                    .parcelamento{
+                        font-size: 19px;
+                        color: $border-color;
+                        margin: 0 0 0.7rem 0;
+                    }
+
+                    .btn-buy{
+                        max-width:195px;
+                        border: black;
+                        background-color: black;
+                        color:white;
+                        font-weight: bold;
+                        font-size: 14px;
+                        padding: 7px 62px;
+                        text-decoration: none;
+                        cursor: pointer;
+                    }
+
+                }
+            }
+            &-products-button{
+                display: flex;
+                justify-content: center;
+                margin: 6rem 0 2rem 0;
+                a{
+                    background-color: $primary-color;
+                    color: white;
+                    font-weight: bold;
+                    text-decoration: none;
+                    max-width: 165px;
+                    padding: 8px 31px;
+                }
+            }
+            
+        }
+        
+        
+
+    }
+    footer{
+        display: flex;
+        justify-content: center;
+        background-color: black;
+
+        p{
+            color: white;
+            padding: 7px;
+        }
+    }
+}
+
+
+
+
