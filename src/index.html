@@ -1,19 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor M3</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <header>
+      <div class="container he">
+        <img src="./img/logo-m3.png" alt="m3 performance digital" />
 
-<body>
+        <i class="fas fa-shopping-bag"></i>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div class="category">
+          <div class="category-title"><h2>Blusas</h2></div>
+          <div class="category-ordination">
+            <h3 id="ordination">Ordenar por : <i id="ordenation-i" class="fas fa-caret-down"></i></h3><br />
+            <div class="cont hide" id="cont"><br />
+              <a >Mas recentes</a><br /><br />
+            <a >Menor preço</a><br /><br />
+            <a >Maior preço</a><br />
+          </div>
+          </div>
+        </div>
+        <div class="main-content">
+          <aside>
+            <h5>CORES</h5><br />
+            <form>
+              <div class="cores1">
+                <input type="checkbox" id="cor1" name="cor1" value="Amarelo" />
+              <label for="cor1"> Amarelo </label><br />
+              <input type="checkbox" id="cor2" name="cor2" value="Azul" />
+              <label for="cor2"> Azul </label><br />
+              <input type="checkbox" id="cor3" name="cor3" value="Branco" />
+              <label for="cor3"> Branco </label><br />
+              <input type="checkbox" id="cor4" name="cor4" value="Cinza" />
+              <label for="cor4"> Cinza </label><br />
+              <input type="checkbox" id="cor5" name="cor5" value="Laranja" />
+              Laranja </label><br />
+              </div>
+              <div class="cores2 hide" id="cores2">
+                <input type="checkbox" id="cor6" name="cor6" value="Verde" />
+              <label for="cor6"> Verde </label><br />
+              <input type="checkbox" id="cor7" name="cor7" value="Vermelho" />
+              <label for="cor7"> Vermelho </label><br />
+              <input type="checkbox" id="cor8" name="cor8" value="Preto" />
+              <label for="cor8"> Preto </label><br />
+              <input type="checkbox" id="cor9" name="cor9" value="Rosa" />
+              Rosa </label><br />
+              <input type="checkbox" id="cor10" name="cor10" value="Vinho" />
+              <label for="cor10"> Vinho </label><br /></div>
+              <h3 class="more-cor" id="more-cor">Ver todas as cores &#9660; </h3>
+            </form><br />
 
-</body>
-<h1>Desafio m3</h1>
+            <h5>TAMANHOS</h5><br /><br /><br /><br />
 
-<script src="bundle.js"></script>
+            <h5>FAIXA DE PREÇO</h5><br />
 
+            <form>
+  <input type="radio" id="price1" name="price_range" value="price1">
+  <label for="price1">de R$0 até R$50</label><br>
+   <input type="radio" id="price2" name="price_range" value="price2">
+  <label for="price2">de R$51 até R$150</label><br>
+   <input type="radio" id="price3" name="price_range" value="price3">
+  <label for="price3">de R$151 até R$300</label><br>
+   <input type="radio" id="price4" name="price_range" value="price4">
+  <label for="price4">de R$301 até R$500</label><br>
+   <input type="radio" id="price1" name="price_range" value="price1">
+  <label for="price1">a partir de R$500</label><br>
+
+</form>
+          </aside>
+          <article id="article-product">
+            
+            
+            <!-- <div class="product">
+              <img src="./img/img_3.png" alt="">
+              <div class="caption">
+                <h2>Saia em couro</h2>
+                <p class="price">R$ 328,00</p>
+                <p class="installment">
+                  até 10x de R$33,00
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>
+            </div>
+            <div class="product">
+              <img src="./img/img_4.png" alt="">
+              <div class="caption">
+                <h2>Cardigan Tigre</h2>
+                <p class="price">R$ 328,00</p>
+                <p class="installment">
+                  até 10x de R$33,00
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>
+            </div>
+            <div class="product">
+              <img src="./img/img_10.png" alt="">
+              <div class="caption">
+                <h2>Camiseta</h2>
+                <p class="price">R$ 28,00</p>
+                <p class="installment">
+                  até 3x de R$9,33
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>
+            </div>
+            <div class="product">
+              <img src="./img/img_10.png" alt="">
+              <div class="caption">
+                <h2>Camiseta</h2>
+                <p class="price">R$ 28,00</p>
+                <p class="installment">
+                  até 3x de R$9,33
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>
+            </div>
+            <div class="product">
+              <img src="./img/img_10.png" alt="">
+              <div class="caption">
+                <h2>Camiseta</h2>
+                <p class="price">R$ 28,00</p>
+                <p class="installment">
+                  até 3x de R$9,33
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>
+            </div>
+            <div class="product">
+              <img src="./img/img_10.png" alt="">
+              <div class="caption">
+                <h2>Camiseta</h2>
+                <p class="price">R$ 28,00</p>
+                <p class="installment">
+                  até 3x de R$9,33
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>
+            </div> -->
+
+          </article>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>M3: Implantação de E-commerce VTEX</p>
+    </footer>
+    <!--  <script src="bundle.js"></script> -->
+     <script>
+       var ordination = document.getElementById("ordination");
+       ordination.addEventListener("click", function() {
+         var cont = document.getElementById("cont");
+         cont.classList.toggle("hide")
+       });
+       var moreCor = document.getElementById("more-cor");
+
+       moreCor.addEventListener("click", function() {
+         var cores2 = document.getElementById("cores2");
+
+         cores2.classList.toggle("hide")
+
+         moreCor.classList.toggle("hide")
+       });
+
+
+
+       var articleProduct = document.getElementById("article-product");
+
+       fetch("http://localhost:5000/products").then((response) => response.json()).then((data) => {
+         data.map((val) => {
+           articleProduct.innerHTML+=`
+           <div class="product">
+              <img src="`+val.image+`" alt="`+val.name+`">
+              <div class="caption">
+                <h2>`+val.name+`</h2>
+                <p class="price">`+val.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`</p>
+                <p class="installment">
+                  até `+val.parcelamento[0]+`x de `+val.parcelamento[1].toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+`
+                </p>
+              </div>
+              <div class="button-buy">
+                comprar
+              </div>`
+         })
+       })
+     </script>
+  </body>
 </html>
