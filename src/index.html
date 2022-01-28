@@ -32,6 +32,22 @@
       <div class="container">
         <div class="category">
           <div class="category-title"><h2>Blusas</h2></div>
+          <div class="btn-filters" >
+            <div class="btn-filter" id="btn-filter">Filtrar</div>
+            <div class="btn-ordination" id="btn-ordination">Ordenar</div>
+            <div id="filter-mobile">
+              <div class="filter-mobile-title">
+                <p>Filtrar</p> <p id="btn-close-1">X</p>
+              </div>
+            </div>
+            <div id="ordination-mobile">
+               <div class="filter-mobile-title">
+                <p>Ordenar</p> <p id="btn-close-2">X</p>
+              </div>
+              
+            </div>
+
+          </div>
           <div class="category-ordination">
             <h3 id="ordination">Ordenar por : <i id="ordenation-i" class="fas fa-caret-down"></i></h3><br />
             <div class="cont hide" id="cont"><br />
@@ -42,7 +58,7 @@
           </div>
         </div>
         <div class="main-content">
-          <aside>
+          <aside >
             <h5>CORES</h5><br />
             <form>
               <div class="cores1">
@@ -89,7 +105,7 @@
 
 </form>
           </aside>
-          <article id="article-product">
+          <article  id="article-product">
             
             
             <!-- <div class="product">
@@ -175,16 +191,19 @@
         </div>
       </div>
     </main>
-    <footer>
+    <footer class="hide">
       <p>M3: Implantação de E-commerce VTEX</p>
     </footer>
     <!--  <script src="bundle.js"></script> -->
      <script>
-       var ordination = document.getElementById("ordination");
+
+       //button ordination
+        var ordination = document.getElementById("ordination");
        ordination.addEventListener("click", function() {
          var cont = document.getElementById("cont");
          cont.classList.toggle("hide")
        });
+       //button more-cor
        var moreCor = document.getElementById("more-cor");
 
        moreCor.addEventListener("click", function() {
@@ -194,12 +213,42 @@
 
          moreCor.classList.toggle("hide")
        });
+       //filter
+       const filterMobile = document.getElementById("filter-mobile");
+       const ordinationMobile = document.getElementById("ordination-mobile");
+
+       const btnFilter = document.getElementById("btn-filter");
+       btnFilter.addEventListener("click", function() {
+         
+
+         filterMobile.classList.toggle("hide")
+
+       });
+       const btnOrdination = document.getElementById("btn-ordination");
+       btnOrdination.addEventListener("click", function() {
+         
+
+         ordinationMobile.classList.toggle("hide")
+
+       });
+       const btnClose1 = document.getElementById("btn-close-1");
+       btnClose1.addEventListener("click", function() {
+        
+         filterMobile.classList.toggle("hide")
+
+       });
+       const btnClose2 = document.getElementById("btn-close-2");
+       btnClose2.addEventListener("click", function() {
+        
+         ordinationMobile.classList.toggle("hide")
+
+       });
 
 
 
-       var articleProduct = document.getElementById("article-product");
+       var articleProduct = document.getElementById("article-product");  
 
-       fetch("http://localhost:5000/products").then((response) => response.json()).then((data) => {
+        fetch("http://localhost:5000/products").then((response) => response.json()).then((data) => {
          data.map((val) => {
            articleProduct.innerHTML+=`
            <div class="product">
@@ -214,8 +263,10 @@
               <div class="button-buy">
                 comprar
               </div>`
+
          })
-       })
+         
+       })  
      </script>
   </body>
 </html>

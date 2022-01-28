@@ -8,13 +8,13 @@
   --primary: #00c0ee;
 }
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1200px;
   padding: auto 25px;
   margin: auto;
 }
 .hide {
-  display: none;
+  display: none !important;
 }
 body {
   font-family: "Open Sans", sans-serif;
@@ -58,6 +58,7 @@ body {
       padding: 40px 10px;
       display: flex;
       justify-content: space-between;
+    
       
 
       .category-title {
@@ -106,6 +107,52 @@ body {
         }
       }
     }
+    .btn-filters {
+      display: none;
+      width: 100%;
+      margin-top: 10px;
+      padding: auto;
+
+      .btn-filter, .btn-ordination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50%;
+        border: 2px solid var(--black);
+        margin: 0;
+        cursor: pointer;
+      }
+      #filter-mobile, #ordination-mobile {
+        
+        background-color: var(--white);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+
+        .filter-mobile-title {
+        width: 90%;
+        height: 70px;
+        font-size: 22px;
+        color: var(--gray2);
+        border-bottom: 2px solid var(--gray2);
+        padding: 5px 16px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+      }
+      #btn-close-1, #btn-close-2 {
+        cursor: pointer;
+      }
+
+      }
+      
+    }
     .main-content {
       display: flex;
       height: 100%;
@@ -121,7 +168,7 @@ body {
         }
       }
       article {
-        width: 75%;;
+        width: 75%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         grid-column-gap: 20px;
@@ -187,4 +234,63 @@ body {
     justify-content: center;
     text-align: center;
   }
+}
+
+@media screen and (max-width: 920px){
+  .main-content {
+    aside {
+      width: 30% !important;
+    }
+    article {
+       width: 70%!important;
+    }
+  }
+  
+}
+@media screen and (max-width: 690px){
+  .main-content {
+    aside {
+      width: 35% !important;
+    }
+    article {
+       width: 65%!important;
+    }
+  }
+  
+}
+@media screen and (max-width: 604px){
+  .category {
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .category-title {
+      h2 {
+        font-size: 22px !important;
+      }
+    }
+
+    .category-ordination {
+    display: none !important;
+
+    h3 {
+      display: none;
+    }
+  }
+  .btn-filters {
+    display: flex !important;
+  }
+
+  }
+  
+  .main-content {
+    aside {
+      display: none
+    }
+    article {
+       width: 100%!important;
+    }
+  }
+  
 }
