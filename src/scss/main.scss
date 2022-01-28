@@ -159,12 +159,66 @@ body {
       aside {
         
         width: 25%;
+        form {
+          input[type="checkbox"]{
+          width: 20px;
+          height: 20px;
+          outline: none;
+          -webkit-appearance: none;
+          border: 2px solid var(--gray2);
+        }
+        input:checked[type="checkbox"] {
+          width: 20px;
+          height: 20px;
+          outline: none;
+          -webkit-appearance: none;
+          border: 1px solid white;
+          border: 2px solid var(--gray2);
+          background-color: var(--primary);
+        }
+        input[type="radio"]{
+          width: 20px;
+          height: 20px;
+          outline: none;
+          appearance: auto;
+          border: 2px solid var(--gray2);
+        }
+      }
         .cores2 {
           cursor: pointer;
         }
         .more-cor {
           color: var(--gray2);
           text-decoration: solid 1px var(--gray2);
+        }
+        .tamanhos {
+          width: 70%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: start;
+          .tam {
+              width: 32px;
+              height: 32px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--gray2);
+              border: 2px solid var(--gray2);
+              font-size: 16px;
+              text-transform: uppercase;
+              margin: 5px;
+              cursor: pointer;
+
+              &:hover {
+                color: var(--black);
+                border: 2px solid var(--primary);
+              }
+            
+            }
+            .tam.active {
+              color: var(--black);
+                border: 2px solid var(--primary);
+            }
         }
       }
       article {
@@ -285,9 +339,9 @@ body {
   }
   
   .main-content {
-    aside {
+  /*   aside {
       display: none
-    }
+    } */
     article {
        width: 100%!important;
     }
