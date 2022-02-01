@@ -26,8 +26,10 @@
         <a href="index.html"
           ><img src="./img/logo-m3.png" alt="m3 performance digital" />
         </a>
-
-        <a href="" class="cart"><i class="fas fa-shopping-bag"></i></a>
+        <div class="sacola">
+          <i class="fas fa-shopping-bag"></i>
+          <a href="" id="cart"></a>
+        </div>
       </div>
     </header>
     <main>
@@ -68,61 +70,92 @@
             <h5>CORES</h5>
             <br />
             <form class="cores">
-              <div class="cores1"> 
-
+              <div class="cores1">
                 <label class="yellow checkbox">
-                  <input name="amarelo" type="checkbox" class="yellow filterColorsAndSize"  />
+                  <input
+                    name="amarelo"
+                    type="checkbox"
+                    class="yellow filterColorsAndSize"
+                  />
                   <span class="yellow">Amarelo</span>
                 </label>
-                <label  class="blue checkbox">
-                  <input name="azul"  type="checkbox" class="blue filterColorsAndSize" />
+                <label class="blue checkbox">
+                  <input
+                    name="azul"
+                    type="checkbox"
+                    class="blue filterColorsAndSize"
+                  />
                   <span class="blue">Azul</span>
                 </label>
-                <label  class="white checkbox">
-                  <input name="branco" type="checkbox" class="white filterColorsAndSize" />
+                <label class="white checkbox">
+                  <input
+                    name="branco"
+                    type="checkbox"
+                    class="white filterColorsAndSize"
+                  />
                   <span class="white">Branco</span>
                 </label>
-                <label  class="grey checkbox" class="grey">
-                  <input name="cinza" type="checkbox" class="grey filterColorsAndSize" />
+                <label class="grey checkbox" class="grey">
+                  <input
+                    name="cinza"
+                    type="checkbox"
+                    class="grey filterColorsAndSize"
+                  />
                   <span class="grey">Cinza</span>
                 </label>
                 <label class="orange checkbox">
-                  <input 
-                  name="laranja"
-                  type="checkbox" class="orange filterColorsAndSize" />
+                  <input
+                    name="laranja"
+                    type="checkbox"
+                    class="orange filterColorsAndSize"
+                  />
                   <span class="orange">Laranja</span>
                 </label>
-                
               </div>
 
               <div class="cores2 hide" id="cores2">
-
                 <label class="green checkbox">
-                  <input name="verde" type="checkbox" class="green filterColorsAndSize" />
+                  <input
+                    name="verde"
+                    type="checkbox"
+                    class="green filterColorsAndSize"
+                  />
                   <span class="green">Verde</span>
                 </label>
                 <label class="red checkbox">
-                  <input name="vermelho" type="checkbox" class="red filterColorsAndSize" />
+                  <input
+                    name="vermelho"
+                    type="checkbox"
+                    class="red filterColorsAndSize"
+                  />
                   <span class="red">Vermelho</span>
                 </label>
                 <label class="black checkbox">
-                  <input name="preto" type="checkbox" class="black filterColorsAndSize" />
+                  <input
+                    name="preto"
+                    type="checkbox"
+                    class="black filterColorsAndSize"
+                  />
                   <span class="black">Preto</span>
                 </label>
                 <label class="pink checkbox">
-                  <input name="rosa" type="checkbox" class="pink filterColorsAndSize" />
+                  <input
+                    name="rosa"
+                    type="checkbox"
+                    class="pink filterColorsAndSize"
+                  />
                   <span class="pink">Rosa</span>
                 </label>
                 <label class="wine checkbox">
-                  <input name="vinho" type="checkbox" class="wine filterColorsAndSize" />
+                  <input
+                    name="vinho"
+                    type="checkbox"
+                    class="wine filterColorsAndSize"
+                  />
                   <span class="wine">Vinho</span>
                 </label>
               </div>
-              <h3 class="more-cor" id="more-cor">
-                Ver todas as cores &#9660;
-              </h3>
-
-
+              <h3 class="more-cor" id="more-cor">Ver todas as cores &#9660;</h3>
             </form>
             <br />
 
@@ -168,14 +201,19 @@
                 <span>a partir de R$500</span>
               </label>
             </form>
-
           </aside>
-          <article id="article-product">
+          <article>
+            <p class="hide" id="textInd">
+              Desculpe! No momento não temos essa cor disponível.
+            </p>
+            <div class="articleContent" id="article-product"></div>
+            <div class="loadMore-1">
+              <button onclick="addCart(1)" class="loadMore">
+                CARREGAR MAIS
+              </button>
+            </div>
           </article>
         </div>
-      </div>
-      <div class="loadMore-1">
-        <button class="loadMore">CARREGAR MAIS</button>
       </div>
     </main>
     <footer class="hide">
