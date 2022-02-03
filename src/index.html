@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <figure>
+                <img src="./img/logo-m3.png" alt="logo">
+            </figure>
+        </div>
+
+
+        <div id="sacola">
+            <figure>
+                <img src="img/bag.png" alt="sacola">
+                <span id="bag-counter">
+                    <span class="bag-counter--span">0</span>
+                </span>
+            </figure>
+
+        </div>
+
+        <hr>
+
+
+
+
+
+
+
+
+
+
+    </header>
+    <div class="btn-filtra-ordenar">
+        <button id="btn-filtrar" class="filtrar">
+            Filtrar
+
+        </button>
+
+        <button id="btn-ordenar" class="ordenar">
+            Ordenar
+        </button>
+
+    </div>
+
+
+    <h1>Blusas</h1>
+
+
+
+
+
+
+    <div class="order-mobile">
+
+        <div id="ordenar-titulo">Ordenar <div class="x" value="x">X</div>
+        </div>
+
+        <div value="mais-recente">
+            <h3>Mais Recente</h3>
+        </div>
+        <div value="menor-preco">
+            <h3>Menor Preço</h3>
+        </div>
+        <div value="maior-preco">
+            <h3>Maior Preço</h3>
+        </div>
+    </div>
+    <select id="order-by" class="order-by-mobile">
+
+        <option value="ordenar-por">
+            <div>Ordenar por:</div>
+        </option>
+        <option value="menor-preco">
+            <button class="option">Menor Preço</button>
+        </option>
+        <option value="mais-recente">
+            <button class="option">Mais Recente</button>
+        </option>
+        <option value="maior-preco">
+            <button class="option">Maior Preço</button>
+        </option>
+
+
+    </select>
+    <aside>
+        <div class="filtrar-titulo-mob">
+            FILTRAR <div class="x-filtrar">X</div>
+        </div>
+        <section id="cores-section" class="cores-mobile">
+
+            <div class="section-titulo">
+                <h2 class="titulo-cores">CORES</h2>
+            </div>
+
+            <div id="cores" class="cores">
+
+                <label for="amarelo">
+                    <input type="checkbox" name="cor" value="Amarelo" id="Amarelo">
+                    <span>Amarelo</span>
+                </label>
+
+                <label for="Azul">
+                    <input type="checkbox" name="cor" value="Azul" id="Azul">
+                    <span>Azul</span>
+                </label>
+
+                <label for="Branco">
+                    <input type="checkbox" name="cor" value="Branco" id="Branco">
+                    <span>Branco</span>
+                </label>
+
+                <label for="Cinza">
+                    <input type="checkbox" name="cor" value="Cinza" id="Cinza">
+                    <span>Cinza</span>
+                </label>
+
+                <label for="laranja">
+                    <input type="checkbox" name="cor" value="Laranja" id="Laranja">
+                    <span>Laranja</span>
+                </label>
+
+                <div id="dropdown-cores">
+                    <label for="verde">
+                        <input type="checkbox" name="cor" value="Verde" id="Verde">
+                        <span>Verde</span>
+                    </label>
+
+                    <label for="vermelho">
+                        <input type="checkbox" name="cor" value="Vermelho" id="Vermelho">
+                        <span>Vermelho</span>
+                    </label>
+
+                    <label for="preto">
+                        <input type="checkbox" name="cor" value="Preto" id="Preto">
+                        <span>Preto</span>
+                    </label>
+
+                    <label for="rosa">
+                        <input type="checkbox" name="cor" value="Rosa" id="Rosa">
+                        <span>Rosa</span>
+                    </label>
+
+                    <label for="vinho">
+                        <input type="checkbox" name="cor" value="Vinho" id="Vinho">
+                        <span>Vinho</span>
+                    </label>
+
+                </div>
+
+            </div>
+        </section>
+        <section id="tamanhos-section" class="tamanhos-mobile">
+            <div class="section-titulo">
+                <h2 class=".tamanhos-titulo">TAMANHOS</h2>
+            </div>
+            <div id="tamanhos" class="tamanhos">
+
+                <label for="p">
+                    <input type="checkbox" value="P" name="tamanho" id="p">
+                    <span>P</span>
+                </label>
+
+                <label for="m">
+                    <input type="checkbox"  name="tamanho" value="m" id="m">
+                    <span>M</span>
+                </label>
+
+                <label for="g">
+                    <input type="checkbox" name="tamanho" value="g" id="g">
+                    <span>G</span>
+                </label>
+
+                <label for="gg">
+                    <input type="checkbox" name="tamanho" value="gg" id="gg">
+                    <span>GG</span>
+                </label>
+
+                <label for="u">
+                    <input type="checkbox" name="tamanho" value="u" id="u">
+                    <span>U</span>
+                </label>
+
+                <label for="36">
+                    <input type="checkbox" name="tamanho" value="36" id="36">
+                    <span>36</span>
+                </label>
+
+                <label for="38">
+                    <input type="checkbox" name="tamanho" value="38" id="38">
+                    <span>38</span>
+                </label>
+
+                <label for="40">
+                    <input type="checkbox" name="tamanho" value="40" id="40">
+                    <span>40</span>
+                </label>
+
+                <label for="42">
+                    <input type="checkbox" name="tamanho" value="42" id="42">
+                    <span>42</span>
+                </label>
+
+                <label for="44">
+                    <input type="checkbox" name="tamanho" value="44" id="44">
+                    <span>44</span>
+                </label>
+
+                <label for="46">
+                    <input type="checkbox" name="tamanho" value="46" id="46">
+                    <span>46</span>
+                </label>
+
+
+            </div>
+        </section>
+        <section id="faixa-preco-section" class="preco-mobile">
+            <div class="section-titulo">
+                <h2 class="preco">FAIXA DE PREÇO</h2>
+            </div>
+
+            <div id="faixa-de-preco" class="faixa-preco">
+                <label for="0-50">
+                    <input type="checkbox"  name="price" value="50" id="ckb-0-50">
+                    <span>de R$0 até R$50</span>
+                </label>
+
+                <label for="51-150">
+                    <input type="checkbox" name="price" value="51" id="ckb-51-150">
+                    <span>de R$51 até R$150</span>
+                </label>
+
+                <label for="151-300">
+                    <input type="checkbox" name="price" value="151" id="ckb-151-300">
+                    <span>de R$151 até R$300</span>
+                </label>
+
+                <label for="301-500">
+                    <input type="checkbox" name="price" value="301" id="ckb-301-500">
+                    <span>de R$301 até R$500</span>
+                </label>
+
+                <label for="1">
+                    <input type="checkbox" name="price" value="1" id="ckb-1">
+                    <span>a partir de R$01</span>
+                </label>
+            </div>
+        </section>
+        <div class="aplicar-limpar">
+            <button id="aplicar" class="aplicar">
+                Aplicar
+            </button>
+            <button id="limpar" class="limpar">
+                Limpar
+            </button>
+        </div>
+    </aside>
+
+    <main>
+        <div class="products"></div>
+        <div class="load-more" id="load-more">Carregar Mais</div>
+    </main>
+    <footer id="footer">Agência M3 - Agência de Performance Digital</footer>
+</body>
+
+
+<script src="bundle.js"></script>
+
+</html>
