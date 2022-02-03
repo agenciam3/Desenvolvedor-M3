@@ -38,18 +38,28 @@
           <div class="category-title"><h2>Blusas</h2></div>
           <div class="btn-filters">
             <div class="btn-filter" id="btn-filter">Filtrar</div>
-            <div class="btn-ordination" id="btn-ordination">Ordenar</div>
-            <div id="filter-mobile">
+            <div class="btn-ordination" id="btn-ordination">
+              Ordenar
+            </div>
+            <div id="filter-mobile" class="hide">
               <div class="filter-mobile-title">
                 <p>Filtrar</p>
-                <p id="btn-close-1">X</p>
+                <p id="btn-close-1">&#10006;</p>
               </div>
             </div>
-            <div id="ordination-mobile">
+            <div id="ordination-mobile" class="hide">
               <div class="filter-mobile-title">
                 <p>Ordenar</p>
-                <p id="btn-close-2">X</p>
+                <p id="btn-close-2">&#10006;</p>
               </div>
+                
+              <div class="ordination-mobile-content">
+              
+                <div  id="recent-mobile" >Mais recentes</div>
+                <div id="lowerPrice-mobile">Menor preço</div>
+                <div id="higherPrice-mobile">Maior preço!</div>
+              </div>
+                
             </div>
           </div>
           <div class="category-ordination">
@@ -58,13 +68,15 @@
             </h3>
             <br />
             <div class="cont hide" id="cont">
-              <br />
-              <a>Mas recentes</a><br /><br />
-              <a>Menor preço</a><br /><br />
-              <a>Maior preço</a><br />
+              
+              <div  id="recent" >Mais recentes</div>
+              <div id="lowerPrice">Menor preço</div>
+              <div id="higherPrice">Maior preço</div>
             </div>
           </div>
         </div>
+          
+        
         <div class="main-content">
           <aside>
             <h5>CORES</h5>
@@ -73,6 +85,7 @@
               <div class="cores1">
                 <label class="yellow checkbox">
                   <input
+                  class="inputCores"
                     name="amarelo"
                     type="checkbox"
                     class="yellow filterColorsAndSize"
@@ -81,6 +94,7 @@
                 </label>
                 <label class="blue checkbox">
                   <input
+                  class="inputCores"
                     name="azul"
                     type="checkbox"
                     class="blue filterColorsAndSize"
@@ -89,6 +103,7 @@
                 </label>
                 <label class="white checkbox">
                   <input
+                  class="inputCores"
                     name="branco"
                     type="checkbox"
                     class="white filterColorsAndSize"
@@ -97,6 +112,7 @@
                 </label>
                 <label class="grey checkbox" class="grey">
                   <input
+                  class="inputCores"
                     name="cinza"
                     type="checkbox"
                     class="grey filterColorsAndSize"
@@ -105,6 +121,7 @@
                 </label>
                 <label class="orange checkbox">
                   <input
+                  class="inputCores"
                     name="laranja"
                     type="checkbox"
                     class="orange filterColorsAndSize"
@@ -116,6 +133,7 @@
               <div class="cores2 hide" id="cores2">
                 <label class="green checkbox">
                   <input
+                  class="inputCores"
                     name="verde"
                     type="checkbox"
                     class="green filterColorsAndSize"
@@ -124,6 +142,7 @@
                 </label>
                 <label class="red checkbox">
                   <input
+                  class="inputCores"
                     name="vermelho"
                     type="checkbox"
                     class="red filterColorsAndSize"
@@ -132,6 +151,7 @@
                 </label>
                 <label class="black checkbox">
                   <input
+                  class="inputCores"
                     name="preto"
                     type="checkbox"
                     class="black filterColorsAndSize"
@@ -140,6 +160,7 @@
                 </label>
                 <label class="pink checkbox">
                   <input
+                  class="inputCores"
                     name="rosa"
                     type="checkbox"
                     class="pink filterColorsAndSize"
@@ -148,6 +169,7 @@
                 </label>
                 <label class="wine checkbox">
                   <input
+                  class="inputCores"
                     name="vinho"
                     type="checkbox"
                     class="wine filterColorsAndSize"
@@ -179,25 +201,55 @@
             <h5>FAIXA DE PREÇO</h5>
             <br />
 
-            <form>
+            <form >
               <label class="checkbox">
-                <input type="checkbox" class="first-price price filterPrice" />
-                <span>de R$0 até R$50</span>
+                <input
+                  type="checkbox"
+                  name="filPrice"
+                  value="50"
+                  data-min="0"
+                  class="filterPrice"
+                />
+                <span>de R$ 0 até R$50</span>
               </label>
               <label class="checkbox">
-                <input type="checkbox" class="second-price price filterPrice" />
-                <span>de R$51 até R$150</span>
+                <input
+                  type="checkbox"
+                  name="filPrice"
+                  value="150"
+                  data-min="51"
+                  class="filterPrice"
+                />
+                <span>de R$ 51 até R$150</span>
               </label>
               <label class="checkbox">
-                <input type="checkbox" class="third-price price filterPrice" />
-                <span>de R$151 até R$300</span>
+                <input
+                  type="checkbox"
+                  name="filPrice"
+                  value="300"
+                  data-min="151"
+                  class="filterPrice"
+                />
+                <span>de R$ 151 até R$300</span>
               </label>
               <label class="checkbox">
-                <input type="checkbox" class="fourth-price price filterPrice" />
-                <span>de R$301 até R$500</span>
+                <input
+                  type="checkbox"
+                  name="filPrice"
+                  value="500"
+                  data-min="301"
+                  class="filterPrice"
+                />
+                <span>de R$ 301 até R$ 500</span>
               </label>
               <label class="checkbox">
-                <input type="checkbox" class="fifth-price price filterPrice" />
+                <input
+                  type="checkbox"
+                  name="filPrice"
+                  value="500+"
+                  data-min="500"
+                  class="filterPrice"
+                />
                 <span>a partir de R$500</span>
               </label>
             </form>

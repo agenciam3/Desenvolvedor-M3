@@ -2,17 +2,43 @@ const products = [];
 const productPagination1 = [];
 const productPagination2 = [];
 const colors = [];
-const sizesFilter = [];
-const cartItems = [];
-const pricess = [];
-const included = [];
-const loadMore = [];
-let filter = [];
+let filterPrice = [];
+var selectedCor = [];
 
 const articleProduct = document.getElementById("article-product");
-const textIndisponivel = document.getElementById("textInd");
+const textUnavailable = document.getElementById("textInd");
 
-function fetchData() {
+const allFilterColors = document.querySelectorAll(".inputCores");
+const allFilterPrice = document.querySelectorAll(".filterPrice");
+
+const color2 = document.getElementById("cores2");
+const moreCor = document.getElementById("more-cor");
+
+const ordination = document.getElementById("ordination");
+const cont = document.getElementById("cont");
+
+
+const buttonHigherPrice = document.getElementById("higherPrice");
+const buttonLowerPrice = document.getElementById("lowerPrice");
+const buttonRecent = document.getElementById("recent");
+
+const buttonHigherPriceMobile = document.getElementById("higherPrice-mobile");
+const buttonLowerPriceMobile = document.getElementById("lowerPrice-mobile");
+const buttonRecentMobile = document.getElementById("recent-mobile");
+
+const filterMobile = document.getElementById("filter-mobile");
+const ordinationMobile = document.getElementById("ordination-mobile");
+
+const btnFilter = document.getElementById("btn-filter");
+const btnOrdination = document.getElementById("btn-ordination");
+
+const btnClose1 = document.getElementById("btn-close-1");
+const btnClose2 = document.getElementById("btn-close-2");
+
+const load_more = document.querySelector(".loadMore");
+//const color = document.querySelector(".cores div");
+
+function showProducts() {
   fetch("http://localhost:5000/products")
     .then((response) => response.json())
     .then((data) => {
@@ -31,26 +57,27 @@ function fetchData() {
               currency: "BRL",
             }),
           ],
-          price: i.price.toLocaleString("pt-br", {
-            style: "currency",
-            currency: "BRL",
-          }),
+          price: [
+            i.price.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            }),
+            i.price,
+          ],
           size: i.size,
         });
       });
       return products;
     })
     .then((products) => {
-      
-
-      function renderProducts(produtos) {
-        produtos.forEach((product, index) => {
+      function renderProducts(productsEl) {
+        productsEl.forEach((product, index) => {
           return (articleProduct.innerHTML += `
           <div class="product">
             <img src="${product.image}" alt="${product.name}" />
             <div class="caption">
                 <h2>${product.name}</h2>
-                <p class="price">${product.price}</p>
+                <p class="price">${product.price[0]}</p>
                 <p class="installment">
                     até ${product.parcelamento[0]} x de ${product.parcelamento[1]}
                 </p>
@@ -69,79 +96,152 @@ function fetchData() {
           productPagination2.push(products[i]);
         }
       }
-      const allFilter = document.querySelectorAll("input[type='checkbox']");
-       allFilter.forEach((checkbox) => {
-         checkbox.addEventListener("change", (el) => {
-           let targetColor = el.target.name;
-           //console.log(targetColor)
-           
+        // button ordination desktop start
+      buttonHigherPrice.addEventListener("click", () => {
+        articleProduct.innerHTML = "";
+        cont.classList.toggle("hide");
+        let price = [];
+        for (product of products) {
+          price.push(product);
+        }
+        price.sort(function (a, b) {
+          return parseInt(b.price[1]) - parseInt(a.price[1]);
+        });
+        console.log(price);
+        renderProducts(price);
+        load_more.classList.add("hide");
+      });
 
-           const hasColors = filter.find((color) => {
-             return color == targetColor;
-           });
-           //console.log(hasColors)
+      buttonLowerPrice.addEventListener("click", () => {
+        articleProduct.innerHTML = "";
+        cont.classList.toggle("hide");
+        let price = [];
+        for (product of products) {
+          price.push(product);
+        }
+        price.sort(function (a, b) {
+          return parseInt(a.price[1]) - parseInt(b.price[1]);
+        });
+        renderProducts(price);
+        load_more.classList.add("hide");
+      });
+      buttonRecent.addEventListener("click", () => {
+        articleProduct.innerHTML = "";
+        cont.classList.toggle("hide");
+        renderProducts(productPagination2);
+        load_more.classList.add("hide");
+      });
+      /// button ordination desktop end
 
-           if (hasColors) {
-             const filterColorIndex = filter.findIndex(
-               (filterColor) => targetColor == filterColor
-             );
-             filter.splice(filterColorIndex, 1);
-           } else {
-             filter.push(targetColor);
+
+      // button ordination mobile start 
+
+         buttonHigherPriceMobile.addEventListener("click", () => {
+           articleProduct.innerHTML = "";
+           ordinationMobile.classList.add("hide");
+           let price = [];
+           for (product of products) {
+             price.push(product);
            }
-           //console.log(filter)
-           var selectedCor = products.filter(
-             (p) => filter.includes(p.color.toLowerCase()) // torar toloswer case
-           );
-
-
-           if (filter.length > 0 && selectedCor.length == 0) {
-           
-            articleProduct.innerHTML = "";
-            textIndisponivel.classList.remove("hide")
-            load_more.classList.add("hide");
-
-           } else if (filter.length > 0) {
-             articleProduct.innerHTML = "";
-             textIndisponivel.classList.add("hide");
-             renderProducts(selectedCor);
-             load_more.classList.add("hide");
-           }else if(filter.length == 0){
-             textIndisponivel.classList.add("hide");
-              articleProduct.innerHTML = "";
-              renderProducts(productPagination1);
-              load_more.classList.remove("hide");
-            }
-
+           price.sort(function (a, b) {
+             return parseInt(b.price[1]) - parseInt(a.price[1]);
+           });
+           console.log(price);
+           renderProducts(price);
+           load_more.classList.add("hide");
          });
-       });
 
-       renderProducts(productPagination1)
-   
-       const load_more = document.querySelector(".loadMore");
+         buttonLowerPriceMobile.addEventListener("click", () => {
+           articleProduct.innerHTML = "";
+           ordinationMobile.classList.add("hide");
+           let price = [];
+           for (product of products) {
+             price.push(product);
+           }
+           price.sort(function (a, b) {
+             return parseInt(a.price[1]) - parseInt(b.price[1]);
+           });
+           renderProducts(price);
+           load_more.classList.add("hide");
+         });
+         buttonRecentMobile.addEventListener("click", () => {
+           articleProduct.innerHTML = "";
+           ordinationMobile.classList.add("hide");
+           renderProducts(productPagination2);
+           load_more.classList.add("hide");
+         });
+
+         // button oridnation mobile end.
+
+      allFilterColors.forEach((checkbox) => {
+        checkbox.addEventListener("change", (el) => {
+          let targetColor = el.target.name;
+          const hasColors = colors.find((color) => {
+            return color == targetColor;
+          });
+          if (hasColors) {
+            const filterColorIndex = colors.findIndex(
+              (filterColor) => targetColor == filterColor
+            );
+            colors.splice(filterColorIndex, 1);
+          } else {
+            colors.push(targetColor);
+          }
+          selectedCor = products.filter((p) =>
+            colors.includes(p.color.toLowerCase())
+          );
+
+          if (colors.length > 0 && selectedCor.length == 0) {
+            articleProduct.innerHTML = "";
+            textUnavailable.classList.remove("hide");
+            load_more.classList.add("hide");
+          } else if (colors.length > 0) {
+            articleProduct.innerHTML = "";
+           textUnavailable.classList.add("hide");
+            renderProducts(selectedCor);
+            load_more.classList.add("hide");
+          } else if (colors.length == 0) {
+            textUnavailable.classList.add("hide");
+            articleProduct.innerHTML = "";
+            renderProducts(productPagination1);
+            load_more.classList.remove("hide");
+          }
+        });
+      });
+
+      allFilterPrice.forEach((radio) => {
+        radio.addEventListener("click", (el) => {
+          let targetValue = el.target.value;
+          let targetDataMin = el.target.dataset.min;
+
+          let selectedPrice = products.filter((p) => {
+            return p.price[1] > targetDataMin && p.price[1] <= targetValue;
+          });
+          console.log(selectedPrice);
+
+          if (selectedPrice.length == 0) {
+            articleProduct.innerHTML = "";
+
+            load_more.classList.add("hide");
+          } else if (selectedPrice.length > 0) {
+            articleProduct.innerHTML = "";
+            renderProducts(selectedPrice);
+          }
+        });
+      });
+
+      renderProducts(productPagination1);
+
+      const load_more = document.querySelector(".loadMore");
 
       load_more.addEventListener("click", () => {
         renderProducts(productPagination2);
-        load_more.classList.toggle("hide")
-      }); 
-
+        load_more.classList.toggle("hide");
+      });
     });
 }
 
-fetchData();
-
-const ordination = document.getElementById("ordination");
-const moreCor = document.getElementById("more-cor");
-const filterMobile = document.getElementById("filter-mobile");
-const ordinationMobile = document.getElementById("ordination-mobile");
-const cont = document.getElementById("cont");
-const cores2 = document.getElementById("cores2");
-const btnFilter = document.getElementById("btn-filter");
-const btnOrdination = document.getElementById("btn-ordination");
-const btnClose1 = document.getElementById("btn-close-1");
-const btnClose2 = document.getElementById("btn-close-2");
-const load_more = document.querySelector(".loadMore");
-const cores = document.querySelector(".cores div");
+showProducts();
 
 //button ordination
 ordination.addEventListener("click", function () {
@@ -149,21 +249,21 @@ ordination.addEventListener("click", function () {
 });
 //button more-cor
 moreCor.addEventListener("click", function () {
-  cores2.classList.toggle("hide");
+  color2.classList.toggle("hide");
   moreCor.classList.toggle("hide");
 });
 //filter
 btnFilter.addEventListener("click", function () {
-  filterMobile.classList.toggle("hide");
+  filterMobile.classList.remove("hide");
 });
 
 btnOrdination.addEventListener("click", function () {
-  ordinationMobile.classList.toggle("hide");
+  ordinationMobile.classList.remove("hide");
 });
 
 btnClose1.addEventListener("click", function () {
-  filterMobile.classList.toggle("hide");
+  filterMobile.classList.add("hide");
 });
 btnClose2.addEventListener("click", function () {
-  ordinationMobile.classList.toggle("hide");
+  ordinationMobile.classList.add("hide");
 });
