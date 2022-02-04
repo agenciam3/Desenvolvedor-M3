@@ -52,6 +52,7 @@ body {
     }
   }
   main {
+    
     width: 100vw;
 
     .category {
@@ -114,7 +115,8 @@ body {
         }
       }
       .ordination-mobile-content {
-        width: 100%;
+        width: 80vw;
+        height: 80vh;
         margin-left: 20px;
         padding-top: 20px;
 
@@ -163,7 +165,7 @@ body {
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: 1000;
+        z-index: 500;
 
         .filter-mobile-title {
           width: 90%;
@@ -189,6 +191,7 @@ body {
       height: 100%;
       aside {
         width: 25%;
+        z-index: 1000;
         form {
           .cores1,
           .cores2 {
@@ -277,6 +280,7 @@ body {
       }
       article {
         width: 75%;
+        z-index: 5;
         p {
           color: var(--gray1);
           font-weight: bold;
@@ -357,22 +361,35 @@ body {
   }
 
   footer {
+    margin-top: 50px;
     background-color: var(--black);
-    height: 30px;
+    height: 40px;
     width: 100%;
-    position: relative;
+    position: absolute;
     bottom: 0;
     color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    
+  }
+}
+@media only screen and (max-width: 2500px){
+footer{
+  position: relative !important;
+}
+}
+@media only screen and (min-width: 739px){
+  aside {
+    display: block !important;
   }
 }
 
 @media screen and (max-width: 920px) {
   .main-content {
     aside {
+      display: block;
       width: 30% !important;
     }
     article {
@@ -400,13 +417,19 @@ body {
       }
     }
     .btn-filters {
-      display: flex !important;
+      display: flex;
     }
   }
 
   .main-content {
     aside {
+      margin-top: -140px;
+      width: 1000% !important;
       display: none;
+
+      .tamanhos {
+        width: 100% !important;
+      }
     }
     article {
       width: 100% !important;
