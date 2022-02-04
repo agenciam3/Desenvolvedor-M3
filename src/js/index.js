@@ -5,9 +5,11 @@ const colors = [];
 const sizes = [];
 let filterPrice = [];
 var selectedCor = [];
+let cartItems = [];
+
+const cart = document.getElementById("cart");
 
 const aside = document.getElementById("aside");
-
 
 const articleProduct = document.getElementById("article-product");
 const textUnavailable = document.getElementById("textInd");
@@ -47,7 +49,6 @@ function showProducts() {
   fetch("http://localhost:5000/products")
     .then((response) => response.json())
     .then((data) => {
-      //console.log(data);
       data.map((i) => {
         products.push({
           id: i.id,
@@ -76,7 +77,7 @@ function showProducts() {
     })
     .then((products) => {
       function renderProducts(productsEl) {
-        productsEl.forEach((product, index) => {
+        productsEl.forEach((product) => {
           return (articleProduct.innerHTML += `
           <div class="product">
             <img src="${product.image}" alt="${product.name}" />
@@ -87,10 +88,21 @@ function showProducts() {
                     até ${product.parcelamento[0]} x de ${product.parcelamento[1]}
                 </p>
             </div>
-            <div onClick= "addCart(${index})"  class="button-buy">
+            <div accesskey="${product.id}" id="btn-buy" class="button-buy">
               comprar
             </div>
           </div>`);
+        });
+        const btnBuy = document.querySelectorAll(".button-buy");
+
+        btnBuy.forEach((elBtnBuy) => {
+          elBtnBuy.addEventListener("click", (el) => {
+            let targetID = el.target.accessKey;
+            cartItems.push(targetID)
+
+            cart.classList.remove("hide");
+            cart.innerHTML = cartItems.length;
+          });
         });
       }
 
@@ -112,7 +124,7 @@ function showProducts() {
         price.sort(function (a, b) {
           return parseInt(b.price[1]) - parseInt(a.price[1]);
         });
-        console.log(price);
+
         renderProducts(price);
         load_more.classList.add("hide");
       });
@@ -150,7 +162,7 @@ function showProducts() {
         price.sort(function (a, b) {
           return parseInt(b.price[1]) - parseInt(a.price[1]);
         });
-        console.log(price);
+
         renderProducts(price);
         load_more.classList.add("hide");
       });
@@ -179,13 +191,11 @@ function showProducts() {
 
       allFilterColors.forEach((checkbox) => {
         checkbox.addEventListener("change", (el) => {
-
           filterMobile.classList.add("hide");
-           aside.style.display = "none";
-          
+          aside.style.display = "none";
+
           let targetColor = el.target.name;
           const hasColors = colors.find((color) => {
-            
             return color == targetColor;
           });
           if (hasColors) {
@@ -199,10 +209,6 @@ function showProducts() {
           selectedCor = products.filter((p) =>
             colors.includes(p.color.toLowerCase())
           );
-
-          
-
-          
 
           if (colors.length > 0 && selectedCor.length == 0) {
             articleProduct.innerHTML = "";
@@ -226,7 +232,7 @@ function showProducts() {
         tam.addEventListener("click", (el) => {
           filterMobile.classList.add("hide");
           aside.style.display = "none";
-          
+
           el.target.classList.toggle("active");
           let targetSize = el.target.accessKey.toUpperCase();
 
@@ -262,18 +268,15 @@ function showProducts() {
 
       allFilterPrice.forEach((radio) => {
         radio.addEventListener("click", (el) => {
-
           filterMobile.classList.add("hide");
           aside.style.display = "none";
-          
-          
+
           let targetValue = el.target.value;
           let targetDataMin = el.target.dataset.min;
 
           let selectedPrice = products.filter((p) => {
             return p.price[1] > targetDataMin && p.price[1] <= targetValue;
           });
-          console.log(selectedPrice);
 
           if (selectedPrice.length == 0) {
             articleProduct.innerHTML = "";
@@ -286,7 +289,7 @@ function showProducts() {
         });
       });
 
-     renderProducts(productPagination1);
+      renderProducts(productPagination1);
 
       const load_more = document.querySelector(".loadMore");
 
@@ -324,15 +327,15 @@ btnOrdination.addEventListener("click", function () {
 
 btnClose1.addEventListener("click", function () {
   filterMobile.classList.add("hide");
-   aside.style.display = "none";
-  window.location.reload()
+  aside.style.display = "none";
+  window.location.reload();
 });
 btnClose2.addEventListener("click", function () {
   ordinationMobile.classList.add("hide");
   window.location.reload();
 });
 
-  if (btnFilters.style.display == "none") {
-   aside.style.display = "block";
- };  
+if (btnFilters.style.display == "none") {
+  aside.style.display = "block";
+}
 

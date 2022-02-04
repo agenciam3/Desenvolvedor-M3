@@ -46,7 +46,7 @@ body {
           position: absolute;
           bottom: 0;
           left: 50%;
-          display: none;
+          
         }
       }
     }
@@ -338,6 +338,11 @@ body {
               font-weight: bold;
               text-transform: uppercase;
               cursor: pointer;
+
+              &:hover {
+                background-color: rgba(2, 2, 2, 0.678);
+                color: #000;
+              }
             }
           }
         }
