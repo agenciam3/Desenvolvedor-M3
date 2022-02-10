@@ -1,0 +1,47 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react"
+    ],
+    "rules": {
+      "linebreak-style": "off",
+      "import/prefer-default-export": "off",
+      "react/jsx-filename-extension": "off",
+      "react/react-in-jsx-scope": "off",
+      "import/no-dynamic-require": "off",
+      "global-require": "off",
+      "react/prop-types": "off",
+      "react/jsx-no-constructed-context-values": "off",
+      "react/jsx-no-useless-fragment": "off",
+      "prefer-const": "off",
+      "no-unused-expressions": "off",
+      "no-return-assign": "off",
+      "no-param-reassign": "off",
+      "jsx-a11y/label-has-associated-control": "off",
+      "jsx-a11y/no-noninteractive-element-interactions": "off",
+      "jsx-a11y/click-events-have-key-events": "off",
+      "no-plusplus": "off",
+      "consistent-return": "off",
+      "max-len": "off",
+      "no-dupe-else-if": "off",
+      "array-callback-return": "off",
+      "no-else-return": "off",
+      "no-use-before-define": "off",
+      "no-unneeded-ternary": "off",
+      "no-shadow": "off"
+    }
+}
