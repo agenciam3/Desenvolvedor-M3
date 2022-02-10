@@ -6,8 +6,9 @@ export const ProductsInfo = [
     price: 28.00,
     showprice: '28,00',
     installments: 'até 3x de R$9,33',
-    size: ['M'],
+    size: ['M', 'GG'],
     color: ['cinza'],
+    date: '1995-12-17',
   },
 
   {
@@ -17,8 +18,9 @@ export const ProductsInfo = [
     price: 398.00,
     showprice: '398,00',
     installments: 'até 5x de R$30,00',
-    size: ['P'],
+    size: ['G', '40'],
     color: ['preto'],
+    date: '1996-12-17',
   },
 
   {
@@ -30,6 +32,7 @@ export const ProductsInfo = [
     installments: 'até 5x de R$30,00',
     size: ['G', 'GG'],
     color: ['laranja'],
+    date: '1997-12-17',
   },
 
   {
@@ -41,6 +44,7 @@ export const ProductsInfo = [
     installments: 'até 3x de R$33,30',
     size: ['P', 'M'],
     color: ['branco'],
+    date: '1998-12-17',
   },
 
   {
@@ -52,6 +56,7 @@ export const ProductsInfo = [
     installments: 'até 3x de R$43,43',
     size: ['M'],
     color: ['amarelo'],
+    date: '1999-12-17',
   },
 
   {
@@ -63,6 +68,7 @@ export const ProductsInfo = [
     installments: 'até 5x de R$30,00',
     size: ['G'],
     color: ['rosa'],
+    date: '1995-12-16',
   },
 
   {
@@ -74,6 +80,7 @@ export const ProductsInfo = [
     installments: 'até 3x de R$40,00',
     size: ['G', 'P'],
     color: ['colorido'],
+    date: '2000-12-17',
   },
 
   {
@@ -85,6 +92,7 @@ export const ProductsInfo = [
     installments: 'até 5x de R$30,00',
     size: ['P'],
     color: ['transparente'],
+    date: '2000-11-17',
   },
 
   {
@@ -96,6 +104,7 @@ export const ProductsInfo = [
     installments: 'até 3x de R$33,00',
     size: ['M', 'GG'],
     color: ['preto'],
+    date: '2003-12-17',
   },
 ];
 

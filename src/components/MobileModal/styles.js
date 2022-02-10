@@ -89,15 +89,28 @@ export const FilterController = styled.div`
     background: ${({ theme }) => theme.colors.lightBlue};
     border: 1px solid ${({ theme }) => theme.colors.lightBlue};
     color: #fff;
+    margin-right: 24px;
+
+    @media (max-width: 400px) {
+      margin-right: 0;
+      margin-top: 24px;
+    }
   }
 
   & > button:last-child {
-    margin-left: 24px;
     margin-bottom: 24px;
     width: 160px;
     height: 30px;
     background: transparent;
     border: 1px solid ${({ theme }) => theme.colors.cinza2};
     color: ${({ theme }) => theme.colors.cinza2};
+
+    @media (max-width: 400px) {
+      margin-top: 24px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    text-align: center;
   }
 `;

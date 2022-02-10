@@ -38,7 +38,15 @@ export function FilterContextProvider({ children }) {
 
   function ordering(option) {
     if (option === 'recent') {
-      const order = productsFiltered.reverse();
+      const order = productsFiltered.sort((a, b) => {
+        if (a.date.replaceAll('-', '') > b.date.replaceAll('-', '')) {
+          return -1;
+        }
+        if (a.date.replaceAll('-', '') < b.date.replaceAll('-', '')) {
+          return 1;
+        }
+        return 0;
+      });
 
       setProductsFiltered(order);
     } else if (option === 'cheaper') {
