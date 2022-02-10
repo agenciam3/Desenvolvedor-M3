@@ -1,7 +1,9 @@
 email: luizfelipezimbrao@gmail.com
 
 Para rodar o site:
+
 -> instale as dependencias usando "yarn" ou "npm i"
+
 -> depois rode o programa usando "yarn start" ou "npm start"
 
 # Getting Started with Create React App
