@@ -2,6 +2,7 @@
 @import "variaveis";
 @import "filter";
 @import "products";
+@import "accordion";
 
 header {
   box-shadow: 0 2px 0 0 rgb(191 191 191);
@@ -15,6 +16,7 @@ header {
   .bag {
     text-align: right;
     position: relative;
+    cursor: pointer;
 
     .bag-counter {
       background-color: $blue-color;
@@ -50,12 +52,11 @@ main {
   width: 100%;
   justify-content: space-between;
   margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-bottom: 6rem;
 }
 
 .category {
   font-size: 32px;
-  margin-right: 10rem;
 
   color: $font-color;
 }
@@ -71,7 +72,7 @@ main {
 .filter {
   display: flex;
   flex-direction: column;
-  width: 13rem;
+  max-width: 14rem;
 }
 
 .filters-title {
@@ -82,11 +83,12 @@ main {
   color: $font-color;
 }
 
-.option-color,
 .option-size,
 .option-price {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .footer {
@@ -100,5 +102,4 @@ main {
   line-height: 19px;
   letter-spacing: 0.05em;
   position: absolute;
-  bottom: 0;
 }

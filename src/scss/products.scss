@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 7rem;
 
   .product-content {
     display: flex;
@@ -45,5 +46,23 @@
       border: 0px solid;
       background-color: $black-color;
     }
+  }
+
+  .product-load {
+    width: 12rem;
+    height: 2rem;
+    padding: 5px;
+
+    background: $blue-color;
+    color: $white-color;
+
+    text-align: center;
+
+    cursor: pointer;
+  }
+
+  .product-load-title {
+    font-family: $font-primary;
+    font-weight: 800;
   }
 }

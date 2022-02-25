@@ -1,4 +1,8 @@
 /* COLOR */
+.option-color {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 label {
   margin-left: 5px;
@@ -30,7 +34,44 @@ input[type="checkbox"]:checked:before {
 
 /* SIZE */
 
-/* PRICE */
-.option-price {
+.size {
+  margin-top: 2rem;
+}
+
+.option-size-botton {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  margin-bottom: 20px;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+}
+
+.lbl-size {
+  display: inline-block;
+  font-family: $font-primary;
+  border: 1px solid #e4e4e4;
+  height: 36px;
+  width: 36px;
+  margin: 5px;
+  position: relative;
+  color: #a1a1a1;
   cursor: pointer;
 }
+
+.one-iten {
+  position: absolute;
+  left: 11px;
+  top: 10px;
+}
+
+.two-itens {
+  position: absolute;
+  left: 7px;
+  top: 10px;
+}
+
+/* PRICE */

@@ -29,7 +29,25 @@
         <div class="header-title, category">
           <span class="category">Blusas</span>
         </div>
-        <div class="home-button"><button>Ordernar por:</button></div>
+        <div div data-js="accordion" class="botton-accordion">
+          <button data-accordion-header="1" class="botton-accordion">
+            <span data-accordion-header="1" class="title-botton"
+              >Ordernar por:</span
+            >
+            <span data-accordion-header="1" class="symbol-botton">v</span>
+          </button>
+          <div data-accordion-body="1" class="accordion-open">
+            <ul class="option-accordion">
+              Mais recentes
+            </ul>
+            <ul class="option-accordion">
+              Menor preço
+            </ul>
+            <ul class="option-accordion">
+              Maior preço
+            </ul>
+          </div>
+        </div>
       </div>
       <div class="home-container">
         <div class="filter">
@@ -88,6 +106,58 @@
                 />
                 <label for="laranja-color"> Laranja</label>
               </div>
+              <div class="option-color-ocult">
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="verde"
+                    id="verde-color"
+                    class="checkbox"
+                  />
+                  <label for="verde-color">Verde</label>
+                </div>
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="vermelho"
+                    id="vermelho-color"
+                    class="checkbox"
+                  />
+                  <label for="vermelho-color">Vermelho</label>
+                </div>
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="preto"
+                    id="preto-color"
+                    class="checkbox"
+                  />
+                  <label for="preto-color">Preto</label>
+                </div>
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="rosa"
+                    id="rosa-color"
+                    class="checkbox"
+                  />
+                  <label for="rosa-color">Rosa</label>
+                </div>
+                <div class="checkbox">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="vinho"
+                    id="vinho-color"
+                    class="checkbox"
+                  />
+                  <label for="vinho-color">Vinho</label>
+                </div>
+              </div>
             </div>
           </div>
           <div class="size">
@@ -102,7 +172,7 @@
                   value="p"
                 />
                 <label class="lbl-size" for="p">
-                  <span>P</span>
+                  <span class="one-iten">P</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -114,7 +184,7 @@
                   value="m"
                 />
                 <label class="lbl-size" for="m">
-                  <span>M</span>
+                  <span class="one-iten">M</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -126,7 +196,7 @@
                   value="g"
                 />
                 <label class="lbl-size" for="g">
-                  <span>G</span>
+                  <span class="one-iten">G</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -138,7 +208,7 @@
                   value="gg"
                 />
                 <label class="lbl-size" for="gg">
-                  <span>GG</span>
+                  <span class="two-itens">GG</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -150,7 +220,7 @@
                   value="u"
                 />
                 <label class="lbl-size" for="u">
-                  <span>U</span>
+                  <span class="one-iten">U</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -162,7 +232,7 @@
                   value="36"
                 />
                 <label class="lbl-size" for="36">
-                  <span>36</span>
+                  <span class="two-itens">36</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -174,7 +244,7 @@
                   value="38"
                 />
                 <label class="lbl-size" for="38">
-                  <span>38</span>
+                  <span class="two-itens">38</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -186,7 +256,7 @@
                   value="40"
                 />
                 <label class="lbl-size" for="40">
-                  <span>40</span>
+                  <span class="two-itens">40</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -198,7 +268,7 @@
                   value="42"
                 />
                 <label class="lbl-size" for="42">
-                  <span>42</span>
+                  <span class="two-itens">42</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -210,7 +280,7 @@
                   value="44"
                 />
                 <label class="lbl-size" for="44">
-                  <span>44</span>
+                  <span class="two-itens">44</span>
                 </label>
               </div>
               <div class="option-size-botton">
@@ -222,7 +292,7 @@
                   value="46"
                 />
                 <label class="lbl-size" for="46">
-                  <span>46</span>
+                  <span class="two-itens">46</span>
                 </label>
               </div>
             </div>
@@ -312,14 +382,17 @@
               <span class="product-parcel">até 3x de R$33,30</span>
               <button class="product-buy">COMPRAR</button>
             </div>
+            <div class="product-load">
+              <span class="product-load-title">CARREGAR MAIS</span>
+            </div>
           </div>
         </div>
       </div>
     </main>
+    <script src="accordion.js"></script>
+    <script src="index.js"></script>
     <footer class="footer">
       <span>M3: Implantação de E-commerce VTEX</span>
     </footer>
   </body>
-
-  <script src="bundle.js"></script>
 </html>
