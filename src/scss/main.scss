@@ -1,1 +1,104 @@
 @import "reset";
+@import "variaveis";
+@import "filter";
+@import "products";
+
+header {
+  box-shadow: 0 2px 0 0 rgb(191 191 191);
+  padding: 1rem 6rem;
+
+  .alignment {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bag {
+    text-align: right;
+    position: relative;
+
+    .bag-counter {
+      background-color: $blue-color;
+      color: white;
+
+      border-radius: 50%;
+      bottom: 7px;
+      right: -3px;
+      width: 12px;
+      height: 12px;
+      font-size: 12px;
+
+      position: absolute;
+
+      text-align: center;
+
+      span {
+        font-family: "Roboto";
+        font-size: 10px;
+        margin: 1px;
+        line-height: 12px;
+      }
+    }
+  }
+}
+
+main {
+  margin: 1rem 6rem;
+}
+
+.home-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.category {
+  font-size: 32px;
+  margin-right: 10rem;
+
+  color: $font-color;
+}
+.home-button {
+  display: flex;
+}
+
+.home-container {
+  font-family: $font-primary;
+  display: flex;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  width: 13rem;
+}
+
+.filters-title {
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+
+  color: $font-color;
+}
+
+.option-color,
+.option-size,
+.option-price {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footer {
+  font-family: $font-primary;
+  background: $black-color;
+  color: $white-color;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  position: absolute;
+  bottom: 0;
+}

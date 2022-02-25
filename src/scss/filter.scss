@@ -1,0 +1,36 @@
+/* COLOR */
+
+label {
+  margin-left: 5px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  cursor: pointer;
+  margin: 5px;
+}
+input[type="checkbox"]:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 0.2px solid rgb(90, 89, 89);
+  background-color: #fff;
+}
+input[type="checkbox"]:checked:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+
+  background-color: $blue-color;
+}
+
+/* SIZE */
+
+/* PRICE */
+.option-price {
+  cursor: pointer;
+}

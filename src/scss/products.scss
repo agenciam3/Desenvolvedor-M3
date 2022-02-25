@@ -1,0 +1,49 @@
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .product-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .product-itens {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 18px;
+    }
+
+    .product-name {
+      margin-top: 8px;
+      margin-bottom: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 14px;
+      line-height: 19px;
+    }
+
+    .product-price {
+      font-weight: bold;
+      margin-bottom: 2px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .product-parcel {
+      color: $gray-color;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    .product-buy {
+      color: $white-color;
+      font-weight: 800;
+      margin-top: 8px;
+      width: 100%;
+      height: 40px;
+      border: 0px solid;
+      background-color: $black-color;
+    }
+  }
+}
