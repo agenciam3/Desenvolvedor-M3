@@ -4,6 +4,7 @@ checkbox();
 selector();
 
 
+
 function checkbox(){
     var btn = Array.from(document.querySelectorAll(".checkbox"));
     btn.map(elem => {
@@ -62,8 +63,8 @@ function showProducts(products){
             <div class="product">
                 <img src="${elem.image}" alt="erro">
                 <h3>${elem.name.toUpperCase()}</h3>
-                <span style="font-weight:500px">R$${Number(elem.price).toFixed(2)} </span>
-                <span>até ${elem.parcelamento[0]}x de R$${Number(elem.parcelamento[1]).toFixed(2)} </span>
+                <span style="font-weight:bold">R$${Number(elem.price).toFixed(2)} </span>
+                <span style="font-weight: 300;font-size: 15px;">até ${elem.parcelamento[0]}x de R$${Number(elem.parcelamento[1]).toFixed(2)} </span>
                 <button class="add" productId=${elem.id}>
                     COMPRAR
                 </button>   
