@@ -1,1 +1,191 @@
 @import "reset";
+
+$blue-color: #00c0ee;
+$lightgray-color: #808080;
+$gray-color: #666666;
+$black-color: #000000;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans' sans-serif;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 100px;
+    border-bottom: 2px solid $lightgray-color;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px 100px; 
+    
+    .filters{
+        width: 70%;
+
+        h3{
+            padding: 30px 0px 5px 0px;
+        }
+
+        .sizes{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 100%;
+
+            .checkbox-btn{
+                width: 34px;
+                height: 34px;
+                border: 1.5px solid $lightgray-color;
+                border-radius: 0px;
+                color: $lightgray-color;
+                background-color: white;
+                margin: 0px 10px 10px 0px;
+            }
+        }
+
+        .color-option{
+            display: flex;
+            flex-direction: row;
+            margin: 10px 0px;
+
+            p{
+                margin: 0px 0px 0px 5px;
+                padding: 0px;
+            }
+
+            .checkbox{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 14px;
+                height: 14px;
+                border: 1px solid $black-color;
+
+                .checked{
+                    display: none;
+                    width: 10px;
+                    height: 10px;
+                    background-color: $blue-color;
+                }
+            }
+
+        }
+    }
+    
+    .catalog{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        .test{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            width: 100%;
+            
+            .testezin{
+                
+                .selector{
+                    border: 1px solid $black-color;
+                    padding: 8px 8px;
+                    background-color: white;
+                    border-radius: 0px;
+                }
+    
+                .options{
+                    display: none;
+                    position: absolute;
+                    top: 130px;
+                    width: auto;
+                    height: auto;
+                    list-style: none;
+                    border: 1px solid $black-color;
+                    background-color: white;
+                    border-top: 0px;
+                    z-index: 1;
+    
+                    li{
+                        position: relative;
+                        display: block;
+                        margin: 0px;
+                        padding: 0px;
+    
+                        a{
+                            padding: 8px 36px 8px 8px;
+                            display: block;
+                            height: auto;
+                            white-space: nowrap;
+                            text-align: left;
+                        }
+    
+                        a:hover{
+                            background-color: $blue-color;
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+        }
+        
+
+        .products{   
+            display:flex;
+            flex-direction: row;
+            align-self: stretch;
+            justify-content:space-between;
+            margin-top: 40px;
+            flex-wrap: wrap;
+
+            .product{
+                display: flex;
+                flex-direction:column;
+                justify-content:space-between;
+                align-items: center;
+                margin-bottom: 40px;
+
+                h3{
+                    margin:10px 0px;
+                }
+                span{
+                    margin-bottom: 10px;
+                }
+
+                .add{
+                    padding: 10px 70px;
+                    border: none;
+                    border-radius: 0px;;
+                    background-color: $black-color;
+                    color: white;
+                }
+            }
+        }
+
+        .load-more-btn{
+            padding: 15px 40px;
+            border: 0px;
+            border-radius: 0px;
+            background-color: $blue-color;
+            color: white;
+
+        }
+    }
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: $black-color;
+    color: white;
+    padding: 5px 0px;
+    
+}
+

@@ -7,13 +7,146 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <div class="header">
+      <img src="img/logo-m3.png">
+      <i class="fa fa-cart-plus fa-2x"></i>
+    </div>
 
+    <div class="main-container">
+      <div class="filters">
+        <h1 style="margin: 0px; font-weight: 500;">Blusas</h1>
+        <h3 style="font-weight: 500;">CORES</h3>
+        
+        <div class="color-option">
+            <div class="checkbox">
+                <div class="checked"></div>
+            </div>
+            <p>Amarelo</p>
+        </div>
+
+        <div class="color-option">
+            <div class="checkbox">
+                <div class="checked"></div>
+            </div>
+            <p>Azul</p>
+        </div>
+
+        <div class="color-option">
+            <div class="checkbox">
+                <div class="checked"></div>
+            </div>
+            <p>Branco</p>
+        </div>
+
+        <div class="color-option">
+            <div class="checkbox">
+                <div class="checked"></div>
+            </div>
+            <p>Cinza</p>
+        </div>
+
+        <div class="color-option">
+          <div class="checkbox">
+              <div class="checked"></div>
+          </div>
+          <p>Laranja</p>
+        </div>
+        
+        <a style="font-size: 12px; color: gray; border-bottom: 1px solid gray;">Ver todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i></a>
+
+        <h3 style="font-weight: 500; margin-bottom: 10px;">TAMANHOS</h3>
+        <div class="sizes">
+          <button class="checkbox-btn">P</button>
+          <button class="checkbox-btn">M</button>
+          <button class="checkbox-btn">G</button>
+          <button class="checkbox-btn">GG</button>
+        </div>
+        <div class="sizes">
+          <button class="checkbox-btn">U</button>
+          <button class="checkbox-btn">36</button>
+          <button class="checkbox-btn">38</button>
+          <button class="checkbox-btn">40</button>
+        </div>
+        <div class="sizes">
+          <button class="checkbox-btn">42</button>
+          <button class="checkbox-btn">44</button>
+          <button class="checkbox-btn">46</button>
+        </div>
+
+        <h3 style="font-weight: 500;">FAIXA DE PREÇO</h3>
+
+        <div class="color-option">
+          <div class="checkbox" id="checkbox-btn">
+              <div class="checked"></div>
+          </div>
+          <p>de R$0 até R$50</p>
+      </div>
+
+      <div class="color-option">
+          <div class="checkbox" id="checkbox-btn">
+              <div class="checked"></div>
+          </div>
+          <p>de R$51 até R$150</p>
+      </div>
+
+      <div class="color-option">
+          <div class="checkbox" id="checkbox-btn">
+              <div class="checked"></div>
+          </div>
+          <p>de R$151 até R$300</p>
+      </div>
+
+      <div class="color-option">
+          <div class="checkbox" id="checkbox-btn">
+              <div class="checked"></div>
+          </div>
+          <p>de R$301 até R$500</p>
+      </div>
+
+      <div class="color-option">
+        <div class="checkbox" id="checkbox-btn">
+            <div class="checked"></div>
+        </div>
+        <p>a partir de R$501</p>
+      </div>
+
+      
+      </div>
+
+      <div class="catalog" id="catalog">
+          <div class="test">
+              <ul class="testezin">
+                  <li>
+                      <a id="selector" class="selector">Ordenar por: <i style="margin-left: 20px;" class="fa fa-solid fa-angle-down"></i></a>
+                      <ul class="options">
+                          <li>
+                              <a class="op"> Mais recentes</a>
+                              <a class="op">Menor preço</a>
+                              <a class="op">Maior preço</a>
+                          </li>
+                      </ul>
+                    </li>
+              </ul>
+          </div>
+          <div class="products" id="products"></div>  
+          <button class="load-more-btn">CARREGAR MAIS</button>      
+      </div>
+    
+    </div>
+
+    <div class="footer">
+      Agência M3 - Agência de Performance Digital 
+    </div>
 </body>
-<h1>Desafio m3</h1>
 
+<script src="js/index.js"></script>
 <script src="bundle.js"></script>
 
 </html>
