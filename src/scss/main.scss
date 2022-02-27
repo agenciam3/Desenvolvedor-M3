@@ -18,6 +18,26 @@ body{
     justify-content: space-between;
     padding: 20px 100px;
     border-bottom: 2px solid $lightgray-color;
+
+    .cart-icon{
+        position: relative;
+        width: 35px;
+        .qtd{
+            display: block;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border-radius: 20px;
+            height: 15px;
+            width: 15px;
+            background-color: $blue-color;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 2px 0px 2px;
+        }
+    }
 }
 
 .main-container{
