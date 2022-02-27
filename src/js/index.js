@@ -37,6 +37,7 @@ function selector(){
     op.map(elem => {
         elem.onclick = function (e) {
             e.preventDefault();
+            options.style.display = 'none';
             let text = elem.childNodes[0].data;
             btn.childNodes[0].data = elem.childNodes[0].data;
             let orderType = elem.getAttribute("ordertype");
@@ -73,7 +74,7 @@ function selector(){
 }
 
 function getProducts(){
-    var requestURL = ' http://localhost:5000/products';
+    var requestURL = 'http://localhost:5000/products';
     var request = new XMLHttpRequest();
     request.open('GET', requestURL);
     request.responseType = 'json';

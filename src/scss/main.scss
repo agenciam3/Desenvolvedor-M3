@@ -124,23 +124,29 @@ body{
             .testezin{
                
                 .selector{
+                    display: block;
+                    width: 107.5px;
                     border: 1px solid $black-color;
-                    padding: 8px 10px;
+                    padding: 8px;
                     background-color: white;
                     border-radius: 0px;
                     font-size: 12px;
+
+                    i{
+                        float: right;
+
+                    }
                 }
     
                 .options{
                     display: none;
                     position: absolute;
-                    top: 134px;
+                    top: 137px;
                     width: auto;
                     height: auto;
                     list-style: none;
                     border: 1px solid $black-color;
                     background-color: white;
-                   
                     z-index: 1;
     
                     li{
