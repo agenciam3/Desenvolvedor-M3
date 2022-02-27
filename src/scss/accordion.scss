@@ -1,12 +1,16 @@
 .botton-accordion {
-  background: white;
+  background: $white-color;
+
   width: 10rem;
   height: 2.5rem;
   border-radius: 0;
-
   border: 0.5px solid rgba(0, 0, 0, 0.466);
 
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 }
 
 .symbol-botton {
@@ -16,15 +20,19 @@
 
 .accordion-open {
   display: none;
+  position: absolute;
 }
 
 .accordion-open.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+
+  background: $white-color;
+
+  width: 9.9rem;
   height: 9rem;
   max-height: 9rem;
   border: 0.5px solid rgba(0, 0, 0, 0.466);
-  display: flex;
-  flex-direction: column;
 }
 
 .option-accordion {
@@ -32,10 +40,33 @@
   height: 2.5rem;
   font-size: 16px;
   line-height: 22px;
-  margin-top: 10px;
-  margin-left: -14px;
+  padding-top: 10px;
+  padding-left: 9px;
 }
 
 .option-accordion:hover {
   background: $blue-color;
+}
+
+.order-mobily {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: contents;
+  }
+}
+
+.btn-mbl {
+  background: $white-color;
+
+  font-size: 24px;
+  height: 4rem;
+  width: 9rem;
+  padding: 0.8rem;
+
+  border: 0.3px solid rgba(0, 0, 0, 0.452);
+}
+
+.contents-mbl {
+  display: none;
 }
