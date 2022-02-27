@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/agenciam3/Desenvolvedor-M3#readme",
   "devDependencies": {
+    "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.0",
     "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",

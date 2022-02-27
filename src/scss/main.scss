@@ -1,1 +1,90 @@
 @import "reset";
+@import "setup";
+
+html, body {
+  height: 100%;
+  
+}
+
+body {
+  .container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    
+
+    .header-section {
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 10%;
+      justify-content: space-between;
+
+      .logo {
+        background-image: url('../img/logo-m3.png');
+        background-repeat: no-repeat;
+        width: 119px;
+        height: 30px;
+      }
+
+      .login {
+        background-image: url('../img/bag.png');
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 23px;
+      }
+    }
+    
+    .catalog {
+      width: 100%;
+      min-height: 80vh;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+
+      .filters {
+        width: 15%;
+        height: 100%;
+        margin-left: 10%;
+      }
+
+      .order-filter {
+        width: 9%;
+        margin-right: 10%;
+      }
+    }
+
+    .products{
+      width: 60%;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      .prod-card {
+        img {
+          width: 195px;
+          height: 293px;
+        }
+      }
+    }
+
+    .footer-section {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 10vh;
+      background-color: $color-black;
+      color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 19px;
+    }
+  }
+}
