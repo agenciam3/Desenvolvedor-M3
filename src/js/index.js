@@ -20,6 +20,25 @@ function checkbox(){
     });
 }
 
+function orderProducts(type, asc){
+    var orderedArray = productsArray;
+    if(asc){
+        orderedArray.sort(function compare(a, b) {
+            if (a[type] < b[type]) return -1;
+            if (a[type] > b[type]) return 1;
+            return 0;
+        })
+    }else{
+        orderedArray.sort(function compare(a, b) {
+            if (a.price > b.price) return -1;
+            if (a.price < b.price) return 1;
+            return 0;
+        })
+    } 
+    document.getElementById("products").innerHTML = "";
+    showProducts(orderedArray);
+}
+
 
 function selector(){
     var btn = document.getElementById('selector');
@@ -38,36 +57,15 @@ function selector(){
         elem.onclick = function (e) {
             e.preventDefault();
             options.style.display = 'none';
-            let text = elem.childNodes[0].data;
             btn.childNodes[0].data = elem.childNodes[0].data;
             let orderType = elem.getAttribute("ordertype");
-            var orderedArray = productsArray;
 
             if(orderType == "recent"){
-                orderedArray.sort(function compare(a, b) {
-                    if (a.date < b.date) return -1;
-                    if (a.date > b.date) return 1;
-                    return 0;
-                })
-                document.getElementById("products").innerHTML = "";
-                showProducts(orderedArray);
+                orderProducts("date",true);
             }else if(orderType == "low-price"){
-                orderedArray.sort(function compare(a, b) {
-                    if (a.price < b.price) return -1;
-                    if (a.price > b.price) return 1;
-                    return 0;
-                })
-                document.getElementById("products").innerHTML = "";
-                showProducts(orderedArray);
+                orderProducts("price",true);
             }else{
-                orderedArray.sort(function compare(a, b) {
-                    if (a.price > b.price) return -1;
-                    if (a.price < b.price) return 1;
-                    return 0;
-                })
-                document.getElementById("products").innerHTML = "";
-                showProducts(orderedArray);
-
+                orderProducts("price",false)
             }
         };
     });
