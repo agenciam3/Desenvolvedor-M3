@@ -1,7 +1,9 @@
 console.log("Dev m3");
 getProducts();
+localStorage.clear();
 checkbox();
 selector();
+// setTimeout(() => { addToCart(); }, 500);
 
 var productsArray;
 
@@ -86,7 +88,6 @@ function getProducts(){
 function showProducts(products){
     products = products.slice(0,9);
     products.map(elem => {
-        console.log(elem);
         let listAllProducts = document.getElementById("products");
         let htmlInsert = `
             <div class="product">
@@ -94,12 +95,34 @@ function showProducts(products){
                 <h3>${elem.name.toUpperCase()}</h3>
                 <span style="font-weight:bold">R$${Number(elem.price).toFixed(2)} </span>
                 <span style="font-weight: 300;font-size: 15px;">até ${elem.parcelamento[0]}x de R$${Number(elem.parcelamento[1]).toFixed(2)} </span>
-                <button class="add" productId=${elem.id}>
+                <button id="add" class="add" productId=${elem.id} price=${elem.price}>
                     COMPRAR
                 </button>   
             </div>
         `
 
-        listAllProducts.insertAdjacentHTML('beforeend', htmlInsert);    
+        listAllProducts.insertAdjacentHTML('beforeend', htmlInsert); 
+        addToCart();   
+    });
+}
+
+function addToCart(){
+    let productToAdd = Array.from(document.querySelectorAll(".add"));
+    productToAdd.map(elem => {
+        elem.onclick = function (e) {
+            e.preventDefault();
+            
+            let id = elem.getAttribute('productId');
+            let price = elem.getAttribute('price');
+            localStorage.setItem(`${id}`,`${price}`);      
+            let qtdDisplay = document.querySelector(".qtd");
+            
+            if(localStorage.length === 1){
+                qtdDisplay.style.display = 'block';
+                qtdDisplay.innerText = localStorage.length;
+            }else{
+                qtdDisplay.innerText = localStorage.length;
+            }           
+        }
     });
 }
