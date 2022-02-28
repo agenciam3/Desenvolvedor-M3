@@ -10,6 +10,24 @@ body{
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
+
+.div-mobile-order{
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+    background-color: white;
+
+    .op{
+        display: block;
+        padding: 15px 20px;
+    }
+
+    .op:hover{
+        background-color: $blue-color;
+        color: white;
+    }
+
+}
    
 
 .header{
@@ -59,6 +77,16 @@ body{
 
         h3{
             padding: 30px 0px 5px 0px;
+        }
+
+        a{
+            font-size: 12px; color: gray; 
+            border-bottom: 1px solid gray;
+            cursor: pointer;
+        }
+
+        .additional-colors{
+            display: none;
         }
 
         .sizes{
@@ -203,6 +231,7 @@ body{
                     border-radius: 0px;;
                     background-color: $black-color;
                     color: white;
+                    cursor: pointer;
                 }
             }
         }
@@ -229,7 +258,6 @@ body{
 
 @media (max-width: 600px)
 {
-
     .header{
         padding: 20px 20px ;
     }
@@ -262,6 +290,7 @@ body{
                     background-color: white;
                     border: 1px solid $lightgray-color;
                     color: $lightgray-color;
+                    cursor: pointer;
                 }
             }
 

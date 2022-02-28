@@ -1,9 +1,5 @@
 console.log("Dev m3");
-getProducts();
-localStorage.clear();
-checkbox();
-selector();
-// setTimeout(() => { addToCart(); }, 500);
+main();
 
 var productsArray;
 
@@ -20,6 +16,21 @@ function checkbox(){
             }
         };
     });
+}
+
+function getAdditionalColors(){
+    var link = document.getElementById('see-more');
+    var div = document.querySelector(".additional-colors")
+    link.onclick = function (e) {  
+        e.preventDefault();
+        if(div.style.display === 'block'){
+             div.style.display = 'none';
+             link.innerHTML = `Veja todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i>`
+        }else{
+            div.style.display = 'block';
+            link.innerHTML= `Veja menos cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-up"></i>`
+        }
+    };
 }
 
 function orderProducts(type, asc){
@@ -125,4 +136,54 @@ function addToCart(){
             }           
         }
     });
+}
+
+function orderMobile(){
+    var btn = document.getElementById("order-mobile");
+    var divOrder = document.querySelector(".div-mobile-order");
+    var divDesktop = document.querySelector(".desktop");
+    btn.onclick = function (e) {  
+        e.preventDefault();
+        if(divOrder.style.display === 'flex'){
+            divOrder.style.display = 'none';
+            divDesktop.style.display = 'block';
+        }else{
+            divOrder.style.display = 'flex';
+            divDesktop.style.display = 'none';
+            document.getElementById("back-icon").onclick = function (e){
+                e.preventDefault();
+                divOrder.style.display = 'none';
+                divDesktop.style.display = 'block';
+            }
+        }
+    };
+
+    let op = Array.from(document.querySelectorAll(".op"));
+
+    op.map(elem => {
+        elem.onclick = function (e) {
+            e.preventDefault();
+            let orderType = elem.getAttribute("ordertype");
+            divOrder.style.display = 'none';
+            divDesktop.style.display = 'block';
+
+            if(orderType == "recent"){
+                orderProducts("date",true);
+            }else if(orderType == "low-price"){
+                orderProducts("price",true);
+            }else{
+                orderProducts("price",false)
+            }
+        };
+    });
+
+}
+
+function main(){
+    getProducts();
+    localStorage.clear();
+    checkbox();
+    selector();
+    getAdditionalColors();
+    orderMobile();
 }

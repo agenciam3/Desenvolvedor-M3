@@ -16,148 +16,187 @@
 </head>
 
 <body>
-    <div class="header">
-      <img src="img/logo-m3.png">
-      <div class="cart-icon">
-        <span class="material-icons" style="font-size: 30px;">shopping_bag</span>
-        <div id="qtd" class="qtd">0</div>
-      </div>
-      
+    <div class="div-mobile-order" id="div-mobile-order">
+        <div class="header"> 
+            <h2 style="padding-top:5px;">ORDENAR</h2>
+            <span id="back-icon" class="material-icons" style="font-size: 24px; cursor: pointer;">close</span>
+        </div> 
+        <a class="op" ordertype="recent"> Mais recentes</a>
+        <a class="op" ordertype="low-price">Menor preço</a>
+        <a class="op" ordertype="price">Maior preço</a>
+        
     </div>
 
-    <div class="main-container" id="main">
-        <div class="mobile-filters">
-            <h1>Blusas</h1>
-            <div class="filter-order-buttons">
-                <button class="mobile-button" id="filter" style="border-right:0px;">Filtrar</button> 
-                <button class="mobile-button" id="order">Ordenar</button> 
-            </div>      
-        </div>
-
-      <div class="filters">
-        <h1>Blusas</h1>
-        <h3 style="font-weight: 500;">CORES</h3>
-        
-        <div class="color-option">
-            <div class="checkbox">
-                <div class="checked"></div>
+    <div class="desktop">
+        <div class="header">
+            <img src="img/logo-m3.png">
+            <div class="cart-icon">
+              <span class="material-icons" style="font-size: 30px;">shopping_bag</span>
+              <div id="qtd" class="qtd">0</div>
             </div>
-            <p>Amarelo</p>
-        </div>
-
-        <div class="color-option">
-            <div class="checkbox">
-                <div class="checked"></div>
-            </div>
-            <p>Azul</p>
-        </div>
-
-        <div class="color-option">
-            <div class="checkbox">
-                <div class="checked"></div>
-            </div>
-            <p>Branco</p>
-        </div>
-
-        <div class="color-option">
-            <div class="checkbox">
-                <div class="checked"></div>
-            </div>
-            <p>Cinza</p>
-        </div>
-
-        <div class="color-option">
-          <div class="checkbox">
-              <div class="checked"></div>
+            
           </div>
-          <p>Laranja</p>
-        </div>
-        
-        <a style="font-size: 12px; color: gray; border-bottom: 1px solid gray;">Ver todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i></a>
-
-        <h3 style="font-weight: 500; margin-bottom: 10px;">TAMANHOS</h3>
-        <div class="sizes">
-          <button class="checkbox-btn">P</button>
-          <button class="checkbox-btn">M</button>
-          <button class="checkbox-btn">G</button>
-          <button class="checkbox-btn">GG</button>
-        </div>
-        <div class="sizes">
-          <button class="checkbox-btn">U</button>
-          <button class="checkbox-btn">36</button>
-          <button class="checkbox-btn">38</button>
-          <button class="checkbox-btn">40</button>
-        </div>
-        <div class="sizes">
-          <button class="checkbox-btn">42</button>
-          <button class="checkbox-btn">44</button>
-          <button class="checkbox-btn">46</button>
-        </div>
-
-        <h3 style="font-weight: 500;">FAIXA DE PREÇO</h3>
-
-        <div class="color-option">
-          <div class="checkbox" id="checkbox-btn">
-              <div class="checked"></div>
-          </div>
-          <p>de R$0 até R$50</p>
-      </div>
-
-      <div class="color-option">
-          <div class="checkbox" id="checkbox-btn">
-              <div class="checked"></div>
-          </div>
-          <p>de R$51 até R$150</p>
-      </div>
-
-      <div class="color-option">
-          <div class="checkbox" id="checkbox-btn">
-              <div class="checked"></div>
-          </div>
-          <p>de R$151 até R$300</p>
-      </div>
-
-      <div class="color-option">
-          <div class="checkbox" id="checkbox-btn">
-              <div class="checked"></div>
-          </div>
-          <p>de R$301 até R$500</p>
-      </div>
-
-      <div class="color-option">
-        <div class="checkbox" id="checkbox-btn">
-            <div class="checked"></div>
-        </div>
-        <p>a partir de R$501</p>
-      </div>
-
       
-      </div>
-
-      <div class="catalog" id="catalog">
-          <div class="test">
-              <ul class="testezin">
-                  <li>
-                      <a id="selector" class="selector">Ordenar por: <i class="fa fa-solid fa-angle-down"></i></a>
-                      <ul class="options">
-                          <li>
-                              <a class="op" ordertype="recent"> Mais recentes</a>
-                              <a class="op" ordertype="low-price">Menor preço</a>
-                              <a class="op" ordertype="price">Maior preço</a>
+          <div class="main-container" id="main">
+              <div class="mobile-filters">
+                  <h1>Blusas</h1>
+                  <div class="filter-order-buttons">
+                      <button class="mobile-button" id="filter" style="border-right:0px;">Filtrar</button> 
+                      <button class="mobile-button" id="order-mobile">Ordenar</button> 
+                  </div>      
+              </div>
+      
+            <div class="filters">
+              <h1>Blusas</h1>
+              <h3 style="font-weight: 500;">CORES</h3>
+              
+              <div class="color-option">
+                  <div class="checkbox">
+                      <div class="checked"></div>
+                  </div>
+                  <p>Amarelo</p>
+              </div>
+      
+              <div class="color-option">
+                  <div class="checkbox">
+                      <div class="checked"></div>
+                  </div>
+                  <p>Azul</p>
+              </div>
+      
+              <div class="color-option">
+                  <div class="checkbox">
+                      <div class="checked"></div>
+                  </div>
+                  <p>Branco</p>
+              </div>
+      
+              <div class="color-option">
+                  <div class="checkbox">
+                      <div class="checked"></div>
+                  </div>
+                  <p>Cinza</p>
+              </div>
+      
+              <div class="color-option">
+                <div class="checkbox">
+                    <div class="checked"></div>
+                </div>
+                <p>Laranja</p>
+              </div>
+      
+              <div class="additional-colors">
+                  <div class="color-option">
+                      <div class="checkbox">
+                          <div class="checked"></div>
+                      </div>
+                      <p>Rosa</p>
+                    </div>
+      
+                    <div class="color-option">
+                      <div class="checkbox">
+                          <div class="checked"></div>
+                      </div>
+                      <p>Preto</p>
+                    </div>
+      
+                    <div class="color-option">
+                      <div class="checkbox">
+                          <div class="checked"></div>
+                      </div>
+                      <p>Vinho</p>
+                    </div>
+              </div>
+              
+              <a id="see-more">Ver todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i></a>
+      
+              
+              
+              <h3 style="font-weight: 500; margin-bottom: 10px;">TAMANHOS</h3>
+              <div class="sizes">
+                <button class="checkbox-btn">P</button>
+                <button class="checkbox-btn">M</button>
+                <button class="checkbox-btn">G</button>
+                <button class="checkbox-btn">GG</button>
+              </div>
+              <div class="sizes">
+                <button class="checkbox-btn">U</button>
+                <button class="checkbox-btn">36</button>
+                <button class="checkbox-btn">38</button>
+                <button class="checkbox-btn">40</button>
+              </div>
+              <div class="sizes">
+                <button class="checkbox-btn">42</button>
+                <button class="checkbox-btn">44</button>
+                <button class="checkbox-btn">46</button>
+              </div>
+      
+              <h3 style="font-weight: 500;">FAIXA DE PREÇO</h3>
+      
+              <div class="color-option">
+                <div class="checkbox" id="checkbox-btn">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$0 até R$50</p>
+            </div>
+      
+            <div class="color-option">
+                <div class="checkbox" id="checkbox-btn">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$51 até R$150</p>
+            </div>
+      
+            <div class="color-option">
+                <div class="checkbox" id="checkbox-btn">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$151 até R$300</p>
+            </div>
+      
+            <div class="color-option">
+                <div class="checkbox" id="checkbox-btn">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$301 até R$500</p>
+            </div>
+      
+            <div class="color-option">
+              <div class="checkbox" id="checkbox-btn">
+                  <div class="checked"></div>
+              </div>
+              <p>a partir de R$501</p>
+            </div>
+      
+            
+            </div>
+      
+            <div class="catalog" id="catalog">
+                <div class="test">
+                    <ul class="testezin">
+                        <li>
+                            <a id="selector" class="selector">Ordenar por: <i class="fa fa-solid fa-angle-down"></i></a>
+                            <ul class="options">
+                                <li>
+                                    <a class="op" ordertype="recent"> Mais recentes</a>
+                                    <a class="op" ordertype="low-price">Menor preço</a>
+                                    <a class="op" ordertype="price">Maior preço</a>
+                                </li>
+                            </ul>
                           </li>
-                      </ul>
-                    </li>
-              </ul>
+                    </ul>
+                </div>
+                <div class="products" id="products"></div>  
+                <button class="load-more-btn">CARREGAR MAIS</button>      
+            </div>
+          
           </div>
-          <div class="products" id="products"></div>  
-          <button class="load-more-btn">CARREGAR MAIS</button>      
-      </div>
+      
+          <div class="footer">
+            Agência M3 - Agência de Performance Digital 
+          </div>
+    </div>
     
-    </div>
-
-    <div class="footer">
-      Agência M3 - Agência de Performance Digital 
-    </div>
 </body>
 
 <script src="js/index.js"></script>
