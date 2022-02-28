@@ -1,7 +1,7 @@
 category();
 
 function orderByDesktop() {
-  const accordion = document.querySelector(".botton-accordion");
+  const accordion = document.querySelector(".category--orderby");
 
   accordion.addEventListener("click", (e) => {
     const accordionHeaderId = e.target.dataset.accordionHeader;
@@ -13,7 +13,9 @@ function orderByDesktop() {
 }
 
 function seeMore() {
-  const optionColor = document.querySelector(".option-color-seeMore");
+  const optionColor = document.querySelector(
+    ".category--filter-content--color-options-seeMore"
+  );
 
   optionColor.addEventListener("click", (e) => {
     // if (e.target != this) return;

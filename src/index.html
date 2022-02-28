@@ -10,432 +10,464 @@
 
   <body>
     <header>
-      <div class="alignment">
-        <div class="logo"><img src="./img/logo-m3.png" alt="logo m3" /></div>
-        <div class="bag">
+      <div class="header--alignment">
+        <div class="header--logo">
+          <img src="./img/logo-m3.png" alt="logo m3" />
+        </div>
+        <div class="header--bag">
           <img
             src="./img/image 3.png"
             alt="sacola de compras"
-            class="bag-icon"
+            class="header--bag-icon"
           />
-          <div class="bag-counter">
-            <span>0</span>
+          <div class="header--bag-counter">
+            <span class="header--bag-counter--number">0</span>
           </div>
         </div>
       </div>
     </header>
-    <main>
-      <div class="home-header">
-        <div class="header-title, category">
-          <span class="category">Blusas</span>
-        </div>
-        <div data-js="accordion" class="botton-accordion">
-          <button data-accordion-header="1" class="botton-accordion">
-            <span data-accordion-header="1" class="title-botton"
-              >Ordernar por:</span
-            >
-            <span data-accordion-header="1" class="symbol-botton">v</span>
+    <main class="category">
+      <div class="category--header">
+        <h1 class="category--header-title">Blusas</h1>
+        <div class="category--orderby" data-js="accordion">
+          <button class="category--orderby-btn" data-accordion-header="1">
+            <span class="category--orderby-btn-title" data-accordion-header="1">
+              Ordernar por:
+            </span>
+            <span class="category--orderby-btn-arrow" data-accordion-header="1">
+              <img class="arrow" src="./img/vetor.png" />
+            </span>
           </button>
-          <div data-accordion-body="1" class="accordion-open">
-            <ul class="option-accordion">
+          <div class="category--orderby-content" data-accordion-body="1">
+            <ul class="category--orderby-content--option">
               Mais recentes
             </ul>
-            <ul class="option-accordion">
+            <ul class="category--orderby-content--option">
               Menor preço
             </ul>
-            <ul class="option-accordion">
+            <ul class="category--orderby-content--option">
               Maior preço
             </ul>
           </div>
         </div>
       </div>
-      <div class="home-container">
-        <div class="filter-mobily-content">
-          <div class="filter filter-mobily">
-            <button class="btn-mbl">Filtrar</button>
-            <div class="option-color-mbl">
-              <div class="mbl-title">
-                <span>FILTRAR</span><span class="close">X</span>
+      <div class="category--container">
+        <div class="category--filter_orderby-mobile--container">
+          <button class="category--filter--open-btn">Filtrar</button>
+          <div class="category--filter-content">
+            <div class="category--filter--header-mobile">
+              <span class="category--filter--header-mobile--title">
+                FILTRAR
+              </span>
+              <span class="close">X</span>
+            </div>
+            <div class="category--filter-content--color">
+              <div class="category--filter-content-title">
+                CORES
+                <span class="category--filter-content-title-arrow">
+                  <img class="arrow" src="./img/vetor.png"
+                /></span>
               </div>
-              <div class="color">
-                <div class="filters-title">
-                  CORES <span class="arrow-mbl">v</span>
+              <div class="category--filter-content--color-options">
+                <div class="color-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="amarelo"
+                    id="amarelo-color"
+                    class="checkbox"
+                  />
+                  <label class="color-label" for="amarelo-color"
+                    >Amarelo
+                  </label>
                 </div>
-                <div class="option-color">
-                  <div class="checkbox">
-                    <input
-                      type="checkbox"
-                      name="color"
-                      value="amarelo"
-                      id="amarelo-color"
-                      class="checkbox"
-                    />
-                    <label for="amarelo-color">Amarelo </label>
-                  </div>
-                  <div class="checkbox-container">
-                    <input
-                      type="checkbox"
-                      name="color"
-                      value="azul"
-                      id="azul-color"
-                      class="checkbox"
-                    />
-                    <label for="azul-color"> Azul</label>
-                  </div>
+                <div class="color-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="azul"
+                    id="azul-color"
+                    class="checkbox"
+                  />
+                  <label class="color-label" for="azul-color"> Azul</label>
+                </div>
 
-                  <div class="checkbox">
-                    <input
-                      type="checkbox"
-                      name="color"
-                      value="branco"
-                      id="branco-color"
-                      class="checkbox"
-                    />
-                    <label for="branco-color"> Branco</label>
-                  </div>
+                <div class="color-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="branco"
+                    id="branco-color"
+                    class="checkbox"
+                  />
+                  <label class="color-label" for="branco-color"> Branco</label>
+                </div>
 
-                  <div class="checkbox">
-                    <input
-                      type="checkbox"
-                      name="color"
-                      value="cinza"
-                      id="cinza-color"
-                      class="checkbox"
-                    />
-                    <label for="cinza-color"> Cinza</label>
-                  </div>
-                  <div class="checkbox">
-                    <input
-                      type="checkbox"
-                      name="color"
-                      value="laranja"
-                      id="laranja-color"
-                      class="checkbox"
-                    />
-                    <label for="laranja-color"> Laranja</label>
-                  </div>
+                <div class="color-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="cinza"
+                    id="cinza-color"
+                    class="checkbox"
+                  />
+                  <label class="color-label" for="cinza-color"> Cinza</label>
+                </div>
+                <div class="color-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="color"
+                    value="laranja"
+                    id="laranja-color"
+                    class="checkbox"
+                  />
+                  <label class="color-label" for="laranja-color">
+                    Laranja</label
+                  >
+                </div>
 
-                  <div data-seeMore="seeMore" class="color-seeMore-">
-                    <div
+                <div data-seeMore="seeMore" class="color-seeMore">
+                  <div
+                    class="category--filter-content--color-options-seeMore"
+                    data-color-option-header="2"
+                  >
+                    <span
+                      class="category--filter-content--color-options-seeMore-title"
                       data-color-option-header="2"
-                      class="option-color-seeMore"
+                      >Ver todas as cores</span
+                    ><span
+                      class="category--filter-content--color-options-seeMore-arrow"
+                      data-color-option-header="2"
                     >
-                      <span
-                        data-color-option-header="2"
-                        class="option-color-seeMore-title"
-                        >Ver todas as cores</span
-                      ><span data-color-option-header="2">v</span>
-                    </div>
+                      <img class="arrow" src="./img/vetor.png"
+                    /></span>
+                  </div>
 
-                    <div data-color-option-body="2" class="option-color-ocult">
-                      <div class="checkbox">
-                        <input
-                          type="checkbox"
-                          name="color"
-                          value="verde"
-                          id="verde-color"
-                          class="checkbox"
-                        />
-                        <label for="verde-color">Verde</label>
-                      </div>
-                      <div class="checkbox">
-                        <input
-                          type="checkbox"
-                          name="color"
-                          value="vermelho"
-                          id="vermelho-color"
-                          class="checkbox"
-                        />
-                        <label for="vermelho-color">Vermelho</label>
-                      </div>
-                      <div class="checkbox">
-                        <input
-                          type="checkbox"
-                          name="color"
-                          value="preto"
-                          id="preto-color"
-                          class="checkbox"
-                        />
-                        <label for="preto-color">Preto</label>
-                      </div>
-                      <div class="checkbox">
-                        <input
-                          type="checkbox"
-                          name="color"
-                          value="rosa"
-                          id="rosa-color"
-                          class="checkbox"
-                        />
-                        <label for="rosa-color">Rosa</label>
-                      </div>
-                      <div class="checkbox">
-                        <input
-                          type="checkbox"
-                          name="color"
-                          value="vinho"
-                          id="vinho-color"
-                          class="checkbox"
-                        />
-                        <label for="vinho-color">Vinho</label>
-                      </div>
+                  <div
+                    data-color-option-body="2"
+                    class="category--filter-content--color-options-ocult"
+                  >
+                    <div class="color-checkbox-wrapper">
+                      <input
+                        type="checkbox"
+                        name="color"
+                        value="verde"
+                        id="verde-color"
+                        class="checkbox"
+                      />
+                      <label class="color-label" for="verde-color">Verde</label>
+                    </div>
+                    <div class="color-checkbox-wrapper">
+                      <input
+                        type="checkbox"
+                        name="color"
+                        value="vermelho"
+                        id="vermelho-color"
+                        class="checkbox"
+                      />
+                      <label class="color-label" for="vermelho-color"
+                        >Vermelho</label
+                      >
+                    </div>
+                    <div class="color-checkbox-wrapper">
+                      <input
+                        type="checkbox"
+                        name="color"
+                        value="preto"
+                        id="preto-color"
+                        class="checkbox"
+                      />
+                      <label class="color-label" for="preto-color">Preto</label>
+                    </div>
+                    <div class="color-checkbox-wrapper">
+                      <input
+                        type="checkbox"
+                        name="color"
+                        value="rosa"
+                        id="rosa-color"
+                        class="checkbox"
+                      />
+                      <label class="color-label" for="rosa-color">Rosa</label>
+                    </div>
+                    <div class="color-checkbox-wrapper">
+                      <input
+                        type="checkbox"
+                        name="color"
+                        value="vinho"
+                        id="vinho-color"
+                        class="checkbox"
+                      />
+                      <label class="color-label" for="vinho-color">Vinho</label>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="size">
-                <div class="filters-title">
-                  TAMANHOS <span class="arrow-mbl">v</span>
-                </div>
-                <div class="option-size">
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="p"
-                      value="p"
-                    />
-                    <label class="lbl-size" for="p">
-                      <span class="one-iten">P</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="m"
-                      value="m"
-                    />
-                    <label class="lbl-size" for="m">
-                      <span class="one-iten">M</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="g"
-                      value="g"
-                    />
-                    <label class="lbl-size" for="g">
-                      <span class="one-iten">G</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="gg"
-                      value="gg"
-                    />
-                    <label class="lbl-size" for="gg">
-                      <span class="two-itens">GG</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="u"
-                      value="u"
-                    />
-                    <label class="lbl-size" for="u">
-                      <span class="one-iten">U</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="36"
-                      value="36"
-                    />
-                    <label class="lbl-size" for="36">
-                      <span class="two-itens">36</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="38"
-                      value="38"
-                    />
-                    <label class="lbl-size" for="38">
-                      <span class="two-itens">38</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="40"
-                      value="40"
-                    />
-                    <label class="lbl-size" for="40">
-                      <span class="two-itens">40</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="42"
-                      value="42"
-                    />
-                    <label class="lbl-size" for="42">
-                      <span class="two-itens">42</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="44"
-                      value="44"
-                    />
-                    <label class="lbl-size" for="44">
-                      <span class="two-itens">44</span>
-                    </label>
-                  </div>
-                  <div class="option-size-botton">
-                    <input
-                      class="btn-size"
-                      type="checkbox"
-                      name="size"
-                      id="46"
-                      value="46"
-                    />
-                    <label class="lbl-size" for="46">
-                      <span class="two-itens">46</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="price">
-                <div class="filters-title">
-                  FAIXA DE PREÇO <span class="arrow-mbl">v</span>
-                </div>
-                <div class="option-price">
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="price"
-                      value="0-50"
-                      id="price-0-50"
-                    />
-                    <label for="price-0-50s"
-                      ><span>de R$0 até R$50</span></label
-                    >
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="price"
-                      value="51-150"
-                      id="price-51-150"
-                    />
-                    <label for="price-51-150"
-                      ><span>de R$51 até R$150</span></label
-                    >
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="price"
-                      value="151-300"
-                      id="price-151-150"
-                    />
-                    <label for="price-151-150"
-                      ><span>de R$151 até R$300</span></label
-                    >
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="price"
-                      value="301-500"
-                      id="price-301-500"
-                    />
-                    <label for="price-301-500"
-                      ><span>de R$301 até R$500</span></label
-                    >
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      name="price"
-                      value="500+"
-                      id="price-500+"
-                    />
-                    <label for="price-500+"
-                      ><span>a partir de R$500</span></label
-                    >
-                  </div>
-                </div>
-                <div class="filter-btn-mbl">
-                  <button class="btn-mbl">Aplicar</button>
-                  <button class="btn-mbl">Limpar</button>
                 </div>
               </div>
             </div>
-            <div class="order-mobily">
-              <button class="btn-mbl">Ordenar</button>
-              <div class="contents-mbl">
-                <div class="title-mbl-header">
-                  <span class="title-mbl">ORDENAR</span>
-                  <span class="close">X</span>
-                </div>
-                <div class="option-mbl">Mais recente</div>
-                <div class="option-mbl">Maior preço</div>
-                <div class="option-mbl">Menor preço</div>
+            <div class="category--filter-content--size">
+              <div class="category--filter-content-title">
+                TAMANHOS
+                <span class="category--filter-content-title-arrow">
+                  <img class="arrow" src="./img/vetor.png"
+                /></span>
               </div>
+              <div class="category--filter-content--size-options">
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="p"
+                    value="p"
+                  />
+                  <label class="option-size" for="p">
+                    <span class="one-iten">P</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="m"
+                    value="m"
+                  />
+                  <label class="option-size" for="m">
+                    <span class="one-iten">M</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="g"
+                    value="g"
+                  />
+                  <label class="option-size" for="g">
+                    <span class="one-iten">G</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="gg"
+                    value="gg"
+                  />
+                  <label class="option-size" for="gg">
+                    <span class="two-itens">GG</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="u"
+                    value="u"
+                  />
+                  <label class="option-size" for="u">
+                    <span class="one-iten">U</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="36"
+                    value="36"
+                  />
+                  <label class="option-size" for="36">
+                    <span class="two-itens">36</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="38"
+                    value="38"
+                  />
+                  <label class="option-size" for="38">
+                    <span class="two-itens">38</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="40"
+                    value="40"
+                  />
+                  <label class="option-size" for="40">
+                    <span class="two-itens">40</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="42"
+                    value="42"
+                  />
+                  <label class="option-size" for="42">
+                    <span class="two-itens">42</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="44"
+                    value="44"
+                  />
+                  <label class="option-size" for="44">
+                    <span class="two-itens">44</span>
+                  </label>
+                </div>
+                <div class="size-checkbox-wrapper">
+                  <input
+                    class="btn-size"
+                    type="checkbox"
+                    name="size"
+                    id="46"
+                    value="46"
+                  />
+                  <label class="option-size" for="46">
+                    <span class="two-itens">46</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="category--filter-content--price">
+              <div class="category--filter-content-title">
+                FAIXA DE PREÇO
+                <span class="category--filter-content-title-arrow">
+                  <img class="arrow" src="./img/vetor.png"
+                /></span>
+              </div>
+              <div class="category--filter-content--price-options">
+                <div class="price-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="price"
+                    value="0-50"
+                    id="price-0-50"
+                  />
+                  <label class="price--option" for="price-0-50s"
+                    ><span>de R$0 até R$50</span></label
+                  >
+                </div>
+                <div class="price-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="price"
+                    value="51-150"
+                    id="price-51-150"
+                  />
+                  <label class="price--option" for="price-51-150"
+                    ><span>de R$51 até R$150</span></label
+                  >
+                </div>
+                <div class="price-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="price"
+                    value="151-300"
+                    id="price-151-150"
+                  />
+                  <label class="price--option" for="price-151-150"
+                    ><span>de R$151 até R$300</span></label
+                  >
+                </div>
+                <div class="price-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="price"
+                    value="301-500"
+                    id="price-301-500"
+                  />
+                  <label class="price--option" for="price-301-500"
+                    ><span>de R$301 até R$500</span></label
+                  >
+                </div>
+                <div class="price-checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    name="price"
+                    value="500+"
+                    id="price-500+"
+                  />
+                  <label class="price--option" for="price-500+"
+                    ><span>a partir de R$500</span></label
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="category--filter-content--actions-mobile">
+              <button class="category--filter-content--actions-mobile--apply">
+                Aplicar
+              </button>
+              <button class="category--filter-content--actions-mobile--clean">
+                Limpar
+              </button>
+            </div>
+          </div>
+          <div class="category--orderby-mobile">
+            <button class="category--orderby--open-btn">Ordenar</button>
+            <div class="category--orderby-mobile--container">
+              <div class="category--orderby--header-mobile">
+                <span class="category--orderby--header-mobile--title"
+                  >ORDENAR</span
+                >
+                <span class="close">X</span>
+              </div>
+              <div class="category--orderby-mobile--option">Mais recente</div>
+              <div class="category--orderby-mobile--option">Maior preço</div>
+              <div class="category--orderby-mobile--option">Menor preço</div>
             </div>
           </div>
         </div>
 
-        <div class="product">
-          <div class="product-content">
-            <div class="product-itens">
+        <div class="category--filter-content--product">
+          <div class="category--filter-content--product--product-load">
+            <div class="product-itens-wrapper">
               <img src="./img/img_2.png" alt="Camiseta de manga cinza" />
               <span class="product-name">CAMISETA MESCLA</span>
               <span class="product-price">R$ 28,00</span>
               <span class="product-parcel">até 3x de R$9,33</span>
               <button class="product-buy">COMPRAR</button>
             </div>
-            <div class="product-itens">
+            <div class="product-itens-wrapper">
               <img src="./img/img_3.png" alt="Saia em couro" />
               <span class="product-name">SAIA EM COURO</span>
               <span class="product-price">R$ 398,00</span>
               <span class="product-parcel">até 10x R$39,80</span>
               <button class="product-buy">COMPRAR</button>
             </div>
-            <div class="product-itens">
+            <div class="product-itens-wrapper">
               <img src="./img/img_4.png" alt="Cardigan tigre" />
               <span class="product-name">CARDIGAN TIGRE</span>
               <span class="product-price">R$ 398,00</span>
               <span class="product-parcel">até 10x de R$39,80</span>
               <button class="product-buy">COMPRAR</button>
             </div>
-            <div class="product-itens">
+            <div class="product-itens-wrapper">
               <img src="./img/img_5.png" alt="Cardigan off white" />
               <span class="product-name">CARDIGAN OFF WHITE</span>
               <span class="product-price">R$ 99,90</span>
               <span class="product-parcel">até 3x de R$33,30</span>
               <button class="product-buy">COMPRAR</button>
             </div>
-            <div class="product-load">
-              <span class="product-load-title">CARREGAR MAIS</span>
-            </div>
+          </div>
+          <div class="product-load">
+            <span class="product-load-title">CARREGAR MAIS</span>
           </div>
         </div>
       </div>
@@ -443,7 +475,7 @@
     <script src="bundle.js"></script>
 
     <footer class="footer">
-      <span class="footer-M3">M3: Implantação de E-commerce VTEX</span>
+      <span class="footer-copy">M3: Implantação de E-commerce VTEX</span>
     </footer>
   </body>
 </html>

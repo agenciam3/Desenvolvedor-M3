@@ -1,162 +1,246 @@
-.home-container {
+.category--container {
   font-family: $font-primary;
   display: flex;
 }
-@media (max-width: 768px) {
-  .option-color-mbl {
-    display: none;
-  }
-  .btn-mbl {
-    background: $white-color;
 
-    font-size: 24px;
-    height: 4rem;
-    width: 9rem;
-    padding: 0.8rem;
-
-    border: 0.3px solid rgba(0, 0, 0, 0.452);
-  }
-  .filter-mobily-content {
-    display: -webkit-box;
-  }
-}
-
-.arrow-mbl,
-.mbl-title,
-.btn-mbl {
+.category--filter--open-btn {
   display: none;
+  @media (max-width: 768px) {
+    display: block;
+    width: 9rem;
+    height: 3rem;
+    font-size: 24px;
+    background: $white-color;
+    border: 1px solid #a1a1a1;
+  }
+}
+.category--filter-content {
+  @media (max-width: 768px) {
+    display: none;
+    // display: block;
+
+    max-width: 100%;
+    box-shadow: 0 2px 0 0 rgb(191 191 191);
+    background: $white-color;
+    overflow-y: auto;
+
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
-.filter {
+.category--filter--header-mobile {
+  display: none;
+  justify-content: space-between;
+
+  box-shadow: 0 2px 0 0 rgb(191 191 191);
+  @media (max-width: 768px) {
+    display: flex;
+  }
+  .category--filter--header-mobile--title,
+  .close {
+    padding: 1rem;
+    color: $font-color;
+
+    font-size: 28px;
+    line-height: 38px;
+  }
+}
+
+.category--filter_orderby-mobile--container {
   display: flex;
   flex-direction: column;
 
   max-width: 14rem;
 
   @media (max-width: 768px) {
+    margin: auto;
     flex-direction: row;
 
     max-width: 20rem;
   }
 }
 
-.filters-title {
+.category--filter-content-title {
   color: $font-color;
 
   font-size: 16px;
   line-height: 22px;
   letter-spacing: 0.05em;
-}
 
-.option-size,
-.option-price {
-  display: flex;
-  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    font-size: 24px;
+    margin: 1rem;
+    justify-content: space-between;
+    display: flex;
+  }
 
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+  .category--filter-content-title-arrow {
+    display: none;
 
-/* COLOR */
-.option-color {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-label {
-  margin-left: 5px;
-}
-
-input[type="checkbox"] {
-  position: relative;
-
-  margin: 5px;
-
-  cursor: pointer;
-}
-input[type="checkbox"]:before {
-  content: "";
-  display: block;
-  position: absolute;
-
-  background-color: #fff;
-
-  width: 16px;
-  height: 16px;
-  border: 0.2px solid rgb(90, 89, 89);
-}
-input[type="checkbox"]:checked:before {
-  content: "";
-  display: block;
-  position: absolute;
-
-  background-color: $blue-color;
-
-  width: 16px;
-  height: 16px;
-}
-
-.option-color-seeMore {
-  width: 10rem;
-  margin: 10px 0;
-  padding-bottom: 5px;
-  border-bottom: 0.2px solid rgba(90, 89, 89, 0.637);
-
-  cursor: pointer;
-
-  .option-color-seeMore-title {
-    margin-right: 10px;
+    @media (max-width: 768px) {
+      display: block;
+    }
   }
 }
 
-.option-color-ocult {
+/*-------------COLOR AND PRICE------------*/
+
+.category--filter-content--color-options,
+.category--filter-content--price-options {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  flex-direction: column;
+
+  .color-checkbox-wrapper,
+  .price-checkbox-wrapper {
+    margin: 5px 0;
+  }
+
+  input[type="checkbox"] {
+    position: relative;
+    margin: 0px;
+    cursor: pointer;
+
+    width: 16px;
+    height: 16px;
+  }
+
+  input[type="checkbox"]::before {
+    content: "";
+    display: block;
+    position: absolute;
+
+    background-color: #fff;
+
+    width: 14px;
+    height: 14px;
+    border: 1px solid rgb(90, 89, 89);
+  }
+
+  input[type="checkbox"]:checked::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    background-color: $blue-color;
+
+    width: 12px;
+    height: 12px;
+    margin: 2px;
+  }
+}
+
+.category--filter-content--color-options-seeMore {
+  display: flex;
+  width: fit-content;
+  margin: 10px 0;
+
+  cursor: pointer;
+
+  .category--filter-content--color-options-seeMore-title {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100%;
+    text-decoration-line: underline;
+    color: #666666;
+
+    margin-right: 4px;
+  }
+  .category--filter-content--color-options-seeMore-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .arrow {
+      color: #666666;
+      width: 9px;
+    }
+  }
+}
+
+.category--filter-content--color-options-ocult {
   display: none;
 }
 
-.option-color-ocult.active {
+.category--filter-content--color-options-ocult.active {
   display: block;
 }
 
-/* SIZE */
+/*-------------SIZE------------*/
 
-.size {
-  margin-top: 2rem;
-}
-
-.option-size-botton {
+.category--filter-content--size-options {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  margin-top: 15px;
+
+  margin-top: 20px;
   margin-bottom: 20px;
+
+  .size-checkbox-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 
   input[type="checkbox"] {
     display: none;
   }
+
+  .option-size {
+    display: inline-block;
+    font-family: $font-primary;
+    border: 1px solid #e4e4e4;
+    height: 36px;
+    width: 36px;
+    margin: 4px;
+    position: relative;
+    color: #a1a1a1;
+    cursor: pointer;
+  }
+  .one-iten {
+    position: absolute;
+    left: 11px;
+    top: 10px;
+  }
+
+  .two-itens {
+    position: absolute;
+    left: 7px;
+    top: 10px;
+  }
 }
 
-.lbl-size {
-  display: inline-block;
-  font-family: $font-primary;
-  border: 1px solid #e4e4e4;
-  height: 36px;
-  width: 36px;
-  margin: 5px;
-  position: relative;
-  color: #a1a1a1;
-  cursor: pointer;
-}
+/*-------------ACTION_ MOBILE------------*/
 
-.one-iten {
-  position: absolute;
-  left: 11px;
-  top: 10px;
-}
+.category--filter-content--actions-mobile {
+  display: none;
+  text-align: center;
+  padding-bottom: 2rem;
 
-.two-itens {
-  position: absolute;
-  left: 7px;
-  top: 10px;
-}
+  @media (max-width: 768px) {
+    display: block;
+  }
 
-/* PRICE */
+  .category--filter-content--actions-mobile--apply,
+  .category--filter-content--actions-mobile--clean {
+    width: 10rem;
+    height: 2.5rem;
+
+    font-size: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.418);
+  }
+
+  .category--filter-content--actions-mobile--apply {
+    background: $blue-color;
+    color: $white-color;
+    margin-right: 1rem;
+  }
+
+  .category--filter-content--actions-mobile--clean {
+    background: $white-color;
+  }
+}
