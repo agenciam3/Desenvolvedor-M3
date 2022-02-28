@@ -1,0 +1,8 @@
+.c-header {
+    border-bottom: 1px solid var(--ter);
+    
+    &__container {
+        @include flex($content: space-between);
+        @extend .container;
+    }
+}

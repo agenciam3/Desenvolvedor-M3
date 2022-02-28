@@ -1,0 +1,7 @@
+.c-footer {
+    @include flex();
+    background-color: var(--sec);
+    color: var(--light);
+    height: 33px;
+    margin-top: 35px;
+}

@@ -1,0 +1,15 @@
+.c-shop {
+    position: relative;
+
+    &__counter {
+        @include flex();
+        background-color: var(--pri);
+        border-radius: 50%;
+        color: var(--light);
+        font-size: 12px;
+        height: 20px;
+        inset: 12px 0 0 12px;
+        position: absolute;
+        width: 20px;
+    }
+}

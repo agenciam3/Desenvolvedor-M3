@@ -1,1 +1,25 @@
-@import "reset";
+/* Base */
+@import "./base/reset";
+@import "./base/measures";
+@import "./base/generics";
+@import "./base/mixins";
+
+/* Theme */
+@import "./theme/colors";
+
+/* Components */
+@import "./components/header";  
+@import "./components/shop";  
+@import "./components/product";  
+@import "./components/main";  
+@import "./components/card";  
+@import "./components/button";  
+@import "./components/input";  
+@import "./components/select";  
+@import "./components/form";  
+@import "./components/sizes";  
+@import "./components/footer";  
+
+/* Layouts */
+@import "./layouts/grade";
+@import "./layouts/responsivity";

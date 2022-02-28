@@ -1,0 +1,17 @@
+.c-sizes {
+    background-color: transparent;
+
+    &.--block {
+        @include flex();
+        border: 1px solid var(--ter);
+        color: var(--ter);
+        height: 32px;
+        width: 32px;
+    }
+
+}
+
+input:checked + .c-sizes.--block {
+    border: 1px solid var(--pri);
+    color: var(--sec);
+}

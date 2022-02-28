@@ -1,0 +1,16 @@
+.c-product {
+    @include flex($content: space-between, $gap: 15px);
+    @extend .container;
+    padding: 16px 25px;
+
+    &__list { 
+        @include grid($size: minmax(210px, 1fr), $gap: 16px);
+        padding-inline: 50px;
+        margin-bottom: 70px;
+        flex: 1;
+    }
+
+    &__wrapper { text-align: center; }
+    &__title { font-size: 2rem;}
+    &__card { @include flex($direction: column, $items: center, $gap: 10px); }
+}

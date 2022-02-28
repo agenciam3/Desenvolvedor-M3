@@ -1,0 +1,7 @@
+.c-main {
+    
+    &__container {
+        @include flex($items: flex-start, $content: space-between);
+        @extend .container;
+    }
+}

@@ -1,0 +1,36 @@
+.c-form {
+    @include flex($items: flex-start, $direction: column, $gap: 24px);
+
+    .c-fieldset, .c-details {
+        overflow: hidden;
+        width: 100%;
+
+        &.--list { @include flex($direction: column, $items: flex-start) }
+        &.--grid { @include grid($value: 4, $size: 32px, $gap: 8px) }
+    }
+
+    .c-details {
+        width: 100vw;
+        margin-bottom: 14px ;
+    }
+
+    .c-legend, .c-summary { 
+        font-size: 1rem;
+        margin-bottom: 14px;
+        text-transform: uppercase;
+    }
+
+    .c-summary { 
+        transform: translateX(-15px);
+
+        span { font-size: 1.5rem; }
+        img { margin-left: 92%; }
+     }
+
+     &__link { 
+        color: var(--qua);
+        margin-top: 10px;
+    } 
+
+    span { font-size: 14px; }
+}
