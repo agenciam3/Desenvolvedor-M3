@@ -1,14 +1,17 @@
-const path = require("path");
+import path from "path";
 
-const { series, src, dest, parallel, watch } = require("gulp");
-const webpack = require("webpack");
-const del = require("del");
-const autoprefixer = require("gulp-autoprefixer");
-const sass = require("gulp-sass")(require("sass"));
-const sourcemaps = require("gulp-sourcemaps");
-const browserSync = require("browser-sync").create();
+import gulp from "gulp";
+import webpack from "webpack";
+import del from "del";
+import autoprefixer from "gulp-autoprefixer";
+import dartSass from 'sass';
+import gulpSass from 'gulp-sass';
+import sourcemaps from "gulp-sourcemaps";
+import webpackConfig from "./webpack.config.js";
+import browserSync  from "browser-sync"
 
-const webpackConfig = require("./webpack.config.js");
+const sass = gulpSass(dartSass);
+
 
 const paths = {
   scripts: {
@@ -41,7 +44,7 @@ function server() {
 }
 
 function styles() {
-  return src(paths.styles.src)
+  return gulp.src(paths.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(
@@ -50,7 +53,7 @@ function styles() {
       })
     )
     .pipe(sourcemaps.write())
-    .pipe(dest(paths.dest))
+    .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream());
 }
 
@@ -79,30 +82,35 @@ function scripts() {
 }
 
 function html() {
-  return src(paths.html.src).pipe(browserSync.stream()).pipe(dest(paths.dest));
+  return gulp.src(paths.html.src).pipe(browserSync.stream()).pipe(gulp.dest(paths.dest));
 }
 
 function img() {
-  return src(paths.img.src).pipe(dest(paths.dest + "/img"));
+  return gulp.src(paths.img.src).pipe(gulp.dest(paths.dest + "/img"));
 }
 
-const build = series(clean, parallel(styles, scripts, html, img));
+const build = gulp.series(clean, gulp.parallel(styles, scripts, html, img));
 const dev = () => {
-  watch(paths.scripts.watch, { ignoreInitial: false }, scripts).on(
+  gulp.watch(paths.scripts.watch, { ignoreInitial: false }, scripts).on(
     "change",
     browserSync.reload
   );
-  watch(paths.styles.src, { ignoreInitial: false }, styles);
-  watch(paths.img.src, { ignoreInitial: false }, img);
-  watch(paths.html.src, { ignoreInitial: false }, html).on(
+  gulp.watch(paths.styles.src, { ignoreInitial: false }, styles);
+  gulp.watch(paths.img.src, { ignoreInitial: false }, img);
+  gulp.watch(paths.html.src, { ignoreInitial: false }, html).on(
     "change",
     browserSync.reload
   );
   server();
 };
 
-exports.build = build;
-exports.server = server;
-exports.styles = styles;
-exports.scripts = scripts;
-exports.default = dev;
+const _build = build;
+export { _build as build };
+const _server = server;
+export { _server as server };
+const _styles = styles;
+export { _styles as styles };
+const _scripts = scripts;
+export { _scripts as scripts };
+const _default = dev;
+export { _default as default };

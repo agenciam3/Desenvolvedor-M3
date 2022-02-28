@@ -1,11 +1,11 @@
-const path = require("path");
+import { resolve } from "path";
 
-module.exports = (paths) => ({
+export default (paths) => ({
   entry: {
-    main: path.resolve(__dirname, paths.scripts.src),
+    main: resolve( paths.scripts.src),
   },
   output: {
-    path: path.resolve(__dirname, paths.dest),
+    path: resolve( paths.dest),
     filename: "bundle.js",
   },
   mode: "development",
@@ -14,7 +14,7 @@ module.exports = (paths) => ({
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
-        include: path.resolve(__dirname, paths.scripts.src),
+        include: resolve( paths.scripts.src),
         use: {
           loader: "babel-loader",
           options: {
@@ -22,8 +22,9 @@ module.exports = (paths) => ({
               [
                 "@babel/preset-env",
                 { targets: { browsers: ["last 2 versions"] } },
-              ],
+              ]
             ],
+            plugins: ["@babel/plugin-transform-runtime"],
             cacheDirectory: true,
           },
         },

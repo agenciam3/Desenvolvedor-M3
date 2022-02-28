@@ -1,0 +1,45 @@
+/* The containerInput */
+.containerInput {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin: 10px 0;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default radio button */
+  .containerInput input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom radio button */
+  .checkmark {
+    @include flex();
+    position: absolute;
+    inset: 0;
+    height: 15px;
+    width: 15px;
+    border: 2px solid var(--ter);
+    margin-right: 10px;
+  
+    .bullet {
+      height: 10px;
+      width: 10px;
+
+    }
+  }
+  
+  /* When the radio button is checked, add a blue background */
+  .containerInput input:checked ~ .checkmark {
+
+    .bullet {
+      background-color: var(--pri);
+    }
+  }
+  

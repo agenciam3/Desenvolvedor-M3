@@ -1,0 +1,35 @@
+.c-button {
+    border: none;
+    color: var(--light);
+    font-weight: 700;
+    height: 34px;
+    text-transform: uppercase;
+    width: 100%;
+    transition: all .1s ease-in;
+
+    &.--std {
+        background: none;
+        border: none;
+        width: initial;
+    }
+
+    &.--pri { background-color: var(--pri); }
+    &.--sec { background-color: var(--sec); }
+
+    &.--ter { 
+        border: 1px solid var(--sec);
+        color: var(--sec);
+    }
+
+    &__wrapper {
+        display: flex;
+        > .c-button { min-width: 120px; }
+    }
+
+    &.--more { width: 175px; }
+
+    &:active {
+        filter: opacity(.7);
+        transform: scale(.98);
+    }
+}

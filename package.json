@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Desafio da agencia m3 para novos colaboradores",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "npm-run-all --parallel dev server",
     "dev": "gulp",
@@ -19,8 +20,14 @@
   },
   "homepage": "https://github.com/agenciam3/Desenvolvedor-M3#readme",
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.0",
+    "@babel/preset-es2017": "^7.0.0-beta.53",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.2.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-stage-0": "^6.24.1",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -32,6 +39,7 @@
     "webpack": "^5.62.1"
   },
   "dependencies": {
+    "@babel/runtime": "^7.17.2",
     "json-server": "^0.17.0"
   }
 }

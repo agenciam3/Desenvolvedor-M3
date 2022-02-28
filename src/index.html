@@ -1,19 +1,397 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
+  
+  <header class="c-header">
+    <div class="c-header__container">
+      <img src="./img/logo-m3.png" alt="Logo M3">
+      <div class="c-shop">
+        <img src="./img/shop.svg" alt="carrinho">
+        <span class="c-shop__counter" id="counter"></span>
+      </div>
+    </div>
+  </header>
 
+  <div class="c-product">
+    <h2 class="c-product__title">Blusas</h2>
+    <div class="c-button__wrapper">
+      <button class="c-button c-sizes --ter" id="filterOpen">Filtrar</button>
+      <button class="c-button c-sizes --ter" id="orderByOpenButton">Ordernar</button>
+    </div>
+
+    <div class="c-select__wrapper u-lh">
+      <select class="c-select" name="orderBy" id="orderBy">
+        <option value="-1">Ordernar por:</option>
+        <option value="1">Mais recentes</option>
+        <option value="2">Menor preço</option>
+        <option value="3">Maior preço</option>
+      </select>
+    </div>
+  </div>
+
+  <main class="c-main">
+    <div class="c-main__container">
+      <aside class="c-aside">
+        <form class="c-form u-lh">
+          <fieldset class="c-fieldset --list">
+            <legend class="c-legend">Cores</legend>
+    
+            <label for="yellow" class="containerInput">
+              <input type="checkbox" id="yellow" value="color-Amarelo">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>Amarelo</span>
+            </label>
+    
+            <label for="blue" class="containerInput">
+              <input type="checkbox" id="blue" value="color-Azul">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>Azul</span>
+            </label>
+    
+            <label for="white" class="containerInput">
+              <input type="checkbox" id="white" value="color-Branco">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>Branco</span>
+            </label>
+    
+            <label for="grey" class="containerInput">
+              <input type="checkbox" id="grey" value="color-Cinza">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>cinza</span>
+            </label>
+    
+            <label for="orange" class="containerInput">
+              <input type="checkbox" id="orange" value="color-Laranja">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>Laranja</span>
+            </label>
+
+            <a href="#" id="moreColors" class="c-form__link">Ver todas as cores</a>    
+          </fieldset>
+    
+          <fieldset class="c-fieldset --grid">
+            <legend class="c-legend">Tamanhos</legend>
+
+            <input type="checkbox"id="size-p" value="size-p" hidden />
+            <label class="c-sizes --block" for="size-p">
+              P 
+            </label>
+
+            <input type="checkbox"id="size-m" value="size-m" hidden />
+            <label class="c-sizes --block --selected" for="size-m">
+              M 
+            </label>
+
+            <input type="checkbox"id="size-g" value="size-g" hidden />
+            <label class="c-sizes --block" for="size-g">
+              G 
+            </label>
+
+            <input type="checkbox" id="size-gg" value="size-gg" hidden />
+            <label class="c-sizes --block" for="size-gg">
+              GG 
+            </label>
+
+            <input type="checkbox"id="size-u" value="size-u" hidden />
+            <label class="c-sizes --block" for="size-u">
+              U 
+            </label>
+
+            <input type="checkbox" id="size-36" value="size-36" hidden />
+            <label class="c-sizes --block" for="size-36">
+              36 
+            </label>
+
+            <input type="checkbox" id="size-38" value="size-38" hidden />
+            <label class="c-sizes --block" for="size-38">
+              38 
+            </label>
+
+            <input type="checkbox" id="size-40" value="size-40" hidden />
+            <label class="c-sizes --block" for="size-40">
+              40 
+            </label>
+            
+            <input type="checkbox" id="size-361" value="size-36" hidden />
+            <label class="c-sizes --block" for="size-361">
+              36 
+            </label>
+
+            <input type="checkbox" id="size-381" value="size-38" hidden />
+            <label class="c-sizes --block" for="size-381">
+              38 
+            </label>
+
+            <input type="checkbox" id="size-401" value="size-40" hidden />
+            <label class="c-sizes --block" for="size-401">
+              40 
+            </label>
+          </fieldset>
+    
+          <fieldset class="c-fieldset --list">
+            <legend class="c-legend">Faixa de preço</legend>
+            <label for="050" class="containerInput">
+              <input type="checkbox" id="050" value="price-0-50">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$0 até R$50</span>
+            </label>
+    
+            <label for="51150" class="containerInput">
+              <input type="checkbox" id="51150" value="price-51-150">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$51 até R$150</span>
+            </label>
+            
+            <label for="151300" class="containerInput">
+              <input type="checkbox" id="151300" value="price-151-300">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$151 até R$300</span>
+            </label>
+    
+            <label for="301500" class="containerInput">
+              <input type="checkbox" id="301500" value="price-301-500">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$301 até R$500</span>
+            </label>
+    
+            <label for="501" class="containerInput">
+              <input type="checkbox" id="501" value="price-501">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>a partir de R$500</span>
+            </label>
+          </fieldset>
+        </form>
+      </aside>
+
+      <section class="c-section__filter u-ls">
+        <header class="c-header u-ls">
+          <div class="c-header__container">
+              <h2>Filtrar</h2>
+              <button class="c-button --std" id="filterClose"><img src="./img/Close.svg" alt="Fechar"></button>
+          </div>
+        </header>
+        <form class="c-form u-ls">
+          <details class="c-details --list">
+              <summary class="c-summary">
+                <span>Cores</span>
+                <img src="./img/arrow.svg" alt="Expandir / Reduzir" width="18"> 
+              </summary>
+
+              <label for="yellow" class="containerInput">
+                <input type="checkbox" id="yellow" value="color-Amarelo">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Amarelo</span>
+              </label>
+
+              <label for="blue" class="containerInput">
+                <input type="checkbox" id="blue" value="color-Azul">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Azul</span>
+              </label>
+
+              <label for="white" class="containerInput">
+                <input type="checkbox" id="white" value="color-Branco">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Branco</span>
+              </label>
+
+              <label for="grey" class="containerInput">
+                <input type="checkbox" id="grey" value="color-Cinza">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>cinza</span>
+              </label>
+
+              <label for="orange" class="containerInput">
+                <input type="checkbox" id="orange" value="color-Laranja">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Laranja</span>
+              </label>
+
+              <label for="green" class="containerInput">
+                <input type="checkbox" id="green" value="color-Verde">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Verde</span>
+              </label>
+
+              <label for="red" class="containerInput">
+                <input type="checkbox" id="red" value="color-Vermelho">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Vermelho</span>
+              </label>
+
+              <label for="black" class="containerInput">
+                <input type="checkbox" id="black" value="color-Preto">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Preto</span>
+              </label>
+
+              <label for="pink" class="containerInput">
+                <input type="checkbox" id="pink" value="color-Rosa">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Rosa</span>
+              </label>
+
+              <label for="wine" class="containerInput">
+                <input type="checkbox" id="wine" value="color-Vinho">
+                <span class="checkmark"> <i class="bullet"></i> </span>
+                <span>Vinho</span>
+              </label>
+          </details>
+
+          <details class="c-details --grid">
+            <summary class="c-summary">
+              <span>Tamanhos</span>
+              <img src="./img/arrow.svg" alt="Expandir / Reduzir" width="18">
+            </summary>
+
+            <div class="c-details --grid">
+              <input type="checkbox"id="msize-p" value="size-p" hidden />
+              <label class="c-sizes --block" for="msize-p">
+              P 
+              </label>
+
+              <input type="checkbox"id="msize-m" value="size-m" hidden />
+              <label class="c-sizes --block --selected" for="msize-m">
+              M 
+              </label>
+
+              <input type="checkbox" id="msize-g" value="size-g" hidden />
+              <label class="c-sizes --block" for="msize-g">
+              G 
+              </label>
+
+              <input type="checkbox" id="msize-gg" value="size-gg" hidden />
+              <label class="c-sizes --block" for="msize-gg">
+              GG 
+              </label>
+
+              <input type="checkbox"id="msize-u" value="size-u" hidden />
+              <label class="c-sizes --block" for="msize-u">
+              U 
+              </label>
+
+              <input type="checkbox" id="msize-36" value="size-36" hidden />
+              <label class="c-sizes --block" for="msize-36">
+              36 
+              </label>
+
+              <input type="checkbox" id="msize-38" value="size-38" hidden />
+              <label class="c-sizes --block" for="msize-38">
+              38 
+              </label>
+
+              <input type="checkbox" id="msize-40" value="size-40" hidden />
+              <label class="c-sizes --block" for="msize-40">
+              40 
+              </label>
+              
+              <input type="checkbox" id="msize-361" value="size-36" hidden />
+              <label class="c-sizes --block" for="msize-361">
+              36 
+              </label>
+
+              <input type="checkbox" id="msize-381" value="size-38" hidden />
+              <label class="c-sizes --block" for="msize-381">
+              38 
+              </label>
+
+              <input type="checkbox" id="msize-401" value="size-40" hidden />
+              <label class="c-sizes --block" for="msize-401">
+              40 
+              </label>
+            </div>
+          </details>
+
+          <details class="c-details --list">
+            <summary class="c-summary">
+              <span>Faixa de preço</span>
+              <img src="./img/arrow.svg" alt="Expandir / Reduzir" width="18">
+            </summary>
+            <label for="m050" class="containerInput">
+              <input type="checkbox" id="m050" value="price-0-50">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$0 até R$50</span>
+            </label>
+
+            <label for="m51150" class="containerInput">
+              <input type="checkbox" id="m51150" value="price-51-150">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$51 até R$150</span>
+            </label>
+            
+            <label for="m151300" class="containerInput">
+              <input type="checkbox" id="m151300" value="price-151-300">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$151 até R$300</span>
+            </label>
+
+            <label for="m301500" class="containerInput">
+              <input type="checkbox" id="m301500" value="price-301-500">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>de R$301 até R$500</span>
+            </label>
+
+            <label for="m501" class="containerInput">
+              <input type="checkbox" id="m501" value="price-501">
+              <span class="checkmark"> <i class="bullet"></i> </span>
+              <span>a partir de R$500</span>
+            </label>
+          </details>
+        </form>
+      </section>
+
+      <section class="c-section__orderBy u-ls">
+        <header class="c-header u-ls">
+          <div class="c-header__container">
+              <h2>Ordernar</h2>
+              <button class="c-button --std" id="orderByCloseButton"><img src="./img/Close.svg" alt="Fechar"></button>
+          </div>
+        </header>
+          <div class="container">
+            <p>
+              <button class="c-button --std" id="orderByButton1">
+              Mais recentes
+            </button>
+            </p>
+            
+            <p>
+              <button class="c-button --std" id="orderByButton2">
+              Menor preço
+            </button>
+            </p>
+  
+            <p>
+              <button class="c-button --std" id="orderByButton3">
+              Maior preço
+            </button>
+            </p>
+          </div>
+      </section>
+    
+      <div class="c-product__wrapper">
+        <div class="c-product__list"></div>
+        <button class="c-button --pri --more" id="loadMore">Carregar mais</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="c-footer">
+    M3: IMPLANTAÇÃO DE E-COMMERCE VTEX
+  </footer>
+
+  <script src="./bundle.js"></script>
 </body>
-<h1>Desafio m3</h1>
-
-<script src="bundle.js"></script>
-
 </html>

@@ -1,0 +1,34 @@
+@mixin title($size: 1.8rem, $weight: 550, $color: var(--pri)) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin sub-title($size: 1.4rem, $weight: 500, $color: var(--txt-content)) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin text($size: 1.2rem, $color: var(--txt-content)) {
+  font-size: $size;
+  color: $color;
+}
+
+@mixin container($rl: 20px, $tb: $rl) {
+  padding: $tb $rl;
+}
+
+@mixin flex($items: center, $content: center, $direction: row, $gap: 0) {
+  align-items: $items;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  gap: $gap;
+}
+
+@mixin grid($value: auto-fill, $size, $gap: 0) {
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat($value, $size);
+}

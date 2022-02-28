@@ -1,0 +1,18 @@
+html {
+    font-family: 'Open Sans', sans-serif;
+    caret-color: transparent;
+}
+
+body { box-sizing: border-box; }
+
+button { cursor: pointer; }
+
+.container {
+    max-width: #{$maxWidth};
+    margin: auto;
+    padding: 16px 25px;
+}
+
+::selection {
+    background-color: transparent;
+}

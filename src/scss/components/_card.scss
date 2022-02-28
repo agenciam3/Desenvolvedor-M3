@@ -1,0 +1,10 @@
+.c-card {
+
+    &__title { text-transform: uppercase; }
+    &__values { text-align: center; }
+
+    &__portion { 
+        margin-top: 4px;
+        color: var(--ter);
+     }
+}

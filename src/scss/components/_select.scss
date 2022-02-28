@@ -1,0 +1,16 @@
+.c-select {
+    border: none;
+    background: none;
+    width: 100%;
+
+    &__wrapper { 
+        @include flex();
+        @extend .c-button;
+        border: 1px solid var(--sec);
+        font-weight: normal;
+        padding-inline: 10px;
+        width: 110px;
+     }
+
+
+}
