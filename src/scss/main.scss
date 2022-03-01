@@ -17,12 +17,13 @@ body{
     z-index: 1;
     background-color: white;
 
-    .op{
+    .op-mobile{
         display: block;
         padding: 15px 20px;
+        cursor: pointer;
     }
 
-    .op:hover{
+    .op-mobile:hover{
         background-color: $blue-color;
         color: white;
     }
@@ -159,6 +160,7 @@ body{
                     background-color: white;
                     border-radius: 0px;
                     font-size: 12px;
+                    cursor: default;
 
                     i{
                         float: right;
@@ -190,6 +192,7 @@ body{
                             white-space: nowrap;
                             text-align: left;
                             font-size: 12px;
+                            cursor: default;
                         }
     
                         a:hover{

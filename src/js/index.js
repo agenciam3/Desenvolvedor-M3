@@ -2,6 +2,48 @@ console.log("Dev m3");
 main();
 
 var productsArray;
+var filteredProducts = new Array;
+var filtersApplyed = new Array;
+
+function filterPrice(product, key){  
+    if(key == "0-to-50"){
+        return (product.price>= 0 && product.price<=50) ? true : false; 
+    }else if (key == "51-to-150"){
+        return (product.price>= 51 && product.price<=150) ? true : false; 
+    }else if (key == "151-to-300"){
+        return (product.price>= 151 && product.price<=300) ? true : false; 
+    }else if(key == "301-to-500"){
+        return (product.price>= 301 && product.price<=500) ? true : false; 
+    }else{
+        return (product.price<500) ? true : false; 
+    }
+}
+
+function applyFilter(filtersApplyed){ 
+    filteredProducts = new Array
+    filtersApplyed.forEach(elem => {
+        if(elem[0] == 'color'){      
+            filteredProducts = filteredProducts.concat(productsArray.filter(produto => produto.color == elem[1]));
+        }else if(elem[0] == 'size'){
+            filteredProducts = filteredProducts.concat(productsArray.filter(produto => produto.size == elem[1]));
+        }else{
+            filteredProducts = filteredProducts.concat(productsArray.filter(elem => filterPrice(elem, elem[0])));
+        }    
+    });
+    document.getElementById("products").innerHTML = "";
+    showProducts(filteredProducts)
+}
+
+function removeFilter(param){
+    filtersApplyed = filtersApplyed.filter(filter => filter[1] !== param[1])
+    console.log(filtersApplyed.length)
+    if(filtersApplyed.length === 0){
+        document.getElementById("products").innerHTML = "";
+        showProducts(productsArray)
+    }else{
+        applyFilter(filtersApplyed)
+    }
+}
 
 function checkbox(){
     var btn = Array.from(document.querySelectorAll(".checkbox"));
@@ -10,9 +52,21 @@ function checkbox(){
             e.preventDefault();
             var checked = elem.firstElementChild;
             if(checked.style.display === 'block'){
-                 checked.style.display = 'none';
+                checked.style.display = 'none';
+                if(elem.getAttribute("id")=='color'){
+                    removeFilter([elem.getAttribute("id"), elem.getAttribute("color")])
+                }else{
+                    removeFilter([elem.getAttribute("price")])       
+                }                
             }else{
                 checked.style.display = 'block';
+                if(elem.getAttribute("id")=='color'){
+                    filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")])
+                    applyFilter(filtersApplyed)
+                }else{
+                    filtersApplyed.push(["price", elem.getAttribute("price")])
+                    applyFilter(filtersApplyed)
+                }              
             }
         };
     });
@@ -97,6 +151,7 @@ function getProducts(){
 }
 
 function showProducts(products){
+    console.log("entrou aqui",products)
     products = products.slice(0,9);
     products.map(elem => {
         let listAllProducts = document.getElementById("products");
@@ -113,6 +168,7 @@ function showProducts(products){
         `
 
         listAllProducts.insertAdjacentHTML('beforeend', htmlInsert); 
+        filteredProducts = productsArray
         addToCart();   
     });
 }
@@ -158,7 +214,7 @@ function orderMobile(){
         }
     };
 
-    let op = Array.from(document.querySelectorAll(".op"));
+    let op = Array.from(document.querySelectorAll(".op-mobile"));
 
     op.map(elem => {
         elem.onclick = function (e) {
