@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans';
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 165px;
+}
+
+header img {
+  padding: 16px 162px;
+}
+
+.topo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1500px;
+  margin: 40px 162px 64px 162px;
+  font-size: 32px;
+}
+
+.main-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.left-content {
+  width: 260px;
+  margin-left: 162px;
+  margin-right: 44px;
+}
+
+.left-content p {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.left-content label {
+  font-size: 14px;
+}
+
+.rigth-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 976px;
+}
+
+.rigth-content .products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 42px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.rigth-content .carregar {
+  background-color: #00C0EE;
+  color: white;
+  border: none;
+  padding: 8px 31px;
+}
+
+.rigth-content .carregar:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.card {
+  padding-right: 90px;
+  padding-bottom: 42px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card img:hover {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
+  -webkit-transition: all .6s ease;
+  transition: all .6s ease;
+}
+
+.card .title {
+  font-weight: 400;
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.card .price {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.card .parcela {
+  font-weight: 400;
+  font-size: 16px;
+  color: #666666;
+  padding-bottom: 14px;
+}
+
+.card button {
+  width: 100%;
+  background-color: #000000;
+  color: white;
+  border: none;
+  padding: 7px 49px;
+}
+
+.card button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 7px;
+  font-weight: 400;
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */
