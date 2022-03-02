@@ -62,43 +62,100 @@
   @media (max-width: 768px) {
     display: contents;
   }
-}
-
-.category--orderby--open-btn {
-  width: 9rem;
-  background: $white-color;
-  border: 1px solid rgba(0, 0, 0, 0.507);
+  .category--orderby--open-btn {
+    width: 8rem;
+    font-size: 24px;
+    height: 49px;
+    color: $gray-color;
+    background: $white-color;
+    border: 1px solid rgba(0, 0, 0, 0.507);
+  }
 }
 
 .category--orderby-mobile--container {
   display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: $white-color;
+
+  &.on {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $white-color;
+  }
 
   .category--orderby--header-mobile {
-    display: flex;
-    justify-content: space-between;
-
     padding: 1rem;
 
     box-shadow: 0 2px 0 0 rgb(191 191 191);
 
-    .category--orderby--header-mobile--title,
-    .close {
+    .category--orderby--header-mobile--title {
+      display: flex;
+      justify-content: space-between;
       color: $font-color;
 
       font-size: 28px;
       line-height: 38px;
+
+      .close {
+        margin-left: auto;
+        width: 20px;
+        height: 20px;
+        padding: 9px;
+      }
     }
   }
-
   .category--orderby-mobile--option {
     font-size: 22px;
 
     padding: 1rem;
   }
 }
+
+// .category--orderby--open-btn {
+//   width: 171px;
+//   height: 49px;
+//   font-size: 24px;
+//   height: 49px;
+//   color: $gray-color;
+//   background: $white-color;
+//   border: 1px solid rgba(0, 0, 0, 0.507);
+// }
+
+// .category--orderby-mobile--container {
+//   display: none;
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   background: $white-color;
+
+//   &.on {
+//     display: block;
+//   }
+
+//   .category--orderby--header-mobile {
+//     display: flex;
+//     justify-content: space-between;
+
+//     padding: 1rem;
+
+//     box-shadow: 0 2px 0 0 rgb(191 191 191);
+
+//     .category--orderby--header-mobile--title,
+//     .close {
+//       color: $font-color;
+
+//       font-size: 28px;
+//       line-height: 38px;
+//     }
+//   }
+
+//   .category--orderby-mobile--option {
+//     font-size: 22px;
+
+//     padding: 1rem;
+//   }
+// }

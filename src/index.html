@@ -29,23 +29,21 @@
     <main class="category">
       <div class="category--header">
         <h1 class="category--header-title">Blusas</h1>
-        <div class="category--orderby" data-js="accordion">
-          <button class="category--orderby-btn" data-accordion-header="1">
-            <span class="category--orderby-btn-title" data-accordion-header="1">
-              Ordernar por:
-            </span>
-            <span class="category--orderby-btn-arrow" data-accordion-header="1">
+        <div class="category--orderby">
+          <button class="category--orderby-btn">
+            <span class="category--orderby-btn-title"> Ordernar por: </span>
+            <span class="category--orderby-btn-arrow">
               <img class="arrow" src="./img/vetor.png" />
             </span>
           </button>
-          <div class="category--orderby-content" data-accordion-body="1">
-            <ul class="category--orderby-content--option">
+          <div class="category--orderby-content">
+            <ul class="category--orderby-content--option" id="recent">
               Mais recentes
             </ul>
-            <ul class="category--orderby-content--option">
+            <ul class="category--orderby-content--option" id="smaller">
               Menor preço
             </ul>
-            <ul class="category--orderby-content--option">
+            <ul class="category--orderby-content--option" id="larger">
               Maior preço
             </ul>
           </div>
@@ -134,18 +132,17 @@
                     <span
                       class="category--filter-content--color-options-seeMore-title"
                       data-color-option-header="2"
-                      >Ver todas as cores</span
-                    ><span
-                      class="category--filter-content--color-options-seeMore-arrow"
-                      data-color-option-header="2"
-                    >
-                      <img class="arrow" src="./img/vetor.png"
-                    /></span>
+                      >Ver todas as cores<span
+                        class="category--filter-content--color-options-seeMore-arrow"
+                        data-color-option-header="2"
+                      >
+                        <img class="arrow" src="./img/vetor.png" /></span
+                    ></span>
                   </div>
 
                   <div
                     data-color-option-body="2"
-                    class="category--filter-content--color-options-ocult"
+                    class="category--filter-content--color-options-another-colors"
                   >
                     <div class="color-checkbox-wrapper">
                       <input
@@ -361,7 +358,9 @@
                     id="price-0-50"
                   />
                   <label class="price--option" for="price-0-50s"
-                    ><span>de R$0 até R$50</span></label
+                    ><span class="price--option-text"
+                      >de R$0 até R$50</span
+                    ></label
                   >
                 </div>
                 <div class="price-checkbox-wrapper">
@@ -372,7 +371,9 @@
                     id="price-51-150"
                   />
                   <label class="price--option" for="price-51-150"
-                    ><span>de R$51 até R$150</span></label
+                    ><span class="price--option-text"
+                      >de R$51 até R$150</span
+                    ></label
                   >
                 </div>
                 <div class="price-checkbox-wrapper">
@@ -383,7 +384,9 @@
                     id="price-151-150"
                   />
                   <label class="price--option" for="price-151-150"
-                    ><span>de R$151 até R$300</span></label
+                    ><span class="price--option-text"
+                      >de R$151 até R$300</span
+                    ></label
                   >
                 </div>
                 <div class="price-checkbox-wrapper">
@@ -394,7 +397,9 @@
                     id="price-301-500"
                   />
                   <label class="price--option" for="price-301-500"
-                    ><span>de R$301 até R$500</span></label
+                    ><span class="price--option-text"
+                      >de R$301 até R$500</span
+                    ></label
                   >
                 </div>
                 <div class="price-checkbox-wrapper">
@@ -405,7 +410,9 @@
                     id="price-500+"
                   />
                   <label class="price--option" for="price-500+"
-                    ><span>a partir de R$500</span></label
+                    ><span class="price--option-text"
+                      >a partir de R$500</span
+                    ></label
                   >
                 </div>
               </div>
@@ -424,9 +431,9 @@
             <div class="category--orderby-mobile--container">
               <div class="category--orderby--header-mobile">
                 <span class="category--orderby--header-mobile--title"
-                  >ORDENAR</span
-                >
-                <span class="close">X</span>
+                  >ORDENAR<span class="close close-orderby"
+                    ><img src="./img/close.png" /></span
+                ></span>
               </div>
               <div class="category--orderby-mobile--option">Mais recente</div>
               <div class="category--orderby-mobile--option">Maior preço</div>
@@ -436,36 +443,7 @@
         </div>
 
         <div class="category--filter-content--product">
-          <div class="category--filter-content--product--product-load">
-            <div class="product-itens-wrapper">
-              <img src="./img/img_2.png" alt="Camiseta de manga cinza" />
-              <span class="product-name">CAMISETA MESCLA</span>
-              <span class="product-price">R$ 28,00</span>
-              <span class="product-parcel">até 3x de R$9,33</span>
-              <button class="product-buy">COMPRAR</button>
-            </div>
-            <div class="product-itens-wrapper">
-              <img src="./img/img_3.png" alt="Saia em couro" />
-              <span class="product-name">SAIA EM COURO</span>
-              <span class="product-price">R$ 398,00</span>
-              <span class="product-parcel">até 10x R$39,80</span>
-              <button class="product-buy">COMPRAR</button>
-            </div>
-            <div class="product-itens-wrapper">
-              <img src="./img/img_4.png" alt="Cardigan tigre" />
-              <span class="product-name">CARDIGAN TIGRE</span>
-              <span class="product-price">R$ 398,00</span>
-              <span class="product-parcel">até 10x de R$39,80</span>
-              <button class="product-buy">COMPRAR</button>
-            </div>
-            <div class="product-itens-wrapper">
-              <img src="./img/img_5.png" alt="Cardigan off white" />
-              <span class="product-name">CARDIGAN OFF WHITE</span>
-              <span class="product-price">R$ 99,90</span>
-              <span class="product-parcel">até 3x de R$33,30</span>
-              <button class="product-buy">COMPRAR</button>
-            </div>
-          </div>
+          <div class="category--filter-content--product--product-load"></div>
           <div class="product-load">
             <span class="product-load-title">CARREGAR MAIS</span>
           </div>

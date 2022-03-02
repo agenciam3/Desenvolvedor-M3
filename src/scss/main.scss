@@ -29,7 +29,6 @@ header {
 
     .header--bag-counter {
       position: absolute;
-      text-align: center;
 
       background-color: $blue-color;
       color: white;
@@ -45,7 +44,7 @@ header {
         font-family: $font-primary;
 
         font-size: 10px;
-        margin: 1px;
+        margin-right: 3px;
         line-height: 12px;
       }
     }

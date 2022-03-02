@@ -6,12 +6,14 @@
   margin-left: 7rem;
 
   @media (max-width: 768px) {
-    margin-left: 1rem;
+    margin-left: 16px;
+    margin-top: 35px;
   }
 
   .category--filter-content--product--product-load {
     display: flex;
     flex-wrap: wrap;
+    margin-left: 45px;
   }
   .product-itens-wrapper {
     display: flex;
@@ -71,25 +73,27 @@
   .product-load {
     text-align: center;
 
-    width: 12rem;
-    height: 2rem;
-    padding-top: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    width: 175px;
+    height: 35px;
+    padding: 8px 31px;
 
     background: $blue-color;
     color: $white-color;
 
     cursor: pointer;
+    display: none;
 
     @media (max-width: 768px) {
-      display: inline-block;
+      margin-bottom: 44px;
+      margin-top: 39px;
     }
-  }
 
-  .product-load-title {
-    font-family: $font-primary;
-
-    font-size: 14px;
-    line-height: 19px;
-    font-weight: 800;
+    &.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 }

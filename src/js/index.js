@@ -1,40 +1,68 @@
+import getProduct from "./products";
+
 category();
 
 function orderByDesktop() {
-  const accordion = document.querySelector(".category--orderby");
+  const orderBy = document.querySelector(".category--orderby");
 
-  accordion.addEventListener("click", (e) => {
-    const accordionHeaderId = e.target.dataset.accordionHeader;
-    const accordionItensToBeOpened = document.querySelector(
-      `[data-accordion-body="${accordionHeaderId}"]`
+  orderBy.addEventListener("click", () => {
+    var orderOptions = document.querySelector(".category--orderby-content");
+    orderOptions.classList.toggle("active");
+  });
+
+  // const recent = document.querySelector("#recent");
+  // const smaller = document.querySelector("#smaller");
+  // const larger = document.querySelector("#larger");
+}
+
+function orderByMobile() {
+  const orderMobile = document.querySelector(".category--orderby--open-btn");
+
+  orderMobile.addEventListener("click", (e) => {
+    var orderMobileOption = document.querySelector(
+      ".category--orderby-mobile--container"
     );
-    accordionItensToBeOpened.classList.toggle(`active`);
+
+    orderMobileOption.classList.add(`on`);
+  });
+
+  const close = document.querySelector(".close-orderby");
+  console.log(close);
+  close.addEventListener("click", () => {
+    orderMobileOption.classList.remove(`on`);
   });
 }
 
-function seeMore() {
+// function clean() {
+//   const close = document.querySelector(".close");
+//   console.log(close);
+
+//   close.addEventListener("click", (e) => {
+//     console.log("fui clicado");
+//   });
+// }
+
+function seeMoreFilterDesktop() {
   const optionColor = document.querySelector(
     ".category--filter-content--color-options-seeMore"
   );
 
   optionColor.addEventListener("click", (e) => {
-    // if (e.target != this) return;
     {
-      const optionColorHeaderId = e.target.dataset.colorOptionHeader;
-      const optionColorItensToBeOpened = document.querySelector(
-        `[data-color-option-body="${optionColorHeaderId}"]`
+      const anotherColors = document.querySelector(
+        ".category--filter-content--color-options-another-colors"
       );
 
-      optionColorItensToBeOpened.classList.toggle(`active`);
+      anotherColors.classList.add(`active`);
 
-      // if (e.target && e.target.parentNode) {
-      //   e.target.parentNode.removeChild(e.target);
-      // }
+      optionColor.remove();
     }
   });
 }
 
 function category() {
   orderByDesktop();
-  seeMore();
+  orderByMobile();
+  seeMoreFilterDesktop();
+  getProduct();
 }
