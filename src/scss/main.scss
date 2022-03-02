@@ -70,7 +70,7 @@ body{
     }
     
     .filters{
-        width: 70%;
+        width: 30%;
 
         h1{
             font-size: revert-layer;
@@ -97,6 +97,7 @@ body{
             width: 100%;
 
             .checkbox-btn{
+                display: block;
                 width: 34px;
                 height: 34px;
                 border: 1.5px solid $lightgray-color;
@@ -140,8 +141,9 @@ body{
     .catalog{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        width: 70%;
         
         .test{
             display: flex;
@@ -220,7 +222,7 @@ body{
                 justify-content:space-between;
                 align-items: center;
                 margin-bottom: 40px;
-
+            
                 h3{
                     margin:10px 0px;
                 }
@@ -240,12 +242,12 @@ body{
         }
 
         .load-more-btn{
+            display: none;
             padding: 15px 40px;
             border: 0px;
             border-radius: 0px;
             background-color: $blue-color;
             color: white;
-
         }
     }
 }
@@ -306,9 +308,11 @@ body{
         }
 
         .catalog{
+            width: 100%;
             .test{
                 display: none;
             }
+
         }
     }
 
