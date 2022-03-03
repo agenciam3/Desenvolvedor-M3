@@ -4,6 +4,7 @@ var productsArray;
 var filtered = new Array;
 var ordered = new Array;
 var filtersApplyed = new Array;
+var filterDesktop = true;
 
 function filterPrice(product, key){ 
     if(key == "0-to-50"){
@@ -76,12 +77,15 @@ function applyFilter(filtersApplyed){
 
 function removeFilter(param){   
     filtersApplyed = filtersApplyed.filter(filter => filter[1] != param[1])
-    if(filtersApplyed.length === 0){
-        document.getElementById("products").innerHTML = "";
-        showProducts(productsArray)
-    }else{
-        applyFilter(filtersApplyed)
+    if(filterDesktop){
+        if(filtersApplyed.length === 0){
+            document.getElementById("products").innerHTML = "";
+            showProducts(productsArray)
+        }else{
+            applyFilter(filtersApplyed)
+        }
     }
+        
 }
 
 function checkbox(){
@@ -101,10 +105,12 @@ function checkbox(){
                 checked.style.display = 'block';
                 if(elem.getAttribute("id")=='color'){
                     filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")])
-                    applyFilter(filtersApplyed)
+                    if(filterDesktop)
+                        applyFilter(filtersApplyed)
                 }else{
                     filtersApplyed.push(["price", elem.getAttribute("price")])
-                    applyFilter(filtersApplyed)
+                    if(filterDesktop)
+                        applyFilter(filtersApplyed)
                 }              
             }
         };
@@ -119,7 +125,8 @@ function checkboxBtn(){
                 elem.setAttribute('active','true');
                 elem.style.border = "1.5px solid #00c0ee";
                 filtersApplyed.push(["size",elem.getAttribute('size')])
-                applyFilter(filtersApplyed)
+                if(filterDesktop)
+                    applyFilter(filtersApplyed)
             }else{
                 elem.setAttribute('active','false');
                 elem.style.border = "1.5px solid gray";
@@ -299,7 +306,7 @@ function orderMobile(){
         }else{
             divOrder.style.display = 'flex';
             divDesktop.style.display = 'none';
-            document.getElementById("back-icon").onclick = function (e){
+            document.getElementById("order-back-icon").onclick = function (e){
                 e.preventDefault();
                 divOrder.style.display = 'none';
                 divDesktop.style.display = 'block';
@@ -328,12 +335,74 @@ function orderMobile(){
 
 }
 
+function applyMobileFilters(){
+
+}
+
+function expandFilter(){
+    let expand = Array.from(document.querySelectorAll(".material-icons.expand-filter"));
+    expand.map(elem => {
+        elem.onclick = function (e) {
+            e.preventDefault();
+            let divColor = elem.parentElement.nextElementSibling
+            if(divColor.style.display == 'block'){
+                divColor.style.display = 'none'
+            }else{
+                divColor.style.display = 'block'
+            }
+        };
+    });
+    document.querySelector(".apply").onclick = function(){
+        applyFilter(filtersApplyed)
+    }
+
+    let checked = Array.from(document.querySelectorAll(".checked"));
+    document.querySelector(".remove").onclick = function(){
+        filtersApplyed.length = 0;
+        document.querySelector(".products").innerHTML = "";
+        checked.map(elem =>{
+            elem.style.display = 'none';
+        });
+        showProducts(productsArray);
+    }
+}
+
+function filterMobile(){
+    var btn = document.getElementById("filter-mobile");
+    var divFilter = document.querySelector(".div-mobile-filter");
+    var divDesktop = document.querySelector(".desktop");
+    btn.onclick = function (e) {  
+        e.preventDefault();
+        filterDesktop = false;
+        if(divFilter.style.display === 'flex'){
+            divFilter.style.display = 'none';
+            divDesktop.style.display = 'block';
+        }else{
+            divFilter.style.display = 'flex';
+            divDesktop.style.display = 'none';
+            document.getElementById("filter-back-icon").onclick = function (e){
+                e.preventDefault();
+                divFilter.style.display = 'none';
+                divDesktop.style.display = 'block';
+            }
+        }
+    };
+    expandFilter();
+
+
+
+   
+
+}
+
 function main(){
     getProducts();
     localStorage.clear();
+    filterMobile();
     checkbox();
     checkboxBtn();
     selector();
     getAdditionalColors();
     orderMobile();
+    
 }

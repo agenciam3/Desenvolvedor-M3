@@ -5,6 +5,53 @@ $lightgray-color: #808080;
 $gray-color: #666666;
 $black-color: #000000;
 
+.sizes{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+
+    .checkbox-btn{
+        display: block;
+        width: 34px;
+        height: 34px;
+        border: 1.5px solid $lightgray-color;
+        border-radius: 0px;
+        color: $lightgray-color;
+        background-color: white;
+        margin: 0px 10px 10px 0px;
+    }
+}
+
+.checkbox-div{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px;
+
+    p{
+        margin: 0px 0px 0px 5px;
+        padding: 0px;
+    }
+
+    .checkbox{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 14px;
+        height: 14px;
+        border: 1px solid $black-color;
+
+        .checked{
+            display: none;
+            width: 10px;
+            height: 10px;
+            background-color: $blue-color;
+        }
+    }
+
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -29,6 +76,8 @@ body{
     }
 
 }
+
+
    
 
 .header{
@@ -89,53 +138,6 @@ body{
         .additional-colors{
             display: none;
         }
-
-        .sizes{
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            width: 100%;
-
-            .checkbox-btn{
-                display: block;
-                width: 34px;
-                height: 34px;
-                border: 1.5px solid $lightgray-color;
-                border-radius: 0px;
-                color: $lightgray-color;
-                background-color: white;
-                margin: 0px 10px 10px 0px;
-            }
-        }
-
-        .color-option{
-            display: flex;
-            flex-direction: row;
-            margin: 10px 0px;
-
-            p{
-                margin: 0px 0px 0px 5px;
-                padding: 0px;
-            }
-
-            .checkbox{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                width: 14px;
-                height: 14px;
-                border: 1px solid $black-color;
-
-                .checked{
-                    display: none;
-                    width: 10px;
-                    height: 10px;
-                    background-color: $blue-color;
-                }
-            }
-
-        }
     }
     
     .catalog{
@@ -145,14 +147,14 @@ body{
         align-items: center;
         width: 70%;
         
-        .test{
+        .select-div{
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
             width: 100%;
             margin-top: 5px;
             
-            .testezin{
+            .select{
                
                 .selector{
                     display: block;
@@ -261,6 +263,55 @@ body{
     
 }
 
+.div-mobile-filter{
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+    background-color: white;
+
+    .filter-mobile-options{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px 20px;
+    }
+
+    .expand{
+        display: none;
+        flex-direction: column;
+        z-index: 1;
+        background-color: white;
+        padding: 0px 20px;
+    }
+
+    .apply-filters{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .apply{
+            background-color: $blue-color;
+            color: white;
+            border: 0px;
+            border-radius: 0px;
+            padding: 10px 25px;
+            cursor: pointer;
+
+        }
+
+        .remove{
+            background-color: white;
+            color: $lightgray-color;
+            border: 2px solid $lightgray-color;
+            border-radius: 0px;
+            padding: 8px 20px;
+            cursor: pointer;
+        }
+
+    }
+}
+
 @media (max-width: 600px)
 {
     .header{
@@ -309,7 +360,7 @@ body{
 
         .catalog{
             width: 100%;
-            .test{
+            .select-div{
                 display: none;
             }
 
