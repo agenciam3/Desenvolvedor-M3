@@ -1,0 +1,38 @@
+header.main-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 2px solid $gray-4;
+    padding: 16px 165px;
+    margin-bottom: 40px;
+
+    div.bag-area{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        span.area-number{
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: $blue;
+            border-radius: 16px;
+            bottom: -3px;
+            right: -5px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: $sub-font;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 10px;
+            line-height: 12px;
+            color: $white;
+        }
+    }
+}

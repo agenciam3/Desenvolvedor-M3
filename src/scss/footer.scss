@@ -1,0 +1,19 @@
+footer.main-footer{
+    bottom: 0px;
+    background: $black;
+    height: 33px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span.description-footer{
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $white;
+    }
+}

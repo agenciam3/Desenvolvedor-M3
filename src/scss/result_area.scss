@@ -1,0 +1,96 @@
+article.area-result{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    margin-bottom: 54px;
+
+    section.header-result{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+
+        margin-bottom: 64px;
+
+        select{
+            height: 42px;
+            border: 1px solid $black-2;
+            box-sizing: border-box;
+            padding: 10px 17px 10px 10px;
+            display: flex;
+            align-items: center;
+
+            font-family: $main-font;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 22px;
+            color: $black;
+
+            &:hover{
+                cursor: pointer;
+            }
+
+            option{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 22px;
+                color: $black;
+            }
+        }
+    }
+
+    section.element-result-area{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        div.elements{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            width: 100%;
+            flex: 1;
+            margin-bottom: 73px;
+            padding: 0px 20px;
+        }
+
+        button.more-elements{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 8px 31px;
+            background: $blue;
+            border: none;
+
+            font-family: $main-font;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+            text-transform: uppercase;
+            color: $white;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}
