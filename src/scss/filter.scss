@@ -8,6 +8,7 @@
   @media (max-width: 768px) {
     display: block;
     width: 8rem;
+    height: 50px;
     font-size: 24px;
     color: $gray-color;
     background: $white-color;
@@ -19,36 +20,44 @@
   height: 648px;
   @media (max-width: 768px) {
     display: none;
-    // display: block;
 
-    max-width: 100%;
-    box-shadow: 0 2px 0 0 rgb(191 191 191);
-    background: $white-color;
-    overflow-y: auto;
+    &.filterSee {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 0 0 rgb(191 191 191);
+      background: $white-color;
+      overflow-y: auto;
 
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
   }
 }
+
+/*-------------CATEGORY MOBILE------------*/
 
 .category--filter--header-mobile {
   display: none;
   justify-content: space-between;
 
   box-shadow: 0 2px 0 0 rgb(191 191 191);
+
   @media (max-width: 768px) {
     display: flex;
-  }
-  .category--filter--header-mobile--title,
-  .close {
-    padding: 1rem;
-    color: $font-color;
+    .category--filter--header-mobile--title,
+    .close {
+      padding: 1rem;
+      color: $font-color;
 
-    font-size: 28px;
-    line-height: 38px;
+      font-size: 28px;
+      line-height: 38px;
+    }
   }
 }
 
@@ -89,8 +98,8 @@
 
 /*-------------COLOR AND PRICE------------*/
 
-.category--filter-content--color-options,
-.category--filter-content--price-options {
+.category--filter-content--price-options,
+.category--filter-content--color-options {
   display: flex;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -137,7 +146,34 @@
   }
 }
 
+@media (max-width: 768px) {
+  .category--filter-content--color-options {
+    display: none;
+
+    &.colorSee {
+      display: flex;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      flex-direction: column;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .category--filter-content--price-options {
+    display: none;
+    &.priceSee {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+}
+
 .category--filter-content--color-options-seeMore {
+  @media (max-width: 768px) {
+    display: none;
+  }
   display: flex;
   width: fit-content;
   margin: 10px 0;
@@ -168,6 +204,9 @@
 
 .category--filter-content--color-options-another-colors {
   display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
 
   &.active {
     display: block;
@@ -183,6 +222,14 @@
   margin-top: 20px;
   margin-bottom: 20px;
 
+  @media (max-width: 768px) {
+    display: none;
+
+    &.sizeSee {
+      display: flex;
+    }
+  }
+
   .size-checkbox-wrapper {
     display: flex;
     flex-direction: row;
@@ -193,7 +240,7 @@
     display: none;
   }
 
-  .option-size {
+  input[type="checkbox"] .option-size {
     display: inline-block;
     font-family: $font-primary;
     border: 1px solid #e4e4e4;
@@ -204,12 +251,19 @@
     color: #a1a1a1;
     cursor: pointer;
 
-    &:hover {
+    &:checked {
       border-color: $blue-color;
       color: $black-color;
       font-weight: 800;
     }
   }
+
+  .option-size:checked {
+    border-color: $blue-color;
+    color: $black-color;
+    font-weight: 800;
+  }
+
   .one-iten {
     position: absolute;
     left: 11px;
@@ -227,29 +281,35 @@
 
 .category--filter-content--actions-mobile {
   display: none;
-  text-align: center;
-  padding-bottom: 2rem;
 
   @media (max-width: 768px) {
-    display: block;
-  }
+    display: none;
 
-  .category--filter-content--actions-mobile--apply,
-  .category--filter-content--actions-mobile--clean {
-    width: 10rem;
-    height: 2.5rem;
+    text-align: center;
+    padding-bottom: 2rem;
 
-    font-size: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.418);
-  }
+    .category--filter-content--actions-mobile--clean {
+      width: 9rem;
+      height: 2.5rem;
 
-  .category--filter-content--actions-mobile--apply {
-    background: $blue-color;
-    color: $white-color;
-    margin-right: 1rem;
-  }
+      font-size: 14px;
+      border: 1px solid rgba(0, 0, 0, 0.418);
+    }
 
-  .category--filter-content--actions-mobile--clean {
-    background: $white-color;
+    .category--filter-content--actions-mobile--apply {
+      background: $blue-color;
+      color: $white-color;
+      margin-right: 1rem;
+      border: 0;
+      width: 9rem;
+      height: 2.5rem;
+      margin-left: 5px;
+
+      font-size: 14px;
+    }
+
+    .category--filter-content--actions-mobile--clean {
+      background: $white-color;
+    }
   }
 }

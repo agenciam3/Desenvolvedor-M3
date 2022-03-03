@@ -24,23 +24,56 @@ function orderByMobile() {
     );
 
     orderMobileOption.classList.add(`on`);
-  });
 
-  const close = document.querySelector(".close-orderby");
-  console.log(close);
-  close.addEventListener("click", () => {
-    orderMobileOption.classList.remove(`on`);
+    const close = document.querySelector(".close-orderby");
+    close.addEventListener("click", () => {
+      orderMobileOption.classList.remove(`on`);
+    });
   });
 }
 
-// function clean() {
-//   const close = document.querySelector(".close");
-//   console.log(close);
+function filterMobile() {
+  const filter = document.querySelector(".category--filter--open-btn");
 
-//   close.addEventListener("click", (e) => {
-//     console.log("fui clicado");
-//   });
-// }
+  filter.addEventListener("click", (e) => {
+    const filterContent = document.querySelector(".category--filter-content");
+
+    filterContent.classList.add("filterSee");
+
+    const offFilter = document.querySelector(".close-filter");
+    offFilter.addEventListener("click", () => {
+      filterContent.classList.remove("filterSee");
+    });
+  });
+
+  const color = document.querySelector(".category--filter-content-title-color");
+  color.addEventListener("click", () => {
+    const colorOption = document.querySelector(
+      ".category--filter-content--color-options"
+    );
+
+    colorOption.classList.toggle(`colorSee`);
+  });
+
+  const size = document.querySelector(".category--filter-content-title-size");
+  size.addEventListener("click", () => {
+    console.log("oiiii");
+    const sizeOption = document.querySelector(
+      ".category--filter-content--size-options"
+    );
+    console.log(sizeOption);
+    sizeOption.classList.toggle(`sizeSee`);
+  });
+
+  const price = document.querySelector(".category--filter-content-title-price");
+
+  price.addEventListener("click", () => {
+    const priceOption = document.querySelector(
+      ".category--filter-content--price-options"
+    );
+    priceOption.classList.toggle(`priceSee`);
+  });
+}
 
 function seeMoreFilterDesktop() {
   const optionColor = document.querySelector(
@@ -65,4 +98,5 @@ function category() {
   orderByMobile();
   seeMoreFilterDesktop();
   getProduct();
+  filterMobile();
 }
