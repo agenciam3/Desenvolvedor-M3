@@ -1,20 +1,24 @@
-const APIURL = "http://localhost:5000/products";
+const ul = document.querySelector("#products");
+const li = document.querySelector(".card");
 
-// const getProducts = () => {
-//   axios
-//     .get(APIURL)
-//     .then((response) => {
-//       console.log(response.data);
-//     })
-//     .catch((error) => console.log(error));
-// };
-// getProducts();
-
-// --------- ACESSANDO O FORM COLORS COM OS INPUTS DE CADA COR
-const colors = document.querySelectorAll("#colors");
-const newColors = colors.map(element => console.log(element))
-console.log(colors[0]);
-
-function newColor(colorSelected) {
-  return colorSelected
+const getProducts = async () => {
+  const response = await fetch('http://localhost:5000/products')
+  return response.json()
 }
+
+const renderProducts = async () => {
+  const products = await getProducts()
+  const productsTemplate = products.map(item =>  
+    `
+    <li class="card">
+    <img src="./${item.image}" alt="">
+    <p class="title">${item.name} </p>
+    <p class="price">R$ ${item.price}</p>
+    <p class="parcela">até ${item.parcelamento[0]}x de R$${item.parcelamento[1]}</p>
+    <button>COMPRAR</button>
+  </li> 
+    `
+  ).join('')
+  ul.innerHTML += productsTemplate
+}
+renderProducts()

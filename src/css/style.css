@@ -76,7 +76,7 @@ header img {
   max-width: 976px;
 }
 
-.rigth-content .products {
+.rigth-content #products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -126,6 +126,7 @@ header img {
 }
 
 .card .title {
+  text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
   padding-top: 10px;

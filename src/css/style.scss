@@ -59,7 +59,7 @@ header{
     flex-direction: column;
     max-width: 976px;
 
-    .products{
+    #products{
         display: flex;
         padding-bottom: 42px;
         flex-wrap: wrap;
@@ -95,10 +95,12 @@ header{
     }
     
     .title{
+        text-transform: uppercase;
         font-weight: 400;
         font-size: 14px;
         padding-top: 10px;
         padding-bottom: 10px;
+        
     }
     .price{
         font-weight: 700;
