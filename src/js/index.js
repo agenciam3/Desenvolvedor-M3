@@ -154,7 +154,7 @@ function getAdditionalColors(){
 }
 
 function orderProducts(type, asc){
-    var orderedArray = filtered.length === 0 ? orderedArray : filtered;
+    var orderedArray = filtered.length === 0 ? productsArray : filtered;
 
     if(asc){
         orderedArray.sort(function compare(a, b) {
@@ -341,30 +341,27 @@ function applyMobileFilters(){
 
 function expandFilter(){
     let expand = Array.from(document.querySelectorAll(".material-icons.expand-filter"));
+    let applyDiv = document.querySelector(".apply-filters")
     expand.map(elem => {
+        let divColor = elem.parentElement.nextElementSibling
         elem.onclick = function (e) {
             e.preventDefault();
-            let divColor = elem.parentElement.nextElementSibling
             if(divColor.style.display == 'block'){
                 divColor.style.display = 'none'
+                elem.textContent = "add"
+                
             }else{
                 divColor.style.display = 'block'
+                applyDiv.style.display = 'flex'
+                elem.textContent = "remove"
+            }
+
+            let expanded = expand.filter(elem => elem.textContent == "remove");
+            if(expanded.length == 0){
+                applyDiv.style.display = 'none'
             }
         };
     });
-    document.querySelector(".apply").onclick = function(){
-        applyFilter(filtersApplyed)
-    }
-
-    let checked = Array.from(document.querySelectorAll(".checked"));
-    document.querySelector(".remove").onclick = function(){
-        filtersApplyed.length = 0;
-        document.querySelector(".products").innerHTML = "";
-        checked.map(elem =>{
-            elem.style.display = 'none';
-        });
-        showProducts(productsArray);
-    }
 }
 
 function filterMobile(){
@@ -389,7 +386,22 @@ function filterMobile(){
     };
     expandFilter();
 
-
+    document.querySelector(".apply").onclick = function(){
+        filtersApplyed.length == 0 ? showProducts(productsArray) : applyFilter(filtersApplyed)       
+        divFilter.style.display = 'none';
+        divDesktop.style.display = 'block';
+    }
+    
+    let checked = Array.from(document.querySelectorAll(".checked"));
+    document.querySelector(".remove").onclick = function(){
+        filtersApplyed.length = 0;
+        filtered.length = 0;
+        document.querySelector(".products").innerHTML = "";
+        checked.map(elem =>{
+            elem.style.display = 'none';
+        });
+        showProducts(productsArray);
+    }
 
    
 
