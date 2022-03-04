@@ -19,9 +19,9 @@
 
 <body>
 
-  <!-- Mobile Section -->
+  <!-- Mobile Section Start-->
   <nav class="mobile-page" id="mobile-order-page">
-    <div>ORDERNAR <img id="close" class="closeButtons" src="./img/imageX.svg" alt=""></div>
+    <div class="mobile-title-menu">ORDERNAR <img id="close" class="closeButtons" src="./img/imageX.svg" alt=""></div>
     <ul mobile="true">
       <li class="option" id="most-recent"><a href="#">Mais recente</a></li>
       <li class="option" id="lowest-price"><a href="#">Menor preço</a></li>
@@ -30,14 +30,132 @@
   </nav>
 
   <nav class="mobile-page" id="mobile-filter-page">
-    <div>FILTRAR <img id="close" class="closeButtons" src="./img/imageX.svg" alt=""></div>
-    <!-- <ul mobile="true">
-      <li class="option" id="most-recent"><a href="#">Mais recente</a></li>
-      <li class="option" id="lowest-price"><a href="#">Menor preço</a></li>
-      <li class="option" id="highest-price"><a href="#">Maior preço</a></li>
-    </ul> -->
+
+    <div class="mobile-title-menu">FILTRAR <img id="close" class="closeButtons" src="./img/imageX.svg" alt=""></div>
+
+    <div class="mobile-options"> CORES <img src="./img/imagevector1.svg" alt=""></div>
+
+    <div class="mobile-product-filter" id="mobile-option-color" show="false">
+
+      <div class="checkbox-filter" id="colors">
+
+        <div class="checkbox-option" id="colors">
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>Amarelo</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>Azul</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>Branco</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>Cinza</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>Laranja</span>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mobile-options"> TAMANHOS <img src="./img/imagevector1.svg" alt=""></div>
+
+    <div class="mobile-product-filter" id="mobile-option-size" show="false">
+      <div class="box">
+        <div class="options-size">
+
+          <div class="check" selecionado=false mobile="true">P</div>
+          <div class="check" selecionado=false mobile="true">M</div>
+          <div class="check" selecionado=false mobile="true">G</div>
+          <div class="check" selecionado=false mobile="true">GG</div>
+          <div class="check" selecionado=false mobile="true">U</div>
+          <div class="check" selecionado=false mobile="true">36</div>
+          <div class="check" selecionado=false mobile="true">38</div>
+          <div class="check" selecionado=false mobile="true">40</div>
+          <div class="check" selecionado=false mobile="true">36</div>
+          <div class="check" selecionado=false mobile="true">38</div>
+          <div class="check" selecionado=false mobile="true">40</div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mobile-options"> FAIXA DE PREÇO <img src="./img/imagevector1.svg" alt=""></div>
+
+    <div class="mobile-product-filter" id="mobile-option-price" show="false">
+      <div class="checkbox-filter">
+        <div class="checkbox-option" id="prices">
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$0 até R$50</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$51 até R$150</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$151 até R$300</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$301 até R$500</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>a partir de R$500</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-filter-buttons">
+      <button class="button-mobile-filter" id="apply">APLICAR</button>
+      <button class="button-mobile-filter" id="reset">LIMPAR</button>
+    </div>
+
   </nav>
-  <!-- Mobile Section -->
+  <!-- Mobile Section End -->
 
   <header>
     <div id="logo">

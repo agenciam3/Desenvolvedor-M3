@@ -6,6 +6,11 @@ let colorFilter = [];
 let sizeFilter = [];
 let priceFilter = [];
 // let orderBy = '';
+let tempLengthColorFilter = null;
+let tempLengthSizeFilter = null;
+let tempLengthPriceFilter = null;
+let checksToReset = [];
+//
 
 let allProducts = [];
 let filteredProducts = [];
@@ -23,6 +28,8 @@ showMore();
 mobileOrder();
 mobileFilter();
 closeMobilePage();
+showOptionsMobile();
+applyMobileFilter();
 
 
 function getProducts(urlProducts) {
@@ -31,7 +38,7 @@ function getProducts(urlProducts) {
             .then(res => res.json())
             .then((res) => {
                 buildHtmlProduct(res, productsPerPage);
-                addCart();
+                // addCart();
             })
     } catch (error) {
         console.log(error);
@@ -44,7 +51,8 @@ function buildHtmlProduct(products, productsPerPage = 9) {
     }
 
     let buttonShowMore = Array.from(document.getElementsByClassName("show-more"))[0];
-    if (products.length < 9 || products.length === allProducts.length) {
+
+    if (products.length < 9 || productsPerPage === allProducts.length) {
         buttonShowMore.style.display = "none";
     } else {
         buttonShowMore.style.display = "block";
@@ -72,6 +80,7 @@ function buildHtmlProduct(products, productsPerPage = 9) {
         `;
 
         listProduct.insertAdjacentHTML("beforeend", htmlProduct);
+        addCart();
     });
 
 
@@ -82,6 +91,20 @@ function checkFilterElements() {
     let checks = Array.from(document.getElementsByClassName("check"));
     checks.forEach(check => {
         check.onclick = function (e) {
+            let equal;
+            if (check.getAttribute("mobile") === "true") {
+                tempLengthColorFilter = tempLengthColorFilter === null ? colorFilter.length : tempLengthColorFilter;
+                tempLengthSizeFilter = tempLengthSizeFilter === null ? sizeFilter.length : tempLengthSizeFilter;
+                tempLengthPriceFilter = tempLengthPriceFilter === null ? priceFilter.length : tempLengthPriceFilter;
+                checksToReset.push(check);
+            } else {
+                let mobileArrayCheck = Array.from(document.getElementsByClassName("check")).filter(elem => elem.getAttribute("mobile"));
+                if (check.parentNode.parentNode.id === "colors" || check.parentNode.id === "prices") {
+                    equal = mobileArrayCheck.find(mob => mob.lastElementChild.innerText === check.lastElementChild.innerText);
+                } else
+                    equal = mobileArrayCheck.find(mob => mob.textContent === check.textContent);
+            }
+            console.log(equal);
             let checked = check.getAttribute('selected');
             checked = checked === "true" ? false : true;
 
@@ -91,9 +114,11 @@ function checkFilterElements() {
 
                 if (checked === true) {
                     check.style.border = "2px solid #00C0EE";
+                    if (equal !== undefined) equal.style.border = "2px solid #00C0EE";
                     sizeFilter.push(check.textContent);
                 } else {
                     check.style.border = "1px solid #666666";
+                    if (equal !== undefined) equal.style.border = "1px solid #666666";
                     sizeFilter = sizeFilter.filter(elem => elem !== check.textContent);
                 }
 
@@ -101,9 +126,11 @@ function checkFilterElements() {
 
                 if (checked === true) {
                     check.firstElementChild.firstElementChild.style.display = "block";
+                    if (equal !== undefined) equal.firstElementChild.firstElementChild.style.display = "block";
                     check.parentNode.parentNode.id === "colors" ? colorFilter.push(check.innerText) : priceFilter.push(check.innerText)
                 } else {
                     check.firstElementChild.firstElementChild.style.display = "none";
+                    if (equal !== undefined) equal.firstElementChild.firstElementChild.style.display = "none";
                     check.parentNode.parentNode.id === "colors" ? colorFilter = colorFilter.filter(elem => elem !== check.innerText) : priceFilter = priceFilter.filter(elem => elem !== check.innerText);
                 }
             }
@@ -293,7 +320,123 @@ function closeMobilePage() {
             Array.from(document.getElementsByTagName("footer"))[0].style.display = "flex";
             Array.from(document.getElementsByClassName("mobile-page"))[0].style.display = "none";
             Array.from(document.getElementsByClassName("mobile-page"))[1].style.display = "none";
+
+            // console.log(tempLengthColorFilter, tempLengthSizeFilter, tempLengthPriceFilter);
+            if (tempLengthColorFilter !== null)
+                colorFilter = colorFilter.slice(0, tempLengthColorFilter);
+            if (tempLengthSizeFilter !== null)
+                sizeFilter = sizeFilter.slice(0, tempLengthSizeFilter);
+            if (tempLengthPriceFilter !== null)
+                priceFilter = priceFilter.slice(0, tempLengthPriceFilter);
+
+            if (checksToReset.length > 0) {
+
+                checksToReset.forEach(elem => {
+                    elem.setAttribute("selected", "false");
+                    if (elem.parentNode.getAttribute('class') === "options-size") {
+                        elem.style.border = "1px solid #666666";
+                    } else {
+                        elem.firstElementChild.firstElementChild.style.display = "none";
+                    }
+                })
+            }
+
+            tempLengthColorFilter = null;
+            tempLengthSizeFilter = null;
+            tempLengthPriceFilter = null;
+            checksToReset = [];
+            applyFilters();
         }
     });
 }
 
+function showOptionsMobile() {
+    let options = Array.from(document.getElementsByClassName("mobile-options"));
+    options.forEach(option => {
+        option.onclick = function (e) {
+            let show = option.nextElementSibling.getAttribute("show");
+            show = show === "true" ? false : true;
+            let url = show === true ? "./img/imageArrowFliped.svg" : "./img/imagevector1.svg";
+
+            option.nextElementSibling.setAttribute("show", show);
+            option.lastChild.setAttribute("src", url);
+            option.nextElementSibling.style.display = show === true ? "block" : "none";
+
+            let buttonsFilter = Array.from(document.getElementsByClassName("mobile-filter-buttons"))[0];
+            if (options.some(option => option.nextElementSibling.getAttribute("show") === "true")) {
+                buttonsFilter.style.display = "flex";
+            } else {
+                buttonsFilter.style.display = "none";
+            }
+        }
+    });
+    buttonsFilterMobile();
+}
+
+function buttonsFilterMobile() {
+    let buttons = Array.from(document.getElementsByClassName("button-mobile-filter"));
+    buttons.forEach(button => {
+        button.onclick = function (e) {
+            if (button.id === "reset") {
+                colorFilter = [];
+                sizeFilter = [];
+                priceFilter = [];
+                Array.from(document.getElementsByClassName("check")).forEach(elem => {
+                    elem.setAttribute("selected", "false");
+                    if (elem.parentNode.getAttribute('class') === "options-size") {
+                        elem.style.border = "1px solid #666666";
+                    } else {
+                        elem.firstElementChild.firstElementChild.style.display = "none";
+                    }
+                });
+            }
+            applyFilters();
+        }
+    })
+}
+
+function applyMobileFilter() {
+    let apply = document.getElementById("apply");
+    apply.onclick = function (e) {
+        Array.from(document.getElementsByTagName("main"))[0].style.display = "block";
+        Array.from(document.getElementsByTagName("header"))[0].style.display = "flex";
+        Array.from(document.getElementsByTagName("footer"))[0].style.display = "flex";
+        Array.from(document.getElementsByClassName("mobile-page"))[0].style.display = "none";
+        Array.from(document.getElementsByClassName("mobile-page"))[1].style.display = "none";
+        // colorFilter = colorFilter.slice(0, tempLengthColorFilter);
+        // sizeFilter = sizeFilter.slice(0, tempLengthSizeFilter);
+        // priceFilter = sizeFilter.slice(0, tempLengthPriceFilter);
+        // checksToReset.forEach(elem => {
+        //     elem.setAttribute("selected", "false");
+        //     if (elem.parentNode.getAttribute('class') === "options-size") {
+        //         elem.style.border = "1px solid #666666";
+        //     } else {
+        //         elem.firstElementChild.firstElementChild.style.display = "none";
+        //     }
+        // })
+        tempLengthColorFilter = null;
+        tempLengthSizeFilter = null;
+        tempLengthPriceFilter = null;
+        checksToReset = [];
+        let arrayCheck = Array.from(document.getElementsByClassName("check")).filter(elem => !elem.getAttribute("mobile"));
+        let auxArray = arrayCheck.slice(0, 10);
+        auxArray.forEach(elem => {
+            if (colorFilter.some(color => elem.lastElementChild.innerText === color)) {
+                elem.firstElementChild.firstElementChild.style.display = "block";
+            }
+        })
+        auxArray = arrayCheck.slice(10, 22);
+        auxArray.forEach(elem => {
+            if (sizeFilter.some(size => size === elem.textContent)) {
+                elem.style.border = "2px solid #00C0EE";
+            }
+        });
+
+        auxArray = arrayCheck.slice(22, arrayCheck.length);
+        auxArray.forEach(elem => {
+            if (priceFilter.some(price => price === elem.lastElementChild.innerText)) {
+                elem.firstElementChild.firstElementChild.style.display = "block";
+            }
+        });
+    }
+}
