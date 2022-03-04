@@ -77,6 +77,7 @@ function applyFilter(filtersApplyed){
 
 function removeFilter(param){   
     filtersApplyed = filtersApplyed.filter(filter => filter[1] != param[1])
+    console.log(filtersApplyed)
     if(filterDesktop){
         if(filtersApplyed.length === 0){
             document.getElementById("products").innerHTML = "";
@@ -88,29 +89,41 @@ function removeFilter(param){
         
 }
 
-function checkbox(){
+function checkbox(){    
     var btn = Array.from(document.querySelectorAll(".checkbox"));
     btn.map(elem => {
         elem.onclick = function (e) {  
             e.preventDefault();
+            if(window.innerWidth > 800){
+                filterDesktop = true;
+            } 
             var checked = elem.firstElementChild;
             if(checked.style.display === 'block'){
                 checked.style.display = 'none';
                 if(elem.getAttribute("id")=='color'){
                     removeFilter([elem.getAttribute("id"), elem.getAttribute("color")])
+                    showCheckedMobile();
                 }else{
-                    removeFilter([elem.getAttribute("id"), elem.getAttribute("price")])       
+                    removeFilter([elem.getAttribute("id"), elem.getAttribute("price")]) 
+                    showCheckedMobile();      
                 }                
             }else{
                 checked.style.display = 'block';
                 if(elem.getAttribute("id")=='color'){
                     filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")])
-                    if(filterDesktop)
+                    if(filterDesktop){
+                        showCheckedMobile();
                         applyFilter(filtersApplyed)
+                    }
+                        
                 }else{
                     filtersApplyed.push(["price", elem.getAttribute("price")])
-                    if(filterDesktop)
+                    if(filterDesktop){
+                        showCheckedMobile();
+                        console.log(filtersApplyed)
                         applyFilter(filtersApplyed)
+                    }
+                        
                 }              
             }
         };
@@ -121,16 +134,22 @@ function checkboxBtn(){
     var btn = Array.from(document.querySelectorAll(".checkbox-btn"));
     btn.map(elem => {
         elem.onclick = function (e) { 
+            if(window.innerWidth > 800){
+                filterDesktop = true;
+            } 
             if(elem.getAttribute('active')=='false'){
                 elem.setAttribute('active','true');
                 elem.style.border = "1.5px solid #00c0ee";
-                filtersApplyed.push(["size",elem.getAttribute('size')])
-                if(filterDesktop)
-                    applyFilter(filtersApplyed)
+                filtersApplyed.push(["size",elem.getAttribute('size')]);
+                if(filterDesktop){
+                    showCheckedMobile();
+                    applyFilter(filtersApplyed);
+                }             
             }else{
                 elem.setAttribute('active','false');
                 elem.style.border = "1.5px solid gray";
-                removeFilter(['size', elem.getAttribute("size")])
+                removeFilter(['size', elem.getAttribute("size")]);
+                showCheckedMobile();
             }
         };
     });
@@ -154,7 +173,8 @@ function getAdditionalColors(){
 }
 
 function orderProducts(type, asc){
-    var orderedArray = filtered.length === 0 ? productsArray : filtered;
+    console.log(filtered)
+    var orderedArray = filtersApplyed.length === 0 ? productsArray : filtered;
 
     if(asc){
         orderedArray.sort(function compare(a, b) {
@@ -196,15 +216,12 @@ function selector(){
             let orderType = elem.getAttribute("ordertype");
             ordered.length = 0;
             if(orderType == "recent"){
-                //ordered.length = 0;
                 ordered.push(["date",false]);
                 orderProducts("date",false);
             }else if(orderType == "low-price"){
-                //ordered.length = 0;
                 ordered.push(["price",true]);
                 orderProducts("price",true);
             }else{
-                //ordered.length = 0;
                 ordered.push(["price",false]);
                 orderProducts("price",false)
             }
@@ -246,9 +263,9 @@ function showProducts(products){
             </div>
         `
 
-        listAllProducts.insertAdjacentHTML('beforeend', htmlInsert); 
-        addToCart();  
+        listAllProducts.insertAdjacentHTML('beforeend', htmlInsert);   
     });
+    addToCart();
 }
 
 function showMoreProducts(products){
@@ -271,6 +288,7 @@ function showMoreProducts(products){
         });
         document.querySelector(".load-more-btn").style.display = 'none';
     }
+    addToCart();
 }
 
 function addToCart(){
@@ -322,21 +340,66 @@ function orderMobile(){
             let orderType = elem.getAttribute("ordertype");
             divOrder.style.display = 'none';
             divDesktop.style.display = 'block';
+            let selectDesktop = document.querySelector(".catalog .selector")
 
             if(orderType == "recent"){
                 orderProducts("date",true);
+                selectDesktop.firstChild.data = 'Mais recentes';
             }else if(orderType == "low-price"){
                 orderProducts("price",true);
+                selectDesktop.firstChild.data = 'Menor preço';
             }else{
                 orderProducts("price",false)
+                selectDesktop.firstChild.data = 'Maior preço';
             }
         };
     });
 
 }
 
-function applyMobileFilters(){
+function showCheckedDesktop(){
+    let allChecks = Array.from(document.querySelectorAll(".filters .checkbox-div .checkbox"))
+    allChecks.map(elem =>{
+        elem.firstElementChild.style.display = 'none';
+        filtersApplyed.map(element => {
+            if (elem.getAttribute("content") == element[1])
+                elem.firstElementChild.style.display = 'block';
+        })
+    })
 
+    let allChecksBtn = Array.from(document.querySelectorAll(".filters .sizes .checkbox-btn"))
+    allChecksBtn.map(elem =>{
+        elem.style.border = "1.5px solid gray";
+        filtersApplyed.map(element => {
+            if(elem.getAttribute('content') == element[1]){
+                elem.setAttribute('active','true');
+                elem.style.border = "1.5px solid #00c0ee";
+            }
+        })
+    })
+    
+}
+
+function showCheckedMobile(){
+    let allChecks = Array.from(document.querySelectorAll(".expand .checkbox-div .checkbox"))
+    allChecks.map(elem =>{
+        elem.firstElementChild.style.display = 'none';
+        filtersApplyed.map(element => {
+            if (elem.getAttribute("content") == element[1])
+                elem.firstElementChild.style.display = 'block';
+        })
+    })
+
+    let allChecksBtn = Array.from(document.querySelectorAll(".expand .sizes .checkbox-btn"))
+    allChecksBtn.map(elem =>{
+        elem.style.border = "1.5px solid gray";
+        filtersApplyed.map(element => {
+            if(elem.getAttribute('content') == element[1]){
+                elem.setAttribute('active','true');
+                elem.style.border = "1.5px solid #00c0ee";
+            }
+        })
+    })
 }
 
 function expandFilter(){
@@ -387,15 +450,19 @@ function filterMobile(){
     expandFilter();
 
     document.querySelector(".apply").onclick = function(){
+        document.querySelector(".products").innerHTML = "";
+        console.log(filtersApplyed)
         filtersApplyed.length == 0 ? showProducts(productsArray) : applyFilter(filtersApplyed)       
         divFilter.style.display = 'none';
         divDesktop.style.display = 'block';
+        showCheckedDesktop();
     }
     
     let checked = Array.from(document.querySelectorAll(".checked"));
     document.querySelector(".remove").onclick = function(){
         filtersApplyed.length = 0;
         filtered.length = 0;
+        showCheckedDesktop();
         document.querySelector(".products").innerHTML = "";
         checked.map(elem =>{
             elem.style.display = 'none';
@@ -403,6 +470,9 @@ function filterMobile(){
         showProducts(productsArray);
     }
 
+    
+
+    
    
 
 }
@@ -415,6 +485,5 @@ function main(){
     checkboxBtn();
     selector();
     getAdditionalColors();
-    orderMobile();
-    
+    orderMobile(); 
 }
