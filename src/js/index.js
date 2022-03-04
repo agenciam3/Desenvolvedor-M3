@@ -1,7 +1,13 @@
+//import api from './api';
+import filtrarMob from './filtrarMob';
+import setCores from './setCores';
+import setPrecos from './setPrecos';
+import setProducts from './setProducts';
+import setTamanhos from './setTamanhos';
 
-window.addEventListener('load', function () {
-  let lista;
+let lista;
 
+function api() {
 
   lista = fetch("http://localhost:5000/products")
     .then((res) => {
@@ -15,108 +21,70 @@ window.addEventListener('load', function () {
 
       lista = data;
       const filterLeft = document.querySelector(".filters");
-      const ulList = document.createElement("ul");
-      ulList.setAttribute("id", "colors");
-      filterLeft.appendChild(ulList);
+      const optForm = document.querySelector(".opt-filters");
 
-      let repeatedColors = [];
-      let unique = [];
-
-      function deleteEquals() {
-        let j = 1;
-
-        for (let i = 0; i < lista.length; i++) {
-          //console.log(lista[i].color)
-          if (lista[i].color != lista[j].color) {
-            //console.log(lista[i].color);
-            unique.push(lista[i].color);
-            //console.log("rep", repeatedColors);
-            j++
-            //console.log("i", i),
-            //console.log("j", j)
-          } else {
-            repeatedColors.push(lista[i].color);
-            //console.log("uniq", unique);
-          }
-        }
+      //FUNÇÃO SET ATTR
+      function setAttributes(el, attributes) {
+        Object.keys(attributes).forEach(attr => {
+          el.setAttribute(attr, attributes[attr]);
+        });
       }
-      deleteEquals();
 
-      unique.map(u => {
-        const li = document.createElement("li");
-        li.classList.add("list-item");
-        li.innerHTML = u;
-        ulList.appendChild(li);
-      });
+      //CORES
+      setCores(lista, setAttributes);
 
-      let teste = [];
+      //TAMANHOS
+      setTamanhos(lista, optForm);
 
-      lista.map(item => {
-        item.size.forEach(s => {
-          teste.push(s);
-        })
-      })
-      console.log(teste)
-
-      //Tamanhos
-      var uniqueSizes = teste.filter(function (elem, index, self) {
-        return index === self.indexOf(elem);
-      })
-
-      const ulSizes = document.createElement("ul");
-      const titleSize = document.createElement("h2");
-      titleSize.innerHTML = "Tamanhos";
-      ulSizes.setAttribute("id", "sizes");
-      filterLeft.appendChild(titleSize);
-      filterLeft.appendChild(ulSizes);
-
-      uniqueSizes.map(un => {
-        const liSizes = document.createElement("li");
-        liSizes.classList.add("list-sizes");
-        liSizes.innerHTML = un;
-        ulSizes.appendChild(liSizes);
-      })
+      //PREÇOS
+      setPrecos(optForm, setAttributes);
 
       //PRODUTOS
-      const prodContainer = document.querySelector(".products");
-      lista.map(item => {
-        const prod = document.createElement("div");
-        prod.classList.add("prod-card");
+      setProducts(lista);
 
-        const prodImg = document.createElement('img');
-        prodImg.setAttribute("src", item.image);
-        prod.appendChild(prodImg);
+      //takeVar(lista);
 
-        const prodName = document.createElement("h4");
-        prodName.classList.add("prod-name");
-        prodName.innerHTML = item.name;
-        prod.appendChild(prodName);
-
-        const prodPrice = document.createElement("h4");
-        prodPrice.classList.add("prod-price");
-        prodPrice.innerHTML = `R$ ${item.price}`;
-        prod.appendChild(prodPrice);
-
-        const prodInstallments = document.createElement("h4");
-        prodInstallments.classList.add("prod-install");
-        prodInstallments.innerHTML = `Até ${item.parcelamento[0]}x de ${item.parcelamento[1]}`;
-        prod.appendChild(prodInstallments);
-
-        const buyBtn = document.createElement("button");
-        buyBtn.classList.add("buy-btn");
-        buyBtn.setAttribute("type", "button");
-        buyBtn.innerHTML = "COMPRAR";
-        prod.appendChild(buyBtn);
-
-        prodContainer.appendChild(prod);
-      })
+      renderMobContent(lista, setAttributes);
 
     });
+}
 
-
-
+window.addEventListener('load', function () {
+  api();
 });
 
+function renderMobContent(val, val2) {
+  const varFunc = val;
+  const helperFunction = val2;
+  //console.log(varFunc, helperFunction);
 
+  //VERIFICAR LARGURA DA TELA
+  let viewportWidth = window.innerWidth;
+
+  if (viewportWidth <= 1024) {
+
+    //BUTTONS
+    const filterBtn = document.createElement("button");
+    const target = document.querySelector(".filters");
+    filterBtn.setAttribute("type", "button");
+    filterBtn.classList.add("mob-filtrar");
+    filterBtn.innerHTML = "Filtrar";
+    target.before(filterBtn);
+    filterBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      filtrarMob(varFunc, helperFunction);
+    });
+
+    const orderBtn = document.createElement("button");
+    orderBtn.setAttribute("type", "button");
+    orderBtn.classList.add("mob-ordenar");
+    orderBtn.innerHTML = "Ordenar";
+    target.before(orderBtn);
+
+  } else {
+    console.log("oi")
+  }
+
+}
 
 
