@@ -1,3 +1,5 @@
+import { filterProduct, setFilters } from "./filter";
+
 export default function getProduct() {
   var products = fetch("http://localhost:5000/products");
   products
@@ -5,19 +7,64 @@ export default function getProduct() {
       var contentType = response.headers.get("content-type");
       if (contentType && contentType.indexOf("application/json") !== -1) {
         response.json().then((data) => {
-          if (screen.width >= 768) {
-            showProductDesktop(data);
-          } else {
-            showProductMobile(data);
-          }
+          filterProduct(data);
+          setFilters(data);
         });
       } else {
         console.log("não é um json");
       }
     })
     .catch((error) => {
-      console.log(error);
+      console.warn(error);
     });
+}
+
+export function showProductDesktop(productList) {
+  console.log("");
+  const cleanPage = document.querySelector(
+    ".category--filter-content--product--product-load"
+  );
+  cleanPage.innerHTML = "";
+  console.log(cleanPage);
+  console.log("showProductDesktop");
+  console.log("productList");
+  console.log(productList);
+
+  if (productList.length <= 6) {
+    createProductHtml(0, productList.length, productList);
+  } else {
+    createProductHtml(0, 6, productList);
+
+    const seeMore = document.querySelector(
+      ".category--filter-content--product .product-load"
+    );
+    seeMore.classList.add("active");
+
+    seeMore.addEventListener("click", () => {
+      createProductHtml(6, productList.length, productList);
+
+      seeMore.classList.remove("active");
+    });
+  }
+}
+
+export function showProductMobile(productList) {
+  if (productList.length <= 4) {
+    createProductHtml(0, productList.length, productList);
+  } else {
+    createProductHtml(0, 4, productList);
+
+    const seeMore = document.querySelector(
+      ".category--filter-content--product .product-load"
+    );
+    seeMore.classList.add("active");
+
+    seeMore.addEventListener("click", () => {
+      createProductHtml(4, productList.length, productList);
+
+      seeMore.classList.remove("active");
+    });
+  }
 }
 
 function createProductHtml(index, limeter, productList) {
@@ -40,13 +87,13 @@ function createProductHtml(index, limeter, productList) {
 
     var price = document.createElement("span");
     price.classList.add("product-price");
-    price.innerHTML = `R$ ${element.price}`;
+    price.innerHTML = `R$ ${element.price.toFixed(2)}`;
 
     var parcel = document.createElement("span");
     parcel.classList.add("product-parcel");
-    parcel.innerHTML = `até ${element.parcelamento[0]}x de R$ ${String(
-      element.parcelamento[1]
-    ).replace(".", ",")}`;
+    parcel.innerHTML = `até ${element.parcelamento[0].toFixed(
+      2
+    )}x de R$ ${String(element.parcelamento[1].toFixed(2)).replace(".", ",")}`;
 
     var buy = document.createElement("button");
     buy.classList.add("product-buy");
@@ -59,58 +106,5 @@ function createProductHtml(index, limeter, productList) {
     div.appendChild(buy);
 
     productsContainer.appendChild(div);
-  }
-}
-
-// var reduced = [];
-
-// productList.forEach((item) => {
-//   var duplicated =
-//     reduced.findIndex((redItem) => {
-//       return item.id == redItem.id;
-//     }) > -1;
-
-//   if (!duplicated) {
-//     reduced.push(item);
-//   }
-// });
-// console.log(`reduced`);
-// console.log(reduced);
-
-function showProductDesktop(productList) {
-  if (productList.length <= 6) {
-    createProductHtml(0, productList.length, productList);
-  } else {
-    createProductHtml(0, 6, productList);
-
-    const seeMore = document.querySelector(
-      ".category--filter-content--product .product-load"
-    );
-    seeMore.classList.add("active");
-
-    seeMore.addEventListener("click", () => {
-      createProductHtml(6, productList.length, productList);
-
-      seeMore.classList.remove("active");
-    });
-  }
-}
-
-function showProductMobile(productList) {
-  if (productList.length <= 4) {
-    createProductHtml(0, productList.length, productList);
-  } else {
-    createProductHtml(0, 4, productList);
-
-    const seeMore = document.querySelector(
-      ".category--filter-content--product .product-load"
-    );
-    seeMore.classList.add("active");
-
-    seeMore.addEventListener("click", () => {
-      createProductHtml(4, productList.length, productList);
-
-      seeMore.classList.remove("active");
-    });
   }
 }

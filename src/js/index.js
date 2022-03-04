@@ -1,6 +1,13 @@
 import getProduct from "./products";
 
-category();
+function category() {
+  getProduct();
+
+  seeMoreFilterDesktop();
+  orderByDesktop();
+  orderByMobile();
+  filterMobile();
+}
 
 function orderByDesktop() {
   const orderBy = document.querySelector(".category--orderby");
@@ -9,10 +16,6 @@ function orderByDesktop() {
     var orderOptions = document.querySelector(".category--orderby-content");
     orderOptions.classList.toggle("active");
   });
-
-  // const recent = document.querySelector("#recent");
-  // const smaller = document.querySelector("#smaller");
-  // const larger = document.querySelector("#larger");
 }
 
 function orderByMobile() {
@@ -57,11 +60,10 @@ function filterMobile() {
 
   const size = document.querySelector(".category--filter-content-title-size");
   size.addEventListener("click", () => {
-    console.log("oiiii");
     const sizeOption = document.querySelector(
       ".category--filter-content--size-options"
     );
-    console.log(sizeOption);
+
     sizeOption.classList.toggle(`sizeSee`);
   });
 
@@ -93,10 +95,4 @@ function seeMoreFilterDesktop() {
   });
 }
 
-function category() {
-  orderByDesktop();
-  orderByMobile();
-  seeMoreFilterDesktop();
-  getProduct();
-  filterMobile();
-}
+category();
