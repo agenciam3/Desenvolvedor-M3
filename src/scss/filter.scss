@@ -16,8 +16,8 @@
   }
 }
 .category--filter-content {
-  width: 160px;
-  height: 648px;
+  width: 190px;
+
   @media (max-width: 768px) {
     display: none;
 
@@ -205,11 +205,11 @@
 .category--filter-content--color-options-another-colors {
   display: none;
   @media (max-width: 768px) {
-    display: block;
+    display: grid;
   }
 
   &.active {
-    display: block;
+    display: grid;
   }
 }
 

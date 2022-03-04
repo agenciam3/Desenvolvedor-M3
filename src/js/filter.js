@@ -5,13 +5,10 @@ const sizeSelected = [];
 const priceSelected = [];
 
 export function filterProduct(productList) {
-  console.log("filterProduct");
-  console.log("productList");
-  console.log(productList);
-
   if (productList) {
     const cleanList = [];
     var list_filter = [];
+    console.log(productList);
 
     // REMOVENDO ITENS DUPLICADOS
 
@@ -50,14 +47,8 @@ export function filterProduct(productList) {
       for (let i = 0; i < item.size.length; i++) {
         const sizeProduct = item.size[i];
 
-        console.log("sizeProduct");
-        console.log(sizeProduct);
-
         for (let i = 0; i < sizeSelected.length; i++) {
           const sizeProductFilter = sizeSelected[i];
-
-          console.log("sizeProductFilter");
-          console.log(sizeProductFilter);
 
           if (sizeProduct === sizeProductFilter) {
             return true;
@@ -66,8 +57,6 @@ export function filterProduct(productList) {
       }
     });
 
-    console.log("list_filter Tamanho");
-    console.log(list_filter);
     // FILTRANDO PRECO
 
     list_filter = list_filter.filter((item) => {
@@ -87,9 +76,6 @@ export function filterProduct(productList) {
       }
     });
 
-    console.log("list_filter Preco");
-    console.log(list_filter);
-
     if (screen.width >= 768) {
       showProductDesktop(list_filter);
     } else {
@@ -99,10 +85,6 @@ export function filterProduct(productList) {
 }
 
 export function setFilters(productList) {
-  console.log("setFilters");
-  console.log("productList");
-  console.log(productList);
-
   var input = document.querySelectorAll("input[type='checkbox']");
 
   for (let i = 0; i < input.length; i++) {
@@ -122,11 +104,13 @@ export function setFilters(productList) {
 
         case "size": {
           var index = sizeSelected.findIndex((i) => i === e.target.value);
+
           if (index === -1) {
             sizeSelected.push(e.target.value);
           } else {
-            priceSelected.splice(index, 1);
+            sizeSelected.splice(index, 1);
           }
+
           break;
         }
         case "price": {

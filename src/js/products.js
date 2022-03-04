@@ -20,24 +20,22 @@ export default function getProduct() {
 }
 
 export function showProductDesktop(productList) {
-  console.log("");
   const cleanPage = document.querySelector(
     ".category--filter-content--product--product-load"
   );
   cleanPage.innerHTML = "";
-  console.log(cleanPage);
-  console.log("showProductDesktop");
-  console.log("productList");
-  console.log(productList);
+
+  const seeMore = document.querySelector(
+    ".category--filter-content--product .product-load"
+  );
 
   if (productList.length <= 6) {
     createProductHtml(0, productList.length, productList);
+
+    seeMore.classList.remove("active");
   } else {
     createProductHtml(0, 6, productList);
 
-    const seeMore = document.querySelector(
-      ".category--filter-content--product .product-load"
-    );
     seeMore.classList.add("active");
 
     seeMore.addEventListener("click", () => {
@@ -91,9 +89,9 @@ function createProductHtml(index, limeter, productList) {
 
     var parcel = document.createElement("span");
     parcel.classList.add("product-parcel");
-    parcel.innerHTML = `até ${element.parcelamento[0].toFixed(
-      2
-    )}x de R$ ${String(element.parcelamento[1].toFixed(2)).replace(".", ",")}`;
+    parcel.innerHTML = `até ${element.parcelamento[0]}x de R$ ${String(
+      element.parcelamento[1].toFixed(2)
+    ).replace(".", ",")}`;
 
     var buy = document.createElement("button");
     buy.classList.add("product-buy");
