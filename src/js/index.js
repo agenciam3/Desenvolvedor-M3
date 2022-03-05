@@ -1,17 +1,56 @@
+
 const ul = document.querySelector("#products");
 const li = document.querySelector(".card");
 const carregar = document.querySelector("#carregar");
 const menor = document.querySelector("#menor");
 
-
 const getProducts = async () => {
   const response = await fetch("http://localhost:5000/products");
-  return response.json();
+  const jsonResponse = await response.json();
+  return jsonResponse;
 };
 
-const renderProducts = async () => {
+const filterProductsByColor = async (colors = []) => {
   const products = await getProducts();
-  const productsTemplate = products.map((item) =>
+  const filteredShirts = [];
+  products.forEach((product) => {
+    colors.forEach((color) => {
+      if (color === product.color) {
+        filteredShirts.push(product);
+      }
+    });
+  });
+  return filteredShirts;
+}
+
+const getShirtsByColor = () => {
+  let colors = document.getElementById('colors');
+  let textinputs = document.querySelectorAll('input[type=checkbox]');
+
+  colors.addEventListener('change', async () => {
+    let shirtColors = [];
+    Array.from(colors.elements).forEach((color) => {
+      if (color.checked) shirtColors.push(color.name);
+    });
+
+    let filteredProducts = [];
+    let allProducts = [];
+
+    let allUnchecked = [...textinputs].every((el) => !el.checked)
+
+    if (allUnchecked) {
+      allProducts = await getProducts();
+      renderProducts(allProducts);
+    } else {
+      filteredProducts = await filterProductsByColor(shirtColors);
+      renderProducts(filteredProducts);
+    }
+  });
+}
+
+const renderProducts = (products) => {
+  let productsTemplate = [];
+  productsTemplate = products.map((item) =>
     `
     <li class="card">
     <img src="./${item.image}" alt="">
@@ -21,11 +60,12 @@ const renderProducts = async () => {
     <button>COMPRAR</button>
     </li> 
     `
-    ).slice(0, 9).join("");
+  ).join("");
 
-    ul.innerHTML += productsTemplate;
-   
-  };
-  renderProducts();
-  
-  
+  ul.innerHTML = '';
+  ul.innerHTML += productsTemplate;
+
+};
+
+getProducts().then((products) => renderProducts(products));
+getShirtsByColor();
