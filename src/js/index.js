@@ -72,7 +72,7 @@ function renderMobContent(val, val2) {
     target.before(filterBtn);
     filterBtn.addEventListener("click", function (e) {
       e.preventDefault();
-      filtrarMob(varFunc, helperFunction);
+      filtrarMob(varFunc, helperFunction, lista);
     });
 
     const orderBtn = document.createElement("button");

@@ -3,7 +3,7 @@ export default function setCoresMob(lista, setAttributes, coresOpt) {
   let repeatedColors = [];
   let unique = [];
 
-  console.log(coresOpt);
+  //console.log(coresOpt);
 
   function deleteEquals() {
     let j = 1;

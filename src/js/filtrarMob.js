@@ -1,6 +1,7 @@
 import setCoresMob from "./setCoresMob";
+import setTamanhosMob from "./setTamanhosMob";
 
-export default function filtrarMob(varFunc, helperFunction) {
+export default function filtrarMob(varFunc, helperFunction, lista) {
   const holder = document.querySelector(".container");
   const mobMenu = document.createElement("div");
   mobMenu.classList.add("menu-filtrar-mob");
@@ -19,7 +20,7 @@ export default function filtrarMob(varFunc, helperFunction) {
   filtrarBtn.appendChild(titleFiltrar);
   mobMenu.appendChild(filtrarBtn);
 
-  console.log(filtrarBtn)
+  //console.log(filtrarBtn)
 
   //CORES
   const coresBtn = document.createElement("div");
@@ -37,12 +38,31 @@ export default function filtrarMob(varFunc, helperFunction) {
 
   const coresOpt = document.createElement("div");
   coresOpt.classList.add("opt-filters");
-  mobMenu.appendChild(coresOpt);
-
+  coresBtn.appendChild(coresOpt);
 
   setCoresMob(varFunc, helperFunction, coresOpt);
 
+  //TAMANHOS
+  const tamBtn = document.createElement("div");
+  tamBtn.classList.add("tamanhos");
+
+  const titleTam = document.createElement("span");
+  titleTam.innerHTML = "TAMANHOS";
+
+  const arrow2 = document.createElement("img");
+  arrow2.src = '../img/arrow.png';
+
+  tamBtn.appendChild(titleTam);
+  tamBtn.appendChild(arrow2);
+  mobMenu.appendChild(tamBtn);
+
+  const tamOpt = document.createElement("div");
+  tamOpt.classList.add("opt-filters");
+  tamBtn.appendChild(tamOpt);
+
+  setTamanhosMob(lista, tamOpt);
+
   holder.appendChild(mobMenu);
 
-  console.log(varFunc);
+  //console.log(tamOpt);
 }
