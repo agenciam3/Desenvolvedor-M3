@@ -6,25 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="css/style.css" />
+  <title>Desenvolvedor M3</title>
 </head>
 
 <body>
 
   <header>
     <img src="img/logo-m3.png" alt="">
-    <img src="" alt="">MOCK
+    <img src="img/cadeado.png" alt="">
   </header>
   <hr>
 
   <div class="topo">
     <p>Blusas</p>
-    <select name="select">
-      <option value="" selected>Ordenar por:</option>
-      <option value="valor1">Mais Recentes</option>
-      <option value="valor2">Menor Preço</option>
-      <option value="valor3">Maior Preço</option>
+    <select name="select" id="select"> 
+      <option value="ordenar">Ordenar por:</option>
+      <option value="recente">Mais Recentes</option>
+      <option value="menor" id="menor">Menor Preço</option>
+      <option value="maior">Maior Preço</option>
     </select>
   </div>
 
@@ -89,7 +89,7 @@
       </ul>
 
       <div id="products">
-        <button class="carregar">CARREGAR MAIS</button>
+        <button id="carregar">CARREGAR MAIS</button>
       </div>
     </div>
   </div>

@@ -19,7 +19,8 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-right: 165px;
+    left: 162px;
+    right: 165px;
     
     img{
         padding: 16px 162px;
@@ -33,6 +34,10 @@ header{
     max-width: 1500px;
     margin: 40px 162px 64px 162px;
     font-size: 32px;    
+
+    #select{
+        padding: 8px;
+    }
 }
 
 .main-content{
@@ -66,7 +71,7 @@ header{
         justify-content: center;
     }
 
-    .carregar{
+    #carregar{
         background-color: $primary-color;
         color: white;
         border: none;
