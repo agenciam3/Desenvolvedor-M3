@@ -6,7 +6,7 @@ export default function setTamanhos(lista, optForm) {
       teste.push(s);
     })
   })
-  console.log(teste)
+  //console.log(teste)
 
 
   var uniqueSizes = teste.filter(function (elem, index, self) {

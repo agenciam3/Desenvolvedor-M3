@@ -14,24 +14,42 @@ export default function filtrarMob(varFunc, helperFunction, lista) {
   const titleFiltrar = document.createElement("span");
   titleFiltrar.innerHTML = "FILTRAR";
 
-  const arrow = document.createElement("img");
-  arrow.src = '../img/arrow.png';
-  filtrarBtn.appendChild(arrow);
+  const x = document.createElement("img");
+  x.src = '../img/x-fechar.png';
+  x.setAttribute("width", "18");
+  x.setAttribute("height", "18");
+  x.addEventListener("click", function () {
+    mobMenu.remove();
+  });
+  filtrarBtn.appendChild(x);
 
   filtrarBtn.appendChild(titleFiltrar);
+  filtrarBtn.appendChild(x);
   mobMenu.appendChild(filtrarBtn);
-
-  //console.log(filtrarBtn)
 
   //CORES
   const coresBtn = document.createElement("div");
   coresBtn.classList.add("cores");
+  let currClass = "cores";
+  coresBtn.addEventListener("click", function () {
+    if (currClass === "cores") {
+      this.classList.remove('cores');
+      this.classList.add('cores-opened');
+      currClass = "cores-opened";
+    } else {
+      currClass = "cores";
+      this.classList.remove('cores-opened');
+      this.classList.add('cores');
+    }
+
+  });
 
   const titleCores = document.createElement("span");
   titleCores.innerHTML = "CORES";
 
-  const y = document.createElement("span");
-  y.innerHTML = "X";
+  const arrow = document.createElement("img");
+  arrow.src = '../img/arrow.png';
+  filtrarBtn.appendChild(arrow);
 
   coresBtn.appendChild(titleCores);
   coresBtn.appendChild(arrow);
