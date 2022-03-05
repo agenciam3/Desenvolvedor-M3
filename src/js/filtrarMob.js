@@ -1,5 +1,6 @@
 import setCoresMob from "./setCoresMob";
 import setTamanhosMob from "./setTamanhosMob";
+import setPrecosMob from "./setPrecosMob";
 
 export default function filtrarMob(varFunc, helperFunction, lista) {
   const holder = document.querySelector(".container");
@@ -61,6 +62,26 @@ export default function filtrarMob(varFunc, helperFunction, lista) {
   tamBtn.appendChild(tamOpt);
 
   setTamanhosMob(lista, tamOpt);
+
+  //PREÇOS
+  const prBtn = document.createElement("div");
+  prBtn.classList.add("precos");
+
+  const titlePr = document.createElement("span");
+  titlePr.innerHTML = "FAIXA DE PREÇO";
+
+  const arrow3 = document.createElement("img");
+  arrow3.src = '../img/arrow.png';
+
+  prBtn.appendChild(titlePr);
+  prBtn.appendChild(arrow3);
+  mobMenu.appendChild(prBtn);
+
+  const prOpt = document.createElement("div");
+  prOpt.classList.add("opt-filters");
+  prBtn.appendChild(prOpt);
+
+  setPrecosMob(prOpt, helperFunction);
 
   holder.appendChild(mobMenu);
 

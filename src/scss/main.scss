@@ -93,7 +93,32 @@ body {
           transition: 0.5s;
         }
       }
+      
       .tamanhos:target {
+        max-height: 400px;
+
+        img {
+          transform: rotate(0deg);
+          transition: 0.5s;
+        }
+      }
+
+      .precos {
+        padding: 20px 0 10px 10px;
+        width: 74%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-height: 6px;
+        overflow: hidden;
+
+        img {
+          transform: rotate(-90deg);
+          transition: 0.5s;
+        }
+      }
+
+      .precos:target {
         max-height: 400px;
 
         img {

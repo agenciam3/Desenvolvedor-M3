@@ -50,6 +50,6 @@ export default function setCoresMob(lista, setAttributes, coresOpt) {
       teste.push(s);
     })
   })
-  console.log(teste)
+  //console.log(teste)
 
 }

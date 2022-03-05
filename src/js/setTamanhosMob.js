@@ -6,7 +6,7 @@ export default function setTamanhos(lista, tamOpt) {
       teste.push(s);
     })
   })
-  console.log(tamOpt)
+  //console.log(tamOpt)
 
 
   var uniqueSizes = teste.filter(function (elem, index, self) {
