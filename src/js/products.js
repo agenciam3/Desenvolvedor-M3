@@ -20,11 +20,6 @@ export default function getProduct() {
 }
 
 export function showProductDesktop(productList) {
-  const cleanPage = document.querySelector(
-    ".category--filter-content--product--product-load"
-  );
-  cleanPage.innerHTML = "";
-
   const seeMore = document.querySelector(
     ".category--filter-content--product .product-load"
   );
@@ -39,7 +34,7 @@ export function showProductDesktop(productList) {
     seeMore.classList.add("active");
 
     seeMore.addEventListener("click", () => {
-      createProductHtml(6, productList.length, productList);
+      createProductHtml(0, productList.length, productList);
 
       seeMore.classList.remove("active");
     });
@@ -47,26 +42,19 @@ export function showProductDesktop(productList) {
 }
 
 export function showProductMobile(productList) {
-  const cleanPage = document.querySelector(
-    ".category--filter-content--product--product-load"
+  const seeMore = document.querySelector(
+    ".category--filter-content--product .product-load"
   );
-
-  if (cleanPage.children.length > 0) {
-    cleanPage.innerHTML = "";
-  }
-
   if (productList.length <= 4) {
     createProductHtml(0, productList.length, productList);
+    seeMore.classList.remove("active");
   } else {
     createProductHtml(0, 4, productList);
 
-    const seeMore = document.querySelector(
-      ".category--filter-content--product .product-load"
-    );
     seeMore.classList.add("active");
 
     seeMore.addEventListener("click", () => {
-      createProductHtml(4, productList.length, productList);
+      createProductHtml(0, productList.length, productList);
 
       seeMore.classList.remove("active");
     });
@@ -77,6 +65,11 @@ function createProductHtml(index, limeter, productList) {
   const productsContainer = document.querySelector(
     ".category--filter-content--product--product-load"
   );
+
+  if (productsContainer.children.length > 0) {
+    productsContainer.innerHTML = "";
+  }
+
   for (let i = index; i < limeter; i++) {
     const element = productList[i];
 
