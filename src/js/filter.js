@@ -1,4 +1,4 @@
-import { showProductDesktop, showProductMobile } from "./products";
+import { setOrderBy } from "./orderBy";
 
 const colorSelected = [];
 const sizeSelected = [];
@@ -8,7 +8,6 @@ export function filterProduct(productList) {
   if (productList) {
     const cleanList = [];
     var list_filter = [];
-    console.log(productList);
 
     // REMOVENDO ITENS DUPLICADOS
 
@@ -76,11 +75,7 @@ export function filterProduct(productList) {
       }
     });
 
-    if (screen.width >= 768) {
-      showProductDesktop(list_filter);
-    } else {
-      showProductMobile(list_filter);
-    }
+    setOrderBy(list_filter);
   }
 }
 
@@ -128,27 +123,61 @@ export function setFilters(productList) {
       if (screen.width >= 768) {
         filterProduct(productList);
       } else {
-        var action = document.querySelector(
-          ".category--filter-content--actions-mobile"
-        );
-        if (
-          priceSelected.length > 0 ||
-          sizeSelected.length > 0 ||
-          colorSelected.length > 0
-        ) {
-          //funçao de filter
-          action.classList.add("seeAction");
-          var applyFilterMobile = document.querySelector(
-            ".category--filter-content--actions-mobile--apply"
-          );
-
-          applyFilterMobile.addEventListener("click", () => {
-            filterProduct(productList);
-          });
-        } else {
-          action.classList.remove("seeAction");
-        }
+        actionsFilter(productList);
       }
     });
+  }
+}
+
+function actionsFilter(productList) {
+  const filterContent = document.querySelector(".category--filter-content");
+  var action = document.querySelector(
+    ".category--filter-content--actions-mobile"
+  );
+
+  // CLEAN
+  const cleanFilterBtn = document.querySelector(
+    ".category--filter-content--actions-mobile--clean"
+  );
+  cleanFilterBtn.addEventListener("click", () => {
+    const filterSelected = document.querySelectorAll(
+      "input[type=checkbox]:checked"
+    );
+
+    for (let i = 0; i < filterSelected.length; i++) {
+      const element = filterSelected[i];
+
+      element.checked = false;
+    }
+
+    colorSelected.splice(0, colorSelected.length);
+    sizeSelected.splice(0, sizeSelected.length);
+    priceSelected.splice(0, priceSelected.length);
+
+    filterProduct(productList);
+
+    action.classList.remove("seeAction");
+    filterContent.classList.remove("filterSee");
+  });
+
+  // APPLY
+  const applyFilterMobile = document.querySelector(
+    ".category--filter-content--actions-mobile--apply"
+  );
+
+  applyFilterMobile.addEventListener("click", () => {
+    filterProduct(productList);
+    filterContent.classList.remove("filterSee");
+  });
+
+  // ACTION
+  if (
+    priceSelected.length > 0 ||
+    sizeSelected.length > 0 ||
+    colorSelected.length > 0
+  ) {
+    action.classList.add("seeAction");
+  } else {
+    action.classList.remove("seeAction");
   }
 }

@@ -47,6 +47,14 @@ export function showProductDesktop(productList) {
 }
 
 export function showProductMobile(productList) {
+  const cleanPage = document.querySelector(
+    ".category--filter-content--product--product-load"
+  );
+
+  if (cleanPage.children.length > 0) {
+    cleanPage.innerHTML = "";
+  }
+
   if (productList.length <= 4) {
     createProductHtml(0, productList.length, productList);
   } else {
@@ -96,6 +104,14 @@ function createProductHtml(index, limeter, productList) {
     var buy = document.createElement("button");
     buy.classList.add("product-buy");
     buy.innerHTML = "COMPRAR";
+
+    buy.addEventListener("click", () => {
+      var bagBuy = document.querySelector(".header--bag-counter--number");
+      var qtdItems = Number(bagBuy.textContent);
+      qtdItems++;
+
+      bagBuy.innerHTML = qtdItems;
+    });
 
     div.appendChild(image);
     div.appendChild(name);

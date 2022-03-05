@@ -22,15 +22,15 @@ function orderByMobile() {
   const orderMobile = document.querySelector(".category--orderby--open-btn");
 
   orderMobile.addEventListener("click", (e) => {
-    var orderMobileOption = document.querySelector(
+    var orderMobileContainer = document.querySelector(
       ".category--orderby-mobile--container"
     );
 
-    orderMobileOption.classList.add(`on`);
+    orderMobileContainer.classList.add(`on`);
 
     const close = document.querySelector(".close-orderby");
     close.addEventListener("click", () => {
-      orderMobileOption.classList.remove(`on`);
+      orderMobileContainer.classList.remove(`on`);
     });
   });
 }
@@ -43,8 +43,8 @@ function filterMobile() {
 
     filterContent.classList.add("filterSee");
 
-    const offFilter = document.querySelector(".close-filter");
-    offFilter.addEventListener("click", () => {
+    const closeFilter = document.querySelector(".close-filter");
+    closeFilter.addEventListener("click", () => {
       filterContent.classList.remove("filterSee");
     });
   });

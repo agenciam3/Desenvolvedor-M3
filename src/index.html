@@ -37,13 +37,22 @@
             </span>
           </button>
           <div class="category--orderby-content">
-            <ul class="category--orderby-content--option" id="recent">
+            <ul
+              class="category--orderby-content--option orderby-option"
+              data-orderBy="recent"
+            >
               Mais recentes
             </ul>
-            <ul class="category--orderby-content--option" id="smaller">
+            <ul
+              class="category--orderby-content--option orderby-option"
+              data-orderBy="lowest-price"
+            >
               Menor preço
             </ul>
-            <ul class="category--orderby-content--option" id="larger">
+            <ul
+              class="category--orderby-content--option orderby-option"
+              data-orderBy="biggest-price"
+            >
               Maior preço
             </ul>
           </div>
@@ -452,9 +461,24 @@
                     ><img src="./img/close.png" /></span
                 ></span>
               </div>
-              <div class="category--orderby-mobile--option">Mais recente</div>
-              <div class="category--orderby-mobile--option">Maior preço</div>
-              <div class="category--orderby-mobile--option">Menor preço</div>
+              <div
+                class="category--orderby-mobile--option orderby-option-mobile"
+                data-orderBy="recent"
+              >
+                Mais recente
+              </div>
+              <div
+                class="category--orderby-mobile--option orderby-option-mobile"
+                data-orderBy="biggest-price"
+              >
+                Maior preço
+              </div>
+              <div
+                class="category--orderby-mobile--option orderby-option-mobile"
+                data-orderBy="lowest-price"
+              >
+                Menor preço
+              </div>
             </div>
           </div>
         </div>
