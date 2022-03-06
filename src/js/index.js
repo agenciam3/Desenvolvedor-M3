@@ -77,7 +77,6 @@ function applyFilter(filtersApplyed){
 
 function removeFilter(param){   
     filtersApplyed = filtersApplyed.filter(filter => filter[1] != param[1])
-    console.log(filtersApplyed)
     if(filterDesktop){
         if(filtersApplyed.length === 0){
             document.getElementById("products").innerHTML = "";
@@ -100,26 +99,25 @@ function checkbox(){
             var checked = elem.firstElementChild;
             if(checked.style.display === 'block'){
                 checked.style.display = 'none';
-                if(elem.getAttribute("id")=='color'){
-                    removeFilter([elem.getAttribute("id"), elem.getAttribute("color")])
-                    showCheckedMobile();
-                }else{
-                    removeFilter([elem.getAttribute("id"), elem.getAttribute("price")]) 
-                    showCheckedMobile();      
-                }                
+                if(filterDesktop){
+                    if(elem.getAttribute("id")=='color'){
+                        removeFilter([elem.getAttribute("id"), elem.getAttribute("color")])     
+                    }else{
+                        removeFilter([elem.getAttribute("id"), elem.getAttribute("price")])                 
+                    }  
+                }
+                              
             }else{
                 checked.style.display = 'block';
                 if(elem.getAttribute("id")=='color'){
                     filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")])
                     if(filterDesktop){
-                        showCheckedMobile();
                         applyFilter(filtersApplyed)
                     }
                         
                 }else{
                     filtersApplyed.push(["price", elem.getAttribute("price")])
                     if(filterDesktop){
-                        showCheckedMobile();
                         console.log(filtersApplyed)
                         applyFilter(filtersApplyed)
                     }
@@ -141,15 +139,15 @@ function checkboxBtn(){
                 elem.setAttribute('active','true');
                 elem.style.border = "1.5px solid #00c0ee";
                 filtersApplyed.push(["size",elem.getAttribute('size')]);
-                if(filterDesktop){
-                    showCheckedMobile();
+                if(filterDesktop){      
                     applyFilter(filtersApplyed);
                 }             
             }else{
                 elem.setAttribute('active','false');
                 elem.style.border = "1.5px solid gray";
-                removeFilter(['size', elem.getAttribute("size")]);
-                showCheckedMobile();
+                if(filterDesktop){
+                    removeFilter(['size', elem.getAttribute("size")]);      
+                }             
             }
         };
     });
@@ -173,7 +171,6 @@ function getAdditionalColors(){
 }
 
 function orderProducts(type, asc){
-    console.log(filtered)
     var orderedArray = filtersApplyed.length === 0 ? productsArray : filtered;
 
     if(asc){
@@ -433,6 +430,7 @@ function filterMobile(){
     var divDesktop = document.querySelector(".desktop");
     btn.onclick = function (e) {  
         e.preventDefault();
+        showCheckedMobile();
         filterDesktop = false;
         if(divFilter.style.display === 'flex'){
             divFilter.style.display = 'none';
@@ -449,7 +447,26 @@ function filterMobile(){
     };
     expandFilter();
 
-    document.querySelector(".apply").onclick = function(){
+    var checked = Array.from(document.querySelectorAll(".checked"));
+    var checkbox = Array.from(document.querySelectorAll(".expand .checkbox"));
+    var allChecksBtn = Array.from(document.querySelectorAll(".expand .sizes .checkbox-btn"))
+    
+    document.querySelector(".apply").onclick = function(e){
+        e.preventDefault();
+        filtersApplyed.length = 0;
+        checkbox.map(elem => {
+            if(elem.firstElementChild.style.display == 'block'){
+                console.log('oi')
+                filtersApplyed.push([elem.getAttribute('id'), elem.getAttribute('content') ])
+            }
+        })
+        allChecksBtn.map(elem =>{
+            console.log(elem)
+            if(elem.style.border == '1.5px solid rgb(0, 192, 238)'){
+                filtersApplyed.push(['size', elem.getAttribute('content') ])
+            }
+        })
+
         document.querySelector(".products").innerHTML = "";
         console.log(filtersApplyed)
         filtersApplyed.length == 0 ? showProducts(productsArray) : applyFilter(filtersApplyed)       
@@ -458,7 +475,6 @@ function filterMobile(){
         showCheckedDesktop();
     }
     
-    let checked = Array.from(document.querySelectorAll(".checked"));
     document.querySelector(".remove").onclick = function(){
         filtersApplyed.length = 0;
         filtered.length = 0;
@@ -469,12 +485,6 @@ function filterMobile(){
         });
         showProducts(productsArray);
     }
-
-    
-
-    
-   
-
 }
 
 function main(){

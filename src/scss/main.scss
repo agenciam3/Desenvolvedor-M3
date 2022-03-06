@@ -119,10 +119,10 @@ body{
     }
     
     .filters{
-        width: 30%;
+        width: 25%;
 
         h1{
-            font-size: revert-layer;
+            font-size: 30px;
         }
 
         h3{
@@ -145,7 +145,7 @@ body{
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        width: 70%;
+        width: 75%;
         
         .select-div{
             display: flex;
@@ -218,7 +218,7 @@ body{
             display:flex;
             flex-direction: row;
             align-self: stretch;
-            justify-content:space-between;
+            justify-content:flex-start;
             margin-top: 40px;
             flex-wrap: wrap;
 
@@ -228,6 +228,7 @@ body{
                 justify-content:space-between;
                 align-items: center;
                 margin-bottom: 40px;
+                margin-left: 55px;
             
                 h3{
                     margin:10px 0px;
@@ -294,13 +295,14 @@ body{
         align-items: center;
         justify-content: space-around;
         padding: 20px 0px;
+        
 
         .apply{
             background-color: $blue-color;
             color: white;
             border: 0px;
             border-radius: 0px;
-            padding: 10px 45px;
+            padding: 10px 55px;
             cursor: pointer;
 
         }
@@ -310,7 +312,7 @@ body{
             color: $lightgray-color;
             border: 1.5px solid $lightgray-color;
             border-radius: 0px;
-            padding: 9px 40px;
+            padding: 9px 50px;
             cursor: pointer;
         }
 
@@ -325,9 +327,10 @@ body{
     .main-container{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
-        padding: 20px 10px;
+        padding: 30px 10px 20px 10px;;
+        min-height: 100vh;
 
         .mobile-filters{
             display: flex;
@@ -337,7 +340,7 @@ body{
             width: 100%;
 
             h1{
-                font-size: revert-layer;
+                font-size: 30px;
                 margin-bottom: 20px;
             }
 
@@ -373,10 +376,19 @@ body{
                 display: none;
             }
 
-            .products{   
+            .products{ 
+                display:flex;
+                flex-direction: row;
+                align-self: stretch;
+                justify-content:space-between;
+                margin-top: 40px;
+                flex-wrap: wrap;
+                 
+                
                 .product{
                     width: 45%;
-                
+                    margin-left: 0;
+
                     h3{
                         font-size: 83%;
                     }
@@ -398,12 +410,6 @@ body{
 
         }
     }
-
-    // .footer{
-    //     position: absolute;
-    //     width: 100%;
-    //     bottom: 0;
-    // }
 
 }
 
