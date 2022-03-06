@@ -4,9 +4,17 @@ header.main-header{
     align-items: center;
     justify-content: space-between;
 
-    border: 2px solid $gray-4;
+    border-bottom: 2px solid $gray-4;
     padding: 16px 165px;
     margin-bottom: 40px;
+
+    @media(max-width: 775px){
+        padding: 16px 80px;
+    }
+
+    @media(max-width: 400px){
+        padding: 16px 30px;
+    }
 
     div.bag-area{
         position: relative;

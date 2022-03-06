@@ -16,6 +16,64 @@ article.area-result{
 
         margin-bottom: 64px;
 
+        @media(max-width: 775px){
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        
+        .header-mobile{
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media(max-width: 775px){
+                display: flex;
+            }
+
+            .header-mobile-title{
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 32px;
+                line-height: 44px;
+                color: $gray;
+                margin-bottom: 12px;
+            }
+
+            aside.area-button-filter{
+                width: 300px;
+                height: 40px;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                border: 1px solid $gray-3;
+
+                span.line-height{
+                    height: 100%;
+                    border: 1px solid $gray-3;
+                }
+
+                span.filter-button,
+                span.order-button{
+                    display: flex;
+                    flex-direction: row;
+                    align-content: center;
+                    justify-content: center;
+                    flex: 1;
+
+                    font-family: $main-font;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 33px;
+                    color: $gray-3;
+                }
+            }
+        }
         select{
             height: 42px;
             border: 1px solid $black-2;
@@ -30,6 +88,10 @@ article.area-result{
             font-size: 16px;
             line-height: 22px;
             color: $black;
+
+            @media(max-width: 775px){
+                display: none;
+            }
 
             &:hover{
                 cursor: pointer;
@@ -69,6 +131,14 @@ article.area-result{
             flex: 1;
             margin-bottom: 73px;
             padding: 0px 20px;
+
+            color: $white;
+
+            @media(max-width: 775px){
+                align-items: center;
+                justify-content: center;
+                padding: 0px;
+            }
         }
 
         button.more-elements{

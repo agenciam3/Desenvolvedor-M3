@@ -5,4 +5,18 @@ main.main-content{
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 35px;
+
+    position: relative;
+
+    @media(max-width: 1180px){
+        max-width: 1025px;
+    }
+
+    @media(max-width: 1095px){
+        max-width: 900px;
+    }
+
+    @media(max-width: 1000px){
+        max-width: 700px;
+    }
 }

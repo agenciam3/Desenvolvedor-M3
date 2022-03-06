@@ -8,8 +8,33 @@ fieldset.element-product{
     margin: 25px 32px;
     margin-top: 0px;
 
+    @media(max-width: 1095px){
+        width: 155px;
+        margin: 25px 25px;
+    }
+
+    @media(max-width: 400px){
+        width: 146px;
+        margin: 25px 10px;
+    }
+
+    &.card-none{
+        display: none;
+    }
+
     div.image-product{
         margin-bottom: 10px;
+
+        @media(max-width: 1095px){
+            img{
+                width: 155px;
+            }
+        }
+        @media(max-width: 400px){
+            img{
+                width: 146px;
+            }
+        }
     }
 
     div.description-product{
@@ -31,6 +56,10 @@ fieldset.element-product{
             color: $black;
 
             margin-bottom: 10px;
+
+            @media(max-width: 400px) {
+                font-size: 12px;
+            }
         }
 
         strong.value-product{

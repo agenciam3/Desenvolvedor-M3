@@ -1,0 +1,24 @@
+section.card-buy{
+    width: 230px;
+    padding: 25px 10px;
+    border-radius: 10px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    background-color: $black;
+    
+    position: fixed;
+    bottom: -100vh;
+    right: 18px;
+    z-index: 10;
+
+    transition: 1s ease-out;
+
+
+    span{
+        font-family: $sub-font;
+        color: $white;
+    }
+}
