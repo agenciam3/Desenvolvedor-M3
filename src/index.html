@@ -4,16 +4,302 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
+  
+  <link rel="stylesheet" href="scss/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </head>
 
 <body>
+  <!--inicio da header-->
+  <div class="header">
+    <a href="index.html">
+      <figure class="logo">
+        <img src="img/logo-m3.png" alt="m3_logo"></a>
+      </figure>
+      
+    <div class="header-right">
 
+      <button  onclick="onShoppingBag()" class = "fa fa-shopping-bag"></button>
+      <div id="shppngBg" class="shppngBg">
+        <a href="javascript:void(0)" class="closebtn" onclick="offShoppingBag()">&times;</a>
+        <p class="styleShoppingBag">Carrinho de Compras</p>
+        <div id="shoppingBag">
+
+        </div>   
+      </div>
+    </div>
+  </div>
+  <!--fim da header-->
+
+  <!--inicio parte superior da pagina-->
+  <section class="title_product">
+
+    <div class="title">Blusas</div>
+    <!--inicio botão de filtro de ordenação-->
+    <div class="orderBy">
+      <button class="dropbtn">Ordenar por:<i class="fa fa-angle-down"></i></button>
+      <div class="orderBy-content">
+        <a href="#">Mais recentes</a>
+        <a href="#">Menor preço</a>
+        <a href="#">Maior preço</a>
+      </div>
+    </div>
+    <!--fim botão de filtro de ordenação-->
+  </section>
+  <!--fim parte superior da pagina-->
+
+  <!--inicio parte esquerda da página - filtros-->
+      <div class="column filters">
+        <!--inicio filtro de cores-->
+          <h1 id="colors">CORES</h1>
+          <div>
+            <label class="container lbl">Amarelo
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container lbl">Azul
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container lbl">Branco
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container lbl">Cinza
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label class="container lbl">Laranja
+              <input type="checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <span id="dots"></span><span id="more">
+              <label class="container lbl">Verde
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container lbl">Vermelho
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container lbl">Preto
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container lbl">Rosa
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+              <label class="container lbl">Vinho
+                <input type="checkbox">
+                <span class="checkmark"></span>
+              </label>
+            </span>
+          </div>
+          
+          <a href="#" onclick="myFunction()" id="myBtn">Ver todas as cores</a>
+          <!--fim filtro de cores-->
+          
+        <!--inicio filtro de tamanho-->
+        <h1 id="sizes">TAMANHOS</h1>
+        <div id="sz_selector">
+          <button id="myDIV" onclick="changeBorder('myDIV')" class="sz">P</button>
+          <button id="myDIV1" onclick="changeBorder('myDIV1')" class="sz">M</button>
+          <button id="myDIV2" onclick="changeBorder('myDIV2')" class="sz">G</button>
+          <button id="myDIV3" onclick="changeBorder('myDIV3')" class="sz">GG</button>
+          <button id="myDIV4" onclick="changeBorder('myDIV4')" class="sz">U</button>
+          <button id="myDIV5" onclick="changeBorder('myDIV5')" class="sz">36</button>
+          <button id="myDIV6" onclick="changeBorder('myDIV6')" class="sz">38</button>
+          <button id="myDIV7" onclick="changeBorder('myDIV7')" class="sz">40</button>
+          <button id="myDIV8" onclick="changeBorder('myDIV8')" class="sz">42</button>
+          <button id="myDIV9" onclick="changeBorder('myDIV9')" class="sz">44</button>
+        </div>
+        <!--fim filtro de tamanho-->
+
+        <!--inicio filtro de faixa de preço-->
+        <h1 id="price">FAIXA DE PREÇO</h1>
+        <div id = "prc_selector">
+          <label class="container prc">de R$0 até R$50
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container prc">de R$51 até R$150
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container prc">de R$151 até R$300
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container prc">de R$301 até R$500
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container prc">a partir de R$500
+            <input type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <!--fim filtro de faixa de preço-->
+
+      </div>
+      <!--fim parte esquerda da página - filtros-->
+      <!--inicio parte dos botões do mobile - filtros-->
+      <div class="mobilebuttons">
+        <button onclick="on()" class="mobilebutton">Filtrar</button>
+        <button onclick="on2()" class="mobilebutton2">Ordenar</button>
+      </div>
+      <!--inicio botão filtro mobile - filtros-->
+        <div id="sidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="off()">&times;</a>
+          <div class="mobilebutton_filter">
+            <div class="mobilebutton_title">
+              <p>FILTRAR</p>
+              <button class="dropdown-btn" onclick="drop()">CORES 
+                <i class="fa fa-angle-down"></i>
+              </button>
+              <div class="dropdown-container">
+                <div>
+                  <label class="container lbl_container">Amarelo
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Azul
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Branco
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Cinza
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Laranja
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Verde
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Vermelho
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Preto
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Rosa
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container lbl_container">Vinho
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              
+              </div>
+              <button class="dropdown-btn" onclick="drop()">TAMANHOS 
+                <i class="fa fa-angle-down"></i>
+              </button>
+              <div class="dropdown-container">
+                <div id="sz_container">
+                  <button id="myDIVcontainer" onclick="changeBorder('myDIVcontainer')" class="sz">P</button>
+                  <button id="myDIV1container" onclick="changeBorder('myDIV1container')" class="sz">M</button>
+                  <button id="myDIV2container" onclick="changeBorder('myDIV2container')" class="sz">G</button>
+                  <button id="myDIV3container" onclick="changeBorder('myDIV3container')" class="sz">GG</button>
+                  <button id="myDIV4container" onclick="changeBorder('myDIV4container')" class="sz">U</button>
+                  <button id="myDIV5container" onclick="changeBorder('myDIV5container')" class="sz">36</button>
+                  <button id="myDIV6container" onclick="changeBorder('myDIV6container')" class="sz">38</button>
+                  <button id="myDIV7container" onclick="changeBorder('myDIV7container')" class="sz">40</button>
+                  <button id="myDIV8container" onclick="changeBorder('myDIV8container')" class="sz">42</button>
+                  <button id="myDIV9container" onclick="changeBorder('myDIV9container')" class="sz">44</button>
+                </div>
+              </div>
+              <button class="dropdown-btn" onclick="drop()">FAIXA DE PREÇO 
+                <i class="fa fa-angle-down"></i>
+              </button>
+              <div class="dropdown-container">
+                <div id = "prc_container">
+                  <label class="container prc">de R$0 até R$50
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container prc">de R$51 até R$150
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container prc">de R$151 até R$300
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container prc">de R$301 até R$500
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                  <label class="container prc">a partir de R$500
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div>
+              <button id="apply">APLICAR</button>
+              <button id="clean">LIMPAR</button>
+            </div>
+
+          </div>
+        </div>
+        <!--fim botão filtro mobile - filtros-->
+        <!--inicio botão ordenação mobile - filtros-->
+        <div id="sidenav2" class="sidenav2">
+          <a href="javascript:void(0)" class="closebtn" onclick="off2()">&times;</a>
+          <div class="mobilebutton_filter">
+            <div class="mobilebutton_title">
+              <p>ORDENAR</p>
+            </div>
+            <div class="buttonsOrder">
+              <button class="new">Mais recentes</button>
+              <button class="lowerPrice">Menor preço</button>
+              <button class="higherPrice">Maior preço</button>
+            </div>
+          </div>
+          <!--fim botão ordenação mobile - filtros-->
+        </div>
+        <!--fim parte dos botões do mobile - filtros-->
+
+
+      <!-- disposição dos produtos-->
+      <div id="products">
+        
+      </div>
+
+     
+    <!--inicio botão carregar mais-->
+  <section class="loadmoreSection">
+    <button class="loadmoreButton">CARREGAR MAIS</button>
+  </section>
+    <!--fim botão carregar mais-->
+    <!--inicio footer-->
+  <footer class="footer">
+    <p class="footertext">
+      M3: Implantação de E-commerce VTEX
+    </p>
+  </footer>
+  <!--fim footer-->
+
+
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
-<h1>Desafio m3</h1>
 
-<script src="bundle.js"></script>
+
 
 </html>
