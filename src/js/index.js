@@ -6,6 +6,7 @@ var ordered = new Array;
 var filtersApplyed = new Array;
 var filterDesktop = true;
 
+//Função responsável por filtrar os produtos pelo preço
 function filterPrice(product, key){ 
     if(key == "0-to-50"){
         return (product.price>= 0 && product.price<=50) ? true : false; 
@@ -20,10 +21,11 @@ function filterPrice(product, key){
     }
 }
 
+//Função aplicar os filtros segundo os critérios selecionados pelo usuário (armazenados no array filtersApplyed)
 function applyFilter(filtersApplyed){ 
-    var filteredColors = new Array
-    var filteredSizes = new Array
-    var filteredPrices = new Array
+    var filteredColors = new Array;
+    var filteredSizes = new Array;
+    var filteredPrices = new Array;
 
     filtersApplyed.sort(function compare(a, b) {
         if (a[0] < b[0]) return -1;
@@ -31,12 +33,12 @@ function applyFilter(filtersApplyed){
         return 0;
     })
 
-    filteredColors = filtersApplyed.filter(elem => elem[0] == 'color').map(elem => elem[1])
-    filteredSizes = filtersApplyed.filter(elem => elem[0] == 'size').map(elem => elem[1])
-    filteredPrices = filtersApplyed.filter(elem => elem[0] == 'price').map(elem => elem[1])
+    filteredColors = filtersApplyed.filter(elem => elem[0] == 'color').map(elem => elem[1]);
+    filteredSizes = filtersApplyed.filter(elem => elem[0] == 'size').map(elem => elem[1]);
+    filteredPrices = filtersApplyed.filter(elem => elem[0] == 'price').map(elem => elem[1]);
 
 
-    var filteredProducts = new Array
+    var filteredProducts = new Array;
 
     filteredProducts = productsArray.filter(product =>{
         if((filteredColors.length == 0 ? true : filteredColors.some(color => product.color == color)) && (filteredSizes.length == 0 ? true :filteredSizes.some(size => product.size.some(elem => elem == size))) && (filteredPrices.length == 0 ? true : filteredPrices.some(price => filterPrice(product, price)))){
@@ -48,26 +50,29 @@ function applyFilter(filtersApplyed){
 
     if(ordered.length == 0){
         document.querySelector(".products").innerHTML = ""; 
-        showProducts(filteredProducts)
+        showProducts(filteredProducts);
 
     }else{
-        orderProducts(ordered[0][0], ordered[0][1])
+        orderProducts(ordered[0][0], ordered[0][1]);
     }
 }
 
+//Função responsável por remover os filtros 
 function removeFilter(param){   
-    filtersApplyed = filtersApplyed.filter(filter => filter[1] != param[1])
+    filtersApplyed = filtersApplyed.filter(filter => filter[1] != param[1]);
     if(filterDesktop){
         if(filtersApplyed.length === 0){
             document.getElementById("products").innerHTML = "";
-            showProducts(productsArray)
+            showProducts(productsArray);
         }else{
-            applyFilter(filtersApplyed)
+            applyFilter(filtersApplyed);
         }
     }
         
 }
 
+//Função responsável pelo funcionamento dos checkboxes de cor e preço
+//Caso o usuário esteja utilizando o site na versão desktop os filtros serão aplicados no momento da seleção
 function checkbox(){    
     var btn = Array.from(document.querySelectorAll(".checkbox"));
     btn.map(elem => {
@@ -81,22 +86,22 @@ function checkbox(){
                 checked.style.display = 'none';
                 if(filterDesktop){
                     if(elem.getAttribute("id")=='color'){
-                        removeFilter([elem.getAttribute("id"), elem.getAttribute("color")])     
+                        removeFilter([elem.getAttribute("id"), elem.getAttribute("color")]);    
                     }else{
-                        removeFilter([elem.getAttribute("id"), elem.getAttribute("price")])                 
+                        removeFilter([elem.getAttribute("id"), elem.getAttribute("price")]);                
                     }  
                 }                      
             }else{
                 checked.style.display = 'block';
                 if(elem.getAttribute("id")=='color'){
-                    filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")])
+                    filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")]);
                     if(filterDesktop){
-                        applyFilter(filtersApplyed)
+                        applyFilter(filtersApplyed);
                     }            
                 }else{
-                    filtersApplyed.push(["price", elem.getAttribute("price")])
+                    filtersApplyed.push(["price", elem.getAttribute("price")]);
                     if(filterDesktop){
-                        applyFilter(filtersApplyed)
+                        applyFilter(filtersApplyed);
                     }             
                 }              
             }
@@ -104,6 +109,8 @@ function checkbox(){
     });
 }
 
+//Função responsável pelo funcionamento dos checkboxes de tamanho
+//Caso o usuário esteja utilizando o site na versão desktop os filtros serão aplicados no momento da seleção
 function checkboxBtn(){
     var btn = Array.from(document.querySelectorAll(".checkbox-btn"));
     btn.map(elem => {
@@ -131,43 +138,53 @@ function checkboxBtn(){
 
 }
 
+//Função responsável por mostrar os produtos ocultos
 function getAdditionalColors(){
     var link = document.getElementById('see-more');
-    var div = document.querySelector(".additional-colors")
+    var div = document.querySelector(".additional-colors");
     link.onclick = function (e) {  
         e.preventDefault();
         if(div.style.display === 'block'){
              div.style.display = 'none';
-             link.innerHTML = `Veja todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i>`
+             link.innerHTML = `Veja todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i>`;
         }else{
             div.style.display = 'block';
-            link.innerHTML= `Veja menos cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-up"></i>`
+            link.innerHTML= `Veja menos cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-up"></i>`;
         }
     };
 }
 
+//Função responsável por ordenar os produtos 
 function orderProducts(type, asc){
     var orderedArray = filtersApplyed.length === 0 ? productsArray : filtered;
 
-    if(asc){
+    if(type == "date"){
         orderedArray.sort(function compare(a, b) {
-            if (a[type] < b[type]) return -1;
-            if (a[type] > b[type]) return 1;
-            return 0;
+            let dateA = new Date(a[type]);
+            let dateB = new Date(b[type]);
+            return dateA < dateB ? 1 : dateA > dateB ? -1 : 0          
         })
     }else{
-        orderedArray.sort(function compare(a, b) {
-            if (a.price > b.price) return -1;
-            if (a.price < b.price) return 1;
-            return 0;
-        })
-    } 
+        if(asc){
+            orderedArray.sort(function compare(a, b) {
+                if (a[type] < b[type]) return -1;
+                if (a[type] > b[type]) return 1;
+                return 0;
+            })
+        }else{
+            orderedArray.sort(function compare(a, b) {
+                if (a.price > b.price) return -1;
+                if (a.price < b.price) return 1;
+                return 0;
+            })
+        } 
+    }
     
     document.getElementById("products").innerHTML = "";
     showProducts(orderedArray);
 }
 
-
+//Função responsável pelo funcionamento do select 
 function selector(){
     var btn = document.getElementById('selector');
     var options = document.querySelector('.options');
@@ -189,8 +206,8 @@ function selector(){
             let orderType = elem.getAttribute("ordertype");
             ordered.length = 0;
             if(orderType == "recent"){
-                ordered.push(["date",true]);
-                orderProducts("date",true);
+                ordered.push(["date",false]);
+                orderProducts("date",false);
             }else if(orderType == "low-price"){
                 ordered.push(["price",true]);
                 orderProducts("price",true);
@@ -202,6 +219,7 @@ function selector(){
     });
 }
 
+//Função responsável por carregar os produtos 
 function getProducts(){
     fetch('http://localhost:5000/products')
         .then(res => res.json())
@@ -214,12 +232,13 @@ function getProducts(){
         });
 }
 
+//Função responsável por mostrar os produtos na tela
 function showProducts(products){   
     if(products.length > 6){
         showMoreProducts(products)
-        document.querySelector(".load-more-btn").style.display = 'block' 
+        document.querySelector(".load-more-btn").style.display = 'block'; 
     }else{
-        document.querySelector(".load-more-btn").style.display = 'none'
+        document.querySelector(".load-more-btn").style.display = 'none';
     }
     products = products.slice(0,6);
     
@@ -242,6 +261,7 @@ function showProducts(products){
     addToCart();
 }
 
+//Função responsável por mostrar os produtos adicionais na tela (carregar mais)
 function showMoreProducts(products){
     products = products.slice(6);
     document.querySelector(".load-more-btn").onclick = function(){
@@ -265,6 +285,10 @@ function showMoreProducts(products){
     addToCart();
 }
 
+//Função responsável por adicionar os produtos ao carrinho
+//Os produtos são armazenados no localstorage com id do produto e preço
+//console.log(localStorage) mostra no console os produtos no carrinho
+//Para fins de teste os produtos são removidos do carrinho ao recarregar a página (localstorage.clear() => vide função main)
 function addToCart(){
     let productToAdd = Array.from(document.querySelectorAll(".add"));
     productToAdd.map(elem => {
@@ -287,6 +311,7 @@ function addToCart(){
     });
 }
 
+//Função responsável pelo funcionamento da ordenação mobile
 function orderMobile(){
     var btn = document.getElementById("order-mobile");
     var divOrder = document.querySelector(".div-mobile-order");
@@ -315,7 +340,7 @@ function orderMobile(){
             let orderType = elem.getAttribute("ordertype");
             divOrder.style.display = 'none';
             divDesktop.style.display = 'block';
-            let selectDesktop = document.querySelector(".catalog .selector")
+            let selectDesktop = document.querySelector(".catalog .selector");
 
             if(orderType == "recent"){
                 orderProducts("date",true);
@@ -332,8 +357,9 @@ function orderMobile(){
 
 }
 
+//Função responsável por mostrar os produtos selecionados no desktop caso o usuário utilize o filtro mobile
 function showCheckedDesktop(){
-    let allChecks = Array.from(document.querySelectorAll(".filters .checkbox-div .checkbox"))
+    let allChecks = Array.from(document.querySelectorAll(".filters .checkbox-div .checkbox"));
     allChecks.map(elem =>{
         elem.firstElementChild.style.display = 'none';
         filtersApplyed.map(element => {
@@ -342,7 +368,7 @@ function showCheckedDesktop(){
         })
     })
 
-    let allChecksBtn = Array.from(document.querySelectorAll(".filters .sizes .checkbox-btn"))
+    let allChecksBtn = Array.from(document.querySelectorAll(".filters .sizes .checkbox-btn"));
     allChecksBtn.map(elem =>{
         elem.style.border = "1.5px solid gray";
         filtersApplyed.map(element => {
@@ -355,6 +381,7 @@ function showCheckedDesktop(){
     
 }
 
+//Função responsável por mostrar os produtos selecionados no mobile caso o usuário utilize o filtro desktop
 function showCheckedMobile(){
     let allChecks = Array.from(document.querySelectorAll(".expand .checkbox-div .checkbox"))
     allChecks.map(elem =>{
@@ -377,31 +404,33 @@ function showCheckedMobile(){
     })
 }
 
+//Função responsável por expandir os filtros mobile
 function expandFilter(){
     let expand = Array.from(document.querySelectorAll(".material-icons.expand-filter"));
-    let applyDiv = document.querySelector(".apply-filters")
+    let applyDiv = document.querySelector(".apply-filters");
     expand.map(elem => {
         let divColor = elem.parentElement.nextElementSibling
         elem.onclick = function (e) {
             e.preventDefault();
             if(divColor.style.display == 'block'){
-                divColor.style.display = 'none'
-                elem.textContent = "add"
+                divColor.style.display = 'none';
+                elem.textContent = "add";
                 
             }else{
-                divColor.style.display = 'block'
-                applyDiv.style.display = 'flex'
-                elem.textContent = "remove"
+                divColor.style.display = 'block';
+                applyDiv.style.display = 'flex';
+                elem.textContent = "remove";
             }
 
             let expanded = expand.filter(elem => elem.textContent == "remove");
             if(expanded.length == 0){
-                applyDiv.style.display = 'none'
+                applyDiv.style.display = 'none';
             }
         };
     });
 }
 
+//Função responsável pelos filtros mobile
 function filterMobile(){
     var btn = document.getElementById("filter-mobile");
     var divFilter = document.querySelector(".div-mobile-filter");
@@ -427,24 +456,24 @@ function filterMobile(){
 
     var checked = Array.from(document.querySelectorAll(".checked"));
     var checkbox = Array.from(document.querySelectorAll(".expand .checkbox"));
-    var allChecksBtn = Array.from(document.querySelectorAll(".expand .sizes .checkbox-btn"))
+    var allChecksBtn = Array.from(document.querySelectorAll(".expand .sizes .checkbox-btn"));
     
     document.querySelector(".apply").onclick = function(e){
         e.preventDefault();
         filtersApplyed.length = 0;
         checkbox.map(elem => {
             if(elem.firstElementChild.style.display == 'block'){
-                filtersApplyed.push([elem.getAttribute('id'), elem.getAttribute('content') ])
+                filtersApplyed.push([elem.getAttribute('id'), elem.getAttribute('content') ]);
             }
         })
         allChecksBtn.map(elem =>{
             if(elem.style.border == '1.5px solid rgb(0, 192, 238)'){
-                filtersApplyed.push(['size', elem.getAttribute('content') ])
+                filtersApplyed.push(['size', elem.getAttribute('content') ]);
             }
         })
 
         document.querySelector(".products").innerHTML = "";
-        filtersApplyed.length == 0 ? showProducts(productsArray) : applyFilter(filtersApplyed)       
+        filtersApplyed.length == 0 ? showProducts(productsArray) : applyFilter(filtersApplyed);       
         divFilter.style.display = 'none';
         divDesktop.style.display = 'block';
         showCheckedDesktop();
@@ -462,6 +491,7 @@ function filterMobile(){
     }
 }
 
+//Função principal
 function main(){
     getProducts();
     localStorage.clear();
