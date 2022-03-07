@@ -7,12 +7,279 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
+
+  <!--Icons-->
+  <link rel="shortcut icon" href="../../images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 </head>
 
 <body>
 
+  <!-- Mobile Section Start-->
+  <nav class="mobile-page" id="mobile-order-page">
+    <div class="mobile-title-menu">ORDERNAR <img id="close" class="closeButtons" src="./img/imageX.svg" alt=""></div>
+    <ul mobile="true">
+      <li class="option" id="most-recent"><a href="#">Mais recente</a></li>
+      <li class="option" id="lowest-price"><a href="#">Menor preço</a></li>
+      <li class="option" id="highest-price"><a href="#">Maior preço</a></li>
+    </ul>
+  </nav>
+
+  <nav class="mobile-page" id="mobile-filter-page">
+
+    <div class="mobile-title-menu">FILTRAR <img id="close" class="closeButtons" src="./img/imageX.svg" alt=""></div>
+
+    <div class="mobile-options"> CORES <img src="./img/imagevector1.svg" alt=""></div>
+
+    <div class="mobile-product-filter" id="mobile-option-color" show="false">
+
+      <div class="checkbox-filter" id="colors">
+
+        <div class="checkbox-option" id="colors" mobile="true">
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mobile-options"> TAMANHOS <img src="./img/imagevector1.svg" alt=""></div>
+
+    <div class="mobile-product-filter" id="mobile-option-size" show="false">
+      <div class="box">
+        <div class="options-size">
+
+          <div class="check" selected=false mobile="true">P</div>
+          <div class="check" selected=false mobile="true">M</div>
+          <div class="check" selected=false mobile="true">G</div>
+          <div class="check" selected=false mobile="true">GG</div>
+          <div class="check" selected=false mobile="true">U</div>
+          <div class="check" selected=false mobile="true">36</div>
+          <div class="check" selected=false mobile="true">38</div>
+          <div class="check" selected=false mobile="true">40</div>
+          <div class="check" selected=false mobile="true">42</div>
+          <div class="check" selected=false mobile="true">44</div>
+          <div class="check" selected=false mobile="true">46</div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="mobile-options"> FAIXA DE PREÇO <img src="./img/imagevector1.svg" alt=""></div>
+
+    <div class="mobile-product-filter" id="mobile-option-price" show="false">
+      <div class="checkbox-filter">
+        <div class="checkbox-option" id="prices">
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$0 até R$50</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$51 até R$150</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$151 até R$300</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>de R$301 até R$500</span>
+          </div>
+
+          <div class="check" selected=false mobile="true">
+            <div class="button">
+              <div class="custom-box"></div>
+            </div>
+            <span>a partir de R$500</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-filter-buttons">
+      <button class="button-mobile-filter" id="apply">APLICAR</button>
+      <button class="button-mobile-filter" id="reset">LIMPAR</button>
+    </div>
+
+  </nav>
+  <!-- Mobile Section End -->
+
+  <header>
+    <div id="logo">
+      <a href="">
+        <img src="./img/logo-m3.png" alt="Logo">
+      </a>
+    </div>
+
+    <div id="cart">
+      <a href="">
+        <img src="./img/image3.svg" alt="cart-icon">
+        <div>
+          <span id="quantity-cart">0</span>
+        </div>
+      </a>
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="sub-menu">
+
+      <span>Blusas</span>
+
+      <ul id="dropdown">
+        <li id="standard"><a href="#" id="standard-text">Ordernar por: <img src="./img/imagevector1.svg"
+              alt="cart-icon"></a>
+          <ul>
+            <li class="option" id="most-recent"><a href="#">Mais recente</a></li>
+            <li class="option" id="lowest-price"><a href="#">Menor preço</a></li>
+            <li class="option" id="highest-price"><a href="#">Maior preço</a></li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <div class="mobile-menu">
+
+      <div class="mobile-menu-options" id="mobile-filter">
+        Filtrar
+      </div>
+
+      <div class="mobile-menu-options" id="mobile-order">
+        Ordernar
+      </div>
+
+    </div>
+
+    <div class="filter-and-products">
+
+      <div class="product-filter">
+
+        <div class="checkbox-filter" id="colors">
+
+          <span class="title">CORES</span>
+
+          <div class="checkbox-option" id="colors">
+          </div>
+
+          <span id="all-colors">Ver todas as cores <img src="./img/imagevector1.svg" alt="cart-icon"></span>
+
+
+        </div>
+
+        <div class="box">
+
+          <span class="title">TAMANHO</span>
+
+          <div class="options-size">
+
+            <div class="check" selected=false>P</div>
+            <div class="check" selected=false>M</div>
+            <div class="check" selected=false>G</div>
+            <div class="check" selected=false>GG</div>
+            <div class="check" selected=false>U</div>
+            <div class="check" selected=false>36</div>
+            <div class="check" selected=false>38</div>
+            <div class="check" selected=false>40</div>
+            <div class="check" selected=false>42</div>
+            <div class="check" selected=false>44</div>
+            <div class="check" selected=false>46</div>
+
+          </div>
+
+        </div>
+
+        <div class="checkbox-filter" id="prices">
+
+          <span class="title">FAIXA DE PREÇO</span>
+
+          <div class="checkbox-option" id="prices">
+
+            <div class="check" selected=false>
+              <div class="button">
+                <div class="custom-box"></div>
+              </div>
+              <span>de R$0 até R$50</span>
+            </div>
+
+            <div class="check" selected=false>
+              <div class="button">
+                <div class="custom-box"></div>
+              </div>
+              <span>de R$51 até R$150</span>
+            </div>
+
+            <div class="check" selected=false>
+              <div class="button">
+                <div class="custom-box"></div>
+              </div>
+              <span>de R$151 até R$300</span>
+            </div>
+
+            <div class="check" selected=false>
+              <div class="button">
+                <div class="custom-box"></div>
+              </div>
+              <span>de R$301 até R$500</span>
+            </div>
+
+            <div class="check" selected=false>
+              <div class="button">
+                <div class="custom-box"></div>
+              </div>
+              <span>a partir de R$500</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="main-label">
+
+        <div class="product-list" id="product-list"></div>
+
+        <div class="show-more">
+          <button>
+            CARREGAR MAIS
+          </button>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </main>
+
+  <footer>
+    <div>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</div>
+  </footer>
+
 </body>
-<h1>Desafio m3</h1>
+
 
 <script src="bundle.js"></script>
 
