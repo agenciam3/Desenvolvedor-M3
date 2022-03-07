@@ -7,13 +7,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
 
-</body>
-<h1>Desafio m3</h1>
+  <header>
+    <div>
+      <img id="logo" src="./img/logo-m3.png" />
+      <button id="bag"><img src="./img/bag.png" />
+        <span class="items-count">0</span>
+      </button>
+    </div>
+  </header>
 
+  <main>
+    <div id="section-name-and-sort-dropdown" class="content">
+      <div class="content-area">
+        <h1 class="section-name">Blusas</h1>
+        <ul class="dropdown">
+          <li id="sort-by-desktop">
+            <a id="dropdown-sort-by-active-item" class="dropdown-active-item">
+              Ordenar por:
+              <span>
+                <img src="./img/arrow.png" />
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="mobile-filters" class="content">
+      <div class="content-area">
+        <div class="mobile-filters">
+          <h1 id="mobile-filter-toggle" class="item-filter">Filtrar</h1>
+          <div id="mobile-filter" class="modal">
+            <div class="modal-title">Filtrar
+              <span id="close-modal-mobile-filter"><img src="./img/close.svg"></span>
+            </div>
+            <div id="filters-mobile" class="filters">
+              <!-- Os filtros serao carregados aqui -->
+            </div>
+            <div class="filter-actions">
+              <button id="apply-filter" class="btn-primary">Aplicar</button>
+              <button id="clean-filter" class="btn-white">Limpar</button>
+            </div>
+          </div>
+          <h1 id="mobile-sort-toggle" class="item-filter">Ordenar</h1>
+          <div id="mobile-sort" class="modal">
+            <div class="modal-title">Ordenar
+              <span id="close-modal-mobile-sort"><img src="./img/close.svg"></span>
+            </div>
+            <div id="sort-by-mobile">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="products-area">
+        <div id="filters-desktop" class="filters">
+          <!-- Os filtros serao carregados aqui -->
+        </div>
+
+        <div>
+          <div class="products-wrapper">
+            <div class="products">
+              <!-- Os produtos que vem da API deverão ser carregados aqui -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="load-more">
+        <button id="load-more" class="btn-load-more btn-primary"> CARREGAR MAIS</button>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</footer>
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="bundle.js"></script>
 
 </html>

@@ -1,0 +1,60 @@
+@import "variables";
+
+.dropdown {
+  margin: 0;
+  padding: 0;
+
+  &:hover {
+    background-color: $gray5;
+  }
+
+  @media (max-width: $md) {
+    display: none;
+  }
+
+  .dropdown-active-item {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    color: $black;
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 36px;
+    border: 1px solid $black;
+    width: 130px;
+  }
+
+  .dropdown-items {
+    display: none;
+    position: absolute;
+    border: 1px solid $black;
+    border-top: 0px;
+    background: $white;
+
+    :first-child {
+      display: none;
+    }
+
+    .dropdown-item {
+      cursor: pointer;
+      color: $black;
+      padding: 0px 10px;
+      height: 40px;
+      line-height: 36px;
+      width: 130px;
+
+      &:hover {
+        background: $primary-color;
+        color: $white;
+      }
+    }
+  }
+}
+
+// css for mobile sort
+@media (max-width: $md) {
+  .dropdown-item {
+    padding: 30px 16px;
+    font-size: 22px;
+  }
+}
