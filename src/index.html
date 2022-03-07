@@ -2,17 +2,339 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
+    <div class="div-mobile-order" id="div-mobile-order">
+        <div class="header" style="padding:20px 20px;"> 
+            <h2 style="padding-top:5px;">ORDENAR</h2>
+            <span id="order-back-icon" class="material-icons" style="font-size: 24px; cursor: pointer;">close</span>
+        </div> 
+        <a class="op-mobile" ordertype="recent"> Mais recentes</a>
+        <a class="op-mobile" ordertype="low-price">Menor preço</a>
+        <a class="op-mobile" ordertype="price">Maior preço</a>    
+    </div>
 
+    <div class="div-mobile-filter" id="div-mobile-filter">
+        <div class="header" style="padding:20px 20px;"> 
+            <h2 style="padding-top:5px;">FILTRAR</h2>
+            <span id="filter-back-icon" class="material-icons" style="font-size: 24px; cursor: pointer;">close</span>
+        </div> 
+        <div class="filter-mobile-options" id="colors-mobile">
+            <h2 style="padding-top:5px;">CORES</h2>
+            <span class="material-icons expand-filter" style="font-size: 24px; cursor: pointer;">add</span>
+        </div> 
+        <div class="expand" id="expand-colors">
+            <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Amarelo" content="Amarelo">
+                    <div class="checked"></div>
+                </div>
+                <p>Amarelo</p>
+            </div>
+    
+            <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Azul" content="Azul">
+                    <div class="checked"></div>
+                </div>
+                <p>Azul</p>
+            </div>
+    
+            <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Branco" content="Branco">
+                    <div class="checked"></div>
+                </div>
+                <p>Branco</p>
+            </div>
+    
+            <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Cinza" content="Cinza">
+                    <div class="checked"></div>
+                </div>
+                <p>Cinza</p>
+            </div>
+    
+            <div class="checkbox-div">
+              <div class="checkbox" id="color" color="Laranja" content="Laranja">
+                  <div class="checked"></div>
+              </div>
+              <p>Laranja</p>
+            </div>
+
+            <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Rosa" content="Rosa">
+                    <div class="checked"></div>
+                </div>
+                <p>Rosa</p>
+              </div>
+
+              <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Preto" content="Preto">
+                    <div class="checked"></div>
+                </div>
+                <p>Preto</p>
+              </div>
+
+              <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Vinho" content="Vinho">
+                    <div class="checked"></div>
+                </div>
+                <p>Vinho</p>
+              </div>
+        </div>  
+        <div class="filter-mobile-options" id="sizes-mobile">
+            <h2 style="padding-top:5px;">TAMANHOS</h2>
+            <span class="material-icons expand-filter" style="font-size: 24px; cursor: pointer;">add</span>
+        </div>
+        <div class="expand">
+            <div class="sizes">
+                <button class="checkbox-btn" size="P" active="false" content="P">P</button>
+                <button class="checkbox-btn" size="M" active="false" content="M">M</button>
+                <button class="checkbox-btn" size="G" active="false" content="G">G</button>
+                <button class="checkbox-btn" size="GG" active="false" content="GG">GG</button>
+              </div>
+              <div class="sizes">
+                <button class="checkbox-btn" size="U" active="false" content="U">U</button>
+                <button class="checkbox-btn" size="36" active="false" content="36">36</button>
+                <button class="checkbox-btn" size="38" active="false" content="38">38</button>
+                <button class="checkbox-btn" size="40" active="false" content="40">40</button>
+              </div>
+              <div class="sizes">
+                <button class="checkbox-btn" size="42" active="false" content="42">42</button>
+                <button class="checkbox-btn" size="44" active="false" content="44">44</button>
+                <button class="checkbox-btn" size="46" active="false" content="46">46</button>
+              </div>
+        </div> 
+        <div class="filter-mobile-options" id="prices-mobile">
+            <h2 style="padding-top:5px;">FAIXA DE PREÇO</h2>
+            <span class="material-icons expand-filter" style="font-size: 24px; cursor: pointer;">add</span>
+        </div> 
+        <div class="expand">
+            <div class="checkbox-div">
+                <div class="checkbox" id="price" price="0-to-50" content="0-to-50">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$0 até R$50</p>
+            </div>
+  
+            <div class="checkbox-div">
+                <div class="checkbox" id="price" price="51-to-150" content="51-to-150">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$51 até R$150</p>
+            </div>
+    
+            <div class="checkbox-div">
+                <div class="checkbox" id="price" price="151-to-300" content="151-to-300">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$151 até R$300</p>
+            </div>
+    
+            <div class="checkbox-div">
+                <div class="checkbox" id="price" price="301-to-500" content="301-to-500">
+                    <div class="checked"></div>
+                </div>
+                <p>de R$301 até R$500</p>
+            </div>
+    
+            <div class="checkbox-div">
+            <div class="checkbox" id="price" price="over-500" content="over-500">
+                <div class="checked"></div>
+            </div>
+            <p>a partir de R$501</p>
+            </div>
+        </div> 
+        
+        <div class="apply-filters">
+            <button class="apply">APLICAR</button>
+            <button class="remove">LIMPAR</button>
+        </div>
+    </div>
+
+    <div class="desktop">
+        <div class="header">
+            <img src="./img/logo-m3.png">
+            <div class="cart-icon">
+              <span class="material-icons" style="font-size: 30px;">shopping_bag</span>
+              <div id="qtd" class="qtd">0</div>
+            </div>
+            
+        </div>
+
+        <div class="main-container" id="main">
+              <div class="mobile-filters">
+                  <h1>Blusas</h1>
+                  <div class="filter-order-buttons">
+                      <button class="mobile-button" id="filter-mobile" style="border-right:0px;">Filtrar</button> 
+                      <button class="mobile-button" id="order-mobile">Ordenar</button> 
+                  </div>      
+              </div>
+      
+            <div class="filters">
+                <h1>Blusas</h1>
+                <h3 style="font-weight: 500;">CORES</h3>
+                
+                <div class="checkbox-div">
+                    <div class="checkbox" id="color" color="Amarelo" content="Amarelo">
+                        <div class="checked"></div>
+                    </div>
+                    <p>Amarelo</p>
+                </div>
+        
+                <div class="checkbox-div">
+                    <div class="checkbox" id="color" color="Azul" content="Azul">
+                        <div class="checked"></div>
+                    </div>
+                    <p>Azul</p>
+                </div>
+        
+                <div class="checkbox-div">
+                    <div class="checkbox" id="color" color="Branco" content="Branco">
+                        <div class="checked"></div>
+                    </div>
+                    <p>Branco</p>
+                </div>
+        
+                <div class="checkbox-div">
+                    <div class="checkbox" id="color" color="Cinza" content="Cinza">
+                        <div class="checked"></div>
+                    </div>
+                    <p>Cinza</p>
+                </div>
+        
+                <div class="checkbox-div">
+                <div class="checkbox" id="color" color="Laranja" content="Laranja">
+                    <div class="checked"></div>
+                </div>
+                <p>Laranja</p>
+                </div>
+      
+                <div class="additional-colors">
+                    <div class="checkbox-div">
+                        <div class="checkbox" id="color" color="Rosa" content="Rosa">
+                            <div class="checked"></div>
+                        </div>
+                        <p>Rosa</p>
+                    </div>
+        
+                    <div class="checkbox-div">
+                        <div class="checkbox" id="color" color="Preto" content="Preto">
+                            <div class="checked"></div>
+                        </div>
+                        <p>Preto</p>
+                    </div>
+        
+                    <div class="checkbox-div">
+                        <div class="checkbox" id="color" color="Vinho" content="Vinho">
+                            <div class="checked"></div>
+                        </div>
+                        <p>Vinho</p>
+                    </div>
+                </div>
+              
+                <a id="see-more">Ver todas as cores <i style="margin-left: 5px;" class="fa fa-solid fa-angle-down"></i></a>
+      
+              
+              
+                <h3 style="font-weight: 500; margin-bottom: 10px;">TAMANHOS</h3>
+                <div class="sizes">
+                    <button class="checkbox-btn" size="P" active="false" content="P">P</button>
+                    <button class="checkbox-btn" size="M" active="false" content="M">M</button>
+                    <button class="checkbox-btn" size="G" active="false" content="G">G</button>
+                    <button class="checkbox-btn" size="GG" active="false" content="GG">GG</button>
+                </div>
+                <div class="sizes">
+                    <button class="checkbox-btn" size="U" active="false" content="U">U</button>
+                    <button class="checkbox-btn" size="36" active="false" content="36">36</button>
+                    <button class="checkbox-btn" size="38" active="false" content="38">38</button>
+                    <button class="checkbox-btn" size="40" active="false" content="40">40</button>
+                </div>
+                <div class="sizes">
+                    <button class="checkbox-btn" size="42" active="false" content="42">42</button>
+                    <button class="checkbox-btn" size="44" active="false" content="44">44</button>
+                    <button class="checkbox-btn" size="46" active="false" content="46">46</button>
+                </div>
+      
+                <h3 style="font-weight: 500;">FAIXA DE PREÇO</h3>
+      
+                <div class="checkbox-div">
+                    <div class="checkbox" id="price" price="0-to-50" content="0-to-50">
+                        <div class="checked"></div>
+                    </div>
+                    <p>de R$0 até R$50</p>
+                </div>
+      
+                <div class="checkbox-div">
+                    <div class="checkbox" id="price" price="51-to-150" content="0-to-50">
+                        <div class="checked"></div>
+                    </div>
+                    <p>de R$51 até R$150</p>
+                </div>
+        
+                <div class="checkbox-div">
+                    <div class="checkbox" id="price" price="151-to-300" content="151-to-300">
+                        <div class="checked"></div>
+                    </div>
+                    <p>de R$151 até R$300</p>
+                </div>
+        
+                <div class="checkbox-div">
+                    <div class="checkbox" id="price" price="301-to-500" content="301-to-500">
+                        <div class="checked"></div>
+                    </div>
+                    <p>de R$301 até R$500</p>
+                </div>
+        
+                <div class="checkbox-div">
+                <div class="checkbox" id="price" price="over-500" content="over-500">
+                    <div class="checked"></div>
+                </div>
+                <p>a partir de R$501</p>
+                </div>
+      
+            
+            </div>
+      
+            <div class="catalog" id="catalog">
+                <div class="select-div">
+                    <ul class="select">
+                        <li>
+                            <a id="selector" class="selector">Ordenar por: <i class="fa fa-solid fa-angle-down"></i></a>
+                            <ul class="options">
+                                <li>
+                                    <a class="op" ordertype="recent"> Mais recentes</a>
+                                    <a class="op" ordertype="low-price">Menor preço</a>
+                                    <a class="op" ordertype="price">Maior preço</a>
+                                </li>
+                            </ul>
+                          </li>
+                    </ul>
+                </div>
+                <div class="products" id="products"></div>  
+                <div class="load-more">
+                    <button class="load-more-btn">CARREGAR MAIS</button>     
+                </div>           
+            </div>
+          
+          </div>
+      
+          <div class="footer">
+            Agência M3 - Agência de Performance Digital 
+          </div>
+    </div>
+    
 </body>
-<h1>Desafio m3</h1>
 
 <script src="bundle.js"></script>
 
