@@ -22,11 +22,14 @@ export default function setTamanhos(lista, optForm) {
   sizeHolder.classList.add("size-holder");
   optForm.appendChild(sizeHolder);
 
+  let selected = [];
   uniqueSizes.map(un => {
     const btnSize = document.createElement("button");
     btnSize.addEventListener("click", function (e) {
       e.preventDefault();
       this.classList.add("size-item-selected");
+      selected.push(this.innerHTML);
+      //console.log(selected)
     });
     btnSize.classList.add("size-item");
     btnSize.innerHTML = un;

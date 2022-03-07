@@ -64,25 +64,31 @@ function renderMobContent(val, val2) {
   if (viewportWidth <= 1024) {
 
     //BUTTONS
+    const btHolder = document.createElement("div");
+    btHolder.classList.add("filtrar-ord");
+
     const filterBtn = document.createElement("button");
-    const target = document.querySelector(".filters");
+    const target = document.querySelector(".filters-title-page");
+    target.after(btHolder);
+
     filterBtn.setAttribute("type", "button");
     filterBtn.classList.add("mob-filtrar");
     filterBtn.innerHTML = "Filtrar";
-    target.before(filterBtn);
+    btHolder.appendChild(filterBtn);
     filterBtn.addEventListener("click", function (e) {
       e.preventDefault();
       filtrarMob(varFunc, helperFunction, lista);
     });
+    btHolder.appendChild(filterBtn);
 
     const orderBtn = document.createElement("button");
     orderBtn.setAttribute("type", "button");
     orderBtn.classList.add("mob-ordenar");
     orderBtn.innerHTML = "Ordenar";
-    target.before(orderBtn);
-
+    target.after(orderBtn);
+    btHolder.appendChild(orderBtn);
   } else {
-    console.log("oi")
+    //console.log("oi")
   }
 
 }

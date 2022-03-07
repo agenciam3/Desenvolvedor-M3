@@ -16,7 +16,7 @@ export default function api() {
     })
     .then(function (data) {
 
-      lista = data;
+      lista = data
       const filterLeft = document.querySelector(".filters");
       const optForm = document.querySelector(".opt-filters");
 

@@ -1,6 +1,7 @@
 export default function setProducts(lista) {
+
   const prodContainer = document.querySelector(".products");
-  lista.map(item => {
+  lista.slice(0, 9).map(item => {
     const prod = document.createElement("div");
     prod.classList.add("prod-card");
 
@@ -34,4 +35,5 @@ export default function setProducts(lista) {
 
     prodContainer.appendChild(prod);
   })
+
 }

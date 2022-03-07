@@ -3,7 +3,7 @@ export default function setCores(lista, setAttributes) {
 
   let repeatedColors = [];
   let unique = [];
-  //console.log(lista)
+  console.log(lista)
   function deleteEquals() {
     let j = 1;
 
@@ -29,6 +29,7 @@ export default function setCores(lista, setAttributes) {
   titleOptColor.innerHTML = "CORES";
   optForm.appendChild(titleOptColor);
 
+  let selected = [];
   unique.map(u => {
     const inputSpan = document.createElement("span");
     const inputCheck = document.createElement("input");
@@ -40,6 +41,21 @@ export default function setCores(lista, setAttributes) {
     };
     inputSpan.classList.add("color-span");
     inputCheck.classList.add("color-item");
+    inputCheck.addEventListener("change", () => {
+      selected.push(attributes.id)
+      const card = document.querySelectorAll(".prod-card")
+
+      for (let i = 0; i < selected.length; i++) {
+
+        lista.filter(l => {
+          if (l.color != selected[i]) {
+
+            card[(l.id) - 1].style.display = "none";
+          }
+        });
+      }
+
+    });
     setAttributes(inputCheck, attributes);
     inputLabel.innerHTML = u;
     inputSpan.appendChild(inputCheck);
@@ -47,13 +63,8 @@ export default function setCores(lista, setAttributes) {
     optForm.appendChild(inputSpan);
   });
 
-  let teste = [];
-
-  lista.map(item => {
-    item.size.forEach(s => {
-      teste.push(s);
-    })
-  })
-  //console.log(teste)
+  // console.log(lista.filter(l => {
+  //   return l.color == "Preto" || l.color == "Branco" || l.color == "Amarelo" || l.color == "Cinza" || l.color == "Laranja" || l.color == "Rosa";
+  // }))
 
 }
