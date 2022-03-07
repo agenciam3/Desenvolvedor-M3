@@ -1,6 +1,6 @@
-#Projeto Desenvolvedor M3
+# Projeto Desenvolvedor M3
 
-##Para executar o projeto, deve-se:
+## Para executar o projeto, deve-se:
  - Clonar o repositório da aplicação.
  - Ir na pasta onde foi salvo.
  - Executar o comando npm install para baixar as dependências.
@@ -10,4 +10,4 @@
 <img src="./img/desktopImg.PNG">
 <img src="./img/mobileImg.PNG">
 
-###Email para contato: wanderleysr@id.uff.br
+### Email para contato: wanderleysr@id.uff.br
