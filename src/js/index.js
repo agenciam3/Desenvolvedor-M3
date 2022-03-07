@@ -20,18 +20,10 @@ function filterPrice(product, key){
     }
 }
 
-function filterSize(product, key){
-    if(product.size.indexOf(key) == -1)
-        return false;
-    else
-        return true;
-}
-
 function applyFilter(filtersApplyed){ 
-    filteredProducts = new Array 
-    var price = false;
-    var size = false;
-    var color = false;
+    var filteredColors = new Array
+    var filteredSizes = new Array
+    var filteredPrices = new Array
 
     filtersApplyed.sort(function compare(a, b) {
         if (a[0] < b[0]) return -1;
@@ -39,30 +31,18 @@ function applyFilter(filtersApplyed){
         return 0;
     })
 
-    filtersApplyed.forEach(elem => {
-        if(elem[0] == 'color'){
-            color = true; 
-            if(price || size){ 
-                filteredProducts = filteredProducts.filter(produto => produto.color == elem[1]);          
-            }else{  
-                filteredProducts = filteredProducts.concat(productsArray.filter(produto => produto.color == elem[1]));            
-            } 
-        }else if(elem[0] == 'size'){
-            size = true;
-            if(price || color){
-                filteredProducts = filteredProducts.filter(element =>filterSize(element, elem[1]));       
-            }else{ 
-                filteredProducts = filteredProducts.concat(productsArray.filter(element =>filterSize(element, elem[1])));       
-            }
-        }else{
-            price = true;
-            if(size || color){ 
-                filteredProducts = filteredProducts.filter(element => filterPrice(element, elem[1]));           
-            }else{
-                filteredProducts =filteredProducts.concat(productsArray.filter(element => filterPrice(element, elem[1])));            
-            }         
-        }    
-    });
+    filteredColors = filtersApplyed.filter(elem => elem[0] == 'color').map(elem => elem[1])
+    filteredSizes = filtersApplyed.filter(elem => elem[0] == 'size').map(elem => elem[1])
+    filteredPrices = filtersApplyed.filter(elem => elem[0] == 'price').map(elem => elem[1])
+
+
+    var filteredProducts = new Array
+
+    filteredProducts = productsArray.filter(product =>{
+        if((filteredColors.length == 0 ? true : filteredColors.some(color => product.color == color)) && (filteredSizes.length == 0 ? true :filteredSizes.some(size => product.size.some(elem => elem == size))) && (filteredPrices.length == 0 ? true : filteredPrices.some(price => filterPrice(product, price)))){
+            return product
+        }
+    })
 
     filtered = filteredProducts;
 
@@ -105,23 +85,19 @@ function checkbox(){
                     }else{
                         removeFilter([elem.getAttribute("id"), elem.getAttribute("price")])                 
                     }  
-                }
-                              
+                }                      
             }else{
                 checked.style.display = 'block';
                 if(elem.getAttribute("id")=='color'){
                     filtersApplyed.push([elem.getAttribute("id"), elem.getAttribute("color")])
                     if(filterDesktop){
                         applyFilter(filtersApplyed)
-                    }
-                        
+                    }            
                 }else{
                     filtersApplyed.push(["price", elem.getAttribute("price")])
                     if(filterDesktop){
-                        console.log(filtersApplyed)
                         applyFilter(filtersApplyed)
-                    }
-                        
+                    }             
                 }              
             }
         };
@@ -246,6 +222,7 @@ function showProducts(products){
         document.querySelector(".load-more-btn").style.display = 'none'
     }
     products = products.slice(0,9);
+    
     products.map(elem => {
         let listAllProducts = document.getElementById("products");
         let htmlInsert = `
@@ -296,7 +273,8 @@ function addToCart(){
             
             let id = elem.getAttribute('productId');
             let price = elem.getAttribute('price');
-            localStorage.setItem(`${id}`,`${price}`);      
+            localStorage.setItem(`${id}`,`${price}`); 
+            console.log(localStorage);     
             let qtdDisplay = document.querySelector(".qtd");
             
             if(localStorage.length === 1){
@@ -456,19 +434,16 @@ function filterMobile(){
         filtersApplyed.length = 0;
         checkbox.map(elem => {
             if(elem.firstElementChild.style.display == 'block'){
-                console.log('oi')
                 filtersApplyed.push([elem.getAttribute('id'), elem.getAttribute('content') ])
             }
         })
         allChecksBtn.map(elem =>{
-            console.log(elem)
             if(elem.style.border == '1.5px solid rgb(0, 192, 238)'){
                 filtersApplyed.push(['size', elem.getAttribute('content') ])
             }
         })
 
         document.querySelector(".products").innerHTML = "";
-        console.log(filtersApplyed)
         filtersApplyed.length == 0 ? showProducts(productsArray) : applyFilter(filtersApplyed)       
         divFilter.style.display = 'none';
         divDesktop.style.display = 'block';
@@ -495,5 +470,5 @@ function main(){
     checkboxBtn();
     selector();
     getAdditionalColors();
-    orderMobile(); 
+    orderMobile();
 }
