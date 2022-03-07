@@ -6,6 +6,18 @@ fetch('http://localhost:5000/products')
         createModel(json);
     });
 
+function startOrderMobile(){
+    const orderButtons = document.querySelectorAll('.order-button-element');
+
+    orderButtons.forEach(elementOrder=>{
+        elementOrder.addEventListener('click', function(){
+            const classNameElement = this.className;
+            const [ nameClass, nameClass2 ] = classNameElement.split(' '); 
+            Order(nameClass);
+        });
+    });
+}
+
 function startFilterMobile(){
     const buttonFilter = document.querySelector('.filter-button');
     const buttonOrder = document.querySelector('.order-button');
@@ -356,3 +368,4 @@ MoreButton();
 ActiveOrder();
 moreFilterColor();
 startFilterMobile();
+startOrderMobile();
