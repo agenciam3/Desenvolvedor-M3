@@ -215,13 +215,13 @@ function getProducts(){
 }
 
 function showProducts(products){   
-    if(products.length > 9){
+    if(products.length > 6){
         showMoreProducts(products)
         document.querySelector(".load-more-btn").style.display = 'block' 
     }else{
         document.querySelector(".load-more-btn").style.display = 'none'
     }
-    products = products.slice(0,9);
+    products = products.slice(0,6);
     
     products.map(elem => {
         let listAllProducts = document.getElementById("products");
@@ -243,7 +243,7 @@ function showProducts(products){
 }
 
 function showMoreProducts(products){
-    products = products.slice(9,-1);
+    products = products.slice(6);
     document.querySelector(".load-more-btn").onclick = function(){
         products.map(elem => {
             let listAllProducts = document.getElementById("products");
