@@ -294,6 +294,7 @@ function orderProducts(orderBy) {
     switch (orderBy) {
         case "most-recent":
             param = "date";
+            inverse = true;
             break;
         case "lowest-price":
             param = "price";
