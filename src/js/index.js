@@ -189,8 +189,8 @@ function selector(){
             let orderType = elem.getAttribute("ordertype");
             ordered.length = 0;
             if(orderType == "recent"){
-                ordered.push(["date",false]);
-                orderProducts("date",false);
+                ordered.push(["date",true]);
+                orderProducts("date",true);
             }else if(orderType == "low-price"){
                 ordered.push(["price",true]);
                 orderProducts("price",true);
