@@ -11,4 +11,4 @@ A construção do site segue o design disponível na pasta layout
 <img src="./src/img/mobile.png">
 <img src="./src/img/mobile_filters.png">
 
-## Email para contato: sassa.sampaio@gmail.com
+#### Email para contato: sassa.sampaio@gmail.com
