@@ -7,7 +7,7 @@
  - Executar o comando npm run start.
  - Abrir "localhost:3000/" no navegador.
 
-<img src="../src/img/desktopImg.PNG">
-<img src="../src/img/mobileImg.PNG">
+<img src="./src/img/desktopImg.PNG">
+<img src="./src/img/mobileImg.PNG">
 
 ### Email para contato: wanderleysr@id.uff.br
