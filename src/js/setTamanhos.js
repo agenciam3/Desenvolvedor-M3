@@ -6,8 +6,6 @@ export default function setTamanhos(lista, optForm) {
       teste.push(s);
     })
   })
-  //console.log(teste)
-
 
   var uniqueSizes = teste.filter(function (elem, index, self) {
     return index === self.indexOf(elem);
@@ -29,7 +27,22 @@ export default function setTamanhos(lista, optForm) {
       e.preventDefault();
       this.classList.add("size-item-selected");
       selected.push(this.innerHTML);
-      //console.log(selected)
+      console.log(selected)
+      const card = document.querySelectorAll(".prod-card");
+
+      console.log(card)
+      for (let i = 0; i < selected.length; i++) {
+
+        lista.slice(0, 9).filter(l => {
+          card[(l.id) - 1].classList.add("hide");
+          for (let y = 0; y < l.size.length; y++) {
+            if (l.size[y] == selected[i]) {
+              card[(l.id) - 1].classList.remove("hide");
+              card[(l.id) - 1].classList.add("show");
+            }
+          }
+        });
+      }
     });
     btnSize.classList.add("size-item");
     btnSize.innerHTML = un;

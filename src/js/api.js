@@ -17,8 +17,6 @@ export default function api() {
     .then(function (data) {
 
       lista = data
-      const filterLeft = document.querySelector(".filters");
-      const optForm = document.querySelector(".opt-filters");
 
       //FUNÇÃO SET ATTR
       function setAttributes(el, attributes) {
@@ -34,7 +32,7 @@ export default function api() {
       setTamanhos(lista, optForm);
 
       //PREÇOS
-      setPrecos(optForm, setAttributes);
+      setPrecos(lista, setAttributes);
 
       //PRODUTOS
       setProducts(lista);

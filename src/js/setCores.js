@@ -3,7 +3,7 @@ export default function setCores(lista, setAttributes) {
 
   let repeatedColors = [];
   let unique = [];
-  console.log(lista)
+  //console.log(lista)
   function deleteEquals() {
     let j = 1;
 

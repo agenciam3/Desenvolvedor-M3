@@ -1,4 +1,7 @@
-export default function setPrecos(optForm, setAttributes) {
+export default function setPrecos(lista, setAttributes) {
+  //lista = ""
+  console.log(lista)
+  const optForm = document.querySelector(".opt-filters");
   const titleOptPrices = document.createElement("h4");
   titleOptPrices.classList.add("opt-filters-title");
   titleOptPrices.innerHTML = "FAIXA DE PREÇO";
@@ -88,4 +91,6 @@ export default function setPrecos(optForm, setAttributes) {
   inputSpan5.appendChild(inputFaixa5);
   inputSpan5.appendChild(labelFaixa5);
   optForm.appendChild(inputSpan5);
+
+
 }
