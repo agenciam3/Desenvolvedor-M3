@@ -6,20 +6,24 @@ export default function filtrarMob(varFunc, helperFunction, lista) {
   const holder = document.querySelector(".container");
   const mobMenu = document.createElement("div");
   mobMenu.classList.add("menu-filtrar-mob");
+  mobMenu.setAttribute("id", "mob-menu");
+  mobMenu.addEventListener("transitionend", () => {
+    this.remove();
+  });
 
   //FILTRAR
   const filtrarBtn = document.createElement("div");
   filtrarBtn.classList.add("filtrar");
-
   const titleFiltrar = document.createElement("span");
   titleFiltrar.innerHTML = "FILTRAR";
+
 
   const x = document.createElement("img");
   x.src = '../img/x-fechar.png';
   x.setAttribute("width", "18");
   x.setAttribute("height", "18");
   x.addEventListener("click", function () {
-    mobMenu.remove();
+    mobMenu.classList.add("removed");
   });
   filtrarBtn.appendChild(x);
 
@@ -158,6 +162,7 @@ export default function filtrarMob(varFunc, helperFunction, lista) {
   btAplicar.addEventListener("click", function () {
     this.classList.add("selected");
     btLimpar.classList.remove("selected");
+    mobMenu.classList.add("removed");
   });
   btHolder.appendChild(btAplicar);
 
@@ -168,6 +173,7 @@ export default function filtrarMob(varFunc, helperFunction, lista) {
   btLimpar.addEventListener("click", function () {
     this.classList.add("selected");
     btAplicar.classList.remove("selected");
+    mobMenu.remove();
   });
   btHolder.appendChild(btLimpar);
 
