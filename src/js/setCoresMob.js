@@ -78,15 +78,6 @@ export default function setCoresMob(lista, setAttributes, coresOpt) {
     coresOpt.appendChild(inputSpan);
   });
 
-  let teste = [];
-
-  lista.map(item => {
-    item.size.forEach(s => {
-      teste.push(s);
-    })
-  })
-  //console.log(teste)
-
 }
 
 
