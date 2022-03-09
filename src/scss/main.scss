@@ -1,1 +1,495 @@
 @import "reset";
+@import "setup";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html, body {
+  height: 100%;
+  font-family: "Open Sans";
+}
+
+body {
+  .container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    
+
+    .header-section {
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 10%;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #000;
+
+      .logo {
+        background-image: url('../img/logo-m3.png');
+        background-repeat: no-repeat;
+        width: 119px;
+        height: 30px;
+      }
+
+      .login {
+        background-image: url('../img/bag.png');
+        background-repeat: no-repeat;
+        width: 20px;
+        height: 23px;
+      }
+    }
+    
+    .added {
+      transform: translateX(0vw);
+    }
+
+    .removed {
+      transform: translateX(-100vw);
+    }
+
+    #mob-menu {
+        transition: transform 1s 0s;
+    }
+
+    .menu-filtrar-mob {
+      width: 100%;
+      height: 100vh;
+      background-color: $color-white;
+      position: absolute;
+      top: 0;
+      z-index: 2;
+
+      .filtrar {
+        font-size: 28px;
+        line-height: 38px;
+        border-bottom: 1px solid #666666;
+        padding: 10px;
+        color: #666666;
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .container-cor {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 24px;
+        }
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .cores {
+        padding: 20px 0 0 10px;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-height: 20px;
+        overflow: hidden;
+
+        img {
+          transform: rotate(-90deg);
+          transition: 0.5s;
+        }
+      }
+
+      .cores-opened {
+        padding: 20px 0 0 10px;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-height: 400px;
+
+        img {
+          transform: rotate(0deg);
+          transition: 0.5s;
+        }
+      }
+
+      .container-tam {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 24px;
+        }
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .tamanhos {
+        padding: 20px 0 10px 10px;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-height: 20px;
+        overflow: hidden;
+
+        .opt-filters{
+          margin-top: 15px;
+        }
+
+        img {
+          transform: rotate(-90deg);
+          transition: 0.5s;
+        }
+      }
+      
+      .tamanhos-opened {
+        padding: 20px 0 10px 10px;
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 400px;
+
+        img {
+          transform: rotate(0deg);
+          transition: 0.5s;
+        }
+
+        .size-holder {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-row-gap: 10px;
+          width: 56%;
+          padding-top: 10px;
+
+          .size-item {
+            font-family: "Open Sans";
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            background-color: $color-white;
+            cursor: pointer;
+            color:rgba(0, 0, 0, 0.5);
+          }
+
+          .size-item-selected {
+            border: 1px solid #00C0EE;
+            color: $color-black;
+          }
+        }
+      }
+
+      .container-pr {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        span {
+          font-size: 24px;
+        }
+
+        img {
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .precos {
+        padding: 20px 0 10px 10px;
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        max-height: 17px;
+        overflow: hidden;
+
+        img {
+          transform: rotate(-90deg);
+          transition: 0.5s;
+        }
+      }
+
+      .precos-opened {
+        padding: 20px 0 10px 10px;
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-height: 400px;
+
+        img {
+          transform: rotate(0deg);
+          transition: 0.5s;
+        }
+
+        .opt-filters {
+          padding-top: 10px;
+        }
+
+        .price-span {
+          padding-bottom: 5px;
+        }
+      }
+
+      .opt-filters {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .color-span {
+          margin: 5px 0;
+          padding: 10px 0 10px 10px ;
+        }
+      }
+
+      .bt-holder {
+        display: flex;
+        justify-content: center;
+
+        .bt-limpar,
+        .bt-aplicar {
+          border: 1px solid #666666;
+          color: #666666;
+          background-color: rgba(0, 0, 0, 0);
+          width: 100px;
+          height: 35px;
+          margin: 10px;
+        }
+      }
+
+      .selected{
+        color: $color-white;
+        border: none;
+        background-color: #00C0EE;
+      }
+    }
+    
+    .catalog {
+      width: 100%;
+      min-height: 80vh;
+      height: auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 50px 0;
+      @media screen and (max-width: 1024px) {
+        flex-direction: column;
+        padding: 50px 5px;
+        box-sizing: border-box;
+      }
+
+      .filters-title-page {
+        display: none;
+        @media screen and (max-width: 1024px) {
+          display: block;
+          text-align: center;
+          margin-bottom: 20px;
+          font-size: 32px;
+          line-height: 44px;
+          margin-bottom: 50px;
+        }
+      }
+
+      .filters {
+        width: 15%;
+        height: 100%;
+        margin-left: 10%;
+
+        &:before {
+          content: "Blusas";
+          font-size: 32px;
+          line-height: 44px;
+          margin-bottom: 50px;  
+        }
+
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        .opt-filters-title {
+          letter-spacing: 0.05em;
+          font-size: 16px;
+          line-height: 22px;
+          margin: 20px 0;
+        }
+
+        .opt-filters {
+          @media screen and (max-width: 1024px) {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            background: white;
+            left: 0;
+            display: none;
+          }
+        }
+        
+        .color-span,
+        .price-span {
+          display: block;
+          margin-bottom: 10px;
+        }
+
+        .size-holder {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-row-gap: 10px;
+
+          .size-item {
+            font-family: "Open Sans";
+            width: 32px;
+            height: 32px;
+            border: 1px solid rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            background-color: $color-white;
+            cursor: pointer;
+            color:rgba(0, 0, 0, 0.5);
+          }
+
+          .size-item-selected {
+            border: 1px solid #00C0EE;
+            color: $color-black;
+          }
+        }
+        
+
+      }
+
+      .filtrar-ord {
+        @media screen and (max-width: 1024px) {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin: 10px 0;
+
+          .mob-filtrar,
+          .mob-ordenar {
+            border: 1px solid #666666;
+            color: #666666;
+            background-color: rgba(0, 0, 0, 0);
+            width: 171.5px;
+            height: 49px;
+            margin: 10px 0;
+            font-size: 24px;
+            line-height: 33px;
+            box-sizing: border-box;
+          }
+
+          // .selected{
+          //   color: $color-white;
+          //   border: none;
+          //   background-color: #00C0EE;
+          // }
+        }   
+      }
+
+      .products{
+        width: 60%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 1em;
+        padding-top: 90px;
+
+        @media screen and (max-width: 1024px) {
+          grid-template-columns: 1fr 1fr;
+          width: 100%;
+          padding-top: 0;
+        }
+  
+        .prod-card {
+          img {
+            width: 195px;
+            height: 293px;
+          }
+
+          .prod-name, 
+          .prod-price {
+            font-size: 14px;
+            line-height: 19px;
+            text-transform: uppercase;
+            text-align: center;
+          }
+
+          .prod-name {
+            padding: 5px 0;
+          }
+
+          .prod-price {
+            font-weight: bold;
+            padding-bottom: 5px;
+          }
+
+          .prod-install {
+            text-align: center;
+            padding-bottom: 10px;
+          }
+
+          .buy-btn {
+            background-color: $color-black;
+            color: $color-white;
+            width: 195px;
+            height: 33px;
+            border: none;
+            font-family: "Open Sans";
+            font-weight: bold;
+            font-size: 14px;
+            line-height: 19px;
+            cursor: pointer;
+          }
+        }
+      }
+  
+      .order-filter {
+        width: 9%;
+        margin-right: 10%;
+
+        @media screen and (max-width: 1024px) {
+          display: none;
+        }
+
+        .list-opt {
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          box-sizing: border-box;
+          font-family: "Open Sans";
+        }
+      }
+    }
+
+    
+    .footer-section {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 5vh;
+      background-color: $color-black;
+      color: $color-white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Open Sans", sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      line-height: 19px;
+    }
+  }
+}
+
+//MOSTRAR OU NÃO CARDS
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
