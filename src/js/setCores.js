@@ -3,22 +3,16 @@ export default function setCores(lista, setAttributes) {
 
   let repeatedColors = [];
   let unique = [];
-  //console.log(lista)
+
   function deleteEquals() {
     let j = 1;
 
     for (let i = 0; i < lista.length; i++) {
-      //console.log(lista[i].color)
       if (lista[i].color != lista[j].color) {
-        //console.log(lista[i].color);
         unique.push(lista[i].color);
-        //console.log("rep", repeatedColors);
         j++
-        //console.log("i", i),
-        //console.log("j", j)
       } else {
         repeatedColors.push(lista[i].color);
-        //console.log("uniq", unique);
       }
     }
   }
@@ -43,14 +37,15 @@ export default function setCores(lista, setAttributes) {
     inputCheck.classList.add("color-item");
     inputCheck.addEventListener("change", () => {
       selected.push(attributes.id)
+      console.log(selected)
       const card = document.querySelectorAll(".prod-card")
 
       for (let i = 0; i < selected.length; i++) {
-
         lista.filter(l => {
-          if (l.color != selected[i]) {
-
-            card[(l.id) - 1].style.display = "none";
+          card[(l.id) - 1].classList.add("hide");
+          if (l.color == selected[i]) {
+            card[(l.id) - 1].classList.remove("hide");
+            card[(l.id) - 1].classList.add("show");
           }
         });
       }
@@ -62,9 +57,5 @@ export default function setCores(lista, setAttributes) {
     inputSpan.appendChild(inputLabel);
     optForm.appendChild(inputSpan);
   });
-
-  // console.log(lista.filter(l => {
-  //   return l.color == "Preto" || l.color == "Branco" || l.color == "Amarelo" || l.color == "Cinza" || l.color == "Laranja" || l.color == "Rosa";
-  // }))
 
 }

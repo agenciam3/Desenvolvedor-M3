@@ -1,6 +1,6 @@
 export default function setPrecos(lista, setAttributes) {
   //lista = ""
-  console.log(lista)
+  //console.log(lista)
   const optForm = document.querySelector(".opt-filters");
   const titleOptPrices = document.createElement("h4");
   titleOptPrices.classList.add("opt-filters-title");
