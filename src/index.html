@@ -1,19 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="./main.css" />
+
 </head>
-
 <body>
+    <!--Header-->
+    <header>
+        <img id="logo" src="img/logo-m3.png" alt="logo da M3 e-commerce">
+        <div>
+            <img id="shopping" src="./img/vector.png" alt="bolsa">
+            <div id="circulo"><span>0</span></div>
+        </div>
+    </header>
 
+    <div id="heading">
+        
+        <div class="tituloOrdenar">  
+            <h1>Blusas</h1>
+            <h2>ORDENAR</h2>
+            <span id="fecharOrdenar">X</span>
+        </div>
+
+        <div id="ordena">
+            <select name="select" id="myselect">
+                <option value="orderBy" hidden>Ordernar por:</option>
+                <option value="recent">Mais recentes</option>
+                <option value="lowestPrice">Menor preço</option>
+                <option value="biggestPrice">Maior preço</option>
+            </select>
+            <div>
+                <button value="recent" name="ordenarMobile">Mais recentes</button>
+                <button value="lowestPrice" name="ordenarMobile">Menor preço</button>
+                <button value="biggestPrice" name="ordenarMobile">Maior preço</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="titulo-button">
+        <h1>Blusas</h1>
+        <div class="buttons">
+            <button class="hidden button1" id="btnFiltro">Filtrar</button>
+            <button class="hidden button1" id="btnOrdena">Ordernar</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <!--sidebar-->
+        <section class="sidebar">
+            <div class="tituloFiltrar">
+                <h2>FILTRAR</h2>
+                <span id="fecharFiltro">X</span>
+            </div>
+           
+            <div class="filtro" id="coresFiltrar">
+                <h3>CORES</h3>
+                <img src="./img/Vector 1.png" alt="">
+                <div id="mostraCor">
+                    <input type="checkbox" name="cor" value="amarelo">
+                <label for="cor">Amarelo</label><br>
+                <input type="checkbox" name="cor" value="azul">
+                <label for="cor">Azul</label><br>
+                <input type="checkbox" name="cor" value="branco">
+                <label for="cor">Branco</label><br>
+                <input type="checkbox" name="cor" value="cinza">
+                <label for="cor">Cinza</label><br>
+                <input type="checkbox" name="cor" value="laranja">
+                <label for="cor">Laranja</label><br>
+                <div id="mostra" class="hidden">
+                    <input type="checkbox" name="cor" value="verde">
+                    <label for="cor">Verde</label><br>
+                    <input type="checkbox" name="cor" value="vermelho">
+                    <label for="cor">Vermelho</label><br>
+                    <input type="checkbox" name="cor" value="preto">
+                    <label for="cor">Preto</label><br>
+                    <input type="checkbox" name="cor" value="rosa">
+                    <label for="cor">Rosa</label><br>
+                    <input type="checkbox" name="cor" value="vinho">
+                    <label for="cor">Vinho</label><br>
+                </div>
+                <button id="button2">
+                    <span>Ver todas as cores</span>
+                    <img src="./img/Vector 1.png" alt="">
+                </button>
+                </div>
+            </div>
+            <div id="tamFiltrar" class="filtro"> 
+                <h3>TAMANHOS</h3>
+                <div class="tamanhos" id="mostraTam">
+                    <input type="checkbox" name="tam" value="P" id="tamP" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="M" id="tamM" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="G" id="tamG" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="GG" id="tamGG" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="U" id="tamU" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="36" id="tam36" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="38" id="tam38" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="40" id="tam40" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="42" id="tam42" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="44" id="tam44" class="tamPadrao">
+                    <input type="checkbox" name="tam" value="46" id="tam46" class="tamPadrao">
+                </div>
+            </div>
+            <div id="precoFiltrar" class="filtro">
+                <h3>FAIXA DE PREÇO</h3>
+                <div id="mostraPreco">
+                    <input type="radio" name="preco" min="0" max="50" id="ate50">
+                    <label for="preco">de R$0 até R$50</label><br>
+                    <input type="radio" name="preco" min="51" max="150" id="ate150">
+                    <label for="preco">de R$51 até R$150</label><br>
+                    <input type="radio" name="preco" min="151" max="300" id="ate300">
+                    <label for="preco">de R$151 até R$300</label><br>
+                    <input type="radio" name="preco" min="301" max="500" id="ate500">
+                    <label for="preco">de R$301 até R$500</label><br>
+                    <input type="radio" name="preco" min="501" id="501">
+                    <label for="preco">a partir de R$500</label><br>
+                </div>
+            </div>
+        </section>
+        <!--feed-->
+        <section class="flexbox" id="produtos">
+            
+        </section>
+    </div>
+    <div class="center btnCarregarMais">
+        <button id="button4">CARREGAR MAIS</button>
+    </div>
+
+    <!--footer-->
+    <footer class="center">
+        <p>M3: Implantação de E-commerce VTEX</p>
+    </footer>
+
+    <script src="./bundle.js"></script>
 </body>
-<h1>Desafio m3</h1>
 
-<script src="bundle.js"></script>
 
 </html>
