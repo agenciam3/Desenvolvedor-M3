@@ -1,0 +1,8 @@
+
+
+.grid-produt-btn {
+  @include style-btn(3.3rem, $black, $primary-color, $white, $white)
+
+}
+
+// @mixin style-btn($height, $bg, $bgHover, $colorText,$colorTextHover ) {

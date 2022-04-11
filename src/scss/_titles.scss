@@ -1,0 +1,60 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 6.4rem;
+  line-height: 112%;
+  /* identical to box height, or 72px */
+  letter-spacing: -1px;
+}
+h2 {
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 112%;
+  /* identical to box height, or 45px */
+
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 2.4rem;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+
+  letter-spacing: -0.5px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 112%;
+  /* or 22px */
+  letter-spacing: -0.5px;
+}
+
+@mixin p1 {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  font-size: 1.8rem;
+  line-height: 150%;
+  letter-spacing: -0.5px;
+}
+@mixin p2 {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 150%;
+}
+
+@mixin p3 {
+  font-family: "Inter", sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 150%;
+}
