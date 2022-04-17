@@ -1,0 +1,14 @@
+@import "variables";
+
+footer {
+  display: flex;
+  justify-content: center;
+  font-size: .875rem;
+  position: absolute;
+  bottom: 0;
+  line-height: 2rem;
+  width: 100%;
+  height: 2.0625rem;
+  color: $white;
+  background: $black;
+}

@@ -1,0 +1,87 @@
+@import "variables";
+
+#filters-desktop {
+  @media (max-width: $md) {
+    display: none;
+  }
+}
+
+#filters-mobile {
+  padding: 0 1rem 1.0625rem;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  width: 10.25rem;
+
+  .filter-title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .625rem;
+
+    .open-options {
+      display: none;
+    }
+
+    @media (max-width: $md) {
+      padding: 1.875rem 0 0;
+      font-size: 1.5rem;
+      line-height: 2.0625rem;
+
+      .open-options {
+        display: inline;
+
+        img {
+          width: 1.125rem;
+          height: .8125rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $md) {
+    width: auto;
+  }
+
+  .colors {
+    width: inherit;
+    padding: .875rem 0 1.5rem;
+
+    p {
+      font-size: .75rem;
+      color: var(--gray2);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    @media (max-width: $md) {
+      display: none;
+      padding: 1.25rem 0 0;
+    }
+  }
+
+  .sizes {
+    width: inherit;
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: .5rem;
+
+    @media (max-width: $md) {
+      // display: none;
+      padding: 1.25rem 0 0;
+    }
+  }
+
+  .prices {
+    width: inherit;
+    padding: .625rem 0 0;
+
+    @media (max-width: $md) {
+      display: none;
+      padding: 1.25rem 0 0;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+@import "variables";
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: $black;
+  background-color: $white;
+  display: none;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  overflow-y: scroll;
+}
+
+.show-modal {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  font-size: 1.75rem;
+  border-bottom: 1px solid $black;
+}

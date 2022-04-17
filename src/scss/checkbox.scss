@@ -1,0 +1,98 @@
+@import "variables";
+
+.checkbox-inner-text {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-inner-text input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark-inner-text {
+  display: flex;
+  border: 1px solid $gray4;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.875rem;
+  font-size: 1rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: $white;
+  color: $gray4;
+  transition: all .5s;
+}
+
+.checkbox-inner-text:hover input ~ .checkmark-inner-text {
+  border: 1px solid $primary;
+  color: $black;
+  transition: all .5s;
+}
+
+.checkbox-inner-text input:checked ~ .checkmark-inner-text {
+  border: 1px solid $primary;
+  color: $black;
+  transition: all .5s;
+}
+
+.checkbox-inner-text .checkmark-inner-text:after {
+  height: 2rem;
+  width: 2rem;
+  background-color: $primary;
+}
+
+.checkbox-label {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 1.625rem;
+  margin-bottom: .625rem;
+  font-size: .875rem;
+  line-height: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: .625rem;
+  width: .625rem;
+  padding: .1875rem;
+  box-shadow: inset 0 0 0 1px $black;
+  background-color: $white;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-label .checkmark:after {
+  width: .625rem;
+  height: .625rem;
+  background-color: $primary;
+}

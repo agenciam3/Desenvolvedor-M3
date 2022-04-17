@@ -1,0 +1,47 @@
+@import "variables";
+
+header {
+  display: flex;
+  justify-content: center;
+  border-bottom: 2px solid $gray3;
+  height: 3.75rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 82vw;
+
+    #cart {
+      position: relative;
+      align-items: center;
+      justify-content: center;
+      color: $black2;
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      .cart-count {
+        font-family: "Roboto";
+        font-size: .625rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: .75rem;
+        letter-spacing: 0;
+
+        position: absolute;
+        bottom: .125rem;
+        right: .1875rem;
+        width: .75rem;
+        height: .75rem;
+        background-color: $primary;
+        color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+      }
+    }
+  }
+}
