@@ -56,12 +56,12 @@
             
             class="btn-filter"
             id="O"
-            
+            onchange="window.location.href= '/masculino/carteira/couro?PS=12&amp;' + 'O=' + this.options[this.selectedIndex].value"
           >
             <option selected="selected" value="">Ordenar por:</option>
-            <option value="OrderByID"  id="OrderByID">Mais recentes</option>
-            <option value="OrderByPriceDESC" id="OrderByPriceDESC">Menor preço</option>
-            <option value="OrderByTopSaleDESC" id="OrderByPriceDESC">Maior preço</option>
+            <option value="OrderByPriceASC">Mas recentes</option>
+            <option value="OrderByPriceDESC">Menor preço</option>
+            <option value="OrderByTopSaleDESC">Maior preço</option>
           </select>
         </fieldset>
       </div>
@@ -211,7 +211,14 @@
         
       </aside>
       <section id="content-category">
-   
+        <div class="card-product">
+          <img class="img-product" src="./img/img_2.png" alt="" />
+          <h3 class="title-product">Camiseta Mescla</h3>
+          <span class="price-product">R$ 28,00</span>
+          <span class="parcelamento-product">até 3x de R$9,33</span>
+          <button class="btn-card-product">comprar</button>
+        </div>
+        <!-- end card-product -->
 
         
 

@@ -76,6 +76,31 @@
 
 
 .card-product {
+
+  .title-product {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    padding-top: 1rem;
+    font-weight: normal;
+
+
+
+  }
+  .price-product{
+    font-size: 1.6rem;
+    font-weight: bold;
+    padding-top: 1rem;
+    color: $black;
+
+
+  }
+  .parcelamento-product {
+    color: #666666;
+    font-size: 1.6rem;
+    padding-bottom: 1.4rem;
+
+
+  }
   @include flex(column, center, center);
   margin: 4.1rem 3.2rem;
 
@@ -189,6 +214,9 @@
 
   
     
+  }
+  option:first-child{
+    display: none;
   }
 
 
