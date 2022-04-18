@@ -1,0 +1,27 @@
+.header {
+  border-bottom: 2px solid #C7C7C7;
+  .container {
+    display: flex;
+    align-items: center;
+    padding: $md 0;
+    justify-content: space-between;
+    @media screen and (max-width: 1050px) {
+      padding: 15px 15px;
+    }
+  }
+  &__cart {
+    position: relative;
+    span {
+      position: absolute;
+      bottom: 0;
+      right: -5px;
+      background-color: $blue;
+      font-size: $xs;
+      border-radius: 100%;
+      color: #FFFFFF;
+      width: $sm;
+      height: $sm;
+      text-align: center;
+    }
+  }
+}

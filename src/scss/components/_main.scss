@@ -1,0 +1,114 @@
+.premain {
+  &__header {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 65px;
+    .filtragem {
+      display: flex;
+      margin-top: 15px;
+    }
+    #filtrar-mobile, #ordenar-mobile {
+      display: none;
+      width: 142px;
+      height: 40px;
+      font-weight: $regular;
+      font-size: 24px;
+      line-height: 40px;
+      color: $gray-dark;
+      border: 1px solid;
+      text-align: center;
+      @media screen and (max-width: 1050px) { 
+        display: block;
+      }
+    }
+    @media screen and (max-width: 1050px) {
+      flex-direction: column;
+    }
+      h1 {
+        font-size: $xl;
+      }
+      select {
+        border: 1px solid $gray-light;
+        border-radius: 0;
+        font-size: $lg;
+        padding: $xs;
+        @media screen and (max-width: 1050px) {
+          display: none;
+        }
+      }
+  }
+}
+
+.main {
+  &.container {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+.section {
+  text-align: center;
+}
+#productBox {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 975px;
+  gap: 64px;
+  margin-left: 175px;
+  @media screen and (max-width: 1050px) {
+    margin-left: 25px;
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: 0 !important;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  
+}
+
+.maxProductContent{
+  display:none;
+}
+
+.content{
+  background-color:#333;
+  height:200px;
+  margin:$xs 0;
+  border:1px solid #ccc;
+}
+
+.load-more{
+  background-color:$blue;
+  color:#fff !important;
+  padding: 8px 30px;
+  font-weight: $bold;
+  font-size: $md;
+  line-height: 19px;
+  margin:50px 0;
+  display:inline-block;
+  text-transform: uppercase;
+  text-decoration: none !important;
+}
+
+#apply, #clear {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 35px;
+  background: $blue;
+  border: 0;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: $lg;
+}
+
+#clear {
+  background-color: #fff !important;
+  border: 1px solid $gray-dark;
+  color: $gray-dark !important;
+}

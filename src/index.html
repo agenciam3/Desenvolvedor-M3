@@ -10,10 +10,162 @@
 </head>
 
 <body>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo">
+        <img src="./img/logo-m3.png" alt="Logo M3 Commerce">
+      </div>
+      <div class="header__cart">
+        <img src="./img/cart.svg" alt="Carrinho de Compras Superior">
+        <span>0</span>
+      </div>
+    </div>
+  </header>
+  <div class="premain__header container">
+    <h1>Blusas</h1>
+    <div class="filtragem">
+      <div id="filtrar-mobile">
+      Filtrar
+      </div>
+      <div id="ordenar-mobile">
+        Ordenar
+      </div>
+    </div>
+    <select name="order" id="order">
+      <option value="0">Ordernar por:</option>
+      <option value="1">Mais recentes</option>
+      <option value="2">Maior preço</option>
+      <option value="2">Menor preço</option>
+    </select>
+    
+  </div>
+  <main class="main container">
+    <aside class="aside">
+      <div class="aside__filters">
+        <h1 class="d-none header-filter">
+          Filtrar
+          <svg id="fecharFiltro" width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.5 18.852 17.555 1" stroke="#000"/><path transform="matrix(.71175 .70244 -.87431 .48537 0 1.235)" stroke="#000" d="M0-.5h25.29"/></svg>
+        </h1>
+        <div class="aside__filters--colors">
+          <h2>Cores <svg class="d-none" width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 9 13 9-12.986" stroke="#666" stroke-linecap="round"/></svg></h2>
+          <form id="colors">
+            <div class="form-group">
+              <input type="checkbox" id="amarelo">
+              <label for="amarelo">Amarelo</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="azul">
+              <label for="azul">Azul</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="branco">
+              <label for="branco">Branco</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="cinza">
+              <label for="cinza">Cinza</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="laranja">
+              <label for="laranja">Laranha</label>
+            </div>
+            <a>Ver todas as cores > </a>
+          </form>
+        </div>
+        <div class="aside__filters--sizes">
+          <h2>Tamanhos <svg class="d-none" width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 9 13 9-12.986" stroke="#666" stroke-linecap="round"/></svg></h2>
+          <form class="form-boxes" id="sizes">
+            <div class="form-size">
+              P
+            </div>
+            <div class="form-size">
+              M
+            </div>
+            <div class="form-size">
+              G
+            </div>
+            <div class="form-size">
+              GG
+            </div>
+            <div class="form-size">
+              U
+            </div>
+            <div class="form-size">
+              36
+            </div>
+            <div class="form-size">
+              38
+            </div>
+            <div class="form-size">
+              40
+            </div>
+            <div class="form-size">
+              36
+            </div>
+            <div class="form-size">
+              38
+            </div>
+            <div class="form-size">
+              40
+            </div>
+          </form>
+        </div>
+        <div class="aside__filters--prices">
+          <h2>Faixa de preços <svg class="d-none" width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 9 13 9-12.986" stroke="#666" stroke-linecap="round"/></svg></h2>
+          <form id="prices">
+            <div class="form-group">
+              <input type="checkbox" id="at50">
+              <label for="at50">de R$0 até R$50</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="at150">
+              <label for="at150">de R$51 até R$150</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="at300">
+              <label for="at300">de R$151 até R$300</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="at500">
+              <label for="at500">de R$301 até R$500</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="at501">
+              <label for="at501">a partir de R$ 500</label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="d-none submit-filters">
+        <button id="apply">Aplicar</button>
+        <button id="clear">Limpar</button>
+      </div>
+    </aside>
 
+    <aside class="aside d-none ordenar">
+      <div class="aside__filters">
+        <h1 class="d-none header-filter">
+          Filtrar
+          <svg id="fecharOrdenar" width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M.5 18.852 17.555 1" stroke="#000"/><path transform="matrix(.71175 .70244 -.87431 .48537 0 1.235)" stroke="#000" d="M0-.5h25.29"/></svg>
+        </h1>
+        <div class="aside__filters--colors">
+          <h3>Mais recentes</h3>
+          <h3>Maior preço</h3>
+          <h3>Menor preço</h3>
+        </div>
+      </div>
+    </aside>
+    <section class="section">
+      <div id="productBox"></div>
+      <a href="" class="load-more">Carregar Mais</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <h3>M3: Implantação de E-commerce VTEX</h3>
+  </footer>
 </body>
-<h1>Desafio m3</h1>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="bundle.js"></script>
 
 </html>

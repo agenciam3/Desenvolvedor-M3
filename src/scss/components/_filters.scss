@@ -1,0 +1,151 @@
+.aside {
+  width: 16%;
+  @media screen and (max-width: 1050px) {
+    display: none;
+    width: 100%;
+    position: fixed;
+    background: white;
+    height: 100%;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__filters {
+    @media screen and (max-width: 1050px) {
+      padding: $lg;
+        form {
+          height: 0;
+          overflow: hidden;
+          &.active {
+            height: auto;
+            overflow: hidden;
+          }
+        }
+    }
+      h3 {
+        font-weight: $regular;
+        font-size: 24px;
+        line-height: 33px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: $gray-dark;
+        margin-bottom: 30px;
+      }
+      h2 {
+        font-size: $lg;
+        font-weight: $regular;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media screen and (max-width: 1050px) {
+          font-weight: $regular;
+          font-size: 24px;
+          line-height: 33px;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          color: $gray-dark;
+        }
+      }
+      a {
+        font-size: $sm;
+        font-weight: $regular;
+        color: $gray-dark;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      &--colors, &--sizes, &--prices {
+        margin-bottom: 24px;
+      }
+  }
+}
+@media screen and (max-width: 1050px) {
+  .header-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: $regular;
+    font-size: 28px;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: $gray-dark;
+    border-bottom: 1px solid $gray-dark;
+    margin-bottom: 25PX;
+  }
+  .submit-filters {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+  }
+}
+
+
+
+.form-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 160px;
+  gap: 8px;
+}
+.form-size {
+  background-color: transparent;
+  border: 1px solid $gray-light;
+  width: $xl;
+  height: $xl;
+  text-align: center;
+  line-height: $xl;
+  cursor: pointer;
+}
+.form-size:focus-visible {
+  border-color: $blue;
+}
+
+.form-group {
+  display: block;
+  margin-bottom: $xs;
+}
+
+.form-group input {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-bottom: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+  font-size: $md;
+  font-weight: $regular;
+}
+
+.form-group label:before {
+  content: "";
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 5%), inset 0px -15px 10px -12px rgb(0 0 0 / 5%);
+  padding: 7px;
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.form-group input:checked + label:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 2px;
+  width: $xs;
+  height: $xs;
+  border: 1px solid $blue;
+  background: $blue;
+}
