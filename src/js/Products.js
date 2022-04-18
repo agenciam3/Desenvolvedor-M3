@@ -1,7 +1,8 @@
 import fetchProductJSON from "./fetchProductJSON";
 
 const contentCategory = document.getElementById("content-category");
-
+const urlBase = "http://localhost:5000/products/?_page=1&_limit=9";
+localStorage.setItem("urlBase", urlBase);
 const Products = (urlApi) => {
   localStorage.setItem("url", urlApi);
   contentCategory.innerHTML = "";

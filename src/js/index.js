@@ -37,6 +37,43 @@ btnCloseFilterOderBy.addEventListener("click", closeFilterOderBy);
 //carregamento inicial
 Product("http://localhost:5000/products/?_page=1&_limit=9");
 
+const sidebar = document.querySelectorAll("#sidebar-filter input");
+const sidebarArr = Array.prototype.slice.call(sidebar);
+
+sidebarArr.forEach((sidebarArr) => {
+  sidebarArr.addEventListener("click", clickFilter);
+});
+//sidebar.addEventListener("checked", clickFilter, false);
+
+let urlFilter = localStorage.setItem("urlFilter", "");
+
+checkAzul;
+
+function clickFilter(e) {
+  //const link = e.target.getAttribute("rel");
+  const urlFilter = localStorage.setItem(
+    e.target.getAttribute("rel"),
+    e.target.getAttribute("rel")
+  );
+
+  if (localStorage.getItem("&color=azul")) {
+    document.querySelector("#checkAzul span").classList.add(":after");
+    //span:after
+    console.log("tem");
+  } else document.getElementById(checkAzul).checked = false;
+  //let novaurl = +link;
+
+  //localStorage.setItem("urlFilter", novaurl);
+  //localStorage.setItem("urlFilter", urlFilter);
+
+  // const mountFilterUrl(urlFilter)=>{
+  //   urlFilter = localStorage.getItem("urlFilter") + localStorage.setItem("urlFilter", urlFilter)
+
+  // }
+  //localStorage.setItem("urlFilter", urlFilter);
+  //console.log(e.target.getAttribute("rel"));
+}
+
 const OrderByPriceASC = document.getElementById("O");
 console.log(OrderByPriceASC);
 OrderByPriceASC.addEventListener("change", clickOrderBy, false);
@@ -44,19 +81,21 @@ OrderByPriceASC.addEventListener("change", clickOrderBy, false);
 function clickOrderBy(e) {
   switch (e.target.value) {
     case "OrderByPriceASC":
-      Product(
-        "http://localhost:5000/products/?color=Preto&color=Rosa&price_gte=100&price_lte=400"
-      );
+      Product(`${localStorage.getItem("urlBase")}&_sort=price&_order=asc`);
+      // Product(
+      //   "http://localhost:5000/products/?color=Preto&color=Rosa&price_gte=400&price_lte=0"
+      // );
       break;
 
     case "OrderByPriceDESC":
-      Product(
-        "http://localhost:5000/products/?color=Preto&color=Rosa&price_gte=10&price_lte=100"
-      );
+      // Product(
+      //   "http://localhost:5000/products/?color=Preto&color=Rosa&price_gte=0&price_lte=1000"
+      // );
+      Product(`${localStorage.getItem("urlBase")}&_sort=price&_order=desc`);
       break;
 
     case "OrderByTopSaleDESC":
-      Product(`${localStorage.getItem("url")}&price_gte=10&price_lte=200`);
+      Product(`${localStorage.getItem("urlBase")}&_sort=id&_order=desc`);
       break;
 
     default:
@@ -80,4 +119,4 @@ function clickOrderBy(e) {
   // );
 }
 
-console.log(Product("http://localhost:5000/products/?_page=1&_limit=9"));
+//console.log(Product("http://localhost:5000/products/?_page=1&_limit=9"));
