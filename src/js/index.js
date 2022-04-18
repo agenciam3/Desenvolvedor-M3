@@ -50,17 +50,21 @@ let urlFilter = localStorage.setItem("urlFilter", "");
 checkAzul;
 
 function clickFilter(e) {
-  //const link = e.target.getAttribute("rel");
-  const urlFilter = localStorage.setItem(
-    e.target.getAttribute("rel"),
-    e.target.getAttribute("rel")
-  );
+  let link = e.target.getAttribute("rel");
 
-  if (localStorage.getItem("&color=azul")) {
-    document.querySelector("#checkAzul span").classList.add(":after");
-    //span:after
-    console.log("tem");
-  } else document.getElementById(checkAzul).checked = false;
+  // const urlFilter = localStorage.setItem(
+  //   e.target.getAttribute("rel"),
+  //   e.target.getAttribute("rel")
+  // );
+  console.log(Product(`${localStorage.getItem("urlBase").concat(link)}`));
+  const linkB = "http://localhost:5000/products/";
+  Product(`${localStorage.getItem("urlBase").concat(link)}`);
+
+  // if (localStorage.getItem("&color=azul")) {
+  //   document.querySelector("#checkAzul span").classList.add(":after");
+  //   //span:after
+  //   console.log("tem");
+  // } else document.getElementById(checkAzul).checked = false;
   //let novaurl = +link;
 
   //localStorage.setItem("urlFilter", novaurl);
