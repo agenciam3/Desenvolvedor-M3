@@ -47,10 +47,23 @@ sidebarArr.forEach((sidebarArr) => {
 
 let urlFilter = localStorage.setItem("urlFilter", "");
 
-checkAzul;
+const checkAzul = document.getElementById("checkAzul");
+
+if (localStorage.getItem("&color=Azul")) {
+  checkAzul.setAttribute("checked", "checked");
+} else {
+}
 
 function clickFilter(e) {
-  let link = e.target.getAttribute("rel");
+  //e.target.getAttribute("checked").toggle("checked");
+  e.target.setAttribute("checked", "checked");
+  localStorage.setItem(
+    e.target.getAttribute("rel"),
+    e.target.getAttribute("checked")
+  );
+  //e.target.toggleAttribute("checked");
+  //console.log(e.target.getAttribute("checked"));
+  //let link = e.target.getAttribute("rel");
 
   // const urlFilter = localStorage.setItem(
   //   e.target.getAttribute("rel"),
