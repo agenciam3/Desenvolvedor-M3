@@ -347,10 +347,16 @@ header {
     align-items: center;
     margin-bottom: 10px;
 
-    position: absolute;
-    top: 600px;
+    position: static;
+    margin-top: 140px;
+    z-index: 999999;
 
     .sectionFilter--buttonsFilterAction {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
       button {
         padding: 8px 30px;
         text-align: center;
@@ -450,12 +456,21 @@ header {
 
   .products--cardContainer {
     max-width: 1080px;
+    min-height: 50vh;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+
+    .products--productFilterEmpty {
+      font-size: 14px;
+      font-family: $primary-font;
+      color: #da0000;
+      font-weight: 400;
+      text-align: center;
+    }
 
     .products--cardItem {
       display: flex;
