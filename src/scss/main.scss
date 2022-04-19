@@ -87,3 +87,159 @@ header {
     }
   }
 }
+
+.products--container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 30px;
+
+  .products--cardContainer {
+    max-width: 1080px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .products--cardItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 165px;
+      height: 350px;
+      margin-bottom: 10px;
+
+      .products--imageCardItem img {
+        width: 160px;
+        height: 240px;
+      }
+
+      .products--textInformationCardItem {
+        height: 75px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        margin-top: -5px;
+        margin-bottom: 5px;
+
+        h3 {
+          font-family: $primary-font;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        
+        p.text-installments {
+          font-family: $primary-font;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: center;
+          line-height: 20px;
+          color: $gray-dark-color;
+        }
+
+        p.bold {
+          font-family: $primary-font;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+          color: $black-color;
+        }
+      }
+
+      .products--buttonBuyCardItem {
+        width: 155px;
+
+        button {
+          width: 100%;
+          padding: 5px 10px;
+
+          font-family: $primary-font;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: center;
+          color: #fff;
+
+          background-color: $black-color;
+          border: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.loadMore--container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .loadMore--containerButton {
+    max-width: 1080px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      font-family: $primary-font;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+
+      background-color: $primary-color;
+      border: none;
+      cursor: pointer;
+
+      padding: 8px 25px;
+
+    }
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  background-color: $black-color;
+
+  .footer--textContainer {
+    text-align: center;
+
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
