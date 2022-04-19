@@ -1,4 +1,5 @@
 const path = require("path");
+const { experiments } = require("webpack");
 
 module.exports = (paths) => ({
   entry: ["regenerator-runtime/runtime.js", path.resolve(__dirname, paths.scripts.src)],
