@@ -102,12 +102,92 @@ const loadMoreProducts = async () => {
 // add function in button Load More
 buttonLoadMore.addEventListener('click', loadMoreProducts) 
 
+// function show and close filter section
+const closeFilterOptionsMobile = document.querySelector('.closeFilterOptionsMobile')
+const openFilterOptionsMobile = document.querySelector('.sectionMobileOrdination--filterButton')
+const sectionFilterOptionsMobile = document.querySelector('.sectionFilter--container')
+const body = document.querySelector('body')
+const headerContainer = document.querySelector('header')
+const sectionMobileOrdination = document.querySelector('.sectionMobileOrdination--container')
+
+const openFilter = () => {
+  sectionFilterOptionsMobile.style.display = 'flex'
+  headerContainer.classList.add('hide')
+  sectionMobileOrdination.classList.add('hide')
+  body.style.position = 'fixed'
+}
+
+const closeFilter = () => {
+  sectionFilterOptionsMobile.style.display = 'none'
+  headerContainer.classList.remove('hide')
+  sectionMobileOrdination.classList.remove('hide')
+  body.style.position = 'initial'
+}
+
+// function show and close filter options 
+const buttonColorsOptionsMobile = document.querySelector('.buttonColorsOptionsMobile')
+const buttonSizesOptionsMobile = document.querySelector('.buttonSizesOptionsMobile')
+const buttonRangePriceOptionsMobile = document.querySelector('.buttonRangePriceOptionsMobile')
+const buttonsSizes = document.querySelectorAll('.buttonSize')
+const optionsColorsContainer = document.querySelector('.sectionFilter--optionsColorsContainer')
+const optionsSizesContainer = document.querySelector('.sectionFilter--optionsSizesContainer')
+const optionsPriceContainer = document.querySelector('.sectionFilter--optionsPriceContainer')
+
+for(let button of buttonsSizes) {
+  button.addEventListener('click', () => {
+    if(button.classList.contains('buttonSize--active')) {
+      button.classList.remove('buttonSize--active')
+    } else {
+      button.classList.add('buttonSize--active')
+    }
+  })
+}
+
+const handleOptionsFilter = (optionsContainer) => {
+  if(optionsContainer.classList.contains('hide')) {
+    optionsContainer.classList.add('show')
+    optionsContainer.classList.remove('hide')
+  } else {
+    optionsContainer.classList.remove('show')
+    optionsContainer.classList.add('hide')
+  }
+}
+
+openFilterOptionsMobile.addEventListener('click', openFilter)
+closeFilterOptionsMobile.addEventListener('click', closeFilter)
+buttonColorsOptionsMobile.addEventListener('click', () => handleOptionsFilter(optionsColorsContainer))
+buttonSizesOptionsMobile.addEventListener('click', () => handleOptionsFilter(optionsSizesContainer))
+buttonRangePriceOptionsMobile.addEventListener('click', () => handleOptionsFilter(optionsPriceContainer))
+
+// function show and close ordination section
+const openOrderOptionsMobile = document.querySelector('.sectionMobileOrdination--OrderButton')
+const closeOrderOptionsMobile = document.querySelector('.closeOrderOptionsMobile')
+const sectionOrderOptionsMobile = document.querySelector('.sectionOrdination--container')
+
+const openOrder = () => {
+  sectionOrderOptionsMobile.style.display = 'flex'
+  headerContainer.classList.add('hide')
+  sectionMobileOrdination.classList.add('hide')
+  body.style.position = 'fixed'
+}
+
+const closeOrder = () => {
+  sectionOrderOptionsMobile.style.display = 'none'
+  headerContainer.classList.remove('hide')
+  sectionMobileOrdination.classList.remove('hide')
+  body.style.position = 'initial'
+}
+
+openOrderOptionsMobile.addEventListener('click', openOrder)
+closeOrderOptionsMobile.addEventListener('click', closeOrder)
+
 // function to resolve promise products 
 const promisesResolve = async () => {
   const products = await getAllProducts()
   const htmlProduct = await generateHtmlProduct(products)
   insertProductsIntoPage(htmlProduct)
 }
+
 
 // call all promise resolves function
 promisesResolve()

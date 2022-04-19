@@ -9,6 +9,7 @@
 </head>
 
 <body>
+  <!--Header section-->
   <header>
     <div class="header--container">
       <div class="header--logoContainer">
@@ -20,6 +21,7 @@
     </div>
   </header>
 
+  <!--mobile session to choose filters-->
   <section class="sectionMobileOrdination--container">
     <div class="sectionMobileOrdination--nameTitle">
       <h2>Blusas</h2>
@@ -30,18 +32,194 @@
     </div>
   </section>
 
-  <section class="products--container">
-    <div class="products--cardContainer">
-      
+  <!--part that contains the choice of filters on mobile-->
+  <aside class="sectionFilter--container">
+    <div class="sectionFilter--headerName">
+      <h2>Filtrar</h2>
+      <img src="./img/Group 1.png" alt="Fechar a sessão de filtragem dos produtos" class="closeFilterOptionsMobile">
     </div>
+    <div class="sectionFilter--optionsFilterContainer">
+      <div class="sectionFilter--FilterOption">
+        <p>Cores</p>
+        <img src="./img/Vector 1.png" alt="Dropdown para as opções de cores" class="buttonColorsOptionsMobile">
+      </div>
+      <div class="sectionFilter--optionsColorsContainer .hide">
+        <ul class="sectionFilter--containerListColors">
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput yellow"></span>
+            </label>
+            <li>Amarelo</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput blue"></span>
+            </label>
+            <li>Azul</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput white"></span>
+            </label>
+            <li>Branco</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput gray"></span>
+            </label>
+            <li>Cinza</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput orange"></span>
+            </label>
+            <li>Laranja</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput green"></span>
+            </label>
+            <li>Verde</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput red"></span>
+            </label>
+            <li>Vermelho</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput black"></span>
+            </label>
+            <li>Preto</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput pink"></span>
+            </label>
+            <li>Rosa</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput wine"></span>
+            </label>
+            <li>Vinho</li>
+          </div>
+        </ul>
+      </div>
+      <div class="sectionFilter--FilterOption">
+        <p>Tamanhos</p>
+        <img src="./img/Vector 1.png" alt="Dropdwon para as opções de tamanhos" class="buttonSizesOptionsMobile">
+      </div>
+      <div class="sectionFilter--optionsSizesContainer hide">
+        <div class="sectionFilter--optionsSizesButton">
+          <button class="buttonSize">P</button>
+          <button class="buttonSize">M</button>
+          <button class="buttonSize">G</button>
+          <button class="buttonSize">GG</button>
+          <button class="buttonSize">U</button>
+          <button class="buttonSize">36</button>
+          <button class="buttonSize">38</button>
+          <button class="buttonSize">40</button>
+        </div>
+      </div>
+      <div class="sectionFilter--FilterOption">
+        <p>Faixa de preço</p>
+        <img src="./img/Vector 1.png" alt="Dropdwon para as opções de faixa de preço" class="buttonRangePriceOptionsMobile">
+      </div>
+      <div class="sectionFilter--optionsPriceContainer hide">
+        <div class="sectionFilter--listRangePrices">
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$0 até R$50</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$0 até R$50</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$51 até R$150</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$151 até R$300</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$301 até R$500</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>A partir de R$500</li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sectionFilter--buttonsFilterActionContainer">
+      <div class="sectionFilter--buttonsFilterAction">
+        <button class="sectionFilter--applyFilterButton">Aplicar</button>
+        <button class="sectionFilter--clearAllFiltersButton">Limpar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!--part that contains the choice of ordering on mobile-->
+  <aside class="sectionOrdination--container">
+    <div class="sectionOrdination--headerName">
+      <h2>Ordenar</h2>
+      <img src="./img/Group 1.png" alt="Fechar a sessão de filtragem dos produtos" class="closeOrderOptionsMobile">
+    </div>
+    <div class="sectionOrdination--optionsOrderContainer">
+      <div class="sectionOrdination--OrderOption">
+        <p>Mais recente</p>
+        <p>Maior preço</p>
+        <p>Menor preço</p>
+      </div>
+    </div>
+  </aside>
+
+  <!--section responsible for rendering the products (via api)-->
+  <section class="products--container">
+    <div class="products--cardContainer"></div>
   </section>
 
+  <!--button section to load more posts-->
   <section class="loadMore--container">
     <div class="loadMore--containerButton">
       <button id="buttonLoadMore">Carregar mais</button>
     </div>
   </section>
 
+  <!--footer section-->
   <footer>
     <div class="footer--textContainer">
       <p>M3: implantação de e-commerce vtex</p>
