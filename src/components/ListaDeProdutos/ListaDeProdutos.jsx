@@ -4,7 +4,6 @@ import Button from '../Button/Button';
 import Foto1 from 'img/img_1.png'
 import Foto2 from 'img/img_2.png'
 import Foto3 from 'img/img_3.png'
-import { Link } from 'react-router-dom';
 
 export default function LisdaDeProdutos() {
   return (
@@ -34,7 +33,6 @@ export default function LisdaDeProdutos() {
           </li>
         </ul>
       </div>
-
     </>
   )
 }
