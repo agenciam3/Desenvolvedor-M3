@@ -181,8 +181,11 @@ const handleOptionsFilter = (optionsContainer) => {
 // selected checkbox for colors checking
 const checkboxColors = document.querySelectorAll('.checkbox--colorsInput')
 const buttonsSize = document.querySelectorAll('.buttonSize')
+const checkboxPrices = document.querySelectorAll('.checkbox--rangePrice')
 const applyFilterButton = document.querySelector('.sectionFilter--applyFilterButton')
+const clearFilterButton = document.querySelector('.sectionFilter--clearAllFiltersButton')
 
+// function to get checkbox color is checked
 const gettingCheckboxChecked = (checkboxesColors) => {
   const checkboxIsChecked = []
   for(let checkbox of checkboxesColors) {
@@ -191,6 +194,7 @@ const gettingCheckboxChecked = (checkboxesColors) => {
   return checkboxIsChecked
 }
 
+// function to get button size is selected
 const gettingSizeSelected = (buttonsSize) => {
   const sizeButtonSelected = []
   for(let size of buttonsSize) {
@@ -200,16 +204,32 @@ const gettingSizeSelected = (buttonsSize) => {
   return sizeButtonSelected
 }
 
+// function to get chekcbox price is checked
+const gettingCheckboxPriceChecked = (checkboxesPrice) => {
+  const checkboxPriceIsChecked = []
+  for (let checkbox of checkboxesPrice) {
+    checkbox.checked ? checkboxPriceIsChecked.push(checkbox) : ''
+  }
+  return checkboxPriceIsChecked
+}
+
+// function to filter product 
 const filterProducts = async () => {
   const checkedColors = gettingCheckboxChecked(checkboxColors)
   const buttonSizeSelected = gettingSizeSelected(buttonsSize)
+  const checkedPrice = gettingCheckboxPriceChecked(checkboxPrices)
   const products = await getAllProducts()
   const productColors = []
   const productsSizes = []
+  const productsPrices = []
+  const productsUnite = []
   const divProductsContainer = document.querySelector('.products--cardContainer')
 
+
+  // Filtering the products according to the color informed
   const filteredProductsColors = (() => {
     products.filter((product) => {
+      // checks if the marked color is present in the array of all products
       const productWithColor = checkedColors.map((checkbox) => {
         return checkbox.classList.contains(`${product.color}`) ? productColors.push(product) : ''
       })
@@ -217,10 +237,151 @@ const filterProducts = async () => {
     })
   })()
 
+  //Filtering the products according to the size informed
+  const filteredProductsSizes = (() => {
+    products.filter((product) => {
+      // does the transformation of the size property in the products
+      const sizePerProduct = product.size
+      const sizeUnique = sizePerProduct.map(sizeUnique => {return sizeUnique})
+      // checks if the size array is in the products
+      const productWithSize = buttonSizeSelected.map((button) => {
+        return button.classList.contains(`${sizeUnique.length > 2 ? sizeUnique[0] || sizeUnique[1] : sizeUnique[0]}`) ? productsSizes.push(product) : ''
+      })
+      return productWithSize
+    })
+  })()
+
+  //filtering the products according to the price range informed
+  const filteredProductsPrice = (() => {
+    const allPrices = []    
+    // transforms the prices of products
+    const checkedPrices = checkedPrice.map((checkbox) => {
+      allPrices.push(checkbox.getAttribute('lowestPrice'))
+      allPrices.push(checkbox.getAttribute('biggestPrice'))
+    })
+    //get the highest and lowest price in the given range
+    const allPricesTransform = allPrices.map((price) => Number(price))
+    const biggestPrice = Math.max.apply(null, allPricesTransform)
+    const lowestPrice = Math.min.apply(null, allPricesTransform)
+
+    // maps the products according to the price that was informed
+    products.map((product) => {
+      if(lowestPrice <= product.price && product.price < biggestPrice) {
+        productsPrices.push(product)
+      }
+    })
+  })()
+
+  const generateArraysForProductsTwoMoreFilters = (array1, array2) => {
+    let biggestArray
+    let otherArray
+    const unionArray = [array1, array2]
+
+    for(let i = 0; i < unionArray.length; i++) {
+      if(i === 0) {
+          biggestArray = unionArray[i]
+        } else {
+          unionArray[i].length > biggestArray.length ? biggestArray = unionArray[i] : ''
+        }
+      }
+      unionArray.map((array) => array !== biggestArray ? otherArray = array : '')
+
+      biggestArray.map((product) => otherArray.includes(product) ? productsUnite.push(product) : '')
+  }
+
+  // uniting the products of all filters made
+  const uniteFilterProducts = (() => {
+    // checking if at least one filter was informed
+    if (productsSizes.length > 0 || productColors.length > 0 || productsPrices.length > 0) {
+      // filter if all three options exist
+      if(productsSizes.length > 0 && productColors.length > 0 && productsPrices.length > 0) {
+        const unionArrays = [productsSizes, productColors, productsPrices]
+        let biggestArray
+        let otherArrays = []
+        // checks which is the largest array among the three
+        for(let i = 0; i < unionArrays.length; i++) {
+          if(i === 0) {
+            biggestArray = unionArrays[i]
+          } else {
+            unionArrays[i].length > biggestArray.length ? biggestArray = unionArrays[i] : ''
+          }
+        }
+        // maps the two other arrays that are not the largest
+        unionArrays.map((array) => array !== biggestArray ? otherArrays.push(array) : '')
+        
+        const arrayComparingFirst = []
+        // compare the largest array with the first
+        const comparingLargestArrayWithFirst = biggestArray.map((product) => unionArrays[0].includes(product) ? arrayComparingFirst.push(product) : '')
+        console.log(arrayComparingFirst)
+
+        const arrayComparingSecond = []
+        //compare the largest array with the second
+        const comparingLargestArrayWithSecond = biggestArray.map((product) => unionArrays[1].includes(product) ? arrayComparingSecond.push(product) : '')
+        
+        //function to join the two filtered arrays
+        const unionArrayFilter = (() => {
+          const unionArray = [arrayComparingFirst, arrayComparingSecond]
+          let biggestArrayFilter
+          let otherArray 
+
+          // check which array is bigger
+          for(let i = 0; i < unionArray.length; i++) {
+            if(i === 0) {
+              biggestArrayFilter = unionArray[i]
+            } else {
+              unionArray[i].length > biggestArrayFilter.length ? biggestArrayFilter = unionArray[i] : ''
+            }
+          }
+
+          //joining all filtered arrays to the product that will be displayed
+          unionArray.map((array) => array !== biggestArrayFilter ? otherArray = array : '')
+          biggestArray.map((product) => otherArray.includes(product) ? productsUnite.push(product) : '')
+        })()
+      }
+
+      // filter if colors and sizes exists
+      if(productColors.length > 0 && productsSizes.length > 0 && productsPrices.length === 0) {
+        generateArraysForProducts(productColors, productsSizes)
+      }
+
+      // filter if colors and prices exists
+      if (productColors.length > 0 && productsPrices.length > 0 && productsSizes.length === 0) {
+        generateArraysForProducts(productColors, productsPrices)
+      }
+
+      // filter if sizes and prices exists
+      if(productsSizes.length > 0 && productsPrices.length > 0 && productColors.length === 0) {
+        generateArraysForProductsTwoMoreFilters(productsSizes, productsPrices)
+      }
+
+      // filter if only color exists
+      if(productColors.length > 0 && productsPrices.length === 0 && productsSizes.length === 0) {
+        productColors.map((product) => productsUnite.push(product))
+      }
+
+      // filter if only sizes exists
+      if(productsSizes.length > 0 && productColors.length === 0 && productsPrices.length === 0) {
+        productsSizes.map((product) => productsUnite.push(product))
+      }
+
+      // filter if only prices exists
+      if(productsPrices.length > 0 && productColors.length === 0 && productsSizes.length === 0) {
+        productsPrices.map((product) => productsUnite.push(product))
+      }
+    }
+
+    // filter if all filters is empty
+    if (productColors.length === 0 && productsSizes.length === 0 && productsPrices.length === 0) {
+      products.map((product) => productsUnite.push(product))
+    }
+  })()
+
+  // generate HTML with filters products info
   const generateHtmlFilteredColor = () => {
     divProductsContainer.innerText = ''
-    if(productColors.length > 0) {
-      productColors.map((product) => {
+
+    if(productsUnite.length > 0) {
+      productsUnite.map((product) => {
         divProductsContainer.innerHTML += `
           <div class="products--cardItem ${product.id}">
             <div class="products--imageCardItem">
@@ -242,7 +403,7 @@ const filterProducts = async () => {
   generateHtmlFilteredColor()
 
   // checking the size of the user's screen and adjusting the amount of initial products
-  if(productColors !== []) {
+  if(productsUnite !== []) {
     if(window.innerWidth < 425) {
       let productsPerPageFilter = 4
       for(let i = productsPerPageFilter; i < divProductsContainer.children.length; i++) {
@@ -264,6 +425,34 @@ const filterProducts = async () => {
   closeFilter()
 }
 
+const clearFilters = () => {
+  const checkedColors = gettingCheckboxChecked(checkboxColors)
+  const buttonSizeSelected = gettingSizeSelected(buttonsSize)
+  const checkedPrice = gettingCheckboxPriceChecked(checkboxPrices)
+
+  const mapCheckedColors = () => {
+    checkedColors.map((checkbox) => {
+      return checkbox.checked ? checkbox.checked = false : ''
+    })
+  } 
+
+  const mapButtonSelected = () => {
+    buttonSizeSelected.map((button) => {
+      button.classList.contains('buttonSize--active') ? button.classList.remove('buttonSize--active') : ''
+    })
+  }
+
+  const mapCheckedPrice = () => {
+    checkedPrice.map((checkbox) => {
+      return checkbox.checked ? checkbox.checked = false : ''
+    })
+  }
+
+  mapCheckedColors()
+  mapButtonSelected()
+  mapCheckedPrice()
+}
+
 // adding the function to the respective buttons
 openFilterOptionsMobile.addEventListener('click', openFilter)
 closeFilterOptionsMobile.addEventListener('click', closeFilter)
@@ -271,6 +460,7 @@ buttonColorsOptionsMobile.addEventListener('click', () => handleOptionsFilter(op
 buttonSizesOptionsMobile.addEventListener('click', () => handleOptionsFilter(optionsSizesContainer))
 buttonRangePriceOptionsMobile.addEventListener('click', () => handleOptionsFilter(optionsPriceContainer))
 applyFilterButton.addEventListener('click', filterProducts)
+clearFilterButton.addEventListener('click', clearFilters)
 
 // ***********************************************
 // function show and close ordination section
