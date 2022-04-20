@@ -3,4 +3,8 @@
   height: 32px;
   border: 1px solid rgb(0, 0, 0);
   box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
