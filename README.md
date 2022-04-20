@@ -1,79 +1,33 @@
-# Venha ser um desenvolvedor da Digital M3
+# Vaga de desenvolvedor front-end (Projeto Digital M3)!
 
-Ola, somos a Agência Digital M3, uma agência voltada para ramo de comercio eletrônico, trabalhamos com implantação, migração, evolução e otmização de e-commerces. Estamos com a sede de desenvolvimento em Nova Friburgo RJ. Mas contratamos pessoas de todo o pais, visto que trabalhamos 100% home office.  
-> R. Helena Coutinho, 41 
-> Braunes, Nova Friburgo/RJ
-[https://goo.gl/maps/2mWagcctnrGdtFhBA]( https://goo.gl/maps/2mWagcctnrGdtFhBA )
+Olá, me chamo Jair Santana e este é o projeto para avaliação concluído conforme solicitado. Utilizei uma ferramenta de automatização para minificação e transpilação dos arquivos fonte, o gulp. Para o Javascript busquei utilizar os recursos do ES6 sempre que achei viável. Não utilizei nenhuma biblioteca externa para tratamento dos elementos no DOM. Busquei seguir o layout fielmente, tanto no desktop quanto também mobile, e utilizei SCSS para estilização.
 
-Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos em HTML, CSS e JS para projetar interfaces e entregar a melhor experiência para os consumidores visando sempre a otimização do código e agilidade no desenvolvimento.
+## Instalação do projeto
 
-## O que procuramos
+### Gulp
 
-### Requisitos Obrigatórios
+Para inicialização do projeto, é necessário ter o GULP instalado, em sua versão 4.0.2 ou superior.
+Utilize os comandos abaixo para instalar as extensões necessárias:
 
-- Html5, css3;
-- Javascript;
-- Consumo de APIs.
-- Versionamento Git;
-- Grunt/gulp;
-- Sass/less;
-- Sites responsivos;
-- Iniciativa, criatividade e colaboração;
-- Boas práticas: reutilização de código, semântica, organização, performance.
+> npm install node-sass
 
-### Desejáveis:
+Se ao instalar o `node-saas` ocorrer algum erro durante a instalação, instale a versão 15 do NodeJS, e execute o seguinte comando:
 
-- Experiência com algum CMS
-- Conhecimento/Experiência em Vtex
-- Nodejs
-- Typescript
-- React
+> npm install -g mirror-config-china --registry=http://registry.npm.taobao.org
 
-----
+Esse plugin ainda não foi atualizado para versão atual, e estranhamente é necessário fazer o download de uma versão chinesa para utilização. Todavia, deixarei a pasta `/dist` incluída no projeto para caso haja algum impecílio na troca de versão do node do avaliador desse projeto.
 
-## Como se candidatar a vaga
+Os demais plugins não possuem observações, basta executar o comando:
 
-- [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
-- No seu fork, codifique o layout seguindo as instruções abaixo;
-- Atualize o readme com as instruções necessárias para rodar o seu código;
-- Adicione também seu e-mail de contato ao readme do projeto ( caso seu e-mail do github esteja privado )
-- Faça um pull request (ou envie para [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Vaga%20DEV%20-%20Digital%20M3)
+> npm install gulp-sass gulp-clean gulp-rename gulp-replace gulp-concat gulp-minify gulp-cssmin gulp-imagemin browser-sync
 
+### Execução:
 
-**obs.**: link do projeto [github.com/agenciam3/Desenvolvedor-M3](https://github.com/agenciam3/Desenvolvedor-M3)
+- Se estiver com o gulp instalado, basta entrar na pasta do projeto pelo terminal e executar o comando `gulp`.
+- Se optar pela execução direta, acesse a pasta `/dist` e execute o arquivo `index.html`
 
-### Instruções para o teste
+---
 
-O layout se encontra no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997Q/Desafio-m3?node-id=0%3A1) e pode ser encontrado images dele em "layout".
+## Contato
 
-### Dependencias
-
-O projeto possui um setup pronto no qual há a necessidade de possuir o nodejs instalado na versão 14 ou superior.
-
-Para instalar as dependencias só é preciso executar o comando: `npm install`
-
-O dar start no server e nos processos para desenvolvimento é necessário rodar o comando: `npm start `
-
-Uma ver que o comando é dado ele irá levantar 2 servidores, sendo eles:
- - um para acessar o front-end que roda na porta 3000. No qual pode ser acessado pela url: http://localhost:3000
- - um para o json-server que irá export uma api com a lista de produtos que roda na porta 5000. Para acessar os produtos é na url:  http://localhost:5000/products
-
-### Objetivo
-
-O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front end, por isso pedimos que não utilize nenhum framework, porem caso deseje utilizar frameworks como react, é possivel adicionar ao setup.
-### Obrigatório
-
-- HTML5 e CSS3
-- Requisição a API para obter os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
-
-#### Bônus
-
-- Javascript sem plugins e modular
-- Adição de processo no gulp para otimizar imagens
-
-##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+Para contato, envie um e-mail para [jairsantana7@gmail.com](mailto:jairsantana7@gmail.com), você também pode enviar uma mensagem no [Whatsapp](https://wa.me/+5513988196659), ou se preferir, entre em contato através [deste número de telefone](tel:+5513988196659)

@@ -1,0 +1,393 @@
+#sidebar-filter {
+
+  #filter-mobile-open {
+    display: none;
+  }
+
+  .aplication-filter {
+    @include flex(row,center , center);
+    .btn-filter{
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-top: 3.3rem;
+    }
+    .apply {
+      background: #00C0EE;
+      transition: all .3s;
+      color: #fff;
+      margin-right: 2.3rem;
+      border: none;
+    }
+  }
+
+
+  max-width: 200px;
+  width: 100%;
+
+  legend{
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .color {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.4rem;
+    div {
+      @include flex(column, left, space-between);
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+      label{
+        font-weight: 400;
+        font-size: 1.4rem;
+        text-transform: capitalize;
+      }
+    
+    }
+
+    .group {
+      display: block;
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.2rem;
+      cursor: pointer;
+      font-size: 1.4rem;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    
+    .group input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    
+    
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 1.6rem;
+      width: 1.6rem;
+      
+      background-color: #fff;
+      border: solid rgba(0, 0, 0, 0.5);
+      border-width: 1px;
+    }
+    
+    
+    .group:hover input ~ .checkmark {
+      background-color: #00C0EE;
+      transition: all 0.5s ease;
+      
+    }
+    
+    
+    .group input:checked ~ .checkmark {
+      background-color: #fff;
+      border: solid rgba(0, 0, 0, 0.5);
+      border-width: 1px;
+    ;
+    }
+    
+    
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      
+    }
+    
+    
+    .group input:checked ~ .checkmark:after {
+      display: block;
+    }
+    
+    
+    .group .checkmark:after {
+      left: 2px;
+      top: 2px;
+      width: 1rem;
+      height: 1rem;
+      background-color: #00C0EE;
+      border: solid rgba(0, 0, 0, 0.5);
+      border-width: 0;
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+    
+    }
+    
+  }
+
+  
+
+  
+.size {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2.4rem;
+  div {
+    margin-bottom: 1rem;
+    label{
+      font-weight: 400;
+      font-size: 1.4rem;
+      text-transform: capitalize;
+    }
+  
+  }
+
+  .group {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: rgba(0, 0, 0, 0.5);
+
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    &:hover input ~ .checkmark {
+      border: solid 0.1rem #00C0EE;
+      transition: all 0.5s ease;
+      
+    }
+
+    input:checked ~ .checkmark {
+      background-color: #fff;
+      border: solid rgba(0, 0, 0, 0.5);
+      border-width: 0.1rem;
+
+      &:after {
+        display: block;
+      }
+    
+
+      
+    }
+
+    .checkmark {
+      border: solid rgba(0, 0, 0, 0.5);
+      border-width: 1px;
+      width: 3.2rem;
+      height: 3.2rem;
+      line-height: 3.2rem;
+      display: block;
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 0 1.1rem 1.1rem 0;
+  
+      &:after {
+        content: "";
+        position: absolute;
+        display: none;
+        width: 3rem;
+      height: 3rem;
+      border: solid 0.1rem #00C0EE;
+      border-width: 0.1rem;
+      transform: rotate(0deg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      }
+    }
+
+
+ 
+
+  }
+  
+
+  
+  
+  
+ 
+
+  
+}
+
+.price {
+  .group {
+    display: block;
+    position: relative;
+    padding-left: 2rem;
+    margin-bottom: 1.2rem;
+    cursor: pointer;
+    font-size: 1.4rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  
+  .group input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 1.6rem;
+    width: 1.6rem;
+    
+    background-color: #fff;
+    border: solid rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+  }
+  
+  
+  .group:hover input ~ .checkmark {
+    background-color: #00C0EE;
+    transition: all 0.5s ease;
+    
+  }
+  
+  
+  .group input:checked ~ .checkmark {
+    background-color: #fff;
+    border: solid rgba(0, 0, 0, 0.5);
+    border-width: 1px;
+  ;
+  }
+  
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    
+  }
+  
+  
+  .group input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  
+  .group .checkmark:after {
+    left: 2px;
+    top: 2px;
+    width: 1rem;
+    height: 1rem;
+    background-color: #00C0EE;
+    border: solid rgba(0, 0, 0, 0.5);
+    border-width: 0;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  
+  }
+}
+
+@include responsive(480px){
+  // display: none;
+  max-width: 100vw;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+
+  fieldset{
+    padding-left: 1.6rem;
+    margin-bottom: 0;
+  }
+
+
+  #filter-mobile-open {
+    display: flex;
+    justify-content: space-between;
+    border: 0 0 1px 0;
+    text-transform: uppercase;
+
+    width: 100%;
+    border-bottom: 1px solid #666666;
+    background: transparent;
+    padding: 1.6rem;
+    font-size: 2.8rem;
+    color: #666666;
+    
+  }
+
+  .accordion {
+    margin-bottom: 0;
+    legend {
+    cursor: pointer;
+    font-size: 2.8rem;
+    padding-top: 1.6rem;
+    margin-bottom: 0;
+    color: #666666;
+
+  }
+
+}
+  .accordion-content {
+    display: none;
+  }
+  .accordion.active .accordion-content {
+    display: block;
+    padding-top: 1.6rem;
+    animation: fadeIn .3s forwards;
+  }
+
+  @keyframes fadeIn {
+    from{
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to{
+      opacity: 1;
+      transform: translateX(0);
+
+    }
+    
+  }
+}
+
+}
+
+.menu-opened {
+  overflow: hidden;
+  #sidebar-filter{
+    opacity: 1;
+    pointer-events: all;
+    aside{
+      transform: translateX(0%);
+    }
+
+  }
+}
+
+
+
+
+
