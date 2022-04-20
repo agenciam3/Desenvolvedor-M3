@@ -23,7 +23,7 @@
           ><img src="./img/logo-m3 1.svg" alt="M3 - Performance digital"
         /></a>
 
-        <button><img src="./img/bag.svg" alt="cart" /></button>
+        <button><img src="./img/bag.svg" alt="cart" id="cart"/> <span id="count"></span></button>
       </div>
     </header>
     <section id="h-section">
@@ -43,9 +43,9 @@
             <span>X</span>
           </button>
 
-          <button  class="bt-filter">Mas recentes</button>
-          <button  class="bt-filter">Menor preço</button>
-          <button  class="bt-filter">Maior preço</button>
+          <button  class="bt-filter"  id="id-recent" value="OrderByTopSaleDESC">Mas recentes</button>
+          <button  class="bt-filter" id="price-size-asc" value="OrderByPriceASC">Menor preço</button>
+          <button  class="bt-filter" id="price-size-desc" value="OrderByPriceDESC">Maior preço</button>
           
           
         </aside>
@@ -207,6 +207,11 @@
           </div>
         </fieldset>
 
+        <div class="aplication-filter">
+          <button class="btn-filter apply" id="apply-filter">APLICAR</button>
+          <button class="btn-filter" id="clear-filter">LIMPAR</button>
+        </div>
+
         
         
       </aside>
@@ -232,5 +237,6 @@
   
   </body>
 
-  <script src="bundle.js"></script>
+  <script  src="bundle.js"></script>
+
 </html>

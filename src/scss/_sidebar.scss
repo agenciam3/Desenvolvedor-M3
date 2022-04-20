@@ -4,6 +4,22 @@
     display: none;
   }
 
+  .aplication-filter {
+    @include flex(row,center , center);
+    .btn-filter{
+      font-size: 1.4rem;
+      cursor: pointer;
+      margin-top: 3.3rem;
+    }
+    .apply {
+      background: #00C0EE;
+      transition: all .3s;
+      color: #fff;
+      margin-right: 2.3rem;
+      border: none;
+    }
+  }
+
 
   max-width: 200px;
   width: 100%;
@@ -192,6 +208,7 @@
       left: 0;
       }
     }
+
 
  
 
