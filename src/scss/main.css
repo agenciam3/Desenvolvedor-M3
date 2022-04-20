@@ -17,4 +17,12 @@ ul {
   list-style: none;
   list-style-type: none;
 }
-/*# sourceMappingURL=reset.css.map */
+
+.rectangle {
+  width: 32px;
+  height: 32px;
+  border: 1px solid black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*# sourceMappingURL=main.css.map */
