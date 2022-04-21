@@ -11,6 +11,11 @@ $primary-color: #00C0EE;
 /* font variable*/
 $primary-font: 'Open Sans', sans-serif; 
 
+/* variable screen sizes*/
+$medium-size: 768px;
+$big-size: 1024px;
+$biggest-size: 1440px;
+
 /* class util for js*/ 
 .hide {
   display: none !important;
@@ -537,6 +542,89 @@ header {
   }
 }
 
+/* container for order and name 1024px*/
+.sectionName--container {
+  width: 100%;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  .sectionName--section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 10px;
+
+    .sectionName--title {
+      h3 {
+        font-size: 32px;
+        line-height: 45px;
+        font-family: $primary-font;
+        font-weight: 400;
+      }
+    }
+
+    .sectionName--ordernedModal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      text-align: center;
+      width: 150px;
+      border: 1px solid $gray-color;
+
+      .sectionName--atualOrderText {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        p {
+          font-size: 16px;
+          font-family: $primary-font;
+          text-align: center;
+          line-height: 20px;
+          color: $black-color;
+        }
+
+        img {
+          width: 12px;
+          height: 9px;
+          margin-left: 10px;
+          margin-top: 1px;
+        }
+      }
+
+      .sectionName--optionsOrder {
+        background-color: #fff;
+        position: absolute;
+        width: 150px;
+        height: 90px;
+        top: 129px;
+        border: 1px solid $gray-color;
+        display: none;
+
+        .sectionName--firstOptionOrder {
+          margin-top: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          font-family: $primary-font;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        
+      }
+    }
+  }
+}
 
 /* container for products exibhition*/
 .products--container {
@@ -706,5 +794,35 @@ footer {
     letter-spacing: 0.05em;
     text-transform: uppercase;
     color: #fff;
+  }
+}
+
+/*MEDIA QUERIES AREA*/
+@media (min-width: $medium-size) {
+  .products--cardContainer {
+    width: 550px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: $big-size) {
+  .products--cardContainer {
+    padding: 20px;
+    width: 700px;
+  }
+
+  .products--cardItem {
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sectionMobileOrdination--container {
+    display: none;
+  }
+
+  .sectionName--container {
+    display: flex;
   }
 }

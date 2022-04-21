@@ -598,6 +598,10 @@ const removeItemFromCart = (element) => {
 
 // function open cart
 const openCartItem = () => {
+  const optionsOrder = document.querySelector('.sectionName--optionsOrder')
+
+  optionsOrder.style.display = 'block' ? optionsOrder.style.display = 'none' : ''
+
   sectionCart.classList.add('show')
   headerContainer.classList.add('hide')
   body.style.position = 'fixed'
@@ -613,6 +617,35 @@ const closeCartItem = () => {
 // add events in buttons
 cartShopIcon.addEventListener('click', openCartItem)
 closeCartIcon.addEventListener('click', closeCartItem)
+
+// ************************************
+//  Function to modal order for 1024px>
+// ************************************
+
+const orderSection = document.querySelector('.sectionName--atualOrderText')
+const optionsOrder = document.querySelectorAll('.optionsOrder')
+
+const handleOrderOption = (element) => {
+  const contentElement = element.innerText
+  orderSection.innerHTML = `<p>${contentElement}</p>: <img src="./img/Vector 1.png" alt="Selecione uma maneira para ordernar os produtos">`
+  openOrderSection()
+}
+
+for(let option of optionsOrder) {
+  option.addEventListener('click', (e) => handleOrderOption(e.target))
+}
+
+const openOrderSection = () => {
+  const optionsOrder = document.querySelector('.sectionName--optionsOrder')
+  
+  if(optionsOrder.style.display === 'none') {
+    optionsOrder.style.display = 'block'
+  } else {
+    optionsOrder.style.display = 'none'
+  }
+}
+
+orderSection.addEventListener('click', openOrderSection)
 
 // function to resolve promise products 
 const promisesResolve = async () => {
