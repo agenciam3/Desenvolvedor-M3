@@ -31,6 +31,11 @@ $biggest-size: 1440px;
   font-weight: 600 !important;
 }
 
+.checkmarkFilterDesktop--active {
+  border-color: $primary-color !important;
+  background-color: $primary-color !important;
+}
+
 /* Header CSS*/
 
 header {
@@ -549,7 +554,7 @@ header {
   display: none;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
 
   .sectionName--section {
     display: flex;
@@ -606,7 +611,7 @@ header {
         position: absolute;
         width: 150px;
         height: 90px;
-        top: 129px;
+        top: 148px;
         border: 1px solid $gray-color;
         display: none;
 
@@ -625,6 +630,242 @@ header {
     }
   }
 }
+
+/* filter section for desktop*/
+.sectionFilterDesktop--container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: -631px;
+  width: 10%;
+
+  .sectionFilterDesktop--section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .sectionFilterDesktop--colorOptions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .sectionFilterDesktop--title {
+        width: 100%;
+        text-align: center;
+
+        h4 {
+          font-size: 16px;
+          font-family: $primary-font;
+          text-transform: uppercase;
+          color: $black-color;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .sectionFilterDesktop--optionsContainerColor {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .sectionFilterDesktop--uniqueOption {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 30px;
+
+          .sectionFilter--labelInput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            .sectionFilter--checkboxArea {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .sectionFilter--checkmarkInput {
+              position: absolute;
+              margin-right: 60px;
+              height: 16px;
+              width: 16px;
+              border: 1px solid $gray-color;
+              background-color: #fff;
+            }
+
+            .sectionFilter--checkmarkInput.azul {
+              margin-right: 33px;
+            }
+
+            .sectionFilter--checkmarkInput.branco {
+              margin-right: 50px;
+            }
+  
+            .sectionFilter--checkmarkInput.cinza {
+              margin-right: 40px;
+            }
+  
+            .sectionFilter--checkmarkInput.laranja {
+              margin-right: 52px;
+            }
+  
+            .sectionFilter--checkmarkInput.verde {
+              margin-right: 44px;
+            }
+  
+            .sectionFilter--checkmarkInput.vermelho {
+              margin-right: 67px;
+            }
+  
+            .sectionFilter--checkmarkInput.preto {
+              margin-right: 41px;
+            }
+  
+            .sectionFilter--checkmarkInput.rosa {
+              margin-right: 37px;
+            }
+  
+            .sectionFilter--checkmarkInput.vinho {
+              margin-right: 43px;
+            }
+          }
+        }
+          p {
+            margin-left: 8px;
+            font-family: $primary-font;
+            font-size: 14px;
+            line-height: 14px;
+          }
+        }
+    }
+    .sectionFilterDesktop--sizesOptions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+
+      .sectionFilterDesktop--sizeTitle {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+
+        h4 {
+          font-size: 16px;
+          font-family: $primary-font;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+        }
+      }
+
+      .sectionFilterDesktop--optionsContainerSize {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 150px;
+        margin-left: 60px;
+
+        button {
+          background: none;
+          border: 1px solid $gray-color;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          width: 32px;
+          height: 32px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: $gray-color;
+          letter-spacing: 0.05rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .sectionFilterDesktop--priceOptions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      .sectionFilterDesktop--priceTitle {
+        width: 100%;
+        text-align: center;
+
+        h4 {
+          font-size: 16px;
+          font-family: $primary-font;
+          text-transform: uppercase;
+          color: $black-color;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          margin-bottom: 15px;
+          width: 100%;
+          margin-left: 30px;
+        }
+      }
+
+      .sectionFilterDesktop--priceRangeOptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .sectionFilterDesktop--priceRange {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 80px;
+
+          .sectionFilter--labelInput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            .sectionFilter--checkboxArea {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .sectionFilter--checkmarkInput {
+              position: absolute;
+              margin-right: 140px;
+              height: 16px;
+              width: 16px;
+              border: 1px solid $gray-color;
+              background-color: #fff;
+            }
+          }
+        }
+        p {
+          margin-left: 8px;
+          font-family: $primary-font;
+          font-size: 14px;
+          line-height: 14px;
+          width: 135px;
+        }
+      }
+    }
+  }
+}
+
 
 /* container for products exibhition*/
 .products--container {
@@ -820,6 +1061,41 @@ footer {
 @media (min-width: 1440px) {
   .sectionMobileOrdination--container {
     display: none;
+  }
+
+  .sectionFilterDesktop--container {
+    display: flex;
+    position: absolute;
+    margin-left: -510px;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .products--container {
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+
+    .products--cardContainer {
+      width: 900px;
+      margin-left: 50px;
+
+      .products--cardItem {
+        width: 200px;
+        height: 380px;
+        margin-bottom: 20px;
+
+        .products--imageCardItem img {
+          width: 180px;
+          height: 250px;
+        }
+
+        .products--textInformationCardItem {
+          margin-top: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
   }
 
   .sectionName--container {

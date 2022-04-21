@@ -423,12 +423,12 @@ const filterProducts = async () => {
       for(let i = productsPerPageFilter; i < divProductsContainer.children.length; i++) {
         divProductsContainer.children[i].style.display = 'none'
       }
-    } else if(window.innerWidth > 520 && window.innerWidth < 1000) {
+    } else if(window.innerWidth > 520 && window.innerWidth < 1024) {
       productsPerPageFilter = 6
       for(let i = productsPerPageFilter; i < divProductsContainer.children.length; i++) {
         divProductsContainer.children[i].style.display = 'none'
       }
-    } else if(window.innerWidth > 1000) {
+    } else if(window.innerWidth > 1024) {
       productsPerPageFilter = 9
       for (let i = productsPerPageFilter; i < divProductsContainer.children.length; i++) {
         divProductsContainer.children[i].style.display = 'none'
@@ -646,6 +646,66 @@ const openOrderSection = () => {
 }
 
 orderSection.addEventListener('click', openOrderSection)
+
+// ******************************************* 
+//        DESKTOP FUNCTIONS ADAPTED
+// *******************************************
+const checkmarkInputs = document.querySelectorAll('.desktopColorFilter')
+const checkmarkSizesDesktop = document.querySelectorAll('.buttonSizeDesktop')
+
+const filterCheckClassColor = (element) => {
+  if(element.classList.contains('checkmarkFilterDesktop--active')) {
+    element.classList.remove('checkmarkFilterDesktop--active')
+  } else {
+    element.classList.add('checkmarkFilterDesktop--active')
+    filterProductDesktop(element)
+  }
+}
+
+const filterCheckClassSize = (element) => {
+  if(element.classList.contains('buttonSize--active')) {
+    element.classList.remove('buttonSize--active')
+  } else {
+    element.classList.add('buttonSize--active')
+    filterProductDesktop(element)
+  }
+}
+
+for(let checkmark of checkmarkInputs) {
+  checkmark.addEventListener('click', (e) => filterCheckClassColor(e.target))
+}
+
+for(let buttonSize of checkmarkSizesDesktop) {
+  buttonSize.addEventListener('click', (e) => filterCheckClassSize(e.target))
+}
+
+const filterProductDesktop = async (element) => {
+  const classSelected = element.classList[1]
+  const products = await getAllProducts()
+  const productsColor = []
+  const productsSize = []
+  const productsFilterInMoment = []
+  
+  const filteredProductColor = (() => {
+    products.filter((product) => {
+      const colorProduct = product.color.toLowerCase()
+      if(colorProduct == classSelected) {
+        productsColor.push(product)
+      }
+    })
+  })()
+  
+  const filteredProductSize = (() => {
+    products.filter((product) => {
+      const sizePerProduct = product.size
+      const sizeUnique = sizePerProduct.map(sizeUnique => {return sizeUnique})
+      // checks if the size array is in the products
+      element.classList.contains(`${sizeUnique.length > 2 ? sizeUnique[0] || sizeUnique[1] : sizeUnique[0]}`) ? productsSize.push(product) : ''
+    })
+  })()
+
+  
+}
 
 // function to resolve promise products 
 const promisesResolve = async () => {
