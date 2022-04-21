@@ -533,46 +533,81 @@ const addItemInCart = async (element) => {
     }
   })
 
+  // getting the class for comparison
   const classIdButton = element.classList[1]
   const classString = String(classIdButton)
 
-  // add html product in cart
+  // filtering only for the current element, avoiding multiple calls 0(n)²
+  let productMatchID 
   removeItemDuplicate.map((product) => {
-    if(product.id === classString) { 
-      containerProduct.innerHTML += `
-        <div class="sectionCart--productSection">
-          <div class="sectionCart--imageProduct">
-            <img src=${product.image} alt="Imagem do produto">
-          </div>
-          <div class="sectionCart--infosProducts">
-            <h3>${product.name}</h3>
-            <p>R$ ${product.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
-          </div>
-          <div class="sectionCart--removeItem">
-            <img src="./img/Group 1.png" alt="Botão para excluir produto do carrinho">
-          </div>
-        </div>
-      `
-    }
+    product.id === classString ? productMatchID = product : ''
   })
+
+  // add html product in cart
+  containerProduct.innerHTML += `
+    <div class="sectionCart--productSection ${productMatchID.id}">
+      <div class="sectionCart--imageProduct">
+        <img src=${productMatchID.image} alt="Imagem do produto" class="imageProductCart ${productMatchID.id}">
+      </div>
+      <div class="sectionCart--infosProducts">
+        <h3>${productMatchID.name}</h3>
+        <p>R$ ${productMatchID.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+      </div>
+      <div class="sectionCart--removeItem">
+        <img src="./img/Group 1.png" alt="Botão para excluir produto do carrinho" class="buttonExcludeItemCart ${productMatchID.id}">
+      </div>
+    </div>
+  `
+
+  // adding function to delete buttons
+  const buttonsExclude = document.querySelectorAll('.buttonExcludeItemCart')
+  for(let button of buttonsExclude) {
+    button.addEventListener('click', (e) => removeItemFromCart(e.target))
+  }
+}
+
+// function to remove item to cart
+const removeItemFromCart = (element) => {
+  // get product by delete button
+  const buttonExcludeCalled = element.classList[1]
+  const imageProductCart = document.querySelectorAll('.imageProductCart')
+  // filtering image for what was called
+  let filterImage
+  for (let image of imageProductCart) {
+    image.classList[1] == buttonExcludeCalled ? filterImage = image : ''
+  }
+  const idImageProduct = filterImage.classList[1]
+  // get product by section
+  const productSection = document.querySelectorAll('.sectionCart--productSection')
+  let filterProductSection 
+  for (let section of productSection) {
+    section.classList[1] == buttonExcludeCalled ? filterProductSection = section : ''
+  }
+
+  // get cart count 
+  const cartItem = document.querySelector('.header--cartNumber')
+  const cartNumber = Number(cartItem.innerText)
+  const cartNewNumber = cartNumber - 1
+
+  // updating html, deleting item and updating count
+  if(buttonExcludeCalled == idImageProduct) {
+    filterProductSection.innerText = ''
+    cartItem.innerHTML = cartNewNumber
+  }
 }
 
 // function open cart
 const openCartItem = () => {
-  if(!sectionCart.classList.contains('show')) {
-    sectionCart.classList.add('show')
-    headerContainer.classList.add('hide')
-    headerContainer.classList.remove('show')
-  } 
+  sectionCart.classList.add('show')
+  headerContainer.classList.add('hide')
+  body.style.position = 'fixed'
 }
 
 // function close cart
 const closeCartItem = () => {
-  if(sectionCart.classList.contains('show')) {
-    sectionCart.classList.remove('show')
-    headerContainer.classList.remove('hide')
-    headerContainer.classList.add('show')
-  } 
+  sectionCart.classList.remove('show')
+  headerContainer.classList.remove('hide')
+  body.style.position = 'initial'
 }
 
 // add events in buttons
@@ -588,3 +623,4 @@ const promisesResolve = async () => {
 
 // call all promise resolves function
 promisesResolve()
+
