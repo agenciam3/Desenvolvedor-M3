@@ -64,12 +64,12 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 ### Obrigatório
 
 - HTML5 e CSS3
-- Requisição a API para obter os produtos
-- Funcionalidade: Filtrar produtos por cor, tamanho e preço.
-- Funcionalidade: Adicionar produto ao carrinho.
-- Funcionalidade: Carregar mais produtos.
-- Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
-- Responsividade
+- [x] Requisição a API para obter os produtos
+- [x] Funcionalidade: Filtrar produtos por cor, tamanho e preço.
+- [x] Funcionalidade: Adicionar produto ao carrinho.
+- [x] Funcionalidade: Carregar mais produtos.
+- [x] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
+- [x] Responsividade
 
 #### Bônus
 

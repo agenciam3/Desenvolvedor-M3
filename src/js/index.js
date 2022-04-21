@@ -34,12 +34,19 @@ const insertProductsIntoPage = htmlProduct => {
         </div>
         <div class="products--textInformationCardItem">
           <h3>${product.name}</h3>
-          <p class="bold">${product.price}</p>
-          <p class="text-installments">até ${product.parcelamento[0]}x de R$${product.parcelamento[1]}</p>
-        </div>
+          <p class="bold"> R$ ${product.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+          <p class="text-installments">até ${product.parcelamento[0]}x de R$${product.parcelamento[1].toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+          </div>
+          <div class="products--buttonBuyCardItem"><button class="buttonBuyItem ${product.id}">Comprar</button></div>
       </div>
     `
   })
+
+  const buttonsBuyItem = document.querySelectorAll('.buttonBuyItem')
+
+  for(let button of buttonsBuyItem) {
+    button.addEventListener('click', (element) => addItemInCart(element.target))
+  }
 
   // checking the size of the user's screen and adjusting the amount of initial products
   if(window.innerWidth < 425) {
@@ -389,14 +396,21 @@ const filterProducts = async () => {
             </div>
           <div class="products--textInformationCardItem">
             <h3>${product.name}</h3>
-            <p class="bold">${product.price}</p>
-            <p class="text-installments">até ${product.parcelamento[0]}x de R$${product.parcelamento[1]}</p>
+            <p class="bold"> R$ ${product.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+            <p class="text-installments">até ${product.parcelamento[0]}x de R$${product.parcelamento[1].toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
           </div>
+          <div class="products--buttonBuyCardItem"><button class="buttonBuyItem ${product.id}">Comprar</button></div>
         </div>
         ` 
       })
     } else {
       divProductsContainer.innerHTML = `<p class="products--productFilterEmpty">Não há produtos catalogados com os filtros requeridos!</p>`
+    }
+
+    const buttonsBuyItem = document.querySelectorAll('.buttonBuyItem')
+
+    for(let button of buttonsBuyItem) {
+      button.addEventListener('click', (element) => addItemInCart(element.target))
     }
   }
 
@@ -490,6 +504,80 @@ const closeOrder = () => {
 // add events for buttons
 openOrderOptionsMobile.addEventListener('click', openOrder)
 closeOrderOptionsMobile.addEventListener('click', closeOrder)
+
+// *****************************
+//  function to add item in cart
+// ******************************
+const cartShopIcon = document.querySelector('.cartShopIcon')
+const closeCartIcon = document.querySelector('.closeCartItem')
+const sectionCart = document.querySelector('.sectionCart--container')
+const containerProduct = document.querySelector('.sectionCart--containerProduct')
+
+// function to add button in cart
+const addItemInCart = async (element) => {
+  const cartItem = document.querySelector('.header--cartNumber')
+  const cartNumber = Number(cartItem.innerText)
+  const cartNewNumber = cartNumber + 1
+  const products = await getAllProducts()
+  const removeItemDuplicate = []
+  let lewestItem
+  cartItem.innerText = cartNewNumber
+  
+  // filter for items repeat for add in cart
+  products.filter((product, index) => {
+    if (index === 0) {
+      lewestItem = product
+      removeItemDuplicate.push(lewestItem)
+    } else {
+      product.id !== products[index - 1].id ? removeItemDuplicate.push(product) : ''
+    }
+  })
+
+  const classIdButton = element.classList[1]
+  const classString = String(classIdButton)
+
+  // add html product in cart
+  removeItemDuplicate.map((product) => {
+    if(product.id === classString) { 
+      containerProduct.innerHTML += `
+        <div class="sectionCart--productSection">
+          <div class="sectionCart--imageProduct">
+            <img src=${product.image} alt="Imagem do produto">
+          </div>
+          <div class="sectionCart--infosProducts">
+            <h3>${product.name}</h3>
+            <p>R$ ${product.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+          </div>
+          <div class="sectionCart--removeItem">
+            <img src="./img/Group 1.png" alt="Botão para excluir produto do carrinho">
+          </div>
+        </div>
+      `
+    }
+  })
+}
+
+// function open cart
+const openCartItem = () => {
+  if(!sectionCart.classList.contains('show')) {
+    sectionCart.classList.add('show')
+    headerContainer.classList.add('hide')
+    headerContainer.classList.remove('show')
+  } 
+}
+
+// function close cart
+const closeCartItem = () => {
+  if(sectionCart.classList.contains('show')) {
+    sectionCart.classList.remove('show')
+    headerContainer.classList.remove('hide')
+    headerContainer.classList.add('show')
+  } 
+}
+
+// add events in buttons
+cartShopIcon.addEventListener('click', openCartItem)
+closeCartIcon.addEventListener('click', closeCartItem)
 
 // function to resolve promise products 
 const promisesResolve = async () => {
