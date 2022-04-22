@@ -88,7 +88,8 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font: 'Open Sans', sans-serif;
+  // font: inherit;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -98,7 +99,7 @@ details,
 figcaption,
 figure,
 footer,
-header,
+// header,
 hgroup,
 menu,
 nav,
