@@ -84,4 +84,53 @@ footer {
 footer p {
   color: #ffff;
 }
+
+header .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img .logo {
+  width: 119px;
+  height: 30px;
+  margin-left: 162px;
+  margin-top: 16px;
+}
+
+img .cadeado {
+  width: 17px;
+  height: 20px;
+  margin-right: 166px;
+  margin-top: 20px;
+}
+
+section .listas {
+  width: 976px;
+  height: 426px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0;
+}
 /*# sourceMappingURL=main.css.map */
