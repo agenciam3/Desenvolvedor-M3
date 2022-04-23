@@ -4,7 +4,7 @@ footer{
   margin: 0 auto;
   left: calc(50% - 1500px/2);
   bottom: 0px;
-  background: black;
+  background: $primary-color;
   display: flex;
   flex-direction: row;
   justify-content: center;
