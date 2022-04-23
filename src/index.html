@@ -9,10 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
+
     <!-- Navbar -->
 
     <header>
@@ -26,213 +27,221 @@
       </div>
     </header>
 
+    <!-- Main -->
 
-    <main class="content">
-      <!-- Filtros -->
-      <filters>
-        <div class="container">
-          <div class="filters">
-            <h2>BLUSAS</h2>
-            <ul class="colors">
-              <li>
-                <input type="checkbox" name="amarelo" value="Amarelo" />
-                <label> Amarelo </label>
-              </li>
-              <li>
-                <input type="checkbox" name="azul" value="Azul" />
-                <label> Azul </label>
-              </li>
-              <li>
-                <input type="checkbox" name="branco" value="Branco" />
-                <label> Branco </label>
-              </li>
-              <li>
-                <input type="checkbox" name="cinza" value="Cinza" />
-                <label> Cinza </label>
-              </li>
-              <li>
-                <input type="checkbox" name="laranja" value="Laranja" />
-                <label> Laranja </label>
-              </li>
-              <div className="ver-todas">
-                <p>Vector</p>
-                <p>Ver todas as cores</p>
-              </div>
-            </ul>
-            <ul class="sizes">
-              <h2>TAMANHOS</h2>
-              <li>
-                <div class="rectangle">
-                  <p>P</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>M</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>G</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>GG</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>U</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>36</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>38</p>
-                </div>
-              </li>
-              <li>
-                <div class="rectangle">
-                  <p>40</p>
-                </div>
-              </li>
-            </ul>
-            <ul class="amount">
+    <main>
+      <div class="container" style="display: flex;margin-left: 161px;margin-top: 104px;">
+
+        <!-- Filtros -->
+        <section>
+          <div class="container">
+            <div class="filters">
               <div>
-                <h2>FAIXA DE PREÇO</h2>
-                <li>
-                  <input type="checkbox" />
-                  <label> de R$0 até R$50 </label>
-                </li>
-                <li>
-                  <input type="checkbox" />
-                  <label> de R$51 até R$150 </label>
-                </li>
-                <li>
-                  <input type="checkbox" />
-                  <label> de R$151 até R$300 </label>
-                </li>
-                <li>
-                  <input type="checkbox" />
-                  <label> de R$301 até R$500 </label>
-                </li>
-                <li>
-                  <input type="checkbox" />
-                  <label> a partir de R$500 </label>
-                </li>
+                <h2>BLUSAS</h2>
               </div>
-            </ul>
+              <ul class="colors">
+                <li>
+                  <input type="checkbox" name="amarelo" value="Amarelo" />
+                  <label> Amarelo </label>
+                </li>
+                <li>
+                  <input type="checkbox" name="azul" value="Azul" />
+                  <label> Azul </label>
+                </li>
+                <li>
+                  <input type="checkbox" name="branco" value="Branco" />
+                  <label> Branco </label>
+                </li>
+                <li>
+                  <input type="checkbox" name="cinza" value="Cinza" />
+                  <label> Cinza </label>
+                </li>
+                <li>
+                  <input type="checkbox" name="laranja" value="Laranja" />
+                  <label> Laranja </label>
+                </li>
+                <div className="ver-todas">
+                  <p>Vector</p>
+                  <p>Ver todas as cores</p>
+                </div>
+              </ul>
+              <ul class="sizes">
+                <div>
+                  <h2>TAMANHOS</h2>
+                </div>
+                <li>
+                  <div class="rectangle">
+                    <p>P</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>M</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>G</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>GG</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>U</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>36</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>38</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="rectangle">
+                    <p>40</p>
+                  </div>
+                </li>
+              </ul>
+              <ul class="amount">
+                <div>
+                  <h2>FAIXA DE PREÇO</h2>
+                </div>
+                <div>
+                  <li>
+                    <input type="checkbox" />
+                    <label> de R$0 até R$50 </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" />
+                    <label> de R$51 até R$150 </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" />
+                    <label> de R$151 até R$300 </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" />
+                    <label> de R$301 até R$500 </label>
+                  </li>
+                  <li>
+                    <input type="checkbox" />
+                    <label> a partir de R$500 </label>
+                  </li>
+                </div>
+              </ul>
+            </div>
           </div>
-        </div>
-      </filters>
-  
-      
-      <!-- Ordenar por -->
-  
-      <orderby>
-        <div class="container">
-          <section class="ordem-por">
-            <p>Ordenar por:</p>
-          </section>
-        </div>
-      </orderby>
-  
-      <!-- Listas -->
-  
-      <section>
-        <div class="section-lists">
-              <ul class="lists">
-                <li class="produto-1">
-                  <img
-                    class="modelo-1"
-                    src="img/img_1.png"
-                    alt="camiseta-mesclada"
-                  />
-                  <p class="nome-do-produto">CAMISETA MESCLADA</p>
-                  <p class="preco">R$ 28,00</p>
-                  <p class="parcelamento">até 3x de R$9,33</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-                <li class="produto-2">
-                  <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
-                  <p class="nome-do-produto">SAIA EM COURO</p>
-                  <p class="preco">R$ 398,00</p>
-                  <p class="parcelamento">até 10x de R$39,80</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-                <li class="produto-3">
-                  <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
-                  <p class="nome-do-produto">CARDIGAN TIGRE</p>
-                  <p class="preco">R$ 398,00</p>
-                  <p class="parcelamento">até 10x de R$39,80</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-              </ul>
-             <!--  <ul class="lists">
-                <li class="produto-1">
-                  <img
-                    class="modelo-1"
-                    src="img/img_1.png"
-                    alt="camiseta-mesclada"
-                  />
-                  <p class="nome-do-produto">CAMISETA MESCLADA</p>
-                  <p class="preco">R$ 28,00</p>
-                  <p class="parcelamento">até 3x de R$9,33</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-                <li class="produto-2">
-                  <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
-                  <p class="nome-do-produto">SAIA EM COURO</p>
-                  <p class="preco">R$ 398,00</p>
-                  <p class="parcelamento">até 10x de R$39,80</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-                <li class="produto-3">
-                  <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
-                  <p class="nome-do-produto">CARDIGAN TIGRE</p>
-                  <p class="preco">R$ 398,00</p>
-                  <p class="parcelamento">até 10x de R$39,80</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-              </ul>
-              <ul class="lists">
-                <li class="produto-1">
-                  <img
-                    class="modelo-1"
-                    src="img/img_1.png"
-                    alt="camiseta-mesclada"
-                  />
-                  <p class="nome-do-produto">CAMISETA MESCLADA</p>
-                  <p class="preco">R$ 28,00</p>
-                  <p class="parcelamento">até 3x de R$9,33</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-                <li class="produto-2">
-                  <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
-                  <p class="nome-do-produto">SAIA EM COURO</p>
-                  <p class="preco">R$ 398,00</p>
-                  <p class="parcelamento">até 10x de R$39,80</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-                <li class="produto-3">
-                  <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
-                  <p class="nome-do-produto">CARDIGAN TIGRE</p>
-                  <p class="preco">R$ 398,00</p>
-                  <p class="parcelamento">até 10x de R$39,80</p>
-                  <button type="button">COMPRAR</button>
-                </li>
-              </ul> -->
-          </section>
-        </div>
-        <button type="button">CARREGAR MAIS</button>
-      </section>
+        </section>
+    
+        <!-- Ordenar por -->
+    
+        <section>
+          <div class="container">
+            <section class="ordem-por">
+              <p>Ordenar por:</p>
+            </section>
+          </div>
+        </section>
+    
+        <!-- Listas -->
+    
+        <section>
+          <div class="section-lists">
+                <ul class="lists">
+                  <li class="produto-1">
+                    <img
+                      class="modelo-1"
+                      src="img/img_1.png"
+                      alt="camiseta-mesclada"
+                    />
+                    <p class="nome-do-produto">CAMISETA MESCLADA</p>
+                    <p class="preco">R$ 28,00</p>
+                    <p class="parcelamento">até 3x de R$9,33</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                  <li class="produto-2">
+                    <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
+                    <p class="nome-do-produto">SAIA EM COURO</p>
+                    <p class="preco">R$ 398,00</p>
+                    <p class="parcelamento">até 10x de R$39,80</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                  <li class="produto-3">
+                    <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
+                    <p class="nome-do-produto">CARDIGAN TIGRE</p>
+                    <p class="preco">R$ 398,00</p>
+                    <p class="parcelamento">até 10x de R$39,80</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                </ul>
+               <!--  <ul class="lists">
+                  <li class="produto-1">
+                    <img
+                      class="modelo-1"
+                      src="img/img_1.png"
+                      alt="camiseta-mesclada"
+                    />
+                    <p class="nome-do-produto">CAMISETA MESCLADA</p>
+                    <p class="preco">R$ 28,00</p>
+                    <p class="parcelamento">até 3x de R$9,33</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                  <li class="produto-2">
+                    <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
+                    <p class="nome-do-produto">SAIA EM COURO</p>
+                    <p class="preco">R$ 398,00</p>
+                    <p class="parcelamento">até 10x de R$39,80</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                  <li class="produto-3">
+                    <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
+                    <p class="nome-do-produto">CARDIGAN TIGRE</p>
+                    <p class="preco">R$ 398,00</p>
+                    <p class="parcelamento">até 10x de R$39,80</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                </ul>
+                <ul class="lists">
+                  <li class="produto-1">
+                    <img
+                      class="modelo-1"
+                      src="img/img_1.png"
+                      alt="camiseta-mesclada"
+                    />
+                    <p class="nome-do-produto">CAMISETA MESCLADA</p>
+                    <p class="preco">R$ 28,00</p>
+                    <p class="parcelamento">até 3x de R$9,33</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                  <li class="produto-2">
+                    <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
+                    <p class="nome-do-produto">SAIA EM COURO</p>
+                    <p class="preco">R$ 398,00</p>
+                    <p class="parcelamento">até 10x de R$39,80</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                  <li class="produto-3">
+                    <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
+                    <p class="nome-do-produto">CARDIGAN TIGRE</p>
+                    <p class="preco">R$ 398,00</p>
+                    <p class="parcelamento">até 10x de R$39,80</p>
+                    <button type="button">COMPRAR</button>
+                  </li>
+                </ul> -->
+        </section>
+          </div>
+          <button type="button">CARREGAR MAIS</button>
+        </section>
+      </div>
     </main>
-
 
     <!-- Footer -->
 
