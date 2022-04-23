@@ -3,18 +3,19 @@ header .container{
   flex-direction: row;
   justify-content: space-between;
   align-items: center; 
+
+  .logo{
+    width: 119px;
+    height: 30px;
+    margin-left: 162px;
+    margin-top: 16px;
+  }
+
+  .cadeado{
+    width: 17px;
+    height: 20px;
+    margin-right: 166px;
+    margin-top: 20px;
+  }
 }
 
-img .logo{
-  width: 119px;
-  height: 30px;
-  margin-left: 162px;
-  margin-top: 16px;
-}
-
-img .cadeado{
-  width: 17px;
-  height: 20px;
-  margin-right: 166px;
-  margin-top: 20px;
-}
