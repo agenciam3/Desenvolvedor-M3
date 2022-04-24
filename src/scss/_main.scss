@@ -1,7 +1,9 @@
-@import "reset";
-@import "rectangle";
-@import "button";
-@import "footer";
-@import "header";
-@import "section";
-@import "variables";
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .container {
+  display: flex;
+}
