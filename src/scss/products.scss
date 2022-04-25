@@ -1,0 +1,50 @@
+.identifier{
+  width: 100%;
+  h3{
+    font-size: 32px;
+    color: #333;
+  }
+}
+
+#products{
+  display: flex;
+  width: 850px;
+  flex-wrap: wrap;
+}
+
+.product{
+  width: 195px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 21px 32px;
+}
+
+.product-name{
+  font-size: 14px;
+  text-transform: uppercase;
+  margin: 10px 0 ;
+  width: 100%;
+}
+
+.price{
+  width: 100%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.parcelamento{
+  font-size: 16px;
+  color: #666;
+}
+
+.comprar{
+  background-color: #000;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  padding: 7px;
+  width: 100%;
+  margin-top: 14px;
+}

@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header{
+  border-bottom: 2px solid #c7c7c7;
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+.container-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.fa-bag-shopping{
+  color: #000;
+  font-size: 20px;
+}
+
+#cart-link{
+  height: 20px;
+}
