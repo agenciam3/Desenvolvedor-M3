@@ -115,6 +115,12 @@ header .container .cadeado {
   margin-top: 20px;
 }
 
+.linha-horizoltal {
+  max-width: 1500px;
+  border: 1px solid #c7c7c7;
+  margin-top: 20px;
+}
+
 section .lists {
   max-width: 1170px;
   display: -webkit-box;
@@ -146,6 +152,7 @@ main {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 10px;
 }
 
 main .container {
@@ -170,7 +177,7 @@ section .container {
           align-items: center;
   max-width: 1170px;
   margin-left: 161px;
-  margin-top: 104px;
+  margin-top: 60px;
 }
 
 main {
