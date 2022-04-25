@@ -85,8 +85,9 @@ footer p {
 }
 
 header .container {
-  max-width: 1500px;
-  min-width: 1170px;
+  max-width: 1270px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -113,6 +114,7 @@ header .container .cadeado {
   width: 17px;
   height: 20px;
   margin-top: 20px;
+  margin-right: 162px;
 }
 
 .linha-horizoltal {
@@ -135,12 +137,7 @@ section .lists {
   padding: 10px;
 }
 
-.section-lists {
-  width: 100%;
-  height: 426px;
-}
-
-main {
+main .container {
   max-width: 1500px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,19 +146,20 @@ main {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 10px;
-}
-
-main .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 section .container {
+  max-width: 1270px;
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  margin-left: 161px;
+  margin-right: 161px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,27 +173,22 @@ section .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 1170px;
-  margin-left: 161px;
-  margin-top: 60px;
 }
 
-main {
+/* main {
   max-width: 1500px;
   min-width: 1170px;
   margin-top: 65px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+ */
+.conteudo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 /*# sourceMappingURL=styles.css.map */

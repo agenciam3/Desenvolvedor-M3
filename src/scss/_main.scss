@@ -1,11 +1,8 @@
-main {
+main .container {
   max-width: 1500px;
+
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  margin-top: 10px;
-}
-
-main .container {
-  display: flex;
 }
