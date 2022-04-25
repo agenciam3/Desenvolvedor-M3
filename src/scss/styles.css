@@ -21,16 +21,16 @@ ul {
 .rectangle {
   width: 32px;
   height: 32px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid #c7c7c7;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -43,6 +43,7 @@ button {
   width: 195px;
   height: 33.5px;
   background: #000;
+  color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,11 +57,9 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: #fff;
 }
 
 footer {
-  width: 100%;
   height: 33px;
   margin: 0 auto;
   left: calc(50% - 1500px / 2);
@@ -86,6 +85,8 @@ footer p {
 }
 
 header .container {
+  max-width: 1500px;
+  min-width: 1170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -111,11 +112,11 @@ header .container .logo {
 header .container .cadeado {
   width: 17px;
   height: 20px;
-  margin-right: 166px;
   margin-top: 20px;
 }
 
 section .lists {
+  max-width: 1170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -131,5 +132,63 @@ section .lists {
 .section-lists {
   width: 100%;
   height: 426px;
+}
+
+main {
+  max-width: 1500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 1170px;
+  margin-left: 161px;
+  margin-top: 104px;
+}
+
+main {
+  max-width: 1500px;
+  min-width: 1170px;
+  margin-top: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=styles.css.map */

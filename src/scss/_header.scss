@@ -1,21 +1,22 @@
-header .container{
+header .container {
+  max-width: 1500px;
+  min-width: 1170px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 
-  .logo{
+  .logo {
     width: 119px;
     height: 30px;
     margin-left: 162px;
     margin-top: 16px;
   }
 
-  .cadeado{
+  .cadeado {
     width: 17px;
     height: 20px;
-    margin-right: 166px;
     margin-top: 20px;
   }
 }
-
