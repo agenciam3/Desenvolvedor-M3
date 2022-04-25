@@ -319,7 +319,6 @@ const filterProducts = async () => {
         const arrayComparingFirst = []
         // compare the largest array with the first
         const comparingLargestArrayWithFirst = biggestArray.map((product) => unionArrays[0].includes(product) ? arrayComparingFirst.push(product) : '')
-        console.log(arrayComparingFirst)
 
         const arrayComparingSecond = []
         //compare the largest array with the second
@@ -348,12 +347,12 @@ const filterProducts = async () => {
 
       // filter if colors and sizes exists
       if(productColors.length > 0 && productsSizes.length > 0 && productsPrices.length === 0) {
-        generateArraysForProducts(productColors, productsSizes)
+        generateArraysForProductsTwoMoreFilters(productColors, productsSizes)
       }
 
       // filter if colors and prices exists
       if (productColors.length > 0 && productsPrices.length > 0 && productsSizes.length === 0) {
-        generateArraysForProducts(productColors, productsPrices)
+        generateArraysForProductsTwoMoreFilters(productColors, productsPrices)
       }
 
       // filter if sizes and prices exists
@@ -424,12 +423,12 @@ const filterProducts = async () => {
         divProductsContainer.children[i].style.display = 'none'
       }
     } else if(window.innerWidth > 520 && window.innerWidth < 1024) {
-      productsPerPageFilter = 6
+      let productsPerPageFilter = 6
       for(let i = productsPerPageFilter; i < divProductsContainer.children.length; i++) {
         divProductsContainer.children[i].style.display = 'none'
       }
     } else if(window.innerWidth > 1024) {
-      productsPerPageFilter = 9
+      let productsPerPageFilter = 9
       for (let i = productsPerPageFilter; i < divProductsContainer.children.length; i++) {
         divProductsContainer.children[i].style.display = 'none'
       }
@@ -635,6 +634,7 @@ for(let option of optionsOrder) {
   option.addEventListener('click', (e) => handleOrderOption(e.target))
 }
 
+
 const openOrderSection = () => {
   const optionsOrder = document.querySelector('.sectionName--optionsOrder')
   
@@ -650,67 +650,263 @@ orderSection.addEventListener('click', openOrderSection)
 // ******************************************* 
 //        DESKTOP FUNCTIONS ADAPTED
 // *******************************************
-const checkmarkInputs = document.querySelectorAll('.desktopColorFilter')
-const checkmarkSizesDesktop = document.querySelectorAll('.buttonSizeDesktop')
+const colorsFilterDesktopInput = document.querySelectorAll('.desktopColorFilter')
+const sizesFilterDesktopInput = document.querySelectorAll('.buttonSizeDesktop')
+const pricesFilterDesktopInput = document.querySelectorAll('.sectionFilter--checkmarkInputDesktop')
+let productsOnFilter = []
+let newFilterUser = []
+let productColorsOnFilter = []
+let productSizeOnFilter = []
+let priceSelectedPrevious = []
+let productsPriceOnFilter = []
+let newArrayPrices = []
+const filtersBeenCalled = []
 
-const filterCheckClassColor = (element) => {
+function gettingColorInput(element) {
   if(element.classList.contains('checkmarkFilterDesktop--active')) {
-    element.classList.remove('checkmarkFilterDesktop--active')
+    element.classList.remove('checkmarkFilterDesktop--active') 
+    removeFilterDesktop(element, 'cor')
   } else {
     element.classList.add('checkmarkFilterDesktop--active')
-    filterProductDesktop(element)
+    filterProductsDesktop(element, 'cor')
   }
 }
 
-const filterCheckClassSize = (element) => {
+function gettingSizeInput(element) {
   if(element.classList.contains('buttonSize--active')) {
     element.classList.remove('buttonSize--active')
   } else {
     element.classList.add('buttonSize--active')
-    filterProductDesktop(element)
+    filterProductsDesktop(element, 'size')
   }
 }
 
-for(let checkmark of checkmarkInputs) {
-  checkmark.addEventListener('click', (e) => filterCheckClassColor(e.target))
+function gettingPriceInput(element) {
+  if(element.classList.contains('checkmarkFilterDesktop--active')) {
+    element.classList.remove('checkmarkFilterDesktop--active') 
+  } else {
+    element.classList.add('checkmarkFilterDesktop--active')
+    filterProductsDesktop(element, 'price')
+  }
 }
 
-for(let buttonSize of checkmarkSizesDesktop) {
-  buttonSize.addEventListener('click', (e) => filterCheckClassSize(e.target))
+const addListenerColors = () => {
+  for(let inputColor of colorsFilterDesktopInput) {
+    inputColor.addEventListener('click', (e) => gettingColorInput(e.target))
+  }
 }
 
-const filterProductDesktop = async (element) => {
-  const classSelected = element.classList[1]
+const addListenerSizes = () => {
+  for(let buttonSize of sizesFilterDesktopInput) {
+    buttonSize.addEventListener('click', (e) => gettingSizeInput(e.target))
+  }
+}
+
+const addListenerPrice = () => {
+  for(let inputPrice of pricesFilterDesktopInput) {
+    inputPrice.addEventListener('click', (e) => gettingPriceInput(e.target))
+  }
+}
+
+addListenerColors()
+addListenerSizes()
+addListenerPrice()
+
+const filterProductsDesktop = async (element, string) => {
+  const elementSelectedActualColorOrSize = element.classList[1]
   const products = await getAllProducts()
-  const productsColor = []
-  const productsSize = []
-  const productsFilterInMoment = []
-  
-  const filteredProductColor = (() => {
+  const divProductContainer = document.querySelector('.products--cardContainer')
+  newFilterUser = []
+  filtersBeenCalled.push(string)
+
+  const verifyColorSelectedIsMatch = () => {
     products.filter((product) => {
-      const colorProduct = product.color.toLowerCase()
-      if(colorProduct == classSelected) {
-        productsColor.push(product)
-      }
+      product.color.toLowerCase() === elementSelectedActualColorOrSize ? productColorsOnFilter.unshift(product) : ''
     })
-  })()
-  
-  const filteredProductSize = (() => {
+  }
+
+  const verifySizeSelectedIsMatch = () => {
     products.filter((product) => {
       const sizePerProduct = product.size
-      const sizeUnique = sizePerProduct.map(sizeUnique => {return sizeUnique})
-      // checks if the size array is in the products
-      element.classList.contains(`${sizeUnique.length > 2 ? sizeUnique[0] || sizeUnique[1] : sizeUnique[0]}`) ? productsSize.push(product) : ''
+      const sizeUnique = sizePerProduct.map((size) => {return size})
+      if(sizeUnique.length > 1) {
+        elementSelectedActualColorOrSize === sizeUnique[0] ? productSizeOnFilter.unshift(product) : ''
+        elementSelectedActualColorOrSize === sizeUnique[1] ? productSizeOnFilter.unshift(product) : ''
+      } else {
+        elementSelectedActualColorOrSize == sizeUnique ? productSizeOnFilter.unshift(product) : ''
+      }
     })
-  })()
+  }
 
+  const verifyPriceSelectedIsMatch = () => {
+    const allPricesSelected = []
+    const pricesOnSelected = [element.getAttribute('lowestPrice'), element.getAttribute('biggestPrice')]
+    priceSelectedPrevious.length === 0 ? priceSelectedPrevious = [...pricesOnSelected] : ''
+    newArrayPrices = []
+
+    if(Number(pricesOnSelected[0]) < Number(priceSelectedPrevious[0])) {
+      allPricesSelected[0] = pricesOnSelected[0]
+    } else {
+      allPricesSelected[0] = priceSelectedPrevious[0]
+    }
+
+    if(Number(pricesOnSelected[1]) > Number(priceSelectedPrevious[1])) {
+      allPricesSelected[1] = pricesOnSelected[1]
+    } else {
+      allPricesSelected[1] = priceSelectedPrevious[1]
+    }
+
+    products.filter((product) => {
+      if(allPricesSelected[0] <= product.price && product.price < allPricesSelected[1]) {
+        newArrayPrices.unshift(product)
+      }
+    })
+
+    productsPriceOnFilter = newArrayPrices
+    priceSelectedPrevious[0] >= pricesOnSelected[0] ? '' : priceSelectedPrevious[0] = pricesOnSelected[0]
+    priceSelectedPrevious[1] <= pricesOnSelected[1] ? priceSelectedPrevious[1] = pricesOnSelected[1] : '' 
+  }
+
+  if(string === 'cor') {
+    verifyColorSelectedIsMatch()
+  } else if(string === 'size') {  
+    verifySizeSelectedIsMatch()
+  } else {
+    verifyPriceSelectedIsMatch()
+  }
+
+  const verifyFilters = (currentValue) => {
+    return currentValue === 'price'
+  } 
+
+  const verifyArrayForOneFilter = () => {
+    if(productsOnFilter.length === 0) {
+      productColorsOnFilter.length !== 0 ? productsOnFilter = productColorsOnFilter : ''
+      productSizeOnFilter.length !== 0 ? productsOnFilter = productSizeOnFilter : ''
+      productsPriceOnFilter.length !== 0 ? productsOnFilter = productsPriceOnFilter : ''
+      
+    } else if (filtersBeenCalled.every(verifyFilters)) { 
+      productsOnFilter = productsPriceOnFilter
+    } else {
+      switch (string) {
+        case 'cor':
+          productsOnFilter.filter((product) => {
+            product.color.toLowerCase() === elementSelectedActualColorOrSize ?  newFilterUser.push(product) : ''
+          })
+          break;
+        case 'size': 
+          productsOnFilter.filter((product) => {
+            const sizePerProduct = product.size
+            const sizeUnique = sizePerProduct.map((size) => {return size})
+            if(sizeUnique.length > 1) {
+              elementSelectedActualColorOrSize === sizeUnique[0] ? newFilterUser.unshift(product) : ''
+              elementSelectedActualColorOrSize === sizeUnique[1] ? newFilterUser.unshift(product) : ''
+            } else {
+              elementSelectedActualColorOrSize == sizeUnique ? newFilterUser.unshift(product) : ''
+            }
+          })
+          break;
+        case 'price':
+          productsOnFilter.filter((product) => {
+            if(priceSelectedPrevious[0] <= product.price && product.price < priceSelectedPrevious[1]) {
+              newFilterUser.push(product)
+            }
+          })
+          break;
+        default:
+          break;
+      }
+
+      productsOnFilter = newFilterUser
+
+    }
+  }
+
+  const generateHTMLFilteredProduct = () => {
+    divProductContainer.innerText = ''
+    productsOnFilter.length !== 0 ? 
+      productsOnFilter.map((product) => {
+        divProductContainer.innerHTML += `
+          <div class="products--cardItem ${product.id}">
+            <div class="products--imageCardItem">
+              <img src=${product.image}></img>
+            </div>
+            <div class="products--textInformationCardItem">
+              <h3>${product.name}</h3>
+              <p class="bold"> R$ ${product.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+              <p class="text-installments">até ${product.parcelamento[0]}x de R$${product.parcelamento[1].toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+            </div>
+            <div class="products--buttonBuyCardItem"><button class="buttonBuyItem${product.id}">Comprar</button></div>
+          </div>
+        `
+      }) : divProductContainer.innerHTML = `<p class="products--productFilterEmpty">Não há produtos catalogados com os filtros requeridos!</p>`
+  }
+
+  const buttonsBuy = document.querySelectorAll('.buttonBuyItem')
+  for(let buttonBuy of buttonsBuy) {
+    buttonBuy.addEventListener('click', (element) => addItemInCart(element.target))
+  }
+
+  verifyArrayForOneFilter()
+  generateHTMLFilteredProduct()
+
+  if(productsOnFilter !== []) {
+    console.log(productsOnFilter)
+    if(window.innerWidth < 425) {
+      let productsPerPageFilter = 3
+      for(let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
+        divProductContainer.children[i].style.display = 'none'
+      }
+    } else if(window.innerWidth > 520 && window.innerWidth < 1024) {
+      let productsPerPageFilter = 4
+      for(let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
+        divProductContainer.children[i].style.display = 'none'
+      }
+    } else if(window.innerWidth > 1024) {
+      let productsPerPageFilter = 6
+      for (let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
+        divProductContainer.children[i].style.display = 'none'
+      }
+    }
+  } 
+}
+
+const removeFilterDesktop = async (element, string) => {
+  const classElementDesmark = element.classList[1]
+  const products = await getAllProducts()
+  const divProductContainer = document.querySelector('.products--cardContainer')
   
+  if(string === 'cor') {
+    productsOnFilter.filter((product, index) => product.color.toLowerCase() === classElementDesmark ? productsOnFilter.splice(index) : '')
+  } else if ( string === 'size') {
+    productsOnFilter.filter((product, index) => product.size[0] === classElementDesmark || product.size[1] === classElementDesmark ? productsOnFilter.splice(index) : '')
+  } 
+
+  if(productsOnFilter.length === 0) {
+    divProductContainer.innerText = ''
+    productsOnFilter = products 
+    productsOnFilter.map((product) => {
+      divProductContainer.innerHTML += `
+        <div class="products--cardItem ${product.id}">
+          <div class="products--imageCardItem">
+            <img src=${product.image}></img>
+          </div>
+          <div class="products--textInformationCardItem">
+            <h3>${product.name}</h3>
+            <p class="bold"> R$ ${product.price.toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+            <p class="text-installments">até ${product.parcelamento[0]}x de R$${product.parcelamento[1].toLocaleString('pt-br', {minimumFractionDigits: 2})}</p>
+          </div>
+          <div class="products--buttonBuyCardItem"><button class="buttonBuyItem${product.id}">Comprar</button></div>
+        </div>
+      `
+    })
+  }
 }
 
 // function to resolve promise products 
 const promisesResolve = async () => {
   const products = await getAllProducts()
-  const htmlProduct = await generateHtmlProduct(products)
+  const htmlProduct = generateHtmlProduct(products)
   insertProductsIntoPage(htmlProduct)
 }
 
