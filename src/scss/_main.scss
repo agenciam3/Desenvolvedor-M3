@@ -8,7 +8,8 @@ main .container {
 }
 
 .conteudo {
-  display: flex;
+  display: grid;
+  grid-template-columns: 50px auto;
 }
 
 section .container {

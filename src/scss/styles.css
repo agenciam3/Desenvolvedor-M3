@@ -13,6 +13,10 @@ ul {
   list-style-type: none;
 }
 
+h2 {
+  margin-bottom: 5px;
+}
+
 button {
   width: 195px;
   height: 33.5px;
@@ -96,6 +100,29 @@ header .container .cadeado {
   margin-top: 20px;
 }
 
+.orderby {
+  width: 142px;
+  height: 42px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.orderby p {
+  font-weight: 400;
+}
+
 section .lists {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -154,9 +181,10 @@ main .container {
 }
 
 .conteudo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50px auto;
+      grid-template-columns: 50px auto;
 }
 
 section .container {
