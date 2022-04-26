@@ -23,3 +23,9 @@ section .lists {
   grid-template-columns: auto;
   flex-wrap: wrap;
 }
+
+.grid-size {
+  display: grid;
+  grid-template-columns: 35px 35px 35px 35px;
+  grid-gap: 5px;
+}

@@ -1,15 +1,10 @@
 footer {
   padding: 0.5rem 0;
   max-width: 1920px;
-  margin: 0 auto;
-  left: calc(50% - 1500px / 2);
-  bottom: 0px;
   background: $color-black;
 
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  align-items: center;
 
   p {
     color: $color-white;
