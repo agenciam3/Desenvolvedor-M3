@@ -19,6 +19,7 @@ section .lists {
 .sizes {
   width: 153px;
 
-  display: flex;
+  display: grid;
+  grid-template-columns: auto;
   flex-wrap: wrap;
 }

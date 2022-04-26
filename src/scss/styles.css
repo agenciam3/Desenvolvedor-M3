@@ -34,7 +34,7 @@ button {
 }
 
 footer {
-  height: 4%;
+  padding: 0.5rem 0;
   max-width: 1920px;
   margin: 0 auto;
   left: calc(50% - 1500px / 2);
@@ -128,9 +128,10 @@ section .lists {
 
 .sizes {
   width: 153px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
