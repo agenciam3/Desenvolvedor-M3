@@ -8,8 +8,14 @@
 
 #products{
   display: flex;
-  width: 850px;
+  max-width: 950px;
+  width: 100%;
   flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hidden-info{
+  display: none;
 }
 
 .product{
@@ -32,11 +38,13 @@
   width: 100%;
   font-size: 16px;
   font-weight: 700;
+  margin: 1px;
 }
 
 .parcelamento{
   font-size: 16px;
   color: #666;
+  font-weight: 400;
 }
 
 .comprar{

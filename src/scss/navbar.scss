@@ -1,0 +1,50 @@
+#filters{
+  justify-self: start;
+}
+
+#sizes{
+  width: 170px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.size-desktop{
+  margin: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  &:hover{
+    color: #000;
+  }
+}
+
+.listed-color{
+  display: flex;
+  margin: 2px 0;
+}
+
+.custom-checkbox{
+  width: 16px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px rgba(0, 0, 0, 0.5);
+  margin-right: 10px;
+}
+
+.check{
+  width: 10px;
+  height: 10px;
+  background-color: #00C0EE;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
