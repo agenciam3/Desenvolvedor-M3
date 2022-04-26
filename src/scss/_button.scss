@@ -4,8 +4,5 @@ button {
   background: $color-black;
   color: $color-white;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  @include flex;
 }

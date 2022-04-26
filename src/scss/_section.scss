@@ -1,7 +1,6 @@
 section .lists {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex;
+
   padding: 10px;
 }
 
@@ -11,9 +10,7 @@ section .lists {
   border: 1px solid $color-gray;
   box-sizing: border-box;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex;
 }
 
 .sizes {
