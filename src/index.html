@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +9,422 @@
 </head>
 
 <body>
+  <!--Header section-->
+  <header>
+    <div class="header--container">
+      <div class="header--logoContainer">
+        <img src="./img/logo-m3.png" alt="Logo da M3 E-commerce">
+      </div>
+      <div class="header--shopImage">
+        <img src="./img/shop-image.png" alt="Imagem da sacola de compras com seu item" class="cartShopIcon"/>
+        <div class="header--cartNumber">0</div>
+      </div>
+    </div>
+  </header>
 
+  <!--shop cart section-->
+  <section class="sectionCart--container">
+    <div class="sectionCart--containerProducts">
+      <div class="sectionCart--textCart">
+        <h3>Seu carrinho de compras</h3>
+        <img src="./img/Group 1.png" alt="Fechar sessão de carrinhos de compras" class="closeCartItem">
+      </div>
+      <div class="sectionCart--containerProduct"></div>
+    </div>
+  </section>
+
+  <!--mobile session to choose filters-->
+  <section class="sectionMobileOrdination--container">
+    <div class="sectionMobileOrdination--nameTitle">
+      <h2>Blusas</h2>
+    </div>
+    <div class="sectionMobileOrdination--mobileButtons">
+      <div class="sectionMobileOrdination--filterButton">Filtrar</div>
+      <div class="sectionMobileOrdination--OrderButton">Ordenar</div>
+    </div>
+  </section>
+
+  <!--part that contains the choice of filters on mobile-->
+  <aside class="sectionFilter--container">
+    <div class="sectionFilter--headerName">
+      <h2>Filtrar</h2>
+      <img src="./img/Group 1.png" alt="Fechar a sessão de filtragem dos produtos" class="closeFilterOptionsMobile">
+    </div>
+    <div class="sectionFilter--optionsFilterContainer">
+      <div class="sectionFilter--FilterOption">
+        <p>Cores</p>
+        <img src="./img/Vector 1.png" alt="Dropdown para as opções de cores" class="buttonColorsOptionsMobile">
+      </div>
+      <div class="sectionFilter--optionsColorsContainer .hide">
+        <ul class="sectionFilter--containerListColors">
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Amarelo">
+              <span class="sectionFilter--checkmarkInput yellow"></span>
+            </label>
+            <li>Amarelo</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Azul">
+              <span class="sectionFilter--checkmarkInput blue"></span>
+            </label>
+            <li>Azul</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Branco">
+              <span class="sectionFilter--checkmarkInput white"></span>
+            </label>
+            <li>Branco</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Cinza">
+              <span class="sectionFilter--checkmarkInput gray"></span>
+            </label>
+            <li>Cinza</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Laranja">
+              <span class="sectionFilter--checkmarkInput orange"></span>
+            </label>
+            <li>Laranja</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Verde">
+              <span class="sectionFilter--checkmarkInput green"></span>
+            </label>
+            <li>Verde</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Vermelho">
+              <span class="sectionFilter--checkmarkInput red"></span>
+            </label>
+            <li>Vermelho</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Preto">
+              <span class="sectionFilter--checkmarkInput black"></span>
+            </label>
+            <li>Preto</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Rosa">
+              <span class="sectionFilter--checkmarkInput pink"></span>
+            </label>
+            <li>Rosa</li>
+          </div>
+          <div class="sectionFilter--optionUniqueColor">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--colorsInput Vinho">
+              <span class="sectionFilter--checkmarkInput wine"></span>
+            </label>
+            <li>Vinho</li>
+          </div>
+        </ul>
+      </div>
+      <div class="sectionFilter--FilterOption">
+        <p>Tamanhos</p>
+        <img src="./img/Vector 1.png" alt="Dropdwon para as opções de tamanhos" class="buttonSizesOptionsMobile">
+      </div>
+      <div class="sectionFilter--optionsSizesContainer hide">
+        <div class="sectionFilter--optionsSizesButton">
+          <button class="buttonSize P">P</button>
+          <button class="buttonSize M">M</button>
+          <button class="buttonSize G">G</button>
+          <button class="buttonSize GG">GG</button>
+          <button class="buttonSize U">U</button>
+          <button class="buttonSize 36">36</button>
+          <button class="buttonSize 38">38</button>
+          <button class="buttonSize 40">40</button>
+        </div>
+      </div>
+      <div class="sectionFilter--FilterOption">
+        <p>Faixa de preço</p>
+        <img src="./img/Vector 1.png" alt="Dropdwon para as opções de faixa de preço" class="buttonRangePriceOptionsMobile">
+      </div>
+      <div class="sectionFilter--optionsPriceContainer hide">
+        <div class="sectionFilter--listRangePrices">
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--rangePrice" lowestPrice="0" biggestPrice="50">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$0 até R$50</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--rangePrice" lowestPrice="51" biggestPrice="150">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$51 até R$150</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--rangePrice" lowestPrice="151" biggestPrice="300">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$151 até R$300</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--rangePrice" lowestPrice="301" biggestPrice="500">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>de R$301 até R$500</li>
+          </div>
+          <div class="sectionFilter--uniqueRangePrice">
+            <label class="sectionFilter--labelInput">
+              <input type="checkbox" class="checkbox--rangePrice" lowestPrice="500" biggestPrice="900000">
+              <span class="sectionFilter--checkmarkInput"></span>
+            </label>
+            <li>A partir de R$500</li>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sectionFilter--buttonsFilterActionContainer hide">
+      <div class="sectionFilter--buttonsFilterAction">
+        <button class="sectionFilter--applyFilterButton">Aplicar</button>
+        <button class="sectionFilter--clearAllFiltersButton">Limpar</button>
+      </div>
+    </div>
+  </aside>
+
+  <!--part that contains the choice of ordering on mobile-->
+  <aside class="sectionOrdination--container">
+    <div class="sectionOrdination--headerName">
+      <h2>Ordenar</h2>
+      <img src="./img/Group 1.png" alt="Fechar a sessão de filtragem dos produtos" class="closeOrderOptionsMobile">
+    </div>
+    <div class="sectionOrdination--optionsOrderContainer">
+      <div class="sectionOrdination--OrderOption">
+        <p class="sectionOrdination--newestProducts">Mais recente</p>
+        <p>Maior preço</p>
+        <p>Menor preço</p>
+      </div>
+    </div>
+  </aside>
+
+  <!--section order size 1440px-->
+  <section class="sectionName--container">
+    <div class="sectionName--section">
+      <div class="sectionName--title">
+        <h3>Blusas</h3>
+      </div>
+      <div class="sectionName--ordernedModal">
+        <div class="sectionName--atualOrderText">
+          <p>Ordernar por:</p> <img src="./img/Vector 1.png" alt="Selecione uma maneira para ordernar os produtos">
+        </div>
+        <div class="sectionName--optionsOrder">
+          <p class="sectionName--firstOptionOrder optionsOrder">Mais recente</p>
+          <p class="optionsOrder">Maior preço</p>
+          <p class="optionsOrder">Menor preço</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--filter section 1440px-->
+  <section class="sectionFilterDesktop--container">
+    <div class="sectionFilterDesktop--section">
+      <div class="sectionFilterDesktop--colorOptions">
+        <div class="sectionFilterDesktop--title">
+          <h4>Cores</h4>
+        </div>
+        <div class="sectionFilterDesktop--optionsContainerColor">
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput amarelo desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Amarelo</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+              <label class="sectionFilter--labelInput">
+                <span class="sectionFilter--checkmarkInput azul desktopColorFilter"></span>
+                <div class="sectionFilter--checkboxArea">
+                  <input type="checkbox" class="checkboxDesktop--colorsInput">
+                  <p>Azul</p>
+                </div>
+              </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput branco desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Branco</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput cinza desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Cinza</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput laranja desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Laranja</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput verde desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Verde</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput vermelho desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Vermelho</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput preto desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Preto</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput rosa desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Rosa</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--uniqueOption">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInput vinho desktopColorFilter"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkboxDesktop--colorsInput">
+                <p>Vinho</p>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="sectionFilterDesktop--sizesOptions">
+        <div class="sectionFilterDesktop--sizeTitle">
+          <h4>Tamanhos</h4>
+        </div>
+        <div class="sectionFilterDesktop--optionsContainerSize">
+          <button class="buttonSizeDesktop P">P</button>
+          <button class="buttonSizeDesktop M">M</button>
+          <button class="buttonSizeDesktop G">G</button>
+          <button class="buttonSizeDesktop GG">GG</button>
+          <button class="buttonSizeDesktop U">U</button>
+          <button class="buttonSizeDesktop 36">36</button>
+          <button class="buttonSizeDesktop 38">38</button>
+          <button class="buttonSizeDesktop 40">40</button>
+        </div>
+      </div>
+      <div class="sectionFilterDesktop--priceOptions">
+        <div class="sectionFilterDesktop--priceTitle">
+          <h4>Faixa de Preço</h4>
+        </div>
+        <div class="sectionFilterDesktop--priceRangeOptions">
+          <div class="sectionFilterDesktop--priceRange">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInputDesktop" lowestPrice="1" biggestPrice="50"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkbox--sizeRange">
+                <p>De R$0 até R$50</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--priceRange">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInputDesktop" lowestPrice="51" biggestPrice="150"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkbox--sizeRange">
+                <p>De R$51 até R$150</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--priceRange">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInputDesktop" lowestPrice="151" biggestPrice="300"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkbox--sizeRange">
+                <p>De R$151 até R$300</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--priceRange">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInputDesktop" lowestPrice="301" biggestPrice="500"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkbox--sizeRange">
+                <p>De R$301 até R$500</p>
+              </div>
+            </label>
+          </div>
+          <div class="sectionFilterDesktop--priceRange">
+            <label class="sectionFilter--labelInput">
+              <span class="sectionFilter--checkmarkInputDesktop" lowestPrice="501" biggestPrice="9999999999"></span>
+              <div class="sectionFilter--checkboxArea">
+                <input type="checkbox" class="checkbox--sizeRange">
+                <p>A partir de R$500</p>
+              </div>
+            </label>
+          </div>
+      </div>
+  </section>
+  
+  <!--loader spin--> 
+  <div class="fix-loader show">
+    <div class="loader"></div>
+  </div>
+
+  <!--section responsible for rendering the products (via api)-->
+  <section class="products--container">
+    <div class="products--cardContainer">
+      
+    </div>
+  </section>
+
+  <!--button section to load more posts-->
+  <section class="loadMore--container">
+    <div class="loadMore--containerButton">
+      <button id="buttonLoadMore">Carregar mais</button>
+    </div>
+  </section>
+
+  <!--footer section-->
+  <footer>
+    <div class="footer--textContainer">
+      <p>M3: implantação de e-commerce vtex</p>
+    </div>
+  </footer>
 </body>
-<h1>Desafio m3</h1>
 
 <script src="bundle.js"></script>
 

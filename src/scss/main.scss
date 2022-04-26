@@ -1,1 +1,1140 @@
 @import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+/*color variables*/
+$black-color: #000000;
+$gray-color: #00000080;
+$gray-dark-color: #666666;
+$primary-color: #00C0EE;
+
+/* font variable*/
+$primary-font: 'Open Sans', sans-serif; 
+
+/* variable screen sizes*/
+$medium-size: 768px;
+$big-size: 1024px;
+$biggest-size: 1440px;
+
+/* class util for js*/ 
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+.buttonSize--active {
+  border: 1px solid $primary-color !important;
+  color: $black-color !important;
+  font-weight: 600 !important;
+}
+
+.checkmarkFilterDesktop--active {
+  border-color: $primary-color !important;
+  background-color: $primary-color !important;
+}
+
+/* Header CSS*/
+
+header {
+  width: 100%;
+  height: 45px;
+  margin-top: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border-bottom: 1px solid #C7C7C7;
+
+  .header--container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 1080px;
+    padding: 10px;
+    margin-bottom: 5px;
+
+
+    .header--logoContainer {
+      img {
+        width: 120px;
+        height: 30px;
+      }
+    }
+  
+    .header--shopImage {
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+
+      .header--cartNumber {
+        background-color: $primary-color;
+        font-size: 10px;
+        font-weight: 400;
+        color: #fff;
+        font-family: $primary-font;
+        border-radius: 16px;
+        width: 12px;
+        height: 12px;
+        text-align: center;
+
+        display: inline-block;
+        margin-left: -11px;
+      }
+    }
+  }
+}
+
+.sectionCart--container {
+  height: 100vh;
+  width: 100%;
+  z-index: 9999999999999999999999;
+
+  background-color: #fff;
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+
+  .sectionCart--containerProducts {
+    width: 100%;
+    overflow-y: scroll;
+
+    .sectionCart--textCart {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      
+      h3 {
+        font-size: 18px;
+        font-family: $primary-font;
+        font-weight: 400;
+      }
+
+      img {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+
+  .sectionCart--containerProduct {
+    padding: 5px;
+    overflow-y: scroll;
+    margin-top: 30px;
+    width: 100%;
+
+    .sectionCart--productSection {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      width: 100%;
+      margin-bottom: 10px;
+
+      .sectionCart--imageProduct {
+        img {
+          width: 110px;
+          height: 110px;
+        }
+      }
+  
+      .sectionCart--infosProducts {
+  
+        h3 {
+          font-size: 14px;
+          font-family: $primary-font;
+          font-weight: 400;
+        }
+  
+        p {
+          font-size: 14px;
+          font-family: $primary-font;
+          text-transform: uppercase;
+          font-weight: 700;
+          margin-top: 10px;
+        }
+      }
+  
+      .sectionCart--removeItem  {
+        img {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+  }
+}
+
+/*Section for buttons e filter in mobile*/
+
+.sectionMobileOrdination--container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .sectionMobileOrdination--nameTitle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    h2 {
+      font-family: $primary-font;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 44px;
+      text-align: center;
+    }
+  }
+
+  .sectionMobileOrdination--mobileButtons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .sectionMobileOrdination--filterButton, .sectionMobileOrdination--OrderButton {
+      border: 1px solid $gray-dark-color;
+      padding: 8px;
+      width: 130px;
+
+      font-family: $primary-font;
+      font-weight: 400;
+      font-size: 24px;
+      color: $gray-dark-color;
+      text-align: center;
+    }
+  }
+}
+
+/* section filter active mobile*/
+
+.sectionFilter--container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999999999999999999999999;
+
+  overflow-y: scroll;
+
+  display: none;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: #fff;
+
+  .sectionFilter--headerName {
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 1px solid $gray-dark-color;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-family: $primary-font;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 40px;
+      color: $gray-dark-color;
+      text-transform: uppercase;
+    }
+  }
+
+  .sectionFilter--optionsFilterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
+
+    .sectionFilter--FilterOption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+
+      p {
+        font-family: $primary-font;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0.05rem;
+        text-transform: uppercase;
+        color: $gray-dark-color;
+      }
+    }
+
+    .sectionFilter--optionsColorsContainer {
+      width: 100%;
+      display: none;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 0px 17px;
+
+      .sectionFilter--containerListColors {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        
+        .sectionFilter--optionUniqueColor {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 5px;
+
+          .sectionFilter--labelInput {
+
+            input:checked ~ .sectionFilter--checkmarkInput {
+              background-color: $primary-color;
+              border: $primary-color;
+            }
+
+            .sectionFilter--checkmarkInput {
+              position: absolute;
+              left: 20px;
+              height: 16px;
+              width: 16px;
+              padding: 1px;
+              border: 1px solid $gray-color;
+              background-color: #fff;
+            }
+
+            .sectionFilter--checkmarkInput.amarelo {
+              top: 148px;
+            }
+
+            .sectionFilter--checkmarkInput.azul {
+              top: 172px;
+            }
+
+            .sectionFilter--checkmarkInput.branco {
+              top: 195px;
+            }
+
+            .sectionFilter--checkmarkInput.cinza {
+              top: 220px;
+            }
+
+            .sectionFilter--checkmarkInput.laranja {
+              top: 244px;
+            }
+
+            .sectionFilter--checkmarkInput.verde {
+              top: 266px;
+            }
+
+            .sectionFilter--checkmarkInput.vermelho {
+              top: 290px;
+            }
+
+            .sectionFilter--checkmarkInput.preto {
+              top: 315px;
+            }
+
+            .sectionFilter--checkmarkInput.rosa {
+              top: 340px;
+            }
+
+            .sectionFilter--checkmarkInput.vinho {
+              top: 363px;
+            }
+          }
+
+          li {
+            margin-left: 10px;
+            font-family: $primary-font;
+            font-weight: 400;
+            font-size: 14px;
+            color: $black-color;
+          }
+        }
+      }
+    }
+
+    .sectionFilter--optionsSizesContainer {
+      width: 100%;
+      padding: 0 15px;
+
+      .sectionFilter--optionsSizesButton {
+        display: flex;
+
+        width: 150px;
+        flex-wrap: wrap;
+        
+
+        button {
+          background: none;
+          border: 1px solid $gray-color;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          width: 32px;
+          height: 32px;
+          padding: 10px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: $gray-color;
+          letter-spacing: 0.05rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .sectionFilter--optionsPriceContainer {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding: 0px 17px;
+
+      .sectionFilter--listRangePrices {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .sectionFilter--uniqueRangePrice {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          width: 100%;
+          margin-bottom: 10px;
+          list-style: none;
+
+          .sectionFilter--labelInput {
+            input:checked ~ .sectionFilter--checkmarkInput {
+              background-color: $primary-color;
+              border: $primary-color;
+            }
+
+            .sectionFilter--checkmarkInput {
+              position: absolute;
+              left: 20px;
+              height: 16px;
+              width: 16px;
+              padding: 1px;
+              border: 1px solid $gray-color;
+              background-color: #fff;
+            }
+          }
+
+          li {
+            font-size: 14px;
+            font-family: $primary-font;
+            font-weight: 400;
+            margin-left: 10px;
+            line-height: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  .sectionFilter--buttonsFilterActionContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+    position: static;
+    margin-top: 140px;
+    z-index: 999999;
+
+    .sectionFilter--buttonsFilterAction {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      button {
+        padding: 8px 30px;
+        text-align: center;
+        font-family: $primary-font;
+        font-size: 14px;
+        font-weight: 400;
+        border: none;
+        text-transform: uppercase;
+        width: 140px;
+      }
+
+      .sectionFilter--applyFilterButton {
+        background-color: $primary-color;
+        color: #fff;
+        margin-right: 10px;
+      }
+
+      .sectionFilter--clearAllFiltersButton {
+        background-color: #fff;
+        border: 1px solid $gray-dark-color;
+        color: $gray-dark-color;
+      }
+    }
+  }
+}
+
+/*section order active mobile*/ 
+.sectionOrdination--container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 99999999999999999999;
+
+  display: none;
+  align-items: center;
+  flex-direction: column;
+
+  background-color: #fff;
+
+  .sectionOrdination--headerName {
+    width: 100%;
+    padding: 10px 15px;
+    border-bottom: 1px solid $gray-dark-color;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-family: $primary-font;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 40px;
+      color: $gray-dark-color;
+      text-transform: uppercase;
+    }
+  }
+
+  .sectionOrdination--optionsOrderContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    width: 100%;
+
+    .sectionOrdination--OrderOption {
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: column;
+      padding-left: 20px;
+      margin-top: 10px;
+
+      p {
+        font-family: $primary-font;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 30px;
+        letter-spacing: 0.05rem;
+        color: $black-color;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+/* container for order and name 1024px*/
+.sectionName--container {
+  width: 100%;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  .sectionName--section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 10px;
+
+    .sectionName--title {
+      h3 {
+        font-size: 32px;
+        line-height: 45px;
+        font-family: $primary-font;
+        font-weight: 400;
+      }
+    }
+
+    .sectionName--ordernedModal {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      text-align: center;
+      width: 150px;
+      border: 1px solid $gray-color;
+
+      .sectionName--atualOrderText {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+
+        p {
+          font-size: 16px;
+          font-family: $primary-font;
+          text-align: center;
+          line-height: 20px;
+          color: $black-color;
+        }
+
+        img {
+          width: 12px;
+          height: 9px;
+          margin-left: 10px;
+          margin-top: 1px;
+        }
+      }
+
+      .sectionName--optionsOrder {
+        background-color: #fff;
+        position: absolute;
+        width: 150px;
+        height: 90px;
+        top: 148px;
+        border: 1px solid $gray-color;
+        display: none;
+
+        .sectionName--firstOptionOrder {
+          margin-top: 10px;
+        }
+
+        p {
+          font-size: 16px;
+          font-family: $primary-font;
+          margin-bottom: 10px;
+          text-align: center;
+        }
+        
+      }
+    }
+  }
+}
+
+/* filter section for desktop*/
+.sectionFilterDesktop--container {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: -631px;
+  width: 10%;
+
+  .sectionFilterDesktop--section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .sectionFilterDesktop--colorOptions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+
+      .sectionFilterDesktop--title {
+        width: 100%;
+        text-align: center;
+
+        h4 {
+          font-size: 16px;
+          font-family: $primary-font;
+          text-transform: uppercase;
+          color: $black-color;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          margin-bottom: 15px;
+        }
+      }
+
+      .sectionFilterDesktop--optionsContainerColor {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .sectionFilterDesktop--uniqueOption {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 30px;
+
+          .sectionFilter--labelInput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            .sectionFilter--checkboxArea {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .sectionFilter--checkmarkInput {
+              position: absolute;
+              margin-right: 60px;
+              height: 16px;
+              width: 16px;
+              border: 1px solid $gray-color;
+              background-color: #fff;
+            }
+
+            .sectionFilter--checkmarkInput.azul {
+              margin-right: 33px;
+            }
+
+            .sectionFilter--checkmarkInput.branco {
+              margin-right: 52px;
+            }
+  
+            .sectionFilter--checkmarkInput.cinza {
+              margin-right: 40px;
+            }
+  
+            .sectionFilter--checkmarkInput.laranja {
+              margin-right: 54px;
+            }
+  
+            .sectionFilter--checkmarkInput.verde {
+              margin-right: 44px;
+            }
+  
+            .sectionFilter--checkmarkInput.vermelho {
+              margin-right: 69px;
+            }
+  
+            .sectionFilter--checkmarkInput.preto {
+              margin-right: 41px;
+            }
+  
+            .sectionFilter--checkmarkInput.rosa {
+              margin-right: 37px;
+            }
+  
+            .sectionFilter--checkmarkInput.vinho {
+              margin-right: 43px;
+            }
+          }
+        }
+          p {
+            margin-left: 8px;
+            font-family: $primary-font;
+            font-size: 14px;
+            line-height: 14px;
+          }
+        }
+    }
+    .sectionFilterDesktop--sizesOptions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+
+      .sectionFilterDesktop--sizeTitle {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 25px;
+
+        h4 {
+          font-size: 16px;
+          font-family: $primary-font;
+          font-weight: 400;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+        }
+      }
+
+      .sectionFilterDesktop--optionsContainerSize {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 150px;
+        margin-left: 60px;
+
+        button {
+          background: none;
+          border: 1px solid $gray-color;
+          margin-left: 10px;
+          margin-bottom: 10px;
+          width: 32px;
+          height: 32px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          color: $gray-color;
+          letter-spacing: 0.05rem;
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .sectionFilterDesktop--priceOptions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+
+      .sectionFilterDesktop--priceTitle {
+        width: 100%;
+        text-align: center;
+
+        h4 {
+          font-size: 16px;
+          font-family: $primary-font;
+          text-transform: uppercase;
+          color: $black-color;
+          letter-spacing: 0.05em;
+          line-height: 20px;
+          margin-bottom: 15px;
+          width: 100%;
+          margin-left: 30px;
+        }
+      }
+
+      .sectionFilterDesktop--priceRangeOptions {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .sectionFilterDesktop--priceRange {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-left: 80px;
+
+          .sectionFilter--labelInput {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+
+            .sectionFilter--checkboxArea {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .sectionFilter--checkmarkInputDesktop {
+              position: absolute;
+              margin-right: 140px;
+              height: 16px;
+              width: 16px;
+              border: 1px solid $gray-color;
+              background-color: #fff;
+            }
+          }
+        }
+        p {
+          margin-left: 8px;
+          font-family: $primary-font;
+          font-size: 14px;
+          line-height: 14px;
+          width: 135px;
+        }
+      }
+    }
+  }
+}
+
+/* Loader */
+.fix-loader {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* container for products exibhition*/
+.products--container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 30px;
+
+  .products--cardContainer {
+    max-width: 1080px;
+    min-height: 80vh;
+    z-index: 9999999;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .products--productFilterEmpty {
+      font-size: 14px;
+      font-family: $primary-font;
+      color: #da0000;
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .products--cardItem {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 165px;
+      height: 350px;
+      margin-bottom: 10px;
+
+      .products--imageCardItem img {
+        width: 160px;
+        height: 240px;
+      }
+
+      .products--textInformationCardItem {
+        height: 75px;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        margin-top: -5px;
+        margin-bottom: 5px;
+
+        h3 {
+          font-family: $primary-font;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 20px;
+          text-align: center;
+          text-transform: uppercase;
+          margin-bottom: 10px;
+        }
+        
+        p.text-installments {
+          font-family: $primary-font;
+          font-weight: 400;
+          font-size: 16px;
+          text-align: center;
+          line-height: 20px;
+          color: $gray-dark-color;
+        }
+
+        p.bold {
+          font-family: $primary-font;
+          font-weight: 700;
+          font-size: 16px;
+          line-height: 20px;
+          text-align: center;
+          color: $black-color;
+        }
+      }
+
+      .products--buttonBuyCardItem {
+        width: 155px;
+
+        button {
+          width: 100%;
+          padding: 5px 10px;
+
+          font-family: $primary-font;
+          font-size: 14px;
+          line-height: 20px;
+          font-weight: 700;
+          text-transform: uppercase;
+          text-align: center;
+          color: #fff;
+
+          background-color: $black-color;
+          border: none;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #fff;
+          color: $black-color;
+        }
+      }
+    }
+  }
+}
+
+
+/* container with button for load more posts*/
+.loadMore--container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  .loadMore--containerButton {
+    max-width: 1080px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      font-family: $primary-font;
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+
+      background-color: $primary-color;
+      border: none;
+      cursor: pointer;
+
+      padding: 8px 25px;
+
+    }
+
+    button:hover {
+      background-color: #fff;
+      color: $primary-color;
+    }
+  }
+}
+
+/* footer section*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  background-color: $black-color;
+
+  .footer--textContainer {
+    text-align: center;
+
+    padding: 10px;
+
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+}
+
+/*MEDIA QUERIES AREA*/
+@media (min-width: $medium-size) {
+  .products--cardContainer {
+    width: 550px;
+    padding: 10px;
+  }
+}
+
+@media (min-width: $big-size) {
+  .products--cardContainer {
+    padding: 20px;
+    width: 700px;
+  }
+
+  .products--cardItem {
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .sectionMobileOrdination--container {
+    display: none;
+  }
+
+  .sectionFilterDesktop--container {
+    display: flex;
+    position: absolute;
+    margin-left: -510px;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .products--container {
+    margin-top: 30px;
+    flex-direction: row;
+    justify-content: center;
+
+    .products--cardContainer {
+      width: 900px;
+      margin-left: 50px;
+
+      .products--cardItem {
+        width: 200px;
+        height: 380px;
+        margin-bottom: 20px;
+
+        .products--imageCardItem img {
+          width: 180px;
+          height: 250px;
+        }
+
+        .products--textInformationCardItem {
+          margin-top: 0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+
+  .sectionName--container {
+    display: flex;
+  }
+}
