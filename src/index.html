@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="scss/styles.scss">
   </head>
 
 <body>
@@ -51,7 +52,7 @@
     <!-- Sidebar -->
 
     <section>
-      <div class="sidebar">
+      <div class="container">
         <div>
           <ul class="colors">
             <div>
@@ -183,35 +184,86 @@
     
         <section>
           <div class="section-lists">
-                <ul class="lists">
-                  <li class="produto" id="card-1">
-                    <img class="modelo-1" src="img/img_1.png" alt="camiseta-mesclada"/>
-                    <p class="nome-do-produto">CAMISETA MESCLADA</p>
-                    <p class="preco">R$ 28,00</p>
-                    <p class="parcelamento">até 3x de R$9,33</p>
-                    <button type="button">COMPRAR</button>
-                  </li>
-                  <li class="produto" id="card-2">
-                    <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
-                    <p class="nome-do-produto">SAIA EM COURO</p>
-                    <p class="preco">R$ 398,00</p>
-                    <p class="parcelamento">até 10x de R$39,80</p>
-                    <button type="button">COMPRAR</button>
-                  </li>
-                  <li class="produto" id="card-3">
-                    <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
-                    <p class="nome-do-produto">CARDIGAN TIGRE</p>
-                    <p class="preco">R$ 398,00</p>
-                    <p class="parcelamento">até 10x de R$39,80</p>
-                    <button type="button">COMPRAR</button>
-                  </li>
-                </ul>
+                <div class="lists">
+                  <div class="lists">
+                    <div class="produto" id="card-1">
+                      <img class="modelo-1" src="img/img_1.png" alt="camiseta-mesclada"/>
+                      <p class="nome-do-produto">CAMISETA MESCLADA</p>
+                      <p class="preco">R$ 28,00</p>
+                      <p class="parcelamento">até 3x de R$9,33</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                    <div class="produto" id="card-2">
+                      <img class="modelo-2" src="img/img_2.png" alt="saia-de-couro" />
+                      <p class="nome-do-produto">SAIA EM COURO</p>
+                      <p class="preco">R$ 398,00</p>
+                      <p class="parcelamento">até 10x de R$39,80</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                    <div class="produto" id="card-3">
+                      <img class="modelo-3" src="img/img_3.png" alt="cardigan-tigre" />
+                      <p class="nome-do-produto">CARDIGAN TIGRE</p>
+                      <p class="preco">R$ 398,00</p>
+                      <p class="parcelamento">até 10x de R$39,80</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="lists">
+                  <div class="lists">
+                    <div class="produto" id="card-1">
+                      <img class="modelo-1" src="img/img_4.png" alt="camiseta-mesclada"/>
+                      <p class="nome-do-produto">CAMISETA MESCLADA</p>
+                      <p class="preco">R$ 28,00</p>
+                      <p class="parcelamento">até 3x de R$9,33</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                    <div class="produto" id="card-2">
+                      <img class="modelo-2" src="img/img_5.png" alt="saia-de-couro" />
+                      <p class="nome-do-produto">SAIA EM COURO</p>
+                      <p class="preco">R$ 398,00</p>
+                      <p class="parcelamento">até 10x de R$39,80</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                    <div class="produto" id="card-3">
+                      <img class="modelo-3" src="img/img_6.png" alt="cardigan-tigre" />
+                      <p class="nome-do-produto">CARDIGAN TIGRE</p>
+                      <p class="preco">R$ 398,00</p>
+                      <p class="parcelamento">até 10x de R$39,80</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="lists">
+                  <div class="lists">
+                    <div class="produto" id="card-1">
+                      <img class="modelo-1" src="img/img_7.png" alt="camiseta-mesclada"/>
+                      <p class="nome-do-produto">CAMISETA MESCLADA</p>
+                      <p class="preco">R$ 28,00</p>
+                      <p class="parcelamento">até 3x de R$9,33</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                    <div class="produto" id="card-2">
+                      <img class="modelo-2" src="img/img_8.png" alt="saia-de-couro" />
+                      <p class="nome-do-produto">SAIA EM COURO</p>
+                      <p class="preco">R$ 398,00</p>
+                      <p class="parcelamento">até 10x de R$39,80</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                    <div class="produto" id="card-3">
+                      <img class="modelo-3" src="img/img_9.png" alt="cardigan-tigre" />
+                      <p class="nome-do-produto">CARDIGAN TIGRE</p>
+                      <p class="preco">R$ 398,00</p>
+                      <p class="parcelamento">até 10x de R$39,80</p>
+                      <button type="button">COMPRAR</button>
+                    </div>
+                  </div>
+                </div>
         </section>
-        <button type="button">CARREGAR MAIS</button>
+        <button class="carregar-mais" type="button" style="background: #00C0EE; border: none;">CARREGAR MAIS</button>
           </div>
       </div>
     </main>
-
   </div>
 
 

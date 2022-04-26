@@ -3,6 +3,7 @@ button {
   height: 33.5px;
   background: $color-black;
   color: $color-white;
+  border: $color-black;
 
   @include flex;
 }

@@ -8,12 +8,11 @@ main .container {
 }
 
 .conteudo {
-  display: grid;
-  grid-template-columns: 50px auto;
+  display: flex;
+  margin-bottom: 50px;
 }
 
-section .sidebar {
-  max-width: 1920px;
+section .container {
   padding: 1.5rem 0;
   margin: 0 auto;
   margin-left: 161px;
