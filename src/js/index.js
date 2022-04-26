@@ -1,4 +1,4 @@
-const fetchApi = () => {
+/* const fetchApi = () => {
   const url = `http://localhost:5000/products`;
 
   fetch(url).then((response) => response.json());
@@ -7,3 +7,4 @@ const fetchApi = () => {
 fetchApi();
 
 console.log("Dev m3");
+ */

@@ -1,0 +1,19 @@
+#card-1 {
+  @include cards("img_1.png");
+}
+
+#card-2 {
+  @include cards("img_2.png");
+}
+
+#card-3 {
+  @include cards("img_3.png");
+}
+
+#card-4 {
+  @include cards("img_4.png");
+}
+
+#card-5 {
+  @include cards("img_5.png");
+}
