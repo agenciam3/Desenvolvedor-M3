@@ -654,18 +654,18 @@ const colorsFilterDesktopInput = document.querySelectorAll('.desktopColorFilter'
 const sizesFilterDesktopInput = document.querySelectorAll('.buttonSizeDesktop')
 const pricesFilterDesktopInput = document.querySelectorAll('.sectionFilter--checkmarkInputDesktop')
 let productsOnFilter = []
-let newFilterUser = []
 let productColorsOnFilter = []
 let productSizeOnFilter = []
 let priceSelectedPrevious = []
 let productsPriceOnFilter = []
 let newArrayPrices = []
 const filtersBeenCalled = []
+let filtersCalled = []
 
 function gettingColorInput(element) {
   if(element.classList.contains('checkmarkFilterDesktop--active')) {
     element.classList.remove('checkmarkFilterDesktop--active') 
-    removeFilterDesktop(element, 'cor')
+    removeFilterDesktop(element)
   } else {
     element.classList.add('checkmarkFilterDesktop--active')
     filterProductsDesktop(element, 'cor')
@@ -675,6 +675,7 @@ function gettingColorInput(element) {
 function gettingSizeInput(element) {
   if(element.classList.contains('buttonSize--active')) {
     element.classList.remove('buttonSize--active')
+    removeFilterDesktop(element)
   } else {
     element.classList.add('buttonSize--active')
     filterProductsDesktop(element, 'size')
@@ -684,6 +685,7 @@ function gettingSizeInput(element) {
 function gettingPriceInput(element) {
   if(element.classList.contains('checkmarkFilterDesktop--active')) {
     element.classList.remove('checkmarkFilterDesktop--active') 
+    removeFilterDesktop(element)
   } else {
     element.classList.add('checkmarkFilterDesktop--active')
     filterProductsDesktop(element, 'price')
@@ -716,15 +718,23 @@ const filterProductsDesktop = async (element, string) => {
   const elementSelectedActualColorOrSize = element.classList[1]
   const products = await getAllProducts()
   const divProductContainer = document.querySelector('.products--cardContainer')
-  newFilterUser = []
+  let newFilterUser = []
+  filtersCalled.push(elementSelectedActualColorOrSize)
   filtersBeenCalled.push(string)
+  let productMerge = []
+  let productColor = []
+  let productSize = []
+  let priceMark = []
+  let prices = []
 
+  // checking which color is selected
   const verifyColorSelectedIsMatch = () => {
     products.filter((product) => {
       product.color.toLowerCase() === elementSelectedActualColorOrSize ? productColorsOnFilter.unshift(product) : ''
     })
   }
 
+  // checking which size is selected
   const verifySizeSelectedIsMatch = () => {
     products.filter((product) => {
       const sizePerProduct = product.size
@@ -738,6 +748,7 @@ const filterProductsDesktop = async (element, string) => {
     })
   }
 
+  // checking which price is selected
   const verifyPriceSelectedIsMatch = () => {
     const allPricesSelected = []
     const pricesOnSelected = [element.getAttribute('lowestPrice'), element.getAttribute('biggestPrice')]
@@ -767,6 +778,7 @@ const filterProductsDesktop = async (element, string) => {
     priceSelectedPrevious[1] <= pricesOnSelected[1] ? priceSelectedPrevious[1] = pricesOnSelected[1] : '' 
   }
 
+  // checking which call case
   if(string === 'cor') {
     verifyColorSelectedIsMatch()
   } else if(string === 'size') {  
@@ -775,51 +787,140 @@ const filterProductsDesktop = async (element, string) => {
     verifyPriceSelectedIsMatch()
   }
 
-  const verifyFilters = (currentValue) => {
+  // checking if the filter is price to assign to the filter
+  const verifyFilterPrice = (currentValue) => {
     return currentValue === 'price'
   } 
 
+  // checking if the filter is color to assign to the filter
+  const verifyFilterColor = (currentValue) => {
+    return currentValue === 'cor'
+  }
+
+  // checking if the filter is size to assign to the filter
+  const verifyFilterSize = (currentValue) => {
+    return currentValue === 'size'
+  }
+
+  // checking which price range is active
+  const priceRangeActive = (() => {
+    for(let checkmark of pricesFilterDesktopInput) {
+      checkmark.classList.contains('checkmarkFilterDesktop--active') ? priceMark.push(checkmark) : ''
+    }
+  })()
+
+  // generating the highest and lowest price
+  let biggestPrice
+  let lowestPrice
+  const getLowestAndBiggest = (() => {
+    priceMark.map((item) => {
+      prices.push(item.getAttribute('lowestPrice'))
+      prices.push(item.getAttribute('biggestPrice'))
+    })
+    prices = prices.map((price) => Number(price))
+
+    biggestPrice = Math.max.apply(null, prices)
+    lowestPrice = Math.min.apply(null, prices)
+  })()
+
+  // checking largest and smallest array
+  let biggestArray
+  let smallestArray
+  const gettingBiggestArray = (array1, array2) => {
+    const unionArray = [array1, array2]
+    for(let i = 0; i < unionArray.length; i++) {
+      if(i === 0) {
+        biggestArray = unionArray[i]
+      } else {
+        unionArray[i].length > biggestArray.length ? biggestArray = unionArray[i] : ''
+      }
+    } 
+    unionArray.map((array) => array !== biggestArray ? smallestArray = array : '')
+  }
+
   const verifyArrayForOneFilter = () => {
+    // checking first call filter
     if(productsOnFilter.length === 0) {
       productColorsOnFilter.length !== 0 ? productsOnFilter = productColorsOnFilter : ''
       productSizeOnFilter.length !== 0 ? productsOnFilter = productSizeOnFilter : ''
       productsPriceOnFilter.length !== 0 ? productsOnFilter = productsPriceOnFilter : ''
-      
-    } else if (filtersBeenCalled.every(verifyFilters)) { 
+    } else if (filtersBeenCalled.every(verifyFilterPrice)) { 
+      // checking if all filters are price
       productsOnFilter = productsPriceOnFilter
+    } else if (filtersBeenCalled.every(verifyFilterColor)) {
+      // checking if all filters are color
+      productsOnFilter = productColorsOnFilter
+    } else if (filtersBeenCalled.every(verifyFilterSize)) {
+      // checking if all filters are size
+      productsOnFilter = productSizeOnFilter
     } else {
-      switch (string) {
-        case 'cor':
-          productsOnFilter.filter((product) => {
-            product.color.toLowerCase() === elementSelectedActualColorOrSize ?  newFilterUser.push(product) : ''
+      // if the types of filters are different
+      filtersCalled.map((filter) => {
+        if(filter === "amarelo" || "azul" || "branco" || "cinza" || "laranja" || "verde" || "vermelho" || "preto" || "rosa" || "vinho") {
+          products.filter((product) => {
+            product.color.toLowerCase() === filter ? productColor.push(product) : ''
           })
-          break;
-        case 'size': 
-          productsOnFilter.filter((product) => {
+        }
+        if(filter === "P" || "M" || "G" || "GG" || "U" || "36" || "38" || "40") {
+          products.filter((product) => {
             const sizePerProduct = product.size
             const sizeUnique = sizePerProduct.map((size) => {return size})
             if(sizeUnique.length > 1) {
-              elementSelectedActualColorOrSize === sizeUnique[0] ? newFilterUser.unshift(product) : ''
-              elementSelectedActualColorOrSize === sizeUnique[1] ? newFilterUser.unshift(product) : ''
+              filter === sizeUnique[0] ? productSize.push(product) : ''
+              filter === sizeUnique[1] ? productSize.push(product) : ''
             } else {
-              elementSelectedActualColorOrSize == sizeUnique ? newFilterUser.unshift(product) : ''
+              filter === sizeUnique[0] ? productSize.push(product) : ''
             }
           })
-          break;
-        case 'price':
-          productsOnFilter.filter((product) => {
-            if(priceSelectedPrevious[0] <= product.price && product.price < priceSelectedPrevious[1]) {
-              newFilterUser.push(product)
-            }
-          })
-          break;
-        default:
-          break;
-      }
+        }
 
-      productsOnFilter = newFilterUser
+        // if there is color and size filter
+        if(productColor.length !== 0 && productSize.length !== 0) {
+          gettingBiggestArray(productColor, productSize)
+  
+          biggestArray.filter((product) => smallestArray.includes(product) ? productMerge.push(product) : '')
+          productMergeFilter()
+        }
+        
+        // if there is only color filter
+        if(productColor.length !== 0 && productSize.length === 0) {
+          productsOnFilter = []
+          if(lowestPrice && biggestPrice) {
+            productColor.filter((product) => {
+              if(lowestPrice <= product.price && product.price <= biggestPrice) {
+                productsOnFilter.push(product)
+              }
+            })
+          }
+        }
 
+        // if there is only size filter
+        if(productSize.length !== 0 && productColor.length === 0) {
+          productsOnFilter = []
+          if(lowestPrice && biggestPrice) {
+            productSize.filter((product) => {
+              if(lowestPrice <= product.price && product.price <= biggestPrice) {
+                productsOnFilter.push(product)
+              }
+            })
+          }
+        }
+      })
     }
+  }
+
+  // merging products for two filters and price
+  const productMergeFilter = () => {
+    productsOnFilter = []
+    if(lowestPrice && biggestPrice) {
+      productMerge.filter((product) => {
+        if(lowestPrice <= product.price && product.price <= biggestPrice) {
+          productsOnFilter.push(product)
+        }
+      })
+    }
+
+    biggestArray.filter((product) => smallestArray.includes(product) ? productsOnFilter.push(product) : '')
   }
 
   const generateHTMLFilteredProduct = () => {
@@ -851,7 +952,6 @@ const filterProductsDesktop = async (element, string) => {
   generateHTMLFilteredProduct()
 
   if(productsOnFilter !== []) {
-    console.log(productsOnFilter)
     if(window.innerWidth < 425) {
       let productsPerPageFilter = 3
       for(let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
@@ -863,7 +963,7 @@ const filterProductsDesktop = async (element, string) => {
         divProductContainer.children[i].style.display = 'none'
       }
     } else if(window.innerWidth > 1024) {
-      let productsPerPageFilter = 6
+      let productsPerPageFilter = 9
       for (let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
         divProductContainer.children[i].style.display = 'none'
       }
@@ -871,20 +971,151 @@ const filterProductsDesktop = async (element, string) => {
   } 
 }
 
-const removeFilterDesktop = async (element, string) => {
+const removeFilterDesktop = async (element) => {
   const classElementDesmark = element.classList[1]
   const products = await getAllProducts()
   const divProductContainer = document.querySelector('.products--cardContainer')
-  
-  if(string === 'cor') {
-    productsOnFilter.filter((product, index) => product.color.toLowerCase() === classElementDesmark ? productsOnFilter.splice(index) : '')
-  } else if ( string === 'size') {
-    productsOnFilter.filter((product, index) => product.size[0] === classElementDesmark || product.size[1] === classElementDesmark ? productsOnFilter.splice(index) : '')
-  } 
+  let filtersRemanaing = []
+  let productColors = []
+  let productSizes = []
+  let productMerge = []
+  let priceMark = []
+  let prices = []
+  let biggestPrice
+  let lowestPrice
 
-  if(productsOnFilter.length === 0) {
+  const checkFilterDesmark = (() => {
+    filtersCalled.map((filter, index) => {
+      filter === classElementDesmark ? filtersCalled[index] = '' : ''
+    })
+    filtersCalled.forEach(filter => {
+      filter === '' ? '' : filtersRemanaing.push(filter)
+    });
+  })()
+
+  const priceRangeActive = (() => {
+    for(let checkmark of pricesFilterDesktopInput) {
+      checkmark.classList.contains('checkmarkFilterDesktop--active') ? priceMark.push(checkmark) : ''
+    }
+  })()
+
+  const getLowestAndBiggest = (() => {
+    if(priceMark.length !== 0) {
+      priceMark.map((item) => {
+        prices.push(item.getAttribute('lowestPrice'))
+        prices.push(item.getAttribute('biggestPrice'))
+      })
+      prices = prices.map((price) => Number(price))
+  
+      biggestPrice = Math.max.apply(null, prices)
+      lowestPrice = Math.min.apply(null, prices)
+    }
+  })()
+
+  let biggestArray
+  let smallestArray
+  const gettingBiggestArray = (array1, array2) => {
+    const unionArray = [array1, array2]
+    for(let i = 0; i < unionArray.length; i++) {
+      if(i === 0) {
+        biggestArray = unionArray[i]
+      } else {
+        unionArray[i].length > biggestArray.length ? biggestArray = unionArray[i] : ''
+      }
+    } 
+    unionArray.map((array) => array !== biggestArray ? smallestArray = array : '')
+  }
+
+  const filterProductRemanaing = () => {
+    filtersRemanaing.length === 0 ? productsOnFilter = products : ''
+
+    if(filtersRemanaing.length !== 0) {
+      filtersRemanaing.map((filter) => {
+        if(filter === "amarelo" || "azul" || "branco" || "cinza" || "laranja" || "verde" || "vermelho" || "preto" || "rosa" || "vinho") {
+          products.filter((product) => {
+            product.color.toLowerCase() === filter ? productColors.push(product) : ''
+          })
+        }
+  
+        if(filter === "P" || "M" || "G" || "GG" || "U" || "36" || "38" || "40") {
+          products.filter((product) => {
+            const sizePerProduct = product.size
+            const sizeUnique = sizePerProduct.map((size) => {return size})
+            if(sizeUnique.length > 1) {
+              filter === sizeUnique[0] ? productSizes.push(product) : ''
+              filter === sizeUnique[1] ? productSizes.push(product) : ''
+            } else {
+              filter === sizeUnique[0] ? productSizes.push(product) : ''
+            }
+          })
+        }
+  
+        if(productColors.length !== 0 && productSizes.length !== 0) {
+          gettingBiggestArray(productColors, productSizes)
+  
+          biggestArray.filter((product) => smallestArray.includes(product) ? productMerge.push(product) : '')
+          productsInPage()
+        }
+  
+        if(productColors.length !== 0 && productSizes.length === 0) {
+          productsOnFilter = []
+          if(lowestPrice && biggestPrice) {
+            productColors.filter((product) => {
+              if(lowestPrice <= product.price && product.price <= biggestPrice) {
+                productsOnFilter.push(product)
+              }
+            })
+          } else {
+            productsOnFilter = productColors
+          }
+        }
+  
+        if(productSizes.length !== 0 && productColors.length === 0) {
+          productsOnFilter = []
+          if(lowestPrice && biggestPrice) {
+            productSizes.filter((product) => {
+              if(lowestPrice <= product.price && product.price <= biggestPrice) {
+                productsOnFilter.push(product)
+              }
+            })
+          } else {
+            productsOnFilter = productSizes
+          }
+        }
+
+        if(productColors.length === 0 && productSizes.length === 0) {
+          productsOnFilter = []
+          if(lowestPrice && biggestPrice) {
+            products.filter((product) => {
+              if(lowestPrice <= product.price && product.price <= biggestPrice) {
+                productsOnFilter.push(product)
+              }
+            })
+          } else {
+            productsOnFilter = products
+          }
+        }
+      })
+    }
+  }
+
+  filterProductRemanaing()
+  
+  const productsInPage = () => {
+    productsOnFilter = []
+    if(biggestPrice && lowestPrice) {
+      productMerge.filter((product) => {
+        if(lowestPrice <= product.price && product.price <= biggestPrice) {
+          productsOnFilter.push(product)
+        }
+      })
+    }
+    biggestArray.filter((product) => smallestArray.includes(product) ? productsOnFilter.push(product) : '')
+  }
+
+
+  const generateHTML = () => {
     divProductContainer.innerText = ''
-    productsOnFilter = products 
     productsOnFilter.map((product) => {
       divProductContainer.innerHTML += `
         <div class="products--cardItem ${product.id}">
@@ -901,6 +1132,32 @@ const removeFilterDesktop = async (element, string) => {
       `
     })
   }
+
+  const buttonsBuy = document.querySelectorAll('.buttonBuyItem')
+  for(let buttonBuy of buttonsBuy) {
+    buttonBuy.addEventListener('click', (element) => addItemInCart(element.target))
+  }
+
+  generateHTML()
+
+  if(productsOnFilter !== []) {
+    if(window.innerWidth < 425) {
+      let productsPerPageFilter = 3
+      for(let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
+        divProductContainer.children[i].style.display = 'none'
+      }
+    } else if(window.innerWidth > 520 && window.innerWidth < 1024) {
+      let productsPerPageFilter = 4
+      for(let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
+        divProductContainer.children[i].style.display = 'none'
+      }
+    } else if(window.innerWidth > 1024) {
+      let productsPerPageFilter = 9
+      for (let i = productsPerPageFilter; i < divProductContainer.children.length; i++) {
+        divProductContainer.children[i].style.display = 'none'
+      }
+    }
+  }
 }
 
 // function to resolve promise products 
@@ -912,4 +1169,3 @@ const promisesResolve = async () => {
 
 // call all promise resolves function
 promisesResolve()
-
