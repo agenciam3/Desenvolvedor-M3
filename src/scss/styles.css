@@ -60,6 +60,7 @@ button {
 }
 
 footer {
+  max-width: 1920px;
   height: 33px;
   margin: 0 auto;
   left: calc(50% - 1500px / 2);
@@ -85,7 +86,7 @@ footer p {
 }
 
 header .container {
-  max-width: 1270px;
+  max-width: 1920px;
   padding: 1.5rem 0;
   margin: 0 auto;
   display: -webkit-box;
@@ -118,13 +119,12 @@ header .container .cadeado {
 }
 
 .linha-horizoltal {
-  max-width: 1500px;
+  max-width: 1920px;
   border: 1px solid #c7c7c7;
   margin-top: 20px;
 }
 
 section .lists {
-  max-width: 1170px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -138,7 +138,7 @@ section .lists {
 }
 
 main .container {
-  max-width: 1500px;
+  max-width: 1920px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,7 +155,7 @@ main .container {
 }
 
 section .container {
-  max-width: 1270px;
+  max-width: 1920px;
   padding: 1.5rem 0;
   margin: 0 auto;
   margin-left: 161px;
