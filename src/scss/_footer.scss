@@ -1,10 +1,10 @@
 footer {
+  height: 4%;
   max-width: 1920px;
-  height: 33px;
   margin: 0 auto;
   left: calc(50% - 1500px / 2);
   bottom: 0px;
-  background: #000;
+  background: $color-black;
 
   display: flex;
   flex-direction: row;
@@ -12,6 +12,6 @@ footer {
   align-items: center;
 
   p {
-    color: #fff;
+    color: $color-white;
   }
 }

@@ -4,3 +4,21 @@ section .lists {
   align-items: center;
   padding: 10px;
 }
+
+.rectangle {
+  width: 32px;
+  height: 32px;
+  border: 1px solid $color-gray;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sizes {
+  width: 153px;
+
+  display: flex;
+  flex-wrap: wrap;
+}

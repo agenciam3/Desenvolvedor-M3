@@ -10,14 +10,12 @@ header .container {
 
   .logo {
     width: 119px;
-    height: 30px;
     margin-left: 162px;
     margin-top: 16px;
   }
 
   .cadeado {
     width: 17px;
-    height: 20px;
     margin-top: 20px;
     margin-right: 162px;
   }
@@ -25,6 +23,6 @@ header .container {
 
 .linha-horizoltal {
   max-width: 1920px;
-  border: 1px solid #c7c7c7;
+  border: 1px solid $color-gray;
   margin-top: 20px;
 }
