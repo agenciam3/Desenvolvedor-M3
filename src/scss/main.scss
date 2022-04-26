@@ -70,6 +70,7 @@ header {
       img {
         width: 20px;
         height: 20px;
+        cursor: pointer;
       }
 
       .header--cartNumber {
@@ -219,6 +220,7 @@ header {
   position: fixed;
   width: 100%;
   height: 100vh;
+  z-index: 9999999999999999999999999;
 
   overflow-y: scroll;
 
@@ -494,6 +496,7 @@ header {
   position: fixed;
   width: 100%;
   height: 100vh;
+  z-index: 99999999999999999999;
 
   display: none;
   align-items: center;
@@ -551,7 +554,7 @@ header {
 /* container for order and name 1024px*/
 .sectionName--container {
   width: 100%;
-
+  cursor: pointer;
   display: none;
   justify-content: center;
   align-items: center;
@@ -707,7 +710,7 @@ header {
             }
 
             .sectionFilter--checkmarkInput.branco {
-              margin-right: 50px;
+              margin-right: 52px;
             }
   
             .sectionFilter--checkmarkInput.cinza {
@@ -715,7 +718,7 @@ header {
             }
   
             .sectionFilter--checkmarkInput.laranja {
-              margin-right: 52px;
+              margin-right: 54px;
             }
   
             .sectionFilter--checkmarkInput.verde {
@@ -723,7 +726,7 @@ header {
             }
   
             .sectionFilter--checkmarkInput.vermelho {
-              margin-right: 67px;
+              margin-right: 69px;
             }
   
             .sectionFilter--checkmarkInput.preto {
@@ -867,6 +870,27 @@ header {
   }
 }
 
+/* Loader */
+.fix-loader {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+
+  .loader {
+    border: 16px solid #f3f3f3; 
+    border-top: 16px solid #3498db; 
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 
 /* container for products exibhition*/
 .products--container {
@@ -973,6 +997,11 @@ header {
           border: none;
           cursor: pointer;
         }
+
+        button:hover {
+          background-color: #fff;
+          color: $black-color;
+        }
       }
     }
   }
@@ -1012,6 +1041,11 @@ header {
 
       padding: 8px 25px;
 
+    }
+
+    button:hover {
+      background-color: #fff;
+      color: $primary-color;
     }
   }
 }

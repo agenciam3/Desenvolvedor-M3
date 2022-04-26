@@ -1,6 +1,6 @@
 import 'regenerator-runtime/runtime';
 
-let productsPerPage = 4
+const fixLoader = document.querySelector('.fix-loader')
 
 //  function to get all products
 const getAllProducts = async () => {
@@ -41,6 +41,13 @@ const insertProductsIntoPage = htmlProduct => {
       </div>
     `
   })
+  
+  if(divProductsContainer.children.length !== 0) {
+    if(fixLoader.classList.contains('show')) {
+      fixLoader.classList.add('hide')
+      fixLoader.classList.remove('show')
+    }
+  }
 
   const buttonsBuyItem = document.querySelectorAll('.buttonBuyItem')
 
@@ -49,17 +56,18 @@ const insertProductsIntoPage = htmlProduct => {
   }
 
   // checking the size of the user's screen and adjusting the amount of initial products
-  if(window.innerWidth < 425) {
+  if(window.innerWidth <= 425) {
+    let productsPerPage = 4
     for(let i = productsPerPage; i < divProductsContainer.children.length; i++) {
       divProductsContainer.children[i].style.display = 'none'
     }
   } else if(window.innerWidth > 520 && window.innerWidth < 1000) {
-    productsPerPage = 6
+    let productsPerPage = 6
     for(let i = productsPerPage; i < divProductsContainer.children.length; i++) {
       divProductsContainer.children[i].style.display = 'none'
     }
   } else if(window.innerWidth > 1000) {
-    productsPerPage = 9
+    let productsPerPage = 9
     for (let i = productsPerPage; i < divProductsContainer.children.length; i++) {
       divProductsContainer.children[i].style.display = 'none'
     }
