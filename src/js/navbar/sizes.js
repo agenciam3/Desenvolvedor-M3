@@ -1,4 +1,4 @@
-export {listSizes, addSizeButtons}
+export {listSizes, addSizeButtons, pickUnpick}
 import { onlyUnique, createElementWithClass, appendById } from "../module_helpers"
 
 function listSizes(products) {
@@ -17,4 +17,25 @@ function addSizeButtons(sizes) {
     div.innerText = size
     appendById(div, 'sizes')
   })
+}
+
+function pick(size) {
+  size.classList.add('chosen')
+}
+
+function unpick(size) {
+  size.classList.remove('chosen')
+}
+
+function pickUnpick(size) {
+  let listedSizes = document.querySelectorAll('.size-desktop');
+  if (size.classList.contains('chosen')) {
+    unpick(size);
+  }
+  else {
+    listedSizes.forEach(s => {
+      unpick(s);
+    });
+    pick(size);
+  }
 }
