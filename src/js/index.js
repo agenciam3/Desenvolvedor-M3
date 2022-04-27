@@ -2,7 +2,7 @@
 // criar uma linha
 // adicionar na tabela
 
-/* function fazGet(url) {
+function fazGet(url) {
   let request = new XMLHttpRequest();
   request.open("GET", url, false);
   request.send();
@@ -36,7 +36,23 @@ function main() {
   });
 }
 
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
 main();
 
 console.log(main);
- */

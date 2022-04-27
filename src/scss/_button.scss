@@ -1,8 +1,54 @@
-button {
+.button-list {
   width: 195px;
   height: 33.5px;
   background: $color-black;
   color: $color-white;
+  cursor: pointer;
 
   @include flex;
+}
+
+.button-load {
+  width: 195px;
+  height: 33.5px;
+  background: $color-primaria;
+  color: $color-white;
+  cursor: pointer;
+
+  @include flex;
+}
+
+.dropbtn {
+  width: 142px;
+  color: $color-black;
+  background-color: $color-white;
+  padding: 16px;
+  font-size: 16px;
+  border: 1px solid $color-black;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $color-white;
+  border: 1px solid $color-black;
+  min-width: 142px;
+  overflow: auto;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: $color-black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: $color-primaria;
+}
+
+.show {
+  display: block;
 }

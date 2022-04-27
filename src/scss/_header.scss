@@ -25,15 +25,3 @@ header .container {
   border: 1px solid $color-gray;
   margin-top: 20px;
 }
-
-.orderby {
-  width: 142px;
-  height: 42px;
-  border: 1px solid $color-gray2;
-
-  @include flex;
-
-  p {
-    font-weight: 400;
-  }
-}
