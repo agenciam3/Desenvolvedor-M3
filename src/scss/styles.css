@@ -22,7 +22,6 @@ button {
   height: 33.5px;
   background: black;
   color: white;
-  border: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,25 +192,5 @@ section .container {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-#card-1 {
-  src: url("../img/img_1.png");
-}
-
-#card-2 {
-  src: url("../img/img_2.png");
-}
-
-#card-3 {
-  src: url("../img/img_3.png");
-}
-
-#card-4 {
-  src: url("../img/img_4.png");
-}
-
-#card-5 {
-  src: url("../img/img_5.png");
 }
 /*# sourceMappingURL=styles.css.map */
