@@ -1,7 +1,7 @@
 import { createElementWithClass, appendById } from "./module_helpers";
-export { add_card_products }
+export { addCardProducts }
 
-function add_card_products(products){
+function addCardProducts(products){
   products.forEach(product => {
     let div = createElementWithClass('div', 'product');
     div.innerHTML =`<img class="product-img" src="${product.image}" alt="">

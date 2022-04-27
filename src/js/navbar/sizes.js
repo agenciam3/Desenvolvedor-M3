@@ -1,7 +1,7 @@
-export {list_sizes, add_size_buttons}
+export {listSizes, addSizeButtons}
 import { onlyUnique, createElementWithClass, appendById } from "../module_helpers"
 
-function list_sizes(products) {
+function listSizes(products) {
   let sizes = []
   products.forEach(product =>{
     product.size.forEach(s => {
@@ -11,7 +11,7 @@ function list_sizes(products) {
   return sizes.filter(onlyUnique).sort().reverse();
 }
 
-function add_size_buttons(sizes) {
+function addSizeButtons(sizes) {
   sizes.forEach(size =>{
     let div = createElementWithClass('div', 'size-desktop');
     div.innerText = size
