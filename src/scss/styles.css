@@ -139,7 +139,7 @@ header .container-header .cadeado {
   margin-top: 20px;
 }
 
-section .lists {
+.lists {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -188,7 +188,7 @@ section .lists {
   grid-gap: 5px;
 }
 
-main .container {
+section .container {
   max-width: 1920px;
   display: -webkit-box;
   display: -ms-flexbox;
