@@ -13,7 +13,7 @@ function listSizes(products) {
 
 function addSizeButtons(sizes) {
   sizes.forEach(size =>{
-    let div = createElementWithClass('div', 'size-desktop');
+    let div = createElementWithClass('div', 'size');
     div.innerText = size
     appendById(div, 'sizes')
   })
@@ -30,7 +30,7 @@ function unpick(size, filterList) {
 }
 
 function pickUnpick(size, filterList) {
-  let listedSizes = document.querySelectorAll('.size-desktop');
+  let listedSizes = document.querySelectorAll('.size');
   if (size.classList.contains('chosen')) {
     unpick(size, filterList);
   }

@@ -28,3 +28,13 @@ body{
     color: #333;
   }
 }
+
+.d-none{
+  display: none;
+}
+
+#wrapper{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}

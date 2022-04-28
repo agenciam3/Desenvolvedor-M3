@@ -32,72 +32,74 @@
         <option value="">Maior preço</option>
       </select>
     </section>
-    <nav id="filters">
-      <p class="filter-title">
-        CORES
-      </p>
-      <form>
-        <div id="colors">
-          <!-- this will be populated by add_colors_filter()  -->
+    <div id="wrapper">
+      <nav id="filters">
+        <p class="filter-title">
+          CORES
+        </p>
+        <form>
+          <div id="colors">
+            <!-- this will be populated by add_colors_filter()  -->
+          </div>
+        </form>
+        <p class="filter-title">
+          TAMANHOS
+        </p>
+        <div id="sizes">
+          <!-- this will be populated by add_size_buttons() -->
         </div>
-      </form>
-      <p class="filter-title">
-        TAMANHOS
-      </p>
-      <div id="sizes">
-        <!-- this will be populated by add_size_buttons() -->
-      </div>
-      <p class="filter-title">
-        FAIXA DE PREÇOS
-      </p>
-      <form id="price-filter">
-        <div id="prices">
-          <div class="listed-price-range">
-            <div class="custom-checkbox">
+        <p class="filter-title">
+          FAIXA DE PREÇOS
+        </p>
+        <form id="price-filter">
+          <div id="prices">
+            <div class="listed-price-range">
+              <div class="custom-checkbox">
+              </div>
+              <input type="radio" class="price-radio" name="price-range" data-min-price="0" data-max-price="50" data-check-status="unchecked" id="range-1">
+              <label for="range-1">
+                de R$0 a R$50
+              </label>
             </div>
-            <input type="radio" class="price-radio" name="price-range" data-min-price="0" data-max-price="50" data-check-status="unchecked" id="range-1">
-            <label for="range-1">
-              de R$0 a R$50
-            </label>
-          </div>
-          <div class="listed-price-range">
-            <div class="custom-checkbox">
+            <div class="listed-price-range">
+              <div class="custom-checkbox">
+              </div>
+              <input type="radio" class="price-radio" name="price-range" data-min-price="51" data-max-price="150" data-check-status="unchecked" id="range-2">
+              <label for="range-2">
+                de R$51 a R$150
+              </label>
             </div>
-            <input type="radio" class="price-radio" name="price-range" data-min-price="51" data-max-price="150" data-check-status="unchecked" id="range-2">
-            <label for="range-2">
-              de R$51 a R$150
-            </label>
-          </div>
-          <div class="listed-price-range">
-            <div class="custom-checkbox">
+            <div class="listed-price-range">
+              <div class="custom-checkbox">
+              </div>
+              <input type="radio" class="price-radio" name="price-range" data-min-price="151" data-max-price="300" data-check-status="unchecked" id="range-3">
+              <label for="range-3">
+                de R$151 a R$300
+              </label>
             </div>
-            <input type="radio" class="price-radio" name="price-range" data-min-price="151" data-max-price="300" data-check-status="unchecked" id="range-3">
-            <label for="range-3">
-              de R$151 a R$300
-            </label>
-          </div>
-          <div class="listed-price-range">
-            <div class="custom-checkbox">
+            <div class="listed-price-range">
+              <div class="custom-checkbox">
+              </div>
+              <input type="radio" class="price-radio" name="price-range" data-min-price="301" data-max-price="500" data-check-status="unchecked" id="range-4">
+              <label for="range-4">
+                de R$301 a R$500
+              </label>
             </div>
-            <input type="radio" class="price-radio" name="price-range" data-min-price="301" data-max-price="500" data-check-status="unchecked" id="range-4">
-            <label for="range-4">
-              de R$301 a R$500
-            </label>
-          </div>
-          <div class="listed-price-range">
-            <div class="custom-checkbox">
+            <div class="listed-price-range">
+              <div class="custom-checkbox">
+              </div>
+              <input type="radio" class="price-radio" name="price-range" data-min-price="500" data-max-price="99999" data-check-status="unchecked" id="range-5">
+              <label for="range-5">
+                a partir de R$500
+              </label>
             </div>
-            <input type="radio" class="price-radio" name="price-range" data-min-price="500" data-max-price="99999" data-check-status="unchecked" id="range-5">
-            <label for="range-5">
-              a partir de R$500
-            </label>
           </div>
-        </div>
-      </form>
-    </nav>
-    <section id="products">
-      <!-- this will be populated by add_card_products -->
-    </section>
+        </form>
+      </nav>
+      <section id="products">
+        <!-- this will be populated by add_card_products -->
+      </section>
+    </div>
   </div>
 </body>
 

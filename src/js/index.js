@@ -1,7 +1,7 @@
 import { listSizes, addSizeButtons, pickUnpick } from "./navbar/sizes";
 import { addColorsFilter, listColors, checkUncheck } from "./navbar/colors";
 import { radioCheckUncheck } from "./navbar/prices";
-import { addCardProducts } from "./module_products";
+import { addCardProducts, filterProducts } from "./module_products";
 
 let url = 'http://localhost:5000/products';
 
@@ -16,16 +16,17 @@ fetch(url)
 
     let colorCheckBoxes = document.querySelectorAll('.color-checkbox');
     colorCheckBoxes.forEach(checkBox => {
-      checkBox.addEventListener("change", function(){ checkUncheck(checkBox, filters)})
+      checkBox.addEventListener("change", function(){ checkUncheck(checkBox, filters); filterProducts(filters)})
+    });
+
+    let listedSizes = document.querySelectorAll('.size');
+    listedSizes.forEach(size => {
+      size.addEventListener("click", function(){ pickUnpick(size, filters); filterProducts(filters)})
     });
 
     let priceRadios = document.querySelectorAll('.price-radio');
     priceRadios.forEach(radio => {
-      radio.addEventListener("click", function(){ radioCheckUncheck(radio, filters)})
+      radio.addEventListener("click", function(){ radioCheckUncheck(radio, filters); filterProducts(filters)})
     });
 
-    let listedSizes = document.querySelectorAll('.size-desktop');
-    listedSizes.forEach(size => {
-      size.addEventListener("click", function(){ pickUnpick(size, filters)})
-    });
   })

@@ -1,4 +1,6 @@
-export { onlyUnique, createElementWithClass, appendById, selectElements, getElementFromParent, removeItemAll }
+export { onlyUnique, createElementWithClass, appendById,
+         selectElements, getElementFromParent, removeItemAll,
+         hide, show }
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
@@ -34,4 +36,12 @@ function removeItemAll(arr, value) {
     }
   }
   return arr;
+}
+
+function hide(element) {
+  element.classList.add('d-none')
+}
+
+function show(element) {
+  element.classList.remove('d-none')
 }
