@@ -1,18 +1,156 @@
-@import "reset";
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
 
-* {box-sizing: border-box;}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
 
-.body{
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.body {
   font-family: "Open Sans", sans-serif;
   margin: 0px;
   height: 100%;
 }
 
-.styleShoppingBag, #apply, #clean, .title, .dropbtn, .orderBy-content, .lbl, .prc, .name_product, .value, .footertext, .mobilebutton_title, #colors, #sizes, #price, .buy_button, .dropdown-btn{
+.styleShoppingBag, #apply, #clean, .title, .dropbtn, .orderBy-content, .lbl, .prc, .name_product, .value, .footertext, .mobilebutton_title, #colors, #sizes, #price, .buy_button, .dropdown-btn {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: normal;
 }
+
 /*posicionamento da header*/
 .header {
   overflow: hidden;
@@ -22,6 +160,7 @@
   padding: 10px 5px;
   height: 62px;
 }
+
 /*posicionamento da logo da header*/
 .logo {
   position: absolute;
@@ -40,14 +179,14 @@
   top: 20px;
 }
 
-.fa-shopping-bag{
+.fa-shopping-bag {
   border: none;
   background-color: #FFFFFF;
   cursor: pointer;
 }
 
 /*blusas*/
-.title{
+.title {
   position: absolute;
   width: 97px;
   height: 44px;
@@ -57,6 +196,7 @@
   line-height: 44px;
   color: #333333;
 }
+
 /*Botão de ordenação*/
 .dropbtn {
   font-size: 16px;
@@ -72,7 +212,6 @@
   cursor: pointer;
 }
 
-
 .orderBy {
   display: inline-block;
 }
@@ -81,7 +220,8 @@
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   width: 142px;
   left: 1100px;
@@ -97,53 +237,56 @@
   display: block;
 }
 
-.orderBy-content a:hover {background-color: #00C0EE;}
+.orderBy-content a:hover {
+  background-color: #00C0EE;
+}
 
 .orderBy:hover .orderBy-content {
   display: block;
 }
 
-.orderBy:hover .dropbtn, #apply{
+.orderBy:hover .dropbtn, #apply {
   background-color: #00C0EE;
 }
 
 /*posicionamento dos titulos de seleção*/
-
-#colors, #sizes, #price{
+#colors, #sizes, #price {
   line-height: 22px;
   letter-spacing: 0.05em;
   position: absolute;
   font-size: 16px;
-
 }
-#colors{
+
+#colors {
   width: 54px;
   height: 22px;
   left: 162px;
   top: 213px;
 }
 
-#sizes{
+#sizes {
   width: 95px;
   height: 22px;
   left: 162px;
   top: 419px;
 }
 
-#price{
+#price {
   position: absolute;
   width: 150px;
   height: 22px;
   left: 161px;
   top: 601px;
 }
+
 /*Ver mais cores*/
-#myBtn{
+#myBtn {
   position: absolute;
-  left:162px;
+  left: 162px;
   top: 400px;
   font-size: 12px;
-  text-decoration-line: underline;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
   color: #666666;
 }
 
@@ -152,7 +295,7 @@
 }
 
 /*posicionamento do container de seleção de cores*/
-.container{
+.container {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -162,36 +305,32 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
-  
+
 .container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
-
 }
 
 /*def tamanho letra do container de seleção*/
-.lbl{
+.lbl {
   font-size: 14px;
   top: 190px;
   left: 162px;
   width: 112px;
-
 }
 
-#sz_selector{
+#sz_selector {
   left: 162px;
   top: 465px;
   width: 180px;
   position: absolute;
-  
 }
 
-.sz{
+.sz {
   border: 1px solid rgba(0, 0, 0, 0);
   position: relative;
   width: 32px;
@@ -199,18 +338,18 @@
   margin: 3px;
 }
 
-#prc_selector{
+#prc_selector {
   position: absolute;
   left: 162px;
-  top:650px;
+  top: 650px;
 }
-.prc{
+
+.prc {
   font-size: 14px;
   width: 180px;
 }
 
-
-  /* checkbox */
+/* checkbox */
 .checkmark {
   position: absolute;
   top: 0;
@@ -219,42 +358,39 @@
   width: 16px;
   height: 16px;
   border: 1px solid rgba(0, 0, 0, 0.5);
-  box-sizing: border-box;
-
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-  
+
 .container:hover input ~ .checkmark {
   background-color: #ccc;
 }
-  
+
 .container input:checked ~ .checkmark {
   background-color: #00C0EE;
-    
 }
-  
+
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
-  
+
 .container input:checked ~ .checkmark:after {
   display: block;
 }
-  
+
 .container .checkmark:after {
   left: 9px;
   top: 5px;
   width: 5px;
   height: 10px;
   -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-
 /*Disposição dos produtos*/
-#products{
+#products {
   position: absolute;
   width: 800px;
   height: 293px;
@@ -262,22 +398,24 @@
   top: 213px;
 }
 
-.eachProduct{
+.eachProduct {
   float: left;
   width: 33.3%;
   text-align: center;
   font-weight: bold;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.name_product{
+.name_product {
   font-size: 14px;
   line-height: 19px;
   margin: 4px;
   text-align: center;
 }
 
-.value{
+.value {
   font-weight: bold;
   font-size: 16px;
   line-height: 22px;
@@ -285,14 +423,14 @@
   padding-top: 10px;
 }
 
-.conditions{
+.conditions {
   font-size: 16px;
   line-height: 22px;
   color: #666666;
   text-align: center;
 }
 
-.buy_button{
+.buy_button {
   background-color: black;
   border: none;
   color: #FFFFFF;
@@ -309,8 +447,7 @@
 }
 
 /* botão mostrar mais itens */
-
-.loadmoreButton{
+.loadmoreButton {
   background-color: #00C0EE;
   border: none;
   color: #FFFFFF;
@@ -319,23 +456,29 @@
   cursor: pointer;
   padding: 8px 31px;
 }
-.loadmoreSection{
+
+.loadmoreSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: relative;
-  top:1300px;
+  top: 1300px;
   padding: 25px;
   left: 125px;
 }
 
 /* customização do footer */
-
-.footer{
+.footer {
   padding-bottom: 30px;
 }
 
-.footer{
+.footer {
   background-color: black;
   position: fixed;
   width: 1500px;
@@ -343,10 +486,9 @@
   left: calc(50% - 1500px/2);
   bottom: 0px;
   text-align: center;
-
 }
 
-.footertext{
+.footertext {
   color: #FFFFFF;
   position: absolute;
   width: 300px;
@@ -360,34 +502,32 @@
 }
 
 /* esconder opçoes do mobile */
+.mobilebutton, .mobilebutton2, .sidenav, .sidenav2 {
+  display: none;
+}
 
-.mobilebutton, .mobilebutton2, .sidenav, .sidenav2{
-  display:none;
- }
-
-.mobilebutton_filter{
-  border : 2px #c7c7c7;
+.mobilebutton_filter {
+  border: 2px #c7c7c7;
   border-bottom-style: solid;
   width: 100%;
   height: 70px;
 }
 
 /* customização do carrinho de compras */
-
-#shppngBg{
+#shppngBg {
   height: 100%;
   width: 550px;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #e9e9e9;;
+  background-color: #e9e9e9;
   overflow-x: hidden;
   padding-top: 20px;
   display: none;
 }
 
-#shoppingBag{
+#shoppingBag {
   display: block;
   position: flex;
   left: 0px;
@@ -395,17 +535,15 @@
   padding: 20px;
 }
 
-
-.styleShoppingBag{
+.styleShoppingBag {
   background-color: #00C0EE;
   padding: 15px;
-
 }
 
 .closebtn {
   position: absolute;
-  top:20px;
-  right:16px;
+  top: 20px;
+  right: 16px;
   font-size: 40px;
   color: black;
   text-decoration: none;
@@ -415,11 +553,11 @@
 /* Responsive layout */
 @media screen and (max-width: 600px) {
   /* reposixcionamento da disposição dos produtos */
-  .eachProduct{
+  .eachProduct {
     width: 50%;
     margin-top: 10px;
   }
-  #products{
+  #products {
     position: absolute;
     width: 500px;
     height: 293px;
@@ -427,17 +565,17 @@
     top: 213px;
   }
   /* escondendo opçoes de seleçao do desktop */
-  .filters, .orderBy{
+  .filters, .orderBy {
     display: none;
   }
   /* reposicionando a header */
-  .logo{
+  .logo {
     width: 119px;
     height: 28.63px;
     left: calc(50% - 119px/2 - 101px);
     top: 16px;
   }
-  .header-right{
+  .header-right {
     position: absolute;
     width: 17px;
     height: 20px;
@@ -445,14 +583,14 @@
     top: 20px;
   }
   /* blusas */
-  .title{
+  .title {
     width: 97px;
     height: 44px;
     left: 225px;
     top: 88px;
   }
   /* customização do botao de seleçao do mobile */
-  .mobilebutton{
+  .mobilebutton {
     display: block;
     position: absolute;
     border: 1px solid #666666;
@@ -460,7 +598,7 @@
     height: 49px;
     left: 15px;
     top: 144px;
-    margin:0px;
+    margin: 0px;
     text-align: center;
     font-size: 24px;
     line-height: 33px;
@@ -468,8 +606,7 @@
     background-color: white;
     cursor: pointer;
   }
-
-  .mobilebutton2{
+  .mobilebutton2 {
     left: 255px;
     display: block;
     position: absolute;
@@ -477,7 +614,7 @@
     width: 274px;
     height: 49px;
     top: 144px;
-    margin:0px;
+    margin: 0px;
     text-align: center;
     font-size: 24px;
     line-height: 33px;
@@ -485,29 +622,26 @@
     background-color: white;
     cursor: pointer;
   }
-
   .closebtn {
     position: absolute;
-    top:30px;
-    right:16px;
+    top: 30px;
+    right: 16px;
     font-size: 40px;
     color: black;
     text-decoration: none;
     cursor: pointer;
   }
-
-  .sidenav,.sidenav2 {
+  .sidenav, .sidenav2 {
     height: 100%;
     width: 550px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #FFFFFF;;
+    background-color: #FFFFFF;
     overflow-x: hidden;
     padding-top: 20px;
   }
-  
   .dropdown-btn {
     text-decoration: none;
     display: block;
@@ -521,67 +655,78 @@
     font-size: 24px;
     margin-top: 25px;
   }
-  
   .dropdown-btn:hover {
     color: #999999;
   }
-  
   .fa-angle-down {
     float: right;
     right: 8px;
-    
   }
-  
-  .lbl_container, #prc_container{
+  .lbl_container, #prc_container {
     font-family: Open Sans;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 100%;
-    top:15px;
+    top: 15px;
   }
-
-  #prc_container{
+  #prc_container {
     padding: 5px;
     padding-bottom: 45px;
   }
-  
-  #sz_container, #prc_container{
+  #sz_container, #prc_container {
     width: 180px;
   }
-  
-  #apply{
+  #apply {
     border: none;
     bottom: 10px;
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 8px 31px;
     width: 250px;
     height: 35px;
     left: 16px;
     color: #FFFFFF;
   }
-
-  #clean{
+  #clean {
     border: 1px solid #666666;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     bottom: 10px;
     position: fixed;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 8px 31px;
     width: 250px;
     height: 35px;
     background-color: #FFFFFF;
     left: 276px;
   }
-/* customização do filtro de ordenação do mobile */
-  .buttonsOrder{
+  /* customização do filtro de ordenação do mobile */
+  .buttonsOrder {
     color: #666666;
     font-size: 28px;
     line-height: 38px;
@@ -590,8 +735,7 @@
     margin-top: 80px;
     left: 16px;
   }
-
-  .new, .lowerPrice, .higherPrice{
+  .new, .lowerPrice, .higherPrice {
     font-size: 22px;
     line-height: 30px;
     display: block;
@@ -602,25 +746,31 @@
     margin-top: 30px;
     cursor: pointer;
   }
-
-  .mobilebutton_title{
+  .mobilebutton_title {
     color: #666666;
     font-size: 28px;
     line-height: 38px;
     position: absolute;
     margin: 16px;
   }
-  .dropdown-container{
-    display:none;
+  .dropdown-container {
+    display: none;
   }
   /* reposicionamento botao de carregamento */
-  .loadmoreSection{
+  .loadmoreSection {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     position: relative;
     top: 2390px;
     padding: 25px;
     left: 20px;
   }
 }
+/*# sourceMappingURL=main.css.map */

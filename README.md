@@ -77,3 +77,13 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 - Adição de processo no gulp para otimizar imagens
 
 ##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+
+---------------------------------------------------------
+
+
+As alterações forem realizadas no Vs Code e dei upload no arquivos individualmente.
+Há comentários em toda estrutura do código para melhor entendimento.
+Devido ao meu nível iniciante em Js, faltou cumprir alguns requisitos obrigatórios.
+Gostei muito de fazer o teste, aprendi bastante.
+Agradeço a oportunidade.
+Meu e=mail: edmarques@id.uff.br
