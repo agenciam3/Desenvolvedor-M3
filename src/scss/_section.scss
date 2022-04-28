@@ -27,3 +27,5 @@
   grid-template-columns: 35px 35px 35px 35px;
   grid-gap: 5px;
 }
+
+@include responsive;

@@ -10,27 +10,37 @@ $color-blue: rgb(0, 192, 238);
   align-items: center;
 }
 
-@media screen and (max-width: 500px) {
-  section .container-filtros {
-    display: none;
-  }
+@mixin responsive {
+  @media screen and (max-width: 500px) {
+    section .container-filtros {
+      display: none;
+    }
 
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+    section .container {
+      max-width: 100%;
+    }
 
-  header .container-header .cadeado {
-    margin-right: 50px;
-  }
+    header .container-header {
+      padding: 1.5rem 0;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
+    header .container-header .cadeado {
+      margin-right: 50px;
+    }
+
+    header .container-header .logo {
+      margin-left: 50px;
+    }
+
+    .cards {
+      margin: 0 auto;
+      max-width: 100%;
+      display: grid;
+      grid-template-columns: 200px 200px;
+    }
   }
 }

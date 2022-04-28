@@ -1,31 +1,3 @@
-@media screen and (max-width: 500px) {
-  section .container-filtros {
-    display: none;
-  }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .container-header .cadeado {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
-  }
-}
-
 * {
   padding: 0;
   margin: 0;
@@ -45,6 +17,10 @@ ul {
 h2 {
   margin-bottom: 20px;
   margin-top: 5px;
+}
+
+img {
+  max-width: 100%;
 }
 
 .button-list {
@@ -88,7 +64,7 @@ h2 {
   color: black;
   background-color: white;
   padding: 16px;
-  font-size: 16px;
+  font-size: 1rem;
   border: 1px solid black;
   cursor: pointer;
 }
@@ -118,6 +94,42 @@ h2 {
   display: block;
 }
 
+@media screen and (max-width: 500px) {
+  section .container-filtros {
+    display: none;
+  }
+  section .container {
+    max-width: 100%;
+  }
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container-header .cadeado {
+    margin-right: 50px;
+  }
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+    max-width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+  }
+}
+
 footer {
   padding: 0.5rem 0;
   max-width: 1920px;
@@ -132,6 +144,42 @@ footer {
 
 footer p {
   color: white;
+}
+
+@media screen and (max-width: 500px) {
+  section .container-filtros {
+    display: none;
+  }
+  section .container {
+    max-width: 100%;
+  }
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container-header .cadeado {
+    margin-right: 50px;
+  }
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+    max-width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+  }
 }
 
 header .container-header {
@@ -165,6 +213,42 @@ header .container-header .cadeado {
   max-width: 1920px;
   border: 1px solid #c7c7c7;
   margin-top: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  section .container-filtros {
+    display: none;
+  }
+  section .container {
+    max-width: 100%;
+  }
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container-header .cadeado {
+    margin-right: 50px;
+  }
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+    max-width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+  }
 }
 
 .lists {
@@ -211,6 +295,42 @@ header .container-header .cadeado {
   -ms-grid-columns: 35px 35px 35px 35px;
       grid-template-columns: 35px 35px 35px 35px;
   grid-gap: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  section .container-filtros {
+    display: none;
+  }
+  section .container {
+    max-width: 100%;
+  }
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container-header .cadeado {
+    margin-right: 50px;
+  }
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+    max-width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+  }
 }
 
 section .container {
@@ -292,5 +412,41 @@ section .container-orderby {
           flex-grow: 1;
   -ms-flex: 1 1 auto;
       flex: 1 1 auto;
+}
+
+@media screen and (max-width: 500px) {
+  section .container-filtros {
+    display: none;
+  }
+  section .container {
+    max-width: 100%;
+  }
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container-header .cadeado {
+    margin-right: 50px;
+  }
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+    max-width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

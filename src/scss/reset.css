@@ -18,4 +18,8 @@ h2 {
   margin-bottom: 20px;
   margin-top: 5px;
 }
+
+img {
+  max-width: 100%;
+}
 /*# sourceMappingURL=reset.css.map */
