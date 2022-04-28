@@ -1,6 +1,6 @@
 import { check, uncheck } from "./helpers";
 
-export function radioCheckUncheck(radio) {
+export function radioCheckUncheck(radio, filterList) {
   let radios = document.querySelectorAll(".price-radio");
 
   if(radio.dataset.checkStatus === "unchecked" && radio.checked){
@@ -12,6 +12,8 @@ export function radioCheckUncheck(radio) {
       }
     });
     check(radio);
+    filterList[0] = parseFloat(radio.dataset.minPrice)
+    filterList[1] = parseFloat(radio.dataset.maxPrice)
   }
 
   else if (radio.dataset.checkStatus === "checked" && radio.checked) {
@@ -22,5 +24,7 @@ export function radioCheckUncheck(radio) {
         r.dataset.checkStatus = "unchecked";
       }
     });
+    filterList[0] = 0
+    filterList[1] = 99999
   }
 }

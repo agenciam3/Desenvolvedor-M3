@@ -19,23 +19,25 @@ function addSizeButtons(sizes) {
   })
 }
 
-function pick(size) {
+function pick(size, filterList) {
   size.classList.add('chosen')
+  filterList[2] = size.innerText
 }
 
-function unpick(size) {
+function unpick(size, filterList) {
   size.classList.remove('chosen')
+  filterList[2] = ""
 }
 
-function pickUnpick(size) {
+function pickUnpick(size, filterList) {
   let listedSizes = document.querySelectorAll('.size-desktop');
   if (size.classList.contains('chosen')) {
-    unpick(size);
+    unpick(size, filterList);
   }
   else {
     listedSizes.forEach(s => {
-      unpick(s);
+      unpick(s, filterList);
     });
-    pick(size);
+    pick(size, filterList);
   }
 }

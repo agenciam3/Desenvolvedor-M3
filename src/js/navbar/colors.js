@@ -1,5 +1,5 @@
 export { addColorsFilter, listColors, checkUncheck }
-import { createElementWithClass, appendById, onlyUnique } from "../module_helpers"
+import { createElementWithClass, appendById, onlyUnique, removeItemAll } from "../module_helpers"
 import { check, uncheck } from "./helpers";
 
 function addColorsFilter(colors) {
@@ -26,11 +26,13 @@ function listColors(products) {
 
 
 
-function checkUncheck(checkable){
+function checkUncheck(checkable, filterList){
   if (checkable.checked) {
     check(checkable)
+    filterList[3].push(checkable.id)
   }
   else {
     uncheck(checkable)
+    removeItemAll(filterList[3], checkable.id)
   }
 }

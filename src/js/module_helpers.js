@@ -1,4 +1,4 @@
-export { onlyUnique, createElementWithClass, appendById, selectElements, getElementFromParent }
+export { onlyUnique, createElementWithClass, appendById, selectElements, getElementFromParent, removeItemAll }
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
@@ -22,4 +22,16 @@ function selectElements(name) {
 
 function getElementFromParent(element, child){
   return child.parentElement.querySelector(element)
+}
+
+function removeItemAll(arr, value) {
+  var i = 0;
+  while (i < arr.length) {
+    if (arr[i] === value) {
+      arr.splice(i, 1);
+    } else {
+      ++i;
+    }
+  }
+  return arr;
 }
