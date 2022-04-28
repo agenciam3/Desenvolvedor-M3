@@ -19,7 +19,7 @@
     <!-- Navbar -->
 
     <header class="header">
-      <div class="container">
+      <div class="container-header">
         <div class="logo">
           <img src="img/logo-m3.png" alt="logo-m3" />
         </div>
@@ -36,14 +36,14 @@
 
     <!-- Ordenar por -->
     
-     <section>
-      <div class="container">
+     <section class="orderby">
+      <div class="container-orderby">
         <div>
           <h2>BLUSAS</h2>
         </div>
 
         <div class="dropdown">
-          <button class="dropbtn" type="button" onclick="myFunction()">Ordenar por:</button>
+          <button class="dropbtn" type="button" onclick="OpenDropDown()">Ordenar por:</button>
           <div id="myDropdown" class="dropdown-content">
             <a href="#">Mais recentes</a>
             <a href="#">Menor preço</a>
@@ -57,8 +57,8 @@
 
     <!-- Sidebar -->
 
-    <section>
-      <div class="container">
+    <section class="filters">
+      <div class="container-filtros">
         <div>
           <ul class="colors">
 
@@ -210,7 +210,7 @@
 
     <!-- Listas -->
     
-        <section class="mid">
+        <section>
                   <div class="lists">
                     <div class="produto" id="card-1">
                       <img class="modelo-1" src="img/img_1.png" alt="camiseta-mesclada"/>
@@ -283,6 +283,7 @@
                   </div>
                 </div>
         </section>
+        
         <button class="button-load" type="button">CARREGAR MAIS</button>
           </div>
       </div>
@@ -297,7 +298,6 @@
       </div>
     </footer>
   </body>
-
   <script src="bundle.js"></script>
 </html>
 

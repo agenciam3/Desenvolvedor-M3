@@ -106,7 +106,7 @@ footer p {
   color: white;
 }
 
-header .container {
+header .container-header {
   max-width: 1920px;
   padding: 1.5rem 0;
   margin: 0 auto;
@@ -121,13 +121,13 @@ header .container {
           align-items: center;
 }
 
-header .container .logo {
+header .container-header .logo {
   width: 119px;
   margin-left: 162px;
   margin-top: 16px;
 }
 
-header .container .cadeado {
+header .container-header .cadeado {
   width: 17px;
   margin-top: 20px;
   margin-right: 162px;
@@ -210,9 +210,31 @@ main .container {
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 50px;
+  max-width: 1920px;
+  padding: 0.5rem 0;
 }
 
-section .container {
+section .container-filtros {
+  padding: 1.5rem 0;
+  margin: 0 auto;
+  margin-left: 161px;
+  margin-right: 161px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section .container-orderby {
   padding: 1.5rem 0;
   margin: 0 auto;
   margin-left: 161px;

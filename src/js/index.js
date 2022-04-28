@@ -2,7 +2,7 @@
 // criar uma linha
 // adicionar na tabela
 
-function fazGet(url) {
+/* function fazGet(url) {
   let request = new XMLHttpRequest();
   request.open("GET", url, false);
   request.send();
@@ -34,9 +34,45 @@ function main() {
     let linha = criarLinha(element);
     tabela.appendChild(linha);
   });
+} */
+
+//Função da galeria
+
+function getProducts() {
+  window
+    .fetch("http://localhost:5000/products")
+    .then((res) => {
+      res.json().then((r) => buildProducts(r));
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
-function myFunction() {
+function buildProducts(products) {
+  console.log(products);
+  let lists = document.getElementById("container");
+
+  products.forEach((product) => {
+    lists.append(
+      document.createElement("img").setAttribute("src", product.image)
+    );
+    lists.append((document.createElement("p").innerHTML = product.name));
+    lists.append((document.createElement("p").innerHTML = product.price));
+    lists.append(
+      (document.createElement("p").innerHTML = product.parcelamento)
+    );
+    lists.append(
+      document.createElement("button").setAttribute("type", "button")
+    );
+  });
+}
+
+getProducts();
+
+// Função do Dropdown
+
+function OpenDropDown() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
@@ -53,6 +89,4 @@ window.onclick = function (event) {
   }
 };
 
-main();
-
-console.log(main);
+OpenDropDown();
