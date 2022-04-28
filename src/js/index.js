@@ -67,8 +67,8 @@ function buildProducts(products) {
     );
   });
 }
-
-getProducts();
+/* 
+getProducts(); */
 
 // Função do Dropdown
 
@@ -88,5 +88,3 @@ window.onclick = function (event) {
     }
   }
 };
-
-OpenDropDown();

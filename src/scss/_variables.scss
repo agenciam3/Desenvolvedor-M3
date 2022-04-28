@@ -9,3 +9,28 @@ $color-blue: rgb(0, 192, 238);
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 500px) {
+  section .container-filtros {
+    display: none;
+  }
+
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  header .container-header .cadeado {
+    margin-right: 50px;
+  }
+
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+  }
+}
