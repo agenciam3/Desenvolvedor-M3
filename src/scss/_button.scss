@@ -2,6 +2,7 @@
   width: 195px;
   height: 33.5px;
   background: $color-black;
+  border-color: $color-black;
   color: $color-white;
   cursor: pointer;
 
@@ -11,7 +12,8 @@
 .button-load {
   width: 195px;
   height: 33.5px;
-  background: $color-primaria;
+  background: $color-blue;
+  border-color: $color-blue;
   color: $color-white;
   cursor: pointer;
 
@@ -46,7 +48,7 @@
 }
 
 .dropdown a:hover {
-  background-color: $color-primaria;
+  background-color: $color-blue;
 }
 
 .show {

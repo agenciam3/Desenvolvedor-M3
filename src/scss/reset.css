@@ -11,9 +11,11 @@ ol,
 ul {
   list-style: none;
   list-style-type: none;
+  margin-bottom: 5px;
 }
 
 h2 {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 /*# sourceMappingURL=reset.css.map */

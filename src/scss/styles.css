@@ -11,16 +11,19 @@ ol,
 ul {
   list-style: none;
   list-style-type: none;
+  margin-bottom: 5px;
 }
 
 h2 {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 .button-list {
   width: 195px;
   height: 33.5px;
   background: black;
+  border-color: black;
   color: white;
   cursor: pointer;
   display: -webkit-box;
@@ -38,6 +41,7 @@ h2 {
   width: 195px;
   height: 33.5px;
   background: #00c0ee;
+  border-color: #00c0ee;
   color: white;
   cursor: pointer;
   display: -webkit-box;
