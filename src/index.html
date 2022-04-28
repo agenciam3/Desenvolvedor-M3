@@ -5,15 +5,84 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
   <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
 
-</body>
-<h1>Desafio m3</h1>
+  <header>
+    <img src="img/logo-m3.png" alt="">
+    <img src="img/cadeado.png" alt="">
+  </header>
+  <hr>
 
-<script src="bundle.js"></script>
+  <div class="topo">
+    <p>Blusas</p>
+    <select name="select" id="select"> 
+      <option value="ordenar">Ordenar por:</option>
+      <option value="recente">Mais Recentes</option>
+      <option value="menor" id="menor">Menor Preço</option>
+      <option value="maior">Maior Preço</option>
+    </select>
+  </div>
+
+  <div class="main-content">
+    <div class="left-content">
+      <p>CORES </p>
+      <div class="custom-checkbox">
+        <form name="colors" id="colors">
+          <input type="checkbox" id="Amarelo" name="Amarelo"> Amarelo <br>
+          <input type="checkbox" id="Azul" name="Azul"> Azul <br>
+          <input type="checkbox" id="Branco" name="Branco"> Branco <br>
+          <input type="checkbox" id="Cinza" name="Cinza"> Cinza <br>
+          <input type="checkbox" id="Laranja" name="Laranja"> Laranja <br>
+          <input type="checkbox" id="Preto" name="Preto"> Preto <br>
+          <input type="checkbox" id="Rosa" name="Rosa"> Rosa <br> <br>
+        </form>
+      </div>
+
+      <p>TAMANHOS</p>
+      <form name="sizes" id="sizes">
+        <input type="checkbox" id="P" name="P"> P
+        <input type="checkbox" id="M" name="M"> M
+        <input type="checkbox" id="G" name="G"> G
+        <input type="checkbox" id="GG" name="GG"> GG <br>
+        <input type="checkbox" id="U" name="U"> U
+        <input type="checkbox" id="36" name="36"> 36
+        <input type="checkbox" id="38" name="38"> 38
+        <input type="checkbox" id="40" name="40">40 <br>
+        <input type="checkbox" id="36" name="36"> 36
+        <input type="checkbox" id="38" name="38"> 38
+        <input type="checkbox" id="40" name="40"> 40 <br><br>
+      </form>
+
+      <p>FAIXA DE PREÇO</p>
+      <form name="prices" id="prices">
+        <input type="checkbox" id="50" name="50" value=""> de R$0 até R$50 <br>
+        <input type="checkbox" id="150" name="150" value=""> de R$51 até R$150 <br>
+        <input type="checkbox" id="300" name="300" value=""> de R$151 até R$300 <br>
+        <input type="checkbox" id="500" name="500" value=""> de R$301 até R$500 <br>
+        <input type="checkbox" id="501" name="501" value=""> a partir de R$ 500 <br>
+      </form>
+
+    </div>
+
+    <div class="rigth-content">
+
+      <ul id="products">
+      </ul>
+
+      <div id="products">
+        <button id="carregar">CARREGAR MAIS</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</footer>
+</body>
+
+<script src="js/index.js"></script>
 
 </html>

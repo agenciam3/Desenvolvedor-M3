@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+$primary-color:#00C0EE;
+$black-color: #000000;
+$cinza1-color: #0000;
+$cinza2-color:#666666;
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Open Sans';
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 162px;
+    right: 165px;
+    
+    img{
+        padding: 16px 162px;
+    }
+}
+
+.topo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: 40px 162px 64px 162px;
+    font-size: 32px;    
+
+    #select{
+        padding: 8px;
+    }
+}
+
+.main-content{
+    display: flex;
+}
+
+.left-content{
+    width:260px;
+    margin-left: 162px;
+    margin-right: 44px;
+    p{
+        font-family: 'Open Sans';
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+    label{
+        font-size: 14px;
+    }
+}
+
+.rigth-content{
+    display: flex;
+    flex-direction: column;
+    max-width: 976px;
+
+    #products{
+        display: flex;
+        padding-bottom: 42px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #carregar{
+        background-color: $primary-color;
+        color: white;
+        border: none;
+        padding: 8px 31px;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all .4s ease;
+        }
+    }
+    
+}
+
+.card{
+    padding-right: 90px;
+    padding-bottom: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        &:hover{
+            transform: scale(1.04);
+            transition: all .6s ease;
+        }
+    }
+    
+    .title{
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 14px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+    }
+    .price{
+        font-weight: 700;
+        font-size: 16px;
+    }
+    .parcela{
+        font-weight: 400;
+        font-size: 16px;
+        color: $cinza2-color;
+        padding-bottom: 14px;
+    }
+    button{
+        width: 100%;
+        background-color: $black-color;
+        color: white;
+        border: none;
+        padding: 7px 49px;
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.1);
+            transition: all .4s ease;
+        }
+    }
+}
+
+footer{
+    background-color: $black-color;
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 7px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
