@@ -37,3 +37,11 @@ section .container-orderby {
   justify-content: space-between;
   align-items: center;
 }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  flex-grow: 1;
+  flex: 1 1 auto;
+}
