@@ -60,3 +60,52 @@
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.checkbox {
+  color: $color-black;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid $color-black;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.checkbox {
+  border-radius: 0;
+}
+
+.checkbox:before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: $color-blue;
+  opacity: 0;
+  transition: all 50ms ease-in-out;
+  position: absolute;
+}
+
+.checkbox:checked:before {
+  opacity: 1;
+}
+
+.checkbox:focus {
+  box-shadow: 0 0 5px $color-blue;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+}
+
+label {
+  margin-left: 5px;
+}

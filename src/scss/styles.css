@@ -355,4 +355,68 @@ footer p {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.checkbox {
+  color: black;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  outline: none;
+}
+
+.checkbox {
+  border-radius: 0;
+}
+
+.checkbox:before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  background: #00c0ee;
+  opacity: 0;
+  -webkit-transition: all 50ms ease-in-out;
+  transition: all 50ms ease-in-out;
+  position: absolute;
+}
+
+.checkbox:checked:before {
+  opacity: 1;
+}
+
+.checkbox:focus {
+  -webkit-box-shadow: 0 0 5px #00c0ee;
+          box-shadow: 0 0 5px #00c0ee;
+}
+
+.check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+label {
+  margin-left: 5px;
+}
 /*# sourceMappingURL=styles.css.map */
