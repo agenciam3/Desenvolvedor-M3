@@ -1,41 +1,3 @@
-// Para cada usuario
-// criar uma linha
-// adicionar na tabela
-
-/* function fazGet(url) {
-  let request = new XMLHttpRequest();
-  request.open("GET", url, false);
-  request.send();
-  return request.responseText;
-}
-
-function criarLinha(pecas) {
-  linha = document.createElement("tr");
-  tdId = document.createElement("td");
-  tdName = document.createElement("td");
-  tdPrice = document.createElement("td");
-  tdId.innerHTML = pecas.id;
-  tdName.innerHTML = pecas.name;
-  tdPrice.innerHTML = pecas.price;
-
-  linha.appendChild(tdId);
-  linha.appendChild(tdName);
-  linha.appendChild(tdPrice);
-
-  return linha;
-}
-
-function main() {
-  let data = fazGet("http://localhost:5000/products");
-  let pecas = JSON.parse(data);
-  let tabela = document.getElementById("tabela");
-
-  pecas.forEach((element) => {
-    let linha = criarLinha(element);
-    tabela.appendChild(linha);
-  });
-} */
-
 //Função da galeria
 
 function getProducts() {
@@ -51,24 +13,56 @@ function getProducts() {
 
 function buildProducts(products) {
   console.log(products);
-  let lists = document.getElementById("container");
+  let lists = document.getElementById("lists");
+  lists.className = "lists";
 
-  products.forEach((product) => {
-    lists.append(
-      document.createElement("img").setAttribute("src", product.image)
-    );
-    lists.append((document.createElement("p").innerHTML = product.name));
-    lists.append((document.createElement("p").innerHTML = product.price));
-    lists.append(
-      (document.createElement("p").innerHTML = product.parcelamento)
-    );
-    lists.append(
-      document.createElement("button").setAttribute("type", "button")
-    );
+  products.forEach((product, index) => {
+    lists.append(createCard(product, index));
   });
 }
-/* 
-getProducts(); */
+
+function createCard(product, index) {
+  let li = document.createElement("li");
+  li.className = "lists";
+  li.id = "lists-" + index;
+
+  let div = document.createElement("div");
+  div.className = "produto";
+  div.id = "card-" + index + 1;
+
+  let img = document.createElement("img");
+  img.src = product.image;
+  img.className = "modelo-1";
+
+  let name = document.createElement("p");
+  name.innerHTML = product.name;
+  name.className = "nome-do-produto";
+
+  let price = document.createElement("p");
+  price.innerHTML = "R$ ".concat(product.price);
+  price.className = "preco";
+
+  let parcels = document.createElement("p");
+  parcels.innerHTML =
+    "até " + product.parcelamento[0] + "x de R$" + product.parcelamento[1];
+  parcels.className = "parcelamento";
+
+  let button = document.createElement("button");
+  button.className = "button-list";
+  button.innerHTML = "COMPRAR";
+
+  li.append(div);
+
+  div.append(img);
+  div.append(name);
+  div.append(price);
+  div.append(parcels);
+  div.append(button);
+
+  return li;
+}
+
+getProducts();
 
 // Função do Dropdown
 
