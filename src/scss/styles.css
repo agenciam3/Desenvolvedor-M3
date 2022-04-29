@@ -1,3 +1,20 @@
+.nome-do-produto {
+  font-weight: 800 bold;
+  font-size: 1rem;
+  color: black;
+}
+
+.preco {
+  font-weight: 700 bold;
+  font-size: 1rem;
+}
+
+.parcelamento {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #c7c7c7;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -60,13 +77,18 @@ img {
 }
 
 .dropbtn {
-  width: 142px;
-  color: black;
   background-color: white;
+  color: black;
+  width: 142px;
   padding: 16px;
   font-size: 1rem;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
 .dropdown-content {
@@ -75,7 +97,7 @@ img {
   background-color: white;
   border: 1px solid black;
   min-width: 142px;
-  overflow: auto;
+  /*  overflow: auto; */
   z-index: 1;
 }
 
@@ -90,7 +112,7 @@ img {
   background-color: #00c0ee;
 }
 
-.show {
+.dropdown:hover .dropdown-content {
   display: block;
 }
 

@@ -4,6 +4,23 @@ $color-gray: rgb(199, 199, 199);
 $color-gray2: rgba(0, 0, 0, 0.5);
 $color-blue: rgb(0, 192, 238);
 
+.nome-do-produto {
+  font-weight: 800 bold;
+  font-size: 1rem;
+  color: $color-black;
+}
+
+.preco {
+  font-weight: 700 bold;
+  font-size: 1rem;
+}
+
+.parcelamento {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #c7c7c7;
+}
+
 @mixin flex {
   display: flex;
   justify-content: center;
