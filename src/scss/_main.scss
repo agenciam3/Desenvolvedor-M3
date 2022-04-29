@@ -39,14 +39,14 @@ section .container-orderby {
   flex: 1 1 auto;
 }
 
-.nome-do-produto {
+.product-name {
   font-weight: bold;
   font-size: 1rem;
   text-transform: uppercase;
   color: $color-black;
 }
 
-.preco {
+.price {
   font-weight: 700;
   font-size: 1rem;
   color: $color-black;
@@ -60,7 +60,7 @@ section .container-orderby {
   padding: 0.5rem 0;
 }
 
-.produto {
+.product {
   display: flex;
   flex-direction: column;
   align-items: center;

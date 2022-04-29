@@ -27,20 +27,20 @@ function createCard(product, index) {
   li.id = "lists-" + index;
 
   let div = document.createElement("div");
-  div.className = "produto";
+  div.className = "product";
   div.id = "card-" + index + 1;
 
   let img = document.createElement("img");
   img.src = product.image;
-  img.className = "modelo-1";
+  img.className = "model-1";
 
   let name = document.createElement("p");
   name.innerHTML = product.name;
-  name.className = "nome-do-produto";
+  name.className = "product-name";
 
   let price = document.createElement("p");
   price.innerHTML = "R$ ".concat(product.price);
-  price.className = "preco";
+  price.className = "price";
 
   let parcels = document.createElement("p");
   parcels.innerHTML =
