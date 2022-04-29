@@ -23,7 +23,6 @@
 .dropbtn {
   background-color: $color-white;
   color: $color-black;
-  width: 142px;
   padding: 16px;
   font-size: 1rem;
   border: 1px solid $color-black;
@@ -40,7 +39,7 @@
   position: absolute;
   background-color: $color-white;
   border: 1px solid $color-black;
-  min-width: 142px;
+  min-width: 146px;
   /*  overflow: auto; */
   z-index: 1;
 }

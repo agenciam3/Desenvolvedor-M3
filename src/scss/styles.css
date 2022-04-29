@@ -5,14 +5,14 @@
 }
 
 .preco {
-  font-weight: 700 bold;
-  font-size: 1rem;
+  font-weight: bold;
+  font-size: 1rem bold;
 }
 
 .parcelamento {
   font-weight: 400;
   font-size: 1rem;
-  color: #c7c7c7;
+  color: #666666;
 }
 
 * {
@@ -79,7 +79,6 @@ img {
 .dropbtn {
   background-color: white;
   color: black;
-  width: 142px;
   padding: 16px;
   font-size: 1rem;
   border: 1px solid black;
@@ -96,7 +95,7 @@ img {
   position: absolute;
   background-color: white;
   border: 1px solid black;
-  min-width: 142px;
+  min-width: 146px;
   /*  overflow: auto; */
   z-index: 1;
 }
