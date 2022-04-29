@@ -1,0 +1,10 @@
+header {
+    border-bottom: 2px solid #c7c7c7c7;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+}

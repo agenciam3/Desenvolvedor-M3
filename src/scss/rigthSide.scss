@@ -1,0 +1,74 @@
+@import "variables.scss";
+
+.rigth-side {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 32px 42px 32px;
+    width: 195px;
+}
+
+.card-img {
+    width: 100%;
+    height: 293px;
+    margin-bottom: 10px;
+}
+
+.card-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: $black;
+    margin-bottom: 10px;
+}
+
+.card-installment {
+    font-size: 16px;
+    margin-bottom: 14px;
+}
+
+.card-btn {
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+    background-color: #000;
+    border: none;
+    color: $white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card-btn:hover {
+    opacity: 0.8;
+}
+
+.btn-load-more {
+    height: 42px;
+    width: 160px;
+    color: $white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    background-color: $primary;
+    margin-bottom: 48px;
+}

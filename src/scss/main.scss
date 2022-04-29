@@ -1,1 +1,40 @@
 @import "reset";
+@import "variables.scss";
+@import "header.scss";
+@import "topSide.scss";
+@import "leftSide.scss";
+@import "rigthSide.scss";
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+// DEFAULT
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.container {
+    max-width: 1175px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+// CONTAINER BLOUSES
+
+.container-blouses {
+    display: flex;
+}
+
+// FOOTER
+
+footer {
+    height: 33px;
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+}
