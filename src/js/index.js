@@ -3,8 +3,8 @@
 function getProducts() {
   window
     .fetch("http://localhost:5000/products")
-    .then((res) => {
-      res.json().then((r) => buildProducts(r));
+    .then((response) => {
+      response.json().then((r) => buildProducts(r));
     })
     .catch((err) => {
       console.log(err);

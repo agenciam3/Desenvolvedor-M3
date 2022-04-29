@@ -94,42 +94,6 @@ img {
   display: block;
 }
 
-@media screen and (max-width: 500px) {
-  section .container-filtros {
-    display: none;
-  }
-  section .container {
-    max-width: 100%;
-  }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .container-header .cadeado {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
-    max-width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 200px 200px;
-        grid-template-columns: 200px 200px;
-  }
-}
-
 footer {
   padding: 0.5rem 0;
   max-width: 1920px;
@@ -144,42 +108,6 @@ footer {
 
 footer p {
   color: white;
-}
-
-@media screen and (max-width: 500px) {
-  section .container-filtros {
-    display: none;
-  }
-  section .container {
-    max-width: 100%;
-  }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .container-header .cadeado {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
-    max-width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 200px 200px;
-        grid-template-columns: 200px 200px;
-  }
 }
 
 header .container-header {
@@ -215,46 +143,12 @@ header .container-header .cadeado {
   margin-top: 20px;
 }
 
-@media screen and (max-width: 500px) {
-  section .container-filtros {
-    display: none;
-  }
-  section .container {
-    max-width: 100%;
-  }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .container-header .cadeado {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
-    max-width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 200px 200px;
-        grid-template-columns: 200px 200px;
-  }
-}
-
 .lists {
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -295,42 +189,6 @@ header .container-header .cadeado {
   -ms-grid-columns: 35px 35px 35px 35px;
       grid-template-columns: 35px 35px 35px 35px;
   grid-gap: 5px;
-}
-
-@media screen and (max-width: 500px) {
-  section .container-filtros {
-    display: none;
-  }
-  section .container {
-    max-width: 100%;
-  }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .container-header .cadeado {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
-    max-width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 200px 200px;
-        grid-template-columns: 200px 200px;
-  }
 }
 
 section .container {

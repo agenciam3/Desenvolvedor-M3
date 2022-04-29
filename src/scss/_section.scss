@@ -1,5 +1,6 @@
 .lists {
-  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 10px;
   gap: 64px;
@@ -27,5 +28,3 @@
   grid-template-columns: 35px 35px 35px 35px;
   grid-gap: 5px;
 }
-
-@include responsive;
