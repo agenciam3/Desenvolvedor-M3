@@ -7,13 +7,6 @@ section .container {
   align-items: center;
 }
 
-.conteudo {
-  display: flex;
-  margin-bottom: 50px;
-  max-width: 1920px;
-  padding: 0.5rem 0;
-}
-
 section .container-filtros {
   padding: 1.5rem 0;
   margin: 0 auto;
@@ -44,6 +37,38 @@ section .container-orderby {
   align-content: stretch;
   flex-grow: 1;
   flex: 1 1 auto;
+}
+
+.nome-do-produto {
+  font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $color-black;
+}
+
+.preco {
+  font-weight: 700;
+  font-size: 1rem;
+  color: $color-black;
+  line-height: 22px;
+}
+
+.conteudo {
+  display: flex;
+  margin-bottom: 50px;
+  max-width: 1920px;
+  padding: 0.5rem 0;
+}
+
+.produto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.amount {
+  width: 116%;
 }
 
 @include responsive;

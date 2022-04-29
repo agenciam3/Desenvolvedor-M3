@@ -4,6 +4,7 @@
   background: $color-black;
   border-color: $color-black;
   color: $color-white;
+  font-weight: 700;
   cursor: pointer;
 
   @include flex;
@@ -12,6 +13,7 @@
 .button-load {
   width: 195px;
   height: 33.5px;
+  margin: 0 auto;
   background: $color-blue;
   border-color: $color-blue;
   color: $color-white;
