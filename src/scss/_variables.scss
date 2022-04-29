@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+// Cores principais 
+
+$black: #000000;
+$gray-light: rgba(0,0,0, 0.5);
+$gray-dark: #666666;
+$blue: #00C0EE;
+
+// Font family
+$font-family: 'Open Sans';
+
+//sizes
+
+$xs: 10px;
+$sm: 12px;
+$md: 14px;
+$lg: 16px;
+$xl: 32px;
+
+// weights
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semiBold: 600;
+$bold: 700;
+$extraBold: 800;
+
+// Containers
+
+.container {
+  max-width: 1176px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+@media screen and (min-width: 1051px) {
+  .d-none {
+    display: none;
+  }
+}

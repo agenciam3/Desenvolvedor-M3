@@ -1,1 +1,10 @@
+@import "./variables";
 @import "reset";
+
+// Components
+
+@import "./components/header";
+@import "./components/main";
+@import "./components/product";
+@import "./components/filters";
+@import "./components/footer";

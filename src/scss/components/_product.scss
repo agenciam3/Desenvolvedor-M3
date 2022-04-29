@@ -1,0 +1,52 @@
+.buy-button {
+  background-color: $black;
+    border-radius: 0;
+    border: none;
+    color: #FFFFFF;
+    font-size: $md;
+    font-weight: $bold;
+    cursor: pointer;
+    width: 195px;
+    height: 33px;
+    transition: all ease .3s;
+    @media screen and (max-width: 1050px) {
+      width: 162px;
+    }
+    &:hover {
+      background-color: #FFF;
+      color: $black;
+      border: 1px solid $black;
+    }
+}
+.product-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__image {
+    margin-bottom: $xs;
+    @media screen and (max-width: 1050px) {
+      max-width: 162px;
+    }
+  }
+  &__name {
+    font-weight: $regular;
+    font-size: $md;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: $black;
+    margin-bottom: $xs;
+  }
+  &__price {
+    font-weight: $bold;
+    font-size: $lg;
+    line-height: 22px;
+    color: $black;
+  }
+  &__installments {
+    font-weight: $regular;
+    font-size: $lg;
+    line-height: 22px;
+    color: $gray-dark;
+    margin-bottom: $md;
+  }
+}
