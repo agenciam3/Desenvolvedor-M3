@@ -54,13 +54,13 @@ header .container-header .logo {
   margin-top: 16px;
 }
 
-header .container-header .cadeado {
+header .container-header .padlock {
   width: 17px;
   margin-top: 20px;
   margin-right: 162px;
 }
 
-.linha-horizoltal {
+.horizontal-line {
   max-width: 1920px;
   border: 1px solid #c7c7c7;
   margin-top: 20px;
@@ -83,7 +83,7 @@ section .container {
           align-items: center;
 }
 
-section .container-filtros {
+section .container-filters {
   padding: 1.5rem 0;
   margin: 0 auto;
   margin-left: 161px;
@@ -152,7 +152,7 @@ section .container-orderby {
   line-height: 22px;
 }
 
-.conteudo {
+.content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,7 +180,7 @@ section .container-orderby {
 }
 
 @media screen and (max-width: 500px) {
-  section .container-filtros {
+  section .container-filters {
     display: none;
   }
   section .container {
@@ -199,7 +199,7 @@ section .container-orderby {
         -ms-flex-align: center;
             align-items: center;
   }
-  header .container-header .cadeado {
+  header .container-header .padlock {
     margin-right: 50px;
   }
   header .container-header .logo {

@@ -18,7 +18,7 @@ $color-blue: rgb(0, 192, 238);
 
 @mixin responsive {
   @media screen and (max-width: 500px) {
-    section .container-filtros {
+    section .container-filters {
       display: none;
     }
 
@@ -34,7 +34,7 @@ $color-blue: rgb(0, 192, 238);
       align-items: center;
     }
 
-    header .container-header .cadeado {
+    header .container-header .padlock {
       margin-right: 50px;
     }
 
