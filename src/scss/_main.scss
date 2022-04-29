@@ -71,4 +71,35 @@ section .container-orderby {
   width: 116%;
 }
 
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  gap: 64px;
+}
+
+.rectangle {
+  width: 32px;
+  height: 32px;
+  border: 1px solid $color-gray;
+  box-sizing: border-box;
+
+  @include flex;
+}
+
+.sizes {
+  width: 153px;
+
+  display: grid;
+  grid-template-columns: auto;
+  flex-wrap: wrap;
+}
+
+.grid-size {
+  display: grid;
+  grid-template-columns: 35px 35px 35px 35px;
+  grid-gap: 5px;
+}
+
 @include responsive;

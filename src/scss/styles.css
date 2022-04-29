@@ -179,42 +179,6 @@ section .container-orderby {
   width: 116%;
 }
 
-@media screen and (max-width: 500px) {
-  section .container-filters {
-    display: none;
-  }
-  section .container {
-    max-width: 100%;
-  }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-  header .container-header .padlock {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  .cards {
-    margin: 0 auto;
-    max-width: 100%;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 200px 200px;
-        grid-template-columns: 200px 200px;
-  }
-}
-
 .lists {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -263,6 +227,73 @@ section .container-orderby {
   grid-gap: 5px;
 }
 
+@media screen and (max-width: 500px) {
+  section .container-filters {
+    display: none;
+  }
+  section .container {
+    max-width: 100%;
+  }
+  header .container-header {
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  header .container-header .padlock {
+    margin-right: 50px;
+  }
+  header .container-header .logo {
+    margin-left: 50px;
+  }
+  .cards {
+    margin: 0 auto;
+    max-width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 200px 200px;
+        grid-template-columns: 200px 200px;
+  }
+}
+
+/* .lists {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  gap: 64px;
+}
+
+.rectangle {
+  width: 32px;
+  height: 32px;
+  border: 1px solid $color-gray;
+  box-sizing: border-box;
+
+  @include flex;
+}
+
+.sizes {
+  width: 153px;
+
+  display: grid;
+  grid-template-columns: auto;
+  flex-wrap: wrap;
+}
+
+.grid-size {
+  display: grid;
+  grid-template-columns: 35px 35px 35px 35px;
+  grid-gap: 5px;
+}
+ */
 footer {
   padding: 0.5rem 0;
   max-width: 1920px;
