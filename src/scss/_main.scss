@@ -1,10 +1,18 @@
 section .container {
-  max-width: 1920px;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 500px) {
+    .button-load {
+      display: none;
+    }
+
+    .lists {
+      display: flex;
+    }
+  }
 }
 
 section .container-filters {
@@ -56,7 +64,6 @@ section .container-orderby {
 .content {
   display: flex;
   margin-bottom: 50px;
-  max-width: 1920px;
   padding: 0.5rem 0;
 }
 

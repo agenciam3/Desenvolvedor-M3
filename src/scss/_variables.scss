@@ -23,7 +23,11 @@ $color-blue: rgb(0, 192, 238);
     }
 
     section .container {
-      max-width: 100%;
+      max-width: 375px;
+    }
+
+    .container-orderby {
+      display: none;
     }
 
     header .container-header {
@@ -46,7 +50,22 @@ $color-blue: rgb(0, 192, 238);
       margin: 0 auto;
       max-width: 100%;
       display: grid;
-      grid-template-columns: 200px 200px;
+      grid-template-columns: 550px 550px;
+    }
+
+    .container-orderby {
+      padding: 1.5rem 0;
+      margin: 0 auto;
+      /* margin-left: 161px; */
+      /* margin-right: 161px; */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .button-load {
+      display: none;
     }
   }
 }
