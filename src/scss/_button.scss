@@ -2,18 +2,6 @@ label {
   margin-left: 5px;
 }
 
-.button-list {
-  width: 195px;
-  height: 33.5px;
-  background: $color-black;
-  border-color: $color-black;
-  color: $color-white;
-  font-weight: 700;
-  cursor: pointer;
-
-  @include flex;
-}
-
 .button-load {
   width: 195px;
   height: 33.5px;

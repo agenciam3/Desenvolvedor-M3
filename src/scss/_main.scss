@@ -1,14 +1,28 @@
-section .container {
+.cards {
+  max-width: 100%;
+}
+
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.produto {
+  width: 33%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+}
 
-  @media (max-width: 375px) {
-    .lists {
-      display: flex;
-    }
-  }
+.button {
+  width: 195px;
+  height: 33.5px;
+  background: $color-black;
+  border-color: $color-black;
+  color: $color-white;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 section .container-filters {
@@ -33,14 +47,6 @@ section .container-orderby {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-}
-
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  flex-grow: 1;
-  flex: 1 1 auto;
 }
 
 .product-name {
@@ -69,31 +75,8 @@ section .container-orderby {
   padding: 0.5rem 0;
 }
 
-.product {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 5px;
-}
-
 .amount {
   width: 116%;
-}
-
-.lists {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 10px;
-  gap: 64px;
-}
-
-.lists-ul {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 10px;
-  gap: 64px;
 }
 
 .rectangle {

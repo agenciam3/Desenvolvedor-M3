@@ -24,7 +24,7 @@ module.exports = (paths) => ({
                 { targets: { browsers: ["last 2 versions"] } },
               ],
             ],
-            cacheDirectory: true,
+            cacheDirectory: false,
           },
         },
       },

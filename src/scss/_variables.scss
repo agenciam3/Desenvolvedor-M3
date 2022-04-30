@@ -12,12 +12,20 @@ $color-blue: rgb(0, 192, 238);
 
 @mixin responsive {
   @media screen and (max-width: 375px) {
-    section .container-filters {
-      display: none;
+    .cards {
+      max-width: 100%;
     }
 
-    section .container {
-      max-width: 375px;
+    .lists {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .produto {
+      width: 45%;
+    }
+
+    section .container-filters {
+      display: none;
     }
 
     header .container-header {
@@ -34,10 +42,6 @@ $color-blue: rgb(0, 192, 238);
 
     header .container-header .logo {
       margin-left: 50px;
-    }
-
-    ul .lists {
-      width: 100vw;
     }
 
     ul img {
@@ -57,21 +61,14 @@ $color-blue: rgb(0, 192, 238);
       gap: 15px;
     }
 
-    .button-list {
-      width: 165px;
+    .button {
+      width: 80%;
       height: 33.5px;
       background: $color-black;
       border-color: $color-black;
       color: $color-white;
       font-weight: 700;
       cursor: pointer;
-    }
-
-    .cards {
-      margin: 0 auto;
-      max-width: 100%;
-      display: grid;
-      grid-template-columns: 40% 40%;
     }
 
     .container-orderby {
