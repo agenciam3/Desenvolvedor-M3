@@ -88,6 +88,14 @@ section .container-orderby {
   gap: 64px;
 }
 
+.lists-ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px;
+  gap: 64px;
+}
+
 .rectangle {
   width: 32px;
   height: 32px;

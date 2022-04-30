@@ -200,6 +200,19 @@ section .container-orderby {
   gap: 64px;
 }
 
+.lists-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  gap: 64px;
+}
+
 .rectangle {
   width: 32px;
   height: 32px;
@@ -264,7 +277,7 @@ section .container-orderby {
   ul .lists {
     width: 100vw;
   }
-  img {
+  ul img {
     width: 100%;
   }
   .model-1 {

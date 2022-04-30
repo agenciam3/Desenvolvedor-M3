@@ -14,7 +14,7 @@ function getProducts() {
 function buildProducts(products) {
   console.log(products);
   let lists = document.getElementById("lists");
-  lists.className = "lists";
+  lists.className = "lists-ul";
 
   products.forEach((product, index) => {
     lists.append(createCard(product, index));
