@@ -2,17 +2,71 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Desenvolvedor M3</title>
+	<link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
+	<header>
+		<div class="container">
+			<img src="./img/logo-m3.png" alt="logo" />
+			<div class="div-bag">
+				<img src="./img/bag.jpg" class="bag" />
+				<div class="div-amount">
+					<span class="amount-bag">0</span>
+				</div>
+			</div>
+		</div>
+	</header>
 
+	<main>
+		<div class="container">
+			<div class="top-side">
+				<span class="title-blouses">Blusas</span>
+				<select class="select">
+					<option value="0">Mais Recentes</option>
+					<option value="1">Menor Preço</option>
+					<option value="2">Maior Preço</option>
+				</select>
+			</div>
+			<div class="container-blouses">
+				<div class="left-side">
+					<aside>
+						<div class="colors">
+							<span class="title-aside">CORES</span>
+							<div class="filter-color"></div>
+							<div class="filter-all-colors">
+								<a href="" class="btn-filter-all-colors">Mostrar mais</a>
+							</div>
+						</div>
+						<div class="sizes">
+							<span class="title-aside">TAMANHOS</span>
+							<div class="filter-size"></div>
+						</div>
+
+						<div class="prices">
+							<span class="title-aside">FAIXA DE PREÇO</span>
+							<div class="filter-price"></div>
+						</div>
+					</aside>
+				</div>
+				<div class="rigth-side">
+					<div class="cards"></div>
+					<button class="btn-load-more">CARREGAR MAIS</button>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container">
+			Agência M3 - Agência de Performace Digital
+		</div>
+	</footer>
 </body>
-<h1>Desafio m3</h1>
 
 <script src="bundle.js"></script>
 
