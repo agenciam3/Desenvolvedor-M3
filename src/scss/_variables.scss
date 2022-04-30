@@ -28,24 +28,19 @@ $color-blue: rgb(0, 192, 238);
       display: none;
     }
 
-    header .container-header {
-      padding: 1.5rem 0;
-      margin: 0 auto;
+    ul img {
+      width: 100%;
+    }
+
+    .header {
+      height: 40px;
+      padding: 2%;
+    }
+
+    .container-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-
-    header .container-header .padlock {
-      margin-right: 50px;
-    }
-
-    header .container-header .logo {
-      margin-left: 50px;
-    }
-
-    ul img {
-      width: 100%;
     }
 
     .model-1 {

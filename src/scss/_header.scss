@@ -1,21 +1,15 @@
-header .container-header {
-  padding: 1.5rem 0;
-  margin: 0 auto;
+.header {
+  height: 40px;
+  padding: 2%;
+  margin: 0 50px 0 50px;
+}
 
+.container-header {
+  margin: 0 auto;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
-  .logo {
-    width: 119px;
-    margin-top: 16px;
-  }
-
-  .padlock {
-    width: 17px;
-    margin-top: 20px;
-    margin-right: 162px;
-  }
 }
 
 .horizontal-line {

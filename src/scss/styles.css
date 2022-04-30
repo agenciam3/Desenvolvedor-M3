@@ -164,9 +164,14 @@ section .container-orderby {
   section .container-filters {
     display: none;
   }
-  header .container-header {
-    padding: 1.5rem 0;
-    margin: 0 auto;
+  ul img {
+    width: 100%;
+  }
+  .header {
+    height: 40px;
+    padding: 2%;
+  }
+  .container-header {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -176,15 +181,6 @@ section .container-orderby {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  header .container-header .padlock {
-    margin-right: 50px;
-  }
-  header .container-header .logo {
-    margin-left: 50px;
-  }
-  ul img {
-    width: 100%;
   }
   .model-1 {
     width: 161px;
@@ -266,29 +262,27 @@ body {
   width: 100%;
 }
 
-header .container-header {
-  padding: 1.5rem 0;
+.header {
+  height: 40px;
+  padding: 2%;
+  margin: 0 50px 0 50px;
+}
+
+.container-header {
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-header .container-header .logo {
-  width: 119px;
-  margin-top: 16px;
-}
-
-header .container-header .padlock {
-  width: 17px;
-  margin-top: 20px;
-  margin-right: 162px;
 }
 
 .horizontal-line {
