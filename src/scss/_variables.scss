@@ -4,12 +4,6 @@ $color-gray: rgb(199, 199, 199);
 $color-gray2: rgb(102, 102, 102);
 $color-blue: rgb(0, 192, 238);
 
-.parcelamento {
-  font-weight: 400;
-  font-size: 1rem;
-  color: $color-gray2;
-}
-
 @mixin flex {
   display: flex;
   justify-content: center;
@@ -17,17 +11,13 @@ $color-blue: rgb(0, 192, 238);
 }
 
 @mixin responsive {
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 375px) {
     section .container-filters {
       display: none;
     }
 
     section .container {
       max-width: 375px;
-    }
-
-    .container-orderby {
-      display: none;
     }
 
     header .container-header {
@@ -46,18 +36,47 @@ $color-blue: rgb(0, 192, 238);
       margin-left: 50px;
     }
 
+    ul .lists {
+      width: 100vw;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .model-1 {
+      width: 161px;
+      height: 242px;
+    }
+
+    .lists {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 4px;
+      gap: 15px;
+    }
+
+    .button-list {
+      width: 165px;
+      height: 33.5px;
+      background: $color-black;
+      border-color: $color-black;
+      color: $color-white;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
     .cards {
       margin: 0 auto;
       max-width: 100%;
       display: grid;
-      grid-template-columns: 550px 550px;
+      grid-template-columns: 40% 40%;
     }
 
     .container-orderby {
       padding: 1.5rem 0;
       margin: 0 auto;
-      /* margin-left: 161px; */
-      /* margin-right: 161px; */
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -65,7 +84,7 @@ $color-blue: rgb(0, 192, 238);
     }
 
     .button-load {
-      display: none;
+      width: 195px;
     }
   }
 }

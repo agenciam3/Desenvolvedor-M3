@@ -1,3 +1,7 @@
+label {
+  margin-left: 5px;
+}
+
 .button-list {
   width: 195px;
   height: 33.5px;
@@ -42,7 +46,6 @@
   background-color: $color-white;
   border: 1px solid $color-black;
   min-width: 146px;
-  /*  overflow: auto; */
   z-index: 1;
 }
 
@@ -104,8 +107,4 @@
 .check {
   display: flex;
   align-items: center;
-}
-
-label {
-  margin-left: 5px;
 }

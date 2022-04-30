@@ -4,11 +4,7 @@ section .container {
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 500px) {
-    .button-load {
-      display: none;
-    }
-
+  @media (max-width: 375px) {
     .lists {
       display: flex;
     }
@@ -59,6 +55,12 @@ section .container-orderby {
   font-size: 1rem;
   color: $color-black;
   line-height: 22px;
+}
+
+.parcelamento {
+  font-weight: 400;
+  font-size: 1rem;
+  color: $color-gray2;
 }
 
 .content {
