@@ -18,7 +18,7 @@ const fetchProducts = () => {
                     <img class="cardImage" src="${dbArray.image}"/>
                     <h2 class="cardTitle">${dbArray.name}</h2>
                     <p class="cardPrice">R$ ${Math.floor(dbArray.price)},00</p>
-                    <p class="cardInstallment">até ${dbArray.parcelamento[0]} dbArray de R$${Math.ceil(dbArray.parcelamento[1])},00</p>
+                    <p class="cardInstallment">até ${dbArray.parcelamento[0]}x de R$${Math.ceil(dbArray.parcelamento[1])},00</p>
                     <button id="${dbArray.id}"class="buyButton">Comprar</button>
                     </li>
                     `
@@ -28,7 +28,7 @@ const fetchProducts = () => {
                     <img class="cardImage" src="${dbArray.image}"/>
                     <h2 class="cardTitle">${dbArray.name}</h2>
                     <p class="cardPrice">R$ ${Math.floor(dbArray.price)},00</p>
-                    <p class="cardInstallment">até ${dbArray.parcelamento[0]} dbArray de R$${Math.ceil(dbArray.parcelamento[1])},00</p>
+                    <p class="cardInstallment">até ${dbArray.parcelamento[0]}x de R$${Math.ceil(dbArray.parcelamento[1])},00</p>
                     <button id="${dbArray.id}" class="buyButton">Comprar</button>
                     </li>
                     `
