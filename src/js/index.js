@@ -2,6 +2,7 @@ import { listSizes, addSizeButtons, pickUnpick } from "./navbar/sizes";
 import { addColorsFilter, listColors, checkUncheck } from "./navbar/colors";
 import { radioCheckUncheck } from "./navbar/prices";
 import { addCardProducts, filterProducts } from "./module_products";
+import { redirectClick } from "./navbar/helpers";
 
 let url = 'http://localhost:5000/products';
 
@@ -29,4 +30,8 @@ fetch(url)
       radio.addEventListener("click", function(){ radioCheckUncheck(radio, filters); filterProducts(filters)})
     });
 
+    let customCheckboxes = document.querySelectorAll('.custom-checkbox');
+    customCheckboxes.forEach(checkBox => {
+      checkBox.addEventListener("click", function() { redirectClick(checkBox); })
+    })
   })

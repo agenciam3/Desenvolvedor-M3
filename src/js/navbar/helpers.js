@@ -10,3 +10,7 @@ export function uncheck(checkable) {
   let customCb = getElementFromParent(".check", checkable)
   customCb.remove()
 }
+
+export function redirectClick(cb) {
+  cb.parentElement.querySelector('label').click()
+}

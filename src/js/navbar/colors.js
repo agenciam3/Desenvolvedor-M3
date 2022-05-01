@@ -8,7 +8,7 @@ function addColorsFilter(colors) {
 
     div.innerHTML = `<div class="custom-checkbox">
                     </div>
-                    <input type="checkbox" class="color-checkbox" onClick name="colors" id="${color}">
+                    <input type="checkbox" class="color-checkbox" name="colors" id="${color}">
                     <label for="${color}">
                       ${color}
                     </label>`;

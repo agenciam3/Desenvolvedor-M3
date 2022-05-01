@@ -25,8 +25,10 @@ function name(params) {
 }
 
 function filterProducts(filterList) {
+
   let products = document.querySelectorAll('.product')
-  console.log('reseting visible products')
+  removeFiller()
+
   products.forEach(product =>{
     product.classList.remove('d-none')
   })
@@ -37,10 +39,20 @@ function filterProducts(filterList) {
       product.classList.add('d-none')
     }
 
-    if (filterList[3].length !== 0 && filterList[3].includes(specs[1]) == false) {
+    if (filterList[3].length > 0 && filterList[3].includes(specs[1]) == false) {
+      product.classList.add('d-none')
+    }
+
+    // console.log(specs[2])
+    // console.log(filterList[2])
+    // console.log(specs[2].includes(filterList[2]))
+    if(filterList[2].length > 0 && specs[2].includes(filterList[2]) == false){
+      console.log('filtering size')
       product.classList.add('d-none')
     }
   });
+
+  addFiller();
 }
 
 
@@ -53,4 +65,20 @@ function defineProductSpecs(product) {
   })
 
   return specifications;
+}
+
+function addFiller() {
+
+  for (let counter = 0; counter <= 2; counter++) {
+    appendById(createElementWithClass('div', 'filler'), 'products')
+
+  }
+}
+
+function removeFiller() {
+  let parent = document.getElementById('products')
+  let fillers = parent.querySelectorAll('.filler')
+  fillers.forEach(filler => {
+    filler.remove();
+  });
 }
