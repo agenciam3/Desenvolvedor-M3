@@ -1,0 +1,25 @@
+@import "variables.scss";
+
+button {
+  border: 0;
+  outline: none;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.btn-black {
+  background-color: $black;
+  color: $white;
+}
+
+.btn-white {
+  box-shadow: inset 0 0 0 1px $black;
+  background-color: $white;
+  color: $black;
+}
+
+.btn-primary {
+  background-color: $primary;
+  color: $white;
+}
