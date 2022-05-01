@@ -7,12 +7,424 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
-</head>
+  </script src="js/index.js">
 
-<body>
+<body id="body">
+
+  <!--
+     Header 
+  -->
+
+  <header id="header" class="header">
+    <div class="logo">
+      <a href="">
+        <img src="img/logo-m3.png" alt="Logo">
+      </a>
+    </div>
+    <div class="cart">
+      <figure id="figureContainer">
+        <img src="img/cart.png" alt="Cart">
+        <figcaption id="cartItems">0</figcaption>
+      </figure>
+
+    </div>
+  </header>
+
+
+  <!--
+     Section
+   -->
+
+  <section class="section">
+    <div class="typeOfCloths">
+      Blusas
+    </div>
+    <div class="comboBox">
+      <select name="Sort" id="priceSort">Ordenar por:
+        <option value="">Ordenar por:</option>
+        <option id="mostRecent" value="1">Mais recentes</option>
+        <option id="lowestPrice" value="2">Menor preço</option>
+        <option id="biggestPrice" value="3">Maior preço</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- 
+    MOBILE NAV
+   -->
+
+  <div id="mobileSection" class="mobileSection">
+    <span id="mobileCloth">Blusas</span>
+  </div>
+
+  <div class="mobileNav">
+
+    <div id="filterMobile" class='filterMobile'>
+      <span> Filtrar </span>
+    </div>
+
+    <div id="sortMobile" class='sortMobile'>
+      <span> Ordenar </span>
+    </div>
+  </div>
+
+  <div id="sidebarSortMobile" class="invisible">
+    <div id="sidebarContainerMobile">
+      <div class="titleSidebarMobile"><span>Ordenar</span></div>
+      <div class="sortCloseMobile"><span id="quitSortIcon"><img src="./img/Quit-icon.png" alt="quit-icon"></span></div>
+    </div>
+  </div>
+
+  <section class="sectionMobile">
+    <div id="mobileComboBox" class="comboBox invisible"> 
+        <div class ="sortItem" id="mostRecentMobile">Mais recentes</div>
+        <div class="sortItem" id="lowestPriceMobile">Menor preço</div>
+        <div class="sortItem" id="biggestPriceMobile">Maior preço</div>
+    </div>
+  </section>
+
+    <!-- 
+    MOBILE NAV FILTER
+   -->
+
+      <div id="sidebarFilterMobile" class="invisible">
+        <div id="sidebarContainerMobile">
+          <div class="titleSidebarMobile"><span>Filtrar</span></div>
+          <div class="filterCloseMobile"><span id="quitIcon"><img src="./img/Quit-icon.png" alt="quit-icon"></span></div>
+        </div>
+      </div>
+
+      <nav id="navMobile" class="navMobile invisible">
+        <div class="MobileContainer">
+          <div class="SideBarMobile">
+            <span>Cores</span>
+          </div>
+          <div id="colorsVectorMobile" class="VectorMobile">
+            <span>
+              <img  src="./img/vector.png" alt="vector">
+            </span>
+          </div>
+        </div>
+  
+        <div id="colorsInputMobile" class="colorsCheckboxMobile">
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="yellowMobile" />
+            Amarelo
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="blueMobile" />
+            Azul
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="whiteMobile" />
+            Branco
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="grayMobile" />
+            Cinza
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="orangeMobile" />
+            Laranja
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="greenMobile" />
+            Verde
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="redMobile" />
+            Vermelho
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="blackMobile" />
+            Preto
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="pinkMobile" />
+            Rosa
+          </label>
+  
+          <label class="form-control2 visible">
+            <input type="radio" name="radio" id="wineMobile" />
+            Vinho
+          </label>
+        </div>
+
+        <div class="MobileContainer">
+          <div class="SideBarMobile">
+            <span>Tamanhos</span>
+          </div>
+          <div id="SizesVectorMobile" class="VectorMobile">
+            <span>
+              <img  src="./img/vector.png" alt="vector">
+            </span>
+          </div>
+        </div>
+        <div id="othSizes" class="sizes invisible">
+  
+          <div id="pMobile">
+            P
+          </div>
+  
+          <div id="mMobile">
+            M
+          </div>
+  
+          <div id="gMobile">
+            G
+          </div>
+  
+          <div id="ggMobile">
+            GG
+          </div>
+  
+          <div id="uMobile">
+            U
+          </div>
+  
+          <div id="thirtySixMobile">
+            36
+          </div>
+          <div id="thirtyEightMobile">
+            38
+          </div>
+  
+          <div id="fortyMobile">
+            40
+          </div>
+        </div>
+  
+        <!-- 
+          NAV MOBILE PRICES
+         -->
+  
+         <div class="MobileContainer">
+          <div class="SideBarMobile">
+            <span>Faixa de preço</span>
+          </div>
+          <div id="PriceVectorMobile" class="VectorMobile">
+            <span>
+              <img  src="./img/vector.png" alt="vector">
+            </span>
+          </div>
+        </div>
+        <div id ="pricesCheckbox" class="pricesCheckbox invisible">
+          <label class="form-control">
+            <input type="radio" name="radio" id="50Mobile" />
+            de R$0 até R$50
+          </label>
+  
+          <label class="form-control">
+            <input type="radio" name="radio" id="150Mobile" />
+            de R$51 até R$150
+          </label>
+  
+          <label class="form-control">
+            <input type="radio" name="radio" id="300Mobile" />
+            de R$151 até R$300
+          </label>
+  
+          <label class="form-control">
+            <input type="radio" name="radio" id="500Mobile" />
+            de R$301 até R$500
+          </label>
+  
+          <label class="form-control">
+            <input type="radio" name="radio" id="moreThan500Mobile" />
+            a partir de R$500
+          </label>
+        </div>
+
+        <div class="applyOrCleanContainer">
+          <div id="applyFilter" class="apply">
+            Aplicar
+          </div>
+          <div id="clearFilter" class="clean"> 
+            Limpar
+          </div>
+        </div>
+  
+      </nav>
+   
+
+    <!-- 
+      Nav
+     -->
+
+    <nav id="nav" class="nav">
+      <div class="colors">
+        Cores
+      </div>
+
+      <div id="colorsInput" class="colorsCheckbox">
+        <label class="form-control">
+          <input type="radio" name="radio" id="yellow" />
+          Amarelo
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="blue" />
+          Azul
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="white" />
+          Branco
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="gray" />
+          Cinza
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="orange" />
+          Laranja
+        </label>
+
+        <div class="seeMoreColors" id="seeMoreColors">
+          <p>Ver todas as cores</p> <img src="img/vector.png" alt="vector">
+        </div>
+
+        <label class="form-control2">
+          <input type="radio" name="radio" id="green" />
+          Verde
+        </label>
+
+        <label class="form-control2">
+          <input type="radio" name="radio" id="red" />
+          Vermelho
+        </label>
+
+        <label class="form-control2">
+          <input type="radio" name="radio" id="black" />
+          Preto
+        </label>
+
+        <label class="form-control2">
+          <input type="radio" name="radio" id="pink" />
+          Rosa
+        </label>
+
+        <label class="form-control2">
+          <input type="radio" name="radio" id="wine" />
+          Vinho
+        </label>
+      </div>
+
+      <!-- 
+        Nav Sizes
+       -->
+
+      <div class="sizesHeader">
+        Tamanhos
+      </div>
+      <div id="othSizes" class="sizes">
+
+        <div id="p">
+          P
+        </div>
+
+        <div id="m">
+          M
+        </div>
+
+        <div id="g">
+          G
+        </div>
+
+        <div id="gg">
+          GG
+        </div>
+
+        <div id="u">
+          U
+        </div>
+
+        <div id="thirtySix">
+          36
+        </div>
+        <div id="thirtyEight">
+          38
+        </div>
+
+        <div id="forty">
+          40
+        </div>
+      </div>
+
+      <!-- 
+        Nav Prices
+       -->
+
+      <div class="pricesHeader">
+        Faixa de preço
+      </div>
+      <div class="pricesCheckbox">
+        <label class="form-control">
+          <input type="radio" name="radio" id="50" />
+          de R$0 até R$50
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="150" />
+          de R$51 até R$150
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="300" />
+          de R$151 até R$300
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="500" />
+          de R$301 até R$500
+        </label>
+
+        <label class="form-control">
+          <input type="radio" name="radio" id="moreThan500" />
+          a partir de R$500
+        </label>
+      </div>
+
+    </nav>
+
+
+
+    <!-- 
+      Main
+     -->
+
+    <main id="mainCards" class="main">
+
+
+    </main>
+
+    <section class="sectionLoadMore">
+      <div id="loadBtn" class="loadMoreBtn">
+        Carregar Mais
+      </div>
+    </section>
+
+    <!-- 
+      Footer
+     -->
+
+    <footer id="footer" class="footer">
+      M3: IMPLANTAÇÃO DE E-COMMERCE VTEX
+    </footer>
+
 
 </body>
-<h1>Desafio m3</h1>
+
 
 <script src="bundle.js"></script>
 
