@@ -7,7 +7,7 @@ Para compilar o código basta:
 
 Ter nodejs instalado com versão 14 ou mais recente. <br>
 Caso já possua o npm instalado basta executar os comandos npm install. <br>
-Execute também npm start no repositório clonado. <br>
+Execute também npm start no repositório. <br>
 Caso não funcione por favor me avise! <br>
 
 # Contato
