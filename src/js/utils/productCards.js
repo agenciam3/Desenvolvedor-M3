@@ -22,6 +22,8 @@ function createCard(item, index) {
 }
 
 function createCards(items) {
+  const productsContainer = document.getElementById('cards-container');
+  productsContainer.innerHTML = '';
 
   items.forEach((item, index) => {
     createCard(item, index);

@@ -152,20 +152,20 @@ footer {
   top: 0;
   width: 100vw;
 
-  div {
+  .menu-header {
     border-bottom: 1px solid $gray2;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    button {
+    #close-menu-button {
       height: 25px;
       margin: 0 16px 0 0;
       position: relative;
       width: 25px;
     }
 
-    button::before, button::after {
+    #close-menu-button::before, #close-menu-button::after {
       background-color: black;
       content: '';
       height: 1px;
@@ -175,11 +175,11 @@ footer {
       width: 25px;
     }
   
-    button::before {
+    #close-menu-button::before {
         transform: rotate(45deg);
     }
   
-    button::after {
+    #close-menu-button::after {
         transform: rotate(-45deg);
     }
   }
