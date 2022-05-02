@@ -35,8 +35,7 @@ header {
     top: 16px;
     width: 119px;
   }
-  
-  // alterar png
+
   #bag-cart {
     height: 20px;
     left: calc(50% - 17px/2 + 150.25px);
@@ -76,11 +75,57 @@ h1 {
 }
 
 footer {
-  @include font(19.07px);
+  @include font(19px);
   background-color: black;
   color: white;
   letter-spacing: 0.7px;
   padding: 7px 0px;
   text-align: center;
   text-transform: uppercase;
+}
+
+#cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 16.86px 16px 0px 16px;
+}
+
+.card-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+  width: 162px;
+
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    @include font(19px);
+    color: black;
+    margin: 8px 0px;
+    text-transform: uppercase;
+  }
+
+  span {
+    @include font(22px, 16px, $font-bold);
+  }
+
+  p {
+    @include font(22px, 16px);
+    color: $gray2;
+  }
+
+  button {
+    @include font(19px, 14px, $font-bold);
+    background-color: black;
+    border: none;
+    color: white;
+    font-family: inherit;
+    margin-top: 12px;
+    padding: 7px 0px;
+    width: 100%;
+  }
 }

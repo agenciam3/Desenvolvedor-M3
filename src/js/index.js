@@ -4,7 +4,7 @@ function createCard(item) {
   const innerHTML = `
     <img src=${item.image} alt=${item.name} />
     <h2>${item.name}</h2>
-    <h3>R$ ${item.price.toFixed(2)}</h3>
+    <span>R$ ${item.price.toFixed(2)}</span>
     <p>até ${item.parcelamento[0]}x de R$${item.parcelamento[1].toFixed(2)}</p>
     <button>COMPRAR</button>
     `;
