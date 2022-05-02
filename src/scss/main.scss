@@ -75,3 +75,12 @@ h1 {
   }
 }
 
+footer {
+  @include font(19.07px);
+  background-color: black;
+  color: white;
+  letter-spacing: 0.7px;
+  padding: 7px 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
