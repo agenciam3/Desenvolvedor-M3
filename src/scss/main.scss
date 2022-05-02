@@ -1,1 +1,46 @@
 @import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+// cores
+$black: #000000;
+$gray1: rgba(#000000, 0.5);
+$gray2: #666666;
+$primary: #00C0EE;
+
+// fontes
+$font-family: 'Open Sans';
+$font-regular: 400;
+$font-bold: 700;
+
+@mixin font($height, $size: 14px, $weight: $font-regular) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+}
+
+body {
+  font-family: $font-family;
+}
+
+header {
+  width: 100%;
+  position: relative;
+  height: 62px;
+  border-bottom: 2px solid #C7C7C7;
+
+  #logo {
+    height: 28.63px;
+    left: calc(50% - 119px/2 - 101px);
+    position: absolute;
+    top: 16px;
+    width: 119px;
+  }
+  
+  #bag-cart {
+    height: 20px;
+    left: calc(50% - 17px/2 + 150.25px);
+    position: absolute;
+    top: 20px;
+    width: 17px;
+  }
+}
