@@ -144,3 +144,42 @@ footer {
   padding: 8px 30px;
   text-transform: uppercase;
 }
+
+.menu-container {
+  background-color: white;
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+
+  div {
+    border-bottom: 1px solid $gray2;
+    position: relative;
+  }
+
+  div::before, div::after {
+    background-color: black;
+    content: '';
+    height: 1px;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    width: 25px;
+  }
+
+  div::before {
+      transform: rotate(45deg);
+  }
+
+  div::after {
+      transform: rotate(-45deg);
+  }
+
+  h1 {
+    @include font(38px, 28px);
+    color: $gray2;
+    margin: 16px;
+    text-transform: uppercase;
+  }
+}
