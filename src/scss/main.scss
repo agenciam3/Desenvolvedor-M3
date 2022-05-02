@@ -36,6 +36,7 @@ header {
     width: 119px;
   }
   
+  // alterar png
   #bag-cart {
     height: 20px;
     left: calc(50% - 17px/2 + 150.25px);
@@ -44,3 +45,33 @@ header {
     width: 17px;
   }
 }
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  @include font(43.58px, 32px);
+  color: #333333;
+  margin-top: 24px;
+}
+
+#buttons-container {
+  margin-top: 12px;
+  width: 343px;
+  display: flex;
+  text-align: center;
+  
+  //alterar borda central
+  button {
+    @include font(32.68px, 24px);
+    width: 50%;
+    border: 0.5px solid $gray2;
+    color: $gray2;
+    font-family: inherit;
+    padding: 8px 0px;
+  }
+}
+
