@@ -79,6 +79,7 @@ footer {
   background-color: black;
   color: white;
   letter-spacing: 0.7px;
+  margin-top: 44px;
   padding: 7px 0px;
   text-align: center;
   text-transform: uppercase;
@@ -128,4 +129,18 @@ footer {
     padding: 7px 0px;
     width: 100%;
   }
+}
+
+.hidden-mobile {
+  display: none;
+}
+
+#loader-button {
+  @include font(19px, 14px, $font-bold);
+  background-color: $primary;
+  border: none;
+  color: white;
+  margin-top: 38.65px;
+  padding: 8px 30px;
+  text-transform: uppercase;
 }
