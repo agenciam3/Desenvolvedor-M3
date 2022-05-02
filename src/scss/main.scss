@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 // cores
-$black: #000000;
 $gray1: rgba(#000000, 0.5);
 $gray2: #666666;
 $primary: #00C0EE;
@@ -155,25 +154,34 @@ footer {
 
   div {
     border-bottom: 1px solid $gray2;
-    position: relative;
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  div::before, div::after {
-    background-color: black;
-    content: '';
-    height: 1px;
-    position: absolute;
-    top: 20px;
-    right: 16px;
-    width: 25px;
-  }
+    button {
+      height: 25px;
+      margin: 0 16px 0 0;
+      position: relative;
+      width: 25px;
+    }
 
-  div::before {
-      transform: rotate(45deg);
-  }
-
-  div::after {
-      transform: rotate(-45deg);
+    button::before, button::after {
+      background-color: black;
+      content: '';
+      height: 1px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      width: 25px;
+    }
+  
+    button::before {
+        transform: rotate(45deg);
+    }
+  
+    button::after {
+        transform: rotate(-45deg);
+    }
   }
 
   h1 {
@@ -181,5 +189,16 @@ footer {
     color: $gray2;
     margin: 16px;
     text-transform: uppercase;
+  }
+
+  button {
+    @include font(30px, 22px);
+    border: none;
+    color: black;
+    display: block;
+    font-family: inherit;
+    margin-left: 16px;
+    margin-top: 30px;
+    padding: 0;
   }
 }
