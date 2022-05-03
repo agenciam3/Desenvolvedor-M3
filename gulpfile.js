@@ -1,6 +1,7 @@
 const path = require("path");
 
 const { series, src, dest, parallel, watch } = require("gulp");
+const gulp = require("gulp");
 const webpack = require("webpack");
 const del = require("del");
 const autoprefixer = require("gulp-autoprefixer");
@@ -22,11 +23,12 @@ const paths = {
     src: "src/img/**/*",
   },
   html: {
-    src: "src/index.html",
+    src: "src/public/index.html",
   },
   dest: "dist",
   temp: ".tmp",
 };
+
 
 function clean() {
   return del([paths.dest, paths.temp]);
