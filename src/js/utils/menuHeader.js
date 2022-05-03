@@ -1,3 +1,5 @@
+import { showMainContent } from './toggleMainContent';
+
 export function closeMenu() {
   const menuContainer = document.querySelector('.menu-container');
   menuContainer.parentNode.removeChild(menuContainer);
@@ -14,6 +16,8 @@ export function closeMenu() {
 
   document.getElementById('apply-btn').className = 'hidden';
   document.getElementById('clear-btn').className = 'hidden';
+
+  showMainContent();
 }
 
 function generateMenuHeader(title) {

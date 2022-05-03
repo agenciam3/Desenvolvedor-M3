@@ -1,5 +1,6 @@
 import generateMenuHeader from '../menuHeader';
 import orderOptions from './orderOptions';
+import { hideMainContent } from '../toggleMainContent';
 
 function generateOrderMenu() {
   const orderMenuSection = document.createElement('section');
@@ -9,6 +10,8 @@ function generateOrderMenu() {
   
   const mainElement = document.getElementById('main');
   mainElement.appendChild(orderMenuSection);
+
+  hideMainContent();
 }
 
 function handleOrderButton() {

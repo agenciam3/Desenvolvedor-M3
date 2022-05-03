@@ -1,4 +1,5 @@
 import generateMenuHeader from '../menuHeader';
+import { hideMainContent } from '../toggleMainContent';
 
 function showFilterBtns() {
   const options = document.querySelectorAll('.filter-options');
@@ -42,6 +43,8 @@ function generateFilterMenu() {
   displayOptionsBtns[0].addEventListener('click', () => toggleOptions('color-options'));
   displayOptionsBtns[1].addEventListener('click', () => toggleOptions('size-options'));
   displayOptionsBtns[2].addEventListener('click', () => toggleOptions('range-options'));
+
+  hideMainContent();
 }
 
 function handleFilterButton() {
