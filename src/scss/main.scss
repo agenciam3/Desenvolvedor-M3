@@ -159,11 +159,11 @@ footer {
 
 .menu-container {
   background-color: white;
-  height: 100vh;
   left: 0;
   position: fixed;
   top: 0;
   width: 100vw;
+  z-index: 2;
 
   .menu-header {
     border-bottom: 1px solid $gray2;
@@ -217,10 +217,12 @@ footer {
 }
 
 #filters-container {
+  background-color: white;
   left: 0;
-  position: fixed;
+  min-height: calc(100vh - 71px);
+  position: absolute;
   top: 71px;
-  z-index: 10;
+  z-index: 1;
 
   .title-container {
     position: relative;
@@ -326,6 +328,7 @@ footer {
   .btns-container {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 17px;
     margin-top: 30px;
   }
 
