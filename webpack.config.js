@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = (paths) => ({
+  devtool:"source-map",
   entry: {
     main: path.resolve(__dirname, paths.scripts.src),
   },
@@ -17,17 +18,11 @@ module.exports = (paths) => ({
         include: path.resolve(__dirname, paths.scripts.src),
         use: {
           loader: "babel-loader",
-          options: {
-            presets: [
-              [
-                "@babel/preset-env",
-                { targets: { browsers: ["last 2 versions"] } },
-              ],
-            ],
-            cacheDirectory: true,
-          },
         },
       },
     ],
   },
+  resolve:{
+    extensions: [".js", ".jsx"],
+  }
 });

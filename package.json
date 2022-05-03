@@ -19,20 +19,26 @@
   },
   "homepage": "https://github.com/agenciam3/Desenvolvedor-M3#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.0",
-    "babel-loader": "^8.2.3",
-    "browser-sync": "^2.27.7",
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-syntax-jsx": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "@babel/preset-react": "^7.16.7",
+    "babel-loader": "^8.2.5",
+    "browser-sync": "^2.27.9",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-sass": "^5.0.0",
     "gulp-sourcemaps": "^3.0.0",
     "npm-run-all": "^4.1.5",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "sass": "^1.43.4",
-    "webpack": "^5.62.1"
+    "webpack": "^5.72.0"
   },
   "dependencies": {
-    "@babel/core": "^7.17.9",
+    "create-react-class": "^15.7.0",
     "json-server": "^0.17.0"
   }
 }
