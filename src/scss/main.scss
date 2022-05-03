@@ -254,15 +254,44 @@ footer {
     @include font(14px);
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-  }
-
-  .filter-options input {
-    margin: 0;
-  }
-
-  .color-options {
     margin-left: 18px;
+    margin-top: 4px;
+  }
+
+  label {
+    align-items: center;
+    display: flex;
+    margin-top: 16px;
+  }
+
+  input {
+    cursor: pointer;
+    height: 0;
+    opacity: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  .checkmark {
+    border: 1px solid $gray1;
+    display: inline-block;
+    height: 16px;
+    margin-right: 10px;
+    width: 16px;
+  }
+
+  .checkmark:after {
+    content: "";
+    display: none;
+    margin-top: 3px;
+    margin-left: 3px;
+  }
+
+  label input:checked ~ .checkmark:after {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: $primary;
   }
 
   .size-options {
