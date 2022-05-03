@@ -23,6 +23,7 @@
       <div class="filter-options color-options hidden">
         <label for="amarelo">
           <input class="color-option" type="checkbox" name="amarelo" id="amarelo" value="amarelo">
+          <span class="checkmark"></span>
           Amarelo
         </label>
         <label for="azul">
@@ -136,8 +137,10 @@
           a partir de R$500
         </label>
       </div>
-      <button type="button" id="apply-btn" class="hidden">Aplicar</button>
-      <button type="reset" id="clear-btn" class="hidden">Limpar</button>
+      <div class="btns-container">
+        <button type="button" id="apply-btn" class="hidden">Aplicar</button>
+        <button type="reset" id="clear-btn" class="hidden">Limpar</button>
+      </div>
     </form>
     <div id="buttons-container">
       <button id="filter-button">Filtrar</button>

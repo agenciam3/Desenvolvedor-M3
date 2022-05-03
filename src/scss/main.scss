@@ -250,13 +250,53 @@ footer {
     width: 16px;
   }
 
-  #apply-btn {
+  .filter-options {
+    @include font(14px);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .filter-options input {
+    margin: 0;
+  }
+
+  .color-options {
+    margin-left: 18px;
+  }
+
+  .size-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btns-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+  }
+
+  #apply-btn, #clear-btn {
     @include font(19px);
-    background-color: $primary;
     border: none;
+    text-transform: uppercase;
+    font-family: inherit;
+  }
+
+  #apply-btn {
+    background-color: $primary;
     color: white;
     padding: 8px 52.5px;
-    text-transform: uppercase;
+  }
+
+  #clear-btn {
+    border: 1px solid $gray2;
+    color: $gray2;
+    padding: 7px 51.5px;
+  }
+
+  .hidden {
+    display: none;
   }
 }
 
