@@ -1,6 +1,9 @@
 export function closeMenu() {
   const menuContainer = document.querySelector('.menu-container');
   menuContainer.parentNode.removeChild(menuContainer);
+
+  const filters = document.getElementById('filters-container');
+  filters.style.display = 'none';
 }
 
 function generateMenuHeader(title) {

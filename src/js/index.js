@@ -3,6 +3,7 @@ import createLoaderButton from './utils/loaderButton';
 import handleOrderButton from './utils/order-button/orderButton';
 import createCards from './utils/productCards';
 import { closeMenu } from './utils/menuHeader';
+import handleFilterButton from './utils/filter-button/filterButton';
 
 let products = [];
 
@@ -12,6 +13,7 @@ axios.get('http://localhost:5000/products')
     createCards(data);
     createLoaderButton();
     handleOrderButton();
+    handleFilterButton();
   });
 
 export function orderByMoreRecent() {

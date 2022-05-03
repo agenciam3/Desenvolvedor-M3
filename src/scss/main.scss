@@ -215,3 +215,9 @@ footer {
     padding: 0;
   }
 }
+
+#filters-container {
+  display: none;
+  position: absolute;
+  z-index: 10;
+}
