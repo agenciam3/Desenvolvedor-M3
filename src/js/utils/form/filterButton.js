@@ -1,5 +1,6 @@
 import generateMenuHeader from '../menuHeader';
 import { hideMainContent } from '../toggleMainContent';
+import applyFilters, { getInputsValues } from './applyFilters';
 
 function showFilterBtns() {
   const options = document.querySelectorAll('.filter-options');
@@ -40,11 +41,14 @@ function generateFilterMenu() {
   hideMainContent();
 }
 
-export function addListenersToDisplayOptions() {
+export function addListeners() {
   const displayOptionsBtns = document.querySelectorAll('.title-container');
   displayOptionsBtns[0].addEventListener('click', () => toggleOptions('color-options'));
   displayOptionsBtns[1].addEventListener('click', () => toggleOptions('size-options'));
   displayOptionsBtns[2].addEventListener('click', () => toggleOptions('range-options'));
+
+  const applyBtn = document.getElementById('apply-btn');
+  applyBtn.addEventListener('click', applyFilters);
 }
 
 function handleFilterButton() {
