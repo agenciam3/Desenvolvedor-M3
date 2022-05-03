@@ -297,6 +297,30 @@ footer {
   .size-options {
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 14px;
+    margin-top: 16px;
+    width: 170px;
+
+    label {
+      margin: 4px 4px 0 4px;
+    }
+
+    span {
+      @include font(21.79px, 16px);
+      align-items: center;
+      border: 1px solid $gray1;
+      color: $gray1;
+      display: flex;
+      height: 32px;
+      justify-content: center;
+      letter-spacing: 0.8px;
+      width: 32px;
+    }
+
+    label input:checked ~ span {
+      color: black;
+      border-color: $primary;
+    }
   }
 
   .btns-container {
