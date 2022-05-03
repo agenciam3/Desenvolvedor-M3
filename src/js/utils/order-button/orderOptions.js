@@ -1,6 +1,6 @@
 import { orderByMoreRecent, orderBySmallerPrice, orderByBiggerPrice } from '../../';
 
-const orderingButtons = () => {
+const orderOptions = () => {
   const recentBtn = document.createElement('button');
   recentBtn.textContent = 'Mais recente';
   recentBtn.id = 'recent-btn';
@@ -24,4 +24,4 @@ const orderingButtons = () => {
   return div;
 }
 
-export default orderingButtons;
+export default orderOptions;

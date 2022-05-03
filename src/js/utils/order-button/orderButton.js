@@ -1,11 +1,11 @@
 import generateMenuHeader from '../menuHeader';
-import orderingButtons from './orderOptions';
+import orderOptions from './orderOptions';
 
 function generateOrderMenu() {
   const orderMenuSection = document.createElement('section');
   orderMenuSection.className = 'menu-container';
   orderMenuSection.appendChild(generateMenuHeader('Ordenar'));
-  orderMenuSection.appendChild(orderingButtons());
+  orderMenuSection.appendChild(orderOptions());
   
   const mainElement = document.getElementById('main');
   mainElement.appendChild(orderMenuSection);
