@@ -1,3 +1,5 @@
+import { filterProducts } from '../..';
+
 export function getInputsValues() {
   const colors = getCheckedInputsByClassName('color-option');
   const sizes = getCheckedInputsByClassName('size-option');
@@ -34,8 +36,31 @@ function getCheckedInputsByClassName(className) {
   return values;
 }
 
+export function isAnyColorAvailable(colors, productColor) {
+  if (colors.length === 0) return true;
+
+  return colors.some((color) => color.toLowerCase() === productColor.toLowerCase());
+}
+
+export function isAnySizeAvailable(sizes, productSizes) {
+  if (sizes.length === 0) return true;
+
+  return sizes.some((size) => productSizes.includes(size));
+}
+
+export function isInAnyRange(ranges, productPrice) {
+  if (ranges.length === 0) return true;
+
+  return ranges.some((range) => {
+    if (range.length === 1) {
+      return productPrice > range[0];
+    }
+    return productPrice > range[0] && productPrice <= range[1];
+  });
+}
+
 function applyFilters() {
-  console.log(getInputsValues());
+  filterProducts(getInputsValues());
 }
 
 export default applyFilters;
