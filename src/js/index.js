@@ -12,28 +12,31 @@ axios.get('http://localhost:5000/products')
   .then(({ data }) => {
     products = data;
     createCards(data);
-    createLoaderButton();
+    createLoaderButton(products.length);
     handleOrderButton();
     addListeners();
     handleFilterButton();
   });
 
+function handleProductsRendering(productsList) {
+  createCards(productsList);
+  createLoaderButton(productsList.length);
+  closeMenu();
+}
+
 export function orderByMoreRecent() {
   const sortedProducts = products.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
-  createCards(sortedProducts);
-  closeMenu();
+  handleProductsRendering(sortedProducts);
 }
 
 export function orderBySmallerPrice() {
   const sortedProducts = products.sort((a, b) => a.price - b.price);
-  createCards(sortedProducts);
-  closeMenu();
+  handleProductsRendering(sortedProducts);
 }
 
 export function orderByBiggerPrice() {
   const sortedProducts = products.sort((a, b) => b.price - a.price);
-  createCards(sortedProducts);
-  closeMenu();
+  handleProductsRendering(sortedProducts);
 }
 
 export function filterProducts({ colors, sizes, ranges }) {
@@ -42,6 +45,7 @@ export function filterProducts({ colors, sizes, ranges }) {
     && isAnySizeAvailable(sizes, product.size)
     && isInAnyRange(ranges, product.price);
   });
-  createCards(filteredProducts);
-  closeMenu();
+
+  console.log(filteredProducts);
+  handleProductsRendering(filteredProducts);
 }

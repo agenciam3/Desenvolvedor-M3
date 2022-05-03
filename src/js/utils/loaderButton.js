@@ -14,7 +14,9 @@ function loadMoreContent() {
   }
 }
 
-function createLoaderButton() {
+function createLoaderButton(numberItems) {
+  if (numberItems <= 4) return;
+
   const loaderButton = document.createElement('button');
 
   loaderButton.innerText = 'Carregar mais';
