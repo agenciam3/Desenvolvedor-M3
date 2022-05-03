@@ -6,8 +6,6 @@ function showFilterBtns() {
   let shouldBeHidden = true;
 
   for (const i of options) {
-    console.log(i);
-    console.log(i.classList.contains('hidden'));
     if (!i.classList.contains('hidden')) {
       shouldBeHidden = false;
     }
@@ -39,12 +37,14 @@ function generateFilterMenu() {
   const filters = document.getElementById('filters-container');
   filters.classList.remove('hidden');
 
+  hideMainContent();
+}
+
+export function addListenersToDisplayOptions() {
   const displayOptionsBtns = document.querySelectorAll('.title-container');
   displayOptionsBtns[0].addEventListener('click', () => toggleOptions('color-options'));
   displayOptionsBtns[1].addEventListener('click', () => toggleOptions('size-options'));
   displayOptionsBtns[2].addEventListener('click', () => toggleOptions('range-options'));
-
-  hideMainContent();
 }
 
 function handleFilterButton() {
