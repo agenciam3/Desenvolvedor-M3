@@ -11,6 +11,9 @@ export function closeMenu() {
       option.classList.add('hidden');
     }
   });
+
+  document.getElementById('apply-btn').className = 'hidden';
+  document.getElementById('clear-btn').className = 'hidden';
 }
 
 function generateMenuHeader(title) {

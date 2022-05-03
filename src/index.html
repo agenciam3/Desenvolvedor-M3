@@ -16,7 +16,7 @@
   </header>
   <main id="main">
     <h1>Blusas</h1>
-    <div id="filters-container" class="hidden">
+    <form id="filters-container" class="hidden">
       <div class="title-container">
         <h2 class="filter-title">cores</h2>
       </div>
@@ -136,7 +136,9 @@
           a partir de R$500
         </label>
       </div>
-    </div>
+      <button type="button" id="apply-btn" class="hidden">Aplicar</button>
+      <button type="reset" id="clear-btn" class="hidden">Limpar</button>
+    </form>
     <div id="buttons-container">
       <button id="filter-button">Filtrar</button>
       <button id="order-button">Ordenar</button>

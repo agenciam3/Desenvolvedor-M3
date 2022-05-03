@@ -31,17 +31,6 @@ function generateFilterMenu() {
   const filterMenuSection = document.createElement('section');
   filterMenuSection.className = 'menu-container';
   filterMenuSection.appendChild(generateMenuHeader('Filtrar'));
-
-  const applyBtn = document.createElement('button');
-  applyBtn.textContent = 'Aplicar';
-  applyBtn.id = 'apply-btn';
-  applyBtn.className = 'hidden';
-  const clearBtn = document.createElement('button');
-  clearBtn.textContent = 'Limpar';
-  clearBtn.id = 'clear-btn';
-  clearBtn.className = 'hidden';
-  filterMenuSection.appendChild(applyBtn);
-  filterMenuSection.appendChild(clearBtn);
   
   const mainElement = document.getElementById('main');
   mainElement.appendChild(filterMenuSection);

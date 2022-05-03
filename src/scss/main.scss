@@ -249,6 +249,15 @@ footer {
     transform: rotate(45deg);
     width: 16px;
   }
+
+  #apply-btn {
+    @include font(19px);
+    background-color: $primary;
+    border: none;
+    color: white;
+    padding: 8px 52.5px;
+    text-transform: uppercase;
+  }
 }
 
 .hidden {
