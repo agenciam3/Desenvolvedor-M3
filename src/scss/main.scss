@@ -42,6 +42,19 @@ header {
     top: 20px;
     width: 17px;
   }
+
+  #cart-counter {
+    @include font(11.72px, 10px);
+    background-color: $primary;
+    border-radius: 50%;
+    color: white;
+    height: 12px;
+    position: absolute;
+    right: 25.75px;
+    text-align: center;
+    top: 30px;
+    width: 12px;
+  }
 }
 
 main {
