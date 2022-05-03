@@ -204,7 +204,7 @@ footer {
     text-transform: uppercase;
   }
 
-  button {
+  #close-menu-button, .button {
     @include font(30px, 22px);
     border: none;
     color: black;
@@ -217,7 +217,40 @@ footer {
 }
 
 #filters-container {
-  display: none;
-  position: absolute;
+  left: 0;
+  position: fixed;
+  top: 71px;
   z-index: 10;
+
+  .title-container {
+    position: relative;
+    width: 100vw;
+  }
+
+  .filter-title {
+    @include font(32.68px, 24px);
+    color: $gray2;
+    margin-left: 16px;
+    margin-top: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+
+  .filter-title::after {
+    -webkit-transform: rotate(45deg);
+    border-color: $gray2;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    content: '';
+    display: inline-block;
+    height: 16px;
+    position: absolute;
+    right: 16px;
+    transform: rotate(45deg);
+    width: 16px;
+  }
+}
+
+.hidden {
+  display: none;
 }

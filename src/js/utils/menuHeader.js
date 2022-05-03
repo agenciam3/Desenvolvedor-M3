@@ -3,7 +3,14 @@ export function closeMenu() {
   menuContainer.parentNode.removeChild(menuContainer);
 
   const filters = document.getElementById('filters-container');
-  filters.style.display = 'none';
+  const options = document.querySelectorAll('.filter-options');
+
+  filters.className = 'hidden';
+  options.forEach((option) => {
+    if (!option.classList.contains('hidden')) {
+      option.classList.add('hidden');
+    }
+  });
 }
 
 function generateMenuHeader(title) {
