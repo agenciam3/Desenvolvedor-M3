@@ -397,6 +397,10 @@ footer {
     margin-top: 40px;
   }
 
+  #buttons-container {
+    display: none;
+  }
+
   #filters-container {
     margin-top: 41px;
     min-height: unset;
@@ -432,6 +436,14 @@ footer {
       label {
         margin: 4px 8px 4px 0;
       }
+    }
+
+    .hidden {
+      display: flex;
+    }
+
+    .btns-container {
+      display: none;
     }
   }
 
