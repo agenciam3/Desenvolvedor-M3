@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
 // largura de tela
-$medium: 700px;
+$medium: 870px;
 
 // cores
 $gray1: rgba(#000000, 0.5);
@@ -104,12 +104,19 @@ footer {
   text-transform: uppercase;
 }
 
+.products-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  width: calc(100vw - 32px);
   justify-content: space-between;
   margin: 16.86px 16px 0px 16px;
+  width: 343px;
 }
 
 .card-wrapper {
@@ -384,7 +391,6 @@ footer {
 
   main {
     align-items: flex-start;
-    flex-wrap: wrap;
     flex-direction: row;
   }
 
@@ -399,6 +405,38 @@ footer {
 
   #buttons-container {
     display: none;
+  }
+  
+  .products-section {
+    margin-right: 10.8%;
+    margin-left: 9.8%;
+  }
+
+  .cards-container {
+    justify-content: flex-start;
+    margin: 128px 0 0 0;
+    width: unset;
+  }
+
+  .card-wrapper {
+    margin: 21px 2.1%;
+    width: 195px;
+
+    h2 {
+      margin: 10px;
+    }
+
+    span {
+      margin-bottom: 1px;
+    }
+
+    button {
+      margin-top: 14px;
+    }
+  }
+
+  #loader-button {
+    margin-top: 52px;
   }
 
   #filters-container {
