@@ -42,7 +42,7 @@ function generateFilterMenu() {
 }
 
 function showAllColors({ target }) {
-  const colors = document.querySelectorAll('.hidden-desktop');
+  const colors = document.querySelectorAll('.color-label.hidden-desktop');
   colors.forEach((color) => {
     color.classList.remove('hidden-desktop');
   });
