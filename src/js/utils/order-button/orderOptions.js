@@ -20,6 +20,7 @@ const orderOptions = () => {
   smallerPriceBtn.addEventListener('click', orderBySmallerPrice);
 
   const div = document.createElement('div');
+  div.className = 'order-btns-container';
   div.appendChild(recentBtn);
   div.appendChild(smallerPriceBtn);
   div.appendChild(biggerPriceBtn);

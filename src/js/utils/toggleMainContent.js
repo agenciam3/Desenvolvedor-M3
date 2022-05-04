@@ -4,7 +4,7 @@ export function hideMainContent() {
   const loaderButton = document.getElementById('loader-button');
   loaderButton.classList.add('hidden');
   const footer = document.querySelector('footer');
-  footer.classList.add('hidden');
+  footer.className = 'hidden';
 }
 
 export function showMainContent() {

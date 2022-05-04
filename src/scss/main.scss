@@ -18,7 +18,11 @@ $font-bold: 700;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: $font-family;
+  justify-content: space-between;
+  min-height: 100vh;
 }
 
 header {
@@ -61,6 +65,7 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
+  min-height: calc(100vh - 141px);
 }
 
 h1 {
@@ -75,7 +80,6 @@ h1 {
   display: flex;
   text-align: center;
   
-  //alterar borda central
   button {
     @include font(32.68px, 24px);
     width: 50%;
@@ -100,6 +104,7 @@ footer {
 .cards-container {
   display: flex;
   flex-wrap: wrap;
+  width: calc(100vw - 32px);
   justify-content: space-between;
   margin: 16.86px 16px 0px 16px;
 }
@@ -202,6 +207,10 @@ footer {
     color: $gray2;
     margin: 16px;
     text-transform: uppercase;
+  }
+
+  .order-btns-container {
+    min-height: calc(100vh - 101px);
   }
 
   #close-menu-button, .button {
