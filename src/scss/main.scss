@@ -442,6 +442,11 @@ footer {
       text-align: start;
       width: 100%;
     }
+
+    .order-selected {
+      background-color: $primary;
+      color: white;
+    }
   }
   
   .products-section {

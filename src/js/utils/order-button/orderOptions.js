@@ -6,7 +6,7 @@ const selectOrderOption = ({ target }) => {
   if (!!oldSelected) {
     oldSelected.classList.remove('order-selected');
   }
-  target.classList.add('order.selected');
+  target.classList.add('order-selected');
 };
 
 const orderOptions = () => {
