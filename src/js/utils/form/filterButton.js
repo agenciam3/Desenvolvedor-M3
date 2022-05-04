@@ -60,7 +60,16 @@ export function filterOptions() {
   showAllColorsBtn.addEventListener('click', showAllColors);
 
   const applyBtn = document.getElementById('apply-btn');
-  applyBtn.addEventListener('click', (event) => applyFilters(event));
+  applyBtn.addEventListener('click', applyFilters);
+
+  const inputs = document.querySelectorAll('input');
+  inputs.forEach((input) => {
+    input.addEventListener('change', () => {
+      if (window.innerWidth >= 870) {
+        applyFilters();
+      }
+    });
+  });
 }
 
 function handleFilterButton() {
