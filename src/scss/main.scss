@@ -173,6 +173,10 @@ footer {
   text-transform: uppercase;
 }
 
+.order-desktop {
+  display: none;
+}
+
 .menu-container {
   background-color: white;
   left: 0;
@@ -247,6 +251,10 @@ footer {
   .title-container {
     position: relative;
     width: calc(100vw);
+  }
+
+  .show-all-colors-btn {
+    display: none;
   }
   
   .filter-title {
@@ -440,12 +448,39 @@ footer {
     margin-top: 52px;
   }
 
+  .order-desktop {
+    @include font(21.8px, 16px);
+    border: 1px solid $gray1;
+    display: inline-block;
+    font-family: inherit;
+    padding: 10px 40px 10px 10px;
+    position: absolute;
+    right: 10.8%;
+    top: 117px;
+  }
+
+  .order-desktop::after {
+    -webkit-transform: rotate(45deg);
+    border-color: $gray2;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    content: '';
+    display: inline-block;
+    height: 9.9px;
+    position: absolute;
+    top: 10px;
+    right: 17px;
+    transform: rotate(45deg);
+    width: 9.9px;
+  }
+
   #filters-container {
     margin-top: 41px;
     min-height: unset;
     position: static;
 
-    #show-all-colors-btn {
+    .show-all-colors-btn {
+      display: block;
       @include font(12px, 12px);
       border: none;
       color: $gray2;
@@ -457,7 +492,7 @@ footer {
       width: 112px;
     }
 
-    #show-all-colors-btn::after {
+    .show-all-colors-btn::after {
       -webkit-transform: rotate(45deg);
       border-color: $gray2;
       border-style: solid;

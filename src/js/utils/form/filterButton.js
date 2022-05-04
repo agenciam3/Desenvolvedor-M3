@@ -56,7 +56,7 @@ export function addListeners() {
   displayOptionsBtns[1].addEventListener('click', () => toggleOptions('size-options'));
   displayOptionsBtns[2].addEventListener('click', () => toggleOptions('range-options'));
 
-  const showAllColorsBtn = document.getElementById('show-all-colors-btn');
+  const showAllColorsBtn = document.querySelector('.show-all-colors-btn');
   showAllColorsBtn.addEventListener('click', showAllColors);
 
   const applyBtn = document.getElementById('apply-btn');
