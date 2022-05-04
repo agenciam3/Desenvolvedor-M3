@@ -3,7 +3,10 @@ import { showMainContent } from './toggleMainContent';
 
 export function closeMenu() {
   const menuHeader = document.querySelector('.menu-header');
-  menuHeader.parentNode.removeChild(menuHeader);
+
+  if (!!menuHeader) {
+    menuHeader.parentNode.removeChild(menuHeader);
+  }
 
   const filters = document.getElementById('filters-container');
   const options = document.querySelectorAll('.filter-options');

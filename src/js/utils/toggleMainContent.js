@@ -2,7 +2,10 @@ export function hideMainContent() {
   const cards = document.getElementById('cards-container');
   cards.classList.add('hidden');
   const loaderButton = document.getElementById('loader-button');
-  loaderButton.classList.add('hidden');
+
+  if (!!loaderButton) {
+    loaderButton.classList.add('hidden');
+  }
   const footer = document.querySelector('footer');
   footer.className = 'hidden';
 }

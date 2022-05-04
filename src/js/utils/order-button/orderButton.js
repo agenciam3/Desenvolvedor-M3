@@ -19,7 +19,7 @@ function handleOrderButton() {
   const orderButton = document.getElementById('order-button');
   const orderDesktopBtn = document.querySelector('.order-desktop');
   orderButton.addEventListener('click', generateOrderMenu);
-  orderDesktopBtn.addEventListener('click', toggleOrderMenu);
+  orderDesktopBtn.addEventListener('click', () => toggleOrderMenu());
 }
 
 export default handleOrderButton;
