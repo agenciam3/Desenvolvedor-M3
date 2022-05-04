@@ -8,12 +8,12 @@ function addToCart() {
     counter.id = 'cart-counter';
     counter.innerHTML = 1;
 
+    const header = document.querySelector('.cart-container');
+    header.appendChild(counter);
   } else {
     counter.innerHTML = parseInt(counter.innerHTML, 10) + 1;
   }
 
-  const header = document.querySelector('header');
-  header.appendChild(counter);
 }
 
 function createCard(item, index) {

@@ -41,25 +41,28 @@ header {
     top: 16px;
     width: 119px;
   }
+
+  .cart-container {
+    position: absolute;
+    right: 28.75px;
+    top: 20px;
+  }
   
   #bag-cart {
     height: 20px;
-    right: 28.75px;
-    position: absolute;
-    top: 20px;
-    width: 17px;
+    width: 17px; 
   }
   
   #cart-counter {
     @include font(11.72px, 10px);
     background-color: $primary;
     border-radius: 50%;
+    bottom: -2px;
     color: white;
     height: 12px;
     position: absolute;
-    right: 25.75px;
+    right: -2px;
     text-align: center;
-    top: 30px;
     width: 12px;
   }
 }
@@ -397,7 +400,7 @@ footer {
       left: 10.8%;
     }
 
-    #bag-cart {
+    .cart-container {
       right: 10.8%;
     }
   }
