@@ -41,14 +41,26 @@ function generateFilterMenu() {
   hideMainContent();
 }
 
+function showAllColors({ target }) {
+  const colors = document.querySelectorAll('.hidden-desktop');
+  colors.forEach((color) => {
+    color.classList.remove('hidden-desktop');
+  });
+
+  target.classList.add('hidden-desktop');
+}
+
 export function addListeners() {
   const displayOptionsBtns = document.querySelectorAll('.title-container');
   displayOptionsBtns[0].addEventListener('click', () => toggleOptions('color-options'));
   displayOptionsBtns[1].addEventListener('click', () => toggleOptions('size-options'));
   displayOptionsBtns[2].addEventListener('click', () => toggleOptions('range-options'));
 
+  const showAllColorsBtn = document.getElementById('show-all-colors-btn');
+  showAllColorsBtn.addEventListener('click', showAllColors);
+
   const applyBtn = document.getElementById('apply-btn');
-  applyBtn.addEventListener('click', applyFilters);
+  applyBtn.addEventListener('click', (event) => applyFilters(event));
 }
 
 function handleFilterButton() {
