@@ -19,8 +19,6 @@ fetch(url)
     addFiller()
 
 
-    console.log(data)
-
     let cartButton = document.getElementById('cart-link');
     cartButton.addEventListener("click", function(){ displayCart(), listCartItems(cart, data) });
 
@@ -45,7 +43,6 @@ fetch(url)
     })
 
     let buyButtons = document.querySelectorAll('.comprar');
-    console.log(buyButtons)
     buyButtons.forEach(buyButton => {
       buyButton.addEventListener("click", function(){ addToCart(buyButton, cart); })
     });
