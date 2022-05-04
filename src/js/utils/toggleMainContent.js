@@ -11,7 +11,9 @@ export function showMainContent() {
   const cards = document.getElementById('cards-container');
   cards.classList.remove('hidden');
   const loaderButton = document.getElementById('loader-button');
-  loaderButton.classList.remove('hidden');
+  if (!!loaderButton) {
+    loaderButton.classList.remove('hidden');
+  }
   const footer = document.querySelector('footer');
   footer.classList.remove('hidden');
 }

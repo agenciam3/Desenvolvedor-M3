@@ -12,7 +12,6 @@ axios.get('http://localhost:5000/products')
   .then(({ data }) => {
     products = data;
     createCards(data);
-    createLoaderButton(products.length);
     handleOrderButton();
     addListeners();
     handleFilterButton();
@@ -20,7 +19,6 @@ axios.get('http://localhost:5000/products')
 
 function handleProductsRendering(productsList) {
   createCards(productsList);
-  createLoaderButton(productsList.length);
   closeMenu();
 }
 

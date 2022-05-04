@@ -10,11 +10,16 @@ function loadMoreContent() {
 
   if (hiddenItems.length === 0) {
     const loaderButton = document.getElementById('loader-button');
-    loaderButton.style.display = 'none';
+    loaderButton.className = 'hidden';
   }
 }
 
 function createLoaderButton(numberItems) {
+  const oldLoader = document.getElementById('loader-button');
+  if (!!oldLoader) {
+    oldLoader.parentNode.removeChild(oldLoader);
+  }
+
   if (numberItems <= 4) return;
 
   const loaderButton = document.createElement('button');

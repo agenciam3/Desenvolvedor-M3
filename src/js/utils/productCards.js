@@ -1,3 +1,5 @@
+import createLoaderButton from './loaderButton';
+
 function addToCart() {
   let counter = document.getElementById('cart-counter');
   
@@ -50,6 +52,8 @@ function createCards(items) {
   items.forEach((item, index) => {
     createCard(item, index);
   });
+
+  createLoaderButton(items.length);
 }
 
 export default createCards;
