@@ -235,19 +235,19 @@ footer {
   position: absolute;
   top: 71px;
   z-index: 1;
-
+  
   .title-container {
     position: relative;
-    width: 100vw;
+    width: calc(100vw);
   }
-
+  
   .filter-title {
     @include font(32.68px, 24px);
     color: $gray2;
+    letter-spacing: 1.2px;
     margin-left: 16px;
     margin-top: 30px;
     text-transform: uppercase;
-    letter-spacing: 1.2px;
   }
 
   .filter-title::after {
@@ -311,7 +311,6 @@ footer {
   .size-options {
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 14px;
     margin-top: 16px;
     width: 170px;
 
@@ -383,9 +382,60 @@ footer {
     }
   }
 
+  main {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  aside {
+    margin-left: 10.8%;
+  }
+
   h1 {
     align-self: flex-start;
-    margin-left: 10.8%;
     margin-top: 40px;
+  }
+
+  #filters-container {
+    margin-top: 41px;
+    min-height: unset;
+    position: static;
+
+    .title-container {
+      width: unset;
+    }
+    
+    .filter-title {
+      @include font(21.79px, 16px);
+      color: #333333;
+      letter-spacing: calc(16px * 0.05);
+      margin-left: 0;
+      margin-top: 24px;
+    }
+
+    .filter-title::after {
+      display: none;
+    }
+
+    .filter-options {
+      margin-left: 0;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+
+    .size-options {
+      margin-top: 20px;
+
+      label {
+        margin: 4px 8px 4px 0;
+      }
+    }
+  }
+
+  .hidden {
+    display: inline-block;
   }
 }
