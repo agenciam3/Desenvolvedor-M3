@@ -50,16 +50,6 @@ header {
     width: 17px;
   }
   
-  @media screen and (min-width: $medium) {
-    #logo {
-      left: 10.8%;
-    }
-
-    #bag-cart {
-      right: 10.8%;
-    }
-  }
-  
   #cart-counter {
     @include font(11.72px, 10px);
     background-color: $primary;
@@ -380,4 +370,22 @@ footer {
 
 .hidden {
   display: none;
+}
+
+@media screen and (min-width: $medium) {
+  header {
+    #logo {
+      left: 10.8%;
+    }
+
+    #bag-cart {
+      right: 10.8%;
+    }
+  }
+
+  h1 {
+    align-self: flex-start;
+    margin-left: 10.8%;
+    margin-top: 40px;
+  }
 }
