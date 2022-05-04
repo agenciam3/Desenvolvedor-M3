@@ -109,6 +109,7 @@ footer {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .cards-container {
@@ -408,14 +409,14 @@ footer {
   }
   
   .products-section {
-    margin-right: 10.8%;
     margin-left: 9.8%;
+    margin-right: 10.8%;
   }
 
   .cards-container {
     justify-content: flex-start;
     margin: 128px 0 0 0;
-    width: unset;
+    width: 100%;
   }
 
   .card-wrapper {
