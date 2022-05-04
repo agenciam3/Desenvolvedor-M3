@@ -2,6 +2,7 @@
 
 - Crie um fork do projeto;
 - Execute o comando `git clone` seguido da chave SSH referente ao repositório;
+- Vá para a pasta que acabou de ser criada com o comando `cd nome-da-pasta`;
 - Certifique-se de que o nodejs está instalado na versão 14 ou superior;
 - Execute o comando `npm install` para instalar as dependências;
 - Execute o comando `npm start` para executar o código e rodar tanto o servidor quanto a página localmente;
