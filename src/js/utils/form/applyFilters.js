@@ -45,6 +45,9 @@ export function isAnyColorAvailable(colors, productColor) {
 export function isAnySizeAvailable(sizes, productSizes) {
   if (sizes.length === 0) return true;
 
+  console.log(sizes);
+  console.log(productSizes)
+
   return sizes.some((size) => productSizes.includes(size));
 }
 
