@@ -14,6 +14,33 @@
   margin-bottom: 10px;
 }
 
+#custom-dropdown{
+  width: 150px;
+  display: flex;
+  position: relative;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dropdown-arrow{
+  width: 10px;
+  height: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  transform: rotate(45deg);
+}
+
+.dropdown-options{
+  width: 150px;
+  position: absolute;
+  top: 100%;
+  left: -1px;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
 .custom-checkbox{
   width: 16px;
   height: 16px;

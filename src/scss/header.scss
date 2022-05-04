@@ -21,4 +21,25 @@ header{
 
 #cart-link{
   height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-content-counter{
+  position: absolute;
+  background-color: #00c0ee;
+  height: 10px;
+  padding: 2px 3px;
+  border-radius: 12px;
+  min-width: 10px;
+  top: 70%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  span{
+    color: #fff;
+    text-align: center;
+    font-size: 10px;
+  }
 }

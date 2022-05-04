@@ -1,5 +1,5 @@
 import { createElementWithClass, appendById } from "./module_helpers";
-export { addCardProducts, filterProducts }
+export { addCardProducts, filterProducts, addFiller }
 
 function addCardProducts(products){
   products.forEach(product => {
@@ -18,10 +18,6 @@ function addCardProducts(products){
     })
     appendById(div, 'products')
   })
-}
-
-function name(params) {
-
 }
 
 function filterProducts(filterList) {
@@ -43,11 +39,7 @@ function filterProducts(filterList) {
       product.classList.add('d-none')
     }
 
-    // console.log(specs[2])
-    // console.log(filterList[2])
-    // console.log(specs[2].includes(filterList[2]))
     if(filterList[2].length > 0 && specs[2].includes(filterList[2]) == false){
-      console.log('filtering size')
       product.classList.add('d-none')
     }
   });

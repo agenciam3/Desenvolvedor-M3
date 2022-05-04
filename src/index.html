@@ -11,13 +11,20 @@
 </head>
 
 <body>
+
+
+
+
   <header>
     <div class="container-header">
-      <a href="index.html">
+      <a>
         <img src="img/logo-m3.png" alt="">
       </a>
-      <a href="" id="cart-link">
-        <i href="" class="fa-solid fa-bag-shopping"></i>
+      <a id="cart-link">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <div class="cart-content-counter d-none">
+          <span class="amount-of-items">0</span>
+        </div>
       </a>
     </div>
   </header>
@@ -25,12 +32,15 @@
     <section class="identifier">
 
       <h3>Blusas</h3>
-      <select class="custom-dropdown" name="" id="">
-        <option value="">Ordenar por:</option>
-        <option value="">Mais recente</option>
-        <option value="">Menor preço</option>
-        <option value="">Maior preço</option>
-      </select>
+      <div id="custom-dropdown">
+        <div class="selected-option">
+          Ordenar por:
+        </div>
+
+        <div class="dropdown-arrow"></div>
+        <div class="dropdown-options">
+        </div>
+      </div>
     </section>
     <div id="wrapper">
       <nav id="filters">

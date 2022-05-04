@@ -2,6 +2,7 @@
 @import "products";
 @import "header";
 @import "navbar";
+@import "cart";
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
 
@@ -12,10 +13,16 @@ body{
   font-family: 'Open Sans', sans-serif;
 }
 
+.lock-scroll{
+  overflow: hidden;
+}
+
 .container{
   display: flex;
   flex-wrap: wrap;
   max-width: 1200px;
+  width: 100%;
+  margin: 10px;
 }
 
 .identifier{
