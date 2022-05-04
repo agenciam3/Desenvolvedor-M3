@@ -1,6 +1,9 @@
 @import "reset";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+// largura de tela
+$medium: 700px;
+
 // cores
 $gray1: rgba(#000000, 0.5);
 $gray2: #666666;
@@ -30,7 +33,7 @@ header {
   position: relative;
   height: 62px;
   border-bottom: 2px solid #C7C7C7;
-
+  
   #logo {
     height: 28.63px;
     left: 27px;
@@ -38,7 +41,7 @@ header {
     top: 16px;
     width: 119px;
   }
-
+  
   #bag-cart {
     height: 20px;
     right: 28.75px;
@@ -46,7 +49,17 @@ header {
     top: 20px;
     width: 17px;
   }
+  
+  @media screen and (min-width: $medium) {
+    #logo {
+      left: 10.8%;
+    }
 
+    #bag-cart {
+      right: 10.8%;
+    }
+  }
+  
   #cart-counter {
     @include font(11.72px, 10px);
     background-color: $primary;
