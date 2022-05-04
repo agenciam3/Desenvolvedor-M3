@@ -1,22 +1,25 @@
 import generateMenuHeader from '../menuHeader';
-import orderOptions from './orderOptions';
 import { hideMainContent } from '../toggleMainContent';
 
 function generateOrderMenu() {
-  const orderMenuSection = document.createElement('section');
-  orderMenuSection.className = 'menu-container';
-  orderMenuSection.appendChild(generateMenuHeader('Ordenar'));
-  orderMenuSection.appendChild(orderOptions());
-  
-  const mainElement = document.getElementById('main');
-  mainElement.appendChild(orderMenuSection);
+  const orderBtns = document.querySelector('.order-btns-container');
+  orderBtns.parentNode.insertBefore(generateMenuHeader('Ordenar'), orderBtns);
 
+  toggleOrderMenu();
   hideMainContent();
+}
+
+export function toggleOrderMenu(force) {
+  const menu = document.querySelector('.menu-container');
+  menu.classList.toggle('hidden-desktop', force);
+  menu.classList.toggle('hidden', force);
 }
 
 function handleOrderButton() {
   const orderButton = document.getElementById('order-button');
+  const orderDesktopBtn = document.querySelector('.order-desktop');
   orderButton.addEventListener('click', generateOrderMenu);
+  orderDesktopBtn.addEventListener('click', toggleOrderMenu);
 }
 
 export default handleOrderButton;

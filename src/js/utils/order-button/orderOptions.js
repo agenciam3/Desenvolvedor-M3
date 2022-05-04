@@ -1,31 +1,32 @@
 import { orderByMoreRecent, orderBySmallerPrice, orderByBiggerPrice } from '../../';
 
+const selectOrderOption = ({ target }) => {
+  const oldSelected = document.querySelector('.order-selected');
+
+  if (!!oldSelected) {
+    oldSelected.classList.remove('order-selected');
+  }
+  target.classList.add('order.selected');
+};
+
 const orderOptions = () => {
-  const recentBtn = document.createElement('button');
-  recentBtn.textContent = 'Mais recente';
-  recentBtn.id = 'recent-btn';
-  recentBtn.className = 'button';
-  recentBtn.addEventListener('click', orderByMoreRecent);
+  const recentBtn = document.getElementById('recent-btn');
+  recentBtn.addEventListener('click', (event) => {
+    orderByMoreRecent();
+    selectOrderOption(event)
+  });
 
-  const biggerPriceBtn = document.createElement('button');
-  biggerPriceBtn.textContent = 'Maior preço';
-  biggerPriceBtn.id = 'bigger-btn';
-  biggerPriceBtn.className = 'button';
-  biggerPriceBtn.addEventListener('click', orderByBiggerPrice)
+  const biggerPriceBtn = document.getElementById('bigger-btn');
+  biggerPriceBtn.addEventListener('click', (event) => {
+    orderByBiggerPrice();
+    selectOrderOption(event)
+  });
   
-  const smallerPriceBtn = document.createElement('button');
-  smallerPriceBtn.textContent = 'Menor preço';
-  smallerPriceBtn.id = 'smaller-btn';
-  smallerPriceBtn.className = 'button';
-  smallerPriceBtn.addEventListener('click', orderBySmallerPrice);
-
-  const div = document.createElement('div');
-  div.className = 'order-btns-container';
-  div.appendChild(recentBtn);
-  div.appendChild(smallerPriceBtn);
-  div.appendChild(biggerPriceBtn);
-
-  return div;
+  const smallerPriceBtn = document.getElementById('smaller-btn');
+  smallerPriceBtn.addEventListener('click', (event) => {
+    orderBySmallerPrice();
+    selectOrderOption(event)
+  });
 }
 
 export default orderOptions;

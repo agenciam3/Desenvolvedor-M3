@@ -177,6 +177,10 @@ footer {
   display: none;
 }
 
+.menu-container.hidden-desktop.hidden {
+  display: none;
+}
+
 .menu-container {
   background-color: white;
   left: 0;
@@ -415,6 +419,27 @@ footer {
   #buttons-container {
     display: none;
   }
+
+  .menu-container {
+    border: 1px solid $gray1;
+    left: auto;
+    position: absolute;
+    right: 10.8%;
+    top: 160.8px;
+    width: 147.31px;
+
+    .order-btns-container {
+      min-height: fit-content;
+    }
+
+    .button {
+      @include font(21.79px, 16px);
+      margin: 0;
+      padding: 10px;
+      text-align: start;
+      width: 100%;
+    }
+  }
   
   .products-section {
     margin-left: 9.8%;
@@ -550,6 +575,10 @@ footer {
     .btns-container {
       display: none;
     }
+  }
+
+  .hidden-desktop {
+    display: none;
   }
 
   .hidden {

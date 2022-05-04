@@ -1,8 +1,9 @@
+import { toggleOrderMenu } from './order-button/orderButton';
 import { showMainContent } from './toggleMainContent';
 
 export function closeMenu() {
-  const menuContainer = document.querySelector('.menu-container');
-  menuContainer.parentNode.removeChild(menuContainer);
+  const menuHeader = document.querySelector('.menu-header');
+  menuHeader.parentNode.removeChild(menuHeader);
 
   const filters = document.getElementById('filters-container');
   const options = document.querySelectorAll('.filter-options');
@@ -13,6 +14,8 @@ export function closeMenu() {
       option.classList.add('hidden');
     }
   });
+
+  toggleOrderMenu(true);
 
   document.getElementById('apply-btn').className = 'hidden';
   document.getElementById('clear-btn').className = 'hidden';

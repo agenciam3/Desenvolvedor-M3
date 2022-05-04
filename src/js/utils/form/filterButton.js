@@ -1,6 +1,6 @@
 import generateMenuHeader from '../menuHeader';
 import { hideMainContent } from '../toggleMainContent';
-import applyFilters, { getInputsValues } from './applyFilters';
+import applyFilters from './applyFilters';
 
 function showFilterBtns() {
   const options = document.querySelectorAll('.filter-options');
@@ -50,7 +50,7 @@ function showAllColors({ target }) {
   target.classList.add('hidden-desktop');
 }
 
-export function addListeners() {
+export function filterOptions() {
   const displayOptionsBtns = document.querySelectorAll('.title-container');
   displayOptionsBtns[0].addEventListener('click', () => toggleOptions('color-options'));
   displayOptionsBtns[1].addEventListener('click', () => toggleOptions('size-options'));

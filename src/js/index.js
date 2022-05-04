@@ -1,9 +1,9 @@
 import axios from 'axios';
-import createLoaderButton from './utils/loaderButton';
 import handleOrderButton from './utils/order-button/orderButton';
 import createCards from './utils/productCards';
 import { closeMenu } from './utils/menuHeader';
-import handleFilterButton, { addListeners } from './utils/form/filterButton';
+import handleFilterButton from './utils/form/filterButton';
+import addListeners from './utils/addListeners';
 import { isAnyColorAvailable, isAnySizeAvailable, isInAnyRange } from './utils/form/applyFilters';
 
 let products = [];
@@ -23,7 +23,6 @@ function handleProductsRendering(productsList) {
   createCards(productsList);
   closeMenu();
 }
-
 
 export function orderByMoreRecent() {
   const sortedProducts = filteredProducts.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
