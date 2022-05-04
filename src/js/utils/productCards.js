@@ -27,9 +27,7 @@ function createCard(item, index) {
   const cardWrapper = document.createElement('div');
   cardWrapper.className = 'card-wrapper';
   
-  if (window.innerWidth <= 700 && index > 3) {
-    cardWrapper.classList.add('hidden-mobile');
-  } else if (index > 5) {
+  if (index > 5) {
     cardWrapper.classList.add('hidden-mobile');
   }
   

@@ -1,13 +1,14 @@
 function loadMoreContent() {
   let hiddenItems = document.querySelectorAll('.hidden-mobile');
+  console.log('before', hiddenItems.length)
 
   hiddenItems.forEach((item, i) => {
-    if (i < 4)
+    if (i < 6)
     item.classList.remove('hidden-mobile');
   });
 
   hiddenItems = document.querySelectorAll('.hidden-mobile');
-
+  console.log('after', hiddenItems.length);
   if (hiddenItems.length === 0) {
     const loaderButton = document.getElementById('loader-button');
     loaderButton.className = 'hidden';

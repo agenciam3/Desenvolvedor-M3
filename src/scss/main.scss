@@ -452,6 +452,10 @@ footer {
   .products-section {
     margin-left: 9.8%;
     margin-right: 10.8%;
+
+    .hidden {
+      display: none;
+    }
   }
 
   .cards-container {
