@@ -124,31 +124,7 @@ input[type="radio"]+label{
 
 @media (max-width: 768px) {
   #mobile-sort-by{
-    // display: none;
-    // position: fixed;
-    // top: 0;
-    // bottom: 0;
-    // right: 0;
-    // left: 0;
-    // background-color: #fff;
-    // padding: 15px;
-    // header{
-    //   font-size: 28px;
-    //   display: flex;
-    //   align-items: center;
-    //   margin-left: -15px;
-    //   margin-top: -15px;
-    //   color: #666666;
-    //   justify-content: flex-start;
-    //   width: 99.5%;
-    // }
-    // i{
-    //   color: #666666;
-    //   position: absolute;
-    //   top: 18px;
-    //   right: 15px;
-    //   font-size: 28px;
-    // }
+    z-index: 1;
     .modal-option{
       font-size: 22px;
       margin-bottom: 30px;
