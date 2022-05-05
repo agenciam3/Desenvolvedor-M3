@@ -91,7 +91,7 @@ fetch(url)
     dropdownOptions.forEach(dropdownOption => {
       dropdownOption.addEventListener('click', function() { select(dropdownOption) })
     })
-
+    closeModal(closeModalBtns[1]);
     let modalSortByOptions = document.querySelectorAll('.modal-option')
     modalSortByOptions.forEach(option => {
       option.addEventListener('click', function() { select(option); closeModal(closeModalBtns[1])})
