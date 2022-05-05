@@ -1,4 +1,5 @@
 const path = require("path");
+const webpack = require("webpack");
 
 module.exports = (paths) => ({
   entry: {
@@ -30,4 +31,5 @@ module.exports = (paths) => ({
       },
     ],
   },
+  plugins: [new webpack.EnvironmentPlugin(["SERVER_API"])],
 });
