@@ -6,6 +6,8 @@
 
 .filter-title{
   margin: 24px 0;
+  position: relative;
+
 }
 
 .listed-color{
@@ -25,6 +27,9 @@
 }
 
 .dropdown-arrow{
+  position: absolute;
+  top: 10px;
+  right: 10px;
   width: 10px;
   height: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -68,6 +73,11 @@ input[type="checkbox"]+label{
 
 #filters{
   justify-self: start;
+  z-index: 1;
+}
+
+.open-tab{
+  display: none !important;
 }
 
 #sizes{
@@ -109,4 +119,51 @@ input[type="radio"]{
 
 input[type="radio"]+label{
   cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  #filters{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #FFF;
+    padding: 15px;
+    header{
+      font-size: 28px;
+      display: flex;
+      align-items: center;
+      margin-left: -15px;
+      margin-top: -15px;
+      color: #666666;
+      justify-content: flex-start;
+      width: 99.5%;
+    }
+    i{
+      color: #666666;
+      position: absolute;
+      top: 18px;
+      right: 15px;
+      font-size: 28px;
+    }
+  }
+
+  .filter-title{
+    color: #666666;
+    font-size: 24px;
+    i {
+      font-size: 24px !important;
+      position: absolute;
+      right: 0 !important;
+      top: 0 !important;
+    }
+  }
+
+  .open-tab{
+    display: inline !important;
+  }
+
 }

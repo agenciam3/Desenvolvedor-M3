@@ -15,7 +15,7 @@
 
 
 
-  <header>
+  <header id="header">
     <div class="container-header">
       <a>
         <img src="img/logo-m3.png" alt="">
@@ -28,38 +28,43 @@
       </a>
     </div>
   </header>
-  <div class="container">
+  <div class="container" id="page-container">
     <section class="identifier">
 
       <h3>Blusas</h3>
       <div id="custom-dropdown">
+        <div class="dropdown-arrow"></div>
         <div class="selected-option">
           Ordenar por:
         </div>
-
-        <div class="dropdown-arrow"></div>
         <div class="dropdown-options">
+
         </div>
       </div>
+      <div class="filtrar filter-btn">Filtrar</div>
+      <div class="ordenar filter-btn">Ordenar</div>
     </section>
     <div id="wrapper">
       <nav id="filters">
+        <i class="fa-solid fa-xmark close-modal mobile"></i>
+        <header class="mobile">FILTRAR</header>
         <p class="filter-title">
           CORES
+          <i class="fa-solid fa-chevron-down open-tab"></i>
         </p>
-        <form>
           <div id="colors">
             <!-- this will be populated by add_colors_filter()  -->
           </div>
-        </form>
         <p class="filter-title">
           TAMANHOS
+          <i class="fa-solid fa-chevron-down open-tab"></i>
         </p>
         <div id="sizes">
           <!-- this will be populated by add_size_buttons() -->
         </div>
         <p class="filter-title">
           FAIXA DE PREÇOS
+          <i class="fa-solid fa-chevron-down open-tab"></i>
         </p>
         <form id="price-filter">
           <div id="prices">
@@ -111,6 +116,7 @@
       </section>
     </div>
   </div>
+  <footer id="footer">M3: Implantação de E-commerce VTEX</footer>
 </body>
 
 <script src="bundle.js"></script>

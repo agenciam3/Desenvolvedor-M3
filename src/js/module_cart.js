@@ -1,4 +1,4 @@
-import { appendById, createElementWithClass } from "./module_helpers"
+import { appendById, createElementWithClass, lockUnlockScroll } from "./module_helpers"
 
 export function displayCart(){
   let div = document.createElement('div')
@@ -32,11 +32,6 @@ export function displayCart(){
 export function closeCart(div){
   div.remove()
   lockUnlockScroll()
-}
-
-function lockUnlockScroll(){
-  let body = document.querySelector('body')
-  body.classList.toggle('lock-scroll')
 }
 
 export function addToCart(buyButton, cart){

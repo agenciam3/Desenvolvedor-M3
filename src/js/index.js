@@ -4,6 +4,7 @@ import { radioCheckUncheck } from "./navbar/prices";
 import { redirectClick } from "./navbar/helpers";
 import { addCardProducts, filterProducts, addFiller } from "./module_products";
 import { displayCart, addToCart, listCartItems } from "./module_cart";
+import { closeModal, showModal, closeTab, openCloseTab, openTab } from "./navbar/responsivity";
 
 let url = 'http://localhost:5000/products';
 
@@ -46,4 +47,38 @@ fetch(url)
     buyButtons.forEach(buyButton => {
       buyButton.addEventListener("click", function(){ addToCart(buyButton, cart); })
     });
+
+    let filterBtns = document.querySelectorAll('.filter-btn')
+    filterBtns[0].addEventListener('click', function() { showModal('#filters') })
+
+    let closeModalBtns = document.querySelectorAll('.close-modal')
+    closeModalBtns.forEach(button => {
+      button.addEventListener("click", function() { closeModal(button) })
+    });
+
+    window.addEventListener('resize', function () { closeModalBtns.forEach(btn => {closeModal(btn)});
+                                                    if (window.innerWidth > 768) {
+                                                      showModal('#filters')
+                                                    } });
+
+    let filterTitles = document.querySelectorAll('.filter-title')
+    filterTitles.forEach(filterTitle => {
+      filterTitle.addEventListener('click', function() { openCloseTab(filterTitle) })
+    });
+
+    filterTitles.forEach(filterTitle => {
+      if (window.innerWidth > 768) {
+        openTab(filterTitle)
+      }
+      else {
+        closeTab(filterTitle)
+      }
+    })
+
+    window.addEventListener('resize', function() { filterTitles.forEach(filterTitle => {
+      if(window.innerWidth < 768){
+      closeTab(filterTitle) }
+      else { openTab(filterTitle) }
+
+    })});
   })

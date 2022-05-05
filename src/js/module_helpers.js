@@ -1,6 +1,6 @@
 export { onlyUnique, createElementWithClass, appendById,
          selectElements, getElementFromParent, removeItemAll,
-         hide, show }
+         hide, show, lockUnlockScroll }
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
@@ -44,4 +44,10 @@ function hide(element) {
 
 function show(element) {
   element.classList.remove('d-none')
+}
+
+
+function lockUnlockScroll(){
+  let body = document.querySelector('body')
+  body.classList.toggle('lock-scroll')
 }
