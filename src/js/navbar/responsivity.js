@@ -1,5 +1,3 @@
-import { lockUnlockScroll } from "../module_helpers";
-
 export function closeModal(el) {
   el.parentElement.style.display = 'none';
 }

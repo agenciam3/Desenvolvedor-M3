@@ -5,6 +5,7 @@ import { redirectClick } from "./navbar/helpers";
 import { addCardProducts, filterProducts, addFiller } from "./module_products";
 import { displayCart, addToCart, listCartItems } from "./module_cart";
 import { closeModal, showModal, closeTab, openCloseTab, openTab } from "./navbar/responsivity";
+import { select } from "./navbar/sort";
 
 let url = 'http://localhost:5000/products';
 
@@ -50,6 +51,7 @@ fetch(url)
 
     let filterBtns = document.querySelectorAll('.filter-btn')
     filterBtns[0].addEventListener('click', function() { showModal('#filters') })
+    filterBtns[1].addEventListener('click', function() { showModal('#mobile-sort-by') })
 
     let closeModalBtns = document.querySelectorAll('.close-modal')
     closeModalBtns.forEach(button => {
@@ -81,4 +83,17 @@ fetch(url)
       else { openTab(filterTitle) }
 
     })});
+
+    let customDropdown = document.getElementById('sort-by')
+    customDropdown.addEventListener('click', function() { openCloseTab(customDropdown.querySelector('.selected-option')) })
+
+    let dropdownOptions = document.querySelectorAll('.dropdown-option')
+    dropdownOptions.forEach(dropdownOption => {
+      dropdownOption.addEventListener('click', function() { select(dropdownOption) })
+    })
+
+    let modalSortByOptions = document.querySelectorAll('.modal-option')
+    modalSortByOptions.forEach(option => {
+      option.addEventListener('click', function() { select(option); closeModal(closeModalBtns[1])})
+    })
   })

@@ -1,6 +1,6 @@
 export { onlyUnique, createElementWithClass, appendById,
          selectElements, getElementFromParent, removeItemAll,
-         hide, show, lockUnlockScroll }
+         hide, show, lockUnlockScroll, getPrice }
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
@@ -50,4 +50,9 @@ function show(element) {
 function lockUnlockScroll(){
   let body = document.querySelector('body')
   body.classList.toggle('lock-scroll')
+}
+
+function getPrice(productCard) {
+  let priceTag = productCard.querySelector('.product-price').innerText
+  return parseFloat(priceTag.substr(2))
 }

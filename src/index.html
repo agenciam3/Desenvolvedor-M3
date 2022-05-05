@@ -32,13 +32,15 @@
     <section class="identifier">
 
       <h3>Blusas</h3>
-      <div id="custom-dropdown">
-        <div class="dropdown-arrow"></div>
+      <div id="sort-by">
+        <header class="mobile">ORDENAR</header>
+        <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
         <div class="selected-option">
           Ordenar por:
         </div>
-        <div class="dropdown-options">
-
+        <div class="dropdown-options d-none">
+          <div class="dropdown-option" data-order-by="ascPrice">Menor Preço</div>
+          <div class="dropdown-option" data-order-by="descPrice">Maior Preço</div>
         </div>
       </div>
       <div class="filtrar filter-btn">Filtrar</div>
@@ -116,6 +118,12 @@
       </section>
     </div>
   </div>
+  <section id="mobile-sort-by">
+    <i class="fa-solid fa-xmark close-modal mobile"></i>
+    <header class="mobile">ORDENAR</header>
+    <div class="modal-option" data-order-by="ascPrice">Menor Preço</div>
+    <div class="modal-option" data-order-by="descPrice">Maior Preço</div>
+  </section>
   <footer id="footer">M3: Implantação de E-commerce VTEX</footer>
 </body>
 
