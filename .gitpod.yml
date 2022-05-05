@@ -9,10 +9,7 @@ ports:
     onOpen: ignore
 
 tasks:
-  - name: server
-    init: npm install
+  - init: npm install
     command: |
       export SERVER_API=`gp url 5000`
-      npm run server
-  - name: front
-    command: npm run dev
+      npm run start:gp
