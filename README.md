@@ -5,7 +5,7 @@ Wellington de Araujo Dias Junior
 
 
 **E-mail:**
-wdiasjunior@gmail.com
+wdias@wdias.dev
 
 
 ### Instruções para executar o projeto
