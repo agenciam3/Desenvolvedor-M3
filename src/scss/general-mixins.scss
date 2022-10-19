@@ -1,0 +1,10 @@
+﻿@mixin typography($family, $weigth) {
+  font-family: $family, sans-serif;
+  font-weight: $weigth;
+}
+
+@mixin flex($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
