@@ -4,7 +4,7 @@
   "description": "Desafio da agencia m3 para novos colaboradores",
   "main": "index.js",
   "scripts": {
-    "start": "node_modules/.bin/cross-env SERVER_API=http://localhost:5000 npm-run-all --parallel dev server",
+    "start": "cross-env SERVER_API=http://localhost:5000 npm-run-all --parallel dev server",
     "start:gp": "npm-run-all --parallel dev server",
     "dev": "gulp",
     "server": "json-server ./db.json --port 5000"
