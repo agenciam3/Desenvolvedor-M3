@@ -1,11 +1,10 @@
 ﻿import { formatPrice } from "../utils/formatPrice.js";
-
+import { api } from "../services/api.js";
 class ProductHandler {
   static showProducts(products) {
     const showcase = document.querySelector(".showcase");
-    showcase.innerHTML = "";
 
-    console.log(products);
+    ProductHandler.addProductsToLocalStorage(products);
 
     products.forEach((product) => {
       const htmlProduct = ProductHandler.buildProduct(product);
@@ -35,6 +34,40 @@ class ProductHandler {
     card.append(image, title, price, installment, buyButton);
 
     return card;
+  }
+
+  static changePage(page) {
+    document
+      .querySelector(".loadMore__area__button")
+      .setAttribute("data-page", `${page}`);
+  }
+
+  static async loadMoreProducts() {
+    const currentPage = document
+      .querySelector(".loadMore__area__button")
+      .getAttribute("data-page");
+
+    const nextPage = +currentPage + 1;
+
+    const products = await api.getAll(nextPage);
+
+    if (products.length === 0) {
+      return null;
+    }
+
+    ProductHandler.showProducts(products);
+  }
+
+  static addProductsToLocalStorage(products) {
+    const previousProducts = JSON.parse(
+      localStorage.getItem("@m3commerce:products")
+    );
+
+    const newProducts = previousProducts
+      ? previousProducts.concat(products)
+      : products;
+
+    localStorage.setItem("@m3commerce:products", JSON.stringify(newProducts));
   }
 }
 

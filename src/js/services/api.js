@@ -1,6 +1,6 @@
-﻿import { WarningHandler } from "../handlers/WarningHandler.js";
-
-class Api {
+﻿import WarningHandler from "../handlers/WarningHandler.js";
+import ProductHandler from "../handlers/ProductHandler.js";
+export class Api {
   constructor(base_url) {
     this._BASE_URL =
       base_url[base_url.length - 1] !== "/" ? base_url + "/" : base_url;
@@ -18,10 +18,15 @@ class Api {
     this._BASE_URL = value;
   }
 
-  async getAll(endpoint = "") {
+  async getAll(page = 1, limit = 6) {
     try {
-      const response = await fetch(`${this.BASE_URL}${endpoint}`);
+      const response = await fetch(
+        `${this.BASE_URL}?_page=${page}&_limit=${limit}`
+      );
+
       const json = await response.json();
+
+      ProductHandler.changePage(page);
 
       return json;
     } catch (err) {
@@ -32,4 +37,4 @@ class Api {
   }
 }
 
-export default Api;
+export const api = new Api("http://localhost:5000/products");

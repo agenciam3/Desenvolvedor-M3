@@ -1,9 +1,14 @@
-import Api from "./services/api.js";
+import { api } from "./services/api.js";
 import ProductHandler from "./handlers/ProductHandler.js";
 
-const api = new Api("http://localhost:5000/products");
+localStorage.clear();
 
-const products = api.getAll().then((products) => {
-  console.log(products);
+api.getAll().then((products) => {
   ProductHandler.showProducts(products);
+});
+
+const loadMoreButton = document.querySelector(".loadMore__area__button");
+
+loadMoreButton.addEventListener("click", () => {
+  ProductHandler.loadMoreProducts();
 });
