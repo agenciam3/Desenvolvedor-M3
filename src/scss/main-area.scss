@@ -2,11 +2,9 @@
   margin-top: 40px;
 
   .filterOrderArea {
-    height: 65px;
     .filterOrderArea__firstArea {
       @include flex(stretch, center);
       flex-direction: column;
-      display: none;
 
       h1 {
         @include typography("open sans", 400);
@@ -44,6 +42,7 @@
         background-color: $white-color;
         display: flex;
         flex-direction: column;
+        display: none;
 
         .filter__title {
           width: 100%;
@@ -175,7 +174,6 @@
 
             .action__button--blue {
               background-color: $primary-color;
-              border: none;
               color: $white-color;
             }
           }
@@ -192,6 +190,7 @@
       background-color: $white-color;
       display: flex;
       flex-direction: column;
+      display: none;
       .order__title {
         width: 100%;
         height: 70px;
@@ -217,7 +216,6 @@
 
         .order__body__option {
           background: none;
-          border: none;
           @include typography("open sans", 400);
           font-size: 22px;
           color: $black;
@@ -225,6 +223,80 @@
           width: fit-content;
         }
       }
+    }
+  }
+
+  .showcase {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 18px 25px;
+    margin-top: 35px;
+    max-width: 716px;
+    margin-left: auto;
+
+    .card {
+      width: 100%;
+      max-width: 190px;
+      img {
+        width: 100%;
+        height: 242px;
+        object-fit: cover;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        @include typography("open sans", 400);
+        font-size: 14px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $black;
+        margin-bottom: 8px;
+        word-wrap: break-word;
+      }
+
+      span {
+        @include typography("open sans", 700);
+        font-size: 16px;
+        text-align: center;
+        color: $black;
+        margin-bottom: 5px;
+        display: block;
+        text-align: center;
+      }
+
+      p {
+        @include typography("open sans", 400);
+        font-size: 16px;
+        text-align: center;
+        color: $gray2;
+        margin-bottom: 11px;
+      }
+
+      button {
+        width: 100%;
+        height: 33px;
+        background-color: $black;
+        @include typography("open sans", 700);
+        font-size: 14px;
+        text-transform: uppercase;
+        color: $white-color;
+      }
+    }
+  }
+
+  .loadMore__area {
+    margin-top: 39px;
+    margin-bottom: 44px;
+    @include flex(center, stretch);
+    .loadMore__area__button {
+      width: 175px;
+      height: 35px;
+      background: $primary-color;
+      @include typography("open sans", 700);
+      font-size: 14px;
+      text-transform: uppercase;
+      color: $white-color;
+      margin: auto;
     }
   }
 }

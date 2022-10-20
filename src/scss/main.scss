@@ -5,9 +5,11 @@
 @import "my-reset";
 @import "header";
 @import "main-area";
+@import "footer";
 
 .container {
   width: 100%;
   max-width: 1226px;
   padding: 0px 30px;
+  margin: auto;
 }
