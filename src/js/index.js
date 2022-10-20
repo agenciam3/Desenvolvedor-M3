@@ -1,3 +1,9 @@
-const serverurl = process.env.SERVER_API;
+import Api from "./services/api.js";
+import ProductHandler from "./handlers/ProductHandler.js";
 
-console.log("Dev m3", serverurl);
+const api = new Api("http://localhost:5000/products");
+
+const products = api.getAll().then((products) => {
+  console.log(products);
+  ProductHandler.showProducts(products);
+});

@@ -6,6 +6,11 @@
 @import "header";
 @import "main-area";
 @import "footer";
+@import "warning";
+
+body {
+  overflow-x: hidden;
+}
 
 .container {
   width: 100%;

@@ -1,0 +1,93 @@
+﻿@keyframes entrar {
+  0% {
+    transform: translate(500px);
+  }
+  25% {
+    transform: translate(0px);
+  }
+  75% {
+    transform: translate(100px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.warning {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  height: 152px;
+  position: absolute;
+  top: 73px;
+  right: 12px;
+  background: #fff;
+  border-radius: 11px;
+  animation-name: entrar;
+  animation-duration: 1s;
+  z-index: 2;
+  border: 3px solid #f8f9fa;
+}
+
+.warning__status {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 28px;
+  width: 100%;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.warning__title {
+  @include typography("open sans", 400);
+  font-size: 14px;
+}
+
+.warning__close {
+  width: 31px;
+  height: 30px;
+  background: #e9ecef;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include typography("open sans", 400);
+  font-size: 14px;
+  color: #868e96;
+}
+
+.warning__message {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0px 28px;
+  @include typography("open sans", 400);
+  font-size: 14px;
+  color: #212529;
+}
+
+.warning__bar {
+  width: 100%;
+  height: 8px;
+  background: #39df8f;
+  border-radius: 0px 0px 8px 8px;
+  transition: width 6s linear;
+}
+
+@media (min-width: 680px) {
+  .warning {
+    width: 496px;
+    height: 174px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .warning {
+    top: unset;
+    bottom: 50px;
+    right: 28px;
+  }
+}
