@@ -1,6 +1,7 @@
 ﻿header {
   width: 100%;
   height: 64px;
+  padding: 0px 30px;
   border-bottom: 2px solid $border-header;
   @include flex(center, center);
 
@@ -51,6 +52,14 @@
         @include typography($second-family, $main-weight);
         padding: 2px;
       }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  header {
+    container {
+      padding: 0;
     }
   }
 }

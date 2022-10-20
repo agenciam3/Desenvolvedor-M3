@@ -1,6 +1,9 @@
 ﻿main {
   margin-top: 40px;
 
+  .container {
+    padding: 0px 30px;
+  }
   .filterOrderArea {
     .filterOrderArea__firstArea {
       @include flex(stretch, center);
@@ -158,6 +161,8 @@
 
           .filter__body__actions {
             @include flex(space-between, stretch);
+            justify-content: center;
+            gap: 50px;
 
             .action__button {
               width: 160px;
@@ -205,6 +210,14 @@
           text-transform: uppercase;
           color: $gray2;
         }
+
+        .order__title__desktop {
+          display: none;
+        }
+
+        .open {
+          display: none;
+        }
       }
 
       .order__body {
@@ -213,6 +226,7 @@
         flex-direction: column;
         overflow: auto;
         padding-bottom: 30px;
+        background-color: $white-color;
 
         .order__body__option {
           background: none;
@@ -297,6 +311,124 @@
       text-transform: uppercase;
       color: $white-color;
       margin: auto;
+    }
+  }
+}
+
+@media (min-width: 690px) {
+  main {
+    .container {
+      .showcase {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  main {
+    .container {
+      .filterOrderArea {
+        @include flex(space-between, stretch);
+        height: 70px;
+
+        .filterOrderArea__firstArea {
+          align-items: flex-start;
+
+          .firstArea__actions {
+            display: none;
+          }
+
+          .filterOrderArea__filter {
+            display: flex;
+            position: initial;
+
+            .filter__title {
+              display: none;
+            }
+
+            .filter__body {
+              padding: 0;
+              margin-top: 65px;
+
+              .filter__body__section {
+                .section__title {
+                  h3 {
+                    font-size: 16px;
+                    color: $title-color;
+                  }
+
+                  .open {
+                    display: none;
+                  }
+                }
+              }
+
+              .filter__body__actions {
+                display: none;
+              }
+            }
+          }
+        }
+
+        .filterOrderArea__order {
+          position: initial;
+          display: flex;
+          width: 142px;
+          z-index: 1;
+
+          .order__title {
+            border: 1px solid $gray2;
+            padding: 10px;
+            margin: 0;
+            .order__title__mobile {
+              display: none;
+            }
+            .order__title__desktop {
+              display: block;
+              font-size: 16px;
+              text-transform: capitalize;
+            }
+
+            .open {
+              display: block;
+              width: 10px;
+              height: 10px;
+              border-left: 1px solid $gray2;
+              border-bottom: 1px solid $gray2;
+              transform: rotate(-45deg);
+            }
+
+            .close {
+              display: none;
+            }
+          }
+
+          .order__body {
+            overflow: initial;
+            padding: 0px;
+            border: 1px solid $gray1;
+            .order__body__option {
+              font-size: 16px;
+              margin: 0;
+              width: 100%;
+              text-align: start;
+              padding-left: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1262px) {
+  main {
+    .container {
+      padding: 0;
+      .showcase {
+        margin-right: 142px;
+      }
     }
   }
 }
