@@ -36,13 +36,13 @@
                 <h2>filtrar</h2>
                 <img src="img/close.png" class="close" alt="botão de fechar" />
               </div>
-              <form action="" class="filter__body">
+              <div action="" class="filter__body">
                 <section class="filter__body__section">
                   <div class="section__title">
                     <h3>cores</h3>
                     <span class="open"></span>
                   </div>
-                  <div class="section__body">
+                  <form class="section__body section__body--color">
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
@@ -50,15 +50,13 @@
                       </span>
                       amarelo
                     </label>
-                    <label
-                      ><label>
-                        <span class="checkbox">
-                          <span class="marked"></span>
-                          <input type="checkbox" name="azul" />
-                        </span>
-                        azul
-                      </label></label
-                    >
+                    <label>
+                      <span class="checkbox">
+                        <span class="marked"></span>
+                        <input type="checkbox" name="azul" />
+                      </span>
+                      azul
+                    </label>
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
@@ -115,59 +113,69 @@
                       </span>
                       vinho
                     </label>
-                  </div>
+                  </form>
                 </section>
                 <section class="filter__body__section">
                   <div class="section__title">
                     <h3>tamanhos</h3>
                     <span class="open"></span>
                   </div>
-                  <div class="section__body section__body--size">
-                    <span class="size__item">
-                      p
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      m
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      g
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      gg
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      u
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      36
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      38
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      40
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      42
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      44
-                      <input type="checkbox" name="preto" />
-                    </span>
-                    <span class="size__item">
-                      46
-                      <input type="checkbox" name="preto" />
-                    </span>
-                  </div>
+                  <form class="section__body section__body--size">
+                    <label>
+                      <span class="size__item">p</span>
+                      <input type="checkbox" name="P" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">m</span>
+                      <input type="checkbox" name="M" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">g</span>
+                      <input type="checkbox" name="G" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">gg</span>
+                      <input type="checkbox" name="GG" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">u</span>
+                      <input type="checkbox" name="U" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">36</span>
+                      <input type="checkbox" name="36" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">38</span>
+                      <input type="checkbox" name="38" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">40</span>
+                      <input type="checkbox" name="40" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">42</span>
+                      <input type="checkbox" name="42" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">44</span>
+                      <input type="checkbox" name="44" />
+                    </label>
+
+                    <label>
+                      <span class="size__item">46</span>
+                      <input type="checkbox" name="46" />
+                    </label>
+                  </form>
                 </section>
 
                 <section class="filter__body__section">
@@ -175,43 +183,43 @@
                     <h3>Faixa de Preço</h3>
                     <span class="open"></span>
                   </div>
-                  <div class="section__body">
+                  <form class="section__body section__body--price">
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
-                        <input type="checkbox" name="rosa" />
+                        <input type="checkbox" name="0-50" />
                       </span>
                       de R$0 até R$50
                     </label>
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
-                        <input type="checkbox" name="rosa" />
+                        <input type="checkbox" name="51-150" />
                       </span>
                       de R$51 até R$150
                     </label>
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
-                        <input type="checkbox" name="rosa" />
+                        <input type="checkbox" name="151-300" />
                       </span>
                       de R$151 até R$300
                     </label>
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
-                        <input type="checkbox" name="rosa" />
+                        <input type="checkbox" name="301-500" />
                       </span>
                       de R$301 até R$500
                     </label>
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
-                        <input type="checkbox" name="rosa" />
+                        <input type="checkbox" name="500" />
                       </span>
                       a partir de R$ 500
                     </label>
-                  </div>
+                  </form>
                 </section>
 
                 <div class="filter__body__actions">
@@ -220,7 +228,7 @@
                   </button>
                   <button class="action__button">limpar</button>
                 </div>
-              </form>
+              </div>
             </div>
           </div>
 
@@ -232,7 +240,10 @@
               <span class="open"></span>
             </div>
             <div class="order__body">
-              <button class="order__body__option" data-order="recent">
+              <button
+                class="order__body__option orderSelected"
+                data-order="recent"
+              >
                 Mais recentes
               </button>
               <button class="order__body__option" data-order="lowest">

@@ -123,7 +123,7 @@
                   .marked {
                     width: 10px;
                     height: 9px;
-                    background: $primary-color;
+                    background: transparent;
                     display: block;
                   }
                 }
@@ -135,6 +135,14 @@
               display: grid;
               grid-template-columns: repeat(4, 40px);
               row-gap: 8px;
+
+              label {
+                margin: 0;
+
+                input {
+                  display: none;
+                }
+              }
             }
 
             .size__item {
@@ -247,6 +255,7 @@
     margin-top: 35px;
     max-width: 716px;
     margin-left: auto;
+    min-height: 680px;
 
     .card {
       width: 100%;

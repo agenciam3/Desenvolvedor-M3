@@ -1,16 +1,20 @@
 ﻿import { formatPrice } from "../utils/formatPrice.js";
 import { api } from "../services/api.js";
+import { disableLoadButton, enableLoadButton } from "../utils/LoadButton.js";
 class ProductHandler {
   static showProducts(products) {
     const showcase = document.querySelector(".showcase");
-
-    ProductHandler.addProductsToLocalStorage(products);
 
     products.forEach((product) => {
       const htmlProduct = ProductHandler.buildProduct(product);
 
       showcase.append(htmlProduct);
     });
+  }
+
+  static clearShowCase() {
+    const showcase = document.querySelector(".showcase");
+    showcase.innerText = "";
   }
 
   static buildProduct(product) {
@@ -43,6 +47,7 @@ class ProductHandler {
   }
 
   static async loadMoreProducts() {
+    disableLoadButton();
     const currentPage = document
       .querySelector(".loadMore__area__button")
       .getAttribute("data-page");
@@ -55,7 +60,10 @@ class ProductHandler {
       return null;
     }
 
+    ProductHandler.addProductsToLocalStorage(products);
+
     ProductHandler.showProducts(products);
+    enableLoadButton();
   }
 
   static addProductsToLocalStorage(products) {
