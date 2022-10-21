@@ -132,6 +132,10 @@
                   }
                 }
               }
+
+              .showMoreColors {
+                display: none;
+              }
             }
 
             .section__body--size {
@@ -375,6 +379,32 @@
                   }
 
                   .open {
+                    display: none;
+                  }
+                }
+
+                .section__body {
+                  .showMoreColors {
+                    @include flex(start, center);
+                    @include typography("open sans", 400);
+                    font-size: 12px;
+                    text-decoration-line: underline;
+                    color: $gray2;
+                    background: transparent;
+                    padding: 0;
+
+                    span {
+                      width: 7px;
+                      height: 7px;
+                      display: block;
+                      border-left: 1px solid $gray2;
+                      border-bottom: 1px solid $gray2;
+                      transform: rotate(-45deg);
+                      margin-left: 5px;
+                    }
+                  }
+
+                  .notInScreen {
                     display: none;
                   }
                 }

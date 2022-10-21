@@ -2,6 +2,7 @@
 import { api } from "../services/api.js";
 import { disableLoadButton, enableLoadButton } from "../utils/LoadButton.js";
 import FilterHandler from "./FilterHandler.js";
+import CartHandler from "./CartHandler.js";
 class ProductHandler {
   static showProducts(products) {
     const showcase = document.querySelector(".showcase");
@@ -35,6 +36,10 @@ class ProductHandler {
       product.parcelamento[1]
     )}`;
     buyButton.innerText = "Comprar";
+
+    buyButton.addEventListener("click", () => {
+      CartHandler.addToCart(product);
+    });
 
     card.append(image, title, price, installment, buyButton);
 

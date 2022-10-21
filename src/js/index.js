@@ -2,6 +2,7 @@ import { api } from "./services/api.js";
 import ProductHandler from "./handlers/ProductHandler.js";
 import FilterHandler from "./handlers/FilterHandler.js";
 import OrderHandler from "./handlers/OrderHandler.js";
+import CartHandler from "./handlers/CartHandler.js";
 
 const loadMoreButton = document.querySelector(".loadMore__area__button");
 const applyFilterButton = document.querySelector(".action__button--blue");
@@ -23,6 +24,9 @@ const openSectionBodyPriceButton = document.querySelector(".open--price");
 const cleanFilters = document.querySelector(
   ".filter__body__actions button:last-child"
 );
+const closeCartButton = document.querySelector(".cart__close");
+const openCartIcon = document.querySelector(".cart-icon");
+const showMoreColors = document.querySelector(".showMoreColors");
 
 localStorage.clear();
 
@@ -91,4 +95,20 @@ openSectionBodyPriceButton.addEventListener("click", () => {
 
 cleanFilters.addEventListener("click", () => {
   FilterHandler.cleanFilters();
+});
+
+closeCartButton.addEventListener("click", () => {
+  CartHandler.closeCart();
+});
+
+openCartIcon.addEventListener("click", () => {
+  CartHandler.openCart();
+});
+
+showMoreColors.addEventListener("click", (e) => {
+  e.preventDefault();
+  e.currentTarget.style.display = "none";
+  const colorsNotInScreen = document.querySelectorAll(".notInScreen");
+
+  colorsNotInScreen.forEach((color) => color.classList.remove("notInScreen"));
 });

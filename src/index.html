@@ -17,7 +17,7 @@
             <div class="handbag__strap"></div>
             <div class="handbag__body"></div>
           </div>
-          <div class="cart-icon__circle">5</div>
+          <div class="cart-icon__circle">0</div>
         </div>
       </div>
     </header>
@@ -80,35 +80,38 @@
                       </span>
                       laranja
                     </label>
-                    <label>
+                    <button class="showMoreColors">
+                      Ver todas as cores <span></span>
+                    </button>
+                    <label class="notInScreen">
                       <span class="checkbox">
                         <span class="marked"></span>
                         <input type="checkbox" name="verde" />
                       </span>
                       verde
                     </label>
-                    <label>
+                    <label class="notInScreen">
                       <span class="checkbox">
                         <span class="marked"></span>
                         <input type="checkbox" name="vermelho" />
                       </span>
                       vermelho
                     </label>
-                    <label>
+                    <label class="notInScreen">
                       <span class="checkbox">
                         <span class="marked"></span>
                         <input type="checkbox" name="preto" />
                       </span>
                       preto
                     </label>
-                    <label>
+                    <label class="notInScreen">
                       <span class="checkbox">
                         <span class="marked"></span>
                         <input type="checkbox" name="rosa" />
                       </span>
                       rosa
                     </label>
-                    <label>
+                    <label class="notInScreen">
                       <span class="checkbox">
                         <span class="marked"></span>
                         <input type="checkbox" name="vinho" />
@@ -266,6 +269,30 @@
         </div>
       </div>
     </main>
+    <aside>
+      <section class="cart">
+        <section class="cart__head">
+          <div class="cart-icon">
+            <div class="cart-icon__handbag">
+              <div class="handbag__strap"></div>
+              <div class="handbag__body"></div>
+            </div>
+          </div>
+          <button class="cart__close">X</button>
+        </section>
+        <section class="cart__body"></section>
+        <section class="cart__foot">
+          <section class="quantity">
+            <span class="quantity__title">Quantidade</span>
+            <span class="quantity__value">0</span>
+          </section>
+          <section class="total">
+            <span class="total__title">Total</span>
+            <span class="total__value">R$ 0,00</span>
+          </section>
+        </section>
+      </section>
+    </aside>
 
     <footer>M3: Implantação de E-commerce VTEX</footer>
   </body>
