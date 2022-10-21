@@ -1,5 +1,5 @@
 const path = require("path");
-
+const imagemin = require("gulp-imagemin");
 const { series, src, dest, parallel, watch } = require("gulp");
 const webpack = require("webpack");
 const del = require("del");
@@ -7,7 +7,6 @@ const autoprefixer = require("gulp-autoprefixer");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
-
 const webpackConfig = require("./webpack.config.js");
 
 const paths = {
@@ -83,7 +82,9 @@ function html() {
 }
 
 function img() {
-  return src(paths.img.src).pipe(dest(paths.dest + "/img"));
+  return src(paths.img.src)
+    .pipe(imagemin())
+    .pipe(dest(paths.dest + "/img"));
 }
 
 const build = series(clean, parallel(styles, scripts, html, img));

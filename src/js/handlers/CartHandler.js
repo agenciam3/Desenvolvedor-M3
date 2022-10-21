@@ -111,7 +111,7 @@ class CartHandler {
       this.cart.push(product);
 
       WarningHandler.clearWarnings();
-      WarningHandler.showWarning("Produto Adicionado!");
+      WarningHandler.showWarning("Produto Adicionado!", false);
       this.updateCart();
     } else {
       this.increaseInCart(product);
