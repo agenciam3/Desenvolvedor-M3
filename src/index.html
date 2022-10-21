@@ -31,7 +31,7 @@
               <button>ordenar</button>
             </div>
 
-            <div class="filterOrderArea__filter">
+            <div class="filterOrderArea__filter closeFilterOrder">
               <div class="filter__title">
                 <h2>filtrar</h2>
                 <img src="img/close.png" class="close" alt="botão de fechar" />
@@ -40,9 +40,11 @@
                 <section class="filter__body__section">
                   <div class="section__title">
                     <h3>cores</h3>
-                    <span class="open"></span>
+                    <span class="open open--color"></span>
                   </div>
-                  <form class="section__body section__body--color">
+                  <form
+                    class="section__body section__body--color closeColorSectionBody"
+                  >
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
@@ -118,9 +120,11 @@
                 <section class="filter__body__section">
                   <div class="section__title">
                     <h3>tamanhos</h3>
-                    <span class="open"></span>
+                    <span class="open open--size"></span>
                   </div>
-                  <form class="section__body section__body--size">
+                  <form
+                    class="section__body section__body--size closeSizeSectionBody"
+                  >
                     <label>
                       <span class="size__item">p</span>
                       <input type="checkbox" name="P" />
@@ -181,9 +185,11 @@
                 <section class="filter__body__section">
                   <div class="section__title">
                     <h3>Faixa de Preço</h3>
-                    <span class="open"></span>
+                    <span class="open open--price"></span>
                   </div>
-                  <form class="section__body section__body--price">
+                  <form
+                    class="section__body section__body--price closePriceSectionBody"
+                  >
                     <label>
                       <span class="checkbox">
                         <span class="marked"></span>
@@ -232,7 +238,7 @@
             </div>
           </div>
 
-          <div class="filterOrderArea__order">
+          <div class="filterOrderArea__order closeFilterOrder">
             <div class="order__title">
               <h2 class="order__title__mobile">ordenar</h2>
               <h2 class="order__title__desktop">Ordenar por:</h2>

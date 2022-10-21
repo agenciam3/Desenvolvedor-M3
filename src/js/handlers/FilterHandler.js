@@ -15,23 +15,50 @@ class FilterHandler {
         if (checkbox.classList.contains("marked")) {
           const input = e.currentTarget.nextElementSibling;
 
-          if (input.checked) {
-            checkbox.style.background = "transparent";
-          } else {
-            checkbox.style.backgroundColor = "#00c0ee";
-          }
+          FilterHandler.changeLayoutOfMarkedInput(input.checked, checkbox);
         } else {
           const input = checkbox.nextElementSibling;
-          if (input.checked) {
-            checkbox.style.border = "1px solid rgba(0, 0, 0, 0.5)";
-            checkbox.style.color = "rgba(0, 0, 0, 0.5)";
-          } else {
-            checkbox.style.border = "1px solid #00c0ee";
-            checkbox.style.color = "#000";
-          }
+
+          FilterHandler.changeLayoutOfSizeInput(input.checked, checkbox);
         }
       });
     });
+  }
+
+  static changeLayoutOfMarkedInput(checked, checkbox) {
+    if (checked) {
+      checkbox.style.background = "transparent";
+    } else {
+      checkbox.style.backgroundColor = "#00c0ee";
+    }
+  }
+
+  static changeLayoutOfSizeInput(checked, checkbox) {
+    if (checked) {
+      checkbox.style.border = "1px solid rgba(0, 0, 0, 0.5)";
+      checkbox.style.color = "rgba(0, 0, 0, 0.5)";
+    } else {
+      checkbox.style.border = "1px solid #00c0ee";
+      checkbox.style.color = "#000";
+    }
+  }
+
+  static cleanFilters() {
+    const checkboxes = document.querySelectorAll(".marked, .size__item");
+
+    checkboxes.forEach((checkbox) => {
+      const input = checkbox.nextElementSibling;
+
+      input.checked = false;
+
+      if (checkbox.classList.contains("marked")) {
+        FilterHandler.changeLayoutOfMarkedInput(!input.checked, checkbox);
+      } else {
+        FilterHandler.changeLayoutOfSizeInput(!input.checked, checkbox);
+      }
+    });
+
+    FilterHandler.filterProducts();
   }
 
   static filterProducts() {
@@ -122,6 +149,48 @@ class FilterHandler {
       "@m3commerce:filteredProducts",
       JSON.stringify(products)
     );
+  }
+
+  static openFilterInMobile() {
+    const filteredOrderedFilter = document.querySelector(
+      ".filterOrderArea__filter"
+    );
+
+    filteredOrderedFilter.classList.add("openOrderFilter");
+
+    setTimeout(() => {
+      filteredOrderedFilter.classList.remove("closeFilterOrder");
+    }, 100);
+  }
+
+  static closeFilterInMobile() {
+    const filteredOrderedFilter = document.querySelector(
+      ".filterOrderArea__filter"
+    );
+
+    filteredOrderedFilter.classList.add("closeFilterOrder");
+
+    setTimeout(() => {
+      filteredOrderedFilter.classList.remove("openOrderFilter");
+    }, 500);
+  }
+
+  static toggleSectionBodyColor() {
+    const sectionBodyColor = document.querySelector(".section__body--color");
+
+    sectionBodyColor.classList.toggle("openColorSectionBody");
+  }
+
+  static toggleSectionBodySize() {
+    const sectionBodySize = document.querySelector(".section__body--size");
+
+    sectionBodySize.classList.toggle("openSizeSectionBody");
+  }
+
+  static toggleSectionBodyPrice() {
+    const sectionBodyPrice = document.querySelector(".section__body--price");
+
+    sectionBodyPrice.classList.toggle("openPriceSectionBody");
   }
 }
 

@@ -75,6 +75,30 @@ class OrderHandler {
       .querySelector(`[data-order="${currentOrder}"]`)
       .classList.add("orderSelected");
   }
+
+  static openOrderInMobile() {
+    const filteredOrderedOrder = document.querySelector(
+      ".filterOrderArea__order"
+    );
+
+    filteredOrderedOrder.classList.add("openOrderFilter");
+
+    setTimeout(() => {
+      filteredOrderedOrder.classList.remove("closeFilterOrder");
+    }, 100);
+  }
+
+  static closeOrderInMobile() {
+    const filteredOrderedOrder = document.querySelector(
+      ".filterOrderArea__order"
+    );
+
+    filteredOrderedOrder.classList.add("closeFilterOrder");
+
+    setTimeout(() => {
+      filteredOrderedOrder.classList.remove("openOrderFilter");
+    }, 500);
+  }
 }
 
 export default OrderHandler;

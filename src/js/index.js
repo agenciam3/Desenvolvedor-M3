@@ -7,6 +7,22 @@ const loadMoreButton = document.querySelector(".loadMore__area__button");
 const applyFilterButton = document.querySelector(".action__button--blue");
 const orderButtons = document.querySelectorAll(".order__body__option");
 const orderOpen = document.querySelector(".order__title .open");
+const filterMobileButton = document.querySelector(
+  ".firstArea__actions button:nth-child(1)"
+);
+const filterCloserMobileButton = document.querySelector(
+  ".filter__title .close"
+);
+const orderMobileButton = document.querySelector(
+  ".firstArea__actions button:nth-child(2)"
+);
+const orderCloserMobileButton = document.querySelector(".order__title .close");
+const openSectionBodyColorButton = document.querySelector(".open--color");
+const openSectionBodySizeButton = document.querySelector(".open--size");
+const openSectionBodyPriceButton = document.querySelector(".open--price");
+const cleanFilters = document.querySelector(
+  ".filter__body__actions button:last-child"
+);
 
 localStorage.clear();
 
@@ -23,6 +39,7 @@ FilterHandler.markOrMarkOffCheckbox();
 if (window.screen.width < 1100) {
   applyFilterButton.addEventListener("click", () => {
     FilterHandler.filterProducts();
+    FilterHandler.closeFilterInMobile();
   });
 }
 
@@ -42,4 +59,36 @@ orderOpen.addEventListener("click", () => {
   const orderBody = document.querySelector(".order__body");
 
   orderBody.classList.toggle("orderOpen");
+});
+
+filterMobileButton.addEventListener("click", () => {
+  FilterHandler.openFilterInMobile();
+});
+
+filterCloserMobileButton.addEventListener("click", () => {
+  FilterHandler.closeFilterInMobile();
+});
+
+orderMobileButton.addEventListener("click", () => {
+  OrderHandler.openOrderInMobile();
+});
+
+orderCloserMobileButton.addEventListener("click", () => {
+  OrderHandler.closeOrderInMobile();
+});
+
+openSectionBodyColorButton.addEventListener("click", () => {
+  FilterHandler.toggleSectionBodyColor();
+});
+
+openSectionBodySizeButton.addEventListener("click", () => {
+  FilterHandler.toggleSectionBodySize();
+});
+
+openSectionBodyPriceButton.addEventListener("click", () => {
+  FilterHandler.toggleSectionBodyPrice();
+});
+
+cleanFilters.addEventListener("click", () => {
+  FilterHandler.cleanFilters();
 });

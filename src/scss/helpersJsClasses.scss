@@ -23,3 +23,44 @@
     }
   }
 }
+
+@media (max-width: 1099px) {
+  main {
+    .container {
+      .filterOrderArea {
+        .filterOrderArea__firstArea {
+          .filterOrderArea__filter {
+            .filter__body {
+              .filter__body__section {
+                .closeColorSectionBody {
+                  height: 0px;
+                }
+                .openColorSectionBody {
+                  height: 305px;
+                }
+                .closeSizeSectionBody {
+                  height: 0px;
+                }
+                .openSizeSectionBody {
+                  height: 112px;
+                }
+                .closePriceSectionBody {
+                  height: 0px;
+                }
+                .openPriceSectionBody {
+                  height: 144px;
+                }
+              }
+            }
+          }
+        }
+        .openOrderFilter {
+          display: flex;
+        }
+        .closeFilterOrder {
+          transform: translate(100vw);
+        }
+      }
+    }
+  }
+}
