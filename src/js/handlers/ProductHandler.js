@@ -1,6 +1,7 @@
 ﻿import { formatPrice } from "../utils/formatPrice.js";
 import { api } from "../services/api.js";
 import { disableLoadButton, enableLoadButton } from "../utils/LoadButton.js";
+import FilterHandler from "./FilterHandler.js";
 class ProductHandler {
   static showProducts(products) {
     const showcase = document.querySelector(".showcase");
@@ -62,7 +63,7 @@ class ProductHandler {
 
     ProductHandler.addProductsToLocalStorage(products);
 
-    ProductHandler.showProducts(products);
+    FilterHandler.filterProducts();
     enableLoadButton();
   }
 

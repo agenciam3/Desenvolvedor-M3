@@ -1,4 +1,5 @@
-﻿import ProductHandler from "./ProductHandler.js";
+﻿import OrderHandler from "./OrderHandler.js";
+import ProductHandler from "./ProductHandler.js";
 
 class FilterHandler {
   static markOrMarkOffCheckbox() {
@@ -48,7 +49,7 @@ class FilterHandler {
 
     const products = JSON.parse(localStorage.getItem("@m3commerce:products"));
 
-    const filteredProducts = products.filter((product) => {
+    let filteredProducts = products.filter((product) => {
       return (
         FilterHandler.verifyColor(colorForm, product.color) &&
         FilterHandler.verifySize(sizeForm, product.size) &&
@@ -56,10 +57,19 @@ class FilterHandler {
       );
     });
 
+    const currentOrder = document.querySelector(".orderSelected");
+
+    if (currentOrder) {
+      filteredProducts = OrderHandler.orderProducts(
+        currentOrder.getAttribute("data-order"),
+        filteredProducts
+      );
+    }
+
+    FilterHandler.addFilteredProductsToLocalStorage(filteredProducts);
+
     ProductHandler.clearShowCase();
     ProductHandler.showProducts(filteredProducts);
-
-    console.log(filteredProducts);
   }
 
   static verifyColor(colors, productColor) {
@@ -105,6 +115,13 @@ class FilterHandler {
         }
       }
     }
+  }
+
+  static addFilteredProductsToLocalStorage(products) {
+    localStorage.setItem(
+      "@m3commerce:filteredProducts",
+      JSON.stringify(products)
+    );
   }
 }
 

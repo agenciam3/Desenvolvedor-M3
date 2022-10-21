@@ -9,3 +9,17 @@
     }
   }
 }
+
+@media (min-width: 1100px) {
+  main {
+    .container {
+      .filterOrderArea {
+        .filterOrderArea__order {
+          .orderOpen {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
