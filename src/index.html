@@ -1,19 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <img
+          src="./img/logo-m3.png"
+          class="header__logo"
+          alt="Logo de la empresa"
+          title="Logo de la empresa"
+        />
 
-<body>
+        <div class="cart" id="cart">
+          <img
+            src="./img/bag.png"
+            class="cart__bag"
+            alt="Logo del carrito de compras"
+            title="Carrito de compras"
+          />
+          <span class="cart__product-counter" id="productCounter">0</span>
+        </div>
+      </div>
+    </header>
 
-</body>
-<h1>Desafio m3</h1>
+    <section class="modal-cart" id="modalCart">
+      <div class="cart" id="cartContainer"></div>
 
-<script src="bundle.js"></script>
+      <div class="cart-details">
+        <p class="cart-details__total-quantity">
+          Productos: <span id="totalProducts">0</span>
+        </p>
 
+        <p class="cart-details__total-price">
+          Precio total: <span id="totalPrice">0</span>
+        </p>
+      </div>
+    </section>
+
+    <main class="main">
+      <div class="main__layout">
+        <h1 class="main__title">Blusas</h1>
+
+        <section class="filter-buttons" id="filterButtons">
+          <div class="filter-buttons__content">
+            <a
+              href="#filter"
+              class="filter-buttons__option filter-buttons__option--border"
+              id="btnFilter"
+            >
+              Filtrar</a
+            >
+            <a href="#order" class="filter-buttons__option" id="btnOrder"
+              >Ordernar</a
+            >
+          </div>
+        </section>
+
+        <section class="modal modal--one" id="filter">
+          <div class="modal__head">
+            <span class="modal__name">Filtrar</span>
+
+            <a href="#" class="modal__close">
+              <img
+                src="./img/close-icon.svg"
+                class="modal__icon"
+                alt="Icono para cerrar la ventana"
+                title="Cerrar la ventana"
+              />
+            </a>
+          </div>
+
+          <section class="accordion" id="accordion">
+            <div class="accordion__item">
+              <input type="checkbox" class="accordion__input" id="colour" />
+
+              <label for="colour" class="accordion__head">
+                <span>cores</span>
+                <img
+                  src="./img/arrow-down.svg"
+                  alt="Flecha hacia abajo"
+                  title="Abrir acordeón"
+                />
+              </label>
+
+              <div class="accordion__content">
+                <form class="accordion__form" id="colorFilter">
+                  <label for="yellow" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-color"
+                      value="Amarelo"
+                      id="yellow"
+                    />
+                    <span>Amarelo</span>
+                  </label>
+
+                  <label for="blue" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-color"
+                      value="Azul"
+                      id="blue"
+                    />
+                    <span>Azul</span>
+                  </label>
+
+                  <label for="white" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-color"
+                      value="Branco"
+                      id="white"
+                    />
+                    <span>Branco</span>
+                  </label>
+
+                  <label for="gray" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-color"
+                      value="Cinza"
+                      id="gray"
+                    />
+                    <span>Cinza</span>
+                  </label>
+
+                  <label for="orange" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-color"
+                      value="Laranja"
+                      id="orange"
+                    />
+                    <span>Laranja</span>
+                  </label>
+
+                    <a href="#">Ver todas as cores</a>
+                </form>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <input type="checkbox" class="accordion__input" id="size" />
+
+              <label for="size" class="accordion__head">
+                <span>Tamanhos</span>
+                <img
+                  src="./img/arrow-down.svg"
+                  alt="Flecha hacia abajo"
+                  title="Abrir acordeón"
+                />
+              </label>
+
+              <div class="accordion__content">
+                <div class="sizes-grid" id="sizeFilter">
+                  <button
+                    class="sizes-grid__button"
+                    data-size="p"
+                    type="button"
+                  >
+                    p
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="m"
+                    type="button"
+                  >
+                    m
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="g"
+                    type="button"
+                  >
+                    g
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="gg"
+                    type="button"
+                  >
+                    gg
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="u"
+                    type="button"
+                  >
+                    u
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="36"
+                    type="button"
+                  >
+                    36
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="38"
+                    type="button"
+                  >
+                    38
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="40"
+                    type="button"
+                  >
+                    40
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="36"
+                    type="button"
+                  >
+                    36
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="38"
+                    type="button"
+                  >
+                    38
+                  </button>
+
+                  <button
+                    class="sizes-grid__button"
+                    data-size="40"
+                    type="button"
+                  >
+                    40
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion__item">
+              <input type="checkbox" class="accordion__input" id="price" />
+
+              <label for="price" class="accordion__head">
+                <span>Faixa de preço</span>
+                <img
+                  src="./img/arrow-down.svg"
+                  alt="Flecha hacia abajo"
+                  title="Abrir acordeón"
+                />
+              </label>
+
+              <div class="accordion__content">
+                <form class="accordion__form" id="priceRangeFilter">
+                  <label for="priceRange1" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-range"
+                      data-min="0"
+                      data-max="50"
+                      id="priceRange1"
+                    />
+                    <span>de R$0 até R$50</span>
+                  </label>
+
+                  <label for="priceRange2" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-range"
+                      data-min="51"
+                      data-max="150"
+                      id="priceRange2"
+                    />
+                    <span>de R$51 até R$150</span>
+                  </label>
+
+                  <label for="priceRange3" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-range"
+                      data-min="151"
+                      data-max="300"
+                      id="priceRange3"
+                    />
+                    <span>de R$151 até R$300</span>
+                  </label>
+
+                  <label for="priceRange4" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-range"
+                      data-min="301"
+                      data-max="500"
+                      id="priceRange4"
+                    />
+                    <span>de R$301 até R$500</span>
+                  </label>
+
+                  <label for="priceRange5" class="accordion__option">
+                    <input
+                      type="checkbox"
+                      class="accordion__input-range"
+                      data-min="500"
+                      data-max="Infinity"
+                      id="priceRange5"
+                    />
+                    <span>a partir de R$ 500</span>
+                  </label>
+                </form>
+
+                <div class="accordion__filters" id="accordionButtons">
+                  <button
+                    class="
+                      accordion__filters__button
+                      accordion__filters__button--primary
+                    "
+                    data-button="apply"
+                    type="button"
+                  >
+                    Aplicar
+                  </button>
+
+                  <button
+                    class="
+                      accordion__filters__button
+                      accordion__filters__button--secondary
+                    "
+                    data-button="reset"
+                    type="button"
+                  >
+                    Limpar
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <section class="modal modal--two" id="order">
+          <div class="modal__head">
+            <span class="modal__name">Ordenar</span>
+
+            <a href="#" class="modal__close">
+              <img
+                src="./img/close-icon.svg"
+                class="modal__icon"
+                alt="Icono para cerrar la ventana"
+                title="Cerrar la ventana"
+              />
+            </a>
+          </div>
+
+          <select class="filter-select" id="filterSelect" multiple>
+            <option class="filter-select__option" value="Ordenar Por">
+              Ordenar Por
+            </option>
+
+            <option class="filter-select__option" value="Mas recentes">
+              Mais recente
+            </option>
+
+            <option class="filter-select__option" value="Maior preco">
+              Maior preço
+            </option>
+
+            <option class="filter-select__option" value="Menor preco">
+              Menor preço
+            </option>
+          </select>
+        </section>
+
+        <section class="product-list">
+          <div class="product-list__content" id="productListContent">
+            
+          </div>
+          <button class="product-list__btn-show" type="button" id="btnShowMore">
+            Carregar mais
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__description">M3: Implantação de E-commerce VTEX</p>
+    </footer>
+
+    <script src="bundle.js"></script>
+
+  </body>
 </html>

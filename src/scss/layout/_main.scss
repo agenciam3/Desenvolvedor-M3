@@ -1,0 +1,31 @@
+.main {
+  min-height: 100vh;
+  margin-top: 24px;
+
+  &__layout {
+    @include wrapper;
+    display: grid;
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: 1fr 4fr 1fr;
+      column-gap: 60px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 1fr 6fr 1fr;
+      column-gap: 110px;
+    }
+  }
+
+  &__title {
+    padding-bottom: 12px;
+    font-size: 2rem;
+    color: rgba(51, 51, 51, 1);
+    text-align: center;
+
+    @media screen and (min-width: 1024px) {
+      padding: 0;
+      text-align: left;
+    }
+  }
+}

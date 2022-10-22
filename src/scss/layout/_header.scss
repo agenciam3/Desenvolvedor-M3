@@ -1,0 +1,35 @@
+.header {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 2px solid #c7c7c7;
+
+  &__content {
+    @include wrapper;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+ 
+
+  .cart {
+    position: relative;
+    cursor: pointer;
+
+    &__bag {
+      width: 25px;
+    }
+
+    &__product-counter {
+      position: absolute;
+      padding: 1px 5px;
+      background-color: $primary;
+      border-radius: 50%;
+      color: $white;
+      right: -5px;
+      bottom: 0;
+    }
+  }
+}

@@ -1,1 +1,15 @@
-@import "reset";
+@import "./base/reset";
+@import "./base/typography";
+
+@import "./utilities/variables";
+@import "./utilities/mixins";
+
+@import "./layout/header";
+@import "./layout/main";
+@import "./layout/filterButtons";
+@import "./layout/modal";
+@import "./layout/accordion";
+@import "./layout/modalCart";
+@import "./layout/filterSelect";
+@import "./layout/productList";
+@import "./layout/footer";

@@ -1,0 +1,104 @@
+.accordion {
+  margin-top: 40px;
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__head {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    color: $gray-two;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    margin: 0;
+    height: 0;
+    overflow: hidden;
+
+    @media screen and (min-width: 1024px) {
+      height: auto;
+      overflow: visible;
+    }
+  }
+
+  &__input:checked ~ &__content {
+    margin: 15px 0;
+    height: auto;
+    overflow: visible;
+  }
+
+  &__option {
+    display: block;
+    margin: 16px 0;
+    cursor: pointer;
+  }
+
+  .sizes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    gap: 8px;
+
+    &__button {
+      display: inline-block;
+      padding: 8px 0;
+      text-align: center;
+      font-family: "Open Sans", sans-serif;
+      font-size: 1rem;
+      text-transform: uppercase;
+      color: $gray-two;
+      background-color: $white;
+      border: 1px solid $gray-two;
+      cursor: pointer;
+      transition: border 500ms;
+
+      &.selected {
+        color: $black;
+        border: 1px solid $primary;
+      }
+    }
+  }
+
+  &__filters {
+    display: flex;
+    column-gap: 23px;
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+
+    &__button {
+      flex-basis: 50%;
+      padding: 10px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      &--primary {
+        background-color: $primary;
+        color: $white;
+      }
+
+      &--secondary {
+        background-color: $white;
+        color: $gray-two;
+        border: 1px solid $gray-two;
+      }
+    }
+  }
+}
