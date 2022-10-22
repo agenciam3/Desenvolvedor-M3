@@ -1,0 +1,57 @@
+.modal-cart {
+  position: absolute;
+  display: none;
+  margin: 12px auto;
+  width: 319px;
+  background-color: $white;
+  border: 1px solid #ccc;
+  right: 0;
+  left: 0;
+
+  &.open {
+    display: block;
+  }
+
+  .cart {
+    height: 171px;
+    overflow-y: scroll;
+  }
+
+  .cart-product {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+
+    &__close {
+      padding: 5px 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    &__name {
+      display: block;
+    }
+  }
+
+  .cart-details {
+    width: 90%;
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    background-color: $black;
+    color: $white;
+
+    &__total-quantity,
+    &__total-price {
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+}

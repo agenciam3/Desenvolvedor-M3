@@ -1,0 +1,14 @@
+@mixin wrapper {
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
