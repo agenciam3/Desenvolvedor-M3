@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -10,9 +10,179 @@
 </head>
 
 <body>
-
+  <header>
+    <a href="/"><img id="logo" src="./img/logo-m3.png" alt="M3 E-commerce" /></a> 
+    <div class="div-bag">
+      <img id="bag-cart" src="./img/image.png" alt="Icone Carrinho" />
+    </div>
+  </header>
+  <main  id="main">
+    <aside>
+      <h1>Blusas</h1>
+      <form id="input_filters" class="hidden">
+        <div class="titles_filters">
+          <h2 class="filter-title">cores</h2>
+        </div>
+        <div class="check_filter_options checks_colors hidden">
+          <label tabindex="3" for="amarelo" class="color-label">
+            <input  class="check_color" type="checkbox" name="amarelo" id="amarelo" value="amarelo">
+            <span class="label_check"></span>
+            Amarelo
+          </label>
+          <label for="azul" class="color-label">
+            <input class="check_color" type="checkbox" name="azul" id="azul" value="azul">
+            <span class="label_check"></span>
+            Azul
+          </label>
+          <label for="branco" class="color-label">
+            <input class="check_color" type="checkbox" name="branco" id="branco" value="branco">
+            <span class="label_check"></span>
+            Branco
+          </label>
+          <label for="cinza" class="color-label">
+            <input class="check_color" type="checkbox" name="cinza" id="cinza" value="cinza">
+            <span class="label_check"></span>
+            Cinza
+          </label>
+          <label for="laranja" class="color-label">
+            <input class="check_color" type="checkbox" name="laranja" id="laranja" value="laranja">
+            <span class="label_check"></span>
+            Laranja
+          </label>
+          <label for="verde" class="color-label hidden-desktop">
+            <input class="check_color" type="checkbox" name="verde" id="verde" value="verde">
+            <span class="label_check"></span>
+            Verde
+          </label>
+          <label for="vermelho" class="color-label hidden-desktop">
+            <input class="check_color" type="checkbox" name="vermelho" id="vermelho" value="vermelho">
+            <span class="label_check"></span>
+            Vermelho
+          </label>
+          <label for="preto" class="color-label hidden-desktop">
+            <input class="check_color" type="checkbox" name="preto" id="preto" value="preto">
+            <span class="label_check"></span>
+            Preto
+          </label>
+          <label for="rosa" class="color-label hidden-desktop">
+            <input class="check_color" type="checkbox" name="rosa" id="rosa" value="rosa">
+            <span class="label_check"></span>
+            Rosa
+          </label>
+          <label for="vinho" class="color-label hidden-desktop">
+            <input class="check_color" type="checkbox" name="vinho" id="vinho" value="vinho">
+            <span class="label_check"></span>
+            Vinho
+          </label>
+          <button type="button" class="show-all-colors-btn">Ver todas as cores</button>
+        </div>
+        <div class="titles_filters">
+          <h2 class="filter-title">Tamanhos</h2>
+        </div>
+        <div class="check_filter_options check_sizes hidden">
+          <label for="p">
+            <input class="check_size" type="checkbox" name="p" id="p" value="P">
+            <span>P</span>
+          </label>
+          <label for="M">
+            <input class="check_size" type="checkbox" name="M" id="M" value="M">
+            <span>M</span>
+          </label>
+          <label for="G">
+            <input class="check_size" type="checkbox" name="G" id="G" value="G">
+            <span>G</span>
+          </label>
+          <label for="GG">
+            <input class="check_size" type="checkbox" name="GG" id="GG" value="GG">
+            <span>GG</span>
+          </label>
+          <label for="U">
+            <input class="check_size" type="checkbox" name="U" id="U" value="U">
+            <span>U</span>
+          </label>
+          <label for="36">
+            <input class="check_size" type="checkbox" name="36" id="36" value="36">
+            <span>36</span>
+          </label>
+          <label for="38">
+            <input class="check_size" type="checkbox" name="38" id="38" value="38">
+            <span>38</span>
+          </label>
+          <label for="40">
+            <input class="check_size" type="checkbox" name="40" id="40" value="40">
+            <span>40</span>
+          </label>
+          <label for="36b">
+            <input class="check_size" type="checkbox" name="36b" id="36b" value="36">
+            <span>36</span>
+          </label>
+          <label for="38b">
+            <input class="check_size" type="checkbox" name="38b" id="38b" value="38">
+            <span>38</span>
+          </label>
+          <label for="40b">
+            <input class="check_size" type="checkbox" name="40b" id="40b" value="40">
+            <span>40</span>
+          </label>
+        </div>
+        <div class="titles_filters">
+          <h2 class="filter-title">Faixa de preço</h2>
+        </div>
+        <div class="check_filter_options check_ranges hidden">
+          <label for="range_one_check">
+            <input class="check_range" type="checkbox" name="range_one_check" id="range_one_check" value="0,50">
+            <span class="label_check"></span>
+            de R$0 até R$50
+          </label>
+          <label for="range_two_check">
+            <input class="check_range" type="checkbox" name="range_two_check" id="range_two_check" value="51,150">
+            <span class="label_check"></span>
+            de R$51 até R$150
+          </label>
+          <label for="range_three_check">
+            <input class="check_range" type="checkbox" name="range_three_check" id="range_three_check" value="151,300">
+            <span class="label_check"></span>
+            de R$151 até R$300
+          </label>
+          <label for="range_four_check">
+            <input class="check_range" type="checkbox" name="range_four_check" id="range_four_check" value="301,500">
+            <span class="label_check"></span>
+            de R$301 até R$500
+          </label>
+          <label for="range_five_check">
+            <input class="check_range" type="checkbox" name="range_five_check" id="range_five_check" value="500">
+            <span class="label_check"></span>
+            a partir de R$500
+          </label>
+        </div>
+        <div class="buttons_filter_mobile">
+          <button type="button" id="apply-btn" class="hidden">Aplicar</button>
+          <button type="reset" id="clear-btn" class="hidden">Limpar</button>
+        </div>
+      </form>
+    </aside>
+    <div id="buttons_select_aside">
+      <button id="filter_nav_mobile">Filtrar</button>
+      <button id="order_nav_mobile">Ordenar</button>
+    </div>
+    <button type="button" class="order-desktop">
+      Ordenar por:
+    </button>
+    <section class="menu-container hidden-desktop hidden">
+      <div class="order_nav_mobiles_filter_mobile">
+        <button type="button" id="recent-btn" class="button">Mais recente</button>
+        <button type="button" id="bigger-btn" class="button">Maior preço</button>
+        <button type="button" id="smaller-btn" class="button">Menor preço</button>
+      </div>
+    </section>
+    <section class="container_products">
+      <div id="cards-container" class="cards-container">
+          
+      </div>
+    </section>
+  </main>
+  <footer>M3: Implantação de E-commerce VTEX</footer>
 </body>
-<h1>Desafio m3</h1>
 
 <script src="bundle.js"></script>
 
