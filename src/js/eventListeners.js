@@ -1,6 +1,6 @@
-const clearAllSelected = require("./utils/clearSelect");
+import clearAllSelected from "./utils/clearSelect";
 
-function addEventListeners() {
+export default function addEventListeners() {
   const selectTitle = document.querySelector(".select-title");
   const selectItemsContainer = document.querySelector(".select-items");
   const selectButtons = document.querySelectorAll(".select-button");
@@ -19,5 +19,3 @@ function addEventListeners() {
     });
   });
 }
-
-module.exports = addEventListeners;
