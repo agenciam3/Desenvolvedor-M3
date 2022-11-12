@@ -66,5 +66,38 @@ hr {
         cursor: pointer;
       }
     }
+
+    .filter-container {
+      width: 20%;
+      .filter {
+        margin-bottom: 1.5rem;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        padding: 0.937rem 0;
+      }
+
+      span {
+        font-size: 0.93rem;
+      }
+
+      .colors {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .sizes span {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        padding: 5px 8px;
+      }
+
+      .prices {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
   }
 }
