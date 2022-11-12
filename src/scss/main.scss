@@ -48,25 +48,26 @@ hr {
   width: calc(1219px - 162px);
   margin: 0 auto;
 
-  .product-list {
-    .product-header {
-      display: flex;
-      justify-content: space-between;
-      padding: 2.5rem 0;
-      align-items: center;
-      h2 {
-        font-size: 2rem;
-      }
-
-      .product.order {
-        display: flex;
-        align-items: center;
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        padding: 0.625rem;
-        cursor: pointer;
-      }
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5rem 0;
+    align-items: center;
+    h2 {
+      font-size: 2rem;
     }
 
+    .product.order {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(0, 0, 0, 0.5);
+      padding: 0.625rem;
+      cursor: pointer;
+    }
+  }
+
+  .product-list {
+    display: flex;
     .filter-container {
       width: 20%;
       .filter {
