@@ -1,1 +1,40 @@
 @import "reset";
+
+header {
+  width: calc(1219px - 162px);
+  margin: 0 auto;
+
+  .contain {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    align-items: center;
+
+    .bag-cart {
+      position: relative;
+
+      i.ph-handbag-simple-fill {
+        font-size: 1.3rem;
+      }
+
+      span {
+        background-color: #00c0ee;
+        border-radius: 50px;
+        color: #fff;
+        font-size: 0.857rem;
+        padding: 0px 3px;
+        position: absolute;
+        bottom: 0;
+        left: 12px;
+      }
+    }
+  }
+}
+
+hr {
+  padding: 0;
+  margin: 0;
+  height: 2px;
+  background-color: #c7c7c7;
+  border: none;
+}
