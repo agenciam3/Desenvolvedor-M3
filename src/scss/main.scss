@@ -14,6 +14,36 @@ body {
   font-family: $font-family;
 }
 
+.hidden {
+  display: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"] + span {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $gray-500;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + span {
+  background-color: white;
+}
+
+input[type="checkbox"]:checked + span::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 9.6px;
+  margin: 2.4px 2.4px;
+  background: $blue-400;
+}
+
 header {
   width: 100%;
   border-bottom: 0.125rem solid #c7c7c7;
@@ -186,6 +216,106 @@ main {
 
     &.hidden {
       display: none;
+    }
+  }
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+  padding: 20px 28px;
+
+  h1 {
+    margin-left: 2px;
+  }
+
+  #colors-checkbox-container {
+    h1 {
+      text-transform: uppercase;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      margin-top: 16px;
+      gap: 10px;
+
+      .initially-hidden-color {
+        display: none;
+      }
+
+      > div {
+        position: relative;
+        button {
+          padding: 8px 8px 8px 4px;
+          border: none;
+          background-color: transparent;
+          color: $gray-500;
+          text-decoration: underline;
+          cursor: pointer;
+          font-family: $font-family;
+          font-size: 0.75rem;
+
+          &::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            -webkit-transform: rotate(45deg);
+            border-color: #666666;
+            border-style: solid;
+            border-width: 0 1px 1px 0;
+            height: 8px;
+            top: 7px;
+            right: -10px;
+            transform: rotate(45deg);
+            width: 8px;
+            background: none;
+            margin-top: 4px;
+          }
+        }
+      }
+    }
+  }
+  #sizes-checkbox-container {
+    margin: 24px 0;
+    h1 {
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    > div {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(4, 1fr);
+      button {
+        background-color: transparent;
+        border: 1.5px solid $gray-500-50;
+        color: $gray-500-50;
+        padding: 8px;
+        cursor: pointer;
+
+        &.selected {
+          border: 1.5px solid $blue-400;
+          color: black;
+        }
+      }
+    }
+  }
+
+  #prices-checkbox-container {
+    h1 {
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      gap: 10px;
     }
   }
 }
