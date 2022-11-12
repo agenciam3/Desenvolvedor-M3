@@ -145,3 +145,21 @@ hr {
     }
   }
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  height: 2.06rem;
+  width: 100%;
+  margin-top: 2.18rem;
+  bottom: 0;
+  position: fixed;
+
+  p {
+    color: #fff;
+    font-size: 0.87rem;
+    text-transform: uppercase;
+  }
+}
