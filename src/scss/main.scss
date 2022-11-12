@@ -1,5 +1,10 @@
 @import "reset";
 
+body,
+button {
+  font-family: "Open Sans", sans-serif;
+}
+
 header {
   width: calc(1219px - 162px);
   margin: 0 auto;
