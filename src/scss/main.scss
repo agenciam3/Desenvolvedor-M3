@@ -57,13 +57,14 @@ header {
 main {
   margin-top: 40px;
   > div {
-    width: 75rem;
+    max-width: 75rem;
     margin: 0 auto;
-    .main-header {
+    .main-desktop-header {
       position: relative;
       display: flex;
       justify-content: space-between;
       font-size: 2rem;
+      padding: 20px 28px;
 
       > button {
         border: 1px solid black;
@@ -76,12 +77,58 @@ main {
       span {
         font-size: 1rem;
       }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .main-mobile-header {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 12px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          border: 1px solid $gray-500;
+          background-color: transparent;
+          font-size: 1.5rem;
+          color: $gray-500;
+          flex: 1;
+          padding: 8px 30px;
+
+          &:not(:last-child) {
+            border-right: none;
+          }
+        }
+
+        &:after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+      }
+
+      @media (max-width: 768px) {
+        display: flex;
+      }
     }
   }
 }
 
 .select-container {
   width: 142px;
+  position: relative;
   .select-button {
     background-color: $blue-400;
     border: 1px solid black;
@@ -95,7 +142,7 @@ main {
     font-family: $font-family;
     font-size: 1rem;
 
-    &::after {
+    &.select-title::after {
       content: "";
       display: inline-block;
       position: absolute;
@@ -113,6 +160,7 @@ main {
     }
   }
   > .select-items {
+    position: absolute;
     display: flex;
     flex-direction: column;
     border-top: none;
