@@ -11,6 +11,7 @@ function createProduct(data) {
   productName = document.createElement("h3");
   productPrice = document.createElement("p");
   productInstallment = document.createElement("p");
+  productInstallment.classList.add("price-parcel");
   productPrice.classList.add("price");
   buyButton = document.createElement("button");
   productImage.src = data.image;
