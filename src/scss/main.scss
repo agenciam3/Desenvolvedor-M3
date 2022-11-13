@@ -108,30 +108,30 @@ hr {
       margin-bottom: 5rem;
       gap: 2.62rem 4.04rem;
 
+      .product {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
       .product-image {
         display: flex;
         justify-content: center;
       }
 
-      .product-infos {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        h3 {
-          font-size: 0.93rem;
-          text-transform: uppercase;
-          padding: 10px;
-        }
+      h3 {
+        font-size: 0.93rem;
+        text-transform: uppercase;
+        padding: 10px;
+      }
 
-        p.price {
-          font-weight: 700;
-          margin-bottom: 0.06rem;
-        }
+      p.price {
+        font-weight: 700;
+        margin-bottom: 0.06rem;
+      }
 
-        .price-parcel {
-          color: #666;
-        }
+      .price-parcel {
+        color: #666;
       }
 
       button {
@@ -152,9 +152,7 @@ hr {
 .showMore {
   margin-bottom: 4rem;
   display: flex;
-  width: 80%;
   justify-content: center;
-  float: right;
 
   button#showMore {
     background: #00c0ee;

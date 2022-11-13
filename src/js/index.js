@@ -6,9 +6,11 @@ let page = 1;
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
+  productDiv.classList.add("product");
   productImage = document.createElement("img");
   productName = document.createElement("h3");
   productPrice = document.createElement("p");
+  productPrice.classList.add("price");
   buyButton = document.createElement("button");
   productImage.src = data.image;
 
@@ -22,6 +24,7 @@ function createProduct(data) {
   productDiv.appendChild(productImage);
   productDiv.appendChild(productName);
   productDiv.appendChild(productPrice);
+
   productDiv.appendChild(buyButton);
 
   return productDiv;
