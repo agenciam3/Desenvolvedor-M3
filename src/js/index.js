@@ -10,6 +10,7 @@ function createProduct(data) {
   productImage = document.createElement("img");
   productName = document.createElement("h3");
   productPrice = document.createElement("p");
+  productInstallment = document.createElement("p");
   productPrice.classList.add("price");
   buyButton = document.createElement("button");
   productImage.src = data.image;
@@ -19,12 +20,19 @@ function createProduct(data) {
     style: "currency",
     currency: "BRL",
   });
+
+  productInstallment.innerHTML = `Até ${
+    data.parcelamento[0]
+  } de ${data.parcelamento[1].toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}`;
   buyButton.innerHTML = "Comprar";
 
   productDiv.appendChild(productImage);
   productDiv.appendChild(productName);
   productDiv.appendChild(productPrice);
-
+  productDiv.appendChild(productInstallment);
   productDiv.appendChild(buyButton);
 
   return productDiv;
