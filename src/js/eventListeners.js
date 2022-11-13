@@ -1,7 +1,7 @@
 import { loadMore } from ".";
 import { addItemToCart, calcTotalAmount } from "./utils/cartActions";
 import clearAllSelected from "./utils/clearSelect";
-import { sortByColor, sortProducts } from "./utils/filters";
+import { filterAll, sortProducts } from "./utils/filters";
 
 export default function addEventListeners() {
   const selectTitle = document.querySelector(".select-title");
@@ -47,7 +47,11 @@ export default function addEventListeners() {
         e.target.classList.add("checked");
         selectedColors.add(e.target.value);
       }
-      sortByColor(Array.from(selectedColors));
+      filterAll({
+        sizes: Array.from(selectedSizes),
+        colors: Array.from(selectedColors),
+        prices: Array.from(selectedPrices),
+      });
     });
   });
 
@@ -62,6 +66,11 @@ export default function addEventListeners() {
         e.target.classList.add("selected");
         selectedSizes.add(e.target.value);
       }
+      filterAll({
+        sizes: Array.from(selectedSizes),
+        colors: Array.from(selectedColors),
+        prices: Array.from(selectedPrices),
+      });
     });
   });
 
@@ -71,9 +80,16 @@ export default function addEventListeners() {
     price.addEventListener("click", (e) => {
       if (selectedPrices.has(e.target.value)) {
         selectedPrices.delete(e.target.value);
+        e.target.classList.remove("selected");
       } else {
         selectedPrices.add(e.target.value);
+        e.target.classList.add("selected");
       }
+      filterAll({
+        sizes: Array.from(selectedSizes),
+        colors: Array.from(selectedColors),
+        prices: Array.from(selectedPrices),
+      });
     });
   });
 
