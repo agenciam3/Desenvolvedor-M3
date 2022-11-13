@@ -71,7 +71,9 @@ header {
       position: absolute;
       bottom: -0.25rem;
       right: -0.25rem;
-      padding: 3.2px;
+      padding: 3px;
+      width: 14px;
+      height: 14px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -80,6 +82,10 @@ header {
       min-height: 0.625rem;
       min-width: 0.625rem;
       color: white;
+
+      &.hidden {
+        display: none;
+      }
     }
   }
 }
