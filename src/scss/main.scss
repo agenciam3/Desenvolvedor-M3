@@ -105,6 +105,8 @@ hr {
       width: 80%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      margin-bottom: 4rem;
+      gap: 2.62rem 4.04rem;
 
       .product-image {
         display: flex;
