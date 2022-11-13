@@ -76,4 +76,24 @@ export default function addEventListeners() {
       }
     });
   });
+
+  const loadMoreButton = document.querySelector(".load-more");
+
+  loadMoreButton.addEventListener("click", () => {
+    loadMore();
+  });
+}
+
+export function listenToProductsButton() {
+  const buyButton = document.querySelectorAll(".product-button");
+  const cartAmount = document.querySelector(".cart-amount");
+
+  buyButton.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      addItemToCart(Number(e.target.id));
+
+      cartAmount.classList.remove("hidden");
+      cartAmount.textContent = calcTotalAmount();
+    });
+  });
 }
