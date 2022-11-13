@@ -330,9 +330,137 @@ aside {
     }
   }
 }
+.loader {
+  width: 60px;
+  grid-area: 1/-1;
 
-.products-container {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  &.hidden {
+    display: none;
+  }
+}
+
+.loader-wheel {
+  animation: spin 1s infinite linear;
+  border: 2px solid rgba(30, 30, 30, 0.5);
+  border-left: 4px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  margin-bottom: 10px;
+  width: 50px;
+}
+
+.loader-text {
+  color: #fff;
+  font-family: arial, sans-serif;
+}
+
+.loader-text:after {
+  content: "Loading";
+  animation: load 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+  0% {
+    content: "Loading";
+  }
+  33% {
+    content: "Loading.";
+  }
+  67% {
+    content: "Loading..";
+  }
+  100% {
+    content: "Loading...";
+  }
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .products-container {
+    position: relative;
+
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: start;
+    align-items: start;
+    place-content: start;
+    gap: 64.75px;
+    margin-bottom: 73px;
+    padding: 0 120px;
+
+    > h2 {
+      font-size: 1.5rem;
+      grid-area: 1/-1;
+    }
+
+    .product {
+      text-align: center;
+      font-family: $font-family;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .product-name {
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        margin-top: 10px;
+      }
+
+      .product-price {
+        font-weight: 700;
+        font-size: 1rem;
+        margin: 10px 0 5px;
+      }
+
+      .product-installment {
+        color: $gray-500;
+        font-size: 1rem;
+      }
+
+      .product-button {
+        margin-top: 14px;
+        font-family: $font-family;
+        font-size: 0.875rem;
+        font-weight: bold;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        width: 100%;
+        padding: 7px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .load-more {
+    border: 0;
+    background-color: $blue-400;
+    color: white;
+    font-family: $font-family;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 8px 31px;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-bottom: 35px;
+
+    &.hidden {
+      display: none;
+    }
+  }
 }
