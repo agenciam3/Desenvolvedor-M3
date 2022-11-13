@@ -86,73 +86,78 @@ header {
 
 main {
   margin-top: 40px;
-  > div {
-    max-width: 75rem;
-    margin: 0 auto;
-    .main-desktop-header {
-      position: relative;
+
+  .main-desktop-header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    padding: 20px 28px;
+    margin-bottom: 54px;
+
+    > button {
+      border: 1px solid black;
       display: flex;
-      justify-content: space-between;
-      font-size: 2rem;
-      padding: 20px 28px;
-
-      > button {
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-      }
-
-      span {
-        font-size: 1rem;
-      }
-
-      @media (max-width: 768px) {
-        display: none;
-      }
-    }
-
-    .main-mobile-header {
-      display: none;
       justify-content: center;
       align-items: center;
-      flex-direction: column;
-      gap: 12px;
+      cursor: pointer;
+    }
 
-      h1 {
-        font-size: 2rem;
+    span {
+      font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .main-mobile-header {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 34px;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        border: 1px solid $gray-500;
+        background-color: transparent;
+        font-size: 1.5rem;
+        color: $gray-500;
+        flex: 1;
+        padding: 8px 30px;
+
+        &:not(:last-child) {
+          border-right: none;
+        }
       }
 
-      > div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        button {
-          border: 1px solid $gray-500;
-          background-color: transparent;
-          font-size: 1.5rem;
-          color: $gray-500;
-          flex: 1;
-          padding: 8px 30px;
-
-          &:not(:last-child) {
-            border-right: none;
-          }
-        }
-
-        &:after {
-          content: "";
-          clear: both;
-          display: table;
-        }
-      }
-
-      @media (max-width: 768px) {
-        display: flex;
+      &:after {
+        content: "";
+        clear: both;
+        display: table;
       }
     }
+
+    @media (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  > div {
+    display: flex;
+    max-width: 75rem;
+    margin: 0 auto;
   }
 }
 
@@ -318,4 +323,10 @@ aside {
       gap: 10px;
     }
   }
+}
+
+.products-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
