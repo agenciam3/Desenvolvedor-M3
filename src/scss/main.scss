@@ -105,7 +105,7 @@ hr {
       width: 80%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      margin-bottom: 4rem;
+      margin-bottom: 5rem;
       gap: 2.62rem 4.04rem;
 
       .product-image {
@@ -143,7 +143,31 @@ hr {
         font-size: 0.93rem;
         font-weight: 700;
         text-transform: uppercase;
+        cursor: pointer;
       }
+    }
+  }
+}
+
+.showMore {
+  margin-bottom: 4rem;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  float: right;
+
+  button#showMore {
+    background: #00c0ee;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.5rem 1.93rem;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #0acafa;
     }
   }
 }

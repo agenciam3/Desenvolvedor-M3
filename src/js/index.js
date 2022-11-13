@@ -1,6 +1,7 @@
 const serverurl = process.env.SERVER_API;
 
 let product = document.querySelector(".product-list-content");
+let page = 1;
 
 function createProduct(data) {
   console.log(data.name);
@@ -26,8 +27,8 @@ function createProduct(data) {
   return productDiv;
 }
 
-function main() {
-  fetch("http://localhost:5000/products")
+function getDataFromApi() {
+  fetch(`http://localhost:5000/products?_page=${page}&_limit=9`)
     .then(function (response) {
       return response.json();
     })
@@ -43,6 +44,18 @@ function main() {
     .catch(function (e) {
       console.log(e);
     });
+}
+
+function main() {
+  getDataFromApi();
+}
+
+const showButton = document.querySelector("#showMore");
+showButton.addEventListener("click", carregarMais);
+
+function carregarMais() {
+  page++;
+  getDataFromApi();
 }
 
 main();
