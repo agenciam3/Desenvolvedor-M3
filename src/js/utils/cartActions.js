@@ -14,3 +14,9 @@ export function addItemToCart(id) {
 
   selectedProducts[itemInCartIndex].amount += 1;
 }
+
+export function calcTotalAmount() {
+  return selectedProducts.reduce((acc, curr) => {
+    return acc + curr.amount;
+  }, 0);
+}
