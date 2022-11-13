@@ -1,10 +1,15 @@
-import { products, renderProducts, setFilterdProducts } from "..";
+import {
+  getFilteredProducts,
+  products,
+  renderProducts,
+  setFilterdProducts,
+} from "..";
 
 export function sortProducts(ordering = "most-recent") {
   switch (ordering) {
     case "most-recent":
       setFilterdProducts(
-        products.sort((a, b) => {
+        getFilteredProducts().sort((a, b) => {
           return new Date(b.date) - new Date(a.date);
         })
       );
@@ -12,7 +17,7 @@ export function sortProducts(ordering = "most-recent") {
       break;
     case "lowest-price":
       setFilterdProducts(
-        products.sort((a, b) => {
+        getFilteredProducts().sort((a, b) => {
           return a.price - b.price;
         })
       );
@@ -20,7 +25,7 @@ export function sortProducts(ordering = "most-recent") {
       break;
     case "highest-price":
       setFilterdProducts(
-        products.sort((a, b) => {
+        getFilteredProducts().sort((a, b) => {
           return b.price - a.price;
         })
       );

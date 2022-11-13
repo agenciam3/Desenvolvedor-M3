@@ -15,6 +15,10 @@ api.get("/products").then((res) => {
   listenToProductsButton();
 });
 
+export function getFilteredProducts() {
+  return filteredProducts;
+}
+
 export function setFilterdProducts(filtered) {
   filteredProducts = filtered;
 }
