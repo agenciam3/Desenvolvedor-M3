@@ -14,6 +14,9 @@ const showButton = document.querySelector("#showMore");
 let titleOrder = document.querySelector(".product-order");
 let optionsOrder = document.querySelector(".orderBy");
 
+// Váriavel do botão de mais recente
+let mostRecent = document.querySelector(".most-recent");
+
 // Váriavel do botão de menor preço
 let lowestPrice = document.querySelector(".lowest-price");
 
@@ -119,6 +122,19 @@ function showBiggestPrice() {
   page = 1;
   query = "price";
   sort = "desc";
+
+  getDataFromApi();
+}
+
+mostRecent.addEventListener("click", showMostRecentProduct);
+
+function showMostRecentProduct() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  query = "date";
+  sort = "asc";
 
   getDataFromApi();
 }
