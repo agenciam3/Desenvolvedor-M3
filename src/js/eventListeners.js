@@ -180,7 +180,6 @@ function filterModalListeners(seeMoreColorsButton) {
     });
   });
 
-  const mobileFilterHeader = document.querySelector(".mobile-filter-header");
   const openFilterMenuButton = document.querySelector(".filter-button");
   const closeFilterMenuButton = document.querySelector(
     ".close-mobile-filter-header"
