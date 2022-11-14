@@ -42,6 +42,9 @@ let greaterThan500 = document.querySelector("#greater-than-500");
 // Váriavel do tamanho P
 let sizeP = document.querySelector(".size-p");
 
+// Váriavel do tamanho M
+let sizeM = document.querySelector(".size-m");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -232,6 +235,19 @@ function showProductsWithSizeP() {
   sort = "asc";
   query = "size";
   extraQuery = "&size=P";
+  getDataFromApi();
+}
+
+sizeM.addEventListener("click", showProductsWithSizeM);
+
+function showProductsWithSizeM() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "size";
+  extraQuery = "&size=M";
   getDataFromApi();
 }
 
