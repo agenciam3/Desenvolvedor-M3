@@ -64,12 +64,13 @@ export function sortByPrice(productsParam, prices) {
     return lowestA - lowestB;
   });
 
-  const lowest = pricesAsInt[0].split("-")[0];
+  const lowest = pricesAsInt[0]?.split("-")[0];
   // highest price or undefined if price is like: "500-"
-  const highest = pricesAsInt[pricesAsInt.length - 1].split("-")[1];
+  const highest = pricesAsInt[pricesAsInt.length - 1]?.split("-")[1];
 
   return productsParam.filter((product) => {
-    console.log("Highest: ", highest);
+    if (!highest || !lowest) return true;
+
     if (prices.length > 0) {
       return (
         (product.price >= lowest && product.price <= highest) ||
