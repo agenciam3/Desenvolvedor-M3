@@ -4,8 +4,9 @@ let product = document.querySelector(".product-list-content");
 let page = 1;
 
 // Váriaveis para adiconar filtro
-let query = "";
-let sort = "";
+let query = "id";
+let sort = "asc";
+let extraQuery = "";
 
 // Variável do botão de carregar mais produtos
 const showButton = document.querySelector("#showMore");
@@ -22,6 +23,9 @@ let lowestPrice = document.querySelector(".lowest-price");
 
 // Variável do botão de maior preço
 let biggestPrice = document.querySelector(".biggest-price");
+
+// Varíavel do checkbox até R$50
+let until50 = document.querySelector("#until-50");
 
 function createProduct(data) {
   console.log(data.name);
@@ -61,7 +65,7 @@ function createProduct(data) {
 
 function getDataFromApi() {
   fetch(
-    `http://localhost:5000/products?_page=${page}&_limit=9&_sort=${query}&_order=${sort}`
+    `http://localhost:5000/products?_page=${page}&_limit=9&_sort=${query}&_order=${sort}${extraQuery}`
   )
     .then(function (response) {
       return response.json();
@@ -136,6 +140,17 @@ function showMostRecentProduct() {
   query = "date";
   sort = "asc";
 
+  getDataFromApi();
+}
+
+until50.addEventListener("click", showPriceultil50);
+
+function showPriceultil50() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  extraQuery = "&price_lte=50";
   getDataFromApi();
 }
 
