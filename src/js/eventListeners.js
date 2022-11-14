@@ -125,6 +125,7 @@ export default function addEventListeners() {
   });
 
   filterModalListeners(seeMoreColorsButton);
+  orderingModalListeners();
 }
 
 export function updateProductsButtonListener() {
@@ -179,6 +180,7 @@ function filterModalListeners(seeMoreColorsButton) {
     });
   });
 
+  const mobileFilterHeader = document.querySelector(".mobile-filter-header");
   const openFilterMenuButton = document.querySelector(".filter-button");
   const closeFilterMenuButton = document.querySelector(
     ".close-mobile-filter-header"
@@ -206,5 +208,19 @@ function filterModalListeners(seeMoreColorsButton) {
 
   clearFiltersButton.addEventListener("click", () => {
     clearAll();
+  });
+}
+
+function orderingModalListeners() {
+  const openOrderingMenuButton = document.querySelector(".ordering-button");
+  const mainDesktopHeader = document.querySelector(".main-header");
+  const closeModal = document.querySelector(".close-mobile-order-header");
+
+  openOrderingMenuButton.addEventListener("click", () => {
+    mainDesktopHeader.classList.toggle("mobile-hidden");
+  });
+
+  closeModal.addEventListener("click", () => {
+    mainDesktopHeader.classList.add("mobile-hidden");
   });
 }
