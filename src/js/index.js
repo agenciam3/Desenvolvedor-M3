@@ -1,4 +1,6 @@
-import addEventListeners, { listenToProductsButton } from "./eventListeners";
+import addEventListeners, {
+  updateProductsButtonListener,
+} from "./eventListeners";
 import { api } from "./utils/api";
 import { generateCards } from "./utils/products";
 
@@ -12,7 +14,7 @@ export let selectedProducts = [];
 api.get("/products").then((res) => {
   products = filteredProducts = res.data;
   renderProducts();
-  listenToProductsButton();
+  updateProductsButtonListener();
 });
 
 export function getFilteredProducts() {
@@ -52,5 +54,5 @@ export function renderProducts() {
 export function loadMore() {
   offset += offset;
   renderProducts();
-  listenToProductsButton();
+  updateProductsButtonListener();
 }

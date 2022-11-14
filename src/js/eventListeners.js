@@ -7,7 +7,7 @@ const selectedColors = new Set();
 const selectedSizes = new Set();
 const selectedPrices = new Set();
 
-export function clearAll() {
+function clearAll() {
   selectedColors.clear();
   selectedSizes.clear();
   selectedPrices.clear();
@@ -31,11 +31,15 @@ export default function addEventListeners() {
 
   selectButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
+      // select title is the title of the select menu, so, don't toggle the hidden
+      // class on it.
       if (e.target.classList.contains("select-title")) return;
       clearAllSelected();
       selectItemsContainer.classList.toggle("hidden");
       selectTitle.textContent = e.target.textContent;
       e.target.classList.add("selected");
+      // target id has only one of the three values: "most-recent", "lowest-price"
+      // or "highest-price"
       sortProducts(e.target.id);
     });
   });
@@ -43,7 +47,9 @@ export default function addEventListeners() {
   const seeMoreColorsButton = document.querySelector("#see-more-colors");
 
   seeMoreColorsButton.addEventListener("click", (e) => {
+    // hide the see more text
     e.target.classList.add("hidden");
+    // show the rest of the colors
     const hiddenColors = document.querySelectorAll(".initially-hidden-color");
     hiddenColors.forEach((color) => {
       color.classList.remove("initially-hidden-color");
@@ -55,6 +61,9 @@ export default function addEventListeners() {
   colors.forEach((color) => {
     color.addEventListener("click", (e) => {
       if (e.target.classList.contains("checked")) {
+        // I'm using a Set to store the selected colors, so, if the color is
+        // already selected, I remove it from the set. Otherwise, I add it to the
+        // Set.
         e.target.classList.remove("checked");
         selectedColors.delete(e.target.value);
       } else {
@@ -74,6 +83,7 @@ export default function addEventListeners() {
   sizes.forEach((size) => {
     size.addEventListener("click", (e) => {
       if (selectedSizes.has(e.target.value)) {
+        // Same thing as with the colors, but with the sizes.
         e.target.classList.remove("selected");
         selectedSizes.delete(e.target.value);
       } else {
@@ -93,6 +103,7 @@ export default function addEventListeners() {
   prices.forEach((price) => {
     price.addEventListener("click", (e) => {
       if (selectedPrices.has(e.target.value)) {
+        // Same thing as with the colors, but with the prices.
         selectedPrices.delete(e.target.value);
         e.target.classList.remove("selected");
       } else {
@@ -113,24 +124,26 @@ export default function addEventListeners() {
     loadMore();
   });
 
-  const openFilterMenuButton = document.querySelector(".filter-button");
-  const closeFilterMenuButton = document.querySelector(
-    ".close-mobile-filter-header"
-  );
-  const filterModal = document.querySelector("aside");
+  filterModalListeners(seeMoreColorsButton);
+}
 
-  function closeFilterModal() {
-    filterModal.classList.add("mobile-hidden");
-  }
+export function updateProductsButtonListener() {
+  const buyButton = document.querySelectorAll(".product-button");
+  const cartAmount = document.querySelector(".cart-amount");
 
-  openFilterMenuButton.addEventListener("click", () => {
-    filterModal.classList.remove("mobile-hidden");
+  buyButton.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      addItemToCart(Number(e.target.id));
+
+      cartAmount.classList.remove("hidden");
+      cartAmount.textContent = calcTotalAmount();
+    });
   });
+}
 
-  closeFilterMenuButton.addEventListener("click", () => {
-    closeFilterModal();
-  });
-
+function filterModalListeners(seeMoreColorsButton) {
+  // Logic for opening and closing the "select" like options
+  // with "CORES", "TAMANHOS","FAIXA DE PREÇO"
   const colorsTitle = document.querySelector(".colors-title");
   const hiddenMobileColors = document.querySelectorAll(
     ".mobile-initially-hidden-color"
@@ -166,6 +179,24 @@ export default function addEventListeners() {
     });
   });
 
+  const openFilterMenuButton = document.querySelector(".filter-button");
+  const closeFilterMenuButton = document.querySelector(
+    ".close-mobile-filter-header"
+  );
+  const filterModal = document.querySelector("aside");
+
+  function closeFilterModal() {
+    filterModal.classList.add("mobile-hidden");
+  }
+
+  openFilterMenuButton.addEventListener("click", () => {
+    filterModal.classList.remove("mobile-hidden");
+  });
+
+  closeFilterMenuButton.addEventListener("click", () => {
+    closeFilterModal();
+  });
+
   const applyFiltersButton = document.querySelector(".button-apply");
   const clearFiltersButton = document.querySelector(".button-clear");
 
@@ -175,19 +206,5 @@ export default function addEventListeners() {
 
   clearFiltersButton.addEventListener("click", () => {
     clearAll();
-  });
-}
-
-export function listenToProductsButton() {
-  const buyButton = document.querySelectorAll(".product-button");
-  const cartAmount = document.querySelector(".cart-amount");
-
-  buyButton.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      addItemToCart(Number(e.target.id));
-
-      cartAmount.classList.remove("hidden");
-      cartAmount.textContent = calcTotalAmount();
-    });
   });
 }
