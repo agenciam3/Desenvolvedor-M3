@@ -2,6 +2,8 @@ const serverurl = process.env.SERVER_API;
 
 let product = document.querySelector(".product-list-content");
 let page = 1;
+let query = "id";
+let sort = "asc";
 
 function createProduct(data) {
   console.log(data.name);
@@ -40,7 +42,9 @@ function createProduct(data) {
 }
 
 function getDataFromApi() {
-  fetch(`http://localhost:5000/products?_page=${page}&_limit=9`)
+  fetch(
+    `http://localhost:5000/products?_page=${page}&_limit=9&_sort=${query}&_order=${sort}`
+  )
     .then(function (response) {
       return response.json();
     })
@@ -49,7 +53,6 @@ function getDataFromApi() {
 
       data.forEach((element) => {
         let productDiv = createProduct(element);
-
         product.appendChild(productDiv);
       });
     })
@@ -85,6 +88,15 @@ function orderToggle() {
 let lowestPrice = document.querySelector(".lowest-price");
 lowestPrice.addEventListener("click", showLowestPrice);
 
-function showLowestPrice() {}
+function showLowestPrice() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  query = "price";
+  sort = "asc";
+
+  getDataFromApi();
+}
 
 main();
