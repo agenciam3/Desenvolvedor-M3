@@ -29,6 +29,11 @@
 
 header {
   border-bottom: 2px solid #c7c7c7;
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  z-index: 2;
+  top: 0;
   nav {
     padding: 16px 0;
     .navegacao {
@@ -440,6 +445,7 @@ header {
 #main {
   padding-top: 24px;
   min-height: calc(100vh - 124px);
+  margin-top: 65px;
   .topo-site {
     display: flex;
     flex-direction: column;

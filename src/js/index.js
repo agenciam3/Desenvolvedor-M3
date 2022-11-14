@@ -169,6 +169,7 @@ document
   .querySelector("#ordenar-lista")
   .addEventListener("click", function (e) {
     ordenarResultados(e.target.innerText);
+    closeSideNav();
   });
 
 function ordenarResultados(ordemEvent) {
@@ -301,6 +302,7 @@ function escutarRemoverItem() {
       contadorCarrinho.innerText =
         document.querySelectorAll(".carrinho-item").length;
       exibeMensagemVazio();
+
       //document.querySelector(`.carrinho-item[data-id="${idClicado}"]`).remove();
     });
   });
@@ -318,3 +320,19 @@ function exibeMensagemVazio() {
     contadorCarrinho.style.display = "none";
   }
 }
+document.querySelector(".limpar").addEventListener("click", function () {
+  document.querySelectorAll(".carrinho-item").forEach((item) => {
+    item.remove();
+  });
+  exibeMensagemVazio();
+});
+document.querySelector(".comprar").addEventListener("click", function () {
+  document.querySelectorAll(".carrinho-item").forEach((item) => {
+    item.remove();
+  });
+  setTimeout(() => {
+    alert("Compra finalizada com sucesso!!");
+  }, 250);
+  closeSideNav();
+  exibeMensagemVazio();
+});
