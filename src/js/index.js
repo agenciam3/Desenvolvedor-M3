@@ -27,6 +27,9 @@ let biggestPrice = document.querySelector(".biggest-price");
 // Varíavel do checkbox até R$50
 let until50 = document.querySelector("#until-50");
 
+// Variável do checkbox até 150
+let until150 = document.querySelector("#until-150");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -150,7 +153,21 @@ function showPriceultil50() {
   product.innerHTML = "";
 
   page = 1;
+  query = "price";
   extraQuery = "&price_lte=50";
+  getDataFromApi();
+}
+
+until150.addEventListener("click", showPriceultil150);
+
+function showPriceultil150() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "price";
+  extraQuery = "?price_lte=150&price_gte=51";
   getDataFromApi();
 }
 
