@@ -1,15 +1,29 @@
-import { loadMore } from ".";
+import { loadMore, renderProducts } from ".";
 import { addItemToCart, calcTotalAmount } from "./utils/cartActions";
-import clearAllSelected from "./utils/clearSelect";
+import clearAllSelected, { uncheckAll } from "./utils/clearSelect";
 import { filterAll, sortProducts } from "./utils/filters";
+
+const selectedColors = new Set();
+const selectedSizes = new Set();
+const selectedPrices = new Set();
+
+export function clearAll() {
+  selectedColors.clear();
+  selectedSizes.clear();
+  selectedPrices.clear();
+
+  uncheckAll();
+  filterAll({
+    sizes: selectedSizes,
+    colors: selectedColors,
+    prices: selectedPrices,
+  });
+}
 
 export default function addEventListeners() {
   const selectTitle = document.querySelector(".select-title");
   const selectItemsContainer = document.querySelector(".select-items");
   const selectButtons = document.querySelectorAll(".select-button");
-  const selectedColors = new Set();
-  const selectedSizes = new Set();
-  const selectedPrices = new Set();
 
   selectTitle.addEventListener("click", (e) => {
     selectItemsContainer.classList.toggle("hidden");
@@ -97,6 +111,70 @@ export default function addEventListeners() {
 
   loadMoreButton.addEventListener("click", () => {
     loadMore();
+  });
+
+  const openFilterMenuButton = document.querySelector(".filter-button");
+  const closeFilterMenuButton = document.querySelector(
+    ".close-mobile-filter-header"
+  );
+  const filterModal = document.querySelector("aside");
+
+  function closeFilterModal() {
+    filterModal.classList.add("mobile-hidden");
+  }
+
+  openFilterMenuButton.addEventListener("click", () => {
+    filterModal.classList.remove("mobile-hidden");
+  });
+
+  closeFilterMenuButton.addEventListener("click", () => {
+    closeFilterModal();
+  });
+
+  const colorsTitle = document.querySelector(".colors-title");
+  const hiddenMobileColors = document.querySelectorAll(
+    ".mobile-initially-hidden-color"
+  );
+
+  colorsTitle.addEventListener("click", () => {
+    hiddenMobileColors.forEach((color) => {
+      color.classList.toggle("mobile-initially-hidden-color");
+      color.classList.remove("initially-hidden-color");
+      seeMoreColorsButton.classList.add("hidden");
+    });
+  });
+
+  const sizesTitle = document.querySelector(".sizes-title");
+  const hiddenMobileSizes = document.querySelectorAll(
+    ".mobile-initially-hidden-size"
+  );
+
+  sizesTitle.addEventListener("click", () => {
+    hiddenMobileSizes.forEach((size) => {
+      size.classList.toggle("mobile-initially-hidden-size");
+    });
+  });
+
+  const pricesTitle = document.querySelector(".prices-title");
+  const hiddenMobilePrices = document.querySelectorAll(
+    ".mobile-initially-hidden-price"
+  );
+
+  pricesTitle.addEventListener("click", () => {
+    hiddenMobilePrices.forEach((price) => {
+      price.classList.toggle("mobile-initially-hidden-price");
+    });
+  });
+
+  const applyFiltersButton = document.querySelector(".button-apply");
+  const clearFiltersButton = document.querySelector(".button-clear");
+
+  applyFiltersButton.addEventListener("click", () => {
+    closeFilterModal();
+  });
+
+  clearFiltersButton.addEventListener("click", () => {
+    clearAll();
   });
 }
 

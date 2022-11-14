@@ -49,16 +49,20 @@
         <h1>Blusas</h1>
 
         <div>
-          <button>Filtrar</button>
-          <button>Ordenar</button>
+          <button class="filter-button">Filtrar</button>
+          <button class="ordering-button">Ordenar</button>
         </div>
       </div>
       <div>
-        <aside>
+        <aside class="mobile-hidden">
+          <div class="mobile-filter-header">
+            <h1>Filtrar</h1>
+            <button type="button" class="close-mobile-filter-header"></button>
+          </div>
           <div id="colors-checkbox-container">
-            <h1>Cores</h1>
+            <h1 class="colors-title">Cores</h1>
             <div>
-              <label for="yellow">
+              <label for="yellow" class="mobile-initially-hidden-color">
                 <input
                   type="checkbox"
                   name="yellow"
@@ -69,7 +73,7 @@
                 <span></span>
                 Amarelo
               </label>
-              <label for="blue">
+              <label for="blue" class="mobile-initially-hidden-color">
                 <input
                   type="checkbox"
                   name="blue"
@@ -80,7 +84,7 @@
                 <span></span>
                 Azul
               </label>
-              <label for="white">
+              <label for="white" class="mobile-initially-hidden-color">
                 <input
                   type="checkbox"
                   name="white"
@@ -91,7 +95,7 @@
                 <span></span>
                 Branco
               </label>
-              <label for="gray">
+              <label for="gray" class="mobile-initially-hidden-color">
                 <input
                   type="checkbox"
                   name="gray"
@@ -102,7 +106,7 @@
                 <span></span>
                 Cinza
               </label>
-              <label for="orange">
+              <label for="orange" class="mobile-initially-hidden-color">
                 <input
                   type="checkbox"
                   name="orange"
@@ -113,7 +117,10 @@
                 <span></span>
                 Laranja
               </label>
-              <label for="green" class="initially-hidden-color">
+              <label
+                for="green"
+                class="initially-hidden-color mobile-initially-hidden-color"
+              >
                 <input
                   type="checkbox"
                   name="green"
@@ -124,7 +131,10 @@
                 <span></span>
                 Verde
               </label>
-              <label for="red" class="initially-hidden-color">
+              <label
+                for="red"
+                class="initially-hidden-color mobile-initially-hidden-color"
+              >
                 <input
                   type="checkbox"
                   name="red"
@@ -135,7 +145,10 @@
                 <span></span>
                 Vermelho
               </label>
-              <label for="black" class="initially-hidden-color">
+              <label
+                for="black"
+                class="initially-hidden-color mobile-initially-hidden-color"
+              >
                 <input
                   type="checkbox"
                   name="black"
@@ -146,7 +159,10 @@
                 <span></span>
                 Preto
               </label>
-              <label for="pink" class="initially-hidden-color">
+              <label
+                for="pink"
+                class="initially-hidden-color mobile-initially-hidden-color"
+              >
                 <input
                   type="checkbox"
                   name="pink"
@@ -157,7 +173,10 @@
                 <span></span>
                 Rosa
               </label>
-              <label for="wine" class="initially-hidden-color">
+              <label
+                for="wine"
+                class="initially-hidden-color mobile-initially-hidden-color"
+              >
                 <input
                   type="checkbox"
                   name="wine"
@@ -170,29 +189,55 @@
               </label>
 
               <div>
-                <button id="see-more-colors" class="">
-                  Ver todas as cores
-                </button>
+                <button id="see-more-colors">Ver todas as cores</button>
               </div>
             </div>
           </div>
           <div id="sizes-checkbox-container">
-            <h1>Tamanhos</h1>
+            <h1 class="sizes-title">Tamanhos</h1>
             <div>
-              <button class="shirt-size" value="P">P</button>
-              <button class="shirt-size" value="M">M</button>
-              <button class="shirt-size" value="G">G</button>
-              <button class="shirt-size" value="GG">GG</button>
-              <button class="shirt-size" value="U">U</button>
-              <button class="shirt-size" value="36">36</button>
-              <button class="shirt-size" value="38">38</button>
-              <button class="shirt-size" value="40">40</button>
+              <button class="shirt-size mobile-initially-hidden-size" value="P">
+                P
+              </button>
+              <button class="shirt-size mobile-initially-hidden-size" value="M">
+                M
+              </button>
+              <button class="shirt-size mobile-initially-hidden-size" value="G">
+                G
+              </button>
+              <button
+                class="shirt-size mobile-initially-hidden-size"
+                value="GG"
+              >
+                GG
+              </button>
+              <button class="shirt-size mobile-initially-hidden-size" value="U">
+                U
+              </button>
+              <button
+                class="shirt-size mobile-initially-hidden-size"
+                value="36"
+              >
+                36
+              </button>
+              <button
+                class="shirt-size mobile-initially-hidden-size"
+                value="38"
+              >
+                38
+              </button>
+              <button
+                class="shirt-size mobile-initially-hidden-size"
+                value="40"
+              >
+                40
+              </button>
             </div>
           </div>
           <div id="prices-checkbox-container">
-            <h1>Faixa de preço</h1>
+            <h1 class="prices-title">Faixa de preço</h1>
             <div>
-              <label for="first-price">
+              <label for="first-price" class="mobile-initially-hidden-price">
                 <input
                   type="checkbox"
                   class="shirt-price"
@@ -203,7 +248,7 @@
                 <span></span>
                 de R$0 até R$50
               </label>
-              <label for="second-price">
+              <label for="second-price" class="mobile-initially-hidden-price">
                 <input
                   type="checkbox"
                   name="second-price"
@@ -214,7 +259,7 @@
                 <span></span>
                 de R$51 até R$150
               </label>
-              <label for="third-price">
+              <label for="third-price" class="mobile-initially-hidden-price">
                 <input
                   type="checkbox"
                   name="third-price"
@@ -225,7 +270,7 @@
                 <span></span>
                 de R$151 até R$300
               </label>
-              <label for="fourth-price">
+              <label for="fourth-price" class="mobile-initially-hidden-price">
                 <input
                   type="checkbox"
                   name="fourth-price"
@@ -236,7 +281,7 @@
                 <span></span>
                 de R$301 até R$500
               </label>
-              <label for="fifth-price">
+              <label for="fifth-price" class="mobile-initially-hidden-price">
                 <input
                   type="checkbox"
                   name="fifth-price"
@@ -248,6 +293,11 @@
                 a partir de R$500
               </label>
             </div>
+          </div>
+
+          <div class="buttons-container">
+            <button type="button" class="button-apply">Aplicar</button>
+            <button type="button" class="button-clear">Limpar</button>
           </div>
         </aside>
         <div class="main-content">

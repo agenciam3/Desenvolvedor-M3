@@ -239,12 +239,127 @@ aside {
   min-width: 250px;
   padding: 20px 28px;
 
-  @media (max-width: 768px) {
+  .mobile-filter-header {
     display: none;
   }
 
-  h1 {
-    margin-left: 2px;
+  @media (max-width: 768px) {
+    &.mobile-hidden {
+      display: none;
+    }
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 100;
+    padding: 0;
+
+    .mobile-initially-hidden-color {
+      display: none;
+    }
+
+    .mobile-initially-hidden-price {
+      display: none;
+    }
+
+    .mobile-initially-hidden-size {
+      display: none;
+    }
+
+    .initially-hidden-color {
+      display: none;
+    }
+
+    #see-more-colors {
+      display: none;
+    }
+
+    .mobile-filter-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $gray-500;
+      background-color: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      > h1::after {
+        content: none;
+      }
+
+      > * {
+        padding-bottom: 0;
+      }
+
+      .close-mobile-filter-header {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        border: none;
+        background-color: transparent;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        cursor: pointer;
+
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 2px;
+          background-color: black;
+          transform: rotate(45deg);
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 2px;
+          background-color: black;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+
+    > div {
+      position: relative;
+      padding: 16px 16px;
+
+      h1 {
+        font-size: 1.5rem;
+        color: $gray-500;
+        text-transform: uppercase;
+        padding-bottom: 16px;
+        position: relative;
+
+        &::after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          -webkit-transform: rotate(45deg);
+          border-color: #666666;
+          border-style: solid;
+          border-width: 0 1px 1px 0;
+          height: 10px;
+          right: 16px;
+          transform: rotate(45deg);
+          width: 10px;
+          background: none;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+
+  &.hidden {
+    display: none;
   }
 
   #colors-checkbox-container {
@@ -306,6 +421,7 @@ aside {
       display: grid;
       gap: 8px;
       grid-template-columns: repeat(4, 1fr);
+      max-width: 250px;
 
       button {
         background-color: transparent;
@@ -334,9 +450,46 @@ aside {
       justify-content: start;
       align-items: start;
       gap: 10px;
+
+      .mobile-initially-hidden-price {
+        display: none;
+      }
+    }
+  }
+
+  > .buttons-container {
+    // hide the buttons on desktop
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px;
+
+    > button {
+      background-color: white;
+      font-family: $font-family;
+      text-transform: uppercase;
+      font-size: 0.875rem;
+
+      &.button-apply {
+        border: 2px solid $blue-400;
+        color: white;
+        background-color: $blue-400;
+        padding: 8px;
+      }
+
+      &.button-clear {
+        border: 2px solid $gray-500-50;
+        color: $gray-500;
+        padding: 8px;
+        color: $gray-500;
+      }
     }
   }
 }
+
 .loader {
   width: 60px;
   grid-area: 1/-1;
