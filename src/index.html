@@ -23,19 +23,27 @@
               />
             </a>
           </li>
-          <li>
+          <li class="contador">
             <img
               id="sacola"
               src="./img/sacola.svg"
               alt="ícone de uma sacola na cor preta."
             />
+            <span id="contador"></span>
           </li>
         </ul>
       </nav>
       <section id="carrinho-sidebar" class="sidenav">
         <a class="closebtn">&times;</a>
         <h2>CARRINHO</h2>
-        <div id="carrinho-lista" class="sidebar-content"></div>
+        <div id="carrinho-lista" class="sidebar-content">
+          <div class="conteudo-carrinho"></div>
+          <p id="carrinho-vazio">Seu carrinho está vazio</p>
+          <div class="botoes-carrinho">
+            <button class="comprar">Finalizar compra</button>
+            <button class="limpar">Limpar carrinho</button>
+          </div>
+        </div>
       </section>
     </header>
 

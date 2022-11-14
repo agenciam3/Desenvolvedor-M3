@@ -8,16 +8,22 @@ let ordenardBtn = document.getElementById("btn-ordenar");
 let closeBtn = document.querySelector(".closebtn");
 
 let sidebarAberto = "";
-
+let botoesComprar = [];
+let botoesRemoverItem = [];
 let listaProdutosAPI = [];
+let itensNoCarrinho = document.querySelectorAll(".carrinho-item");
 let limitadorDeItems = 9;
 let paginaAtual = 1;
 
 const btnCarregarMais = document.getElementById("carregar-mais");
 const divItems = document.querySelector(".cards-wrap");
+const divCarrinhoItems = document.querySelector(".conteudo-carrinho");
+const carrinhoVazio = document.getElementById("carrinho-vazio");
+const botoesCarrinho = document.querySelector(".botoes-carrinho");
 const btnVerMaisMenos = document.querySelector(".ver-mais-opcoes");
 const containerFiltroCores = document.querySelector("#filtrar-sidebar .cores");
 const selectOrdenacao = document.querySelector("select.ordenacao");
+const contadorCarrinho = document.getElementById("contador");
 
 window.onload = () => {
   getproducts();
@@ -86,10 +92,13 @@ function closeSideNav() {
 //Função para tratar os filtros/carrinho
 function escutaSideBar(e) {
   e.stopPropagation();
-  if (e.target.parentElement.className.includes("filtro-aberto")) {
-    e.target.parentElement.classList.remove("filtro-aberto");
-  } else {
-    e.target.parentElement.classList.add("filtro-aberto");
+
+  if (e.target.classList[0] !== "remover-item") {
+    if (e.target.parentElement.className.includes("filtro-aberto")) {
+      e.target.parentElement.classList.remove("filtro-aberto");
+    } else {
+      e.target.parentElement.classList.add("filtro-aberto");
+    }
   }
 
   //Fecha o modal se clicar no X
@@ -226,10 +235,13 @@ function listItems(items, pageActual, limitItems) {
                         <label class="nome-produto">${nomeProduto}</label>
                         <label class="preco-produto">R$ ${item.price}</label>
                         <label class="parcela-produto">até ${item.parcelamento[0]}x de R$${item.parcelamento[1]}</label>
-                        <button class="adicionar-carrinho">Comprar</button>
+                        <button value="${item.id}" class="adicionar-carrinho">Comprar</button>
                       </div>`;
 
       divItems.innerHTML += cardItem;
+
+      botoesComprar = document.querySelectorAll(".adicionar-carrinho");
+      escutarComprar();
     }
 
     // Se existir algum item undefined (Fim da paginação) ele remove o botão de mostrar mais
@@ -237,4 +249,72 @@ function listItems(items, pageActual, limitItems) {
       btnCarregarMais.style.display = "none";
     }
   });
+}
+
+// adicionar o produto no carrinho
+function escutarComprar() {
+  botoesComprar.forEach((item, index) => {
+    item.addEventListener("click", function (e) {
+      const idClicado = e.target.value;
+      let produtoClicado = listaProdutosAPI.filter(
+        (produto) => produto.id === idClicado
+      );
+
+      const nomeProduto =
+        produtoClicado[0].name.length > 18
+          ? produtoClicado[0].name.slice(0, 18) + "..."
+          : produtoClicado[0].name;
+
+      let cardItem = `<div data-value="${produtoClicado[0].id}" class="carrinho-item">
+                    <img class="imagem-carrinho" src=".${produtoClicado[0].image}"
+                    alt="${produtoClicado[0].name} na cor ${produtoClicado[0].color}" />
+                    <div class="detalhes-produto">
+                      <label class="nome-produtoClicado">${nomeProduto}</label>
+                      <label class="valor-produto"><span>R$ </span>${produtoClicado[0].price}</label>
+                    </div>
+                    <img data-value="${produtoClicado[0].id}" class="remover-item" src="./img/ícone-lixeira.png" />
+                  </div>`;
+
+      divCarrinhoItems.innerHTML += cardItem;
+
+      divCarrinhoItems.style.display = "block";
+      botoesCarrinho.style.display = "flex";
+      carrinhoVazio.style.display = "none";
+
+      contadorCarrinho.innerText =
+        document.querySelectorAll(".carrinho-item").length;
+
+      contadorCarrinho.removeAttribute("style");
+
+      botoesRemoverItem = document.querySelectorAll(".remover-item");
+      escutarRemoverItem();
+    });
+  });
+}
+
+// Remove o produto no carrinho
+function escutarRemoverItem() {
+  botoesRemoverItem.forEach((item) => {
+    item.addEventListener("click", function () {
+      this.parentElement.remove();
+
+      contadorCarrinho.innerText =
+        document.querySelectorAll(".carrinho-item").length;
+      exibeMensagemVazio();
+      //document.querySelector(`.carrinho-item[data-id="${idClicado}"]`).remove();
+    });
+  });
+}
+
+divCarrinhoItems.style.display = "none";
+botoesCarrinho.style.display = "none";
+contadorCarrinho.style.display = "none";
+//
+function exibeMensagemVazio() {
+  if (document.querySelectorAll(".carrinho-item").length === 0) {
+    divCarrinhoItems.style.display = "none";
+    botoesCarrinho.style.display = "none";
+    carrinhoVazio.style.display = "block";
+    contadorCarrinho.style.display = "none";
+  }
 }

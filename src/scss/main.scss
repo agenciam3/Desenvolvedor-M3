@@ -35,6 +35,23 @@ header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      .contador {
+        position: relative;
+        #contador {
+          position: absolute;
+          background-color: #00c0ee;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          top: 15px;
+          right: -8px;
+          font-size: 12px;
+        }
+      }
     }
   }
 }
@@ -80,6 +97,7 @@ header {
     text-decoration: none;
     color: #818181;
     display: block;
+    cursor: pointer;
     transition: 0.3s;
     &:hover {
       color: #000;
@@ -244,6 +262,104 @@ header {
         &#btn-limpar-filtro {
           border: 1px solid #666666;
           background-color: transparent;
+        }
+      }
+    }
+
+    &#carrinho-lista {
+      position: relative;
+      .conteudo-carrinho {
+        height: calc(100vh - 180px);
+        overflow-y: auto;
+        padding-right: 20px;
+
+        &::-webkit-scrollbar {
+          width: 12px; /* width of the entire scrollbar */
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #eee; /* color of the tracking area */
+          border-radius: 20px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.5); /* color of the scroll thumb */
+          border-radius: 20px; /* roundness of the scroll thumb */
+          border: 3px solid #eee; /* creates padding around scroll thumb */
+
+          &:hover {
+            background-color: rgba(0, 0, 0, 1);
+          }
+        }
+        .carrinho-item {
+          display: flex;
+          height: 130px;
+          border-top: 1px solid #666666;
+          width: 100%;
+          justify-content: space-between;
+          padding-top: 20px;
+          margin-bottom: 30px;
+          &:first-child {
+            border-top: none;
+          }
+          .imagem-carrinho {
+            width: 100px;
+            height: 100%;
+            object-fit: contain;
+          }
+          .detalhes-produto {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            label {
+              margin: 0 10px 20px 0;
+              &.valor-produto {
+                font-size: 20px;
+                font-weight: bold;
+                span {
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+          .remover-item {
+            height: 25px;
+            cursor: pointer;
+            &:hover {
+              opacity: 72%;
+            }
+          }
+        }
+      }
+      .botoes-carrinho {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        gap: 10px;
+        background-color: #fff;
+        width: 100%;
+        padding: 15px 0;
+        button {
+          border: none;
+          font-size: 14px;
+          height: 33px;
+          width: 180px;
+          cursor: pointer;
+          &:hover {
+            opacity: 72%;
+          }
+          &.comprar {
+            background: #00c0ee;
+            color: #ffffff;
+          }
+          &.limpar {
+            background-color: transparent;
+          }
+        }
+      }
+      @media screen and (min-width: 700px) {
+        .conteudo-carrinho {
+          height: calc(100vh - 208px);
         }
       }
     }
