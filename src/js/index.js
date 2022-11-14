@@ -17,6 +17,9 @@ let optionsOrder = document.querySelector(".orderBy");
 // Váriavel do botão de menor preço
 let lowestPrice = document.querySelector(".lowest-price");
 
+// Variável do botão de maior preço
+let biggestPrice = document.querySelector(".biggest-price");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -103,6 +106,19 @@ function showLowestPrice() {
   page = 1;
   query = "price";
   sort = "asc";
+
+  getDataFromApi();
+}
+
+biggestPrice.addEventListener("click", showBiggestPrice);
+
+function showBiggestPrice() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  query = "price";
+  sort = "desc";
 
   getDataFromApi();
 }
