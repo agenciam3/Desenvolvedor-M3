@@ -82,4 +82,9 @@ function orderToggle() {
   }
 }
 
+let lowestPrice = document.querySelector(".lowest-price");
+lowestPrice.addEventListener("click", showLowestPrice);
+
+function showLowestPrice() {}
+
 main();
