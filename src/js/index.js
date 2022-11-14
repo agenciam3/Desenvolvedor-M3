@@ -70,4 +70,16 @@ function carregarMais() {
   getDataFromApi();
 }
 
+let titleOrder = document.querySelector(".product-order");
+let optionsOrder = document.querySelector(".orderBy");
+titleOrder.addEventListener("click", orderToggle);
+
+function orderToggle() {
+  if (optionsOrder.classList.contains("show")) {
+    optionsOrder.classList.remove("show");
+  } else {
+    optionsOrder.classList.add("show");
+  }
+}
+
 main();

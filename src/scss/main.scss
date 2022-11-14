@@ -6,7 +6,7 @@ button {
 }
 
 header {
-  width: calc(1219px - 162px);
+  width: 1200px;
   margin: 0 auto;
 
   .contain {
@@ -45,7 +45,7 @@ hr {
 }
 
 .container {
-  width: calc(1219px - 162px);
+  width: 1200px;
   margin: 0 auto;
 
   .product-header {
@@ -57,12 +57,49 @@ hr {
       font-size: 2rem;
     }
 
-    .product.order {
-      display: flex;
-      align-items: center;
-      border: 1px solid rgba(0, 0, 0, 0.5);
-      padding: 0.625rem;
-      cursor: pointer;
+    .order {
+      position: relative;
+
+      .product-order {
+        display: flex;
+        align-items: center;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        padding: 0.625rem;
+        cursor: pointer;
+      }
+
+      .orderBy {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        position: absolute;
+        left: 2px;
+        top: 40px;
+
+        &.show {
+          opacity: 1;
+          visibility: visible;
+        }
+
+        div {
+          &:focus {
+            background-color: #00c0ee;
+            color: #fff;
+          }
+          span {
+            display: block;
+            padding: 8px 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+
+            &:hover {
+              background-color: #00c0ee;
+              color: #fff;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -102,7 +139,7 @@ hr {
     }
 
     .product-list-content {
-      width: 80%;
+      width: 70%;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       margin-bottom: 5rem;
