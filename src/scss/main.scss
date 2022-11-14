@@ -167,9 +167,29 @@ hr {
         }
       }
 
-      .sizes span {
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        padding: 5px 8px;
+      .sizes {
+        color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        gap: 0.5rem;
+        .size {
+          width: 32px;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          height: 32px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+
+          &:hover {
+            border: 1px solid #00c0ee;
+            color: #000;
+            cursor: pointer;
+          }
+
+          span {
+            padding: 5px 8px;
+          }
+        }
       }
 
       .prices {
