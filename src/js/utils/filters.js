@@ -4,6 +4,7 @@ import {
   renderProducts,
   setFilterdProducts,
 } from "..";
+import { updateProductsButtonListener } from "../eventListeners";
 
 export function sortProducts(ordering = "most-recent") {
   switch (ordering) {
@@ -89,4 +90,5 @@ export function filterAll({ sizes, colors, prices }) {
 
   setFilterdProducts(priceFilter);
   renderProducts();
+  updateProductsButtonListener();
 }
