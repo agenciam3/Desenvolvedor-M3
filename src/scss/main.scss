@@ -12,6 +12,9 @@ $font-family: "Open Sans", sans-serif;
 
 body {
   font-family: $font-family;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .hidden {
@@ -726,6 +729,8 @@ footer {
   color: white;
   font-size: 0.875rem;
   padding: 8px;
+
+  margin-top: auto;
 
   text-align: center;
 }
