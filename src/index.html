@@ -1,19 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
+  
 </head>
 
 <body>
-
+  <div class="bar">
+    <img id="icon"src="/img/logo-m3.png" alt="M3, Performance Digital" />
+    <img id="sacola" src="/img/sacola-de-supermercado.png" />
+  </div>
+  <hr />
+  <div class="bar2">
+    <p id="pB">Blusas</p>
+    <select class="combo">
+      <option value="filtrosBox">Ordernar por:</option>
+      <option value="recentes">Mais recentes</option>
+      <option value="menorPreco">Menor preço</option>
+      <option value="maiorPreco">Maior preço</option>
+    </select>
+  </div>
+</div>
+<main id="content">
+<div class="optionsDiv" id="optionsDiv"></div>
+  <div class="productsSector" id="productsSector">
+      <div class="cardDiv" id="cardDiv"></div>
+    </div>
+  </main>
+  <button class="mais">CARREGAR MAIS</button>
+    <footer class="footer" id="footer"></footer>
 </body>
-<h1>Desafio m3</h1>
-
 <script src="bundle.js"></script>
 
 </html>
