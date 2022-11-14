@@ -33,6 +33,9 @@ let until150 = document.querySelector("#until-150");
 // Variável do checkbox até 350
 let until300 = document.querySelector("#until-300");
 
+// Variável do checkbox até 500
+let until500 = document.querySelector("#until-500");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -184,6 +187,19 @@ function showPriceUntil300() {
   sort = "asc";
   query = "price";
   extraQuery = "&price_lte=300&price_gte=151";
+  getDataFromApi();
+}
+
+until500.addEventListener("click", showPriceUntil500);
+
+function showPriceUntil500() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "price";
+  extraQuery = "&price_lte=500&price_gte=301";
   getDataFromApi();
 }
 
