@@ -198,8 +198,9 @@ hr {
 
       .sizes {
         color: rgba(0, 0, 0, 0.5);
-        display: flex;
+        display: grid;
         gap: 0.5rem;
+        grid-template-columns: repeat(4, 0.1fr);
         .size {
           width: 32px;
           border: 1px solid rgba(0, 0, 0, 0.5);
