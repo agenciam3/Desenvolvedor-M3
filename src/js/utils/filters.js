@@ -2,14 +2,14 @@ import {
   getFilteredProducts,
   products,
   renderProducts,
-  setFilterdProducts,
+  setFilteredProducts,
 } from "..";
 import { updateProductsButtonListener } from "../eventListeners";
 
 export function sortProducts(ordering = "most-recent") {
   switch (ordering) {
     case "most-recent":
-      setFilterdProducts(
+      setFilteredProducts(
         getFilteredProducts().sort((a, b) => {
           return new Date(b.date) - new Date(a.date);
         })
@@ -17,7 +17,7 @@ export function sortProducts(ordering = "most-recent") {
       renderProducts();
       break;
     case "lowest-price":
-      setFilterdProducts(
+      setFilteredProducts(
         getFilteredProducts().sort((a, b) => {
           return a.price - b.price;
         })
@@ -25,7 +25,7 @@ export function sortProducts(ordering = "most-recent") {
       renderProducts();
       break;
     case "highest-price":
-      setFilterdProducts(
+      setFilteredProducts(
         getFilteredProducts().sort((a, b) => {
           return b.price - a.price;
         })
@@ -67,16 +67,15 @@ export function sortByPrice(productsParam, prices) {
 
   const lowest = pricesAsInt[0]?.split("-")[0];
   // highest price or undefined if price is like: "500-"
-  const highest = pricesAsInt[pricesAsInt.length - 1]?.split("-")[1];
+  let highest = pricesAsInt[pricesAsInt.length - 1]?.split("-")[1];
 
   return productsParam.filter((product) => {
-    if (!highest || !lowest) return true;
+    if (lowest && !highest) {
+      return product.price >= lowest;
+    }
 
     if (prices.length > 0) {
-      return (
-        (product.price >= lowest && product.price <= highest) ||
-        (product.price >= lowest && !highest)
-      );
+      return product.price >= lowest && product.price <= highest;
     }
 
     return true;
@@ -88,7 +87,7 @@ export function filterAll({ sizes, colors, prices }) {
   const colorsFilter = sortByColor(sizeFilter, colors);
   const priceFilter = sortByPrice(colorsFilter, prices);
 
-  setFilterdProducts(priceFilter);
+  setFilteredProducts(priceFilter);
   renderProducts();
   updateProductsButtonListener();
 }

@@ -21,7 +21,7 @@ export function getFilteredProducts() {
   return filteredProducts;
 }
 
-export function setFilterdProducts(filtered) {
+export function setFilteredProducts(filtered) {
   filteredProducts = filtered;
 }
 
