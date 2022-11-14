@@ -2,8 +2,20 @@ const serverurl = process.env.SERVER_API;
 
 let product = document.querySelector(".product-list-content");
 let page = 1;
-let query = "id";
-let sort = "asc";
+
+// Váriaveis para adiconar filtro
+let query = "";
+let sort = "";
+
+// Variável do botão de carregar mais produtos
+const showButton = document.querySelector("#showMore");
+
+// Variáveis para toggle da ordenação dos produtos
+let titleOrder = document.querySelector(".product-order");
+let optionsOrder = document.querySelector(".orderBy");
+
+// Váriavel do botão de menor preço
+let lowestPrice = document.querySelector(".lowest-price");
 
 function createProduct(data) {
   console.log(data.name);
@@ -65,7 +77,6 @@ function main() {
   getDataFromApi();
 }
 
-const showButton = document.querySelector("#showMore");
 showButton.addEventListener("click", carregarMais);
 
 function carregarMais() {
@@ -73,8 +84,6 @@ function carregarMais() {
   getDataFromApi();
 }
 
-let titleOrder = document.querySelector(".product-order");
-let optionsOrder = document.querySelector(".orderBy");
 titleOrder.addEventListener("click", orderToggle);
 
 function orderToggle() {
@@ -85,7 +94,6 @@ function orderToggle() {
   }
 }
 
-let lowestPrice = document.querySelector(".lowest-price");
 lowestPrice.addEventListener("click", showLowestPrice);
 
 function showLowestPrice() {
