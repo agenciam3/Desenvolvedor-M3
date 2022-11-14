@@ -30,6 +30,9 @@ let until50 = document.querySelector("#until-50");
 // Variável do checkbox até 150
 let until150 = document.querySelector("#until-150");
 
+// Variável do checkbox até 350
+let until300 = document.querySelector("#until-300");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -146,9 +149,9 @@ function showMostRecentProduct() {
   getDataFromApi();
 }
 
-until50.addEventListener("click", showPriceultil50);
+until50.addEventListener("click", showPriceUntil50);
 
-function showPriceultil50() {
+function showPriceUntil50() {
   //limpar lista de produtos
   product.innerHTML = "";
 
@@ -158,16 +161,29 @@ function showPriceultil50() {
   getDataFromApi();
 }
 
-until150.addEventListener("click", showPriceultil150);
+until150.addEventListener("click", showPriceUntil150);
 
-function showPriceultil150() {
+function showPriceUntil150() {
   //limpar lista de produtos
   product.innerHTML = "";
 
   page = 1;
   sort = "asc";
   query = "price";
-  extraQuery = "?price_lte=150&price_gte=51";
+  extraQuery = "&price_lte=150&price_gte=51";
+  getDataFromApi();
+}
+
+until300.addEventListener("click", showPriceUntil300);
+
+function showPriceUntil300() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "price";
+  extraQuery = "&price_lte=300&price_gte=151";
   getDataFromApi();
 }
 
