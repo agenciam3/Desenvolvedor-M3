@@ -66,6 +66,9 @@ let size40 = document.querySelector(".size-40");
 // Váriavel da cor amarela
 let yellow = document.querySelector("#yellow");
 
+// Váriavel da cor azul
+let blue = document.querySelector("#blue");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -360,6 +363,19 @@ function showProductsWithYellowColor() {
   sort = "asc";
   query = "color";
   extraQuery = "&color=Amarelo";
+  getDataFromApi();
+}
+
+blue.addEventListener("click", showProductsWithBlueColor);
+
+function showProductsWithBlueColor() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "color";
+  extraQuery = "&color=Azul";
   getDataFromApi();
 }
 
