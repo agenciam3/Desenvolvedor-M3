@@ -1,0 +1,51 @@
+@import "reset";
+@import "colors.scss";
+
+.container-site {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+
+  * {
+    font-family: $font-principal;
+    font-style: normal;
+    font-weight: 400;
+  }
+}
+
+.mobile-only {
+  display: flex !important;
+
+  @media screen and (min-width: 1200px) {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  display: none !important;
+
+  @media screen and (min-width: 1200px) {
+    display: flex !important;
+  }
+}
+
+.vazio {
+  font-size: 24px;
+  color: $medium-gray;
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  #resetar-filtro {
+    color: $light-blue;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 72%;
+      border-bottom: 2px solid $light-blue;
+    }
+  }
+}

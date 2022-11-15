@@ -43,6 +43,8 @@ window.onload = () => {
 
 //Abre o sidebar de carrinho
 sacolaBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  e.stopPropagation();
   openSideNav("carrinho");
 });
 
@@ -101,11 +103,23 @@ function closeSideNav() {
   document.body.style.backgroundColor = "white";
 }
 
-//Função para tratar os filtros/carrinho
+//Função para tratar os filtros/carrinho mobile
 function escutaSideBar(e) {
   e.stopPropagation();
-
   if (e.target.classList[0] !== "remover-item") {
+    //previne o click caso for no h3 ou img, e sobe mais um nível para adicionar a classe de filtro-aberto
+    if (e.target.localName === "h3" || e.target.localName === "img") {
+      e.preventDefault();
+
+      if (
+        e.target.parentElement.parentElement.className.includes("filtro-aberto")
+      ) {
+        e.target.parentElement.parentElement.classList.remove("filtro-aberto");
+      } else {
+        e.target.parentElement.parentElement.classList.add("filtro-aberto");
+      }
+    }
+    //sobe um nível para adicionar a classe de filtro-aberto
     if (e.target.parentElement.className.includes("filtro-aberto")) {
       e.target.parentElement.classList.remove("filtro-aberto");
     } else {
@@ -442,7 +456,9 @@ handleChangeCores.addEventListener("change", function (e) {
     }
   });
 
-  filtrarEOrdenarResultados();
+  if (window.innerWidth > 1200) {
+    filtrarEOrdenarResultados();
+  }
 });
 
 //Escuta check de Tamanhos
@@ -465,7 +481,9 @@ handleChangeTamanhos.addEventListener("change", function (e) {
     }
   });
 
-  filtrarEOrdenarResultados();
+  if (window.innerWidth > 1200) {
+    filtrarEOrdenarResultados();
+  }
 });
 
 //Escuta check de cores
@@ -488,7 +506,18 @@ handleChangePrecos.addEventListener("change", function (e) {
     }
   });
 
-  filtrarEOrdenarResultados();
+  if (window.innerWidth > 1200) {
+    filtrarEOrdenarResultados();
+  }
+});
+
+// Função para aplicar o filtro quando clicar no botão de filtrar
+const btnFiltrar = document.getElementById("btn-aplicar-filtro");
+btnFiltrar.addEventListener("click", function () {
+  if (window.innerWidth <= 1200) {
+    filtrarEOrdenarResultados();
+    closeSideNav();
+  }
 });
 
 // Função parar checar se o valor está entre o intervalo

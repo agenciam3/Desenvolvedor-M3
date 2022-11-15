@@ -7,6 +7,7 @@
     <meta name="description" content="Loja E-commerce da M3." />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="Rebeca Ribeiro" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
     <title>Desenvolvedor M3</title>
     <link rel="stylesheet" href="main.css" />
   </head>
@@ -16,7 +17,7 @@
       <nav>
         <ul class="navegacao container-site">
           <li>
-            <a class="logo">
+            <a class="logo" href="/">
               <img
                 src="./img/logo-m3.png"
                 alt="Logo da agência m3, escrito m3 em azul, separado por uma barra vertical e ao outro lado da barra, escrito performance digital."
@@ -34,7 +35,7 @@
         </ul>
       </nav>
       <section id="carrinho-sidebar" class="sidenav">
-        <a class="closebtn">&times;</a>
+        <span class="closebtn">&times;</span>
         <h2>CARRINHO</h2>
         <div id="carrinho-lista" class="sidebar-content">
           <div class="conteudo-carrinho"></div>
@@ -64,7 +65,7 @@
       </div>
       <div class="content-site">
         <aside id="filtrar-sidebar" class="sidenav">
-          <a class="closebtn mobile-only">&times;</a>
+          <span class="closebtn mobile-only">&times;</span>
           <h2 class="mobile-only">FILTRAR</h2>
           <div id="filtrar-lista" class="sidebar-content">
             <div class="item-filtro lista-cores">
@@ -233,7 +234,7 @@
         <section class="lista-itens">
           <p id="sem-items" class="vazio">
             Não foi encontrado nenhum item para sua busca.
-            <a id="resetar-filtro">Resetar o filtro</a>
+            <span id="resetar-filtro">Resetar o filtro</span>
           </p>
           <div class="cards-wrap"></div>
           <button id="carregar-mais">Carregar mais</button>
@@ -247,7 +248,7 @@
       >
     </footer>
     <section id="ordenar-sidebar" class="sidenav">
-      <a class="closebtn">&times;</a>
+      <span class="closebtn">&times;</span>
       <h2>ORDENAR</h2>
       <div id="ordenar-lista" class="sidebar-content">
         <h3 class="ordenar-item">Mais recente</h3>
