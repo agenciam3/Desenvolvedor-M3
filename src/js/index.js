@@ -54,6 +54,9 @@ let sizeGg = document.querySelector(".size-gg");
 // Váriavel do tamanho U
 let sizeU = document.querySelector(".size-u");
 
+// Váriavel do tamanho 36
+let size36 = document.querySelector(".size-36");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -296,6 +299,19 @@ function showProductsWithSizeU() {
   sort = "asc";
   query = "size";
   extraQuery = "&size_like=U";
+  getDataFromApi();
+}
+
+size36.addEventListener("click", showProductsWithSize36);
+
+function showProductsWithSize36() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "size";
+  extraQuery = "&size_like=36";
   getDataFromApi();
 }
 
