@@ -45,6 +45,9 @@ let sizeP = document.querySelector(".size-p");
 // Váriavel do tamanho M
 let sizeM = document.querySelector(".size-m");
 
+// Váriavel do tamanho G
+let sizeG = document.querySelector(".size-g");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -234,7 +237,7 @@ function showProductsWithSizeP() {
   page = 1;
   sort = "asc";
   query = "size";
-  extraQuery = "&size=P";
+  extraQuery = "&size_like=P";
   getDataFromApi();
 }
 
@@ -247,7 +250,20 @@ function showProductsWithSizeM() {
   page = 1;
   sort = "asc";
   query = "size";
-  extraQuery = "&size=M";
+  extraQuery = "&size_like=M";
+  getDataFromApi();
+}
+
+sizeG.addEventListener("click", showProductsWithSizeG);
+
+function showProductsWithSizeG() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "size";
+  extraQuery = "&size_like=^G,";
   getDataFromApi();
 }
 
