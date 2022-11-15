@@ -31,6 +31,17 @@ Estamos procurando Desenvolvedores(as) `Front-end`, com sólidos conhecimentos e
 
 ----
 
+
+## EDIT
+Apos rodar o `npm install` para dar start no server e nos processos para desenvolvimento é necessário rodar o comando: `npm run start:gp`
+
+### E-mail : ribeirobeca1999@gmail.com
+
+
+### Como ficou o projeto:
+![image](https://user-images.githubusercontent.com/102257498/201807077-b88f79cc-7e2f-48dd-8b71-769073f23147.png)
+
+
 ## Como se candidatar a vaga
 
 - [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
@@ -53,6 +64,7 @@ O projeto possui um setup pronto no qual há a necessidade de possuir o nodejs i
 Para instalar as dependencias só é preciso executar o comando: `npm install`
 
 O dar start no server e nos processos para desenvolvimento é necessário rodar o comando: `npm start `
+
 
 Uma ver que o comando é dado ele irá levantar 2 servidores, sendo eles:
  - um para acessar o front-end que roda na porta 3000. No qual pode ser acessado pela url: http://localhost:3000

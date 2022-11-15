@@ -1,19 +1,262 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Loja E-commerce da M3." />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Rebeca Ribeiro" />
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <title>Desenvolvedor M3</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <header>
+      <nav>
+        <ul class="navegacao container-site">
+          <li>
+            <a class="logo" href="/">
+              <img
+                src="./img/logo-m3.png"
+                alt="Logo da agência m3, escrito m3 em azul, separado por uma barra vertical e ao outro lado da barra, escrito performance digital."
+              />
+            </a>
+          </li>
+          <li class="contador">
+            <img
+              id="sacola"
+              src="./img/sacola.svg"
+              alt="ícone de uma sacola na cor preta."
+            />
+            <span id="contador"></span>
+          </li>
+        </ul>
+      </nav>
+      <section id="carrinho-sidebar" class="sidenav">
+        <span class="closebtn">&times;</span>
+        <h2>CARRINHO</h2>
+        <div id="carrinho-lista" class="sidebar-content">
+          <div class="conteudo-carrinho"></div>
+          <p id="carrinho-vazio" class="vazio">Seu carrinho está vazio</p>
+          <div class="botoes-carrinho">
+            <button class="comprar">Finalizar compra</button>
+            <button class="limpar">Limpar carrinho</button>
+          </div>
+        </div>
+      </section>
+    </header>
 
-<body>
+    <div id="main" class="container-site">
+      <div class="topo-site">
+        <h1>Blusas</h1>
+        <div class="filtros mobile-only">
+          <button id="btn-filtrar" class="btn-filtro">Filtrar</button>
+          <button id="btn-ordenar" class="btn-filtro">Ordenar</button>
+        </div>
 
-</body>
-<h1>Desafio m3</h1>
+        <select class="desktop-only ordenacao">
+          <option value="" disabled selected hidden>Ordenar por:</option>
+          <option value="mais-recente">Mais recente</option>
+          <option value="menor-preco">Menor preço</option>
+          <option value="maior-preco">Maior preço</option>
+        </select>
+      </div>
+      <div class="content-site">
+        <aside id="filtrar-sidebar" class="sidenav">
+          <span class="closebtn mobile-only">&times;</span>
+          <h2 class="mobile-only">FILTRAR</h2>
+          <div id="filtrar-lista" class="sidebar-content">
+            <div class="item-filtro lista-cores">
+              <div class="nome-filtro">
+                <h3>CORES</h3>
+                <img
+                  class="mobile-only"
+                  src="./img/arrow-down.png"
+                  alt="ícone de uma seta apontando para baixo."
+                />
+              </div>
+              <div class="conteudo-filtro cores">
+                <label class="container-check"
+                  >Amarelo
+                  <input value="Amarelo" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Azul
+                  <input value="Azul" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Branco
+                  <input value="Branco" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Cinza
+                  <input value="Cinza" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Laranja
+                  <input value="Laranja" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Verde
+                  <input value="Verde" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Vermelho
+                  <input value="Vermelho" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Preto
+                  <input value="Preto" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Rosa
+                  <input value="Rosa" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >Vinho
+                  <input value="Vinho" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+              <label class="ver-mais-opcoes desktop-only"
+                >Ver todas as cores
+                <img
+                  src="./img/arrow-down.png"
+                  alt="ícone de uma seta, apontando para baixo"
+              /></label>
+            </div>
+            <div class="item-filtro lista-tamanhos">
+              <div class="nome-filtro">
+                <h3>TAMANHOS</h3>
+                <img
+                  class="mobile-only"
+                  src="./img/arrow-down.png"
+                  alt="ícone de uma seta apontando para baixo."
+                />
+              </div>
+              <div class="conteudo-filtro tamanhos">
+                <label class="container-check-tam">
+                  <input value="P" type="checkbox" />
+                  <span class="checkmark">P</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="M" type="checkbox" />
+                  <span class="checkmark">M</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="G" type="checkbox" />
+                  <span class="checkmark">G</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="GG" type="checkbox" />
+                  <span class="checkmark">GG</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="U" type="checkbox" />
+                  <span class="checkmark">U</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="36" type="checkbox" />
+                  <span class="checkmark">36</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="38" type="checkbox" />
+                  <span class="checkmark">38</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="40" type="checkbox" />
+                  <span class="checkmark">40</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="42" type="checkbox" />
+                  <span class="checkmark">42</span>
+                </label>
+                <label class="container-check-tam">
+                  <input value="44" type="checkbox" />
+                  <span class="checkmark">44</span>
+                </label>
+              </div>
+            </div>
+            <div class="item-filtro lista-preco">
+              <div class="nome-filtro">
+                <h3>FAIXA DE PREÇO</h3>
+                <img
+                  class="mobile-only"
+                  src="./img/arrow-down.png"
+                  alt="ícone de uma seta apontando para baixo."
+                />
+              </div>
+              <div class="conteudo-filtro">
+                <label class="container-check"
+                  >de R$0 até R$50
+                  <input value="0 a 50" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >de R$51 até R$150
+                  <input value="51 a 150" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >de R$151 até R$300
+                  <input value="151 a 300" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >de R$301 até R$500
+                  <input value="301 a 500" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container-check"
+                  >a partir de R$ 500
+                  <input value="acima 500" type="checkbox" />
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+            <div class="container-botoes mobile-only">
+              <button id="btn-aplicar-filtro">APLICAR</button>
+              <button id="btn-limpar-filtro">LIMPAR</button>
+            </div>
+          </div>
+        </aside>
+        <section class="lista-itens">
+          <p id="sem-items" class="vazio">
+            Não foi encontrado nenhum item para sua busca.
+            <span id="resetar-filtro">Resetar o filtro</span>
+          </p>
+          <div class="cards-wrap"></div>
+          <button id="carregar-mais">Carregar mais</button>
+        </section>
+      </div>
+    </div>
 
-<script src="bundle.js"></script>
+    <footer>
+      <a href="https://m3ecommerce.com/" target="blanck"
+        >M3: Implantação de E-commerce VTEX</a
+      >
+    </footer>
+    <section id="ordenar-sidebar" class="sidenav">
+      <span class="closebtn">&times;</span>
+      <h2>ORDENAR</h2>
+      <div id="ordenar-lista" class="sidebar-content">
+        <h3 class="ordenar-item">Mais recente</h3>
+        <h3 class="ordenar-item">Menor preço</h3>
+        <h3 class="ordenar-item">Maior preço</h3>
+      </div>
+    </section>
+  </body>
 
+  <script src="bundle.js"></script>
 </html>
