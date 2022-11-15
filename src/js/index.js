@@ -63,6 +63,9 @@ let size38 = document.querySelector(".size-38");
 // Váriavel do tamanho 38
 let size40 = document.querySelector(".size-40");
 
+// Váriavel da cor amarela
+let yellow = document.querySelector("#yellow");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -344,6 +347,19 @@ function showProductsWithSize40() {
   sort = "asc";
   query = "size";
   extraQuery = "&size_like=40";
+  getDataFromApi();
+}
+
+yellow.addEventListener("click", showProductsWithYellowColor);
+
+function showProductsWithYellowColor() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "color";
+  extraQuery = "&color=Amarelo";
   getDataFromApi();
 }
 
