@@ -75,6 +75,9 @@ let white = document.querySelector("#white");
 // Váriavel da cor cinza
 let gray = document.querySelector("#gray");
 
+// Váriavel da cor cinza
+let orange = document.querySelector("#orange");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -408,6 +411,19 @@ function showProductsWithGrayColor() {
   sort = "asc";
   query = "color";
   extraQuery = "&color=Cinza";
+  getDataFromApi();
+}
+
+orange.addEventListener("click", showProductsWithOrangeColor);
+
+function showProductsWithOrangeColor() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  sort = "asc";
+  query = "color";
+  extraQuery = "&color=Laranja";
   getDataFromApi();
 }
 
