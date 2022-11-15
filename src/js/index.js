@@ -2,6 +2,7 @@ const serverurl = process.env.SERVER_API;
 
 let product = document.querySelector(".product-list-content");
 let page = 1;
+let limit = 9;
 
 // Váriaveis para adiconar filtro
 let query = "id";
@@ -14,6 +15,9 @@ const showButton = document.querySelector("#showMore");
 // Variáveis para toggle da ordenação dos produtos
 let titleOrder = document.querySelector(".product-order");
 let optionsOrder = document.querySelector(".orderBy");
+// Mobile
+let titleOrderMobile = document.querySelector(".product-order-mobile");
+let optionOrderByMobile = document.querySelector(".orderByMobile");
 
 // Váriavel do botão de mais recente
 let mostRecent = document.querySelector(".most-recent");
@@ -78,6 +82,18 @@ let gray = document.querySelector("#gray");
 // Váriavel da cor cinza
 let orange = document.querySelector("#orange");
 
+// Variavel do close na ordenação do mobile
+let closeButton = document.querySelector(".close");
+
+// Variavel do menor preço na ordenação do mobile
+let lowestPriceMob = document.querySelector(".lowest-price-mob");
+
+// Variavel do maior preço na ordenação do mobile
+let biggestPriceMob = document.querySelector(".biggest-price-mob");
+
+// Variavel do mais recente na ordenação do mobile
+let mostRecentMob = document.querySelector(".most-recent-mob");
+
 function createProduct(data) {
   console.log(data.name);
   productDiv = document.createElement("div");
@@ -116,7 +132,7 @@ function createProduct(data) {
 
 function getDataFromApi() {
   fetch(
-    `http://localhost:5000/products?_page=${page}&_limit=9&_sort=${query}&_order=${sort}${extraQuery}`
+    `http://localhost:5000/products?_page=${page}&_limit=${limit}&_sort=${query}&_order=${sort}${extraQuery}`
   )
     .then(function (response) {
       return response.json();
@@ -155,9 +171,40 @@ function orderToggle() {
   }
 }
 
+titleOrderMobile.addEventListener("click", orderToggleMobile);
+closeButton.addEventListener("click", orderToggleMobile);
+
+function orderToggleMobile() {
+  if (optionOrderByMobile.classList.contains("show")) {
+    optionOrderByMobile.classList.remove("show");
+  } else {
+    optionOrderByMobile.classList.add("show");
+  }
+}
+
+closeButton.addEventListener("click", closeOrderFilter);
+
+function closeOrderFilter() {
+  optionOrderByMobile.classList.remove("show");
+}
+
 lowestPrice.addEventListener("click", showLowestPrice);
 
 function showLowestPrice() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  query = "price";
+  sort = "asc";
+
+  getDataFromApi();
+}
+
+lowestPriceMob.addEventListener("click", showLowestPriceMob);
+
+function showLowestPriceMob() {
+  optionOrderByMobile.classList.remove("show");
   //limpar lista de produtos
   product.innerHTML = "";
 
@@ -181,9 +228,37 @@ function showBiggestPrice() {
   getDataFromApi();
 }
 
+biggestPriceMob.addEventListener("click", showBiggestPriceMob);
+
+function showBiggestPriceMob() {
+  optionOrderByMobile.classList.remove("show");
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  query = "price";
+  sort = "desc";
+
+  getDataFromApi();
+}
+
 mostRecent.addEventListener("click", showMostRecentProduct);
 
 function showMostRecentProduct() {
+  //limpar lista de produtos
+  product.innerHTML = "";
+
+  page = 1;
+  query = "date";
+  sort = "asc";
+
+  getDataFromApi();
+}
+
+mostRecentMob.addEventListener("click", showMostRecentProductMob);
+
+function showMostRecentProductMob() {
+  optionOrderByMobile.classList.remove("show");
   //limpar lista de produtos
   product.innerHTML = "";
 
