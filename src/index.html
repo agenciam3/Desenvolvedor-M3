@@ -38,7 +38,7 @@
         <h2>CARRINHO</h2>
         <div id="carrinho-lista" class="sidebar-content">
           <div class="conteudo-carrinho"></div>
-          <p id="carrinho-vazio">Seu carrinho está vazio</p>
+          <p id="carrinho-vazio" class="vazio">Seu carrinho está vazio</p>
           <div class="botoes-carrinho">
             <button class="comprar">Finalizar compra</button>
             <button class="limpar">Limpar carrinho</button>
@@ -231,6 +231,10 @@
           </div>
         </aside>
         <section class="lista-itens">
+          <p id="sem-items" class="vazio">
+            Não foi encontrado nenhum item para sua busca.
+            <a id="resetar-filtro">Resetar o filtro</a>
+          </p>
           <div class="cards-wrap"></div>
           <button id="carregar-mais">Carregar mais</button>
         </section>

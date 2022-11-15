@@ -27,6 +27,25 @@
   }
 }
 
+.vazio {
+  font-size: 24px;
+  color: #666666;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  #resetar-filtro {
+    color: #00c0ee;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 72%;
+    }
+  }
+}
+
 header {
   border-bottom: 2px solid #c7c7c7;
   position: fixed;
@@ -42,6 +61,7 @@ header {
       align-items: center;
       .contador {
         position: relative;
+        cursor: pointer;
         #contador {
           position: absolute;
           background-color: #00c0ee;
@@ -81,6 +101,7 @@ header {
 
   &.open {
     width: 100%;
+    z-index: 10;
   }
 
   h2 {
@@ -116,6 +137,7 @@ header {
       line-height: 30px;
       color: #000000;
       padding-bottom: 30px;
+      cursor: pointer;
       &:hover {
         opacity: 72%;
       }
@@ -143,10 +165,15 @@ header {
         align-items: center;
         z-index: 1;
         justify-content: space-between;
+        cursor: pointer;
 
         h3,
         img {
           z-index: -1;
+        }
+
+        &:hover {
+          opacity: 72%;
         }
       }
       .conteudo-filtro {
@@ -168,6 +195,11 @@ header {
 
           &:first-child {
             margin-top: 20px;
+          }
+
+          &.disabled-check {
+            cursor: not-allowed;
+            opacity: 0.4;
           }
           input {
             position: absolute;
@@ -212,6 +244,11 @@ header {
             -moz-user-select: none;
             -ms-user-select: none;
             user-select: none;
+
+            &.disabled-check {
+              cursor: not-allowed;
+              opacity: 0.4;
+            }
 
             input {
               position: absolute;
@@ -260,6 +297,11 @@ header {
         line-height: 19px;
         text-transform: uppercase;
         border: none;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 72%;
+        }
         &#btn-aplicar-filtro {
           background: #00c0ee;
           color: #ffffff;
@@ -388,6 +430,15 @@ header {
 
     .sidebar-content {
       padding: 45px 24px;
+      .item-filtro {
+        .nome-filtro {
+          cursor: default;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 
@@ -471,6 +522,11 @@ header {
         max-width: 172px;
         width: 100%;
         height: 49px;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 72%;
+        }
         &#btn-filtrar {
           border-right: 0;
         }
@@ -478,14 +534,16 @@ header {
     }
     select {
       padding: 10px;
-
-      option {
-        height: 36px;
-      }
+      cursor: pointer;
     }
   }
   .content-site {
     margin: 35px 0;
+
+    #sem-items {
+      display: none;
+    }
+
     .lista-itens {
       margin: 0 auto;
       display: flex;

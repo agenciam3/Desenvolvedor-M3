@@ -2,7 +2,7 @@ const serverurl = process.env.SERVER_API;
 
 //console.log("Dev m3", serverurl);
 
-let sacolaBtn = document.getElementById("sacola");
+let sacolaBtn = document.querySelector(".contador");
 let filtrarBtn = document.getElementById("btn-filtrar");
 let ordenardBtn = document.getElementById("btn-ordenar");
 let closeBtn = document.querySelector(".closebtn");
@@ -15,6 +15,12 @@ let itensNoCarrinho = document.querySelectorAll(".carrinho-item");
 let limitadorDeItems = 9;
 let paginaAtual = 1;
 
+//Variáveis para controlar o filtro
+let corFiltrada = "";
+let tamanhoFiltrado = "";
+let precoFiltrado = "";
+let ordem = "";
+
 const btnCarregarMais = document.getElementById("carregar-mais");
 const divItems = document.querySelector(".cards-wrap");
 const divCarrinhoItems = document.querySelector(".conteudo-carrinho");
@@ -24,13 +30,19 @@ const btnVerMaisMenos = document.querySelector(".ver-mais-opcoes");
 const containerFiltroCores = document.querySelector("#filtrar-sidebar .cores");
 const selectOrdenacao = document.querySelector("select.ordenacao");
 const contadorCarrinho = document.getElementById("contador");
+const semResultadoBusca = document.getElementById("sem-items");
+
+//constantes dos filtros
+const listaFiltroCores = document.querySelectorAll(".lista-cores input");
+const listaFiltroTamanho = document.querySelectorAll(".lista-tamanhos input");
+const listaFiltroPreco = document.querySelectorAll(".lista-preco input");
 
 window.onload = () => {
   getproducts();
 };
 
 //Abre o sidebar de carrinho
-sacolaBtn.addEventListener("click", function () {
+sacolaBtn.addEventListener("click", function (e) {
   openSideNav("carrinho");
 });
 
@@ -130,10 +142,6 @@ btnCarregarMais.addEventListener("click", function () {
   listItems(listaProdutosAPI, page, limitadorDeItems);
 });
 
-document.addEventListener("change", function (e) {
-  console.log(e);
-});
-
 //Btn ver mais filtrar
 let verMaisAtivo = false;
 
@@ -160,21 +168,61 @@ btnVerMaisMenos.addEventListener("click", function () {
 //Altera a ordem de exibição
 //Desktop
 selectOrdenacao.addEventListener("change", function (e) {
-  let ordem = e.target.value;
-  ordenarResultados(ordem);
+  ordem = e.target.value;
+
+  filtrarEOrdenarResultados();
 });
 
 //Mobile
 document
   .querySelector("#ordenar-lista")
   .addEventListener("click", function (e) {
-    ordenarResultados(e.target.innerText);
+    ordem = e.target.innerText;
+
+    filtrarEOrdenarResultados();
     closeSideNav();
   });
 
-function ordenarResultados(ordemEvent) {
+function filtrarEOrdenarResultados() {
   let temp = listaProdutosAPI;
-  if (ordemEvent === "menor-preco" || ordemEvent === "Menor preço") {
+
+  if (corFiltrada !== "") {
+    temp = temp.filter((item) => item.color === corFiltrada);
+  }
+
+  if (tamanhoFiltrado !== "") {
+    let arrTam = [];
+    temp.forEach((item) =>
+      item.size.filter((tam) => {
+        if (tam === tamanhoFiltrado) {
+          arrTam.push(item);
+        }
+      })
+    );
+
+    temp = arrTam;
+  }
+
+  if (precoFiltrado !== "") {
+    switch (precoFiltrado) {
+      case "0 a 50":
+        temp = checaItemValorEntre(temp, 0, 50);
+        break;
+      case "51 a 150":
+        temp = checaItemValorEntre(temp, 51, 150);
+        break;
+      case "151 a 300":
+        temp = checaItemValorEntre(temp, 151, 300);
+        break;
+      case "301 a 500":
+        temp = checaItemValorEntre(temp, 301, 500);
+        break;
+      default:
+        temp = checaItemValorEntre(temp, 501, 9999999999);
+    }
+  }
+
+  if (ordem === "menor-preco" || ordem === "Menor preço") {
     temp.sort(function (a, b) {
       if (a.price < b.price) {
         return -1;
@@ -182,7 +230,9 @@ function ordenarResultados(ordemEvent) {
         return true;
       }
     });
-  } else if (ordemEvent === "maior-preco" || ordemEvent === "Maior preço") {
+  }
+
+  if (ordem === "maior-preco" || ordem === "Maior preço") {
     temp.sort(function (a, b) {
       if (a.price > b.price) {
         return -1;
@@ -190,7 +240,9 @@ function ordenarResultados(ordemEvent) {
         return true;
       }
     });
-  } else {
+  }
+
+  if (ordem === "mais-recente" || ordem === "Mais recente") {
     temp.sort(function (a, b) {
       let dataA = new Date(a.date);
       let dataB = new Date(b.date);
@@ -222,34 +274,46 @@ function listItems(items, pageActual, limitItems) {
     }
   }
 
-  result.map((item) => {
-    if (item) {
-      // valida se o nome do produto é maior que 18, se for adicionar '...' no final do nome
-      const nomeProduto =
-        item.name.length > 18 ? item.name.slice(0, 18) + "..." : item.name;
+  if (result.length < 1) {
+    btnCarregarMais.style.display = "none";
+    semResultadoBusca.style.display = "flex";
+  } else {
+    semResultadoBusca.removeAttribute("style");
+    result.map((item) => {
+      if (item) {
+        // valida se o nome do produto é maior que 18, se for adicionar '...' no final do nome
+        const nomeProduto =
+          item.name.length > 18 ? item.name.slice(0, 18) + "..." : item.name;
 
-      let cardItem = `<div class="card-item">
+        let cardItem = `<div class="card-item">
                         <img
                         src=".${item.image}"
                         alt="${item.name} na cor ${item.color}"
                         />
                         <label class="nome-produto">${nomeProduto}</label>
-                        <label class="preco-produto">R$ ${item.price}</label>
-                        <label class="parcela-produto">até ${item.parcelamento[0]}x de R$${item.parcelamento[1]}</label>
-                        <button value="${item.id}" class="adicionar-carrinho">Comprar</button>
+                        <label class="preco-produto">R$ ${formatarPreco(
+                          item.price
+                        )}</label>
+                        <label class="parcela-produto">até ${
+                          item.parcelamento[0]
+                        }x de R$${formatarPreco(item.parcelamento[1])}</label>
+                        <button value="${
+                          item.id
+                        }" class="adicionar-carrinho">Comprar</button>
                       </div>`;
 
-      divItems.innerHTML += cardItem;
+        divItems.innerHTML += cardItem;
 
-      botoesComprar = document.querySelectorAll(".adicionar-carrinho");
-      escutarComprar();
-    }
+        botoesComprar = document.querySelectorAll(".adicionar-carrinho");
+        escutarComprar();
+      }
 
-    // Se existir algum item undefined (Fim da paginação) ele remove o botão de mostrar mais
-    if (pageActual === totalPage) {
-      btnCarregarMais.style.display = "none";
-    }
-  });
+      // Se existir algum item undefined (Fim da paginação) ele remove o botão de mostrar mais
+      if (pageActual === totalPage) {
+        btnCarregarMais.style.display = "none";
+      }
+    });
+  }
 }
 
 // adicionar o produto no carrinho
@@ -266,14 +330,24 @@ function escutarComprar() {
           ? produtoClicado[0].name.slice(0, 18) + "..."
           : produtoClicado[0].name;
 
-      let cardItem = `<div data-value="${produtoClicado[0].id}" class="carrinho-item">
-                    <img class="imagem-carrinho" src=".${produtoClicado[0].image}"
-                    alt="${produtoClicado[0].name} na cor ${produtoClicado[0].color}" />
+      let cardItem = `<div data-value="${
+        produtoClicado[0].id
+      }" class="carrinho-item">
+                    <img class="imagem-carrinho" src=".${
+                      produtoClicado[0].image
+                    }"
+                    alt="${produtoClicado[0].name} na cor ${
+        produtoClicado[0].color
+      }" />
                     <div class="detalhes-produto">
                       <label class="nome-produtoClicado">${nomeProduto}</label>
-                      <label class="valor-produto"><span>R$ </span>${produtoClicado[0].price}</label>
+                      <label class="valor-produto"><span>R$ </span>${formatarPreco(
+                        produtoClicado[0].price
+                      )}</label>
                     </div>
-                    <img data-value="${produtoClicado[0].id}" class="remover-item" src="./img/ícone-lixeira.png" />
+                    <img data-value="${
+                      produtoClicado[0].id
+                    }" class="remover-item" src="./img/ícone-lixeira.png" />
                   </div>`;
 
       divCarrinhoItems.innerHTML += cardItem;
@@ -311,7 +385,8 @@ function escutarRemoverItem() {
 divCarrinhoItems.style.display = "none";
 botoesCarrinho.style.display = "none";
 contadorCarrinho.style.display = "none";
-//
+
+// Caso não existir nenhum item no carrinho exibe a mensagem
 function exibeMensagemVazio() {
   if (document.querySelectorAll(".carrinho-item").length === 0) {
     divCarrinhoItems.style.display = "none";
@@ -320,12 +395,16 @@ function exibeMensagemVazio() {
     contadorCarrinho.style.display = "none";
   }
 }
+
+// Limpa o carrinho
 document.querySelector(".limpar").addEventListener("click", function () {
   document.querySelectorAll(".carrinho-item").forEach((item) => {
     item.remove();
   });
   exibeMensagemVazio();
 });
+
+// Escuta o click no botão de finalizar compra
 document.querySelector(".comprar").addEventListener("click", function () {
   document.querySelectorAll(".carrinho-item").forEach((item) => {
     item.remove();
@@ -336,3 +415,125 @@ document.querySelector(".comprar").addEventListener("click", function () {
   closeSideNav();
   exibeMensagemVazio();
 });
+
+//Função para retornar o valor em real brasileiro
+function formatarPreco(valor) {
+  return valor.toLocaleString("pt-BR", { minimumFractionDigits: 2 });
+}
+
+//Controla o filtro
+//Escuta check de cores
+const handleChangeCores = document.querySelector(".lista-cores");
+handleChangeCores.addEventListener("change", function (e) {
+  corFiltrada = "";
+  listaFiltroCores.forEach((item) => {
+    if (item.value !== e.target.value) {
+      item.setAttribute("disabled", "disabled");
+      item.parentElement.classList.add("disabled-check");
+    }
+
+    if (!e.target.checked) {
+      item.removeAttribute("disabled");
+      item.parentElement.classList.remove("disabled-check");
+    }
+
+    if (item.value === e.target.value && e.target.checked) {
+      corFiltrada = item.value;
+    }
+  });
+
+  filtrarEOrdenarResultados();
+});
+
+//Escuta check de Tamanhos
+const handleChangeTamanhos = document.querySelector(".lista-tamanhos");
+handleChangeTamanhos.addEventListener("change", function (e) {
+  tamanhoFiltrado = "";
+  listaFiltroTamanho.forEach((item) => {
+    if (item.value !== e.target.value) {
+      item.setAttribute("disabled", "disabled");
+      item.parentElement.classList.add("disabled-check");
+    }
+
+    if (!e.target.checked) {
+      item.removeAttribute("disabled");
+      item.parentElement.classList.remove("disabled-check");
+    }
+
+    if (item.value === e.target.value && e.target.checked) {
+      tamanhoFiltrado = item.value;
+    }
+  });
+
+  filtrarEOrdenarResultados();
+});
+
+//Escuta check de cores
+const handleChangePrecos = document.querySelector(".lista-preco");
+handleChangePrecos.addEventListener("change", function (e) {
+  precoFiltrado = "";
+  listaFiltroPreco.forEach((item) => {
+    if (item.value !== e.target.value) {
+      item.setAttribute("disabled", "disabled");
+      item.parentElement.classList.add("disabled-check");
+    }
+
+    if (!e.target.checked) {
+      item.removeAttribute("disabled");
+      item.parentElement.classList.remove("disabled-check");
+    }
+
+    if (item.value === e.target.value && e.target.checked) {
+      precoFiltrado = item.value;
+    }
+  });
+
+  filtrarEOrdenarResultados();
+});
+
+// Função parar checar se o valor está entre o intervalo
+function checaItemValorEntre(array, minVal, maxVal) {
+  let arrTemp = [];
+  array.filter((item) => {
+    if (item.price >= minVal && item.price <= maxVal) {
+      arrTemp.push(item);
+    }
+  });
+  return arrTemp;
+}
+
+// Limpa o filtro
+document
+  .querySelector("#btn-limpar-filtro")
+  .addEventListener("click", function () {
+    resetarFiltros();
+    filtrarEOrdenarResultados();
+    closeSideNav();
+  });
+
+// Reseta o filtro quando não existe nenhum resultado
+document
+  .querySelector("#resetar-filtro")
+  .addEventListener("click", function () {
+    resetarFiltros();
+    filtrarEOrdenarResultados();
+    closeSideNav();
+  });
+
+function resetarFiltros() {
+  listaFiltroCores.forEach((item) => {
+    item.checked = false;
+    item.parentElement.classList.remove("disabled-check");
+    corFiltrada = "";
+  });
+  listaFiltroTamanho.forEach((item) => {
+    item.checked = false;
+    item.parentElement.classList.remove("disabled-check");
+    tamanhoFiltrado = "";
+  });
+  listaFiltroPreco.forEach((item) => {
+    item.checked = false;
+    item.parentElement.classList.remove("disabled-check");
+    precoFiltrado = "";
+  });
+}
