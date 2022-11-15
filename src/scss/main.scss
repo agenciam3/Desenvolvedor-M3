@@ -1,6 +1,6 @@
 // @import "reset";
 * {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,34 +16,31 @@
 .bar2 {
   display: flex;
   justify-content: space-between;
-  margin-top: 43px;
-  margin-left: 130px;
-  margin-right: 130px;
-  margin-bottom: 43px;
+  margin: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 #pB {
-  font-size: 25px;
+  font-size: 2rem;
 
 }
 .productsSector {
   display: grid;
   grid-template-columns: 100px 100px 100px;
-  grid-template-rows: auto;
+  // grid-template-rows: auto;
 }
+label.container {
+  display: block;
+  font-size: 12px;
+}
+
+
 h1,
 h2,
 h3 {
   font-size: 17px;
   text-transform: uppercase;
 }
-.optionsDiv {
-  width: 100%;
-  height: 290px;
-  margin: 0px;
-  display: grid;
-  font-size: 12px;
-}
-
 .img {
   width: 100%;
   height: 290px;
@@ -61,8 +58,6 @@ h3 {
   grid-gap: 20px;
   justify-content: center;
   margin: auto;
-
-
 }
 
 footer {
@@ -90,14 +85,16 @@ button {
   padding: 10px 45px;
   margin-bottom: 50px;
   text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
 }
 #sacola {
-  width: 20px;
-  height: 20px;
+  width: 23px;
+  height: 23px;
 }
 #icon {
-  width: 100px;
-  height: 25px;
+  width: 135px;
+  height: 30px;
 }
 #content {
   margin: auto;
@@ -106,11 +103,41 @@ button {
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
 }
+
+select:hover {
+  background-color:  #00C0EE;
+  cursor: pointer;
+  color: white;
+}
+select{
+  border:1px solid #c0c0c0;
+  padding: 10px;
+  font-size: 15px;
+}
 .mais {
   margin-top: 30px;
   margin-left: 40%;
   margin-bottom: 80px;
+  border: 0;
   width: 300px;
   height: 50px;
+  background-color: #00C0EE;
+}
+input {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
 }
 
+@media (max-width: 768px){
+  #cardDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .optionsDiv {
+    display: none;
+  }
+}
