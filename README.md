@@ -38,6 +38,10 @@ Apos rodar o `npm install` para dar start no server e nos processos para desenvo
 ### E-mail : ribeirobeca1999@gmail.com
 
 
+### Como ficou o projeto:
+![image](https://user-images.githubusercontent.com/102257498/201807077-b88f79cc-7e2f-48dd-8b71-769073f23147.png)
+
+
 ## Como se candidatar a vaga
 
 - [Crie um fork desse projeto;](https://github.com/agenciam3/Desenvolvedor-M3/fork)
