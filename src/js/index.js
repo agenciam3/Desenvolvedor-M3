@@ -70,17 +70,32 @@ let size40 = document.querySelector(".size-40");
 // Váriavel da cor amarela
 let yellow = document.querySelector("#yellow");
 
+// Variavel da cor amarela mobile
+let yellowMob = document.querySelector("#yellowMob");
+
 // Váriavel da cor azul
 let blue = document.querySelector("#blue");
+
+// Váriavel da cor azul mobile
+let blueMob = document.querySelector("#blueMob");
 
 // Váriavel da cor branca
 let white = document.querySelector("#white");
 
+// Váriavel da cor branca mobile
+let whiteMob = document.querySelector("#whiteMob");
+
 // Váriavel da cor cinza
 let gray = document.querySelector("#gray");
 
-// Váriavel da cor cinza
+// Váriavel da cor cinza mobile
+let grayMob = document.querySelector("#grayMob");
+
+// Váriavel da cor laranja
 let orange = document.querySelector("#orange");
+
+// Váriavel da cor laranja mobile
+let orangeMob = document.querySelector("#orangeMob");
 
 // Variavel do count do carrinho
 let countBag = document.querySelector(".count");
@@ -108,6 +123,12 @@ let productFilterMobile = document.querySelector(".product-filter-mobile");
 
 // Variável do filtro do mobile
 let filterByMobile = document.querySelector(".filterByMobile");
+
+// Variável para abrir filtro de cores
+let openFilterColors = document.querySelector(".open-filter-colors");
+
+// Variável de cores do filtro mobile
+let colors = document.querySelector(".colors-mob");
 
 function createProduct(data) {
   productDiv = document.createElement("div");
@@ -206,6 +227,16 @@ function orderToggleMobile() {
     optionOrderByMobile.classList.remove("show");
   } else {
     optionOrderByMobile.classList.add("show");
+  }
+}
+
+openFilterColors.addEventListener("click", openColorsFilterMob);
+
+function openColorsFilterMob() {
+  if (colors.classList.contains("show")) {
+    colors.classList.remove("show");
+  } else {
+    colors.classList.add("show");
   }
 }
 
@@ -471,68 +502,145 @@ function showProductsWithSize40() {
 }
 
 yellow.addEventListener("click", showProductsWithYellowColor);
+yellowMob.addEventListener("click", showProductsWithYellowColor);
 
 function showProductsWithYellowColor() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = yellowMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "color";
-  extraQuery = "&color=Amarelo";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Amarelo";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Amarelo";
+    getDataFromApi();
+  }
 }
 
 blue.addEventListener("click", showProductsWithBlueColor);
+blueMob.addEventListener("click", showProductsWithBlueColor);
 
 function showProductsWithBlueColor() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "color";
-  extraQuery = "&color=Azul";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Azul";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Azul";
+    getDataFromApi();
+  }
 }
 
 white.addEventListener("click", showProductsWithWhiteColor);
+whiteMob.addEventListener("click", showProductsWithWhiteColor);
 
 function showProductsWithWhiteColor() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = whiteMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "color";
-  extraQuery = "&color=Branco";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Branco";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Branco";
+    getDataFromApi();
+  }
 }
 
 gray.addEventListener("click", showProductsWithGrayColor);
+grayMob.addEventListener("click", showProductsWithGrayColor);
 
 function showProductsWithGrayColor() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = grayMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "color";
-  extraQuery = "&color=Cinza";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Cinza";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Cinza";
+    getDataFromApi();
+  }
 }
 
 orange.addEventListener("click", showProductsWithOrangeColor);
+orangeMob.addEventListener("click", showProductsWithOrangeColor);
 
 function showProductsWithOrangeColor() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = grayMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "color";
-  extraQuery = "&color=Laranja";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Laranja";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "color";
+    extraQuery = "&color=Laranja";
+    getDataFromApi();
+  }
 }
 
 function buyProduct() {

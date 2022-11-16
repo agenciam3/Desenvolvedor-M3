@@ -427,6 +427,7 @@ footer {
               color: #666;
               border-bottom: 1px solid #666666;
               margin-bottom: 1.875rem;
+              text-transform: uppercase;
             }
 
             &.show {
@@ -441,6 +442,36 @@ footer {
               background-color: #fff;
               z-index: 999;
               display: block;
+            }
+
+            .filter {
+              h2 {
+                display: flex;
+                justify-content: space-between;
+                font-size: 1.5rem;
+                text-transform: uppercase;
+                color: #666;
+                padding: 0.7rem 1rem;
+                margin-bottom: 0;
+              }
+
+              .colors-mob {
+                margin-bottom: 1rem;
+                padding: 0 1rem;
+                display: none;
+                visibility: hidden;
+                opacity: 0;
+
+                &.show {
+                  display: block;
+                  visibility: visible;
+                  opacity: 1;
+                }
+
+                .color {
+                  padding: 0.3rem 0;
+                }
+              }
             }
           }
 
@@ -466,6 +497,7 @@ footer {
               color: #666;
               border-bottom: 1px solid #666666;
               margin-bottom: 1.875rem;
+              text-transform: uppercase;
             }
 
             button {
