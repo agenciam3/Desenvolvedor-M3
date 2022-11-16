@@ -410,10 +410,12 @@ footer {
           opacity: 0;
 
           h3 {
+            display: flex;
+            justify-content: space-between;
             font-size: 1.75rem;
             padding: 1rem;
             color: #666;
-            border: 1px solid #666666;
+            border-bottom: 1px solid #666666;
             margin-bottom: 1.875rem;
           }
 
@@ -423,7 +425,7 @@ footer {
             background: transparent;
             text-align: left;
             cursor: pointer;
-            padding: 0.37rem 1.3rem 0.37rem 0.2rem;
+            padding: 0.37rem 1.3rem 0.37rem 1rem;
           }
 
           &.show {
