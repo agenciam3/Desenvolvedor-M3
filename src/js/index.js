@@ -88,6 +88,9 @@ let countBag = document.querySelector(".count");
 // Variavel do close na ordenação do mobile
 let closeButton = document.querySelector(".close");
 
+// Variavel do close do filtro do mobile
+let closeFilter = document.querySelector(".close-filter");
+
 // Variavel do menor preço na ordenação do mobile
 let lowestPriceMob = document.querySelector(".lowest-price-mob");
 
@@ -99,6 +102,12 @@ let mostRecentMob = document.querySelector(".most-recent-mob");
 
 // Variavel do botão comprar
 let buyProductButton;
+
+// Variável do botão de chamada do filtro do mobile
+let productFilterMobile = document.querySelector(".product-filter-mobile");
+
+// Variável do filtro do mobile
+let filterByMobile = document.querySelector(".filterByMobile");
 
 function createProduct(data) {
   productDiv = document.createElement("div");
@@ -180,8 +189,17 @@ function orderToggle() {
   }
 }
 
+productFilterMobile.addEventListener("click", filterToggleMobile);
+
+function filterToggleMobile() {
+  if (filterByMobile.classList.contains("show")) {
+    filterByMobile.classList.remove("show");
+  } else {
+    filterByMobile.classList.add("show");
+  }
+}
+
 titleOrderMobile.addEventListener("click", orderToggleMobile);
-closeButton.addEventListener("click", orderToggleMobile);
 
 function orderToggleMobile() {
   if (optionOrderByMobile.classList.contains("show")) {
@@ -195,6 +213,12 @@ closeButton.addEventListener("click", closeOrderFilter);
 
 function closeOrderFilter() {
   optionOrderByMobile.classList.remove("show");
+}
+
+closeFilter.addEventListener("click", closeFilterMob);
+
+function closeFilterMob() {
+  filterByMobile.classList.remove("show");
 }
 
 lowestPrice.addEventListener("click", showLowestPrice);

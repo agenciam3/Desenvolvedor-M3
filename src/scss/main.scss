@@ -129,6 +129,10 @@ hr {
         }
       }
 
+      .filters-mobile {
+        display: none;
+      }
+
       .product-order-mobile {
         display: none;
       }
@@ -396,54 +400,100 @@ footer {
           display: none;
         }
 
-        .product-order-mobile {
-          display: block;
-          background: transparent;
-          border: 1px solid #666666;
-          color: #666;
-          padding: 0.5rem 2.187rem;
-          font-size: 1.25rem;
-        }
+        .filters-mobile {
+          display: flex;
+          width: 90%;
 
-        .orderByMobile {
-          visibility: hidden;
-          opacity: 0;
-
-          h3 {
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.75rem;
-            padding: 1rem;
-            color: #666;
-            border-bottom: 1px solid #666666;
-            margin-bottom: 1.875rem;
-          }
-
-          button {
-            width: 100%;
-            border: none;
-            background: transparent;
-            text-align: left;
-            cursor: pointer;
-            padding: 0.37rem 1.3rem 0.37rem 1rem;
-          }
-
-          &.show {
-            opacity: 1;
-            visibility: visible;
-            position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            background-color: #fff;
-            z-index: 999;
+          .product-filter-mobile {
             display: block;
+            background: transparent;
+            border: 1px solid #666666;
+            color: #666;
+            padding: 0.5rem 2.187rem;
+            font-size: 1.25rem;
+            width: 50%;
           }
 
-          button {
-            span {
-              font-size: 1.375rem;
+          .filterByMobile {
+            visibility: hidden;
+            opacity: 0;
+            display: none;
+
+            h3 {
+              display: flex;
+              justify-content: space-between;
+              font-size: 1.75rem;
+              padding: 1rem;
+              color: #666;
+              border-bottom: 1px solid #666666;
+              margin-bottom: 1.875rem;
+            }
+
+            &.show {
+              display: block;
+              opacity: 1;
+              visibility: visible;
+              position: fixed;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background-color: #fff;
+              z-index: 999;
+              display: block;
+            }
+          }
+
+          .product-order-mobile {
+            display: block;
+            background: transparent;
+            border: 1px solid #666666;
+            color: #666;
+            padding: 0.5rem 2.187rem;
+            font-size: 1.25rem;
+            width: 50%;
+          }
+
+          .orderByMobile {
+            visibility: hidden;
+            opacity: 0;
+
+            h3 {
+              display: flex;
+              justify-content: space-between;
+              font-size: 1.75rem;
+              padding: 1rem;
+              color: #666;
+              border-bottom: 1px solid #666666;
+              margin-bottom: 1.875rem;
+            }
+
+            button {
+              width: 100%;
+              border: none;
+              background: transparent;
+              text-align: left;
+              cursor: pointer;
+              padding: 0.37rem 1.3rem 0.37rem 1rem;
+            }
+
+            &.show {
+              opacity: 1;
+              visibility: visible;
+              position: fixed;
+              top: 0;
+              left: 0;
+              bottom: 0;
+              right: 0;
+              background-color: #fff;
+              z-index: 999;
+              display: block;
+            }
+
+            button {
+              span {
+                font-size: 1.375rem;
+              }
             }
           }
         }
