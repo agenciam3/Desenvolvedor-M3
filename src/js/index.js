@@ -82,6 +82,9 @@ let gray = document.querySelector("#gray");
 // Váriavel da cor cinza
 let orange = document.querySelector("#orange");
 
+// Variavel do count do carrinho
+let countBag = document.querySelector(".count");
+
 // Variavel do close na ordenação do mobile
 let closeButton = document.querySelector(".close");
 
@@ -94,8 +97,10 @@ let biggestPriceMob = document.querySelector(".biggest-price-mob");
 // Variavel do mais recente na ordenação do mobile
 let mostRecentMob = document.querySelector(".most-recent-mob");
 
+// Variavel do botão comprar
+let buyProductButton;
+
 function createProduct(data) {
-  console.log(data.name);
   productDiv = document.createElement("div");
   productDiv.classList.add("product");
   productImage = document.createElement("img");
@@ -105,6 +110,7 @@ function createProduct(data) {
   productInstallment.classList.add("price-parcel");
   productPrice.classList.add("price");
   buyButton = document.createElement("button");
+  buyButton.classList.add("buy-button");
   productImage.src = data.image;
 
   productName.innerHTML = data.name;
@@ -138,12 +144,15 @@ function getDataFromApi() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-
       data.forEach((element) => {
         let productDiv = createProduct(element);
         product.appendChild(productDiv);
       });
+
+      buyProductButton = document.getElementsByClassName("buy-button");
+      for (var i = 0; i < buyProductButton.length; i++) {
+        buyProductButton[i].addEventListener("click", buyProduct);
+      }
     })
     .catch(function (e) {
       console.log(e);
@@ -500,6 +509,10 @@ function showProductsWithOrangeColor() {
   query = "color";
   extraQuery = "&color=Laranja";
   getDataFromApi();
+}
+
+function buyProduct() {
+  countBag.innerHTML = Number(countBag.innerHTML) + 1;
 }
 
 main();
