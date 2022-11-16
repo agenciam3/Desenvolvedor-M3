@@ -5,14 +5,236 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <title>Desenvolvedor M3</title>
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
+  <header>
+    <div class="contain">
+      <img src="./img//logo-m3.png" alt="Logo M3">
+      <div class="bag-cart">
+        <i class="ph-handbag-simple-fill"></i>
+        <span class="count">0</span>
+      </div>
+    </div>
+  </header>
+  <hr>
+  <div class="container">
+    <section>
+      <div class="product-header">
+          <h2>Blusas</h2>
+          <div class="order">
+            <button class="product-order">
+              <span>Ordenar por: </span>
+              <div class="arrow-down-icon">
+                <i class="ph-caret-down-light"></i>
+              </div>
+            </button>
+            <div class="orderBy">
+              <button class="most-recent"><span>Mais recentes</span></button>
+              <button class="lowest-price"><span>Menor preço</span></button>
+              <button class="biggest-price"><span>Maior preço</span></button>
+            </div>
 
+            <div class="filters-mobile">
+              <button class="product-filter-mobile">
+                <span>Filtrar</span>
+              </button>
+              <div class="filterByMobile">
+                <h3>Filtrar<span class="close-filter">X</span></h3>
+                <div class="filter filter-color">
+                  <h2 class="open-filter-colors">Cores<span class="down-arrow"><i class="ph-caret-down-light"></i></span></h2>
+                  <div class="colors-mob">
+                    <div class="color">
+                      <input id="yellowMob" type="checkbox" />
+                      <label for="yellowMob">Amarelo</label>
+                    </div>
+                    <div class="color">
+                      <input id="blueMob" type="checkbox" />
+                      <label for="blueMob">Azul</label>
+                    </div>
+                    <div class="color">
+                      <input id="whiteMob" type="checkbox" />
+                      <label for="whiteMob">Branco</label>
+                    </div>
+                    <div class="color">
+                      <input id="grayMob" type="checkbox" />
+                      <label for="grayMob">Cinza</label>
+                    </div>
+                    <div class="color">
+                      <input id="orangeMob" type="checkbox" />
+                      <label for="orangeMob">Laranja</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter filter-size">
+                  <h2 class="open-filter-sizes">Tamanhos<span><i class="ph-caret-down-light"></i></span></h2>
+                  <div class="sizes-mob">
+                    <div class="size size-p-mob">
+                      <span>P</span>
+                    </div>
+                    <div class="size size-m-mob">
+                      <span>M</span>
+                    </div>
+                    <div class="size size-g-mob">
+                      <span>G</span>
+                    </div>
+                    <div class="size size-gg-mob">
+                      <span>GG</span>
+                    </div>
+                    <div class="size size-u-mob">
+                      <span>U</span>
+                    </div>
+                    <div class="size size-36-mob">
+                      <span>36</span>
+                    </div>
+                    <div class="size size-38-mob">
+                      <span>38</span>
+                    </div>
+                    <div class="size size-40-mob">
+                      <span>40</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter filter-price">
+                  <h2 class="open-filter-price">Faixa de preço<span><i class="ph-caret-down-light"></i></span></h2>
+                  <div class="prices-mob">
+                    <div class="until-50">
+                      <input id="until-50-mob" type="checkbox" />
+                      <label for="until-50-mob">de R$0 até R$50</label>
+                    </div>
+                    <div>
+                      <input id="until-150-mob" type="checkbox" />
+                      <label for="until-150-mob">de R$51 até R$150</label>
+                    </div>
+                    <div>
+                      <input id="until-300-mob" type="checkbox" />
+                      <label for="until-300-mob">de R$151 até R$300</label>
+                    </div>
+                    <div>
+                      <input id="until-500-mob" type="checkbox" />
+                      <label for="until-500-mob">de R$301 até R$500</label>
+                    </div>
+                    <div>
+                      <input id="greater-than-500-mob" type="checkbox" />
+                      <label for="greater-than-500-mob">a partir de R$ 500</label>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+            
+              <button class="product-order-mobile">
+                <span>Ordenar</span>
+              </button>
+              <div class="orderByMobile">
+                <h3>Ordenar<span class="close">X</span></h3>
+                <button class="most-recent-mob"><span>Mais recentes</span></button>
+                <button class="lowest-price-mob"><span>Menor preço</span></button>
+                <button class="biggest-price-mob"><span>Maior preço</span></button>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-list">
+        <div class="filter-container">
+          <div class="filter filter-color">
+            <h2>Cores</h2>
+            <div class="colors">
+              <div class="color">
+                <input id="yellow" type="checkbox" />
+                <label for="yellow">Amarelo</label>
+              </div>
+              <div class="color">
+                <input id="blue" type="checkbox" />
+                <label for="blue">Azul</label>
+              </div>
+              <div class="color">
+                <input id="white" type="checkbox" />
+                <label for="white">Branco</label>
+              </div>
+              <div class="color">
+                <input id="gray" type="checkbox" />
+                <label for="gray">Cinza</label>
+              </div>
+              <div class="color">
+                <input id="orange" type="checkbox" />
+                <label for="orange">Laranja</label>
+              </div>
+            </div>
+          </div>
+          <div class="filter filter-size">
+            <h2>Tamanhos</h2>
+            <div class="sizes">
+              <div class="size size-p">
+                <span>P</span>
+              </div>
+              <div class="size size-m">
+                <span>M</span>
+              </div>
+              <div class="size size-g">
+                <span>G</span>
+              </div>
+              <div class="size size-gg">
+                <span>GG</span>
+              </div>
+              <div class="size size-u">
+                <span>U</span>
+              </div>
+              <div class="size size-36">
+                <span>36</span>
+              </div>
+              <div class="size size-38">
+                <span>38</span>
+              </div>
+              <div class="size size-40">
+                <span>40</span>
+              </div>
+            </div>
+          </div>
+          <div class="filter filter-price">
+            <h2>Faixa de Preço</h2>
+            <div class="prices">
+              <div class="until-50">
+                <input id="until-50" type="checkbox" />
+                <label for="until-50">de R$0 até R$50</label>
+              </div>
+              <div>
+                <input id="until-150" type="checkbox" />
+                <label for="until-150">de R$51 até R$150</label>
+              </div>
+              <div>
+                <input id="until-300" type="checkbox" />
+                <label for="until-300">de R$151 até R$300</label>
+              </div>
+              <div>
+                <input id="until-500" type="checkbox" />
+                <label for="until-500">de R$301 até R$500</label>
+              </div>
+              <div>
+                <input id="greater-than-500" type="checkbox" />
+                <label for="greater-than-500">a partir de R$ 500</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-list-content"></div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="showMore">
+    <button id="showMore">Carregar mais</button>
+  </div>
+
+  <footer>
+    <p>M3: Implantação de E-commerce VTEX</p>
+  </footer>
 </body>
-<h1>Desafio m3</h1>
 
 <script src="bundle.js"></script>
 
