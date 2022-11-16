@@ -43,6 +43,21 @@ let until500 = document.querySelector("#until-500");
 // Variável do checkbox a partir de 500
 let greaterThan500 = document.querySelector("#greater-than-500");
 
+// Varíavel do checkbox até R$50 no mobile
+let until50Mob = document.querySelector("#until-50-mob");
+
+// Variável do checkbox até 150 no mobile
+let until150Mob = document.querySelector("#until-150-mob");
+
+// Variável do checkbox até 350 no mobile
+let until300Mob = document.querySelector("#until-300-mob");
+
+// Variável do checkbox até 500 no mobile
+let until500Mob = document.querySelector("#until-500-mob");
+
+// Variável do checkbox a partir de 500 no mobile
+let greaterThan500Mob = document.querySelector("#greater-than-500-mob");
+
 // Váriavel do tamanho P
 let sizeP = document.querySelector(".size-p");
 
@@ -127,8 +142,44 @@ let filterByMobile = document.querySelector(".filterByMobile");
 // Variável para abrir filtro de cores
 let openFilterColors = document.querySelector(".open-filter-colors");
 
+// Variável para abrir filtro de preços
+let openFilterPrice = document.querySelector(".open-filter-price");
+
 // Variável de cores do filtro mobile
 let colors = document.querySelector(".colors-mob");
+
+// Variável para abrir filtro de tamanhos
+let openFilterSizes = document.querySelector(".open-filter-sizes");
+
+// Variável de preços do filtro mobile
+let pricesMob = document.querySelector(".prices-mob");
+
+// Variável de tamanhos do filtro mobile
+let sizes = document.querySelector(".sizes-mob");
+
+// Variavel tamanho P mobile
+let sizePMob = document.querySelector(".size-p-mob");
+
+// Variavel tamanho M mobile
+let sizeMMob = document.querySelector(".size-m-mob");
+
+// Variavel tamanho G mobile
+let sizeGMob = document.querySelector(".size-g-mob");
+
+// Variavel tamanho GG mobile
+let sizeGgMob = document.querySelector(".size-gg-mob");
+
+// Variavel tamanho u mobile
+let sizeUMob = document.querySelector(".size-u-mob");
+
+// Variavel tamanho 36 mobile
+let size36Mob = document.querySelector(".size-36-mob");
+
+// Variavel tamanho 38 mobile
+let size38Mob = document.querySelector(".size-38-mob");
+
+// Variavel tamanho 40 mobile
+let size40Mob = document.querySelector(".size-40-mob");
 
 function createProduct(data) {
   productDiv = document.createElement("div");
@@ -240,6 +291,26 @@ function openColorsFilterMob() {
   }
 }
 
+openFilterSizes.addEventListener("click", openSizesFilterMob);
+
+function openSizesFilterMob() {
+  if (sizes.classList.contains("show")) {
+    sizes.classList.remove("show");
+  } else {
+    sizes.classList.add("show");
+  }
+}
+
+openFilterPrice.addEventListener("click", openpricesFilterMob);
+
+function openpricesFilterMob() {
+  if (pricesMob.classList.contains("show")) {
+    pricesMob.classList.remove("show");
+  } else {
+    pricesMob.classList.add("show");
+  }
+}
+
 closeButton.addEventListener("click", closeOrderFilter);
 
 function closeOrderFilter() {
@@ -334,171 +405,366 @@ function showMostRecentProductMob() {
 }
 
 until50.addEventListener("click", showPriceUntil50);
+until50Mob.addEventListener("click", showPriceUntil50);
 
 function showPriceUntil50() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  query = "price";
-  extraQuery = "&price_lte=50";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    query = "price";
+    extraQuery = "&price_lte=50";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    query = "price";
+    extraQuery = "&price_lte=50";
+    getDataFromApi();
+  }
 }
 
 until150.addEventListener("click", showPriceUntil150);
+until150Mob.addEventListener("click", showPriceUntil150);
 
 function showPriceUntil150() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "price";
-  extraQuery = "&price_lte=150&price_gte=51";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_lte=150&price_gte=51";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_lte=150&price_gte=51";
+    getDataFromApi();
+  }
 }
 
 until300.addEventListener("click", showPriceUntil300);
+until300Mob.addEventListener("click", showPriceUntil300);
 
 function showPriceUntil300() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "price";
-  extraQuery = "&price_lte=300&price_gte=151";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_lte=300&price_gte=151";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_lte=300&price_gte=151";
+    getDataFromApi();
+  }
 }
 
 until500.addEventListener("click", showPriceUntil500);
+until500Mob.addEventListener("click", showPriceUntil500);
 
 function showPriceUntil500() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "price";
-  extraQuery = "&price_lte=500&price_gte=301";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_lte=500&price_gte=301";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_lte=500&price_gte=301";
+    getDataFromApi();
+  }
 }
 
 greaterThan500.addEventListener("click", showPricegreaterthan500);
+greaterThan500Mob.addEventListener("click", showPricegreaterthan500);
 
 function showPricegreaterthan500() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "price";
-  extraQuery = "&price_gte=500";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_gte=500";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "price";
+    extraQuery = "&price_gte=500";
+    getDataFromApi();
+  }
 }
 
 sizeP.addEventListener("click", showProductsWithSizeP);
+sizePMob.addEventListener("click", showProductsWithSizeP);
 
 function showProductsWithSizeP() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=P";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=P";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=P";
+    getDataFromApi();
+  }
 }
 
 sizeM.addEventListener("click", showProductsWithSizeM);
+sizeMMob.addEventListener("click", showProductsWithSizeM);
 
 function showProductsWithSizeM() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=M";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=M";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=M";
+    getDataFromApi();
+  }
 }
 
 sizeG.addEventListener("click", showProductsWithSizeG);
+sizeGMob.addEventListener("click", showProductsWithSizeG);
 
 function showProductsWithSizeG() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=^G,";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=^G,";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=^G,";
+    getDataFromApi();
+  }
 }
 
 sizeGg.addEventListener("click", showProductsWithSizeGg);
+sizeGgMob.addEventListener("click", showProductsWithSizeGg);
 
 function showProductsWithSizeGg() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=GG";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=GG";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=GG";
+    getDataFromApi();
+  }
 }
 
 sizeU.addEventListener("click", showProductsWithSizeU);
+sizeUMob.addEventListener("click", showProductsWithSizeU);
 
 function showProductsWithSizeU() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=U";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=U";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=U";
+    getDataFromApi();
+  }
 }
 
 size36.addEventListener("click", showProductsWithSize36);
+size36Mob.addEventListener("click", showProductsWithSize36);
 
 function showProductsWithSize36() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=36";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=36";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=36";
+    getDataFromApi();
+  }
 }
 
 size38.addEventListener("click", showProductsWithSize38);
+size38Mob.addEventListener("click", showProductsWithSize38);
 
 function showProductsWithSize38() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=38";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=38";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=38";
+    getDataFromApi();
+  }
 }
 
 size40.addEventListener("click", showProductsWithSize40);
+size40Mob.addEventListener("click", showProductsWithSize40);
 
 function showProductsWithSize40() {
-  //limpar lista de produtos
-  product.innerHTML = "";
+  let parentElement = blueMob.closest(".filterByMobile.show");
 
-  page = 1;
-  sort = "asc";
-  query = "size";
-  extraQuery = "&size_like=40";
-  getDataFromApi();
+  if (parentElement) {
+    parentElement.classList.remove("show");
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=40";
+    getDataFromApi();
+  } else {
+    //limpar lista de produtos
+    product.innerHTML = "";
+
+    page = 1;
+    sort = "asc";
+    query = "size";
+    extraQuery = "&size_like=40";
+    getDataFromApi();
+  }
 }
 
 yellow.addEventListener("click", showProductsWithYellowColor);

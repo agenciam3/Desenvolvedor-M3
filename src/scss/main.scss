@@ -441,7 +441,6 @@ footer {
               right: 0;
               background-color: #fff;
               z-index: 999;
-              display: block;
             }
 
             .filter {
@@ -470,6 +469,50 @@ footer {
 
                 .color {
                   padding: 0.3rem 0;
+                }
+              }
+
+              .sizes-mob {
+                color: rgba(0, 0, 0, 0.5);
+                display: grid;
+                gap: 0.5rem;
+                grid-template-columns: repeat(4, 0.1fr);
+                margin: 0rem 1rem;
+                display: none;
+                visibility: hidden;
+                opacity: 0;
+
+                &.show {
+                  display: grid;
+                  visibility: visible;
+                  opacity: 1;
+                  margin-bottom: 1rem;
+                }
+
+                .size {
+                  width: 32px;
+                  border: 1px solid rgba(0, 0, 0, 0.5);
+                  height: 32px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  position: relative;
+                }
+              }
+
+              .prices-mob {
+                margin-bottom: 1rem;
+                padding: 0 1rem;
+                display: none;
+                visibility: hidden;
+                opacity: 0;
+
+                &.show {
+                  display: flex;
+                  flex-direction: column;
+                  visibility: visible;
+                  opacity: 1;
+                  gap: 0.4rem;
                 }
               }
             }
