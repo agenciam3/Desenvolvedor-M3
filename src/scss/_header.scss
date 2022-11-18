@@ -1,0 +1,36 @@
+@import "./colors";
+header {
+    border-bottom: 2px solid $lightGray;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    .header-logo {
+        object-fit: cover;
+        height: 30px;
+    }
+    .cart-bag {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        position: relative;
+        img {
+            height: 100%;
+        }
+        .total {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            height: 20px;
+            width: 20px;
+            top: 30px;
+            left: 30px;
+            position: absolute;
+            background-color: $blue;
+            border-radius: 50px;
+        }
+    }
+}
