@@ -1,1 +1,28 @@
 @import "reset";
+
+:root {
+  --preto: black;
+  --greyLight: rgba(32, 32, 32, 0.5);
+  --grey: #666666;
+  --blueLight: #00c0ee;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  padding: 16px 162px;
+  right: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: #c7c7c7 2px solid;
+
+  * {
+    cursor: pointer;
+  }
+}
