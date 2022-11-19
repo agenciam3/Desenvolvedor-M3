@@ -62,4 +62,42 @@ header {
 
 .filters {
   padding: 16px 162px;
+
+  > * {
+    margin-top: 20px;
+  }
+
+  .tamanhos {
+    .sizes {
+      display: grid;
+      grid-template-columns: 35px 35px 35px;
+      justify-items: center;
+
+      grid-gap: 10px;
+
+      div {
+        cursor: pointer;
+        border: #666666 2px solid;
+        width: 32px;
+        height: 32px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: #666666;
+      }
+    }
+  }
+
+  .cores-title,
+  .tamanhos-title,
+  .precos-title {
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--grey);
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
 }
