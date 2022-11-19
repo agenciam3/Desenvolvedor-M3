@@ -1,6 +1,7 @@
 import { getProducts } from "./api";
 
 let offset = 9;
+let products = [];
 
 document.addEventListener("DOMContentLoaded", () => {
   onLoad();
@@ -21,7 +22,9 @@ function loadProducts(limit, offset) {
 
   productsContainer.innerHTML = "";
 
-  getProducts(limit, offset).then((products) => {
+  getProducts(limit, offset).then((apiProducts) => {
+    products = apiProducts;
+
     products.forEach((product) => {
       const productElement = createProductElement(product);
       productsContainer.appendChild(productElement);
@@ -69,3 +72,5 @@ function createProductElement(product) {
 
   return productElement;
 }
+
+// --
