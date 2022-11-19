@@ -325,6 +325,15 @@ aside .prices .price {
 aside .prices p {
   padding: 5px;
 }
+aside .drop-down {
+  height: 0px;
+  opacity: 0;
+}
+aside .show {
+  transition: all 0.2s ease-in;
+  height: 100%;
+  opacity: 1;
+}
 
 * {
   margin: 0;

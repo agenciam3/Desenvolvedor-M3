@@ -1,6 +1,14 @@
 const sizes = document.querySelector('.border-none')
-const showColors = document.querySelector('.')
+const dropDown = document.querySelector('.drop-down')
+const btn = document.querySelector('.show-colors')
 
+const showColor = () => {
+    if (dropDown.classList.contains('drop-down')) {
+        dropDown.classList.remove('drop-down')
+        dropDown.classList.add('show')
+        btn.style.display = "none"
+    }
+}
 
 Array.from(document.querySelectorAll('.border-none')).map((item) => {
     item.addEventListener('click', () => {

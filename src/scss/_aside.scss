@@ -142,4 +142,13 @@ aside {
             padding: 5px;
         }
     }
+    .drop-down {
+        height: 0px;
+        opacity: 0;
+    }
+    .show {
+        transition: all 0.2s ease-in;
+        height: 100%;
+        opacity: 1;
+    }
 }
