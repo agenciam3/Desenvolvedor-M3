@@ -2,19 +2,23 @@ import { getProducts } from "./api";
 
 document.addEventListener("DOMContentLoaded", () => {
   onLoad();
+
+  const loadMore = document.getElementById("loadMore");
+  loadMore.onclick = () => {
+    loadProducts(9 * 2, 0);
+  };
 });
 
 function onLoad() {
-  loadFirstProducts();
+  loadProducts(9, 0);
 }
 
-function loadFirstProducts() {
-  const limit = 9;
-  const offset = 0;
+function loadProducts(limit, offset) {
+  const productsContainer = document.getElementById("container-products");
+
+  productsContainer.innerHTML = "";
 
   getProducts(limit, offset).then((products) => {
-    const productsContainer = document.getElementById("container-products");
-
     products.forEach((product) => {
       const productElement = createProductElement(product);
       productsContainer.appendChild(productElement);

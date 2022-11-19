@@ -25,6 +25,14 @@ header {
   * {
     cursor: pointer;
   }
+
+  .bagStore {
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
 }
 
 .subheader {
