@@ -76,6 +76,8 @@ header {
       grid-gap: 10px;
 
       div {
+        transition: 0.2s;
+
         cursor: pointer;
         border: #666666 2px solid;
         width: 32px;
@@ -86,6 +88,12 @@ header {
         align-items: center;
 
         color: #666666;
+
+        &:hover {
+          transition: 0.2s;
+          border: var(--blueLight) 2px solid;
+          color: var(--blueLight);
+        }
       }
     }
   }
@@ -119,6 +127,7 @@ header {
       row-gap: 10px;
 
       .product-button {
+        transition: 0.2s;
         background-color: black;
         color: white;
         border: none;
@@ -129,6 +138,11 @@ header {
         font-weight: 600;
         letter-spacing: 1px;
         cursor: pointer;
+
+        &:hover {
+          transition: 0.2s;
+          background-color: var(--blueLight);
+        }
       }
 
       .product-title {
@@ -148,7 +162,36 @@ header {
     }
   }
 }
+.subfooter {
+  margin: 80px;
+  display: flex;
+  justify-content: center;
+
+  .loadMore-button {
+    transition: 0.2s;
+
+    background-color: #00c0ee;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    &:hover {
+      transition: 0.2s;
+      opacity: 0.8;
+    }
+  }
+}
 
 footer {
   background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  padding: 5px;
 }
