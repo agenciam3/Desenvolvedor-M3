@@ -26,3 +26,40 @@ header {
     cursor: pointer;
   }
 }
+
+.subheader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 162px;
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .orderBy {
+    select {
+      border: rgba(black, 0.5) solid 2px;
+      padding: 10px 20px;
+
+      background-color: white;
+
+      font-size: 16px;
+
+      option {
+        font-size: 16px;
+        border: rgba(black, 0.5) solid 2px;
+
+        &:hover {
+          color: white;
+          background: var(--blueLight) !important;
+        }
+      }
+    }
+  }
+}
+
+.filters {
+  padding: 16px 162px;
+}
