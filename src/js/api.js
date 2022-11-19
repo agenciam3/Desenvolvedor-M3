@@ -3,10 +3,12 @@ async function getProducts(limit, offset) {
 
   // should send limit and offset to the server, but it's not implemented :(
 
-  const response = await fetch(`${serverurl}/products`);
+  const response = await fetch(
+    `${serverurl}/products?_page=${offset}&_limit=${limit}`
+  );
   const data = await response.json();
 
-  return data.splice(offset, limit);
+  return data;
 }
 
 export { getProducts };
