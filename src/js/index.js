@@ -1,16 +1,19 @@
 import { getProducts } from "./api";
 
+let offset = 9;
+
 document.addEventListener("DOMContentLoaded", () => {
   onLoad();
 
   const loadMore = document.getElementById("loadMore");
   loadMore.onclick = () => {
-    loadProducts(9 * 2, 0);
+    offset *= 2;
+    loadProducts(offset, 0);
   };
 });
 
 function onLoad() {
-  loadProducts(9, 0);
+  loadProducts(offset, 0);
 }
 
 function loadProducts(limit, offset) {
