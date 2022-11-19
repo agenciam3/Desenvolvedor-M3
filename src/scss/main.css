@@ -134,13 +134,18 @@ table {
 }
 
 header {
-  border-bottom: 2px solid #808080;
+  border-bottom: 1px solid #C7C7C7;
   display: flex;
   justify-content: space-between;
   height: 70px;
   width: 100%;
   align-items: center;
   padding: 10px;
+}
+header .logo-container {
+  width: 300px;
+  display: flex;
+  justify-content: center;
 }
 header .header-logo {
   -o-object-fit: cover;
@@ -154,20 +159,171 @@ header .cart-bag {
   position: relative;
 }
 header .cart-bag img {
-  height: 100%;
+  position: relative;
+  top: 10px;
+  width: 17px;
+  height: 20px;
 }
 header .cart-bag .total {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  height: 20px;
-  width: 20px;
-  top: 30px;
-  left: 30px;
+  width: 10px;
+  height: 12px;
+  font-size: 10px;
+  top: 20px;
+  left: 10px;
   position: absolute;
   background-color: #00c0ee;
   border-radius: 50px;
+}
+
+aside {
+  display: flex;
+  height: 100%;
+  width: 22%;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+}
+aside h1 {
+  font-size: 32px;
+  margin-top: 25px;
+  width: 50%;
+}
+aside h3 {
+  width: 100%;
+  margin-right: 20px;
+  margin-top: 30px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+aside a {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #808080;
+}
+aside input[type=checkbox] {
+  display: grid;
+  place-content: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.7px solid #808080;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+aside input[type=checkbox]::before {
+  content: "";
+  width: 0.65em;
+  background-color: #00c0ee;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+aside input[type=checkbox]:checked::before {
+  background-color: #00c0ee;
+  transform: scale(1);
+}
+aside .colors {
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+aside .colors-container {
+  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+}
+aside .color {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 10px;
+  display: flex;
+}
+aside .color .checkbox-container {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 0.9em auto;
+  font-weight: bold;
+  line-height: 1.1;
+}
+aside .color .checkbox-container + .checkbox-container {
+  margin-top: 1em;
+}
+aside .color p {
+  font-size: 15px;
+  margin-left: 5px;
+}
+aside .sizes {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 10px;
+  padding: 5px;
+}
+aside .sizes .size {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 40px);
+  grid-gap: 10px;
+  margin-top: 10px;
+}
+aside .sizes span {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0.6;
+  width: 100%;
+  height: 35px;
+}
+aside .sizes span:hover {
+  opacity: 1;
+}
+aside .sizes .border-none {
+  border: 1px solid #808080;
+}
+aside .sizes .border {
+  opacity: 1;
+  border: 2px solid #00c0ee;
+}
+aside .sizes div {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.6;
+  width: 100%;
+  height: 35px;
+}
+aside .prices {
+  padding: 10px;
+}
+aside .prices .prices-container {
+  margin-top: 10px;
+}
+aside .prices .price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+aside .prices p {
+  padding: 5px;
 }
 
 * {

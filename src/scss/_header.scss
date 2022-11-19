@@ -1,12 +1,17 @@
 @import "./colors";
 header {
-    border-bottom: 2px solid $lightGray;
+    border-bottom: 1px solid #C7C7C7;
     display: flex;
     justify-content: space-between;
     height: 70px;
     width: 100%;
     align-items: center;
     padding: 10px;
+    .logo-container {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
     .header-logo {
         object-fit: cover;
         height: 30px;
@@ -17,17 +22,21 @@ header {
         display: flex;
         position: relative;
         img {
-            height: 100%;
+            position: relative;
+            top: 10px;
+            width: 17px;
+            height: 20px;
         }
         .total {
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            height: 20px;
-            width: 20px;
-            top: 30px;
-            left: 30px;
+            width: 10px;
+            height: 12px;
+            font-size: 10px;
+            top: 20px;
+            left: 10px;
             position: absolute;
             background-color: $blue;
             border-radius: 50px;

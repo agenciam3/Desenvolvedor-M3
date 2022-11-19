@@ -1,27 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>E-commerce M3</title>
-    <link type="text/css" rel="stylesheet" href="./scss/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="./scss/main.css" />
 </head>
 
 <body>
     <header>
-        <img class="header-logo" src="./img/logo-m3.png" alt="Logo M3">
+        <div class="logo-container">
+            <img class="header-logo" src="./img/logo-m3.png" alt="Logo M3" />
+        </div>
+
         <div class="cart-bag">
-            <img src="./img/bag.png" alt="Shopping-Bag">
+            <img src="./img/bag.svg" alt="Shopping-Bag" />
             <div class="total">
                 <span>0</span>
             </div>
         </div>
     </header>
+
+    <aside>
+        <h1>Blusas</h1>
+        <div class="aside-container">
+            <section class="colors">
+                <h3>CORES</h3>
+                <ul class="colors-container">
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="checkbox" />
+                            <p>Amarelo</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Azul" />
+                            <p>Azul</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Branco" />
+                            <p>Branco</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Cinza" />
+                            <p>Cinza</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Laranja" />
+                            <p>Laranja</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Verde" />
+                            <p>Verde</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Vermelho" />
+                            <p>Vermelho</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Preto" />
+                            <p>Preto</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Rosa" />
+                            <p>Rosa</p>
+                        </label>
+                    </li>
+
+                    <li class="color">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="Vinho" />
+                            <p>Vinho</p>
+                        </label>
+                    </li>
+                </ul>
+                <a href="#">Ver todas as cores <img src="./img/arrow.svg" alt="arrow-down" /></a>
+            </section>
+
+            <section class="sizes">
+                <h3>TAMANHOS</h3>
+                <div class="size">
+                    <span class="border-none">P</span>
+                    <span class="border-none">M</span>
+                    <span class="border-none">G</span>
+                    <span class="border-none">GG</span>
+                    <span class="border-none">U</span>
+                    <span class="border-none">36</span>
+                    <span class="border-none">38</span>
+                    <span class="border-none">40</span>
+                    <span class="border-none">42</span>
+                    <span class="border-none">44</span>
+                    <span class="border-none">46</span>
+                </div>
+            </section>
+
+            <section class="prices">
+
+                <h3>FAIXA DE PREÇO</h3>
+
+                <ul class="prices-container">
+
+                    <li class="price">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="checkbox" />
+                        </label>
+                        <p>de R$0 até R$50</p>
+                    </li>
+
+                    <li class="price">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="checkbox" />
+                        </label>
+                        <p>de R$51 até R$150</p>
+                    </li>
+
+                    <li class="price">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="checkbox" />
+                        </label>
+                        <p>de R$151 até R$300</p>
+                    </li>
+
+                    <li class="price">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="checkbox" />
+                        </label>
+                        <p>de R$301 até R$500</p>
+                    </li>
+
+                    <li class="price">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="checkbox" />
+                        </label>
+                        <p>a partir de R$01</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </aside>
+    <main>
+
+    </main>
 </body>
 
-
+<script src="./js/main.js"></script>
 <script src="bundle.js"></script>
 
 </html>
