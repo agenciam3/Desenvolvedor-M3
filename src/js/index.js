@@ -2,6 +2,7 @@ import { getProducts } from "./api";
 
 let offset = 9;
 let products = [];
+let colorsFilters = new Set([]);
 
 document.addEventListener("DOMContentLoaded", () => {
   onLoad();
@@ -25,6 +26,10 @@ function loadProducts(limit, offset) {
   getProducts(limit, offset).then((apiProducts) => {
     products = apiProducts;
 
+    products = products.filter((product) =>{
+      if(!colorsFilters.size) return true
+      return colorsFilters.has(product.color)
+    })
     products.forEach((product) => {
       const productElement = createProductElement(product);
       productsContainer.appendChild(productElement);
@@ -73,4 +78,18 @@ function createProductElement(product) {
   return productElement;
 }
 
-// --
+// --Filters colors
+
+
+let inputsColors = document.querySelectorAll('#cores-fields input[type="checkbox"]');
+inputsColors.forEach((e)=> {
+  e.addEventListener('change', () => {
+    if (e.checked) {
+      colorsFilters.add(e.id.replace('c', ''))
+      // console.log(e.id, 'Checked');
+    }else {
+      colorsFilters.delete(e.id.replace('c', ''))
+    }
+    onLoad();
+  })
+})
