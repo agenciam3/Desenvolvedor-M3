@@ -8,6 +8,7 @@
     <title>E-commerce M3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
     <link type="text/css" rel="stylesheet" href="./scss/main.css" />
 </head>
@@ -26,156 +27,179 @@
         </div>
     </header>
 
-    <aside>
-        <h1>Blusas</h1>
-        <div class="aside-container">
-            <section class="colors">
-                <h3>CORES</h3>
-                <ul class="colors-container">
-                    <li class="color">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="checkbox" />
-                            <p>Amarelo</p>
-                        </label>
-                    </li>
-
-                    <li class="color">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="Azul" />
-                            <p>Azul</p>
-                        </label>
-                    </li>
-
-                    <li class="color">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="Branco" />
-                            <p>Branco</p>
-                        </label>
-                    </li>
-
-                    <li class="color">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="Cinza" />
-                            <p>Cinza</p>
-                        </label>
-                    </li>
-
-                    <li class="color">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="Laranja" />
-                            <p>Laranja</p>
-                        </label>
-                    </li>
-
-                    <ul class="drop-down">
+    <div class="content-container">
+        <aside>
+            <h1>Blusas</h1>
+            <div class="aside-container">
+                <section class="colors">
+                    <h3>CORES</h3>
+                    <ul class="colors-container">
                         <li class="color">
                             <label class="checkbox-container">
-                                <input type="checkbox" name="Verde" />
-                                <p>Verde</p>
+                                <input type="checkbox" name="checkbox" />
+                                <p>Amarelo</p>
                             </label>
                         </li>
 
                         <li class="color">
                             <label class="checkbox-container">
-                                <input type="checkbox" name="Vermelho" />
-                                <p>Vermelho</p>
+                                <input type="checkbox" name="Azul" />
+                                <p>Azul</p>
                             </label>
                         </li>
 
                         <li class="color">
                             <label class="checkbox-container">
-                                <input type="checkbox" name="Preto" />
-                                <p>Preto</p>
+                                <input type="checkbox" name="Branco" />
+                                <p>Branco</p>
                             </label>
                         </li>
 
                         <li class="color">
                             <label class="checkbox-container">
-                                <input type="checkbox" name="Rosa" />
-                                <p>Rosa</p>
+                                <input type="checkbox" name="Cinza" />
+                                <p>Cinza</p>
                             </label>
                         </li>
 
                         <li class="color">
                             <label class="checkbox-container">
-                                <input type="checkbox" name="Vinho" />
-                                <p>Vinho</p>
+                                <input type="checkbox" name="Laranja" />
+                                <p>Laranja</p>
                             </label>
+                        </li>
+
+                        <ul class="drop-down hide">
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="Verde" />
+                                    <p>Verde</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="Vermelho" />
+                                    <p>Vermelho</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="Preto" />
+                                    <p>Preto</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="Rosa" />
+                                    <p>Rosa</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="Vinho" />
+                                    <p>Vinho</p>
+                                </label>
+                            </li>
+                        </ul>
+                    </ul>
+                    <a onclick="showColor()" class="show-colors" href="#">Ver todas as cores <img src="./img/arrow.svg"
+                            alt="arrow-down" />
+                    </a>
+                </section>
+
+                <section class="sizes">
+                    <h3>TAMANHOS</h3>
+                    <div class="size">
+                        <span class="border-none">P</span>
+                        <span class="border-none">M</span>
+                        <span class="border-none">G</span>
+                        <span class="border-none">GG</span>
+                        <span class="border-none">U</span>
+                        <span class="border-none">36</span>
+                        <span class="border-none">38</span>
+                        <span class="border-none">40</span>
+                        <span class="border-none">42</span>
+                        <span class="border-none">44</span>
+                        <span class="border-none">46</span>
+                    </div>
+                </section>
+
+                <section class="prices">
+
+                    <h3>FAIXA DE PREÇO</h3>
+
+                    <ul class="prices-container">
+
+                        <li class="price">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="checkbox" />
+                            </label>
+                            <p>de R$0 até R$50</p>
+                        </li>
+
+                        <li class="price">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="checkbox" />
+                            </label>
+                            <p>de R$51 até R$150</p>
+                        </li>
+
+                        <li class="price">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="checkbox" />
+                            </label>
+                            <p>de R$151 até R$300</p>
+                        </li>
+
+                        <li class="price">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="checkbox" />
+                            </label>
+                            <p>de R$301 até R$500</p>
+                        </li>
+
+                        <li class="price">
+                            <label class="checkbox-container">
+                                <input type="checkbox" name="checkbox" />
+                            </label>
+                            <p>a partir de R$01</p>
                         </li>
                     </ul>
-                </ul>
-                <a onclick="showColor()" class="show-colors" href="#">Ver todas as cores <img src="./img/arrow.svg"
-                        alt="arrow-down" />
-                </a>
-            </section>
-
-            <section class="sizes">
-                <h3>TAMANHOS</h3>
-                <div class="size">
-                    <span class="border-none">P</span>
-                    <span class="border-none">M</span>
-                    <span class="border-none">G</span>
-                    <span class="border-none">GG</span>
-                    <span class="border-none">U</span>
-                    <span class="border-none">36</span>
-                    <span class="border-none">38</span>
-                    <span class="border-none">40</span>
-                    <span class="border-none">42</span>
-                    <span class="border-none">44</span>
-                    <span class="border-none">46</span>
+                </section>
+            </div>
+        </aside>
+        <main>
+            <div class="main-container">
+                <div class="sort-container">
+                    <div class="sorts">
+                        <div onclick="showSort()" class="sort">
+                            <p>Ordenar por</p>
+                            <img src="./img/arrow-2.svg" alt="">
+                        </div>
+                        <ul class="sort-options hide">
+                            <li>Mais recentes</li>
+                            <li>Menor preço</li>
+                            <li>Maior preço</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
+                <section id="cards">
 
-            <section class="prices">
-
-                <h3>FAIXA DE PREÇO</h3>
-
-                <ul class="prices-container">
-
-                    <li class="price">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="checkbox" />
-                        </label>
-                        <p>de R$0 até R$50</p>
-                    </li>
-
-                    <li class="price">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="checkbox" />
-                        </label>
-                        <p>de R$51 até R$150</p>
-                    </li>
-
-                    <li class="price">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="checkbox" />
-                        </label>
-                        <p>de R$151 até R$300</p>
-                    </li>
-
-                    <li class="price">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="checkbox" />
-                        </label>
-                        <p>de R$301 até R$500</p>
-                    </li>
-
-                    <li class="price">
-                        <label class="checkbox-container">
-                            <input type="checkbox" name="checkbox" />
-                        </label>
-                        <p>a partir de R$01</p>
-                    </li>
-                </ul>
-            </section>
-        </div>
-    </aside>
-    <main>
-
-    </main>
+                    <div class="btn-container">
+                        <button>CARREGAR MAIS</button>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
 
 <script src="./js/main.js"></script>
+<script src="./js/renderProducts.js"></script>
 <script src="bundle.js"></script>
 
 </html>

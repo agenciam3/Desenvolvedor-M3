@@ -325,18 +325,135 @@ aside .prices .price {
 aside .prices p {
   padding: 5px;
 }
-aside .drop-down {
-  height: 0px;
-  opacity: 0;
+
+main {
+  width: 100%;
+  height: 100vh;
 }
-aside .show {
-  transition: all 0.2s ease-in;
+main .sort-container {
+  display: flex;
   height: 100%;
-  opacity: 1;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+main .sort-container .sorts {
+  position: relative;
+  top: 20px;
+  right: 100px;
+  height: 100%;
+  width: 130px;
+}
+main .sort-container .sort {
+  border: 1px solid #808080;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  height: 30px;
+  cursor: pointer;
+}
+main .sort-container .sort img {
+  width: 12px;
+  height: 9px;
+}
+main .sort-options {
+  border: 1px solid #808080;
+  display: flex;
+  height: 100px;
+  flex-direction: column;
+  align-items: center;
+}
+main .sort-options li {
+  padding: 5px;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+main .sort-options li:hover {
+  background: #00c0ee;
+  color: #fff;
+}
+main #cards {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-gap: 20px;
+}
+main #cards .card {
+  font-family: "Open Sans", sans-serif;
+  width: 220px;
+  height: 100%;
+}
+main #cards .card .card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+main #cards .card .card-info h4 {
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 14px;
+}
+main #cards .card .card-info h3 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+main #cards .card .card-info p {
+  margin-top: 5px;
+  font-size: 16px;
+}
+main #cards .card .card-btn {
+  width: 100%;
+}
+main #cards .card .card-btn button {
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  color: #fff;
+  border: none;
+  background: #000000;
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+}
+main #cards .btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main #cards .btn-container button {
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  width: 175px;
+  height: 35px;
+  border: none;
+  color: #fff;
+  background-color: #00c0ee;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.content-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.hide {
+  height: 0px;
+  opacity: 0;
+}
+
+.show {
+  transition: all 0.2s ease-in;
+  height: 100%;
+  opacity: 1;
 }/*# sourceMappingURL=main.css.map */
