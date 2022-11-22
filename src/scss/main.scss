@@ -1,20 +1,36 @@
 @import "reset";
 
+// I use varibles like that because of tailwindCSS, so I'm used to naming
+// colors with shades like that
 $blue-400: #00c0ee;
 $gray-500-50: rgba(0, 0, 0, 0.5);
 $gray-500: #666666;
 
-$font-family: "Open Sans", sans-serif;
+$default-font: "Open Sans", sans-serif;
+
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin font($size: 1rem, $weight: 400, $line-height: 1) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $default-font;
+  line-height: $line-height;
+}
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: $font-family;
+  @include flex(column);
+  @include font();
+
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .hidden {
@@ -52,12 +68,11 @@ header {
   border-bottom: 2px solid #c7c7c7;
 
   > div {
+    @include flex(row, space-between, center);
+
     max-width: 1200px;
     margin: 0 auto;
-    display: flex;
     padding: 20px 28px;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .shopping-bag-container {
@@ -70,16 +85,15 @@ header {
     }
 
     .cart-amount {
-      font-size: 0.625rem;
+      @include flex(row, center, center);
+      @include font(0.625rem);
+
       position: absolute;
       bottom: -4px;
       right: -4px;
       padding: 3px;
       width: 14px;
       height: 14px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background-color: $blue-400;
       border-radius: 99999999px;
       min-height: 10px;
@@ -95,12 +109,13 @@ header {
 
 main {
   margin-top: 40px;
+  width: 100%;
 
   .main-header {
+    @include flex(row, space-between);
+    @include font(2rem);
+
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    font-size: 2rem;
     padding: 20px 28px;
     margin-bottom: 54px;
     z-index: 10;
@@ -110,17 +125,15 @@ main {
       position: relative;
 
       .select-button {
+        @include flex(row, start, center);
+        @include font(1rem);
+
         background-color: $blue-400;
         border: 1px solid black;
         padding: 10px;
         width: 100%;
         cursor: pointer;
         background-color: white;
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        font-family: $font-family;
-        font-size: 1rem;
 
         @media (max-width: 768px) {
           &.select-title {
@@ -146,9 +159,9 @@ main {
         }
       }
       > .select-items {
+        @include flex(column);
+
         position: absolute;
-        display: flex;
-        flex-direction: column;
         border-top: none;
         width: 100%;
         border: 1px solid black;
@@ -198,10 +211,9 @@ main {
     }
 
     > button {
+      @include flex(row, center, center);
+
       border: 1px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       cursor: pointer;
     }
 
@@ -245,10 +257,9 @@ main {
   }
 
   .main-mobile-header {
+    @include flex(column, center, center);
+
     display: none;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     gap: 12px;
     margin-bottom: 34px;
 
@@ -257,16 +268,14 @@ main {
     }
 
     > div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex(row, center, center);
 
       button {
+        @include font(1.5rem);
+
         border: 1px solid $gray-500;
         background-color: transparent;
-        font-size: 1.5rem;
         color: $gray-500;
-        font-family: $font-family;
         flex: 1;
         padding: 8px 30px;
 
@@ -296,9 +305,9 @@ main {
 
 .mobile-filter-header,
 .mobile-order-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include flex(row, space-between, center);
+
+  width: 100%;
   border-bottom: 1px solid $gray-500;
   background-color: white;
   position: sticky;
@@ -311,7 +320,7 @@ main {
   }
 
   > h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
     text-transform: uppercase;
 
     &::after {
@@ -325,12 +334,11 @@ main {
 
   .close-mobile-filter-header,
   .close-mobile-order-header {
+    @include flex(row, center, center);
+
     position: relative;
-    display: flex;
-    justify-content: center;
     border: none;
     background-color: transparent;
-    align-items: center;
     height: 40px;
     width: 40px;
     cursor: pointer;
@@ -362,14 +370,17 @@ main {
 }
 
 aside {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
+  @include flex(column, start);
+
   min-width: 250px;
   padding: 20px 28px;
 
   &.hidden {
     display: none;
+  }
+
+  > * {
+    width: 100%;
   }
 
   #colors-checkbox-container {
@@ -378,10 +389,8 @@ aside {
     }
 
     > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
+      @include flex(column, start, start);
+
       margin-top: 16px;
       gap: 10px;
 
@@ -392,14 +401,14 @@ aside {
       > div {
         position: relative;
         button {
+          @include font(0.75rem);
+
           padding: 8px 8px 8px 4px;
           border: none;
           background-color: transparent;
           color: $gray-500;
           text-decoration: underline;
           cursor: pointer;
-          font-family: $font-family;
-          font-size: 0.75rem;
 
           &::after {
             content: "";
@@ -434,10 +443,11 @@ aside {
       max-width: 250px;
 
       button {
+        @include font();
+
         background-color: transparent;
         border: 1.5px solid $gray-500-50;
         color: $gray-500-50;
-        font-family: $font-family;
         padding: 8px;
         cursor: pointer;
 
@@ -456,10 +466,8 @@ aside {
     }
 
     > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
+      @include flex(column, start, start);
+
       gap: 10px;
     }
   }
@@ -476,10 +484,11 @@ aside {
     margin-top: 20px;
 
     > button {
+      @include font(0.875rem);
+
+      cursor: pointer;
       background-color: white;
-      font-family: $font-family;
       text-transform: uppercase;
-      font-size: 0.875rem;
 
       &.button-apply {
         border: 2px solid $blue-400;
@@ -621,10 +630,8 @@ aside {
 }
 
 .main-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flex(column, flex-start, center);
+
   width: 100%;
 
   .products-container {
@@ -654,12 +661,10 @@ aside {
     }
 
     .product {
+      @include flex(column, center, center);
+      @include font();
+
       text-align: center;
-      font-family: $font-family;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
       .product-image {
         width: 100%;
@@ -675,8 +680,8 @@ aside {
       }
 
       .product-price {
-        font-weight: 700;
-        font-size: 1rem;
+        @include font(1rem, 700);
+
         margin: 10px 0 5px;
       }
 
@@ -686,10 +691,9 @@ aside {
       }
 
       .product-button {
+        @include font(0.875rem, 700);
+
         margin-top: 14px;
-        font-family: $font-family;
-        font-size: 0.875rem;
-        font-weight: bold;
         background-color: black;
         border: none;
         color: white;
@@ -706,11 +710,11 @@ aside {
     }
   }
   .load-more {
+    @include font(1rem, 700);
+
     border: 0;
     background-color: $blue-400;
     color: white;
-    font-family: $font-family;
-    font-weight: bold;
     text-transform: uppercase;
     padding: 8px 31px;
     cursor: pointer;
@@ -724,6 +728,7 @@ aside {
 }
 
 footer {
+  width: 100%;
   text-transform: uppercase;
   background-color: black;
   color: white;
