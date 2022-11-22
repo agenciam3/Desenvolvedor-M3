@@ -15,6 +15,7 @@ export function sortProducts(ordering = "most-recent") {
         })
       );
       renderProducts();
+      updateProductsButtonListener();
       break;
     case "lowest-price":
       setFilteredProducts(
@@ -23,6 +24,7 @@ export function sortProducts(ordering = "most-recent") {
         })
       );
       renderProducts();
+      updateProductsButtonListener();
       break;
     case "highest-price":
       setFilteredProducts(
@@ -31,6 +33,7 @@ export function sortProducts(ordering = "most-recent") {
         })
       );
       renderProducts();
+      updateProductsButtonListener();
       break;
     default:
       break;
