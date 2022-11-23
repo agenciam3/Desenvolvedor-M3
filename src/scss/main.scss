@@ -80,10 +80,10 @@ header {
       display: grid;
       grid-template-columns: 35px 35px 35px 35px;
       justify-items: center;
-
+      
       grid-gap: 10px;
 
-      div {
+      .sizers {
         transition: 0.2s;
 
         cursor: pointer;
@@ -202,4 +202,15 @@ footer {
   justify-content: center;
   text-transform: uppercase;
   padding: 5px;
+}
+
+// Teste
+
+.labers {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--grey);
+  letter-spacing: 1px;
+  margin-bottom: 20px;
 }

@@ -3,6 +3,7 @@ import { getProducts } from "./api";
 let offset = 9;
 let products = [];
 let colorsFilters = new Set([]);
+let sizersProducts = new Set([]);
 
 document.addEventListener("DOMContentLoaded", () => {
   onLoad();
@@ -34,6 +35,15 @@ function loadProducts(limit, offset) {
       const productElement = createProductElement(product);
       productsContainer.appendChild(productElement);
     });
+
+    products = products.filter((product) =>{
+      if(!sizersProducts.size) return true
+      return sizersProducts.has(product.size)
+    })
+    products.forEach((product) => {
+      const productElement = createProductElement(product);
+      productsContainer.appendChild(productElement);
+    })
   });
 }
 
@@ -85,11 +95,25 @@ let inputsColors = document.querySelectorAll('#cores-fields input[type="checkbox
 inputsColors.forEach((e)=> {
   e.addEventListener('change', () => {
     if (e.checked) {
-      colorsFilters.add(e.id.replace('c', ''))
-      // console.log(e.id, 'Checked');
+      console.log('Marcado')
+      // colorsFilters.add(e.id.replace('c', ''))
+      
     }else {
-      colorsFilters.delete(e.id.replace('c', ''))
+      console.log('Desmarcado')
+      // colorsFilters.delete(e.id.replace('c', ''))
     }
     onLoad();
   })
 })
+
+// let inputSizers = document.querySelectorAll('#sizes-fields div[type="checkbox"]');
+// inputSizers.forEach((e) => {
+//   if (e.checked) {
+//     sizersProducts.add(e.id.replace('tam', ''))
+
+//   }else {
+//     sizersProducts.delete(e.id.replace('tam', ''))
+//   }
+//   onLoad()
+// })
+
