@@ -30,9 +30,6 @@ Array.from(document.querySelectorAll('.size-item')).map((item) => {
         } else {
             item.classList.remove('border')
             item.classList.add('size-item')
-
-
         }
-
     })
 })

@@ -227,9 +227,9 @@
                             <img src="./img/arrow-2.svg" alt="">
                         </div>
                         <ul class="sort-options hide">
-                            <li>Mais recentes</li>
-                            <li>Menor preço</li>
-                            <li>Maior preço</li>
+                            <li onclick="sortDate()">Mais recentes</li>
+                            <li onclick="sortLower()">Menor preço</li>
+                            <li onclick="sortHigh()">Maior preço</li>
                         </ul>
                     </div>
                 </div>
@@ -244,8 +244,8 @@
     </div>
 </body>
 
-<script src="./js/sortItem.js"></script>
 <script src="./js/renderProducts.js"></script>
+<script src="./js/sortItem.js"></script>
 <script src="./js/main.js"></script>
 <script src="./js/filterProducts.js"></script>
 <script src="bundle.js"></script>
