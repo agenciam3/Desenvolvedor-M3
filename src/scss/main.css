@@ -205,7 +205,7 @@ aside a {
   font-size: 15px;
   color: #808080;
 }
-aside input[type=checkbox] {
+aside .checkboxs {
   display: grid;
   place-content: center;
   -webkit-appearance: none;
@@ -220,7 +220,7 @@ aside input[type=checkbox] {
   border-radius: 0.15em;
   transform: translateY(-0.075em);
 }
-aside input[type=checkbox]::before {
+aside .checkboxs::before {
   content: "";
   width: 0.65em;
   background-color: #00c0ee;
@@ -229,7 +229,35 @@ aside input[type=checkbox]::before {
   transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em var(--form-control-color);
 }
-aside input[type=checkbox]:checked::before {
+aside .checkboxs:checked::before {
+  background-color: #00c0ee;
+  transform: scale(1);
+}
+aside .checkboxs1 {
+  display: grid;
+  place-content: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.7px solid #808080;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+}
+aside .checkboxs1::before {
+  content: "";
+  width: 0.65em;
+  background-color: #00c0ee;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+aside .checkboxs1:checked::before {
   background-color: #00c0ee;
   transform: scale(1);
 }
@@ -282,20 +310,47 @@ aside .sizes .size {
   grid-gap: 10px;
   margin-top: 10px;
 }
-aside .sizes span {
+aside .sizes label {
+  cursor: pointer;
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   opacity: 0.6;
   width: 100%;
   height: 35px;
 }
-aside .sizes span:hover {
-  opacity: 1;
+aside .sizes label .checkboxs2 {
+  cursor: pointer;
+  display: grid;
+  place-content: center;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #fff;
+  margin: 0;
+  color: currentColor;
+  width: 2.9em;
+  height: 35px;
+  border: 0.7px solid #808080;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  opacity: 0;
+  position: absolute;
 }
-aside .sizes .border-none {
+aside .sizes label .checkboxs2::before {
+  width: 0.65em;
+  background-color: #00c0ee;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+}
+aside .sizes label .checkboxs2:checked::before {
+  background-color: #00c0ee;
+  transform: scale(1);
+}
+aside .sizes .size-item {
   border: 1px solid #808080;
 }
 aside .sizes .border {
@@ -328,7 +383,7 @@ aside .prices p {
 
 main {
   width: 100%;
-  height: 100vh;
+  height: 100%;
 }
 main .sort-container {
   display: flex;
@@ -377,9 +432,10 @@ main .sort-options li:hover {
 }
 main #cards {
   height: 100%;
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(3, 300px);
-  grid-gap: 20px;
+  grid-template-columns: repeat(6, 100px);
+  grid-gap: 50px;
 }
 main #cards .card {
   font-family: "Open Sans", sans-serif;

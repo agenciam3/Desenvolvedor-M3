@@ -5,23 +5,32 @@ const formatoReal = (valor) => {
 }
 
 async function renderProducts() {
-    fetch(productsUrl)
+    await fetch(productsUrl)
         .then((resp) => resp.json())
         .then((data) => renderProduct(data))
 }
 
+function renderProduct(item, size) {
+    const showProduct = item.map((product) =>
+        `
+        <div class="card" 
+            data-key="${product.id}" 
+            color="${product.color}" 
+            price="${product.price}" 
+            size="${product.size}">
 
-function renderProduct(item) {
-    const showProduct = item.map((product) => `
-        <div class="card" data-key="${product.id}">
             <div class="card-img">
-                <img src="${product.image}" alt="">
+                <img src="${product.image}" 
+                alt="">
             </div>
+
             <div class="card-info">
                 <h4>${product.name}</h4>
                 <h3>${formatoReal(product.price)}</h3>
-                <p>até ${product.parcelamento}</p>
+                <p>até ${product.parcelamento[0]}
+                x de ${formatoReal(product.parcelamento[1])}</p>
             </div>
+
             <div class="card-btn">
                 <button type="button">COMPRAR</button>
             </div>
@@ -29,7 +38,7 @@ function renderProduct(item) {
            
         `);
     document.getElementById('cards').innerHTML = showProduct
-
 }
+
 
 renderProducts()

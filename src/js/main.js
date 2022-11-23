@@ -1,9 +1,8 @@
-const sizes = document.querySelector('.border-none')
+const sizes = document.querySelector('.size-item')
 const dropDown = document.querySelector('.drop-down')
 const btn = document.querySelector('.show-colors')
 const sortOptions = document.querySelector('.sort-options')
 const sort = document.querySelector('.sort')
-
 
 const showColor = () => {
     if (dropDown.classList.contains('hide')) {
@@ -23,14 +22,16 @@ const showSort = () => {
     }
 }
 
-Array.from(document.querySelectorAll('.border-none')).map((item) => {
+Array.from(document.querySelectorAll('.size-item')).map((item) => {
     item.addEventListener('click', () => {
-        if (item.classList.contains('border-none')) {
-            item.classList.remove('border-none')
+        if (item.classList.contains('size-item')) {
             item.classList.add('border')
+            item.classList.remove('size-item')
         } else {
             item.classList.remove('border')
-            item.classList.add('border-none')
+            item.classList.add('size-item')
+
+
         }
 
     })

@@ -23,7 +23,33 @@ aside {
         font-size: 15px;
         color: $lightGray;
     }
-    input[type="checkbox"] {
+    .checkboxs {
+        display: grid;
+        place-content: center;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.7px solid $lightGray;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        &::before {
+            content: "";
+            width: 0.65em;
+            background-color: $blue;
+            height: 0.65em;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(--form-control-color);
+        }
+        &:checked::before {
+            background-color: $blue;
+            transform: scale(1);
+        }
+    }
+    .checkboxs1 {
         display: grid;
         place-content: center;
         appearance: none;
@@ -97,20 +123,45 @@ aside {
             grid-gap: 10px;
             margin-top: 10px;
         }
-        span {
+        label {
+            cursor: pointer;
             display: flex;
             text-align: center;
             justify-content: center;
             align-items: center;
-            cursor: pointer;
             opacity: 0.6;
             width: 100%;
             height: 35px;
-            &:hover {
-                opacity: 1;
+            .checkboxs2 {
+                cursor: pointer;
+                display: grid;
+                place-content: center;
+                appearance: none;
+                background-color: #fff;
+                margin: 0;
+                color: currentColor;
+                width: 2.9em;
+                height: 35px;
+                border: 0.7px solid $lightGray;
+                border-radius: 0.15em;
+                transform: translateY(-0.075em);
+                opacity: 0;
+                position: absolute;
+                &::before {
+                    width: 0.65em;
+                    background-color: $blue;
+                    height: 0.65em;
+                    transform: scale(0);
+                    transition: 120ms transform ease-in-out;
+                    box-shadow: inset 1em 1em var(--form-control-color);
+                }
+                &:checked::before {
+                    background-color: $blue;
+                    transform: scale(1);
+                }
             }
         }
-        .border-none {
+        .size-item {
             border: 1px solid $lightGray;
         }
         .border {
