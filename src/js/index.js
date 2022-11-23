@@ -2,20 +2,22 @@ import { getProducts } from "./api";
 
 let offset = 9;
 let products = [];
-let colorsFilters = new Set([]);
-let sizersProducts = new Set([]);
+let colorsFilter = new Set([]);
+let sizeFilter = new Set([]);
+let priceFilter = "";
 
 document.addEventListener("DOMContentLoaded", () => {
-  onLoad();
+  loadProductsToDOM();
+  watchSizeFilter();
 
   const loadMore = document.getElementById("loadMore");
   loadMore.onclick = () => {
     offset *= 2;
-    loadProducts(offset, 0);
+    loadProductsToDOM(offset, 0);
   };
 });
 
-function onLoad() {
+function loadProductsToDOM() {
   loadProducts(offset, 0);
 }
 
@@ -27,23 +29,41 @@ function loadProducts(limit, offset) {
   getProducts(limit, offset).then((apiProducts) => {
     products = apiProducts;
 
-    products = products.filter((product) =>{
-      if(!colorsFilters.size) return true
-      return colorsFilters.has(product.color)
-    })
+    // Color filter
+    products = products.filter((product) => {
+      if (!colorsFilter.size) return true;
+      return colorsFilter.has(product.color);
+    });
+
+    // Size filter
+    products = products.filter((product) => {
+      if (!sizeFilter.size) return true;
+      return product.size.some((size) => sizeFilter.has(size));
+    });
+
+    // Price filter
+    products = products.filter((product) => {
+      if (priceFilter === "") return true;
+
+      switch (priceFilter) {
+        case "0-50":
+          return product.price >= 0 && product.price <= 50;
+        case "51-150":
+          return product.price >= 51 && product.price <= 150;
+        case "151-300":
+          return product.price >= 151 && product.price <= 300;
+        case "301-500":
+          return product.price >= 301 && product.price <= 500;
+        default:
+          return product.price >= 500;
+      }
+    });
+
+    // update products
     products.forEach((product) => {
       const productElement = createProductElement(product);
       productsContainer.appendChild(productElement);
     });
-
-    products = products.filter((product) =>{
-      if(!sizersProducts.size) return true
-      return sizersProducts.has(product.size)
-    })
-    products.forEach((product) => {
-      const productElement = createProductElement(product);
-      productsContainer.appendChild(productElement);
-    })
   });
 }
 
@@ -88,32 +108,60 @@ function createProductElement(product) {
   return productElement;
 }
 
+function watchSizeFilter() {
+  // we need this function to watch for changes in the size filter
+  // because it's not a input, we need to use the change event :(
+  const sizes = document.getElementsByClassName("size-filter-check");
+
+  for (let i = 0; i < sizes.length; i++) {
+    const size = sizes.item(i);
+
+    size.addEventListener("click", () => {
+      if (!size.hasAttribute("checked")) {
+        size.setAttribute("checked", "");
+      } else {
+        size.removeAttribute("checked");
+      }
+
+      if (size.hasAttribute("checked")) {
+        sizeFilter.add(size.id.replace("tam", ""));
+      } else {
+        sizeFilter.delete(size.id.replace("tam", ""));
+      }
+      loadProductsToDOM();
+    });
+  }
+}
+
 // --Filters colors
 
-
-let inputsColors = document.querySelectorAll('#cores-fields input[type="checkbox"]');
-inputsColors.forEach((e)=> {
-  e.addEventListener('change', () => {
+let inputsColors = document.querySelectorAll(
+  '#cores-fields input[type="checkbox"]'
+);
+inputsColors.forEach((e) => {
+  e.addEventListener("change", () => {
     if (e.checked) {
-      console.log('Marcado')
-      // colorsFilters.add(e.id.replace('c', ''))
-      
-    }else {
-      console.log('Desmarcado')
-      // colorsFilters.delete(e.id.replace('c', ''))
+      colorsFilter.add(e.id.replace("c", ""));
+    } else {
+      colorsFilter.delete(e.id.replace("c", ""));
     }
-    onLoad();
-  })
-})
+    loadProductsToDOM();
+  });
+});
 
-// let inputSizers = document.querySelectorAll('#sizes-fields div[type="checkbox"]');
-// inputSizers.forEach((e) => {
-//   if (e.checked) {
-//     sizersProducts.add(e.id.replace('tam', ''))
+// --Filters price
 
-//   }else {
-//     sizersProducts.delete(e.id.replace('tam', ''))
-//   }
-//   onLoad()
-// })
+let inputsPrice = document.querySelectorAll(
+  '#precos-fields input[type="checkbox"]'
+);
 
+inputsPrice.forEach((e) => {
+  e.addEventListener("change", () => {
+    if (e.checked) {
+      priceFilter = e.id.replace("p", "");
+    } else {
+      priceFilter = "";
+    }
+    loadProductsToDOM();
+  });
+});

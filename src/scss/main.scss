@@ -80,10 +80,10 @@ header {
       display: grid;
       grid-template-columns: 35px 35px 35px 35px;
       justify-items: center;
-      
+
       grid-gap: 10px;
 
-      .sizers {
+      div {
         transition: 0.2s;
 
         cursor: pointer;
@@ -102,6 +102,10 @@ header {
           border: var(--blueLight) 2px solid;
           color: var(--blueLight);
         }
+      }
+      div[checked] {
+        border: var(--blueLight) 2px solid;
+        color: var(--blueLight);
       }
     }
   }
