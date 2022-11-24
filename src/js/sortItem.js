@@ -14,6 +14,7 @@ async function sortLower() {
                     }
                 })
                 renderProduct(sortByLower)
+
             })
         });
 }

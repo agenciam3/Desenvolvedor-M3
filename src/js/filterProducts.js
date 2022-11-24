@@ -40,16 +40,15 @@ async function filterColorAndSize() {
 
         })
 }
-
 async function filterPrice() {
     await fetch(productsUrl)
         .then((resp) => resp.json())
         .then((data) => {
             data.map(() => {
-                const filteredPrice1 = data.filter(function(x) { return x.price >= 0 && x.price <= 50 })
-                const filteredPrice2 = data.filter(function(x) { return x.price >= 51 && x.price <= 150 })
-                const filteredPrice3 = data.filter(function(x) { return x.price >= 151 && x.price <= 300 })
-                const filteredPrice4 = data.filter(function(x) { return x.price >= 301 && x.price <= 500 })
+                const filteredPrice1 = data.filter((x) => { return x.price >= 0 && x.price <= 50 })
+                const filteredPrice2 = data.filter((x) => { return x.price >= 51 && x.price <= 150 })
+                const filteredPrice3 = data.filter((x) => { return x.price >= 151 && x.price <= 300 })
+                const filteredPrice4 = data.filter((x) => { return x.price >= 301 && x.price <= 500 })
 
                 const checkPriceValue = [...document.querySelectorAll('.checkboxs')].filter((input => input.checked)).map((input) => input.value)
                 console.log(checkPriceValue)

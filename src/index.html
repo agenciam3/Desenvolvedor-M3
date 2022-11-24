@@ -24,6 +24,10 @@
             <div class="total">
                 <span>0</span>
             </div>
+            <div onclick="removeItem()" class="remove">
+                <span>-</span>
+            </div>
+
         </div>
     </header>
 
@@ -220,6 +224,7 @@
         </aside>
         <main>
             <div class="main-container">
+
                 <div class="sort-container">
                     <div class="sorts">
                         <div onclick="showSort()" class="sort">
@@ -233,20 +238,23 @@
                         </ul>
                     </div>
                 </div>
+
                 <section id="cards">
 
-                    <div class="btn-container">
-                        <button>CARREGAR MAIS</button>
-                    </div>
                 </section>
+                <div class="btn-container">
+                    <button onclick="showMore()">CARREGAR MAIS</button>
+                </div>
             </div>
         </main>
     </div>
 </body>
 
+
 <script src="./js/renderProducts.js"></script>
-<script src="./js/sortItem.js"></script>
 <script src="./js/main.js"></script>
+<script src="./js/cart.js"></script>
+<script src="./js/sortItem.js"></script>
 <script src="./js/filterProducts.js"></script>
 <script src="bundle.js"></script>
 

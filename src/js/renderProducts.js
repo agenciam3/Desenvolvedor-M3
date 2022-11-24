@@ -1,4 +1,6 @@
 const productsUrl = `http://localhost:5000/products`
+let clicks = 0
+let cart = []
 const seleciona = (elemento) => document.querySelector(elemento)
 const formatoReal = (valor) => {
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -10,7 +12,15 @@ async function renderProducts() {
         .then((data) => renderProduct(data))
 }
 
-function renderProduct(item, size) {
+function removeItem() {
+    if (clicks != 0)
+        clicks -= 1
+    totalCart.innerHTML = clicks
+    cart.pop()
+    console.log(cart)
+}
+
+function renderProduct(item) {
     const showProduct = item.map((product) =>
         `
         <div class="card" 
@@ -32,13 +42,27 @@ function renderProduct(item, size) {
             </div>
 
             <div class="card-btn">
-                <button type="button">COMPRAR</button>
+                <button key="${product.id}" type="button">COMPRAR</button>
             </div>
-        </div>
-           
-        `);
+        </div>       
+        `
+    );
+
     document.getElementById('cards').innerHTML = showProduct
+
+    Array.from(document.querySelectorAll('.card')).map((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault()
+            key = e.target.closest('.card').getAttribute('data-key')
+            total = cart.concat(key)
+            clicks += 1
+            totalCart.innerHTML = clicks
+            cart.push(key)
+            console.log(cart)
+
+
+        })
+    })
+
 }
-
-
 renderProducts()

@@ -24,22 +24,53 @@ header {
         img {
             position: relative;
             top: 10px;
-            width: 17px;
-            height: 20px;
+            width: 47px;
+            height: 40px;
         }
         .total {
+            font-family: 'Open Sans', sans-serif;
             display: flex;
             align-items: center;
             justify-content: center;
             color: #fff;
-            width: 10px;
-            height: 12px;
-            font-size: 10px;
-            top: 20px;
-            left: 10px;
+            width: 30px;
+            height: 30px;
+            font-size: 20px;
+            font-weight: bold;
+            top: 25px;
+            left: 25px;
             position: absolute;
             background-color: $blue;
             border-radius: 50px;
+        }
+        .remove {
+            cursor: pointer;
+            opacity: 0.7;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            width: 20px;
+            height: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            top: 30px;
+            left: -15px;
+            position: absolute;
+            background-color: $gray;
+            border-radius: 50px;
+            &:hover {
+                opacity: 1;
+            }
+            span {
+                font-weight: bold;
+                position: relative;
+                top: 1px;
+                left: 5px;
+                width: 47px;
+                height: 40px;
+            }
         }
     }
 }

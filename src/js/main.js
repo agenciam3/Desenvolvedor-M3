@@ -3,6 +3,7 @@ const dropDown = document.querySelector('.drop-down')
 const btn = document.querySelector('.show-colors')
 const sortOptions = document.querySelector('.sort-options')
 const sort = document.querySelector('.sort')
+const totalCart = document.querySelector('.total span')
 
 const showColor = () => {
     if (dropDown.classList.contains('hide')) {
@@ -22,6 +23,12 @@ const showSort = () => {
     }
 }
 
+function showMore() {
+
+    document.getElementById('cards').style.height = "100%"
+    document.querySelector('.btn-container').style.display = "none"
+
+}
 Array.from(document.querySelectorAll('.size-item')).map((item) => {
     item.addEventListener('click', () => {
         if (item.classList.contains('size-item')) {

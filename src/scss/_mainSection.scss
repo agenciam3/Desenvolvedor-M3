@@ -1,10 +1,11 @@
 @import "./colors";
 main {
-    width: 100%;
+    width: 50%;
     height: 100%;
     .sort-container {
         display: flex;
-        height: 100%;
+        height: 80px;
+        width: 90rem;
         flex-direction: column;
         align-items: flex-end;
         font-family: 'Open Sans', sans-serif;
@@ -34,6 +35,7 @@ main {
         border: 1px solid $lightGray;
         display: flex;
         height: 100px;
+        background-color: #fff;
         flex-direction: column;
         align-items: center;
         li {
@@ -48,11 +50,15 @@ main {
         }
     }
     #cards {
-        height: 100%;
+        height: 90vh;
+        overflow: hidden;
         width: 100%;
+        margin-left: 10px;
+        margin-bottom: 10px;
         display: grid;
-        grid-template-columns: repeat(6, 100px);
+        grid-template-columns: repeat(6, 120px);
         grid-gap: 50px;
+        justify-content: center;
         .card {
             font-family: 'Open Sans', sans-serif;
             width: 220px;
@@ -80,6 +86,7 @@ main {
             .card-btn {
                 width: 100%;
                 button {
+                    cursor: pointer;
                     font-family: 'Open Sans', sans-serif;
                     font-weight: bold;
                     color: #fff;
@@ -91,20 +98,22 @@ main {
                 }
             }
         }
-        .btn-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            button {
-                cursor: pointer;
-                font-family: 'Open Sans', sans-serif;
-                font-weight: bold;
-                width: 175px;
-                height: 35px;
-                border: none;
-                color: #fff;
-                background-color: $blue;
-            }
+    }
+    .btn-container {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 25px;
+        margin-bottom: 20px;
+        button {
+            cursor: pointer;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            width: 175px;
+            height: 35px;
+            border: none;
+            color: #fff;
+            background-color: $blue;
         }
     }
 }
