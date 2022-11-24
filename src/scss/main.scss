@@ -2,25 +2,41 @@
 @import "./header";
 @import "./aside";
 @import "./mainSection";
-@import "./cart";
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    width: 100%;
+    height: 35px;
+    background-color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .content-container {
+    margin-bottom: 30px;
     display: flex;
     width: 100%;
     height: 100%;
 }
 
 .hide {
-    height: 0px;
+    height: 0;
+    width: 0;
+    display: none;
     opacity: 0;
 }
 
 .show {
+    display: flex;
     transition: all 0.2s ease-in;
     height: 100%;
     opacity: 1;

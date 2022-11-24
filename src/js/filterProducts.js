@@ -5,7 +5,7 @@ async function filterColorAndSize() {
             data.map(() => {
                 const checkSizeValue = [...document.querySelectorAll('.checkboxs2')].filter((input => input.checked)).map((input) => input.value)
                 const checkColorValue = [...document.querySelectorAll('.checkboxs1')].filter((input => input.checked)).map((input) => input.value)
-                console.log(checkSizeValue, checkColorValue)
+                console.log("Tamanho:", checkSizeValue, "Cor:", checkColorValue)
 
                 const filterSize = data.filter(({ size }) => {
                     if (checkSizeValue.includes(size[0]))
@@ -27,6 +27,7 @@ async function filterColorAndSize() {
 
                 } else if (checkColorValue.length <= 0) {
                     renderProduct(data)
+
                 }
                 if (checkSizeValue + checkSizeValue) {
                     renderProduct(filterSize)
@@ -36,10 +37,19 @@ async function filterColorAndSize() {
 
                 }
 
-            });
+                if (filterResult.length <= 1) {
+                    btnsApply.style.display = "none"
+                }
 
+                if (filterResult.length >= 1) {
+                    btnsApply.style.display = "block"
+                }
+
+            });
         })
+
 }
+
 async function filterPrice() {
     await fetch(productsUrl)
         .then((resp) => resp.json())
@@ -51,11 +61,10 @@ async function filterPrice() {
                 const filteredPrice4 = data.filter((x) => { return x.price >= 301 && x.price <= 500 })
 
                 const checkPriceValue = [...document.querySelectorAll('.checkboxs')].filter((input => input.checked)).map((input) => input.value)
-                console.log(checkPriceValue)
+                console.log("Preço menor que:", checkPriceValue)
 
                 if (checkPriceValue >= 1 && checkPriceValue <= 50 && checkPriceValue.length >= 1) {
                     renderProduct(filteredPrice1)
-
 
                 } else if (checkPriceValue >= 51 && checkPriceValue <= 150) {
                     renderProduct(filteredPrice2)
@@ -71,8 +80,15 @@ async function filterPrice() {
 
                 } else if (checkPriceValue.length <= 0) {
                     renderProduct(data)
-
                 }
+                if (checkPriceValue.length <= 1) {
+                    btnsApply.style.display = "none"
+                }
+
+                if (checkPriceValue.length >= 1) {
+                    btnsApply.style.display = "block"
+                }
+
             })
         })
 }

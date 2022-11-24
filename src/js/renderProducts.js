@@ -17,7 +17,7 @@ function removeItem() {
         clicks -= 1
     totalCart.innerHTML = clicks
     cart.pop()
-    console.log(cart)
+    console.log('Removeu do carrinho', cart)
 }
 
 function renderProduct(item) {
@@ -58,7 +58,8 @@ function renderProduct(item) {
             clicks += 1
             totalCart.innerHTML = clicks
             cart.push(key)
-            console.log(cart)
+
+            console.log('Adicionou no carrinho:', cart)
 
 
         })

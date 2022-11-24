@@ -1,6 +1,8 @@
+@import './colors';
 aside {
     display: flex;
     height: 100%;
+    background-color: transparent;
     width: 22%;
     flex-direction: column;
     align-items: center;
@@ -109,7 +111,6 @@ aside {
         }
     }
     .sizes {
-        display: grid;
         justify-content: center;
         width: 100%;
         height: 100%;
@@ -166,16 +167,7 @@ aside {
         }
         .border {
             opacity: 1;
-            border: 2px solid $blue;
-        }
-        div {
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            opacity: 0.6;
-            width: 100%;
-            height: 35px;
+            border: 3px solid $blue;
         }
     }
     .prices {
@@ -190,6 +182,180 @@ aside {
         }
         p {
             padding: 5px;
+        }
+    }
+}
+
+.filter-mobile {
+    display: none;
+}
+
+.menu-mobile {
+    span {
+        display: none;
+    }
+}
+
+.btn-apply {
+    display: none;
+}
+
+@media (max-width:600px) {
+    aside {
+        h1 {
+            display: none;
+        }
+        right: 100vw;
+        transition: all 0.1s ease;
+        background-color: #fff;
+        width: 100vw;
+        height: 150vh;
+        align-items: flex-start;
+        position: absolute;
+        .aside-container {
+            margin: 10px;
+            width: 100%;
+            height: 100%;
+            .colors {
+                .color {
+                    p {
+                        margin-left: 15px;
+                        font-size: 20px;
+                    }
+                    input {
+                        font-size: 20px;
+                    }
+                }
+                a {
+                    display: none;
+                }
+            }
+            .sizes {
+                width: 100%;
+                height: 100px;
+                padding: 10px;
+                justify-content: flex-start;
+                margin-top: 10px;
+                .size {
+                    margin-top: 20px;
+                    justify-content: center;
+                    grid-template-columns: repeat(4, 50px);
+                    grid-gap: 10px;
+                }
+                .size-item {
+                    height: 50px;
+                    width: 50px;
+                }
+                .border {
+                    width: 50px;
+                    height: 50px;
+                }
+            }
+            .prices {
+                .prices-container {
+                    margin-top: 10px;
+                }
+                .price {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                }
+                p {
+                    margin-left: 15px;
+                    font-size: 20px;
+                }
+                input {
+                    font-size: 20px;
+                }
+            }
+            .btn-apply {
+                text-align: center;
+                justify-content: center;
+                width: 100%;
+                .clean {
+                    width: 160px;
+                    height: 35px;
+                    font-size: 15px;
+                    opacity: 0.7;
+                    font-family: 'Open Sans', sans-serif;
+                    border: 1px solid $lightGray;
+                    margin-left: 10px;
+                }
+                .apply {
+                    width: 160px;
+                    height: 35px;
+                    background-color: $blue;
+                    color: #fff;
+                    font-size: 15px;
+                    opacity: 0.7;
+                    font-family: 'Open Sans', sans-serif;
+                    border: 1px solid $lightGray;
+                    margin-left: 10px;
+                }
+            }
+        }
+        .hide {
+            height: 100%;
+            opacity: 1;
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
+        .show1 {
+            display: block;
+        }
+    }
+    .menu-mobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        span {
+            display: block;
+        }
+        .btn-more-less {
+            align-items: center;
+            justify-content: flex;
+            margin-top: 20px;
+            display: flex;
+            width: 30px;
+        }
+        .more1 {
+            height: 20px;
+        }
+        .more2 {
+            position: absolute;
+            height: 20px;
+        }
+        .more3 {
+            height: 20px;
+        }
+        .less {
+            height: 20px;
+            position: absolute;
+            transform: rotate(90deg);
+        }
+    }
+    .filter-mobile {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 80px;
+        border-bottom: 1px solid rgb(165, 165, 165);
+        padding: 10px;
+        p {
+            color: #333;
+            font-weight: bold;
+            letter-spacing: 2px;
+            font-size: 25px;
+        }
+        h2 {
+            color: #333;
+            font-size: 25px;
+            font-weight: bold;
         }
     }
 }
