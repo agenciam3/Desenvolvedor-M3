@@ -21,3 +21,5 @@ botao filtrar com um menu dropdown que mostra o restante do seu conteúdo.
 no modo mobile ao clicar em algum filtro os botões aparecem
 
 log no console com nome da cor,preço e tamanho selecionado e itens no carrinho.
+
+EMAIL : jpgoncalves021@gmail.com
