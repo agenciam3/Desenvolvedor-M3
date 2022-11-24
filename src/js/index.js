@@ -1,3 +1,3 @@
-const serverurl = process.env.SERVER_API;
+import fetchData from "./api";
 
-console.log("Dev m3", serverurl);
+fetchData();
