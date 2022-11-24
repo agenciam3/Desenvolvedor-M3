@@ -1,1 +1,143 @@
-@import "reset";
+// @import "reset";
+* {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.bar {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13px;
+  margin-left: 130px;
+  margin-right: 130px;
+  margin-bottom: 13px;
+}
+.bar2 {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+#pB {
+  font-size: 2rem;
+
+}
+.productsSector {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  // grid-template-rows: auto;
+}
+label.container {
+  display: block;
+  font-size: 12px;
+}
+
+
+h1,
+h2,
+h3 {
+  font-size: 17px;
+  text-transform: uppercase;
+}
+.img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+}
+
+#cardDiv {
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  text-align: center;
+  padding: 15px 15px 40px;
+  max-width: 1000px;
+  grid-gap: 20px;
+  justify-content: center;
+  margin: auto;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+
+.footerText {
+  font-size: clamp(0.8rem, 1vw, 2rem);
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  background-color: black;
+  color: white;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  padding: 10px 45px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+#sacola {
+  width: 23px;
+  height: 23px;
+}
+#icon {
+  width: 135px;
+  height: 30px;
+}
+#content {
+  margin: auto;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+}
+
+select:hover {
+  background-color:  #00C0EE;
+  cursor: pointer;
+  color: white;
+}
+select{
+  border:1px solid #c0c0c0;
+  padding: 10px;
+  font-size: 15px;
+}
+.mais {
+  margin-top: 30px;
+  margin-left: 40%;
+  margin-bottom: 80px;
+  border: 0;
+  width: 300px;
+  height: 50px;
+  background-color: #00C0EE;
+}
+input {
+  width: 20px;
+  height: 20px;
+  margin: 10px;
+}
+
+@media (max-width: 768px){
+  #cardDiv {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px){
+  .optionsDiv {
+    display: none;
+  }
+}
