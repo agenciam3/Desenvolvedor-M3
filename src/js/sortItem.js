@@ -1,3 +1,6 @@
+/* FUNÇÕES PARA ORGANIZAR OS OBJETOS 
+POR DATA, PREÇO MAIS ALTO E PREÇO MAIS BAIXO
+*/
 async function sortLower() {
     await fetch(productsUrl)
         .then((resp) => resp.json())

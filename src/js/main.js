@@ -17,7 +17,7 @@ const btnClean = document.querySelector('.clean')
 const inputs = document.querySelector('input[type="checkbox"]')
 
 
-
+/* FUNÇÕES PARA ALTERAR ESTADO DA UI */
 
 const closeMenuSort = () => {
     document.querySelector('.sort-container').style.right = '100vw'
@@ -90,6 +90,10 @@ function showMore() {
     document.getElementById('cards').style.height = "100%"
     document.querySelector('.btn-container').style.display = "none"
 }
+
+
+
+/* MARCA O CHECKBOX DO FILTRO TAMANHO */
 
 Array.from(document.querySelectorAll('.size-item')).map((item) => {
     item.addEventListener('click', () => {
