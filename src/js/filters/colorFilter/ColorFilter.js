@@ -31,6 +31,7 @@ export default class ColorFilter extends HTMLElement {
 
     const filterTitle = document.createElement("h3");
     filterTitle.innerHTML = "CORES";
+    colorFilterContainer.appendChild(filterTitle);
 
     let colors = [];
     this.data.forEach(product => colors.push(product.color));
