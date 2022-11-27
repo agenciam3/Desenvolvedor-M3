@@ -7,6 +7,7 @@ import SizeFilter from "./filters/sizeFilter/SizeFilter";
 import SizeOption from "./filters/sizeFilter/SizeOption";
 import PriceFilter from "./filters/priceFilter/PriceFilter";
 import PriceOption from "./filters/priceFilter/PriceOption";
+import App from "./App";
 
 customElements.define('product-card', ProductCard);
 customElements.define('products-container', ProductsContainer);
@@ -16,29 +17,13 @@ customElements.define('size-filter', SizeFilter);
 customElements.define('size-option', SizeOption);
 customElements.define('price-filter', PriceFilter);
 customElements.define('price-option', PriceOption);
-
+customElements.define('my-app', App);
 
 fetchData().then(res => {
   const data = res;
 
-  const productsContainer = document.createElement("products-container");
-  productsContainer.data = data;
+  const app = document.createElement("my-app");
+  app.state = data;
 
-  const filtersForm = document.createElement("form");
-
-  const colorFilter = document.createElement("color-filter");
-  colorFilter.data = data;
-
-  const sizeFilter = document.createElement("size-filter");
-  sizeFilter.data = data;
-
-  const priceFilter = document.createElement("price-filter");
-  priceFilter.data = data;
-
-  filtersForm.appendChild(colorFilter);
-  filtersForm.appendChild(sizeFilter);
-  filtersForm.appendChild(priceFilter);
-
-  document.getElementById("container").appendChild(productsContainer);
-  document.getElementById("container").appendChild(filtersForm);
+  document.getElementById("container").appendChild(app);
 });
