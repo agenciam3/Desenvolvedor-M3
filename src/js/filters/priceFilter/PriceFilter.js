@@ -11,6 +11,10 @@ export default class PriceFilter extends HTMLElement {
     const priceFilterContainer = document.createElement("fieldset");
     priceFilterContainer.setAttribute("id", "priceFilterContainer");
     shadow.append(priceFilterContainer);
+
+    const filterTitle = document.createElement("legend");
+    filterTitle.innerHTML = "FAIXA DE PREÇO";
+    priceFilterContainer.appendChild(filterTitle);
   }
 
   set data(value) {
@@ -28,10 +32,6 @@ export default class PriceFilter extends HTMLElement {
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const priceFilterContainer = shadow.getElementById("priceFilterContainer");
-
-    const filterTitle = document.createElement("h3");
-    filterTitle.innerHTML = "FAIXA DE PREÇO";
-    priceFilterContainer.appendChild(filterTitle);
 
     allPriceRanges.map((priceRange, i) => {
       const priceOption = document.createElement("price-option");

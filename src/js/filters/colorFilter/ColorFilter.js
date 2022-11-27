@@ -11,6 +11,10 @@ export default class ColorFilter extends HTMLElement {
     const colorFilterContainer = document.createElement("fieldset");
     colorFilterContainer.setAttribute("id", "colorFilterContainer");
     shadow.append(colorFilterContainer);
+
+    const filterTitle = document.createElement("legend");
+    filterTitle.innerHTML = "CORES";
+    colorFilterContainer.appendChild(filterTitle);
   }
 
   set data(value) {
@@ -28,10 +32,6 @@ export default class ColorFilter extends HTMLElement {
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const colorFilterContainer = shadow.getElementById("colorFilterContainer");
-
-    const filterTitle = document.createElement("h3");
-    filterTitle.innerHTML = "CORES";
-    colorFilterContainer.appendChild(filterTitle);
 
     allColors.map(color => {
       const colorOption = document.createElement("color-option");

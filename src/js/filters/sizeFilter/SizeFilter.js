@@ -11,6 +11,10 @@ export default class SizeFilter extends HTMLElement {
     const sizeFilterContainer = document.createElement("fieldset");
     sizeFilterContainer.setAttribute("id", "sizeFilterContainer");
     shadow.append(sizeFilterContainer);
+
+    const filterTitle = document.createElement("legend");
+    filterTitle.innerHTML = "TAMANHOS";
+    sizeFilterContainer.appendChild(filterTitle);
   }
 
   set data(value) {
@@ -28,10 +32,6 @@ export default class SizeFilter extends HTMLElement {
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const sizeFilterContainer = shadow.getElementById("sizeFilterContainer");
-
-    const filterTitle = document.createElement("h3");
-    filterTitle.innerHTML = "TAMANHOS";
-    sizeFilterContainer.appendChild(filterTitle);
 
     allSizes.map(size => {
       const sizeOption = document.createElement("size-option");
