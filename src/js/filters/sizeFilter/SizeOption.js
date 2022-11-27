@@ -33,11 +33,12 @@ export default class SizeOption extends HTMLElement {
     optionInput.setAttribute("id", this.data.size);
     optionInput.setAttribute("value", this.data.size);
 
-    const optionName = document.createElement("label");
-    optionName.innerHTML = this.data.size;
-    optionName.setAttribute("for", this.data.size);
+    const optionLabel = document.createElement("label");
+    const optionSpan = document.createElement("span");
+    optionSpan.innerHTML = this.data.size;
 
-    SizeOptionContainer.appendChild(optionInput);
-    SizeOptionContainer.appendChild(optionName);
+    optionLabel.appendChild(optionInput);
+    optionLabel.appendChild(optionSpan);
+    SizeOptionContainer.appendChild(optionLabel);
   }
 }

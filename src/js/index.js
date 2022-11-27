@@ -24,6 +24,8 @@ fetchData().then(res => {
   const productsContainer = document.createElement("products-container");
   productsContainer.data = data;
 
+  const filtersForm = document.createElement("form");
+
   const colorFilter = document.createElement("color-filter");
   colorFilter.data = data;
 
@@ -33,8 +35,10 @@ fetchData().then(res => {
   const priceFilter = document.createElement("price-filter");
   priceFilter.data = data;
 
+  filtersForm.appendChild(colorFilter);
+  filtersForm.appendChild(sizeFilter);
+  filtersForm.appendChild(priceFilter);
+
   document.getElementById("container").appendChild(productsContainer);
-  document.getElementById("container").appendChild(colorFilter);
-  document.getElementById("container").appendChild(sizeFilter);
-  document.getElementById("container").appendChild(priceFilter);
+  document.getElementById("container").appendChild(filtersForm);
 });
