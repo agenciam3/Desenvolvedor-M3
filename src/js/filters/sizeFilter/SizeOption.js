@@ -23,6 +23,17 @@ export default class SizeOption extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchOptionSelectedEvent(event, node) {
+    const optionSelected = new CustomEvent('optionselected', {
+      detail: {
+        value: event.target.value,
+        isChecked: event.target.checked
+      }
+    })
+
+    node.dispatchEvent(optionSelected)
+  }
+
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const SizeOptionContainer = shadow.getElementById("SizeOptionContainer");
@@ -40,5 +51,7 @@ export default class SizeOption extends HTMLElement {
     optionLabel.appendChild(optionInput);
     optionLabel.appendChild(optionSpan);
     SizeOptionContainer.appendChild(optionLabel);
+
+    optionLabel.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
   }
 }

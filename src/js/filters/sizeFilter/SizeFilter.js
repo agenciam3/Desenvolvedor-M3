@@ -40,6 +40,7 @@ export default class SizeFilter extends HTMLElement {
         disabled: false
       };
 
+      sizeOption.addEventListener("optionselected", (e) => console.log(e.detail.value, e.detail.isChecked))
       sizeFilterContainer.appendChild(sizeOption);
     });
   }
