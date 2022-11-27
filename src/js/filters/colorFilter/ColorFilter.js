@@ -33,25 +33,12 @@ export default class ColorFilter extends HTMLElement {
     filterTitle.innerHTML = "CORES";
     colorFilterContainer.appendChild(filterTitle);
 
-    let colors = [];
-    this.data.forEach(product => colors.push(product.color));
-    const availableColors = new Set(colors);
-
-
     allColors.map(color => {
       const colorOption = document.createElement("color-option");
-      colorOption.data = color;
-
-      availableColors.has(color) ?
-        colorOption.data = {
-          color: color,
-          disabled: false
-        }
-      :
-        colorOption.data = {
-          color: color,
-          disabled: true
-        }
+      colorOption.data = {
+        color: color,
+        disabled: false
+      };
 
       colorFilterContainer.appendChild(colorOption);
     });

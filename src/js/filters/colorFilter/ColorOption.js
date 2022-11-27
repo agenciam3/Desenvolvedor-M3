@@ -27,17 +27,15 @@ export default class ColorOption extends HTMLElement {
     const shadow = el.shadowRoot;
     const colorOptionContainer = shadow.getElementById("colorOptionContainer");
 
-    const optionName = document.createElement("label");
-    optionName.innerHTML = this.data.color;
-    optionName.setAttribute("for", this.data.color);
-
     const optionInput = document.createElement("input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", this.data.color);
+    optionInput.setAttribute("id", this.data.color);
+    optionInput.setAttribute("value", this.data.color);
 
-    if(this.data.disabled) {
-      optionInput.setAttribute("disabled", true);
-    }
+    const optionName = document.createElement("label");
+    optionName.innerHTML = this.data.color;
+    optionName.setAttribute("for", this.data.color);
 
     colorOptionContainer.appendChild(optionInput);
     colorOptionContainer.appendChild(optionName);
