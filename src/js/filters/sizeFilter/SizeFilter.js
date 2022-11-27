@@ -33,25 +33,12 @@ export default class SizeFilter extends HTMLElement {
     filterTitle.innerHTML = "TAMANHOS";
     sizeFilterContainer.appendChild(filterTitle);
 
-    let sizes = [];
-    this.data.forEach(product => product.size.forEach(size => sizes.push(size)));
-    const availableSizes = new Set(sizes);
-
-
     allSizes.map(size => {
       const sizeOption = document.createElement("size-option");
-      sizeOption.data = size;
-
-      availableSizes.has(size) ?
-        sizeOption.data = {
-          size: size,
-          disabled: false
-        }
-      :
-        sizeOption.data = {
-          size: size,
-          disabled: true
-        }
+      sizeOption.data = {
+        size: size,
+        disabled: false
+      };
 
       sizeFilterContainer.appendChild(sizeOption);
     });

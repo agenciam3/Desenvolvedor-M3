@@ -27,17 +27,15 @@ export default class SizeOption extends HTMLElement {
     const shadow = el.shadowRoot;
     const SizeOptionContainer = shadow.getElementById("SizeOptionContainer");
 
-    const optionName = document.createElement("label");
-    optionName.innerHTML = this.data.size;
-    optionName.setAttribute("for", this.data.size);
-
     const optionInput = document.createElement("input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", this.data.size);
+    optionInput.setAttribute("id", this.data.size);
+    optionInput.setAttribute("value", this.data.size);
 
-    if(this.data.disabled) {
-      optionInput.setAttribute("disabled", true);
-    }
+    const optionName = document.createElement("label");
+    optionName.innerHTML = this.data.size;
+    optionName.setAttribute("for", this.data.size);
 
     SizeOptionContainer.appendChild(optionInput);
     SizeOptionContainer.appendChild(optionName);
