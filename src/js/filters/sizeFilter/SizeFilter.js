@@ -29,6 +29,17 @@ export default class SizeFilter extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchOptionSelectedEvent(event, node) {
+    const optionSelected = new CustomEvent('optionselected', {
+      detail: {
+        value: event.detail.value,
+        isChecked: event.detail.isChecked
+      }
+    })
+
+    node.dispatchEvent(optionSelected)
+  }
+
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const sizeFilterContainer = shadow.getElementById("sizeFilterContainer");
@@ -40,7 +51,7 @@ export default class SizeFilter extends HTMLElement {
         disabled: false
       };
 
-      sizeOption.addEventListener("optionselected", (e) => console.log(e.detail.value, e.detail.isChecked))
+      sizeOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, el));
       sizeFilterContainer.appendChild(sizeOption);
     });
   }

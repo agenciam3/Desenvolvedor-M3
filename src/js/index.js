@@ -23,7 +23,9 @@ fetchData().then(res => {
   const data = res;
 
   const app = document.createElement("my-app");
-  app.state = data;
+  app.state = {
+    data: data
+  };
 
   document.getElementById("container").appendChild(app);
 });

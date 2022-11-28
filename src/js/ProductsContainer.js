@@ -5,14 +5,11 @@ export default class ProductsContainer extends HTMLElement {
     this._data = [];
 
     const shadow = this.attachShadow({ mode: "open" });
-
-    const productsContainer = document.createElement("div");
-    productsContainer.setAttribute("id", "productsContainer");
-    shadow.append(productsContainer);
   }
 
   set data(value) {
     this._data = value;
+    this.updateComponent(this);
   }
 
   get data() {
@@ -25,7 +22,11 @@ export default class ProductsContainer extends HTMLElement {
 
   updateComponent(el) {
     const shadow = el.shadowRoot;
-    const productsContainer = shadow.getElementById("productsContainer");
+    shadow.innerHTML = "";
+
+    const productsContainer = document.createElement("div");
+    productsContainer.setAttribute("id", "productsContainer");
+    shadow.append(productsContainer);
 
     this.data.map(productData => {
       const productCard = document.createElement("product-card")
