@@ -71,15 +71,11 @@ export default class App extends HTMLElement {
       if(!this.dataToFilter.priceRanges.some(IsPriceInRange) && this.dataToFilter.priceRanges.length > 0) {
         this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
       }
-    })
 
-    this.filteredData.forEach(product => {
       if(!(this.dataToFilter.colors.some(color => product.color === color)) && this.dataToFilter.colors.length > 0) {
         this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
       }
-    })
 
-    this.filteredData.forEach(product => {
       if(!(this.dataToFilter.sizes.some(size => product.size.includes(size))) && this.dataToFilter.sizes.length > 0) {
         this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
       }
