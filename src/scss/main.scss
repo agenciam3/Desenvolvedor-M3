@@ -6,3 +6,7 @@ $black-100: #000000;
 $grey-100: #00000080; 
 $grey-200: #666666;
 $font-family: 'Open Sans', sans-serif;
+
+.app-container {
+  font-family: $font-family;
+}

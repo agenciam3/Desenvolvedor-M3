@@ -88,6 +88,7 @@ export default class App extends HTMLElement {
   updateComponent(node) {
     const shadow = node.shadowRoot;
     const appContainer = document.createElement("div");
+    appContainer.setAttribute("class", "app-container");
     shadow.append(appContainer);
 
     const productsContainer = document.createElement("products-container");
