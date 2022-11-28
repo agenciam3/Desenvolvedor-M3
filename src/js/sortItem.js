@@ -2,59 +2,29 @@
 POR DATA, PREÇO MAIS ALTO E PREÇO MAIS BAIXO
 */
 async function sortLower() {
-    await fetch(productsUrl)
+    await fetch('http://localhost:5000/products?_sort=price&_order=asc')
         .then((resp) => resp.json())
         .then((data) => {
             data.map(() => {
-                const sortByLower = data.sort((a, b) => {
-                    a.price = parseFloat(a.price)
-                    b.price = parseFloat(b.price)
-                    if (a.price < b.price) {
-                        return -1
-                    } else {
-                        return true
-
-                    }
-                })
-                renderProduct(sortByLower)
-
+                renderProduct(data)
             })
         });
 }
 async function sortHigh() {
-    await fetch(productsUrl)
+    await fetch('http://localhost:5000/products?_sort=price&_order=desc')
         .then((resp) => resp.json())
         .then((data) => {
             data.map(() => {
-                const sortByHigh = data.sort((a, b) => {
-                    a.price = parseFloat(a.price)
-                    b.price = parseFloat(b.price)
-                    if (a.price > b.price) {
-                        return -1
-                    } else {
-                        return true
-                    }
-                })
-                renderProduct(sortByHigh)
+                renderProduct(data)
             })
         });
 }
 async function sortDate() {
-    await fetch(productsUrl)
+    await fetch('http://localhost:5000/products?_sort=date&_order=desc')
         .then((resp) => resp.json())
         .then((data) => {
             data.map(() => {
-                const sortByDate = data.sort((a, b) => {
-                    a.date = parseFloat(a.date)
-                    b.date = parseFloat(b.date)
-                    if (a.date > b.date) {
-                        return -1
-                    } else {
-                        return true
-                    }
-                })
-                renderProduct(sortByDate)
+                renderProduct(data)
             })
         });
-
 }
