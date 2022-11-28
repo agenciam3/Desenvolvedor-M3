@@ -5,6 +5,11 @@ export default class ProductsContainer extends HTMLElement {
     this._data = [];
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
   }
 
   set data(value) {

@@ -5,6 +5,11 @@ export default class ProductCard extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const card = document.createElement("div");
     card.setAttribute("id", "card");

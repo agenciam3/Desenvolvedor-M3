@@ -5,6 +5,11 @@ export default class PriceOption extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const priceOptionContainer = document.createElement("div");
     priceOptionContainer.setAttribute("id", "priceOptionContainer");

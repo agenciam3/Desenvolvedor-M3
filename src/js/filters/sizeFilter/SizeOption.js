@@ -5,6 +5,11 @@ export default class SizeOption extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const SizeOptionContainer = document.createElement("div");
     SizeOptionContainer.setAttribute("id", "SizeOptionContainer");

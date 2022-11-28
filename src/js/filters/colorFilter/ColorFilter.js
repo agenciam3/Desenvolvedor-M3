@@ -7,6 +7,11 @@ export default class ColorFilter extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const colorFilterContainer = document.createElement("fieldset");
     colorFilterContainer.setAttribute("id", "colorFilterContainer");

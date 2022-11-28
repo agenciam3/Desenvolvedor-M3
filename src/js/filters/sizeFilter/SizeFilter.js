@@ -7,6 +7,11 @@ export default class SizeFilter extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const sizeFilterContainer = document.createElement("fieldset");
     sizeFilterContainer.setAttribute("id", "sizeFilterContainer");

@@ -15,6 +15,11 @@ export default class App extends HTMLElement {
     this.filteredData = [];
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const appContainer = document.createElement("div");
     appContainer.setAttribute("id", "appContainer");

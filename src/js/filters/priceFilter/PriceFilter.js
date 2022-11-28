@@ -7,6 +7,11 @@ export default class PriceFilter extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const priceFilterContainer = document.createElement("fieldset");
     priceFilterContainer.setAttribute("id", "priceFilterContainer");

@@ -5,6 +5,11 @@ export default class ColorOption extends HTMLElement {
     this._data = {};
 
     const shadow = this.attachShadow({ mode: "open" });
+    shadow.innerHTML = `
+      <style>
+        @import "main.css"
+      </style>
+    `;
 
     const colorOptionContainer = document.createElement("div");
     colorOptionContainer.setAttribute("id", "colorOptionContainer");
