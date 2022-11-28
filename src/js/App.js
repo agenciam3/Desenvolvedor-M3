@@ -92,6 +92,7 @@ export default class App extends HTMLElement {
     shadow.append(appContainer);
 
     const navbar = document.createElement("my-navbar");
+    const footer = document.createElement("my-footer");
 
     const productsContainer = document.createElement("products-container");
     productsContainer.data = this.state.data;
@@ -117,5 +118,6 @@ export default class App extends HTMLElement {
     appContainer.appendChild(navbar);
     appContainer.appendChild(productsContainer);
     appContainer.appendChild(filtersForm);
+    appContainer.appendChild(footer);
   }
 }

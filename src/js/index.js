@@ -8,6 +8,7 @@ import SizeOption from "./filters/sizeFilter/SizeOption";
 import PriceFilter from "./filters/priceFilter/PriceFilter";
 import PriceOption from "./filters/priceFilter/PriceOption";
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 import App from "./App";
 
 customElements.define('product-card', ProductCard);
@@ -20,6 +21,7 @@ customElements.define('price-filter', PriceFilter);
 customElements.define('price-option', PriceOption);
 customElements.define('my-app', App);
 customElements.define('my-navbar', Navbar);
+customElements.define('my-footer', Footer);
 
 fetchData().then(res => {
   const data = res;
