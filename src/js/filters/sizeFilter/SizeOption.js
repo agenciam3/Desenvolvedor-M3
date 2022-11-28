@@ -3,17 +3,6 @@ export default class SizeOption extends HTMLElement {
     super();
 
     this._data = {};
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
-
-    const SizeOptionContainer = document.createElement("div");
-    SizeOptionContainer.setAttribute("id", "SizeOptionContainer");
-    shadow.append(SizeOptionContainer);
   }
 
   set data(value) {
@@ -39,10 +28,7 @@ export default class SizeOption extends HTMLElement {
     node.dispatchEvent(optionSelected)
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const SizeOptionContainer = shadow.getElementById("SizeOptionContainer");
-
+  updateComponent(node) {
     const optionInput = document.createElement("input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", this.data.size);
@@ -55,8 +41,8 @@ export default class SizeOption extends HTMLElement {
 
     optionLabel.appendChild(optionInput);
     optionLabel.appendChild(optionSpan);
-    SizeOptionContainer.appendChild(optionLabel);
+    node.appendChild(optionLabel);
 
-    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
+    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, node));
   }
 }

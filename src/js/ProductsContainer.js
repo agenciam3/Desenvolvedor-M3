@@ -3,13 +3,6 @@ export default class ProductsContainer extends HTMLElement {
     super();
 
     this._data = [];
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
   }
 
   set data(value) {
@@ -25,19 +18,14 @@ export default class ProductsContainer extends HTMLElement {
     this.updateComponent(this);
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    shadow.innerHTML = "";
-
-    const productsContainer = document.createElement("div");
-    productsContainer.setAttribute("id", "productsContainer");
-    shadow.append(productsContainer);
+  updateComponent(node) {
+    node.innerHTML = "";
 
     this.data.map(productData => {
-      const productCard = document.createElement("product-card")
+      const productCard = document.createElement("product-card");
       productCard.data = productData;
 
-      productsContainer.appendChild(productCard);
+      node.appendChild(productCard);
     })
   }
 }

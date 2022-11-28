@@ -20,10 +20,6 @@ export default class App extends HTMLElement {
         @import "main.css"
       </style>
     `;
-
-    const appContainer = document.createElement("div");
-    appContainer.setAttribute("id", "appContainer");
-    shadow.append(appContainer);
   }
 
   set state(value) {
@@ -89,9 +85,10 @@ export default class App extends HTMLElement {
     node.data = this.filteredData;
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const appContainer = shadow.getElementById("appContainer");
+  updateComponent(node) {
+    const shadow = node.shadowRoot;
+    const appContainer = document.createElement("div");
+    shadow.append(appContainer);
 
     const productsContainer = document.createElement("products-container");
     productsContainer.data = this.state.data;

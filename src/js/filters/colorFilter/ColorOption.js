@@ -3,17 +3,6 @@ export default class ColorOption extends HTMLElement {
     super();
 
     this._data = {};
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
-
-    const colorOptionContainer = document.createElement("div");
-    colorOptionContainer.setAttribute("id", "colorOptionContainer");
-    shadow.append(colorOptionContainer);
   }
 
   set data(value) {
@@ -39,10 +28,7 @@ export default class ColorOption extends HTMLElement {
     node.dispatchEvent(optionSelected)
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const colorOptionContainer = shadow.getElementById("colorOptionContainer");
-
+  updateComponent(node) {
     const optionInput = document.createElement("input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", this.data.color);
@@ -53,8 +39,8 @@ export default class ColorOption extends HTMLElement {
     optionName.innerHTML = this.data.color;
     optionName.setAttribute("for", this.data.color);
 
-    colorOptionContainer.appendChild(optionInput);
-    colorOptionContainer.appendChild(optionName);
-    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
+    node.appendChild(optionInput);
+    node.appendChild(optionName);
+    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, node));
   }
 }

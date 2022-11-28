@@ -5,21 +5,6 @@ export default class PriceFilter extends HTMLElement {
     super();
 
     this._data = {};
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
-
-    const priceFilterContainer = document.createElement("fieldset");
-    priceFilterContainer.setAttribute("id", "priceFilterContainer");
-    shadow.append(priceFilterContainer);
-
-    const filterTitle = document.createElement("legend");
-    filterTitle.innerHTML = "FAIXA DE PREÇO";
-    priceFilterContainer.appendChild(filterTitle);
   }
 
   set data(value) {
@@ -47,9 +32,14 @@ export default class PriceFilter extends HTMLElement {
     node.dispatchEvent(optionSelected)
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const priceFilterContainer = shadow.getElementById("priceFilterContainer");
+  updateComponent(node) {
+    const priceFilterContainer = document.createElement("fieldset");
+    priceFilterContainer.setAttribute("id", "priceFilterContainer");
+    node.append(priceFilterContainer);
+
+    const filterTitle = document.createElement("legend");
+    filterTitle.innerHTML = "FAIXA DE PREÇO";
+    priceFilterContainer.appendChild(filterTitle);
 
     allPriceRanges.map((priceRange, i) => {
       const priceOption = document.createElement("price-option");
@@ -68,7 +58,7 @@ export default class PriceFilter extends HTMLElement {
         disabled: false
       }
 
-      priceOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, el));
+      priceOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, node));
       priceFilterContainer.appendChild(priceOption);
     });
   }

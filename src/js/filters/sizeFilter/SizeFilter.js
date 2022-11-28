@@ -5,21 +5,6 @@ export default class SizeFilter extends HTMLElement {
     super();
 
     this._data = {};
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
-
-    const sizeFilterContainer = document.createElement("fieldset");
-    sizeFilterContainer.setAttribute("id", "sizeFilterContainer");
-    shadow.append(sizeFilterContainer);
-
-    const filterTitle = document.createElement("legend");
-    filterTitle.innerHTML = "TAMANHOS";
-    sizeFilterContainer.appendChild(filterTitle);
   }
 
   set data(value) {
@@ -45,9 +30,14 @@ export default class SizeFilter extends HTMLElement {
     node.dispatchEvent(optionSelected)
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const sizeFilterContainer = shadow.getElementById("sizeFilterContainer");
+  updateComponent(node) {
+    const sizeFilterContainer = document.createElement("fieldset");
+    sizeFilterContainer.setAttribute("id", "sizeFilterContainer");
+    node.append(sizeFilterContainer);
+
+    const filterTitle = document.createElement("legend");
+    filterTitle.innerHTML = "TAMANHOS";
+    sizeFilterContainer.appendChild(filterTitle);
 
     allSizes.map(size => {
       const sizeOption = document.createElement("size-option");
@@ -56,7 +46,7 @@ export default class SizeFilter extends HTMLElement {
         disabled: false
       };
 
-      sizeOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, el));
+      sizeOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, node));
       sizeFilterContainer.appendChild(sizeOption);
     });
   }

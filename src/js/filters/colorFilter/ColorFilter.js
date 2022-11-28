@@ -5,21 +5,6 @@ export default class ColorFilter extends HTMLElement {
     super();
 
     this._data = {};
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
-
-    const colorFilterContainer = document.createElement("fieldset");
-    colorFilterContainer.setAttribute("id", "colorFilterContainer");
-    shadow.append(colorFilterContainer);
-
-    const filterTitle = document.createElement("legend");
-    filterTitle.innerHTML = "CORES";
-    colorFilterContainer.appendChild(filterTitle);
   }
 
   set data(value) {
@@ -45,9 +30,14 @@ export default class ColorFilter extends HTMLElement {
     node.dispatchEvent(optionSelected)
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const colorFilterContainer = shadow.getElementById("colorFilterContainer");
+  updateComponent(node) {
+    const colorFilterContainer = document.createElement("fieldset");
+    colorFilterContainer.setAttribute("id", "colorFilterContainer");
+    node.append(colorFilterContainer);
+
+    const filterTitle = document.createElement("legend");
+    filterTitle.innerHTML = "CORES";
+    colorFilterContainer.appendChild(filterTitle);
 
     allColors.map(color => {
       const colorOption = document.createElement("color-option");
@@ -56,7 +46,7 @@ export default class ColorFilter extends HTMLElement {
         disabled: false
       };
 
-      colorOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, el));
+      colorOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, node));
       colorFilterContainer.appendChild(colorOption);
     });
   }

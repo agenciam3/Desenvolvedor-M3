@@ -3,17 +3,6 @@ export default class PriceOption extends HTMLElement {
     super();
 
     this._data = {};
-
-    const shadow = this.attachShadow({ mode: "open" });
-    shadow.innerHTML = `
-      <style>
-        @import "main.css"
-      </style>
-    `;
-
-    const priceOptionContainer = document.createElement("div");
-    priceOptionContainer.setAttribute("id", "priceOptionContainer");
-    shadow.append(priceOptionContainer);
   }
 
   set data(value) {
@@ -39,10 +28,7 @@ export default class PriceOption extends HTMLElement {
     node.dispatchEvent(optionSelected)
   }
 
-  updateComponent(el) {
-    const shadow = el.shadowRoot;
-    const priceOptionContainer = shadow.getElementById("priceOptionContainer");
-
+  updateComponent(node) {
     const optionInput = document.createElement("input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", "priceRange");
@@ -52,8 +38,8 @@ export default class PriceOption extends HTMLElement {
     optionName.innerHTML = this.data.labelText;
     optionName.setAttribute("for", this.data.range);
 
-    priceOptionContainer.appendChild(optionInput);
-    priceOptionContainer.appendChild(optionName);
-    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
+    node.appendChild(optionInput);
+    node.appendChild(optionName);
+    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, node));
   }
 }
