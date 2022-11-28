@@ -91,6 +91,8 @@ export default class App extends HTMLElement {
     appContainer.setAttribute("class", "app-container");
     shadow.append(appContainer);
 
+    const navbar = document.createElement("my-navbar");
+
     const productsContainer = document.createElement("products-container");
     productsContainer.data = this.state.data;
 
@@ -112,7 +114,8 @@ export default class App extends HTMLElement {
     filtersForm.appendChild(sizeFilter);
     filtersForm.appendChild(priceFilter);
 
-    appContainer.append(productsContainer);
+    appContainer.appendChild(navbar);
+    appContainer.appendChild(productsContainer);
     appContainer.appendChild(filtersForm);
   }
 }
