@@ -1,3 +1,5 @@
+import { arrayEquals } from "./utils";
+
 export default class App extends HTMLElement {
   constructor() {
     super();
@@ -31,6 +33,7 @@ export default class App extends HTMLElement {
     this.updateComponent(this);
   }
 
+
   filter(value, valueIsChecked, filterType, node) {
     this.filteredData = this.state.data;
 
@@ -39,14 +42,14 @@ export default class App extends HTMLElement {
         valueIsChecked ?
           this.dataToFilter.sizes.push(value)
         :
-          this.dataToFilter.sizes = this.dataToFilter.sizes.filter(productToFilter => productToFilter !== value);
+          this.dataToFilter.sizes = this.dataToFilter.sizes.filter(sizeToFilter => sizeToFilter !== value);
         break;
       
       case "color":
         valueIsChecked ?
           this.dataToFilter.colors.push(value)
         :
-          this.dataToFilter.colors = this.dataToFilter.colors.filter(productToFilter => productToFilter !== value);
+          this.dataToFilter.colors = this.dataToFilter.colors.filter(colorToFilter => colorToFilter !== value);
         break;
 
       case "priceRange":
@@ -55,36 +58,32 @@ export default class App extends HTMLElement {
         valueIsChecked ?
           this.dataToFilter.priceRanges.push(rangeArr)
         :
-          this.dataToFilter.priceRanges = this.dataToFilter.priceRanges.filter(productToFilter => productToFilter !== rangeArr);
+          this.dataToFilter.priceRanges = this.dataToFilter.priceRanges.filter(rangeToFilter => !arrayEquals(rangeToFilter, rangeArr));
         break;
 
       default:
         return;
     }
 
-    this.state.data.forEach(product => {
-      this.dataToFilter.priceRanges.forEach(priceRange => {
-        if(!(product.price > priceRange[0] && product.price <= priceRange[1])) {
-          this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
-        }
-      });
+    this.filteredData.forEach(product => {
+      const IsPriceInRange = (priceRange) => product.price > priceRange[0] && product.price <= priceRange[1];
 
-      // if(this.dataToFilter.colors.includes(product.color)) {
-        
-      // }
-
-      this.dataToFilter.colors.forEach(color => {
-        if(product.color !== color) {
-          this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
-        }
-      });
-
-      if(!product.size.some(size => this.dataToFilter.sizes.includes(size))) {
+      if(!this.dataToFilter.priceRanges.some(IsPriceInRange) && this.dataToFilter.priceRanges.length > 0) {
         this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
       }
     })
-    console.log(this.dataToFilter);
-    console.log(this.filteredData);
+
+    this.filteredData.forEach(product => {
+      if(!(this.dataToFilter.colors.some(color => product.color === color)) && this.dataToFilter.colors.length > 0) {
+        this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
+      }
+    })
+
+    this.filteredData.forEach(product => {
+      if(!(this.dataToFilter.sizes.some(size => product.size.includes(size))) && this.dataToFilter.sizes.length > 0) {
+        this.filteredData = this.filteredData.filter(productToFilter => productToFilter !== product);
+      }
+    })
 
     node.data = this.filteredData;
   }
@@ -100,6 +99,7 @@ export default class App extends HTMLElement {
 
     const colorFilter = document.createElement("color-filter");
     colorFilter.data = this.state.data;
+    colorFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer));
 
     const sizeFilter = document.createElement("size-filter");
     sizeFilter.data = this.state.data;
@@ -107,6 +107,7 @@ export default class App extends HTMLElement {
 
     const priceFilter = document.createElement("price-filter");
     priceFilter.data = this.state.data;
+    priceFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer));
 
     filtersForm.appendChild(colorFilter);
     filtersForm.appendChild(sizeFilter);

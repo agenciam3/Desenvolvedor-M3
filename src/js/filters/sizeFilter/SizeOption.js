@@ -52,6 +52,6 @@ export default class SizeOption extends HTMLElement {
     optionLabel.appendChild(optionSpan);
     SizeOptionContainer.appendChild(optionLabel);
 
-    optionLabel.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
+    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
   }
 }

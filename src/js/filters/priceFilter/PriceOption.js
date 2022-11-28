@@ -23,6 +23,17 @@ export default class PriceOption extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchOptionSelectedEvent(event, node) {
+    const optionSelected = new CustomEvent('optionselected', {
+      detail: {
+        value: event.target.value,
+        isChecked: event.target.checked
+      }
+    })
+
+    node.dispatchEvent(optionSelected)
+  }
+
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const priceOptionContainer = shadow.getElementById("priceOptionContainer");
@@ -38,5 +49,6 @@ export default class PriceOption extends HTMLElement {
 
     priceOptionContainer.appendChild(optionInput);
     priceOptionContainer.appendChild(optionName);
+    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
   }
 }

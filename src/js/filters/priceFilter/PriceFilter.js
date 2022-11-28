@@ -29,6 +29,19 @@ export default class PriceFilter extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchOptionSelectedEvent(event, node) {
+    console.log("dispatch")
+
+    const optionSelected = new CustomEvent('optionselected', {
+      detail: {
+        value: event.detail.value,
+        isChecked: event.detail.isChecked
+      }
+    })
+
+    node.dispatchEvent(optionSelected)
+  }
+
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const priceFilterContainer = shadow.getElementById("priceFilterContainer");
@@ -50,6 +63,7 @@ export default class PriceFilter extends HTMLElement {
         disabled: false
       }
 
+      priceOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, el));
       priceFilterContainer.appendChild(priceOption);
     });
   }

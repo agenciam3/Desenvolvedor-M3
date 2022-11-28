@@ -23,6 +23,17 @@ export default class ColorOption extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchOptionSelectedEvent(event, node) {
+    const optionSelected = new CustomEvent('optionselected', {
+      detail: {
+        value: event.target.value,
+        isChecked: event.target.checked
+      }
+    })
+
+    node.dispatchEvent(optionSelected)
+  }
+
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const colorOptionContainer = shadow.getElementById("colorOptionContainer");
@@ -39,5 +50,6 @@ export default class ColorOption extends HTMLElement {
 
     colorOptionContainer.appendChild(optionInput);
     colorOptionContainer.appendChild(optionName);
+    optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, el));
   }
 }

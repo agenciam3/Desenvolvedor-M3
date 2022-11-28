@@ -29,6 +29,17 @@ export default class ColorFilter extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchOptionSelectedEvent(event, node) {
+    const optionSelected = new CustomEvent('optionselected', {
+      detail: {
+        value: event.detail.value,
+        isChecked: event.detail.isChecked
+      }
+    })
+
+    node.dispatchEvent(optionSelected)
+  }
+
   updateComponent(el) {
     const shadow = el.shadowRoot;
     const colorFilterContainer = shadow.getElementById("colorFilterContainer");
@@ -40,6 +51,7 @@ export default class ColorFilter extends HTMLElement {
         disabled: false
       };
 
+      colorOption.addEventListener("optionselected", (e) => this.dispatchOptionSelectedEvent(e, el));
       colorFilterContainer.appendChild(colorOption);
     });
   }
