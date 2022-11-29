@@ -3,16 +3,6 @@ import { allSortOptions } from "../../utils";
 export default class SortFilter extends HTMLElement {
   constructor() {
     super();
-
-    this._data = {};
-  }
-
-  set data(value) {
-    this._data = value;
-  }
-
-  get data() {
-    return this._data;
   }
 
   connectedCallback() {

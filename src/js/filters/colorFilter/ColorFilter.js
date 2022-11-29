@@ -3,16 +3,6 @@ import { allColors } from "../../utils";
 export default class ColorFilter extends HTMLElement {
   constructor() {
     super();
-
-    this._data = {};
-  }
-
-  set data(value) {
-    this._data = value;
-  }
-
-  get data() {
-    return this._data;
   }
 
   connectedCallback() {

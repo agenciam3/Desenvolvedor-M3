@@ -3,16 +3,6 @@ import { allPriceRanges } from "../../utils";
 export default class PriceFilter extends HTMLElement {
   constructor() {
     super();
-
-    this._data = {};
-  }
-
-  set data(value) {
-    this._data = value;
-  }
-
-  get data() {
-    return this._data;
   }
 
   connectedCallback() {
