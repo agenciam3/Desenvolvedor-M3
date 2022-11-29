@@ -22,10 +22,12 @@ export default class SizeFilter extends HTMLElement {
 
   updateComponent(node) {
     const sizeFilterContainer = document.createElement("fieldset");
+    sizeFilterContainer.classList.add("filter__container--size");
     sizeFilterContainer.setAttribute("id", "sizeFilterContainer");
     node.append(sizeFilterContainer);
 
     const filterTitle = document.createElement("legend");
+    filterTitle.classList.add("filter__title")
     filterTitle.innerHTML = "TAMANHOS";
     sizeFilterContainer.appendChild(filterTitle);
 

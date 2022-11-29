@@ -30,17 +30,22 @@ export default class ColorOption extends HTMLElement {
 
   updateComponent(node) {
     const optionInput = document.createElement("input");
+    optionInput.classList.add("option__input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", this.data.color);
     optionInput.setAttribute("id", this.data.color);
     optionInput.setAttribute("value", this.data.color);
 
-    const optionName = document.createElement("label");
-    optionName.innerHTML = this.data.color;
-    optionName.setAttribute("for", this.data.color);
+    const optionContainer = document.createElement("label");
+    optionContainer.classList.add("option__container");
+    const optionSpan = document.createElement("span");
+    optionSpan.classList.add("option__checkmark");
+    optionContainer.innerHTML = this.data.color;
 
-    node.appendChild(optionInput);
-    node.appendChild(optionName);
+    optionContainer.appendChild(optionInput);
+    optionContainer.appendChild(optionSpan);
+    node.appendChild(optionContainer);
+
     optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, node));
   }
 }

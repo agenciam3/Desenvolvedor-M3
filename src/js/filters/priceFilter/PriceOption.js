@@ -30,16 +30,21 @@ export default class PriceOption extends HTMLElement {
 
   updateComponent(node) {
     const optionInput = document.createElement("input");
+    optionInput.classList.add("option__input");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", "priceRange");
     optionInput.setAttribute("value", this.data.range);
 
-    const optionName = document.createElement("label");
-    optionName.innerHTML = this.data.labelText;
-    optionName.setAttribute("for", this.data.range);
+    const optionContainer = document.createElement("label");
+    optionContainer.classList.add("option__container");
+    const optionSpan = document.createElement("span");
+    optionSpan.classList.add("option__checkmark");
+    optionContainer.innerHTML = this.data.labelText;
 
-    node.appendChild(optionInput);
-    node.appendChild(optionName);
+    optionContainer.appendChild(optionInput);
+    optionContainer.appendChild(optionSpan);
+    node.appendChild(optionContainer);
+
     optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, node));
   }
 }

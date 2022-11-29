@@ -136,3 +136,123 @@ $font-family: 'Open Sans', sans-serif;
   line-height: 1.1875em;
   letter-spacing: 0em;
 }
+
+.filter__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__container--size {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 8px;
+  justify-content: flex-start
+}
+ 
+.filter__title {
+  margin-bottom: 14px;
+
+  color: $grey-200;
+
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  letter-spacing: 0.05em;
+}
+
+.option__container {
+  display: block;
+  position: relative;
+
+  padding-top: 2px;
+  padding-left: 26px;
+  margin-bottom: 10px;
+
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  height: 16px;
+  width: fit-content;
+
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 0.875em;
+  letter-spacing: 0em;
+}
+
+.option__input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.option__checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 13px;
+  width: 13px;
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  outline: 1px solid $grey-200;
+}
+
+.option__container .option__input:checked ~ .option__checkmark {
+  border: 2px solid #ffffff;
+  outline: 1px solid $grey-200;
+  background-color: $primary-color;
+}
+
+.option__container--size {
+  display: block;
+  position: relative;
+
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  height: 32px;
+  width: 32px;
+}
+
+.option__input--size {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.option__checkmark--size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  border: 1px solid $grey-200;
+
+  color: $grey-100;
+
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  letter-spacing: 0.05em;
+}
+
+.option__container--size .option__input--size:checked ~ .option__checkmark--size {
+  border: 1px solid $primary-color;
+  color: $black-100
+}

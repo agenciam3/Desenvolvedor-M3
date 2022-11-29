@@ -22,10 +22,12 @@ export default class PriceFilter extends HTMLElement {
 
   updateComponent(node) {
     const priceFilterContainer = document.createElement("fieldset");
+    priceFilterContainer.classList.add("filter__container");
     priceFilterContainer.setAttribute("id", "priceFilterContainer");
     node.append(priceFilterContainer);
 
     const filterTitle = document.createElement("legend");
+    filterTitle.classList.add("filter__title")
     filterTitle.innerHTML = "FAIXA DE PREÇO";
     priceFilterContainer.appendChild(filterTitle);
 

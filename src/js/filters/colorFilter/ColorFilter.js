@@ -22,10 +22,12 @@ export default class ColorFilter extends HTMLElement {
 
   updateComponent(node) {
     const colorFilterContainer = document.createElement("fieldset");
+    colorFilterContainer.classList.add("filter__container");
     colorFilterContainer.setAttribute("id", "colorFilterContainer");
     node.append(colorFilterContainer);
 
     const filterTitle = document.createElement("legend");
+    filterTitle.classList.add("filter__title")
     filterTitle.innerHTML = "CORES";
     colorFilterContainer.appendChild(filterTitle);
 

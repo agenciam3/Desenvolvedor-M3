@@ -30,18 +30,25 @@ export default class SizeOption extends HTMLElement {
 
   updateComponent(node) {
     const optionInput = document.createElement("input");
+    optionInput.classList.add("option__input--size");
     optionInput.setAttribute("type", "checkbox");
     optionInput.setAttribute("name", this.data.size);
     optionInput.setAttribute("id", this.data.size);
     optionInput.setAttribute("value", this.data.size);
 
-    const optionLabel = document.createElement("label");
+    const optionContainer = document.createElement("label");
+    optionContainer.classList.add("option__container--size");
     const optionSpan = document.createElement("span");
-    optionSpan.innerHTML = this.data.size;
+    optionSpan.classList.add("option__checkmark--size");
 
-    optionLabel.appendChild(optionInput);
-    optionLabel.appendChild(optionSpan);
-    node.appendChild(optionLabel);
+    const optionText = document.createElement("span");
+    optionText.classList.add("option__text--size");
+    optionText.innerHTML = this.data.size;
+    optionSpan.appendChild(optionText)
+
+    optionContainer.appendChild(optionInput);
+    optionContainer.appendChild(optionSpan);
+    node.appendChild(optionContainer);
 
     optionInput.addEventListener("change", (event) => this.dispatchOptionSelectedEvent(event, node));
   }
