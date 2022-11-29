@@ -130,3 +130,27 @@
   color: #ffffff;
   background: #000000;
 }
+
+// ===== CARDS ======================
+
+.footer {
+  background-color: #000000;
+}
+
+.footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 33px;
+}
+
+.footer-info {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+}

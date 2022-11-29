@@ -24,6 +24,7 @@ module.exports = (paths) => ({
           path.resolve(__dirname, "src/js/components/Header/styles.scss"),
           path.resolve(__dirname, "src/js/components/Cards/index.jsx"),
           path.resolve(__dirname, "src/js/components/Card/index.jsx"),
+          path.resolve(__dirname, "src/js/components/Footer/index.jsx")
           // ------------------------------------------------------------------
         ],
         use: {
