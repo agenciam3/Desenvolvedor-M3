@@ -20,8 +20,6 @@
   },
   "homepage": "https://github.com/agenciam3/Desenvolvedor-M3#readme",
   "devDependencies": {
-    "@babel/preset-env": "^7.16.0",
-    "babel-loader": "^8.2.3",
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
@@ -35,7 +33,6 @@
     "webpack": "^5.62.1"
   },
   "dependencies": {
-    "@babel/core": "^7.17.9",
     "cross-env": "^7.0.3",
     "json-server": "^0.17.0"
   }

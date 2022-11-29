@@ -1,7 +1,9 @@
 import { Product } from "./Product";
 
-const serverurl = "http://localhost:5000";
+const serverUrl = "http://localhost:5000";
 
-function main() {}
+function main() {
+  console.log(serverUrl);
+}
 
 document.addEventListener("DOMContentLoaded", main);
