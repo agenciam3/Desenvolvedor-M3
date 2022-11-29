@@ -18,6 +18,11 @@ export default class ProductsContainer extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchProductBought() {
+    const productBought = new CustomEvent('productbought');
+    this.dispatchEvent(productBought);
+  }
+
   updateComponent(node) {
     node.innerHTML = "";
     
@@ -27,6 +32,7 @@ export default class ProductsContainer extends HTMLElement {
         productCard.classList.add("product");
         productCard.data = productData;
 
+        productCard.addEventListener("productbought", () => this.dispatchProductBought());
         node.appendChild(productCard);
       })
     } else {

@@ -17,6 +17,11 @@ export default class ProductCard extends HTMLElement {
     this.updateComponent(this);
   }
 
+  dispatchProductBought() {
+    const productBought = new CustomEvent('productbought');
+    this.dispatchEvent(productBought);
+  }
+
   updateComponent(node) {
     const productImage = document.createElement("img");
     const productName = document.createElement("h5");
@@ -37,6 +42,8 @@ export default class ProductCard extends HTMLElement {
     productInstallmentPayment.innerHTML = `até ${this.data.parcelamento[0]}x de R$${installmentPaymentPriceFormatted}`;
     buyProduct.textContent = "COMPRAR";
     
+    buyProduct.addEventListener("click", () => this.dispatchProductBought());
+
     node.appendChild(productImage);
     node.appendChild(productName);
     node.appendChild(productPrice);

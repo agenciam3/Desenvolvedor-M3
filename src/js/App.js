@@ -19,6 +19,8 @@ export default class App extends HTMLElement {
 
     this.filteredData = [];
 
+    this.itemsInCart = 0;
+
     const shadow = this.attachShadow({ mode: "open" });
     shadow.innerHTML = `
       <style>
@@ -146,6 +148,12 @@ export default class App extends HTMLElement {
     }
   }
 
+  updateItemsInCartCount(node) {
+    this.itemsInCart++;
+
+    node.itemsInCart = this.itemsInCart;
+  }
+
   updateComponent(node) {
     const shadow = node.shadowRoot;
     const appContainer = document.createElement("div");
@@ -158,11 +166,13 @@ export default class App extends HTMLElement {
     pageTitle.innerHTML = "blusas";
 
     const navbar = document.createElement("my-navbar");
+    navbar.itemsInCart = this.itemsInCart;
     const footer = document.createElement("my-footer");
 
     const productsContainer = document.createElement("products-container");
     productsContainer.classList.add("products-container");
     productsContainer.data = this.state.data;
+    productsContainer.addEventListener("productbought", () => this.updateItemsInCartCount(navbar));
 
     const filtersForm = document.createElement("form");
     filtersForm.classList.add("filters-form");
