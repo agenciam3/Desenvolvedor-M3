@@ -13,13 +13,25 @@ module.exports = (paths) => ({
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|scss|css)$/,
         exclude: /(node_modules|bower_components)/,
-        include: path.resolve(__dirname, paths.scripts.src),
+        include: [
+          // ------------------------------------------------------------------
+          // Arquivos React precisam ser adicionados aqui
+          path.resolve(__dirname, "src/js/index.jsx"),
+          path.resolve(__dirname, "src/js/pages/HomePage.jsx"),
+          path.resolve(__dirname, "src/js/components/Header/index.jsx"),
+          path.resolve(__dirname, "src/js/components/Header/styles.scss"),
+          path.resolve(__dirname, "src/js/components/Cards/index.jsx"),
+          path.resolve(__dirname, "src/js/components/Card/index.jsx"),
+          // ------------------------------------------------------------------
+        ],
         use: {
           loader: "babel-loader",
           options: {
             presets: [
+              // Adicionei a dependência que precisava para rodar React
+              "@babel/preset-react",
               [
                 "@babel/preset-env",
                 { targets: { browsers: ["last 2 versions"] } },
