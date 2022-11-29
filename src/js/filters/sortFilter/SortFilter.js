@@ -21,6 +21,7 @@ export default class SortFilter extends HTMLElement {
 
   updateComponent(node) {
     const sortSelect = document.createElement("select");
+    sortSelect.classList.add("sort-filter");
     node.append(sortSelect);
 
     const sortOption = document.createElement("option");

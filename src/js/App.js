@@ -147,6 +147,11 @@ export default class App extends HTMLElement {
     appContainer.setAttribute("class", "app-container");
     shadow.append(appContainer);
 
+    const pageHeader = document.createElement("div");
+    const pageTitle = document.createElement("h1");
+    pageTitle.classList.add("page-header__title");
+    pageTitle.innerHTML = "blusas";
+
     const navbar = document.createElement("my-navbar");
     const footer = document.createElement("my-footer");
 
@@ -174,10 +179,14 @@ export default class App extends HTMLElement {
     filtersForm.appendChild(sizeFilter);
     filtersForm.appendChild(priceFilter);
 
+    pageHeader.appendChild(pageTitle);
+    pageHeader.appendChild(sortFilter);
+    pageHeader.classList.add("page-header");
+
     appContainer.appendChild(navbar);
+    appContainer.appendChild(pageHeader);
     appContainer.appendChild(filtersForm);
     appContainer.appendChild(productsContainer);
-    appContainer.appendChild(sortFilter);
     appContainer.appendChild(footer);
   }
 }

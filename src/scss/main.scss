@@ -35,3 +35,20 @@ $font-family: 'Open Sans', sans-serif;
 .navbar__second-element {
   margin-right: 10vw;
 }
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin: 88px 10vw 0;
+}
+
+.page-header__title {
+  text-transform: capitalize;
+
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: 0em;
+}
