@@ -105,7 +105,7 @@
             "price": 99.0,
             "parcelamento": [3, 33],
             "color": "Preto",
-            "image": "/img/img_10.png",
+            "image": "/src/img/img_10.png",
             "size": ["M"],
             "date": "2003-12-17"
         },
@@ -119,8 +119,10 @@
             "size": ["M"],
             "date": "2003-12-17"
         },
+
         {
             "id": "9",
+
             "name": "Pochete Clutch",
             "price": 99.0,
             "parcelamento": [3, 33],
