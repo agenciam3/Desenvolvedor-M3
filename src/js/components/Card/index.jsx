@@ -9,7 +9,7 @@ const Card = ({image, name, price, installment, installmentValue, onBuy}) => {
           <span className="card-product-title">{name}</span>
         </div>
         <div className="card-prices">
-          <strong id="card-price-amount">R$ {price}</strong>
+          <span id="card-price-amount">R$ {price}</span>
           <br />
           <span id="card-price-installment">até {installment}x de R$ {installmentValue}</span>
         </div>
