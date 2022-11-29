@@ -83,7 +83,7 @@ function html() {
 }
 
 function img() {
-    return src(paths.img.src).pipe(dest(paths.dest + "/img"));
+    return src(paths.img.src).pipe(dest(paths.dest + "/src/img"));
 }
 
 const build = series(clean, parallel(styles, scripts, html, img));
