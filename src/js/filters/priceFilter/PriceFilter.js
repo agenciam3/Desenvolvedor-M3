@@ -20,8 +20,6 @@ export default class PriceFilter extends HTMLElement {
   }
 
   dispatchOptionSelectedEvent(event, node) {
-    console.log("dispatch")
-
     const optionSelected = new CustomEvent('optionselected', {
       detail: {
         value: event.detail.value,
