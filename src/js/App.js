@@ -44,24 +44,24 @@ export default class App extends HTMLElement {
 
     switch (sortBy) {
       case "Mais recentes":
-        this.state.data.forEach(product => this.dataToSort.dates.push(product.date));
+        node.data.forEach(product => this.dataToSort.dates.push(product.date));
         this.dataToSort.dates = this.dataToSort.dates.sort((a, b) => a - b);
 
         this.dataToSort.dates.forEach(date => {
-          this.state.data.forEach(product => {
+          node.data.forEach(product => {
             if(product.date === date) {
-              sortedData.push(product);
+              sortedData.unshift(product);
             }
           })
         })
         break;
 
       case "Menor preço":
-        this.state.data.forEach(product => this.dataToSort.prices.push(product.price));
+        node.data.forEach(product => this.dataToSort.prices.push(product.price));
         this.dataToSort.prices = this.dataToSort.prices.sort((a, b) => a - b);
 
         this.dataToSort.prices.forEach(price => {
-          this.state.data.forEach(product => {
+          node.data.forEach(product => {
             if(product.price === price) {
               sortedData.push(product);
             }
@@ -70,11 +70,11 @@ export default class App extends HTMLElement {
         break;
 
       case "Maior preço":
-        this.state.data.forEach(product => this.dataToSort.prices.push(product.price));
+        node.data.forEach(product => this.dataToSort.prices.push(product.price));
         this.dataToSort.prices = this.dataToSort.prices.sort((a, b) => a - b);
 
         this.dataToSort.prices.forEach(price => {
-          this.state.data.forEach(product => {
+          node.data.forEach(product => {
             if(product.price === price) {
               sortedData.unshift(product);
             }
@@ -91,7 +91,7 @@ export default class App extends HTMLElement {
     node.data = uniqueSortedData;
   }
 
-  filter(value, valueIsChecked, filterType, node) {
+  filter(value, valueIsChecked, filterType, node, sortFilterElement) {
     this.filteredData = this.state.data;
 
     switch (filterType) {
@@ -138,7 +138,12 @@ export default class App extends HTMLElement {
       }
     })
 
+    const valueToSortBy = sortFilterElement.firstChild.options[sortFilterElement.firstChild.selectedIndex].value;
     node.data = this.filteredData;
+
+    if(valueToSortBy !== sortFilterElement.firstChild.options[0].value) {
+      this.sortFilter(valueToSortBy, node)
+    }
   }
 
   updateComponent(node) {
@@ -160,20 +165,17 @@ export default class App extends HTMLElement {
 
     const filtersForm = document.createElement("form");
 
-    const colorFilter = document.createElement("color-filter");
-    colorFilter.data = this.state.data;
-    colorFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer));
-
-    const sizeFilter = document.createElement("size-filter");
-    sizeFilter.data = this.state.data;
-    sizeFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "size", productsContainer));
-
-    const priceFilter = document.createElement("price-filter");
-    priceFilter.data = this.state.data;
-    priceFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer));
-
     const sortFilter = document.createElement("sort-filter");
     sortFilter.addEventListener("optionselected", (e) => this.sortFilter(e.detail.value, productsContainer));
+
+    const colorFilter = document.createElement("color-filter");
+    colorFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer, sortFilter));
+
+    const sizeFilter = document.createElement("size-filter");
+    sizeFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "size", productsContainer, sortFilter));
+
+    const priceFilter = document.createElement("price-filter");
+    priceFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer, sortFilter));
 
     filtersForm.appendChild(colorFilter);
     filtersForm.appendChild(sizeFilter);
