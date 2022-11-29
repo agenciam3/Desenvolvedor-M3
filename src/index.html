@@ -1,19 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce M3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet" />
+    <link type="text/css" rel="stylesheet" href="scss/main.css" />
 </head>
 
 <body>
+    <header>
+        <div class="logo-container">
+            <img class="header-logo" src="./img/logo-m3.png" alt="Logo M3" />
+        </div>
 
+        <div class="cart-bag">
+            <img src="./img/bag.svg" alt="Shopping-Bag" />
+            <div class="total">
+                <span>0</span>
+            </div>
+            <div onclick="removeItem()" class="remove">
+                <span>-</span>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="content-container">
+        <aside>
+            <h1>Blusas</h1>
+            <div class="filter-mobile">
+                <p>FILTRAR</p>
+                <h2 onclick="closeMenuFilter()">X</h2>
+            </div>
+            <div class="aside-container">
+
+                <section class="colors">
+
+                    <div class="menu-mobile">
+
+                        <h3>CORES</h3>
+                        <div onclick="showOptionColor()" class="btn-more-less">
+                            <span class="more1">|</span>
+                            <span class="less">|</span>
+                        </div>
+                    </div>
+
+                    <ul class="colors-container">
+                        <div class="dropDown-color hidden">
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" onchange="filterColorAndSize()" name="color" value="Amarelo"
+                                        class="checkboxs1" />
+                                    <p>Amarelo</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" onchange="filterColorAndSize()" name="color" value="Azul"
+                                        class="checkboxs1" />
+                                    <p>Azul</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" onchange="filterColorAndSize()" name="color" value="Branco"
+                                        class="checkboxs1" />
+                                    <p>Branco</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" onchange="filterColorAndSize()" name="color" value="Cinza"
+                                        class="checkboxs1" />
+                                    <p>Cinza</p>
+                                </label>
+                            </li>
+
+                            <li class="color">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" onchange="filterColorAndSize()" name="color" value="Laranja"
+                                        class="checkboxs1" />
+                                    <p>Laranja</p>
+                                </label>
+                            </li>
+
+                            <div class="drop-down hide">
+                                <li class="color">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" onchange="filterColorAndSize()" name="color"
+                                            value="Verde" class="checkboxs1" />
+                                        <p>Verde</p>
+                                    </label>
+                                </li>
+
+                                <li class="color">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" onchange="filterColorAndSize()" name="color"
+                                            value="Vermelho" class="checkboxs1" />
+                                        <p>Vermelho</p>
+                                    </label>
+                                </li>
+
+                                <li class="color">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" onchange="filterColorAndSize()" name="color"
+                                            value="Preto" class="checkboxs1" />
+                                        <p>Preto</p>
+                                    </label>
+                                </li>
+
+                                <li class="color">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" onchange="filterColorAndSize()" name="color" value="Rosa"
+                                            class="checkboxs1" />
+                                        <p>Rosa</p>
+                                    </label>
+                                </li>
+
+                                <li class="color">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" onchange="filterColorAndSize()" name="color"
+                                            value="Vinho" class="checkboxs1" />
+                                        <p>Vinho</p>
+                                    </label>
+                                </li>
+                            </div>
+                        </div>
+
+                    </ul>
+                    <a onclick="showColor()" class="show-colors" href="#">Ver todas as cores <img src="./img/arrow.svg"
+                            alt="arrow-down" />
+                    </a>
+                </section>
+
+                <section class="sizes">
+
+                    <div class="menu-mobile">
+                        <h3>TAMANHOS</h3>
+                        <div onclick="showOptionSize()" class="btn-more-less">
+                            <span class="more2">|</span>
+                            <span class="less">|</span>
+                        </div>
+                    </div>
+
+                    <div class="dropDown-size hidden">
+                        <div class="size">
+                            <label class="size-item">P<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="P">
+                            </label>
+
+                            <label class="size-item">M<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="M">
+                            </label>
+
+                            <label class="size-item">G<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="G">
+                            </label>
+
+                            <label class="size-item">GG<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="GG">
+                            </label>
+
+                            <label class="size-item">U<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="U">
+                            </label>
+
+                            <label class="size-item">36<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="36">
+                            </label>
+
+                            <label class="size-item">38<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="38">
+                            </label>
+                            <label class="size-item">40<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="40">
+                            </label>
+
+                            <label class="size-item">42<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="42">
+                            </label>
+                            <label class="size-item">44<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="44">
+                            </label>
+
+                            <label class="size-item">46<input type="checkbox" class="checkboxs2"
+                                    onchange="filterColorAndSize()" name="size" value="46">
+                            </label>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="prices">
+                    <div class="menu-mobile">
+                        <h3>FAIXA DE PREÇO</h3>
+                        <div onclick="showOptionPrice()" class="btn-more-less">
+                            <span class="more3">|</span>
+                            <span class="less">|</span>
+                        </div>
+                    </div>
+
+                    <ul class="prices-container">
+                        <div class="dropDown-price hidden">
+                            <li class="price">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="price" value="50" onchange="filterPrice()"
+                                        class="checkboxs" />
+                                </label>
+                                <p>de R$0 até R$50</p>
+                            </li>
+
+                            <li class="price">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="price" value="150" onchange="filterPrice()"
+                                        class="checkboxs" />
+                                </label>
+                                <p>de R$51 até R$150</p>
+                            </li>
+
+                            <li class="price">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="price" value="300" onchange="filterPrice()"
+                                        class="checkboxs" />
+                                </label>
+                                <p>de R$151 até R$300</p>
+                            </li>
+
+                            <li class="price">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="price" value="500" onchange="filterPrice()"
+                                        class="checkboxs" />
+                                </label>
+                                <p>de R$301 até R$500</p>
+                            </li>
+
+                            <li class="price">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="price" value="1000" onchange="filterPrice()"
+                                        class="checkboxs" />
+                                </label>
+                                <p>a partir de R$500</p>
+                            </li>
+                        </div>
+                    </ul>
+                </section>
+                <div class="btn-apply">
+                    <button onclick="closeMenuFilter()" class="apply">APLICAR</button>
+                    <button onclick="closeMenuFilter()" class="clean">FECHAR</button>
+                </div>
+            </div>
+        </aside>
+        <main>
+            <div class="main-container">
+
+                <div class="sort-container">
+                    <div class="sorts">
+                        <div class="sort-mobile">
+                            <p>ORDENAR</p>
+                            <h3 onclick="closeMenuSort()">X</h3>
+                        </div>
+                        <div onclick="showSort()" class="sort">
+                            <p>Ordenar por</p>
+                            <img src="./img/arrow-2.svg" alt="">
+                        </div>
+                        <ul class="sort-options hide">
+                            <li onclick="sortDate()">Mais recentes</li>
+                            <li onclick="sortLower()">Menor preço</li>
+                            <li onclick="sortHigh()">Maior preço</li>
+                        </ul>
+                        <ul class="sort-options-mob">
+                            <li onclick="sortDate()">Mais recentes</li>
+                            <li onclick="sortLower()">Menor preço</li>
+                            <li onclick="sortHigh()">Maior preço</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mobile-filter-btn">
+                    <h1>Blusas</h1>
+                    <div class="btn-main-container">
+                        <button onclick="openMenuFilter()">Filtrar</button>
+                        <button onclick="openMenuSort()">Ordenar</button>
+                    </div>
+                </div>
+                <section id="cards">
+
+                </section>
+                <div class="btn-container">
+                    <button onclick="showMore()">CARREGAR MAIS</button>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <footer>
+
+        <p>Agência M3 - Agência de Performance Digital</p>
+
+    </footer>
 </body>
-<h1>Desafio m3</h1>
 
-<script src="bundle.js"></script>
+
+<script type="text/javascript" src="./js/renderProducts.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/sortItem.js"></script>
+<script type="text/javascript" src="./js/filterProducts.js"></script>
+<script type="text/javascript" src="./js/bundle.js"></script>
 
 </html>
