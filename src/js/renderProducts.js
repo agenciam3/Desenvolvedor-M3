@@ -28,7 +28,7 @@ function removeItem() {
 
 /* FUNÇÃO PARA RENDERIZAR OS OBJETOS VINDO DA API */
 
-function renderProduct(item) {
+function renderProduct(item, e) {
     const showProduct = item.map((product) =>
         `
         <div class="card" 
