@@ -1,1 +1,30 @@
 @import "reset";
+
+.header {
+  box-shadow: 0 2px #c7c7c7;
+}
+
+.header-container {
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page {
+  max-width: 1300px;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+
+#logo {
+  width: 119px;
+  height: 30px;
+}
+
+#padlock-icon {
+  width: 17px;
+  height: 20px;
+}
