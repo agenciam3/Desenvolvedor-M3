@@ -23,6 +23,7 @@ export default class ProductsContainer extends HTMLElement {
 
     this.data.map(productData => {
       const productCard = document.createElement("product-card");
+      productCard.classList.add("product");
       productCard.data = productData;
 
       node.appendChild(productCard);

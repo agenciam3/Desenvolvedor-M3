@@ -20,9 +20,13 @@ export default class ProductCard extends HTMLElement {
   updateComponent(node) {
     const productImage = document.createElement("img");
     const productName = document.createElement("h5");
+    productName.classList.add("product__name");
     const productPrice = document.createElement("p");
+    productPrice.classList.add("product__price");
     const productInstallmentPayment = document.createElement("label");
+    productInstallmentPayment.classList.add("product__payment-option")
     const buyProduct = document.createElement("button");
+    buyProduct.classList.add("product__button--buy");
 
     const priceFormatted = this.data.price.toFixed(2).toString().replace(".", ",");
     const installmentPaymentPriceFormatted = this.data.parcelamento[1].toFixed(2).toString().replace(".", ",");
