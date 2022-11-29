@@ -62,7 +62,7 @@ const showOptionColor = () => {
 }
 
 const showOptionSize = () => {
-    if (dropDownSize.classList.contains('hidden') && btnsApply.classList.contains('hidden')) {
+    if (dropDownSize.classList.contains('hidden')) {
         dropDownSize.classList.remove('hidden')
         dropDownSize.classList.add('show1')
         more2.style.rotate = "90deg"
@@ -75,7 +75,7 @@ const showOptionSize = () => {
     }
 }
 const showOptionPrice = () => {
-    if (dropDownPrice.classList.contains('hidden') && btnsApply.classList.contains('hidden')) {
+    if (dropDownPrice.classList.contains('hidden')) {
         dropDownPrice.classList.remove('hidden')
         dropDownPrice.classList.add('show1')
         more3.style.rotate = "90deg"

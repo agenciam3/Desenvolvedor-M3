@@ -5,7 +5,6 @@ async function filterColorAndSize() {
             data.map(() => {
 
                 /* SELECIONA O CHECKBOX CLICADO E ADICIONA EM UM ARRAY */
-
                 const checkSizeValue = [...document.querySelectorAll('.checkboxs2')].filter((input => input.checked)).map((input) => input.value)
                 const checkColorValue = [...document.querySelectorAll('.checkboxs1')].filter((input => input.checked)).map((input) => input.value)
                 console.log("Tamanho:", checkSizeValue, "Cor:", checkColorValue)
@@ -16,6 +15,7 @@ async function filterColorAndSize() {
                     if (checkSizeValue.includes(size[0]))
                         return size[0]
                 })
+
 
                 const filterColor = data.filter(({ color }) => {
                     if (checkColorValue.includes(color))
@@ -72,7 +72,7 @@ async function filterPrice() {
                 const filteredPrice1 = data.filter((x) => { return x.price >= 0 && x.price <= 50 })
                 const filteredPrice2 = data.filter((x) => { return x.price >= 51 && x.price <= 150 })
                 const filteredPrice3 = data.filter((x) => { return x.price >= 151 && x.price <= 300 })
-                const filteredPrice4 = data.filter((x) => { return x.price >= 500 && x.price <= 5000 })
+                const filteredPrice4 = data.filter((x) => { return x.price >= 301 && x.price <= 500 })
 
                 /* SELECIONA O CHECKBOX CLICADO E ADICIONA EM UM NOVO ARRAY */
 
@@ -93,7 +93,7 @@ async function filterPrice() {
                 } else if (checkPriceValue >= 301 && checkPriceValue <= 500) {
                     renderProduct(filteredPrice4)
 
-                } else if (checkPriceValue >= 0 && checkPriceValue <= 5000) {
+                } else if (checkPriceValue >= 500 && checkPriceValue <= 1000) {
                     renderProduct(data)
 
                 } else if (checkPriceValue.length <= 0) {
