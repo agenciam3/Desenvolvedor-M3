@@ -36,8 +36,10 @@ export default class Navbar extends HTMLElement {
     cart.appendChild(cartIcon);
     
     const itemsInCartContainer = document.createElement("div");
+    itemsInCartContainer.classList.add("cart-counter__container");
     const itemsInCartLabel = document.createElement("label");
     itemsInCartLabel.innerHTML = this.itemsInCart;
+    itemsInCartContainer.classList.add("cart-counter__text");
 
     itemsInCartContainer.appendChild(itemsInCartLabel);
     cart.appendChild(itemsInCartContainer);
