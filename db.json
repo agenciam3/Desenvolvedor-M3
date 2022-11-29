@@ -5,7 +5,7 @@
             "price": 28.8,
             "parcelamento": [3, 9.33],
             "color": "Cinza",
-            "image": "/img/img_2.png",
+            "image": "/src/img/img_2.png",
             "size": ["M", "GG"],
             "date": "1995-12-17"
         },
@@ -105,7 +105,7 @@
             "price": 99.0,
             "parcelamento": [3, 33],
             "color": "Preto",
-            "image": "/src/img/img_10.png",
+            "image": "/img/img_10.png",
             "size": ["M"],
             "date": "2003-12-17"
         },
