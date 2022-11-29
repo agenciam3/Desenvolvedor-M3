@@ -152,7 +152,7 @@ export default class App extends HTMLElement {
     appContainer.setAttribute("class", "app-container");
     shadow.append(appContainer);
 
-    const pageHeader = document.createElement("div");
+    const pageHeader = document.createElement("header");
     const pageTitle = document.createElement("h1");
     pageTitle.classList.add("page-header__title");
     pageTitle.innerHTML = "blusas";
@@ -161,9 +161,11 @@ export default class App extends HTMLElement {
     const footer = document.createElement("my-footer");
 
     const productsContainer = document.createElement("products-container");
+    productsContainer.classList.add("products-container");
     productsContainer.data = this.state.data;
 
     const filtersForm = document.createElement("form");
+    filtersForm.classList.add("filters-form");
 
     const sortFilter = document.createElement("sort-filter");
     sortFilter.addEventListener("optionselected", (e) => this.sortFilter(e.detail.value, productsContainer));
@@ -185,10 +187,19 @@ export default class App extends HTMLElement {
     pageHeader.appendChild(sortFilter);
     pageHeader.classList.add("page-header");
 
+    const pageMainContent = document.createElement("main");
+    pageMainContent.classList.add("main-content");
+    const pageAsideContent = document.createElement("aside");
+    pageAsideContent.classList.add("aside-content");
+
+    pageAsideContent.appendChild(filtersForm);
+
+    pageMainContent.appendChild(pageAsideContent);
+    pageMainContent.appendChild(productsContainer);
+
     appContainer.appendChild(navbar);
     appContainer.appendChild(pageHeader);
-    appContainer.appendChild(filtersForm);
-    appContainer.appendChild(productsContainer);
+    appContainer.appendChild(pageMainContent);
     appContainer.appendChild(footer);
   }
 }

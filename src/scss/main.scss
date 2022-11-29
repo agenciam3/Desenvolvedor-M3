@@ -52,3 +52,30 @@ $font-family: 'Open Sans', sans-serif;
   line-height: 44px;
   letter-spacing: 0em;
 }
+
+.main-content {
+  margin: 54px 10vw 0;
+
+  display: flex;
+  flex: 1;
+}
+
+.aside-content {
+  width: 160px;
+
+  margin-right: 44px;
+}
+
+.filters-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 40px;
+  column-gap: 64px;
+  justify-content: center
+}
