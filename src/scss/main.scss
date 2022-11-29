@@ -83,6 +83,13 @@ $font-family: 'Open Sans', sans-serif;
   justify-content: center;
 }
 
+.no-data__text {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.5em;
+  letter-spacing: 0em;
+}
+
 .product {
   display: flex;
   flex-direction: column;
