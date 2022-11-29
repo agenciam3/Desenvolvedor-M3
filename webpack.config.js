@@ -13,23 +13,12 @@ module.exports = (paths) => ({
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         include: path.resolve(__dirname, paths.scripts.src),
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [
-              [
-                "@babel/preset-env",
-                { targets: { browsers: ["last 2 versions"] } },
-              ],
-            ],
-            cacheDirectory: true,
-          },
-        },
+        use: "ts-loader",
       },
     ],
   },
-  plugins: [new webpack.EnvironmentPlugin(["SERVER_API"])],
+  plugins: [],
 });
