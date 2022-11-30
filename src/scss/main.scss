@@ -315,3 +315,27 @@ $font-family: 'Open Sans', sans-serif;
   line-height: 1.1875em;
   letter-spacing: 0.05em;
 }
+
+.filter__container color-option:nth-of-type(n + 6) {
+  display: none;
+}
+
+.color-filter-expand {
+  cursor: pointer;
+  width: fit-content;
+}
+
+.color-filter-expand__text {
+  color: $grey-200;
+
+  font-size: 0.75em;
+  font-weight: 400;
+  line-height: 0.75em;
+  letter-spacing: 0em;
+
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+
+  margin-right: 2px;
+}
