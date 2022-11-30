@@ -222,6 +222,10 @@ $font-family: 'Open Sans', sans-serif;
   letter-spacing: 0em;
 }
 
+.option__container:hover {
+  color: $primary-color;
+}
+
 .option__input {
   position: absolute;
   opacity: 0;
@@ -292,6 +296,10 @@ $font-family: 'Open Sans', sans-serif;
 .option__container--size .option__input--size:checked ~ .option__checkmark--size {
   border: 1px solid $primary-color;
   color: $black-100
+}
+
+.option__container--size .option__input--size:hover ~ .option__checkmark--size {
+  color: $black-100;
 }
 
 .footer {
