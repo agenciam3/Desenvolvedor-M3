@@ -371,3 +371,23 @@ $font-family: 'Open Sans', sans-serif;
   line-height: 1.1875em;
   letter-spacing: 0em;
 }
+
+.sort-filter {
+  padding: 8px 22px 8px 10px;
+
+  font-family: $font-family;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  letter-spacing: 0em;
+  
+  background: transparent;
+  background-image: url("img/sort_filter_expand_icon.svg");
+  background-repeat: no-repeat;
+  background-position-x: calc(100% - 10px);
+  background-position-y: 14px;
+}
+
+.sort-filter:focus {
+  outline: none;
+}
