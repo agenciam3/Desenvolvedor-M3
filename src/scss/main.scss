@@ -269,3 +269,63 @@
   text-transform: uppercase;
   color: #ffffff;
 }
+
+// --------------RESPONSIVE-------------
+
+@media (max-width: 1290px) {
+  .section-cards,
+  .section-order,
+  .header-container {
+    padding: 0px 30px;
+  }
+
+  .col-filter {
+    width: 245px;
+  }
+}
+
+@media (max-width: 820px) {
+  .col-card {
+    width: 50%;
+  }
+
+  .col-cards {
+    width: 70%;
+  }
+
+  .col-filter {
+    width: 30%;
+  }
+
+  .header-container {
+    padding: 0px 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .col-cards {
+    width: 100%;
+  }
+
+  .col-filter {
+    display: none;
+  }
+
+  .section-order,
+  .section-cards {
+    padding: 0px 16px;
+  }
+
+  .col-cards {
+    padding: 0px;
+  }
+
+  .card,
+  .col-card {
+    width: 161.79px;
+  }
+
+  .card-media {
+    height: 242.55px;
+  }
+}
