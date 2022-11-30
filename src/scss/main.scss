@@ -33,6 +33,36 @@
 
 // ===================================
 
+.section-order {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+
+.section-order h1 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+  color: #333333;
+}
+
+.section-order-by,
+#orderby {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+  width: 142px;
+  height: 42px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
 // ===== FILTER ======================
 .col-filter h2 {
   font-family: "Open Sans";
@@ -47,7 +77,7 @@
 }
 
 .col-filter {
-  width: 157px;
+  width: 173px;
   height: 500px;
 }
 
@@ -65,9 +95,6 @@
 .color-filter input {
   width: 16px;
   height: 16px;
-
-  // border: 1px solid rgba(0, 0, 0, 0.5);
-  // background: #00c0ee;
 }
 
 .color-filter label {
@@ -119,6 +146,9 @@
   margin-right: 5px;
 }
 
+.amount-filter-title {
+  margin: 24px 0px 14px 0px;
+}
 
 // ===== FIM FILTER ======================
 

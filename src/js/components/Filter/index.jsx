@@ -37,7 +37,6 @@ const Filter = () => {
           <div className="size-filter-title">
             <h2>Tamanhos</h2>
           </div>
-
           <div className="size-filter-fields">
             <SizeField size={"P"} value={true} />
             <SizeField size={"M"} value={true} />
@@ -52,8 +51,15 @@ const Filter = () => {
             <SizeField size={"40"} value={true} />
           </div>
 
-          <div class="amount-filter">
+          <div class="amount-filter-title">
             <h2>Faixa de preço</h2>
+          </div>
+          <div className="amount-filter-fields">
+            <Checkbox name={"de R$0 até R$50"} value={true} />
+            <Checkbox name={"de R$51 até R$150"} value={true} />
+            <Checkbox name={"de R$151 até R$300"} value={true} />
+            <Checkbox name={"de R$301 até R$500"} value={true} />
+            <Checkbox name={"a partir de R$ 500"} value={true} />
           </div>
         </form>
       </div>
