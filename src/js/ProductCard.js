@@ -24,6 +24,7 @@ export default class ProductCard extends HTMLElement {
 
   updateComponent(node) {
     const productImage = document.createElement("img");
+    productImage.classList.add("product__image");
     const productName = document.createElement("h5");
     productName.classList.add("product__name");
     const productPrice = document.createElement("p");

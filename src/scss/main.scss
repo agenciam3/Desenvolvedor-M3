@@ -124,6 +124,12 @@ $font-family: 'Open Sans', sans-serif;
   justify-content: center;
 }
 
+.product__image {
+  width: 195px;
+
+  object-fit: contain;
+}
+
 .product__name {
   margin-top: 10px;
 
