@@ -41,7 +41,7 @@ export default class App extends HTMLElement {
     this.updateComponent(this);
   }
 
-  sortFilter(sortBy, node) {
+  sortFilter(sortBy, node, appContainerNode) {
     let sortedData = [];
 
     switch (sortBy) {
@@ -91,9 +91,10 @@ export default class App extends HTMLElement {
     sortedData = new Set(sortedData);
     const uniqueSortedData = Array.from(sortedData);
     node.data = uniqueSortedData;
+    this.setExpandableProducts(appContainerNode);
   }
 
-  filter(value, valueIsChecked, filterType, node, sortFilterElement) {
+  filter(value, valueIsChecked, filterType, node, sortFilterElement, appContainerNode) {
     this.filteredData = this.state.data;
 
     switch (filterType) {
@@ -142,9 +143,37 @@ export default class App extends HTMLElement {
 
     const valueToSortBy = sortFilterElement.firstChild.options[sortFilterElement.firstChild.selectedIndex].value;
     node.data = this.filteredData;
+    this.setExpandableProducts(appContainerNode);
 
     if(valueToSortBy !== sortFilterElement.firstChild.options[0].value) {
-      this.sortFilter(valueToSortBy, node)
+      this.sortFilter(valueToSortBy, node, appContainerNode)
+    }
+  }
+
+  setExpandableProducts(node) {
+    const nodeWidth = node.offsetWidth;
+    const productsContainerWidth = nodeWidth - (((window.innerWidth / 10) * 2) + 204);
+    const productCardWidth = 195;
+    const numberOfElementsPerRow = Math.floor((productsContainerWidth - ((Math.floor(productsContainerWidth / productCardWidth) - 1) * 64)) / productCardWidth);
+
+    node.querySelectorAll(`.products-container .product:nth-of-type(n + ${Math.pow(numberOfElementsPerRow, 2) + 1})`).forEach(el => el.style.display = "none");
+
+    const seeAllProducts = document.createElement("div");
+    seeAllProducts.classList.add("product-list-expand");
+
+    const seeAllProductsButton = document.createElement("button");
+    seeAllProductsButton.classList.add("product-list-expand__button");
+    seeAllProductsButton.innerHTML = "Carregar mais";
+    seeAllProducts.appendChild(seeAllProductsButton);
+
+    seeAllProductsButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      node.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
+      seeAllProducts.style.display = "none";
+    })
+
+    if(node.getElementsByClassName("product-list-expand").length == 0) {
+      node.appendChild(seeAllProducts);
     }
   }
 
@@ -178,16 +207,16 @@ export default class App extends HTMLElement {
     filtersForm.classList.add("filters-form");
 
     const sortFilter = document.createElement("sort-filter");
-    sortFilter.addEventListener("optionselected", (e) => this.sortFilter(e.detail.value, productsContainer));
+    sortFilter.addEventListener("optionselected", (e) => this.sortFilter(e.detail.value, productsContainer, appContainer));
 
     const colorFilter = document.createElement("color-filter");
-    colorFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer, sortFilter));
+    colorFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer, sortFilter, appContainer));
 
     const sizeFilter = document.createElement("size-filter");
-    sizeFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "size", productsContainer, sortFilter));
+    sizeFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "size", productsContainer, sortFilter, appContainer));
 
     const priceFilter = document.createElement("price-filter");
-    priceFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer, sortFilter));
+    priceFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer, sortFilter, appContainer));
 
     filtersForm.appendChild(colorFilter);
     filtersForm.appendChild(sizeFilter);
@@ -211,53 +240,13 @@ export default class App extends HTMLElement {
     appContainer.appendChild(pageHeader);
     appContainer.appendChild(pageMainContent);
 
-    const appContainerWidth = appContainer.offsetWidth;
-    const productsContainerWidth = appContainerWidth - (((window.innerWidth / 10) * 2) + 204);
-    const productCardWidth = 195;
-    const numberOfElementsPerRow = Math.floor((productsContainerWidth - ((Math.floor(productsContainerWidth / productCardWidth) - 1) * 64)) / productCardWidth);
-
-    appContainer.querySelectorAll(`.products-container .product:nth-of-type(n + ${Math.pow(numberOfElementsPerRow, 2) + 1})`).forEach(el => el.style.display = "none");
-
-    const seeAllProducts = document.createElement("div");
-    seeAllProducts.classList.add("product-list-expand");
-
-    const seeAllProductsButton = document.createElement("button");
-    seeAllProductsButton.classList.add("product-list-expand__button");
-    seeAllProductsButton.innerHTML = "Carregar mais";
-    seeAllProducts.appendChild(seeAllProductsButton);
-
-    seeAllProductsButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
-      seeAllProducts.style.display = "none";
-    })
+    this.setExpandableProducts(appContainer);
 
     window.addEventListener("resize", () => {
       appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
-
-      const appContainerWidth = appContainer.offsetWidth;
-      const productsContainerWidth = appContainerWidth - (((window.innerWidth / 10) * 2) + 204);
-      const productCardWidth = 195;
-      const numberOfElementsPerRow = Math.floor((productsContainerWidth - ((Math.floor(productsContainerWidth / productCardWidth) - 1) * 64)) / productCardWidth);
-
-      appContainer.querySelectorAll(`.products-container .product:nth-of-type(n + ${Math.pow(numberOfElementsPerRow, 2) + 1})`).forEach(el => el.style.display = "none");
-
-      const seeAllProducts = document.createElement("div");
-      seeAllProducts.classList.add("product-list-expand");
-
-      const seeAllProductsButton = document.createElement("button");
-      seeAllProductsButton.classList.add("product-list-expand__button");
-      seeAllProductsButton.innerHTML = "Carregar mais";
-      seeAllProducts.appendChild(seeAllProductsButton);
-
-      seeAllProductsButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
-        seeAllProducts.style.display = "none";
-      })
+      this.setExpandableProducts(appContainer);
     })
 
-    appContainer.appendChild(seeAllProducts)
     appContainer.appendChild(footer);
   }
 }
