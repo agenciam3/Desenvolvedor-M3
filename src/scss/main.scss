@@ -33,6 +33,71 @@
 
 // ===================================
 
+// ===== FILTER ======================
+.col-filter h2 {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  color: #333333;
+}
+
+.col-filter {
+  width: 157px;
+  height: 500px;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.color-filter {
+  display: flex;
+  align-items: center;
+}
+
+.color-filter input {
+  width: 16px;
+  height: 16px;
+
+  // border: 1px solid rgba(0, 0, 0, 0.5);
+  // background: #00c0ee;
+}
+
+.color-filter label {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #000000;
+  padding-bottom: 10px;
+  padding: 10px;
+}
+
+.button-text #submit {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+  text-decoration: underline;
+  color: #666666;
+  border: none;
+}
+
+.size-filter-title {
+  margin: 24px 0px;
+}
+
+// ===== FIM FILTER ======================
+
 // ===== CARDS ======================
 
 .section-cards {
@@ -40,12 +105,6 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 30px 0px;
-}
-
-.col-filter {
-  width: 157px;
-  height: 500px;
-  background-color: #000000;
 }
 
 .col-cards {
@@ -131,7 +190,9 @@
   background: #000000;
 }
 
-// ===== CARDS ======================
+// ===== FIM CARDS ======================
+
+// ===== FOOTER ======================
 
 .footer {
   background-color: #000000;

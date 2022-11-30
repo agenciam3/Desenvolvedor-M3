@@ -1,11 +1,12 @@
 const Card = require("../Card/index.jsx");
+const Filter = require("../Filter/index.jsx");
 
 const Cards = ({ cards }) => {
   console.log("cards", cards);
   return (
     <div className="page">
       <div className="section-cards">
-        <div className="col-filter">1</div>
+        <Filter />
         <div className="col-cards">
           <div className="row-cards">
             {cards &&
