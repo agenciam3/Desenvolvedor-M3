@@ -101,6 +101,25 @@
   margin: 24px 0px;
 }
 
+.size-filter-fields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.size-field-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+}
+
+
 // ===== FIM FILTER ======================
 
 // ===== CARDS ======================

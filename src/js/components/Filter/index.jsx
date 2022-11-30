@@ -1,4 +1,5 @@
 const Checkbox = require("../Checkbox/index.jsx");
+const SizeField = require("../SizeField/index.jsx");
 
 const Filter = () => {
   return (
@@ -33,8 +34,22 @@ const Filter = () => {
             </button>
           </div>
 
-          <div class="size-filter-title">
+          <div className="size-filter-title">
             <h2>Tamanhos</h2>
+          </div>
+
+          <div className="size-filter-fields">
+            <SizeField size={"P"} value={true} />
+            <SizeField size={"M"} value={true} />
+            <SizeField size={"G"} value={true} />
+            <SizeField size={"GG"} value={true} />
+            <SizeField size={"U"} value={true} />
+            <SizeField size={"36"} value={true} />
+            <SizeField size={"38"} value={true} />
+            <SizeField size={"40"} value={true} />
+            <SizeField size={"36"} value={true} />
+            <SizeField size={"38"} value={true} />
+            <SizeField size={"40"} value={true} />
           </div>
 
           <div class="amount-filter">
