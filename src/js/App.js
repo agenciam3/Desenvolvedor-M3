@@ -210,6 +210,54 @@ export default class App extends HTMLElement {
     appContainer.appendChild(navbar);
     appContainer.appendChild(pageHeader);
     appContainer.appendChild(pageMainContent);
+
+    const appContainerWidth = appContainer.offsetWidth;
+    const productsContainerWidth = appContainerWidth - (((window.innerWidth / 10) * 2) + 204);
+    const productCardWidth = 195;
+    const numberOfElementsPerRow = Math.floor((productsContainerWidth - ((Math.floor(productsContainerWidth / productCardWidth) - 1) * 64)) / productCardWidth);
+
+    appContainer.querySelectorAll(`.products-container .product:nth-of-type(n + ${Math.pow(numberOfElementsPerRow, 2) + 1})`).forEach(el => el.style.display = "none");
+
+    const seeAllProducts = document.createElement("div");
+    seeAllProducts.classList.add("product-list-expand");
+
+    const seeAllProductsButton = document.createElement("button");
+    seeAllProductsButton.classList.add("product-list-expand__button");
+    seeAllProductsButton.innerHTML = "Carregar mais";
+    seeAllProducts.appendChild(seeAllProductsButton);
+
+    seeAllProductsButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
+      seeAllProducts.style.display = "none";
+    })
+
+    window.addEventListener("resize", () => {
+      appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
+
+      const appContainerWidth = appContainer.offsetWidth;
+      const productsContainerWidth = appContainerWidth - (((window.innerWidth / 10) * 2) + 204);
+      const productCardWidth = 195;
+      const numberOfElementsPerRow = Math.floor((productsContainerWidth - ((Math.floor(productsContainerWidth / productCardWidth) - 1) * 64)) / productCardWidth);
+
+      appContainer.querySelectorAll(`.products-container .product:nth-of-type(n + ${Math.pow(numberOfElementsPerRow, 2) + 1})`).forEach(el => el.style.display = "none");
+
+      const seeAllProducts = document.createElement("div");
+      seeAllProducts.classList.add("product-list-expand");
+
+      const seeAllProductsButton = document.createElement("button");
+      seeAllProductsButton.classList.add("product-list-expand__button");
+      seeAllProductsButton.innerHTML = "Carregar mais";
+      seeAllProducts.appendChild(seeAllProductsButton);
+
+      seeAllProductsButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
+        seeAllProducts.style.display = "none";
+      })
+    })
+
+    appContainer.appendChild(seeAllProducts)
     appContainer.appendChild(footer);
   }
 }
