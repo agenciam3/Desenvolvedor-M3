@@ -104,7 +104,6 @@
 .size-filter-fields {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
 }
@@ -117,6 +116,7 @@
   height: 32px;
   border: 1px solid rgba(0, 0, 0, 0.5);
   margin-bottom: 8px;
+  margin-right: 5px;
 }
 
 
