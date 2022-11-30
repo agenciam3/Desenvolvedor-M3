@@ -88,8 +88,13 @@
   font-size: 12px;
   line-height: 100%;
   text-decoration: underline;
+  background: transparent;
   color: #666666;
   border: none;
+}
+
+.button-text svg {
+  margin-left: 2px;
 }
 
 .size-filter-title {
