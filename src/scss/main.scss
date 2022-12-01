@@ -248,6 +248,69 @@
   display: none;
 }
 
+.filter-modal-mobile {
+  text-align: left;
+}
+
+.modal-form-option {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #666666;
+  background: transparent;
+  border: none;
+  margin: 30px 0px;
+  width: 100%;
+}
+
+.filter-modal-form-sizes {
+  display: flex;
+  flex-wrap: wrap;
+  width: 173px;
+}
+
+.modal-filter-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.modal-filter-button-apply {
+  width: 160px;
+  height: 35px;
+  background: #00c0ee;
+  border: none;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.modal-filter-button-cancel {
+  width: 160px;
+  height: 35px;
+  background: transparent;
+  border: 1px solid #666666;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: #666666;
+}
+
 // ===== FIM CARDS ======================
 
 // ===== FOOTER ======================
@@ -283,6 +346,7 @@
   right: 0px;
   left: 0px;
   background: #ffffff;
+  overflow-y: scroll;
 }
 
 .modal-header {
@@ -435,5 +499,12 @@
 
   .card-media {
     height: 242.55px;
+  }
+}
+
+@media (max-width: 325px) {
+  .modal-filter-button-apply,
+  .modal-filter-button-cancel {
+    width: 120px;
   }
 }

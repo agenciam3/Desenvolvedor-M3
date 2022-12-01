@@ -1,5 +1,6 @@
 const Card = require("../Card/index.jsx");
 const Filter = require("../Filter/index.jsx");
+const MobileFilter = require("../MobileFilter/index.jsx");
 const Modal = require("../Modal/index.jsx");
 
 const Cards = ({ cards }) => {
@@ -26,7 +27,7 @@ const Cards = ({ cards }) => {
               })
             }
           >
-            {modal.content === "filtrar" && <div>filtro</div>}
+            {modal.content === "filtrar" && <MobileFilter />}
 
             {modal.content === "ordernar" && (
               <>
@@ -87,7 +88,9 @@ const Cards = ({ cards }) => {
         </div>
       </div>
       <div className="section-cards">
-        <Filter />
+        <div className="col-filter">
+          <Filter />
+        </div>
         <div className="col-cards">
           <div className="row-cards">
             {cards &&

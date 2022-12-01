@@ -29,6 +29,7 @@ module.exports = (paths) => ({
           path.resolve(__dirname, "src/js/components/Checkbox/index.jsx"),
           path.resolve(__dirname, "src/js/components/SizeField/index.jsx"),
           path.resolve(__dirname, "src/js/components/Modal/index.jsx"),
+          path.resolve(__dirname, "src/js/components/MobileFilter/index.jsx"),
           // ------------------------------------------------------------------
         ],
         use: {

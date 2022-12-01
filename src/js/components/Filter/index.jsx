@@ -3,7 +3,7 @@ const SizeField = require("../SizeField/index.jsx");
 
 const Filter = () => {
   return (
-    <div className="col-filter">
+    <>
       <h2>Cores</h2>
       <div className="checkbox-wrapper">
         <form action="/">
@@ -63,7 +63,7 @@ const Filter = () => {
           </div>
         </form>
       </div>
-    </div>
+    </>
   );
 };
 
