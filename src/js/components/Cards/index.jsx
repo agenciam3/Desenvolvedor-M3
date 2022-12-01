@@ -6,9 +6,24 @@ const Cards = ({ cards }) => {
   return (
     <div className="page">
       <div className="section-order">
-        <div>
+        <div className="section-order-title">
           <h1>Blusas</h1>
         </div>
+
+        <div className="button-responsive-filters">
+          <div className="col-tab">
+            <button className="tab">Filtrar</button>
+          </div>
+
+          <div>
+            <div className="divider-tab"/>
+          </div>
+
+          <div className="col-tab">
+            <button className="tab">Ordernar</button>
+          </div>
+        </div>
+
         <div className="section-order-by">
           <select id="orderby" name="orderby">
             <option value="">Ordenar por:</option>

@@ -244,6 +244,10 @@
   background: #000000;
 }
 
+.button-responsive-filters {
+  display: none;
+}
+
 // ===== FIM CARDS ======================
 
 // ===== FOOTER ======================
@@ -311,9 +315,52 @@
     display: none;
   }
 
-  .section-order,
+  .section-order-title {
+    width: 100%;
+  }
+
   .section-cards {
     padding: 0px 16px;
+  }
+
+  .section-order {
+    display: block;
+    text-align: center;
+    padding: 30px 16px;
+  }
+
+  .section-order-by {
+    display: none;
+  }
+
+  .button-responsive-filters {
+    display: flex;
+    height: 49px;
+    border: 1px solid #666666;
+    margin-top: 12px;
+  }
+
+  .col-tab {
+    width: 100%;
+  }
+
+  .divider-tab {
+    width: 1px;
+    height: 100%;
+    background: #666666;
+  }
+
+  .tab {
+    width: 100%;
+    height: 100%;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 33px;
+    background: transparent;
+    color: #666666;
+    border: none;
   }
 
   .col-cards {
