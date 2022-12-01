@@ -1,7 +1,14 @@
 const Card = require("../Card/index.jsx");
 const Filter = require("../Filter/index.jsx");
+const Modal = require("../Modal/index.jsx");
 
 const Cards = ({ cards }) => {
+  const [modal, setModal] = React.useState({
+    open: false,
+    content: "",
+  });
+  console.log("modal", modal);
+
   console.log("cards", cards);
   return (
     <div className="page">
@@ -9,18 +16,48 @@ const Cards = ({ cards }) => {
         <div className="section-order-title">
           <h1>Blusas</h1>
         </div>
-
+        {modal.open && (
+          <Modal
+            title={modal.content}
+            onClose={() =>
+              setModal({
+                open: false,
+                content: "",
+              })
+            }
+          />
+        )}
         <div className="button-responsive-filters">
           <div className="col-tab">
-            <button className="tab">Filtrar</button>
+            <button
+              onClick={() =>
+                setModal({
+                  open: true,
+                  content: "filtrar",
+                })
+              }
+              className="tab"
+            >
+              Filtrar
+            </button>
           </div>
 
           <div>
-            <div className="divider-tab"/>
+            <div className="divider-tab" />
           </div>
 
           <div className="col-tab">
-            <button className="tab">Ordernar</button>
+            <button
+              onClick={() =>
+                setModal({
+                  open: true,
+                  content: "ordernar",
+                })
+              }
+              className="tab"
+            >
+              Ordernar
+            </button>
           </div>
         </div>
 

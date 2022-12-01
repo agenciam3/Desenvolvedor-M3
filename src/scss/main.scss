@@ -274,6 +274,42 @@
   color: #ffffff;
 }
 
+// ------------MODAL-----------
+
+.modal {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+  background: #ffffff;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  box-shadow: 0 2px #c7c7c7;
+  padding: 0px 16px;
+}
+
+.modal-header-title {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 38px;
+  text-transform: uppercase;
+
+  color: #666666;
+}
+
+.modal-header-button {
+  background: transparent;
+  border: none;
+}
+
 // --------------RESPONSIVE-------------
 
 @media (max-width: 1290px) {
