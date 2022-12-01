@@ -152,8 +152,8 @@ export default class App extends HTMLElement {
 
   setExpandableProducts(node) {
     const nodeWidth = node.offsetWidth;
-    const productsContainerWidth = nodeWidth - (((window.innerWidth / 10) * 2) + 204);
-    const productCardWidth = 195;
+    const productsContainerWidth = window.innerWidth > 844 ? (nodeWidth - (((window.innerWidth / 10) * 2) + 204)) : (nodeWidth - 32);
+    const productCardWidth = window.innerWidth > 844 ? 195 : 162;
     const numberOfElementsPerRow = Math.floor((productsContainerWidth - ((Math.floor(productsContainerWidth / productCardWidth) - 1) * 64)) / productCardWidth);
 
     node.querySelectorAll(`.products-container .product:nth-of-type(n + ${Math.pow(numberOfElementsPerRow, 2) + 1})`).forEach(el => el.style.display = "none");
@@ -168,7 +168,7 @@ export default class App extends HTMLElement {
 
     seeAllProductsButton.addEventListener("click", (e) => {
       e.preventDefault();
-      node.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
+      node.querySelectorAll(".products-container .product").forEach(el => el.style.display = "inherit");
       seeAllProducts.style.display = "none";
     })
 
@@ -206,24 +206,65 @@ export default class App extends HTMLElement {
     const filtersForm = document.createElement("form");
     filtersForm.classList.add("filters-form");
 
+    const filtersContainer = document.createElement("div");
+    filtersContainer.classList.add("filters-container--mobile");
+    const filtersContainerHeader = document.createElement("div");
+    filtersContainerHeader.classList.add("filters-container--mobile__header");
+    const filtersContainerTitle = document.createElement("span");
+    filtersContainerTitle.innerHTML = "filtrar";
+    filtersContainerTitle.classList.add("filters-container--mobile__title");
+    const filtersContainerIcon = document.createElement("img");
+    filtersContainerIcon.setAttribute("src", "../icon_close.svg");
+    filtersContainerIcon.classList.add("filters-container--mobile__icon");
+    filtersContainerHeader.appendChild(filtersContainerTitle);
+    filtersContainerHeader.appendChild(filtersContainerIcon);
+    filtersContainer.appendChild(filtersContainerHeader);
+
     const sortFilter = document.createElement("sort-filter");
     sortFilter.addEventListener("optionselected", (e) => this.sortFilter(e.detail.value, productsContainer, appContainer));
 
     const colorFilter = document.createElement("color-filter");
     colorFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer, sortFilter, appContainer));
+    const colorFilterMobile = document.createElement("color-filter");
+    colorFilterMobile.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "color", productsContainer, sortFilter, appContainer));
 
     const sizeFilter = document.createElement("size-filter");
     sizeFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "size", productsContainer, sortFilter, appContainer));
+    const sizeFilterMobile = document.createElement("size-filter");
+    sizeFilterMobile.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "size", productsContainer, sortFilter, appContainer));
 
     const priceFilter = document.createElement("price-filter");
     priceFilter.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer, sortFilter, appContainer));
+    const priceFilterMobile = document.createElement("price-filter");
+    priceFilterMobile.addEventListener("optionselected", (e) => this.filter(e.detail.value, e.detail.isChecked, "priceRange", productsContainer, sortFilter, appContainer));
+
+    const openFiltersButton = document.createElement("button");
+    openFiltersButton.innerHTML = "filtrar";
+    openFiltersButton.classList.add("open-filter");
 
     filtersForm.appendChild(colorFilter);
     filtersForm.appendChild(sizeFilter);
     filtersForm.appendChild(priceFilter);
 
+    const filterButtonsContainer = document.createElement("div");
+    filterButtonsContainer.classList.add("filter__buttons");
+    const applyFiltersButton = document.createElement("button");
+    applyFiltersButton.innerHTML = "aplicar"
+    applyFiltersButton.classList.add("filter__button--primary");
+    filterButtonsContainer.appendChild(applyFiltersButton);
+
+    const filterOptionsContainer = document.createElement("div");
+    filterOptionsContainer.classList.add("filter-options__container--mobile");
+
+    filterOptionsContainer.appendChild(colorFilterMobile);
+    filterOptionsContainer.appendChild(sizeFilterMobile);
+    filterOptionsContainer.appendChild(priceFilterMobile);
+    filterOptionsContainer.appendChild(filterButtonsContainer);
+    filtersContainer.appendChild(filterOptionsContainer);
+
     pageHeader.appendChild(pageTitle);
     pageHeader.appendChild(sortFilter);
+    pageHeader.appendChild(openFiltersButton);
     pageHeader.classList.add("page-header");
 
     const pageMainContent = document.createElement("main");
@@ -232,19 +273,58 @@ export default class App extends HTMLElement {
     pageAsideContent.classList.add("aside-content");
 
     pageAsideContent.appendChild(filtersForm);
-
     pageMainContent.appendChild(pageAsideContent);
     pageMainContent.appendChild(productsContainer);
 
     appContainer.appendChild(navbar);
     appContainer.appendChild(pageHeader);
     appContainer.appendChild(pageMainContent);
+    appContainer.appendChild(filtersContainer);
 
     this.setExpandableProducts(appContainer);
 
     window.addEventListener("resize", () => {
       appContainer.querySelectorAll(".products-container .product").forEach(el => el.style.display = "block");
       this.setExpandableProducts(appContainer);
+    })
+
+    openFiltersButton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      navbar.classList.add("hide");
+      navbar.classList.remove("show");
+      pageHeader.classList.add("hide");
+      pageHeader.classList.remove("show");
+      filtersContainer.classList.add("show");
+      filtersContainer.classList.remove("hide");
+      pageMainContent.classList.add("hide");
+      pageMainContent.classList.remove("show");
+    })
+
+    filtersContainerHeader.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      navbar.classList.add("show");
+      navbar.classList.remove("hide");
+      pageHeader.classList.add("show");
+      pageHeader.classList.remove("hide");
+      filtersContainer.classList.add("hide");
+      filtersContainer.classList.remove("show");
+      pageMainContent.classList.add("show");
+      pageMainContent.classList.remove("hide");
+    })
+
+    applyFiltersButton.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      navbar.classList.add("show");
+      navbar.classList.remove("hide");
+      pageHeader.classList.add("show");
+      pageHeader.classList.remove("hide");
+      filtersContainer.classList.add("hide");
+      filtersContainer.classList.remove("show");
+      pageMainContent.classList.add("show");
+      pageMainContent.classList.remove("hide");
     })
 
     appContainer.appendChild(footer);

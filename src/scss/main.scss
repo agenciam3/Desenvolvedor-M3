@@ -9,6 +9,7 @@ $font-family: 'Open Sans', sans-serif;
 
 .app-container {
   font-family: $font-family;
+  position: relative;
 }
 
 .navbar {
@@ -368,7 +369,7 @@ $font-family: 'Open Sans', sans-serif;
 
   cursor: pointer;
 
-  border: none;
+  border: 1px solid $primary-color;
   padding: 8px 32px;
 
   text-transform: uppercase;
@@ -396,4 +397,139 @@ $font-family: 'Open Sans', sans-serif;
 
 .sort-filter:focus {
   outline: none;
+}
+
+.filters-container--mobile {
+  display: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.filters-container--mobile.show {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: auto;
+  background-color: #ffffff;
+  z-index: 5;
+}
+
+.open-filter {
+  display: none;
+  
+  background-color: #ffffff;
+  color: $grey-200;
+  cursor: pointer;
+
+  border: 1px solid $grey-200;
+  padding: 8px 32px;
+  width: 138px;
+
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  letter-spacing: 0em;
+}
+
+.filters-container--mobile__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px;
+
+  border-bottom: 1px solid $grey-200;
+}
+
+.filters-container--mobile__title {
+  font-family: $font-family;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.375em;
+  letter-spacing: 0em;
+
+  color: $grey-200;
+  text-transform: uppercase;
+}
+
+.filter-options__container--mobile {
+  margin: 30px 18px 0;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+
+.filter__buttons {
+  display: flex;
+  justify-content: center;
+
+  column-gap: 24px;
+
+  margin-bottom: 20px;
+}
+
+.filter__button--primary {
+  background-color: $primary-color;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  border: 1px solid $primary-color;
+  padding: 8px 32px;
+
+  text-transform: uppercase;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.1875em;
+  letter-spacing: 0em;
+}
+
+@media screen and (max-width: 844px) {
+  .aside-content {
+    display: none;
+  }
+
+  .open-filter {
+    display: block;
+  }
+
+  .page-header {
+    flex-direction: column;
+    row-gap: 12px;
+  }
+
+  .product__image {
+    width: 162px;
+  }
+
+  .main-content {
+    justify-content: center;
+    margin: 54px 16px 0;
+  }
+
+  .page-header {
+    margin: 88px 16px 0;
+  }
+
+  .navbar__first-element {
+    margin-left: 16px;
+  }
+  
+  .navbar__second-element {
+    margin-right: 16px;
+  }
 }
