@@ -25,7 +25,23 @@ const Cards = ({ cards }) => {
                 content: "",
               })
             }
-          />
+          >
+            {modal.content === "filtrar" && <div>filtro</div>}
+
+            {modal.content === "ordernar" && (
+              <>
+                <div className="modal-container-button">
+                  <button className="modal-order-button">Mais recente</button>
+                </div>
+                <div className="modal-container-button">
+                  <button className="modal-order-button">Maior preço</button>
+                </div>
+                <div className="modal-container-button">
+                  <button className="modal-order-button">Menor preço</button>
+                </div>
+              </>
+            )}
+          </Modal>
         )}
         <div className="button-responsive-filters">
           <div className="col-tab">

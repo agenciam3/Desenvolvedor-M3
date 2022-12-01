@@ -1,4 +1,4 @@
-const Modal = ({ title, onClose }) => {
+const Modal = ({ title, onClose, children }) => {
   return (
     <div className="modal">
       <div className="modal-header">
@@ -22,6 +22,7 @@ const Modal = ({ title, onClose }) => {
           </svg>
         </button>
       </div>
+      <div className="modal-content">{children}</div>
     </div>
   );
 };

@@ -310,6 +310,31 @@
   border: none;
 }
 
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0px 16px 30px 16px;
+}
+
+.modal-container-button {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.modal-order-button {
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 30px;
+  color: #000000;
+}
+
 // --------------RESPONSIVE-------------
 
 @media (max-width: 1290px) {
