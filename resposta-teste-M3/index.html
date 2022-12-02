@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>M3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/d244ca6331.js" crossorigin="anonymous"></script>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body class="grid-container">
+    <header class="flex-container">
+        <div class="header-content">
+            <div class="logo">
+                <img src="./assets/imagens/logo-m3.png" alt="logo">
+            </div>
+            <i class="fas fa-shopping-bag"></i>
+        </div>
+    </header>
+
+    <aside>
+        <div class="aside-content">
+            <span class="tipo-produto">Blusas</span>
+            <div>
+                <span class="tipo-form">Cores</span>
+                <form class="form-cores">
+                    <div class="cor">
+                        <input type="checkbox" name="amarelo" value="amarelo" onclick="filtrarCor(event)">
+                        <label for="amarelo"> Amarelo</label>
+                    </div>
+                    <div class="cor">
+                        <input type="checkbox" name="preto" value="preto" onclick="filtrarCor(event)">
+                        <label for="preto"> Preto</label>
+                    </div>
+                    <div class="cor">
+                        <input type="checkbox" name="branco" value="branco" onclick="filtrarCor(event)">
+                        <label for="branco"> Branco</label>
+                    </div>
+                    <div class="cor">
+                        <input type="checkbox" name="cinza" value="cinza" onclick="filtrarCor(event)">
+                        <label for="cinza"> Cinza</label>
+                    </div>
+                    <div class="cor">
+                        <input type="checkbox" name="laranja" value="laranja" onclick="filtrarCor(event)">
+                        <label for="laranja"> Laranja</label>
+                    </div>
+                    <div class="maisCores">
+                        <select>
+                            <option>Veja todas as cores</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <span class="tipo-form">Tamanhos</span>
+                <form class="form-tamanhos">
+                    <label for="tamP"><input type="checkbox" name="tamP" value="tamP" onclick="filtrarTamanho(event)"> P</label>
+                    
+                    <label for="tamM"><input type="checkbox" name="tamM" value="tamM" onclick="filtrarTamanho(event)"> M</label>
+                    
+                    <label for="tamG"><input type="checkbox" name="tamG" value="tamG" onclick="filtrarTamanho(event)"> G</label>
+                    
+                    <label for="tamGG"><input type="checkbox" name="tamGG" value="tamGG" onclick="filtrarTamanho(event)"> GG</label>
+                    
+                    <label for="tamU"><input type="checkbox" name="tamU" value="tamU" onclick="filtrarTamanho(event)"> U</label>
+                    
+                    <label for="tam36"><input type="checkbox" name="tam36" value="tam36" onclick="filtrarTamanho(event)"> 36</label>
+                    
+                    <label for="tam38"><input type="checkbox" name="tam38" value="tam38" onclick="filtrarTamanho(event)"> 38</label>
+                    
+                    <label for="tam40"><input type="checkbox" name="tam40" value="tam40" onclick="filtrarTamanho(event)"> 40</label>
+                  </form>
+            </div>
+            
+            <div>
+                <span class="tipo-form">Faixa de Preço</span>
+                <form class="form-faixa-de-precos">
+                    <div>
+                        <input type="checkbox" name="valorBaixo" value="50" onclick="filtrarPreco(event)">
+                        <label for="valorBaixo"> até R$50,00</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="valorMedio" value="150" onclick="filtrarPreco(event)">
+                        <label for="valorMedio"> até R$150,00</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="valorAlto" value="250" onclick="filtrarPreco(event)">
+                        <label for="valorAlto"> até R$250,00</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="valorMuitoAlto" value="500" onclick="filtrarPreco(event)">
+                        <label for="valorMuitoAlto"> até R$500,00</label>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="ordenar-por">
+            <select id="ordenar" name="ordenar" onchange="ordenarProdutos()">
+                <option>Ordenar por</option>
+                <option value="mais-recentes">Mais recentes</option>
+                <option value="menor-preco">Menor preço</option>
+                <option value="maior-preco">Maior preço</option>
+            </select>
+
+        </div>
+
+        <div class="main-content" id="main-content"></div>
+
+        <div class="card">
+            <button class="carregarMais" id="carregarMais" onclick="carregarMaisProdutos()">Carregar Mais</button>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            Agência M3-Agência de Performance Digital
+        </div>
+    </footer>
+
+    <script src="./index.js"></script>
+    
+</body>
+</html>

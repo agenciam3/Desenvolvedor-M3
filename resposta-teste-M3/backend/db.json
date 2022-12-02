@@ -1,0 +1,85 @@
+{
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Camiseta Mescla",
+      "preco": "R$ 28,00",
+      "url": "./assets/imagens/img_2.png",
+      "cor": "cinza",
+      "tamanho": "tamP",
+      "parcelamento": "até 3x de R$9,33"
+    },
+    {
+      "id": 2,
+      "nome": "Saia Em Couro",
+      "preco": "R$ 398,00",
+      "url": "./assets/imagens/img_3.png",
+      "cor": "preto",
+      "tamanho": "tamP",
+      "parcelamento": "até 5x de R$30,00"
+    },
+    {
+      "id": 3,
+      "nome": "Cardigan Tigre",
+      "preco": "R$ 398,00",
+      "url": "./assets/imagens/img_4.png",
+      "cor": "",
+      "tamanho": "tamM",
+      "parcelamento": "até 5x de R$30,00"
+    },
+    {
+      "id": 4,
+      "nome": "Cardigan Off White",
+      "preco": "R$ 99,90",
+      "url": "./assets/imagens/img_5.png",
+      "cor": "",
+      "tamanho": "36",
+      "parcelamento": "até 3x de R$33,30"
+    },
+    {
+      "id": 5,
+      "nome": "Body Leopardo",
+      "preco": "R$ 129,90",
+      "url": "./assets/imagens/img_6.png",
+      "cor": "",
+      "tamanho": "tamM",
+      "parcelamento": "até 3x de R$43,43"
+    },
+    {
+      "id": 6,
+      "nome": "Casaco Pelos",
+      "preco": "R$ 398,00",
+      "url": "./assets/imagens/img_7.png",
+      "cor": "",
+      "tamanho": "tam40",
+      "parcelamento": "até 5x de R$30,00"
+    },
+    {
+      "id": 7,
+      "nome": "Cropped Stripes",
+      "preco": "R$ 120,00",
+      "url": "./assets/imagens/img_8.png",
+      "cor": "",
+      "tamanho": "tam36",
+      "parcelamento": "até 3x de R$40,00"
+    },
+    {
+      "id": 8,
+      "nome": "Camisa Transparente",
+      "preco": "R$ 398,00",
+      "url": "./assets/imagens/img_9.png",
+      "cor": "",
+      "tamanho": "tam38",
+      "parcelamento": "até 5x de R$30,00"
+    },
+    {
+      "id": 9,
+      "nome": "Pochete Clutch",
+      "preco": "R$99,00",
+      "url": "./assets/imagens/img_10.png",
+      "cor": "",
+      "tamanho": "tamGG",
+      "parcelamento": "até 3x de R$33,00"
+    }
+  ]
+}
