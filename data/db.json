@@ -1,0 +1,123 @@
+{
+  "products":
+  [
+    {
+      "id": 1,
+      "title": "Camiseta Mescla",
+      "image": "/images/products/img_2.png",
+      "price": 28.00,
+      "color": "gray",
+      "sizes": ["P", "M"],
+      "date" : "2021-01-27",
+      "installments": {
+        "quantity" : 3,
+        "price": 9.33
+      }
+    },
+    {
+      "id": 2,
+      "title": "Saia em Couro",
+      "image": "/images/products/img_3.png",
+      "price": 398.00,
+      "color": "black",
+      "sizes": ["M","G","GG"],
+      "date" : "2021-01-01",
+      "installments": {
+        "quantity" : 5,
+        "price": 30.00
+      }
+    },
+    {
+      "id": 3,
+      "title": "Cardigan Tigre",
+      "image": "/images/products/img_4.png",
+      "price": 398.00,
+      "color": "orange",
+      "sizes": ["G","U"],
+      "date" : "2021-03-10",
+      "installments": {
+        "quantity" : 5,
+        "price": 30.00
+      }
+    },
+    {
+      "id": 4,
+      "title": "Cardigan Off White",
+      "image": "/images/products/img_5.png",
+      "price": 99.90,
+      "color": "white",
+      "sizes": ["36"],
+      "date" : "2021-04-25",
+      "installments": {
+        "quantity" : 3,
+        "price": 33.30
+      }
+    },
+    {
+      "id": 5,
+      "title": "Body Leopardo",
+      "image": "/images/products/img_6.png",
+      "price": 129.90,
+      "color": "yellow",
+      "sizes": ["38"],
+      "date" : "2021-05-01",
+      "installments": {
+        "quantity" : 3,
+        "price": 43.43
+      }
+    },
+    {
+      "id": 6,
+      "title": "Casaco Pelos",
+      "image": "/images/products/img_7.png",
+      "price": 398.00,
+      "color": "pink",
+      "sizes": ["40"],
+      "date" : "2021-05-10",
+      "installments": {
+        "quantity" : 5,
+        "price": 30.00
+      }
+    },
+    {
+      "id": 7,
+      "title": "Cropped Stripes",
+      "image": "/images/products/img_8.png",
+      "price": 120.00,
+      "color": "yellow",
+      "sizes": ["42"],
+      "date" : "2021-06-01",
+      "installments": {
+        "quantity" : 3,
+        "price": 40.00
+      }
+    },
+    {
+      "id": 8,
+      "title": "Camisa transparente",
+      "image": "/images/products/img_9.png",
+      "price": 398.00,
+      "color": "black",
+      "sizes": ["GG","44"],
+      "date" : "2010-05-11",
+      "installments": {
+        "quantity" : 5,
+        "price": 30.00
+      }
+    },
+    {
+      "id": 9,
+      "title": "Pochete Clutch",
+      "image": "/images/products/img_10.png",
+      "price": 99.00,
+      "color": "black",
+      "sizes": ["46"],
+      "date" : "2021-07-01",
+      "installments": {
+        "quantity" : 3,
+        "price": 33.00
+      }
+    }
+
+  ]
+}

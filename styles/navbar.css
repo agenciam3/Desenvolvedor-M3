@@ -1,0 +1,53 @@
+.navbar{
+  width: 100%;
+  height: 65px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  position: sticky;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  top: 0;
+}
+
+.navbar .cart{
+  width: 30px;
+  height: 30px;
+}
+
+.navbar nav{
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 1rem 2rem;
+}
+
+.cart_bar{
+  display: flex;
+  cursor: pointer;
+}
+
+.counter{
+  font-size: .9rem;
+  width: 25px;
+  height: 25px;
+  background-color: #2bbff2;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 31px;
+  right: 17px;
+}
+
+@media screen and (max-width: 900px) {
+  .navbar{
+    padding: 0 1rem 0 .2rem;
+  }
+}

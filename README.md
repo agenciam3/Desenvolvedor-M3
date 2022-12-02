@@ -77,3 +77,19 @@ O objetivo desse desafio é avaliar a seus conhecimentos fundamentais de front e
 - Adição de processo no gulp para otimizar imagens
 
 ##### Dúvidas: [heraldo@digitalm3.com.br](mailto:heraldo@digitalm3.com.br?subject=Dúvida%20Vaga%20DEV%20-%20Digital%20M3)
+
+----
+
+## Instruções para rodar o código 
+
+O requisito necessário é apenas o NodeJs, utilizei o json-server para simular uma API json. Para rodar:
+ - Abra no seu terminal a pasta /data
+ - Execute o comando:
+```{r}
+  npx json-server --watch db.json 
+```
+- Abra o index.html no navegador
+
+## Contato
+
+#### Email: rafaelsilvaoliveira@id.uff.br

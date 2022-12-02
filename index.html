@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>M3 Performance Digital</title>
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/navbar.css">
+  <link rel="stylesheet" href="styles/products.css">
+  <link rel="stylesheet" href="styles/filters.css">
+  <link rel="stylesheet" href="styles/order_menu.css">
+  <link rel="stylesheet" href="styles/mobile.css">
+</head>
+<body>
+  <div class="site">
+    <header class="navbar">
+      <nav>
+        <img src="/images/icons/logo-m3.png" alt="Logo da m3, performance digital" class="logo">
+        <div class="cart_bar">
+          <img src="/images/icons/cart.png" alt="Ícone de uma sacola de compras" class="cart">
+          <span class="counter">0</span>
+        </div>
+      </nav>
+    </header>
+    
+    <div class="main">
+      <div class="order">
+        <h1>Blusas</h1>
+        <div class="mobile">
+          <button class="mobile_menu" id="filter_mobile" onclick="Filters()">
+            <h1>Filtrar</h1>
+          </button>
+          <button class="mobile_menu" id="order_mobile" onclick="Order()">
+            <h1>Ordenar</h1>
+          </button>
+        </div>
+        <div class="order_menu">
+          <class class="nav_order">
+            <button type="button" class="close_order" onclick="Close_Order()">
+              <span class="title_order_mobile" >Ordenar</span>
+              <span class="icon_close_order"><img src="images/icons/close.png" ></span>
+          </class>
+          <button class="drop_btn" onclick="Toggle_Order()">
+            Ordenar por:
+            <span class="arrow_down"><img src="images/icons/arrow_down.png"></span>
+          </button>
+          <div class="drop_content" id="order_btns">
+            <!-- A função Filter_SortBy receberá um número indicando o tipo de ordenação desejada. 0 - Recentes, 1 - Menor preço, 2 - Maior Preço -->
+            <input type="button" class="content" id="recent" value="Mais recentes" onclick="Products.Filter_SortBy(0); Close_Order()">
+            <input type="button" class="content" id="lowest" value="Menor Preço" onclick="Products.Filter_SortBy(1); Close_Order()">
+            <input type="button" class="content" id="highest" value="Maior Preço" onclick="Products.Filter_SortBy(2); Close_Order()">
+          </div>
+        </div>
+      </div>
+      <div class="side-bar">
+        <div class="nav_filter">
+          <button type="button" class="close_filter" onclick="Close_Filter()">
+            <span class="title_filter_mobile" >Filtrar</span>
+            <span class="icon_close_filter"><img src="images/icons/close.png" ></span>
+          </button>
+        </div>
+        <div class="icon_mobile" onclick="Toggle_Colors(this)">
+          <span id="title_filter">Cores</span>
+          <span class="plus_icon"><img id="plus" src="images/icons/plus.png" alt="Ícone em forma de X"></span>
+        </div>
+          <div class="drop_colors" id="colors_drop">
+          <label class="colors_class">
+            <input type="radio" name="colors" value="yellow" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Amarelo</span>
+          </label>
+          <label class="colors_class">
+            <input type="radio" name="colors" value="blue" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Azul</span>
+          </label>
+          <label class="colors_class">
+            <input type="radio" name="colors" value="white" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Branco</span>
+          </label>
+          <label class="colors_class">
+            <input type="radio" name="colors" value="gray" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Cinza</span>
+          </label>
+          <label class="colors_class">
+            <input type="radio" name="colors" value="orange" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Laranja</span>
+          </label>
+          <label class="dropdown_cont" id="dropdown_toggle">
+            <input type="radio" name="colors" value="black" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Preto</span>
+          </label>
+          <label class="dropdown_cont" id="dropdown_toggle">
+            <input type="radio" name="colors" value="pink" onclick="Products.Filter_SortBy()">
+            <span class="color_check"></span>
+            <span class="name_title">Rosa</span>
+          </label>
+          <div class="more_colors">
+              <input type="button" id="loadColors" value="Ver todas as cores" onclick="MoreColors()">
+              <span class="arrow_down"><img src="images/icons/arrow_down.png"></span>
+          </div>
+        </div>
+        <div class="sizes">
+          <div class="icon_mobile" onclick="Toggle_Sizes(this)">
+            <span id="title_filter">Tamanhos</span>
+            <span class="plus_icon"><img id="plus" src="images/icons/plus.png" alt="Ícone em forma de X"></span>
+          </div>
+          <div class="size_buttons" id="buttons_size">
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="P" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">P</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="M" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">M</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="G" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">G</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio"name="sizes_name" value="GG" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">GG</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="U" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">U</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="36" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">36</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="38" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">38</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="40" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">40</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="42" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">42</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="44" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">44</span>
+            </label>
+            <label class="size_class" id="size_label">
+              <input type="radio" name="sizes_name" value="46" onclick="Products.Filter_SortBy(); Checked(this)">
+              <span class="size_check">46</span>
+            </label>
+          </div>
+        </div>
+        <div class="prices">
+          <div class="icon_mobile" onclick="Toggle_Prices(this)">
+            <span id="title_filter">Faixa de preço</span>
+            <span class="plus_icon"><img id="plus" src="images/icons/plus.png" alt="Ícone em forma de X"></span>
+          </div>
+          <div class="price_buttons" id="buttons_price">
+            <label class="price_class">
+              <input type="radio" class="price_filter" name="prices" min="0" max="50" onchange="Products.Filter_SortBy()">
+              <span class="price_check"></span>
+              <span class="name_title">de R$0 até R$50</span>
+            </label>
+            <label class="price_class">
+              <input type="radio" class="price_filter" name="prices"  min="51" max="150" onchange="Products.Filter_SortBy()">
+              <span class="price_check"></span>
+              <span class="name_title">de R$51 até R$150</span>
+            </label>          
+            <label class="price_class">
+              <input type="radio" class="price_filter" name="prices" min="151" max="300" onchange="Products.Filter_SortBy()">
+              <span class="price_check"></span>
+              <span class="name_title">de R$151 até R$300</span>
+            </label>          
+            <label class="price_class">
+              <input type="radio" class="price_filter" name="prices"  min="301" max="500" onchange="Products.Filter_SortBy()">
+              <span class="price_check"></span>
+              <span class="name_title">de R$301 até R$500</span>
+            </label>
+            <label class="price_class">
+              <input type="radio" class="price_filter" name="prices" min="501" max="999" onchange="Products.Filter_SortBy()">
+              <span class="price_check"></span>
+              <span class="name_title">a partir de R$ 501</span>
+            </label>
+          </div>
+        </div>
+        <div class="buttons_mobile">
+          <button type="button" class="mobile_btn" id="confirmation" onclick="Confirmation()">Aplicar</button>
+          <button type="button" class="mobile_btn"  id="clear" onclick="Clear()">Limpar</button>
+        </div>
+      </div>
+      <div class="products_main">
+        <div class="catalog">
+
+        </div>
+        <div class="show_btn">
+          <input type="button" class="btn_more" value="Carregar mais" onclick="Products.LoadMore()">
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>Agência M3 - Agência de Performance Digital</p>
+  </footer>
+  <script src="scripts/products.js"></script>
+  <script src="scripts/filters.js"></script>
+  <script src="scripts/Order_menu.js"></script>
+  <script src="scripts/mobile.js"></script>
+</body>
+</html>
