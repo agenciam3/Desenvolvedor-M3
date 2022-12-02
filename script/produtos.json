@@ -1,0 +1,65 @@
+[
+    {
+      "imagem": "img_2.png",
+      "nome": "CAMISETA MESCLA",
+      "preco": "R$ 28,00",
+      "parcelamento": "até 3x de R$9,33",
+      "cor": "mescla"
+    },
+    {
+      "imagem": "img_3.png",
+      "nome": "SAIA EM COURO",
+      "preco": "R$ 398,00",
+      "parcelamento": "até 5x de R$30,00",
+      "cor": "preto"
+    },
+    {
+      "imagem": "img_4.png",
+      "nome": "CARDIGAN TIGRE",
+      "preco": "R$ 398,00",
+      "parcelamento": "até 5x de R$30,00",
+      "cor": "laranja"
+    },
+    {
+      "imagem": "img_5.png",
+      "nome": "CARDIGAN OF WHITE",
+      "preco": "R$ 99,90",
+      "parcelamento": "até 3x de R$33,33",
+      "cor": "branco"
+    },
+    {
+      "imagem": "img_6.png",
+      "nome": "BODY LEOPARDO",
+      "preco": "R$ 129,90",
+      "parcelamento": "até 3x de R$43,43",
+      "cor": "laranja"
+    },
+    {
+      "imagem": "img_7.png",
+      "nome": "CASACO PELOS",
+      "preco": "R$ 398,00",
+      "parcelamento": "até 3x de R$30,00",
+      "cor": "rosa"
+    },
+    {
+      "imagem": "img_8.png",
+      "nome": "CROPED STRIPES",
+      "preco": "R$ 120,00",
+      "parcelamento": "até 3x de R$40,00",
+      "cor": "amarelo"
+    },
+    {
+      "imagem": "img_9.png",
+      "nome": "CAMISA TRANSPARENTE",
+      "preco": "R$ 398,00",
+      "parcelamento": "até 5x de R$30,00",
+      "cor": "preto"
+    },
+    {
+      "imagem": "img_10.png",
+      "nome": "POCHETE CLUTCH",
+      "preco": "R$ 99,00",
+      "parcelamento": "até 3x de R$33,00",
+      "cor": "preto"
+    }
+  ]
