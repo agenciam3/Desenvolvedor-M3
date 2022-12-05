@@ -54,4 +54,4 @@ Para dar o start no server é necessário executar o comando: npm run dev
 
 Email: adrianemaciel.developer@gmail.com
 
-Linkedin: linkedin.com/in/adrianemacieldeveloper/
+Linkedin: https://linkedin.com/in/adrianemacieldeveloper/
