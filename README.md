@@ -35,3 +35,23 @@ Para renderizar os componentes React, utilizei `ReactDOM.createRoot` como descri
 ## Estrutura do projeto
 
 As páginas do projeto estão salvas em `src/js/pages` e os componentes que são reutilizáveis estão salvos em `src/js/components`.
+
+---
+
+## Instalação e execução do projeto
+
+O projeto possui um setup pronto no qual há a necessidade de possuir o nodejs instalado na versão 16.18.0 ou superior.
+
+Para instalar as dependencias só é preciso executar o comando: npm install
+
+Para dar o start no server é necessário executar o comando: npm run dev
+
+<b>Obs:</b> o Frontend irá executar na porta: 3000
+
+---
+
+## Contato
+
+Email: adrianemaciel.developer@gmail.com
+
+Linkedin: linkedin.com/in/adrianemacieldeveloper/
