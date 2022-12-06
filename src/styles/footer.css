@@ -1,0 +1,15 @@
+.footer_container{
+    width: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom:0;
+}
+
+.footer_container p{
+    padding: 5px 0;
+    color: white;
+    font-size: clamp(0.5em,1vw, 1em);
+}
