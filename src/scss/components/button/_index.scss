@@ -1,0 +1,13 @@
+@mixin defaultBtn($color){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+
+    background-color: $color;
+
+    width: 175px;
+    height: 35px;
+    padding: 8px 30px;
+}

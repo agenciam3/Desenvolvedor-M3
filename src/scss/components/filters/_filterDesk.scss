@@ -1,0 +1,227 @@
+.area-filter{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 180px;
+
+    margin-right: 40px;
+
+    @media(max-width: 775px){
+        display: none;
+    }
+    
+    h1.title-filter{
+        font-family: $main-font;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 44px;
+        color: $gray;
+        margin-bottom: 65px;
+    }
+
+    section {
+        &.filter-cors{
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            flex-direction: column;
+            margin-bottom: 24px;
+    
+            span.cors-name{
+                @include titleFilter;
+                color: $gray;
+                margin-bottom: 16px;
+            }
+    
+            div.input-cors{
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-around;
+                flex-direction: column;
+                margin-bottom: 11px;
+                
+                div.element-color{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    margin-bottom: 10px;
+    
+                    &.color-none{
+                        display: none;
+                    }
+    
+                    label.check-select{
+                        margin-right: 10px;
+                        input{
+                            display: none !important;
+    
+                            &:checked + span {
+                                background-color: $blue;
+                            }
+                        }
+    
+                        span {
+                            width: 12px;
+                            height: 12px;
+                            display: block;
+                            background-color: $white;
+                            border: 1px solid $gray-2;
+                        }
+                    }
+    
+                    span.name-color{
+                        @include blackOpenSans;
+                        color: $black;
+                    }
+                }
+            }
+    
+            button.swipe-button{
+                font-family: $main-font;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 12px;
+                text-decoration-line: underline;
+                color: $gray-3;
+                background-color: transparent;
+                border: none;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+
+        &.filter-size{
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            flex-direction: column;
+            margin-bottom: 24px;
+    
+            span.size-name{
+                @include titleFilter;
+                color: $gray;
+                margin-bottom: 16px;
+            }
+    
+            div.input-size{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                justify-content: flex-start;
+                width: 100%;
+                flex-wrap: wrap;
+    
+                div.element-size{
+                    width: 32px;
+                    height: 32px;
+    
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 4px;
+    
+                    label.check-select-size{
+                        width: 100%;
+                        height: 100%;
+                        border: 1px solid $black-2;
+                        box-sizing: border-box;
+    
+                        input{
+                            display: none !important;
+                            outline: 1px solid $gray-5;
+                            border: 1px solid $gray-5;
+
+                            &:checked + span {
+                                border: 1px solid $blue;
+                                color: $black;
+                            }
+                        }
+    
+                        span {
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+    
+                            font-family: $main-font;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 16px;
+                            line-height: 22px;
+                            letter-spacing: 0.05em;
+                            text-transform: uppercase;
+                            color: $black;
+    
+                            &:hover{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.filter-price-range{
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+            flex-direction: column;
+            margin-bottom: 24px;
+    
+            span.price-range-name{
+                @include titleFilter;
+                color: $gray;
+                margin-bottom: 16px;
+            }
+    
+            div.input-price-range{
+                width: 100%;
+                display: flex;
+                align-items: flex-start;
+                justify-content: space-around;
+                flex-direction: column;
+                margin-bottom: 11px;
+    
+                div.element-price-range{
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    margin-bottom: 10px;
+    
+                    label.check-select-price-range{
+                        margin-right: 10px;
+                        input{
+                            display: none !important;
+    
+                            &:checked + span {
+                                background-color: $blue;
+                            }
+                        }
+    
+                        span {
+                            width: 12px;
+                            height: 12px;
+                            display: block;
+                            background-color: $white;
+                            border: 1px solid $gray-2;
+                        }
+                    }
+    
+                    span.price-range-value{
+                        @include blackOpenSans;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+}
