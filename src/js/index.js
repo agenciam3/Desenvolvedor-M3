@@ -1,5 +1,7 @@
 import { quantityProductCar } from "./components/activeCardForBuy";
 import { CreateModal } from "./components/createModel";
+import { filterColors } from "./components/filterColors";
+import { moreFilterColor } from "./components/moreFilterColor";
 
 function ajaxReq() {
     const req = {
@@ -18,4 +20,6 @@ function ajaxReq() {
 $(document).ready(function () {
     ajaxReq();
     quantityProductCar();
+    moreFilterColor();
+    filterColors();
 });
