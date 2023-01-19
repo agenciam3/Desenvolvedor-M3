@@ -6,16 +6,16 @@ import { activeCardForBuy } from "./activeCardForBuy";
 import { moreButton } from "./moreButton";
 
 function checkedInputs(){
+    const inputSize = $(".input-size input");
     const inputCors = $(".input-cors input");
     const inputPrices = $(".input-price-range input");
-    const inputSize = $(".input-size input");
 
     $(inputPrices).prop("checked", false);
-    $(inputSize).prop("checked", false);
+    $(inputCors).prop("checked", false);
 
     let arr = [];
 
-    $(inputCors).each(function(key, element){
+    $(inputSize).each(function(key, element){
         if($(element)[0].checked){
             arr.push($(element)[0].defaultValue)
         }
@@ -24,12 +24,12 @@ function checkedInputs(){
     return arr;
 }
 
-export function filterColors() {
+export function filterSize() {
     var arrFiltedProducts,
         arrayElement;
 
     const areaResult = $(".elements");
-    const inputCors = $(".input-cors input");
+    const inputCors = $(".input-size input");
 
     $(inputCors).on("click", async function () {
         let statusChecked = $(this)[0].checked;
@@ -41,7 +41,7 @@ export function filterColors() {
             $(areaResult).empty();
             $(areaResult).append(load);
 
-            arrFiltedProducts = await filterProduct(allCheckedInputs, "color");
+            arrFiltedProducts = await filterProduct(allCheckedInputs, "size");
 
             saveProductsList(arrFiltedProducts);
 

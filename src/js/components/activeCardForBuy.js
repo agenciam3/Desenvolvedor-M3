@@ -21,13 +21,13 @@ export function activeCardForBuy(){
             const CardBuy = $("div.card-buy");
             const array = [];
 
-            if(localStorage.getItem('@M3Store_KeyProduct') !== null){
-                array.push(localStorage.getItem('@M3Store_KeyProduct'));
+            if(localStorage.getItem("@M3Store_KeyProduct") !== null){
+                array.push(localStorage.getItem("@M3Store_KeyProduct"));
             }
 
             array.push(key);
 
-            localStorage.setItem('@M3Store_KeyProduct', array);
+            localStorage.setItem("@M3Store_KeyProduct", array);
 
             quantityProductCar();
 

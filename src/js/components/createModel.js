@@ -1,6 +1,7 @@
 import { moreButton } from "./moreButton";
 import { activeCardForBuy } from "./activeCardForBuy";
 import { elementCreate } from "../libs/elementCreate";
+import { saveProductsList } from "../libs/productsList";
 
 export class CreateModal {
     elementArea = $(".elements");
@@ -18,6 +19,8 @@ export class CreateModal {
         arrayElement.forEach(element=>{
             $(this.elementArea).append(document.createRange().createContextualFragment(element));
         });
+
+        saveProductsList(arrResult);
 
         moreButton();
         activeCardForBuy();
