@@ -1,4 +1,5 @@
 import { quantityProductCar } from "./components/activeCardForBuy";
+import { clearFilter } from "./components/clearFilter";
 import { CreateModal } from "./components/createModel";
 import { filterColors } from "./components/filterColors";
 import { filterPrices } from "./components/filterPrices";
@@ -6,6 +7,7 @@ import { filterSize } from "./components/filterSize";
 import { mobileBtns } from "./components/mobileBtns";
 import { moreFilterColor } from "./components/moreFilterColor";
 import { orderProducts } from "./components/orderProducts";
+import { orderProductsMobile } from "./components/orderProductsMobile";
 
 function ajaxReq() {
     const req = {
@@ -30,4 +32,6 @@ $(document).ready(function () {
     filterPrices();
     orderProducts();
     mobileBtns();
+    orderProductsMobile();
+    clearFilter();
 });

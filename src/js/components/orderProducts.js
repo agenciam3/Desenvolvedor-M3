@@ -2,7 +2,7 @@ import { addClass } from "../libs/filterSearch";
 import { activeCardForBuy } from "./activeCardForBuy";
 import { moreButton } from "./moreButton";
 
-function orderMethod(key){
+export function orderMethod(key){
     const arrProducts = $(".elements li").clone();
     let aux;
 
