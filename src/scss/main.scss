@@ -1,1 +1,24 @@
 @import "reset";
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 65.5px;
+  align-items: center;
+  margin-right: 163px;
+  margin-left: 162px;
+}
+
+.logo {
+  height: 30px;
+  width: 119px;
+}
+
+.icon {
+  width: 20px;
+  height: 23px;
+}
+
+.hr {
+  margin: 0;
+}
