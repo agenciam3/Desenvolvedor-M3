@@ -1,0 +1,35 @@
+@import url("./reset.scss");
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 162px;
+  border-bottom: 1px solid #c7c7c7;
+
+  @media screen and (max-width:675px) {
+    padding: 16px 27px;
+  }
+
+  .bag{
+    position: relative;
+
+    .bolinha {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 13px;
+      height: 13px;
+      background-color: #00c0ee;
+      border-radius: 50%;
+      position: absolute;
+      top: 13px;
+      right: 0;
+
+      p{
+        font-size: 12px;
+      }
+    }
+  }
+
+
+}
