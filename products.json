@@ -1,0 +1,101 @@
+[
+  {
+    "id": 2,
+    "title": "CAMISETA MESCLA",
+    "price": 28.00,
+    "plus_units": 3,
+    "plus_price": 9.33,
+    "sizes": [ "G", "GG"],
+    "colors": ["Cinza"],
+    "image": "./layout/imagens/img_2.png",
+    "date": "2021-11-21 12:00:00"
+  },
+  {
+    "id": 3,
+    "title": "SAIA EM COURO",
+    "price": 398.00,
+    "plus_units": 5,
+    "plus_price": 30.00,
+    "sizes": [ "M", "GG", "46", "36"],
+    "colors": ["Laranja"],
+    "image": "./layout/imagens/img_3.png",
+    "date": "2021-03-21 12:00:00"
+  },
+  {
+    "id": 4,
+    "title": "CARDIGAN TIGRE",
+    "price": 398.00,
+    "plus_units": 5,
+    "plus_price": 30.00,
+    "sizes": [ "U", "P", "M"],
+    "colors": ["Laranja", "Preto"],
+    "image": "./layout/imagens/img_4.png",
+    "date": "2021-04-21 12:00:00"
+  },
+  {
+    "id": 5,
+    "title": "CARDIGAN OFF WHITE",
+    "price": 129.90,
+    "plus_units": 3,
+    "plus_price": 33.30,
+    "sizes": [ "40", "42", "38"],
+    "colors": ["Branco"],
+    "image": "./layout/imagens/img_5.png",
+    "date": "2021-05-21 12:00:00"
+  },
+  {
+    "id": 6,
+    "title": "BODY LEOPARDO",
+    "price": 129.90,
+    "plus_units": 3,
+    "plus_price": 43.43,
+    "sizes": [ "G", "GG"],
+    "colors": ["Cinza", "Preto"],
+    "image": "./layout/imagens/img_6.png",
+    "date": "2021-06-21 12:00:00"
+  },
+  {
+    "id": 7,
+    "title": "CASACO PELOS",
+    "price": 398.00,
+    "plus_units": 5,
+    "plus_price": 30.00,
+    "sizes": [ "P", "G", "GG", "44"],
+    "colors": ["Rosa"],
+    "image": "./layout/imagens/img_7.png",
+    "date": "2021-07-21 12:00:00"
+  },
+  {
+    "id": 8,
+    "title": "CROPPED STRIPES",
+    "price": 120.00,
+    "plus_units": 3,
+    "plus_price": 40.00,
+    "sizes": [ "M", "U", "40", "46"],
+    "colors": ["Azul", "Vermelho", "Verde", "Laranja"],
+    "image": "./layout/imagens/img_8.png",
+    "date": "2021-08-21 12:00:00"
+  },
+  {
+    "id": 9,
+    "title": "CAMISA TRANSPARENTE",
+    "price": 398.00,
+    "plus_units": 5,
+    "plus_price": 30.00,
+    "sizes": [ "U"],
+    "colors": ["Preto"],
+    "image": "./layout/imagens/img_9.png",
+    "date": "2021-09-21 12:00:00"
+  },
+  {
+    "id": 10,
+    "title": "POCHETE CLUTCH",
+    "price": 99.00,
+    "plus_units": 3,
+    "plus_price": 33.00,
+    "sizes": [ "M", "GG", "42"],
+    "colors": ["Branco"],
+    "image": "./layout/imagens/img_10.png",
+    "date": "2021-10-21 12:00:00"
+  }
+]

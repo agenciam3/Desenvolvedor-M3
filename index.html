@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="head">
+            <img id="logo" src="/layout/imagens/logo-m3.png" alt="logom3">
+            <div class="cart">
+                <div class="count" id="cartItems">0</div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="title-bar">
+            <div class="main-title">
+                Blusas
+            </div>
+            <div class="filter-menu">
+                <select id="filter-select" onchange="filterSelect(this)">
+                    <option>Ordenar por</option>
+                    <option value="1">Mais recentes</option>
+                    <option value="2">Menor preço</option>
+                    <option value="3">Maior preço</option>
+                </select>
+            </div>
+        </div>
+        <div class="options" id="options">
+            <div class="option" onclick="showFilter()">Filtrar</div>
+            <div class="option" onclick="showOrdenar()">Ordenar</div>
+        </div>
+        <div class="main-section">
+            <div class="left-options" id="left-options">
+                <div class="menu" id="menu">
+                    <div class="menu-head">
+                        <div class="menu-title">
+                            ORDENAR
+                        </div>
+                        <div class="menu-close" onclick="hideOrdenar()">
+                            X
+                        </div>
+                    </div>
+                    <div class="menu-content">
+                        <ul class="menu-items">
+                            <li class="menu-item" id="low-date"  onclick="orderProductsBy('date', true)">Mais recentes</li>
+                            <li class="menu-item" id="low-price"  onclick="orderProductsBy('price', true)">Menor preço</li>
+                            <li class="menu-item" id="high-price" onclick="orderProductsBy('price', false)">Maior preço</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="categories" id="category">
+                    <div class="categories-head">
+                        <div class="categories-title">
+                            FILTRAR
+                        </div>
+                        <div class="categories-close" onclick="hideCategories()">
+                            X
+                        </div>
+                    </div>
+                    <div class="categories-content">
+                        <ul class="categories-items">
+                            <li class="categories-item">
+                                <div class="cat-title">
+                                    <p>CORES</p>
+                                    <p class="submenu-button" onclick="showSubmenu(this, 'color-list')">+</p>
+                                </div>
+                                <div class="color-list" id="color-list">
+                                    <!-- Lista de Colores -->
+                                </div>
+                            </li>
+                            <li class="categories-item">
+                                <div class="cat-title">
+                                    <p>TAMANHOS</p>
+                                    <p class="submenu-button" onclick="showSubmenu(this, 'size-list')">+</p>
+                                </div>
+                                <div class="size-list" id="size-list">
+                                    <div>
+                                        <!-- Lista de Tallas -->
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="categories-item">
+                                <div class="cat-title">
+                                    <p>FAIXA DE PREÇO</p>
+                                    <p class="submenu-button" onclick="showSubmenu(this, 'price-list')">+</p>
+                                </div>
+                                <div class="price-list" id="price-list">
+                                    <label class="label-container"> de R$ 0 até R$ 50
+                                        <input type="checkbox" name="price" onclick="activatePrice(this)" data-min="0" data-max="50">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-container"> de R$ 51 até R$ 150
+                                        <input type="checkbox" name="price" onclick="activatePrice(this)" data-min="51" data-max="150">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-container"> de R$ 151 até R$ 300
+                                        <input type="checkbox" name="price" onclick="activatePrice(this)" data-min="151" data-max="300">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-container"> de R$ 301 até R$ 500
+                                        <input type="checkbox" name="price" onclick="activatePrice(this)" data-min="301" data-max="500">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="label-container"> a partir de R$ 501
+                                        <input type="checkbox" name="price" onclick="activatePrice(this)" data-min="501">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="apply-list" id="apply-list">
+                            <button class="apply-btn apply-active-btn" id="apply-btn" onclick="getProducts()" type="button">APLICAR</button>
+                            <button class="apply-btn" onclick="cleanFilters()" id="clear-btn" type="reset">LIMPAR</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-list" id="product-list">
+                <!-- Lista de Productos-->
+            </div>
+        </div>
+    </div>
+    <div class="btn">
+        <button id="btn-load" type="button" onclick="printProducts()">
+            CARREGAR MAIS
+        </button>
+    </div>
+    <footer id="footer">Agência M3 - Agência de Perfomance Digital</footer>
+    <script src="./js/index.js"></script>
+</body>
+</html>

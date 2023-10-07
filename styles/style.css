@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    margin: 0px 20px;
+    padding: 0px;
+    font-family: "Open Sans";
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+    height: 60px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#logo{
+    height: 50px;
+    position: relative;
+    margin: 5px;
+}
+.cart {
+    background-image: url("../layout/imagens/bag.png");
+    background-repeat: no-repeat;
+    padding: 10px 0px 0px 10px;
+    margin: 10px;
+    height: 30px;
+}
+.count {
+    color: white;
+    background-color: #00c0ee;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    margin-right: 20px;
+    padding: 20px;
+}
+.main-title {
+    height: 50px;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+}
+.filter-menu {
+    display: none;
+}
+.options {
+    margin: 20px;
+    display: flex;
+    align-items: stretch;
+}
+.option {
+    border: 1px solid #c7c7c7;
+    height: 80px;
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #666666;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-section {
+    display: flex;
+    justify-content: flex-start;
+}
+.left-options {
+    display: none;
+    width: 30%;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product {
+    max-width: 42%;
+    height: 570px;
+    margin: 20px;
+    padding-bottom: 60px;
+    flex: 1 1 auto;
+}
+.product-image img{
+    width: 260px;
+    height: 420px;
+}
+.product-info {
+    margin-top: 30px;
+}
+.product-info h5, h4, h3{
+    display: flex;
+    justify-content: center;
+}
+.product-info h5, h4{
+    line-height: 1px;
+}
+.product-button{
+    display: flex;
+    justify-content: center;
+    width: 260px;
+    height: 60px;
+    color: white;
+    background-color: black;
+}
+.btn{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-content: center;
+}
+#btn-load{
+    border: none;
+    width: 250px;
+    height: 65px;
+    color: white;
+    background-color: #00ccff;
+    font-size: 20px;
+    font-weight:bolder;
+    margin-bottom: 30px;
+}
+#btn-load:disabled,
+#btn-load[disabled] {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+}
+#footer{
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    margin-top: 60px;
+    padding-top: 10px;
+    text-align: center;
+}
+.menu {
+    position: fixed;
+    display: none;
+    top: 0px;
+    left: 0px;
+    height: 1000px;
+    width: 100%;
+    background-color:white;
+}
+.menu-head {
+    height: 110px;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.menu-title, .menu-close {
+    font-size: 30px;
+    color: #666666;
+}
+.menu-items{
+    list-style-type: none;
+}
+.menu-item {
+    height: 90px;
+    font-size: 30px;
+}
+.categories {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 1000px;
+    width: 100%;
+    background-color:white;
+}
+.categories-head {
+    padding: 30px 30px 15px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+.categories-title, .categories-close {
+    font-size: 30px;
+    color: #666666;
+}
+.categories-items{
+    list-style-type: none;
+    padding-right: 30px;
+}
+.categories-item{
+    align-items: center;
+    min-height: 60px;
+    font-size: 30px;
+}
+.cat-title {
+    display: flex;
+    justify-content: space-between;
+}
+.cat-title p {
+    margin: 5px 0px;
+}
+.sub-categories-items{
+    list-style-type: none;
+    font-size: 20px;
+}
+.color-list{
+    padding-left: 30px;
+    display: none;
+}
+
+/* Checkbox styles */
+
+/* Customize the label (the container) */
+.label-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .label-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    background-color: white;
+    border: 1px solid black;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .label-container:hover input ~ .checkmark {
+    background-color: #eee;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .label-container input:checked ~ .checkmark {
+    background-color: #00bff3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: " ";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .label-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .label-container .checkmark:after {
+    left: 0px;
+    top: 0px;
+    width: 17px;
+    height: 17px;
+    border: 4px solid white;
+  }
+#mybutton{
+        box-shadow:inset 0px 1px 0px 0px #ffffff;
+        background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+        background-color:#ffffff;
+        border-radius:6px;
+        border:1px solid #dcdcdc;
+        display:inline-block;
+        cursor:pointer;
+        color:#666666;
+        font-family:A;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ffffff;
+    }
+    #myButton:hover {
+        background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+        background-color:#f6f6f6;
+    }
+    #myButton:active {
+        position:relative;
+        top:1px;
+    }
+
+/**************/
+
+/** Lista de Tallas */
+.size-list {
+    display: none;
+    justify-content: space-evenly;
+}
+.size-btn {
+	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	background-color:#ffffff;
+	border: 1px solid #eeeded;
+	display: inline-block;
+	cursor: pointer;
+	color:#a3a2a2;
+	font-family: Arial;
+	font-size: 15px;
+	padding: 15px;
+    margin: 10px;
+	text-decoration: none;
+    width: 20px;
+    height: 15px;
+}
+.size-btn:hover {
+	border: 1px solid #00bff3;
+}
+.size-btn:active {
+	position:relative;
+	top:1px;
+}
+.size-pressed-btn {
+	border: 1px solid #00bff3;
+	color: black;
+}
+
+/** Checkbox de Precio */
+.price-list {
+    display: none;
+}
+.price-btn {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 18px;
+	letter-spacing: 2px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.price-btn input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+}
+.checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    background-color: white;
+    border: 1px solid black;
+}
+.price-btn:hover input ~ .checkmark {
+    background-color: #eee;
+}
+.price-btn input:checked ~ .checkmark {
+    background-color: #00bff3;
+}
+.checkmark:after {
+    content: " ";
+    position: absolute;
+    display: none;
+}
+  /* Show the checkmark when checked */
+.price-btn input:checked ~ .checkmark:after {
+    display: block;
+}
+.price-btn .checkmark:after {
+    left: 0px;
+    top: 0px;
+    width: 17px;
+    height: 17px;
+    border: 4px solid white;
+}
+
+/** Botones de Aplicar y Borrar */
+.apply-list {
+    display: none;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-content: center;
+}
+.apply-btn {
+	background-color:#ffffff;
+	border:1px solid #a3a2a2;
+	cursor:pointer;
+	color:#a3a2a2;
+	font-family:Arial;
+	font-size:20px;
+	padding: 15px;
+    margin: 10px;
+	text-decoration:none;
+    width: 180px;
+    height: 60px;
+}
+.apply-active-btn, .apply-btn:hover {
+	background-color: #00bff3;
+	color: white;
+	border: #00bff3;
+}
+.apply-btn:active {
+	position:relative;
+	top:1px;
+}
+.apply-btn:focus {
+	background-color: #00bff3;
+	color: white;
+	border: #00bff3;
+}
+
+
+/*desktop view*/
+
+@media screen and (min-width: 800px) {
+    .main-title {
+        text-align: left;
+    }
+    .filter-menu {
+        display: flex;
+        justify-content: end;
+        text-align: center;
+    }
+    #filter-select{
+        background-color: white;
+        border: 1 px solid black;
+        padding: 5px 15px;
+        font-size: 15px;
+        color: black;
+    
+    }
+    .options {
+        display: none;
+    }
+    .left-options {
+        display: block;
+        height: 1000px;
+    }
+    .color-list {
+        display: block;
+    }
+    .size-list {
+        display: block;
+    }
+    .menu {
+        position: relative;
+        display: block;
+        height: 0px;
+        width: 100%;
+        background-color:white;
+    }
+    .menu * {
+        display: none;
+    }
+    .categories {
+        display: block;
+        position: relative;
+        height: 0px;
+        width: 100%;
+        background-color:white;
+        font-size: 15px;
+    }
+    .menu * {
+        font-size: 12px;
+    }
+    .product-list {
+        width: 70%;
+    }
+    .price-list {
+        display: block;
+    }
+    .categories-head {
+        display: none;
+    }
+    .submenu-button {
+        display: none;
+    }
+    .cat-title {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .label-container {
+        font-size: 15px;
+    }
+    .size-list{
+        margin-bottom: 50px;
+    }
+    .size-btn {
+        font-size: 12px;
+    }
+    .color-list{
+        padding-left: 0px;
+        margin-bottom: 50px;
+    }
+    .title-bar{
+        display: flex;
+        justify-content: space-between;
+    }
+    #btn-load{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 370px;
+    }
+    .apply-btn {
+        height: 40px;
+        width: 140px;
+        font-size: 15px;
+        padding: 0px;
+    }
+
+}
