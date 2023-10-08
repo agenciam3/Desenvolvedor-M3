@@ -103,7 +103,27 @@ function main() {
   fetchProducts();
   const orderSelect = document.getElementById("order") as HTMLSelectElement;
 
-  /////
+  if (orderSelect) {
+    orderSelect.addEventListener("change", () => {
+      const selectedOption = orderSelect.value;
+
+      if (selectedOption === "recentes") {
+        filteredProducts.sort((a, b) => {
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
+      } else if (selectedOption === "menorPreço") {
+        filteredProducts.sort((a, b) => {
+          return a.price - b.price;
+        });
+      } else if (selectedOption === "maiorPreço") {
+        filteredProducts.sort((a, b) => {
+          return b.price - a.price;
+        });
+      }
+
+      renderProducts(filteredProducts.slice(0, initialProducts));
+    });
+  }
 }
 
 document.addEventListener("DOMContentLoaded", main);

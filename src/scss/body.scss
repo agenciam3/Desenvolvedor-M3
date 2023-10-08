@@ -70,16 +70,6 @@
 
       input[type="checkbox"] {
         display: none;
-        appearance: none;
-        -webkit-appearance: none;
-        background-color: transparent;
-        height: 23px;
-        cursor: pointer;
-        margin: 0;
-
-        &:checked {
-          border: 1px solid #00c0ee;
-        }
       }
     }
     .filtersPriceContainer {
