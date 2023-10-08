@@ -1,0 +1,48 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 65.5px;
+  align-items: center;
+  margin-right: 163px;
+  margin-left: 162px;
+
+  .logo {
+    height: 30px;
+    width: 119px;
+  }
+
+  .icon {
+    width: 20px;
+    height: 23px;
+  }
+
+  .hr {
+    margin: 0;
+  }
+}
+
+.headerSubContainer {
+  margin: 40px 162px 65px;
+
+  .tittleContainer {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 32px;
+      color: 333333;
+      font-family: "Open-sans", sans-serif;
+    }
+
+    .btnDrop {
+      font-size: 16px;
+      color: 333333;
+      font-family: "Open-sans", sans-serif;
+      width: 142px;
+      height: 42px;
+      color: #000;
+      border-radius: 0;
+      cursor: pointer;
+    }
+  }
+}
