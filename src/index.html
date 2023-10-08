@@ -1,20 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Desenvolvedor M3</title>
     <link rel="stylesheet" href="main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-
   <body>
     <div class="headerContainer">
       <img class="logo" src="./img/logo-m3.png" alt="M3 Logo" />
       <img class="icon" src="./img/lockicon.svg" alt="" />
     </div>
     <hr class="hr" />
+    <div class="headerSubContainer">
+      <div class="tittleContainer">
+        <h1 class="mainTittle">Blusas</h1>
+        <select class="btnDrop" name="order" id="order">
+          <option selected hidden>Ordenar por:</option>
+          <option value="recentes">Mais recentes</option>
+          <option value="menorPreço">Menor preço</option>
+          <option value="maiorPreço">Maior preço</option>
+        </select>
+      </div>
+    </div>
+    <div class="bodyContainer">
+      <div class="filterContainer">
+        <div class="filterColorsContainer">
+          <h2>CORES</h2>
+        </div>
+        <h2 class="tittleTamanhos">TAMANHOS</h2>
+        <div class="filtersSizeContainer"></div>
+        <div class="filtersPriceContainer">
+          <h2>FAIXA DE PREÇO</h2>
+        </div>
+      </div>
+      <div id="productsContainer"></div>
+    </div>
+    <div class="loadMoreBtnContainer">
+      <button id="loadMoreBtn">CARREGAR MAIS</button>
+    </div>
+    <div class="footerContainer">M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</div>
   </body>
-
   <script src="bundle.js"></script>
 </html>
