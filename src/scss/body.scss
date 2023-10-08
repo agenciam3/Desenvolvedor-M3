@@ -1,0 +1,176 @@
+.bodyContainer {
+  width: 1177px;
+  margin: auto;
+  display: flex;
+
+  .filterContainer {
+    width: 157px;
+    height: 544px;
+
+    .filterColorsContainer {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-family: "Open-sans", sans-serif;
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #333333;
+      }
+
+      .label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: "Open-sans", sans-serif;
+        font-size: 14px;
+        color: #333333;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          appearance: none;
+          -webkit-appearance: none;
+          background-color: white;
+          height: 16px;
+          width: 16px;
+          border: 1px solid #0000007c;
+          cursor: pointer;
+
+          &:checked {
+            background-color: #00c0ee;
+            box-shadow: 0 0 0 2px white inset;
+          }
+        }
+      }
+    }
+    .tittleTamanhos {
+      font-family: "Open-sans", sans-serif;
+      font-size: 16px;
+      margin-bottom: 15px;
+      color: #333333;
+      margin: 14px 0 24px;
+    }
+    .filtersSizeContainer {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      gap: 7px;
+      color: #0000007c;
+      font-family: "Open-sans", sans-serif;
+
+      .label {
+        height: 32px;
+        width: 32px;
+        border: 1px solid #0000007c;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+        appearance: none;
+        -webkit-appearance: none;
+        background-color: transparent;
+        height: 23px;
+        cursor: pointer;
+        margin: 0;
+
+        &:checked {
+          border: 1px solid #00c0ee;
+        }
+      }
+    }
+    .filtersPriceContainer {
+      display: flex;
+      flex-direction: column;
+      h2 {
+        font-family: "Open-sans", sans-serif;
+        font-size: 16px;
+        margin-bottom: 15px;
+        color: #333333;
+        margin: 24px 0 14px;
+      }
+      .label {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-family: "Open-sans", sans-serif;
+        font-size: 14px;
+        color: #333333;
+        cursor: pointer;
+
+        input[type="checkbox"] {
+          appearance: none;
+          -webkit-appearance: none;
+          background-color: white;
+          height: 16px;
+          width: 16px;
+          border: 1px solid #d9d9d9;
+          cursor: pointer;
+
+          &:checked {
+            background-color: #00c0ee;
+            box-shadow: 0 0 0 2px white inset;
+          }
+        }
+      }
+    }
+  }
+
+  #productsContainer {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 175px;
+
+    .productCard {
+      margin-right: 64px;
+      margin-bottom: 42px;
+    }
+
+    .tittleCard {
+      font-size: 14px;
+      font-family: "Open-sans", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .productPrice {
+      font-size: 16px;
+      font-family: "Open-sans", sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      font-weight: bold;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .productInstallment {
+      font-family: "Open-sans", sans-serif;
+      font-size: 16px;
+      color: 666666;
+      text-align: center;
+      margin-top: 3px;
+    }
+
+    .btnBuy {
+      background-color: #000000;
+      color: white;
+      padding: 7px 62px;
+      font-family: "Open-sans", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      margin-top: 14px;
+      border: 0;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        background-color: #5a5a5a;
+      }
+    }
+  }
+}
