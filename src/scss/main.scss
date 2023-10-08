@@ -1,24 +1,14 @@
 @import "reset";
+@import "header";
+@import "body";
+@import "footer";
 
-.headerContainer {
-  display: flex;
-  justify-content: space-between;
-  height: 65.5px;
-  align-items: center;
-  margin-right: 163px;
-  margin-left: 162px;
+* {
+  font-family: "Open-sans", sans-serif;
+  /* box-sizing: border-box; */
 }
 
-.logo {
-  height: 30px;
-  width: 119px;
-}
-
-.icon {
-  width: 20px;
-  height: 23px;
-}
-
-.hr {
-  margin: 0;
-}
+//////////
+///
+///
+///
