@@ -11,13 +11,16 @@
     background-color: #00c0ee;
     border: none;
     margin-bottom: 35px;
-    margin-top: 70px;
+    margin-top: 50px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &:hover,
     &:focus {
       background-color: #0099cc;
+    }
+    @media (max-width: 768px) {
+      margin-top: 40px;
     }
   }
 }
@@ -31,4 +34,8 @@
   justify-content: center;
   font-family: "Open-sans", sans-serif;
   font-size: 14px;
+
+  @media (max-width: 280px) {
+    font-size: 10px;
+  }
 }
