@@ -19,30 +19,103 @@
   .hr {
     margin: 0;
   }
+
+  @media (max-width: 768px) {
+    margin-right: 27px;
+    margin-left: 26px;
+  }
 }
 
 .headerSubContainer {
   margin: 40px 162px 65px;
 
-  .tittleContainer {
+  @media (max-width: 768px) {
+    margin: 24px 0 34px;
+  }
+}
+
+.tittleContainer {
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 32px;
+    color: 333333;
+    font-family: "Open-sans", sans-serif;
+
+    @media (max-width: 768px) {
+      margin-bottom: 14px;
+    }
+  }
+
+  .btnDrop {
+    font-size: 16px;
+    color: 333333;
+    font-family: "Open-sans", sans-serif;
+    width: 142px;
+    height: 42px;
+    color: #000;
+    border-radius: 0;
+    cursor: pointer;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  .btnMobile {
+    margin: 0;
     display: flex;
-    justify-content: space-between;
-
-    h1 {
-      font-size: 32px;
-      color: 333333;
-      font-family: "Open-sans", sans-serif;
+    width: 344px;
+    height: 50px;
+    @media (max-width: 280px) {
+      width: 250px;
+      height: 45px;
     }
 
-    .btnDrop {
-      font-size: 16px;
-      color: 333333;
-      font-family: "Open-sans", sans-serif;
-      width: 142px;
-      height: 42px;
-      color: #000;
+    .filtrar {
+      color: #666666;
+      background: white;
       border-radius: 0;
+      border: none;
+      border: 1px solid #666666;
+      height: 100%;
+      width: 50%;
+      font-size: 24px;
       cursor: pointer;
+      &:hover,
+      &:focus {
+        background-color: #00c0ee;
+        color: white;
+      }
     }
+    .ordenar {
+      color: #666666;
+      background: white;
+      border: none;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+      border: 1px solid #666666;
+      font-size: 24px;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        background-color: #00c0ee;
+        color: white;
+      }
+    }
+    @media (min-width: 768px) {
+      display: none;
+    }
+    @media (max-width: 280px) {
+      justify-content: center;
+      display: flex;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 }
