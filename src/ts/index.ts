@@ -2,7 +2,8 @@ import { Product } from "./Product";
 
 const serverUrl = "http://localhost:5000";
 const apiUrl = "http://localhost:5000/products";
-const initialProducts = 9;
+
+let initialProducts = 9;
 let currentPage = 1;
 let productList: Product[] = [];
 let filteredProducts = productList;
@@ -17,10 +18,6 @@ const filtersMetadata: {
     container: document.querySelector(".filterColorsContainer"),
   },
   { type: "size", container: document.querySelector(".filtersSizeContainer") },
-  {
-    type: "price",
-    container: document.querySelector(".filtersPriceContainer"),
-  },
 ];
 
 const filtersContainer = document.querySelector(".filterContainer");
@@ -32,13 +29,12 @@ function filterCheck(e: any) {
       value: e.target.getAttribute("name"),
       type: e.target.getAttribute("data-type"),
     });
-    console.log(selectedFilters);
   } else {
     selectedFilters = selectedFilters.filter((filter) => {
       return filter.value !== e.target.getAttribute("name");
     });
   }
-  console.log(e.target.getAttribute("name"));
+
   filteredProducts = productList.filter((product) => {
     if (selectedFilters.length === 0) {
       return true;
@@ -56,8 +52,6 @@ function filterCheck(e: any) {
   });
 
   renderProducts(filteredProducts.slice(0, initialProducts));
-  console.log(filteredProducts);
-  console.log(selectedFilters);
 }
 
 function generateFilterElements(productList: Product[]) {
@@ -87,7 +81,6 @@ function generateFilterElements(productList: Product[]) {
       checkbox.setAttribute("name", filter);
       checkbox.addEventListener("change", filterCheck);
       checkbox.dataset.type = filterMetadata.type;
-      console.log(label);
 
       filterMetadata.container.appendChild(label);
     });
@@ -140,6 +133,11 @@ function fetchProducts() {
       filteredProducts = products;
       productList = products;
 
+      if (window.innerWidth <= 1024) {
+        initialProducts = 4;
+      } else {
+        initialProducts = 9;
+      }
       generateFilterElements(productList);
       renderProducts(filteredProducts.slice(0, initialProducts));
       if (productList.length <= initialProducts) {
@@ -163,7 +161,7 @@ function renderProducts(products: Product[]) {
         <p class="productInstallment">até ${
           product.parcelamento[0]
         }x de R$ ${product.parcelamento[1].toFixed(2)}</p>
-        <button class="btnBuy">COMPRAR</button>
+        <button class="btnBuy" id="btnBuyId">COMPRAR</button>
       </div>
     `;
   });
@@ -187,3 +185,116 @@ function hideLoadMoreButton() {
     loadMoreButton.style.display = "none";
   }
 }
+
+/////////////
+
+const btnMobileContainer = document.querySelector(".btnMobile");
+const modal = document.querySelector(".modal") as HTMLDivElement;
+const btnOrder = document.querySelector(".btnOrder");
+const closeBtn = document.querySelector(".close-btn") as HTMLElement;
+createModal(btnMobileContainer, "Ordenar", "ORDENAR", closeBtn);
+
+if (window.innerWidth < 768) {
+  createFilterModal();
+}
+console.log(window.innerWidth);
+function createFilterModal() {
+  const filtersContainer = document.createElement("div");
+  const filterColorsContainer = document.querySelector(
+    ".filterColorsContainer"
+  );
+  const filterSizeContainer = document.querySelector(".filtersSizeContainer");
+  const filterPriceContainer = document.querySelector(".filtersPriceContainer");
+  filtersContainer.appendChild(filterColorsContainer);
+  filtersContainer.appendChild(filterSizeContainer);
+  filtersContainer.appendChild(filterPriceContainer);
+
+  console.log(filterColorsContainer, "testetet");
+  createModal(btnMobileContainer, "Filtrar", "FILTRAR", filtersContainer);
+}
+
+function createModal(
+  parent: Element,
+  label: string,
+  title: string,
+  content: Element | undefined
+) {
+  const openBtn = document.createElement("button");
+  openBtn.classList.add(label.toLowerCase());
+  const modal = document.createElement("div");
+  openBtn.innerText = label;
+  modal.classList.add("modal");
+  const header = document.createElement("header");
+  const span = document.createElement("span");
+  span.innerText = title;
+  const closeBtn = document.createElement("button");
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.left = "100%";
+  });
+
+  openBtn.addEventListener("click", () => {
+    if (window.innerWidth <= 768) {
+      modal.style.left = "0";
+    }
+  });
+  parent.appendChild(openBtn);
+  header.appendChild(span);
+  header.appendChild(closeBtn);
+  modal.appendChild(header);
+  document.body.appendChild(modal);
+
+  modal.appendChild(content);
+}
+
+/////////////
+
+const priceRanges: { label: string; minPrice: number; maxPrice: number }[] = [
+  { label: "de R$0 até R$350", minPrice: 0, maxPrice: 350 },
+  { label: "de R$51 até R$150", minPrice: 51, maxPrice: 150 },
+  { label: "de R$151 até R$300", minPrice: 151, maxPrice: 300 },
+  { label: "de R$301 até R$500", minPrice: 301, maxPrice: 500 },
+  { label: "A partir de R$500", minPrice: 500, maxPrice: Infinity },
+];
+
+function filterByPrice(minPrice: number, maxPrice: number) {
+  filteredProducts = productList.filter((product) => {
+    const productPrice = product.price;
+    return productPrice >= minPrice && productPrice <= maxPrice;
+  });
+
+  renderProducts(filteredProducts.slice(0, initialProducts));
+}
+
+function createPriceFilters() {
+  const priceFilterContainer = document.querySelector(".filtersPriceContainer");
+  if (!priceFilterContainer) return;
+
+  priceRanges.forEach((range) => {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    input.type = "checkbox";
+    input.name = "priceRange";
+    input.value = range.label;
+
+    input.setAttribute("data-filtered", "false");
+
+    input.addEventListener("change", () => {
+      const isFiltered = input.getAttribute("data-filtered") === "true";
+
+      if (isFiltered) {
+        input.setAttribute("data-filtered", "false");
+        renderProducts(productList.slice(0, initialProducts));
+      } else {
+        input.setAttribute("data-filtered", "true");
+        filterByPrice(range.minPrice, range.maxPrice);
+      }
+    });
+
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(range.label));
+    priceFilterContainer.appendChild(label);
+  });
+}
+
+createPriceFilters();
