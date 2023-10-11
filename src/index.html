@@ -22,24 +22,39 @@
     <div class="headerSubContainer">
       <div class="tittleContainer">
         <h1 class="mainTittle">Blusas</h1>
-        <select class="btnDrop" name="order" id="order">
-          <option selected hidden>Ordenar por:</option>
-          <option value="recentes">Mais recentes</option>
-          <option value="menorPreço">Menor preço</option>
-          <option value="maiorPreço">Maior preço</option>
-        </select>
+        <div>
+          <select class="btnDrop" name="order" id="order">
+            <option selected hidden>Ordenar por:</option>
+            <option value="recentes">Mais recentes</option>
+            <option value="menorPreço">Menor preço</option>
+            <option value="maiorPreço">Maior preço</option>
+          </select>
+          <div class="modal" id="modal">
+            <div class="modal-content">
+              <span class="close-btn" id="close-btn">&times;</span>
+              <select class="btnDrop" name="order" id="order">
+                <option selected hidden>Ordenar por:</option>
+                <option value="recentes">Mais recentes</option>
+                <option value="menorPreço">Menor preço</option>
+                <option value="maiorPreço">Maior preço</option>
+              </select>
+            </div>
+          </div>
+          <div class="btnMobile">
+            <!-- <button class="btnFilter">Filtrar</button>
+            <button class="btnOrder">Ordenar</button> -->
+          </div>
+        </div>
       </div>
     </div>
     <div class="bodyContainer">
       <div class="filterContainer">
-        <div class="filterColorsContainer">
-          <h2>CORES</h2>
-        </div>
+        <h2 class="titleCores">CORES</h2>
+        <div class="filterColorsContainer"></div>
         <h2 class="tittleTamanhos">TAMANHOS</h2>
         <div class="filtersSizeContainer"></div>
-        <div class="filtersPriceContainer">
-          <h2>FAIXA DE PREÇO</h2>
-        </div>
+        <h2 class="titlePrice">FAIXA DE PREÇO</h2>
+        <div class="filtersPriceContainer"></div>
       </div>
       <div id="productsContainer"></div>
     </div>
