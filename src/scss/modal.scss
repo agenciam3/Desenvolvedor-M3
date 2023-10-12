@@ -7,6 +7,12 @@
   background-color: white;
   z-index: 999;
   transition: left 200ms;
+  display: flex;
+  flex-direction: column;
+
+  .modalContainer {
+    overflow: auto;
+  }
 
   .headerModal {
     height: 70px;
@@ -53,7 +59,6 @@
       background: white;
       border-radius: 0;
       border: 1px solid #666666;
-      padding: 8px;
       cursor: pointer;
     }
   }
@@ -62,14 +67,6 @@
 .customDropdown {
   position: relative;
   display: inline-block;
-  width: 142px;
-  height: 42px;
-
-  @media (max-width: 767px) {
-    margin-left: 16px;
-    margin-top: 2px;
-    position: inherit;
-  }
 }
 
 .btnDrop {
@@ -90,16 +87,16 @@
   gap: 10px;
   align-items: center;
   justify-content: center;
-  position: absolute;
   display: none;
   background-color: white;
   border: 1px solid #ccc;
   gap: 30px;
   list-style: none;
   padding: 0;
+  position: absolute;
   width: 140px;
-
   @media (max-width: 767px) {
+    width: 100%;
     display: block;
     border: none;
   }
@@ -111,15 +108,13 @@
   align-items: center;
   font-family: "Open-sans", sans-serif;
   font-size: 16px;
-  padding-left: 8px;
   border: none;
   cursor: pointer;
+  margin-left: 10px;
   @media (max-width: 767px) {
-    margin-top: 30px;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 100%;
     font-size: 22px;
+    margin: 10px;
+    padding: 10px;
   }
 }
 
@@ -132,4 +127,20 @@
   border: none;
   background-color: white;
   cursor: pointer;
+}
+
+.titleColors,
+.titleSize,
+.titlePrice {
+  margin-top: 30px;
+  margin-left: 16px;
+  color: #666666;
+  font-size: 24px;
+  @media (max-width: 280px) {
+    font-size: 16px;
+  }
+}
+
+.filtersSizeContainer {
+  font-size: 16px;
 }
