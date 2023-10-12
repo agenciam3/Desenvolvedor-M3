@@ -110,7 +110,7 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-left: 10px;
+  padding-left: 10px;
   @media (max-width: 767px) {
     font-size: 22px;
     margin: 10px;
@@ -132,15 +132,18 @@
 .titleColors,
 .titleSize,
 .titlePrice {
-  margin-top: 30px;
-  margin-left: 16px;
+  margin: 30px 16px;
   color: #666666;
   font-size: 24px;
+
+  img {
+    margin-left: 50px;
+    text-align: end;
+  }
   @media (max-width: 280px) {
     font-size: 16px;
   }
 }
-
 .filtersSizeContainer {
   font-size: 16px;
 }

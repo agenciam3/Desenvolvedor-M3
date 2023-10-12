@@ -9,7 +9,6 @@
   @media (min-width: 769px) and (max-width: 1499px) {
     width: 77%;
     justify-content: center;
-    /* margin: auto; */
   }
   @media (max-width: 768px) {
     width: 100%;
@@ -103,7 +102,6 @@
   }
 
   input[type="checkbox"] {
-    /* display: none; */
     position: absolute;
     width: 32px;
     height: 32px;
@@ -264,12 +262,4 @@
       background-color: #5a5a5a;
     }
   }
-  /* @media (max-width: 1024px) {
-    display: grid;
-    grid-template-columns: 161px 161px;
-  }
-  @media (max-width: 280px) {
-    display: grid;
-    grid-template-columns: auto;
-  } */
 }
