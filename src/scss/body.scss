@@ -30,6 +30,14 @@
 .filterColorsContainer {
   display: flex;
   flex-direction: column;
+  @media (max-width: 768px) {
+    margin-top: 21px;
+    h2 {
+      margin: 30px 16px 20px;
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
 
   .label {
     display: flex;
@@ -40,6 +48,10 @@
     color: #333333;
     cursor: pointer;
 
+    @media (max-width: 768px) {
+      margin-bottom: 17px;
+    }
+
     input[type="checkbox"] {
       appearance: none;
       -webkit-appearance: none;
@@ -48,6 +60,9 @@
       width: 16px;
       border: 1px solid #0000007c;
       cursor: pointer;
+      @media (max-width: 768px) {
+        margin-right: 10px;
+      }
 
       &:checked {
         background-color: #00c0ee;
@@ -72,6 +87,8 @@
 
   @media (max-width: 768px) {
     grid-template-columns: 32px 32px 32px 32px;
+    margin-top: 21px;
+    margin-bottom: 14px;
   }
 
   .label {
@@ -101,7 +118,7 @@
   }
 }
 
-.titlePrice {
+.titlePreco {
   font-family: "Open-sans", sans-serif;
   font-size: 16px;
   margin-bottom: 15px;
@@ -112,10 +129,14 @@
 .filtersPriceContainer {
   display: flex;
   flex-direction: column;
-  width: 160px;
   @media (max-width: 768px) {
+    margin-top: 20px;
+    h2 {
+      margin: 30px 16px 20px;
+      font-size: 24px;
+      font-weight: 300;
+    }
   }
-
   label {
     display: flex;
     align-items: center;
@@ -124,6 +145,10 @@
     font-size: 14px;
     color: #333333;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      margin-bottom: 17px;
+    }
 
     input[type="checkbox"] {
       appearance: none;
