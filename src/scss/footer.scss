@@ -39,3 +39,35 @@
     font-size: 10px;
   }
 }
+
+.footerBtn {
+  margin-bottom: 30px;
+  margin-top: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 23px;
+  .applyModal {
+    padding: 8px 52px;
+    font-size: 14px;
+    color: white;
+    background-color: #00c0ee;
+    border: none;
+    border: 1px solid #00c0ee;
+    @media (max-width: 280px) {
+      padding: 8px 30px;
+    }
+  }
+  .resetModal {
+    padding: 8px 52px;
+    font-size: 14px;
+    color: #666666;
+    background-color: white;
+    border: none;
+    border: 1px solid #666666;
+
+    @media (max-width: 280px) {
+      padding: 8px 30px;
+    }
+  }
+}
