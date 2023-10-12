@@ -16,34 +16,25 @@
   <body>
     <div class="headerContainer">
       <img class="logo" src="./img/logo-m3.png" alt="M3 Logo" />
-      <img class="icon" src="./img/lockicon.svg" alt="" />
+      <img class="icon" src="./img/lock.png" alt="" />
     </div>
     <hr class="hr" />
     <div class="headerSubContainer">
       <div class="tittleContainer">
         <h1 class="mainTittle">Blusas</h1>
         <div>
-          <select class="btnDrop" name="order" id="order">
-            <option selected hidden>Ordenar por:</option>
-            <option value="recentes">Mais recentes</option>
-            <option value="menorPreço">Menor preço</option>
-            <option value="maiorPreço">Maior preço</option>
-          </select>
-          <div class="modal" id="modal">
-            <div class="modal-content">
-              <span class="close-btn" id="close-btn">&times;</span>
-              <select class="btnDrop" name="order" id="order">
-                <option selected hidden>Ordenar por:</option>
-                <option value="recentes">Mais recentes</option>
-                <option value="menorPreço">Menor preço</option>
-                <option value="maiorPreço">Maior preço</option>
-              </select>
-            </div>
+          <div class="customDropdown">
+            <button id="order" class="btnDrop">
+              <span id="dropdownTitle">Ordenar por:</span>
+              <img src="./img/v.png" alt="" />
+            </button>
+            <ul class="dropdownOptions">
+              <li data-value="recentes">Mais recentes</li>
+              <li data-value="menorPreço">Menor preço</li>
+              <li data-value="maiorPreço">Maior preço</li>
+            </ul>
           </div>
-          <div class="btnMobile">
-            <!-- <button class="btnFilter">Filtrar</button>
-            <button class="btnOrder">Ordenar</button> -->
-          </div>
+          <div class="btnMobile"></div>
         </div>
       </div>
     </div>
