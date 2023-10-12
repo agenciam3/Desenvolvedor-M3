@@ -70,22 +70,34 @@
   color: #0000007c;
   font-family: "Open-sans", sans-serif;
 
-  @media (max-width: 767px) {
+  @media (max-width: 768px) {
     grid-template-columns: 32px 32px 32px 32px;
   }
 
   .label {
     height: 32px;
     width: 32px;
-    border: 1px solid #0000007c;
+    text-align: center;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
   }
 
   input[type="checkbox"] {
-    display: none;
+    /* display: none; */
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #0000007c;
+    cursor: pointer;
+
+    &:checked {
+      border: 1px solid #00c0ee;
+    }
   }
 }
 
@@ -135,7 +147,6 @@
   display: grid;
   grid-template-columns: 195px 195px 195px;
   justify-items: center;
-  /* width: 100%; */
   margin-bottom: 20px;
   margin-left: 175px;
   column-gap: 64px;
@@ -149,14 +160,22 @@
   @media (min-width: 769px) and (max-width: 1499px) {
     margin-left: 6%;
   }
+  @media (max-width: 1024px) {
+    display: grid;
+    grid-template-columns: 161px 161px;
+  }
+  @media (max-width: 280px) {
+    display: grid;
+    grid-template-columns: auto;
+  }
 
   .productCard {
     @media (max-width: 768px) {
+      justify-content: center;
       margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
     }
     img {
       @media (max-width: 768px) {
@@ -220,12 +239,12 @@
       background-color: #5a5a5a;
     }
   }
-  @media (max-width: 1024px) {
+  /* @media (max-width: 1024px) {
     display: grid;
-    grid-template-columns: 195px 195px;
+    grid-template-columns: 161px 161px;
   }
   @media (max-width: 280px) {
     display: grid;
     grid-template-columns: auto;
-  }
+  } */
 }
