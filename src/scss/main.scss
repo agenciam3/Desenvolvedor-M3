@@ -1,1 +1,14 @@
-@import "reset";
+  @import "reset";
+  @import "colors";
+
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .title {
+    color: $primary;
+    font-weight: 700;
+  }
