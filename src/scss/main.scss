@@ -1,14 +1,165 @@
   @import "reset";
   @import "colors";
+  @import "mixins";
 
   body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    @include center-items-column();
   }
 
-  .title {
-    color: $primary;
+  // container
+  .main-container {
+    @include center-items-column();
+    max-width: 1500px;
+    width: 100%;
+  }
+
+  // header
+  .main-header {
+    @include center-items();
+    height: 3rem;
+    margin-top: 1rem;
+    width: 100%;
+    border-bottom: 2px solid $gray-3;
+  }
+
+  .main-header-content {
+    @include center-between();
+    width: 100%;
+    @include max-width-content();
+  }
+
+  // main-content
+  .content-container {
+    @include center-items-column();
+    @include max-width-content();
+    width: 100%;
+    margin-top: 2rem;
+  }
+
+  .content-header {
+    @include center-between();
+    width: 100%;
+
+    h1 {
+      color: $gray-4;
+      font-size: 2rem;
+      line-height: 2.724rem;
+    }
+  }
+
+  .content-article {
+    @include center-between();
+    align-items: flex-start;
+    width: 100%;
+    margin: 2rem 0;
+    gap: 2rem;
+  }
+
+  .content-filters-aside {
+    @include center-items-column();
+    align-items: flex-start;
+    gap: 1rem;
+    width: 9.813rem;
+
+    h2 {
+      color: $gray-4;
+      text-transform: uppercase;
+      line-height: 1.362rem;
+    }
+  }
+
+  // grid
+  .content-grid-container {
+    gap: 4rem;
+    width: 61rem;
+    @include center-items();
+    flex-wrap: wrap;
+    padding: 0 4rem;
+  }
+
+  // card
+  .content-card {
+    height: 26.5rem;
+    width: 12.203rem;
+    @include center-items-column();
+    justify-content: space-between;
+  }
+
+  .card-image-container {
+    height: 18.313rem;
+    width: 12.188rem;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-text-container {
+    @include center-items-column();
+    gap: .5rem;
+    width: 100%;
+  }
+
+  .card-clothing-name {
+    font-size: 0.875rem;
+    color: $secondary;
+    line-height: 1.192rem;
+    text-transform: uppercase;
+  }
+
+  .card-span-container {
+    @include center-items-column();
+  }
+
+  .card-clothing-price {
+    font-size: 1rem;
+    color: $secondary;
     font-weight: 700;
+    line-height: 1.362rem;
+  }
+
+  .card-clothing-divide-price {
+    font-size: 1rem;
+    color: $gray-1;
+    line-height: 1.362rem;
+  }
+
+  .card-clothing-btn {
+    background-color: $secondary;
+    color: $third;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.192rem;
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 2.063rem;
+    margin-top: .5rem;
+    text-transform: uppercase;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $gray-4;
+      transition: all ease-in-out .3s;
+    }
+  }
+
+  // footer
+  .footer {
+    @include center-items();
+    background-color: $secondary;
+    width: 100%;
+    height: 2.063rem;
+
+    p {
+      color: $third;
+      text-transform: uppercase;
+    }
   }
