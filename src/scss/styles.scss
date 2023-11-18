@@ -31,7 +31,7 @@ header {
 
   h1 {
     font-size: 2rem;
-    color: -primary;
+    color: $font-color-primary;
   }
 
   select {
@@ -116,18 +116,79 @@ main {
 
   #products {
     width: 80%;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    flex-wrap: wrap;
+    padding-bottom: 40px;
 
-    .load-more {
-      width: 175px;
-      height: 35px;
-      border: none;
-      background-color: $color-primary;
-      color: $font-color-secondary;
-      font-size: 0.875rem;
-      font-weight: 700;
-      letter-spacing: 0.063rem;
-      cursor: pointer;
+    .product {
+      width: 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .product-image {
+        max-width: 195px;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .product-image:hover {
+        scale: 1.07;
+      }
+
+      .product-description {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 0.875rem;
+        color: $color-secondary;
+        padding: 10px 0;
+      }
+
+      .product-price {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $color-secondary;
+        padding-bottom: 6px;
+      }
+
+      .product-installment {
+        font-size: 1rem;
+        color: $color-gray-dark;
+        padding-bottom: 15px;
+      }
+
+      .product-button {
+        width: 100%;
+        max-width: 195px;
+        min-height: 33px;
+        border: none;
+        background-color: $color-secondary;
+        color: $font-color-secondary;
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .product-button:hover {
+        background-color: rgba($color-secondary, 0.8);
+        scale: 1.05;
+      }
     }
+
+    // .load-more {
+    //   width: 175px;
+    //   height: 35px;
+    //   border: none;
+    //   background-color: $color-primary;
+    //   color: $font-color-secondary;
+    //   font-size: 0.875rem;
+    //   font-weight: 700;
+    //   letter-spacing: 0.063rem;
+    //   cursor: pointer;
+    // }
   }
 }
 
