@@ -1,19 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio M3</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenvolvedor M3</title>
-  <link rel="stylesheet" href="main.css" />
-</head>
+  <body>
+    <header>
+      <img src="./img/logo-m3.png" alt="Logo da M3" />
+      <img src="./img/image-bag.jpg" alt="Carrinho de produtos" />
+    </header>
 
-<body>
+    <section class="products-identification">
+      <h1>Blusas</h1>
+      <select>
+        <option value="">Ordenar por:</option>
+        <option value="">Mais recentes</option>
+        <option value="">Menor preço</option>
+        <option value="">Maior preço</option>
+      </select>
 
-</body>
-<h1>Desafio m3</h1>
+      <div class="filters-mobile">
+        <p>Filtrar</p>
+        <p>Ordenar</p>
+      </div>
+    </section>
 
-<script src="bundle.js"></script>
+    <main>
+      <aside class="filters-desktop">
+        <div class="filter-colors">
+          <h3>CORES</h3>
+          <div class="colors-options">
+            <div>
+              <input type="checkbox" name="" id="" />
+              <label for="">Amarelo</label>
+            </div>
 
+            <div>
+              <input type="checkbox" name="" id="" />
+              <label for="">Azul</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="" id="" />
+              <label for="">Branco</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="" id="" />
+              <label for="">Cinza</label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="" id="" />
+              <label for="">Laranja</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="filter-sizes">
+          <h3>TAMANHOS</h3>
+          <div class="sizes-options">
+            <div class="size">P</div>
+            <div class="size">G</div>
+            <div class="size">M</div>
+            <div class="size">GG</div>
+            <div class="size">U</div>
+            <div class="size">36</div>
+            <div class="size">38</div>
+            <div class="size">40</div>
+            <div class="size">42</div>
+            <div class="size">44</div>
+            <div class="size">46</div>
+          </div>
+        </div>
+
+        <div class="filter-prices">
+          <h3>FAIXA DE PREÇO</h3>
+          <div class="price-options">
+            <div>
+              <input type="radio" name="" id="" />
+              <label for="">de R$0 até R$50</label>
+            </div>
+
+            <div>
+              <input type="radio" name="" id="" />
+              <label for="">de R$51 até R$150</label>
+            </div>
+
+            <div>
+              <input type="radio" name="" id="" />
+              <label for="">de R$151 até R$300</label>
+            </div>
+
+            <div>
+              <input type="radio" name="" id="" />
+              <label for="">de R$301 até R$500</label>
+            </div>
+
+            <div>
+              <input type="radio" name="" id="" />
+              <label for="">a partir de R$ 500</label>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <section id="products">
+        <article class="product">
+          <figure>
+            <img class="product-image" src="" alt="Foto do produto" />
+            <figcaption class="product-description"></figcaption>
+          </figure>
+          <div>
+            <p class="product-price"></p>
+            <p class="product-installment"></p>
+          </div>
+          <button>COMPRAR</button>
+        </article>
+        <button class="load-more">CARREGAR MAIS</button>
+      </section>
+    </main>
+
+    <footer>
+      <p>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</p>
+    </footer>
+
+    <script src="bundle.js"></script>
+  </body>
 </html>

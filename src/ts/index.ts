@@ -1,9 +1,19 @@
 import { Product } from "./Product";
 
-const serverUrl = "http://localhost:5000";
+const serverUrl = "http://localhost:5000/products";
 
-function main() {
-  console.log(serverUrl);
+function getDataFromApi() {
+  fetch("http://localhost:5000/products")
+    .then((data) => data.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.error(error));
 }
 
-document.addEventListener("DOMContentLoaded", main);
+getDataFromApi();
+
+// function productsList() {
+//   console.log(serverUrl);
+// }
+
+// productsList();
+// document.addEventListener("DOMContentLoaded", main);

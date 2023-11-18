@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+$color-primary: #00c0ee;
+$color-secondary: #000000;
+$color-gray-dark: #666666;
+$color-gray-light: #00000080;
+$font-color-primary: #333333;
+$font-color-secondary: #ffffff;
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 16px 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #c7c7c7;
+}
+
+.products-identification {
+  width: 100%;
+  height: auto;
+  padding: 40px 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 2rem;
+    color: -primary;
+  }
+
+  select {
+    min-height: 42px;
+    padding: 0 15px;
+  }
+}
+
+main {
+  // width: 100%;
+  display: flex;
+  padding: 26px 0 0 150px;
+
+  .filters-desktop {
+    width: 20%;
+
+    h3 {
+      font-size: 1rem;
+      color: $font-color-primary;
+      padding-bottom: 24px;
+    }
+
+    .filter-colors,
+    .filter-sizes,
+    .filter-prices {
+      padding-bottom: 24px;
+    }
+
+    .filter-colors {
+      .colors-options {
+        div {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 2px;
+        }
+        input {
+          width: 16px;
+          height: 16px;
+          appearance: none;
+          border: 1px solid $color-gray-light;
+        }
+      }
+    }
+
+    .filter-sizes {
+      .sizes-options {
+        width: 70%;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+
+        .size {
+          width: 32px;
+          height: 32px;
+          border: 1px solid $color-gray-light;
+          text-align: center;
+          padding-top: 6px;
+          color: $color-gray-light;
+        }
+      }
+    }
+
+    .filter-prices {
+      .price-options {
+        div {
+          display: flex;
+          align-items: flex-end;
+          gap: 10px;
+          margin-bottom: 5px;
+        }
+
+        input {
+          width: 16px;
+          height: 16px;
+          appearance: none;
+          border: 1px solid $color-gray-light;
+        }
+      }
+    }
+  }
+
+  #products {
+    width: 80%;
+
+    .load-more {
+      width: 175px;
+      height: 35px;
+      border: none;
+      background-color: $color-primary;
+      color: $font-color-secondary;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.063rem;
+      cursor: pointer;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $color-secondary;
+  color: $font-color-secondary;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0.063rem;
+}
+
+.filters-mobile {
+  display: none;
+}
