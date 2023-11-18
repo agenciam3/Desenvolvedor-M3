@@ -28,9 +28,52 @@
   }
 
   .main-header-content {
-    @include center-between();
     width: 100%;
+    @include center-between();
     @include max-width-content();
+
+    .logo-container {
+      width: 7.438rem;
+      height: 1.875rem;
+      cursor: pointer;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .cart-icon-container {
+      width: 1.25rem;
+      height: 1.438rem;
+      cursor: pointer;
+      position: relative;
+
+      .cart-amount {
+        position: absolute;
+        bottom: -3px;
+        right: -4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $primary;
+        width: 0.85rem;
+        height: 0.85rem;
+        border-radius: 50%;
+
+        .cart-amount-item {
+          font-size: 0.6rem;
+          color: $third;
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 
   // main-content
