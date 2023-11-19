@@ -6,17 +6,9 @@
   width: 100%;
   flex-wrap: wrap;
 
-  &:hover {
-    cursor: pointer;
-  }
-
   label {
     font-size: .8rem;
     line-height: 0.875rem;
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 }
 
@@ -29,6 +21,7 @@
   height: 16px;
   border: 1px solid $gray-2;
   margin-right: 0.5rem;
+  cursor: pointer;
 
   &:checked {
     background-color: $third;
@@ -61,10 +54,7 @@
   color: $gray-2;
   width: .5rem;
   height: .5rem;
-
-  &:hover {
-    cursor: pointer;
-  }
+  cursor: pointer;
 }
 
 .size-option input:checked+span {
