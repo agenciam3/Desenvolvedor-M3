@@ -84,3 +84,19 @@
       }
     }
   }
+
+  .load-btn {
+    padding: 0 .5rem;
+    font-size: 1rem;
+    width: 9.875rem;
+    height: 2.188rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $third;
+    border: none;
+    background-color: $primary;
+    font-weight: bold;
+    margin: 2rem 0;
+  }
