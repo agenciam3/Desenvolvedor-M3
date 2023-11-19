@@ -9,6 +9,7 @@
     font-family: 'Open Sans', sans-serif;
     width: 100%;
     min-width: 375px;
+    overflow-x: hidden;
     @include center-items-column();
   }
 
@@ -76,7 +77,7 @@
       }
     }
 
-    @media (max-width: 375px) {
+    @media (max-width: 1246px) {
       padding: 0 1.5rem;
     }
   }
@@ -87,6 +88,10 @@
     @include max-width-content();
     width: 100%;
     margin-top: 2rem;
+
+    @media (max-width: 1246px) {
+      width: 96%;
+    }
   }
 
   .content-header {
@@ -115,7 +120,7 @@
     color: $secondary;
     padding: 0 .5rem;
     font-size: 1rem;
-    width: 9.875rem;
+    width: 10.719rem;
     height: 2.625rem;
     border: 1px solid $gray-2;
     background-color: $third;
@@ -132,12 +137,16 @@
   // content order dropdown mobile
   .filter-order-mobile {
     position: fixed;
-    // display: inline-block;
     display: none;
+    // display: inline-block;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 55;
+
+    @media (min-width: 375px) {
+      display: none;
+    }
   }
 
   // order order mobile
@@ -153,7 +162,7 @@
     border-right: none;
     background-color: $third;
     cursor: pointer;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
@@ -161,16 +170,12 @@
     img {
       margin-right: .6rem;
     }
-
-    @media (max-width: 375px) {
-      display: flex;
-    }
   }
 
   .order-select-mobile {
     z-index: 1;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh + 10rem);
     display: block;
     position: absolute;
     background-color: $third;
@@ -194,12 +199,16 @@
   // content dropdown mobile
   .rest-filters-mobile {
     position: fixed;
-    // display: inline-block;
     display: none;
+    // display: inline-block;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 55;
+
+    @media (min-width: 375px) {
+      display: none;
+    }
   }
 
   // rest filters mobile
@@ -215,7 +224,7 @@
     border-right: none;
     background-color: $third;
     cursor: pointer;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
@@ -223,25 +232,16 @@
     img {
       margin-right: .6rem;
     }
-
-    @media (max-width: 375px) {
-      display: flex;
-    }
   }
 
   .rest-filters-selects-mobile {
     z-index: 1;
     width: 100%;
-    height: 100vh;
-    display: none;
+    height: calc(100vh + 10rem);
+    display: block;
     position: absolute;
     background-color: $third;
     border: none;
-
-
-    @media (max-width: 375px) {
-      display: block;
-    }
   }
 
   // dropdown options
@@ -260,7 +260,7 @@
     border: none;
     background-color: $third;
     cursor: pointer;
-    display: none;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
@@ -269,17 +269,14 @@
     img {
       margin-right: .6rem;
     }
-
-    @media (max-width: 375px) {
-      display: flex;
-    }
   }
 
   .content-select-mobile {
     z-index: 1;
     width: 99%;
+    height: 100%;
     display: none;
-    position: absolute;
+    // position: absolute;
     background-color: $third;
     border: none;
     padding: 0 .5rem;
@@ -306,7 +303,7 @@
   // apply button
   .apply-dropbtn-container {
     width: 100%;
-    margin-top: 20rem;
+    margin-top: 1rem;
     @include center-items();
     justify-content: space-around;
   }
@@ -495,7 +492,8 @@
     @include center-items-column();
     align-items: flex-start;
     gap: 1rem;
-    width: 9.813rem;
+    max-width: 9.813rem;
+    width: 100%;
 
     @media (max-width: 375px) {
       display: none;
@@ -606,13 +604,19 @@
     flex-wrap: wrap;
     padding: 0 4rem;
 
+    @media (max-width: 987px) {
+      padding: 0 2rem;
+    }
+
     @media (max-width: 375px) {
       gap: .5rem;
+      padding: 0 4rem;
       width: 100%;
       width: 70%;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       overflow: hidden;
+      row-gap: 1.5rem;
     }
   }
 
