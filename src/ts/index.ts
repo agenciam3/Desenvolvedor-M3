@@ -1,38 +1,43 @@
 import { Product } from "./Product";
 
-const serverUrl = "http://localhost:5000";
-
-let colors: string[] = [];
-let prices: string[] = [];
-let sizes: string = '';
-
-let selectedValues: {
-  color: string[];
-  price: string[];
-  size: string;
-} = {
-  color: [],
-  price: [],
-  size: ""
-};
-
 function main() {
-  const show_list_colors = document.querySelector("#show-icons-btn");
-  const filters_btn = document.querySelector("#filters-btn");
-  const order_btn = document.querySelector("#order-btn");
-  const close_filters_btn = document.querySelector("#close-filters-btn");
-  const close_order_btn = document.querySelector("#close-order-btn");
-  const load_btn = document.querySelector("#load-btn");
-  const clearFilter = document.querySelector("#clear-filters");
-  const orderOptionsWeb = document.querySelectorAll('.content-select-web .custom-option');
-  const orderOptionsMobile = document.querySelectorAll('.order-select-mobile .custom-option');
-  const colorContainer = document.querySelectorAll('.color-container');
-  const priceContainer = document.querySelectorAll('.price-container');
-  const sizeOption = document.querySelectorAll('.size-option');
-  const gettingFiltersData = document.getElementById('get-filters-data');
-  const defaut_colors_hidden = document.querySelector(".defaut-colors-hidden");
-  const filter_order_mobile = document.querySelector(".filter-order-mobile");
-  const filters_mobile = document.querySelector(".rest-filters-mobile");
+  let colors: string[] = [];
+  let prices: string[] = [];
+  let sizes: string = '';
+
+  let selectedValues: {
+    color: string[];
+    price: string[];
+    size: string;
+  } = {
+    color: [],
+    price: [],
+    size: ""
+  };
+
+  const serverUrl = "http://localhost:5000";
+  const radioInput = 'input[type="radio"]'
+  const checkboxInput = 'input[type="checkbox"]'
+
+  const ELEMENTS = {
+    showListColors: document.getElementById("show-icons-btn"),
+    filtersBtn: document.getElementById("filters-btn"),
+    orderBtn: document.getElementById("order-btn"),
+    closeFiltersBtn: document.getElementById("close-filters-btn"),
+    closeOrderBtn: document.getElementById("close-order-btn"),
+    loadCardBtn: document.getElementById("load-btn"),
+    clearFilter: document.getElementById("clear-filters"),
+    gettingFiltersData: document.getElementById('get-filters-data'),
+    filterOrderMobile: document.getElementById("filter-order-mobile"),
+    filtersMobile: document.getElementById("rest-filters-mobile"),
+    defaultHiddenColors: document.querySelector(".defaut-colors-hidden"),
+    gridContainer: document.querySelector(".content-grid-container"),
+    orderOptionsWeb: document.querySelectorAll('.content-select-web .custom-option'),
+    orderOptionsMobile: document.querySelectorAll('.order-select-mobile .custom-option'),
+    colorContainer: document.querySelectorAll('.color-container'),
+    priceContainer: document.querySelectorAll('.price-container'),
+    sizeOption: document.querySelectorAll('.size-option'),
+  };
 
   const getProducts = async () => {
     const response = await fetch(`${serverUrl}/products`)
@@ -40,58 +45,9 @@ function main() {
     return data
   }
 
-  const showColorsList = () => {
-    show_list_colors.classList.remove('show-icons-btn');
-    show_list_colors.classList.add('hidden');
-    defaut_colors_hidden.classList.remove('hidden')
-  }
-
-  const showFiltersList = () => {
-    if (filters_mobile) {
-      (filters_mobile as HTMLElement).style.display = 'inline-block';
-    }
-  }
-
-  const showOrderList = () => {
-    if (filter_order_mobile) {
-      (filter_order_mobile as HTMLElement).style.display = 'inline-block';
-    }
-  }
-
-  const closeOrderList = () => {
-    if (filter_order_mobile) {
-      (filter_order_mobile as HTMLElement).style.display = 'none';
-    }
-  }
-
-  const closeFiltersList = () => {
-    if (filters_mobile) {
-      (filters_mobile as HTMLElement).style.display = 'none';
-    }
-  }
-
-  const clearFilterData = () => {
-    colors = [];
-    prices = [];
-    sizes = "";
-
-    const clearInputs = (selector: string) => {
-      const elements = document.querySelectorAll(selector);
-      elements.forEach((element) => {
-        if (element instanceof HTMLInputElement) {
-          element.checked = false;
-        }
-      });
-    };
-
-    clearInputs('input[type="radio"]');
-    clearInputs('input[type="checkbox"]');
-  };
-
   const renderProducts = async (start: number, end: number) => {
     try {
       const products = await getProducts();
-      const gridContainer = document.querySelector(".content-grid-container");
 
       for (let i = start; i < end && i < products.length; i++) {
         const product = products[i];
@@ -113,108 +69,124 @@ function main() {
         </div>
       `;
 
-        gridContainer.innerHTML += card;
+        ELEMENTS.gridContainer.innerHTML += card;
       }
     } catch (error) {
       console.error("Erro ao obter produtos:", error);
     }
   };
 
-  show_list_colors.addEventListener('click', showColorsList);
-  filters_btn.addEventListener('click', showFiltersList);
-  order_btn.addEventListener('click', showOrderList);
-  close_order_btn.addEventListener('click', closeOrderList);
-  close_filters_btn.addEventListener('click', closeFiltersList);
-  clearFilter.addEventListener('click', clearFilterData);
+  const clearInputs = (selector: string) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      if (element instanceof HTMLInputElement) {
+        element.checked = false;
+      }
+    });
+  };
 
-  gettingFiltersData.addEventListener('click', function () {
+  const clearFilterData = () => {
+    colors = [];
+    prices = [];
+    sizes = "";
+
+    clearInputs(radioInput);
+    clearInputs(checkboxInput);
+  };
+
+  const showFiltersList = () => ELEMENTS.filtersMobile.style.display = 'inline-block';
+  const showOrderList = () => ELEMENTS.filterOrderMobile.style.display = 'inline-block';
+
+  const closeMenuFiterMobile = () => {
+    ELEMENTS.filtersMobile.style.display = 'none';
+    ELEMENTS.filterOrderMobile.style.display = 'none';
+  }
+
+  const showColorsList = () => {
+    ELEMENTS.showListColors.classList.remove('show-icons-btn');
+    ELEMENTS.showListColors.classList.add('hidden');
+    ELEMENTS.defaultHiddenColors.classList.remove('hidden')
+  }
+
+  const handleLoadButtonClick = () => {
+    const lastRenderedIndex = document.querySelectorAll(".content-card").length;
+    renderProducts(lastRenderedIndex, lastRenderedIndex + 9);
+    ELEMENTS.loadCardBtn.style.display = 'none';
+  }
+
+  const handleSizeChange = (checkbox: HTMLInputElement) => {
+    if (checkbox.checked) {
+      const selectedValue = {
+        size: checkbox.value
+      };
+
+      sizes = selectedValue.size
+      console.log(selectedValue);
+    }
+  }
+
+  const handleCheckboxChange = (checkbox: HTMLInputElement, values: string[]) => {
+    if (checkbox.checked) {
+      if (!values.includes(checkbox.value)) {
+        values.push(checkbox.value);
+      }
+    } else {
+      const index = values.indexOf(checkbox.value);
+      if (index !== -1) {
+        values.splice(index, 1);
+      }
+    }
+    console.log(values);
+  }
+
+  const handleOrderOptionClick = (option: Element) => {
+    const selectedValue = option.getAttribute('data-value');
+    closeMenuFiterMobile()
+    console.log(selectedValue);
+  }
+
+  renderProducts(0, 9);
+
+  ELEMENTS.showListColors.addEventListener('click', showColorsList);
+  ELEMENTS.filtersBtn.addEventListener('click', showFiltersList);
+  ELEMENTS.orderBtn.addEventListener('click', showOrderList);
+  ELEMENTS.closeOrderBtn.addEventListener('click', closeMenuFiterMobile);
+  ELEMENTS.closeFiltersBtn.addEventListener('click', closeMenuFiterMobile);
+  ELEMENTS.clearFilter.addEventListener('click', clearFilterData);
+  ELEMENTS.loadCardBtn.addEventListener("click", handleLoadButtonClick);
+
+  ELEMENTS.gettingFiltersData.addEventListener('click', function () {
     selectedValues = {
       color: colors,
       price: prices,
       size: sizes
     };
-
+    closeMenuFiterMobile()
     console.log(selectedValues);
   });
 
-  colorContainer.forEach(container => {
-    const checkbox = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
-
-    checkbox.addEventListener('change', function () {
-      if (checkbox.checked) {
-        if (!colors.includes(checkbox.name)) {
-          colors.push(checkbox.name);
-        }
-      } else {
-        const index = colors.indexOf(checkbox.name);
-        if (index !== -1) {
-          colors.splice(index, 1);
-        }
-      }
-
-      console.log(colors);
-    });
+  ELEMENTS.colorContainer.forEach(container => {
+    const checkbox = container.querySelector(checkboxInput) as HTMLInputElement;
+    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, colors));
   });
 
-  sizeOption.forEach(container => {
-    const checkbox = container.querySelector('input[type="radio"]') as HTMLInputElement;
-
-    checkbox.addEventListener('change', function () {
-      if (checkbox.checked) {
-        const selectedValue = {
-          size: checkbox.value
-        };
-
-        sizes = selectedValue.size
-        console.log(selectedValue);
-      }
-    });
+  ELEMENTS.sizeOption.forEach(container => {
+    const checkbox = container.querySelector(radioInput) as HTMLInputElement;
+    checkbox.addEventListener('change', () => handleSizeChange(checkbox));
   });
 
-  priceContainer.forEach(container => {
-    const checkbox = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
-
-    checkbox.addEventListener('change', function () {
-      if (checkbox.checked) {
-        if (!prices.includes(checkbox.value)) {
-          prices.push(checkbox.value);
-        }
-      } else {
-        const index = prices.indexOf(checkbox.value);
-        if (index !== -1) {
-          prices.splice(index, 1);
-        }
-      }
-
-      console.log(prices);
-    });
+  ELEMENTS.priceContainer.forEach(container => {
+    const checkbox = container.querySelector(checkboxInput) as HTMLInputElement;
+    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, prices));
   });
 
-  orderOptionsWeb.forEach(option => {
-    option.addEventListener('click', function () {
-      const selectedValue = option.getAttribute('data-value');
-      console.log(selectedValue);
-    });
+  ELEMENTS.orderOptionsWeb.forEach(option => {
+    option.addEventListener('click', () => handleOrderOptionClick(option));
   });
 
-  orderOptionsMobile.forEach(option => {
-    option.addEventListener('click', function () {
-      const selectedValue = option.getAttribute('data-value');
-      closeOrderList()
-      console.log(selectedValue);
-    });
+  ELEMENTS.orderOptionsMobile.forEach(option => {
+    option.addEventListener('click', () => handleOrderOptionClick(option));
   });
-
-  load_btn.addEventListener("click", () => {
-    const lastRenderedIndex = document.querySelectorAll(".content-card").length;
-    renderProducts(lastRenderedIndex, lastRenderedIndex + 9);
-
-    if (load_btn) {
-      (load_btn as HTMLElement).style.display = 'none';
-    }
-  });
-
-  renderProducts(0, 9);
 }
 
 document.addEventListener("DOMContentLoaded", main);

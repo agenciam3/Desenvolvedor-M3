@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -42,7 +42,7 @@
         </section>
 
         <!-- filter by order menu mobile -->
-        <div class="filter-order-mobile">
+        <div class="filter-order-mobile" id="filter-order-mobile">
           <button class="order-dropbtn-mobile-close">Ordenar<img id="close-order-btn" src="img/close.svg"
               alt="arrow-icon"></button>
           <div class="order-select-mobile" id="order-select-mobile">
@@ -53,7 +53,7 @@
         </div>
 
         <!-- rest filters menu mobile -->
-        <div class="rest-filters-mobile">
+        <div class="rest-filters-mobile" id="rest-filters-mobile">
           <button class="rest-filters-dropbtn-mobile-close">Filtrar<img id="close-filters-btn" src="img/close.svg"
               alt="arrow-icon"></button>
 
@@ -65,52 +65,52 @@
                 <aside class="content-filters-aside-mobile">
                   <fieldset>
                     <div class="input-container color-container">
-                      <input type="checkbox" id="yellow" name="Amarelo" />
+                      <input type="checkbox" id="yellow" name="Amarelo" value="Amarelo" />
                       <label for="yellow">Amarelo</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="blue" name="Azul" />
+                      <input type="checkbox" id="blue" name="Azul" value="Azul" />
                       <label for="blue">Azul</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="white" name="Branco" />
+                      <input type="checkbox" id="white" name="Branco" value="Branco" />
                       <label for="white">Branco</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="gray" name="Cinza" />
+                      <input type="checkbox" id="gray" name="Cinza" value="Cinza" />
                       <label for="gray">Cinza</label>
                     </div>
 
                     <div class="hidden color-list-item">
-                      <input type="checkbox" id="orange" name="Laranja" />
+                      <input type="checkbox" id="orange" name="Laranja" value="Laranja" />
                       <label for="orange">Laranja</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="green" name="Verde" />
+                      <input type="checkbox" id="green" name="Verde" value="Verde" />
                       <label for="green">Verde</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="red" name="Vermelho" />
+                      <input type="checkbox" id="red" name="Vermelho" value="Vermelho" />
                       <label for="red">Vermelho</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="black" name="Preto" />
+                      <input type="checkbox" id="black" name="Preto" value="Preto" />
                       <label for="black">Preto</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="pink" name="Rosa" />
+                      <input type="checkbox" id="pink" name="Rosa" value="Rosa" />
                       <label for="pink">Rosa</label>
                     </div>
 
                     <div class="input-container color-container">
-                      <input type="checkbox" id="wine" name="Vinho" />
+                      <input type="checkbox" id="wine" name="Vinho" value="Vinho" />
                       <label for="wine">Vinho</label>
                     </div>
                   </fieldset>
@@ -246,23 +246,24 @@
           <!-- filter by colors -->
           <fieldset>
             <legend>Cores</legend>
+
             <div class="input-container color-container">
-              <input type="checkbox" id="yellow" name="Amarelo" />
+              <input type="checkbox" id="yellow" name="Amarelo" value="Amarelo" />
               <label for="yellow">Amarelo</label>
             </div>
 
             <div class="input-container color-container">
-              <input type="checkbox" id="blue" name="Azul" />
+              <input type="checkbox" id="blue" name="Azul" value="Azul" />
               <label for="blue">Azul</label>
             </div>
 
             <div class="input-container color-container">
-              <input type="checkbox" id="white" name="Branco" />
+              <input type="checkbox" id="white" name="Branco" value="Branco" />
               <label for="white">Branco</label>
             </div>
 
             <div class="input-container color-container">
-              <input type="checkbox" id="gray" name="Cinza" />
+              <input type="checkbox" id="gray" name="Cinza" value="Cinza" />
               <label for="gray">Cinza</label>
             </div>
 
@@ -272,33 +273,33 @@
 
             <!-- default hidden -->
             <section class="defaut-colors-hidden hidden">
-              <div class="input-container">
-                <input type="checkbox" id="orange" name="Laranja" />
+              <div class="hidden color-list-item">
+                <input type="checkbox" id="orange" name="Laranja" value="Laranja" />
                 <label for="orange">Laranja</label>
               </div>
 
               <div class="input-container color-container">
-                <input type="checkbox" id="green" name="Verde" />
+                <input type="checkbox" id="green" name="Verde" value="Verde" />
                 <label for="green">Verde</label>
               </div>
 
               <div class="input-container color-container">
-                <input type="checkbox" id="red" name="Vermelho" />
+                <input type="checkbox" id="red" name="Vermelho" value="Vermelho" />
                 <label for="red">Vermelho</label>
               </div>
 
               <div class="input-container color-container">
-                <input type="checkbox" id="black" name="Preto" />
+                <input type="checkbox" id="black" name="Preto" value="Preto" />
                 <label for="black">Preto</label>
               </div>
 
               <div class="input-container color-container">
-                <input type="checkbox" id="pink" name="Rosa" />
+                <input type="checkbox" id="pink" name="Rosa" value="Rosa" />
                 <label for="pink">Rosa</label>
               </div>
 
               <div class="input-container color-container">
-                <input type="checkbox" id="wine" name="Vinho" />
+                <input type="checkbox" id="wine" name="Vinho" value="Vinho" />
                 <label for="wine">Vinho</label>
               </div>
             </section>
