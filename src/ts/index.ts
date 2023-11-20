@@ -15,6 +15,12 @@ function main() {
     size: ""
   };
 
+  const openedFilters = {
+    size: selectedValues.size,
+    color: selectedValues.color,
+    price: selectedValues.price,
+  };
+
   const serverUrl = "http://localhost:5000";
   const radioInput = 'input[type="radio"]'
   const checkboxInput = 'input[type="checkbox"]'
@@ -45,12 +51,29 @@ function main() {
     return data
   }
 
-  const renderProducts = async (start: number, end: number) => {
+  const renderProducts = async (start: number, end: number, filters?: any) => {
     try {
       const products = await getProducts();
 
-      for (let i = start; i < end && i < products.length; i++) {
-        const product = products[i];
+      const filteredProducts = products.filter(product => {
+        const sizeFilter = filters.size === "" || (Array.isArray(product.size) && product.size.includes(filters.size));
+        const colorFilter = filters.color.length === 0 || filters.color.some((selectedColor: string) => product.color.includes(selectedColor));
+
+        const priceFilter = filters.price.length === 0 || filters.price.some((selectedPrice: string) => {
+          if (selectedPrice.includes('-')) {
+            const [minPrice, maxPrice] = selectedPrice.split('-').map(Number);
+            return product.price >= minPrice && product.price <= maxPrice;
+          } else {
+            const price = Number(selectedPrice);
+            return product.price === price;
+          }
+        });
+
+        return colorFilter && sizeFilter && priceFilter
+      });
+
+      for (let i = start; i < end && i < filteredProducts.length; i++) {
+        const product = filteredProducts[i];
 
         const card = `
         <div class="content-card">
@@ -92,6 +115,7 @@ function main() {
 
     clearInputs(radioInput);
     clearInputs(checkboxInput);
+    renderProducts(0, 9, openedFilters);
   };
 
   const showFiltersList = () => ELEMENTS.filtersMobile.style.display = 'inline-block';
@@ -121,11 +145,23 @@ function main() {
       };
 
       sizes = selectedValue.size
-      console.log(selectedValue);
+
+      const newFilter = {
+        size: sizes,
+        color: selectedValues.color,
+        price: selectedValues.price,
+      };
+
+      ELEMENTS.gridContainer.innerHTML = "";
+      renderProducts(0, 9, newFilter);
     }
   }
 
-  const handleCheckboxChange = (checkbox: HTMLInputElement, values: string[]) => {
+  const handleCheckboxChange = (
+    checkbox: HTMLInputElement,
+    values: string[],
+    filterType: 'color' | 'price'
+  ) => {
     if (checkbox.checked) {
       if (!values.includes(checkbox.value)) {
         values.push(checkbox.value);
@@ -136,16 +172,24 @@ function main() {
         values.splice(index, 1);
       }
     }
-    console.log(values);
+
+    const newFilter = {
+      size: selectedValues.size,
+      color: filterType === 'color' ? values : selectedValues.color,
+      price: filterType === 'price' ? values : selectedValues.price
+    };
+
+    ELEMENTS.gridContainer.innerHTML = "";
+    renderProducts(0, 9, newFilter);
   }
 
   const handleOrderOptionClick = (option: Element) => {
-    const selectedValue = option.getAttribute('data-value');
+    const selectedOrderValue = option.getAttribute('data-value');
     closeMenuFiterMobile()
-    console.log(selectedValue);
+    console.log(selectedOrderValue);
   }
 
-  renderProducts(0, 9);
+  renderProducts(0, 9, openedFilters);
 
   ELEMENTS.showListColors.addEventListener('click', showColorsList);
   ELEMENTS.filtersBtn.addEventListener('click', showFiltersList);
@@ -162,12 +206,16 @@ function main() {
       size: sizes
     };
     closeMenuFiterMobile()
-    console.log(selectedValues);
+
+    const newFilter = selectedValues;
+
+    ELEMENTS.gridContainer.innerHTML = "";
+    renderProducts(0, 9, newFilter);
   });
 
   ELEMENTS.colorContainer.forEach(container => {
     const checkbox = container.querySelector(checkboxInput) as HTMLInputElement;
-    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, colors));
+    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, colors, 'color'));
   });
 
   ELEMENTS.sizeOption.forEach(container => {
@@ -177,7 +225,7 @@ function main() {
 
   ELEMENTS.priceContainer.forEach(container => {
     const checkbox = container.querySelector(checkboxInput) as HTMLInputElement;
-    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, prices));
+    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, prices, 'price'));
   });
 
   ELEMENTS.orderOptionsWeb.forEach(option => {
