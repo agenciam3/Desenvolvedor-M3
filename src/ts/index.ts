@@ -1,54 +1,49 @@
 import { Product } from "./Product";
 
 const serverUrl = "http://localhost:5000";
-const colorsData = [
-  { id: "orange", name: "Laranja" },
-  { id: "green", name: "Verde" },
-  { id: "red", name: "Vermelho" },
-  { id: "black", name: "Preto" },
-  { id: "pink", name: "Rosa" },
-  { id: "wine", name: "Vinho" }
-];
+
+let colors: string[] = [];
+let prices: string[] = [];
+let sizes: string = '';
+
+let selectedValues: {
+  color: string[];
+  price: string[];
+  size: string;
+} = {
+  color: [],
+  price: [],
+  size: ""
+};
 
 function main() {
-  // constants ids
   const show_list_colors = document.querySelector("#show-icons-btn");
   const filters_btn = document.querySelector("#filters-btn");
   const order_btn = document.querySelector("#order-btn");
   const close_filters_btn = document.querySelector("#close-filters-btn");
   const close_order_btn = document.querySelector("#close-order-btn");
   const load_btn = document.querySelector("#load-btn");
-
-  // dropdowns
-  const customOptionsWeb = document.querySelectorAll('.content-select-web .custom-option');
-  const customOptionsMobile = document.querySelectorAll('.order-select-mobile .custom-option');
-
-  // constants classes
-  const show_list_items = document.querySelector(".show-list-items");
+  const clearFilter = document.querySelector("#clear-filters");
+  const orderOptionsWeb = document.querySelectorAll('.content-select-web .custom-option');
+  const orderOptionsMobile = document.querySelectorAll('.order-select-mobile .custom-option');
+  const colorContainer = document.querySelectorAll('.color-container');
+  const priceContainer = document.querySelectorAll('.price-container');
+  const sizeOption = document.querySelectorAll('.size-option');
+  const gettingFiltersData = document.getElementById('get-filters-data');
+  const defaut_colors_hidden = document.querySelector(".defaut-colors-hidden");
   const filter_order_mobile = document.querySelector(".filter-order-mobile");
   const filters_mobile = document.querySelector(".rest-filters-mobile");
 
-  // fetch
   const getProducts = async () => {
     const response = await fetch(`${serverUrl}/products`)
     const data: Product[] = await response.json()
     return data
   }
 
-  // click events functions
   const showColorsList = () => {
     show_list_colors.classList.remove('show-icons-btn');
     show_list_colors.classList.add('hidden');
-
-    colorsData.forEach(color => {
-      const inputContainer = `
-    <div class="input-container">
-    <input type="checkbox" id="${color.id}" name="${color.name}" />
-    <label for="${color.id}">${color.name}</label>
-  </div>
-    `
-      show_list_items.innerHTML += inputContainer;
-    });
+    defaut_colors_hidden.classList.remove('hidden')
   }
 
   const showFiltersList = () => {
@@ -74,6 +69,24 @@ function main() {
       (filters_mobile as HTMLElement).style.display = 'none';
     }
   }
+
+  const clearFilterData = () => {
+    colors = [];
+    prices = [];
+    sizes = "";
+
+    const clearInputs = (selector: string) => {
+      const elements = document.querySelectorAll(selector);
+      elements.forEach((element) => {
+        if (element instanceof HTMLInputElement) {
+          element.checked = false;
+        }
+      });
+    };
+
+    clearInputs('input[type="radio"]');
+    clearInputs('input[type="checkbox"]');
+  };
 
   const renderProducts = async (start: number, end: number) => {
     try {
@@ -107,24 +120,84 @@ function main() {
     }
   };
 
-  // events
   show_list_colors.addEventListener('click', showColorsList);
-  show_list_colors.addEventListener('click', showColorsList);
-
-  // filters btns mobile
   filters_btn.addEventListener('click', showFiltersList);
   order_btn.addEventListener('click', showOrderList);
   close_order_btn.addEventListener('click', closeOrderList);
   close_filters_btn.addEventListener('click', closeFiltersList);
+  clearFilter.addEventListener('click', clearFilterData);
 
-  customOptionsWeb.forEach(option => {
+  gettingFiltersData.addEventListener('click', function () {
+    selectedValues = {
+      color: colors,
+      price: prices,
+      size: sizes
+    };
+
+    console.log(selectedValues);
+  });
+
+  colorContainer.forEach(container => {
+    const checkbox = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        if (!colors.includes(checkbox.name)) {
+          colors.push(checkbox.name);
+        }
+      } else {
+        const index = colors.indexOf(checkbox.name);
+        if (index !== -1) {
+          colors.splice(index, 1);
+        }
+      }
+
+      console.log(colors);
+    });
+  });
+
+  sizeOption.forEach(container => {
+    const checkbox = container.querySelector('input[type="radio"]') as HTMLInputElement;
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        const selectedValue = {
+          size: checkbox.value
+        };
+
+        sizes = selectedValue.size
+        console.log(selectedValue);
+      }
+    });
+  });
+
+  priceContainer.forEach(container => {
+    const checkbox = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
+
+    checkbox.addEventListener('change', function () {
+      if (checkbox.checked) {
+        if (!prices.includes(checkbox.value)) {
+          prices.push(checkbox.value);
+        }
+      } else {
+        const index = prices.indexOf(checkbox.value);
+        if (index !== -1) {
+          prices.splice(index, 1);
+        }
+      }
+
+      console.log(prices);
+    });
+  });
+
+  orderOptionsWeb.forEach(option => {
     option.addEventListener('click', function () {
       const selectedValue = option.getAttribute('data-value');
       console.log(selectedValue);
     });
   });
 
-  customOptionsMobile.forEach(option => {
+  orderOptionsMobile.forEach(option => {
     option.addEventListener('click', function () {
       const selectedValue = option.getAttribute('data-value');
       closeOrderList()

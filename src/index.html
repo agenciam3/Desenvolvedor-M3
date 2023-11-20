@@ -64,22 +64,22 @@
               <div class="content-select-mobile">
                 <aside class="content-filters-aside-mobile">
                   <fieldset>
-                    <div class="input-container">
-                      <input type="checkbox" id="yellow" name="Amarelo" checked />
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="yellow" name="Amarelo" />
                       <label for="yellow">Amarelo</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="blue" name="Azul" />
                       <label for="blue">Azul</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="white" name="Branco" />
                       <label for="white">Branco</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="gray" name="Cinza" />
                       <label for="gray">Cinza</label>
                     </div>
@@ -89,27 +89,27 @@
                       <label for="orange">Laranja</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="green" name="Verde" />
                       <label for="green">Verde</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="red" name="Vermelho" />
                       <label for="red">Vermelho</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="black" name="Preto" />
                       <label for="black">Preto</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="pink" name="Rosa" />
                       <label for="pink">Rosa</label>
                     </div>
 
-                    <div class="input-container">
+                    <div class="input-container color-container">
                       <input type="checkbox" id="wine" name="Vinho" />
                       <label for="wine">Vinho</label>
                     </div>
@@ -192,28 +192,28 @@
               <div class="content-select-mobile">
                 <aside class="content-filters-aside-mobile">
                   <fieldset>
-                    <div class="input-container">
-                      <input type="checkbox" id="0-50" name="de R$0 até R$50" />
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="0-50" name="de R$0 até R$50" value="0-50" />
                       <label for="0-50">de R$0 até R$50</label>
                     </div>
 
-                    <div class="input-container">
-                      <input type="checkbox" id="51-150" name="de R$51 até R$150" />
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="51-150" name="de R$51 até R$150" value="51-150" />
                       <label for="51-150">de R$51 até R$150</label>
                     </div>
 
-                    <div class="input-container">
-                      <input type="checkbox" id="151-300" name="de R$151 até R$300" />
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="151-300" name="de R$151 até R$300" value="151-300" />
                       <label for="151-300">de R$151 até R$300</label>
                     </div>
 
-                    <div class="input-container">
-                      <input type="checkbox" id="301-500" name="de R$351 até R$500" />
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="301-500" name="de R$351 até R$500" value="351-500" />
                       <label for="301-500">de R$351 até R$500</label>
                     </div>
 
-                    <div class="input-container">
-                      <input type="checkbox" id="500" name="a partir de R$ 500" />
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="500" name="a partir de R$ 500" value="500" />
                       <label for="500">a partir de R$ 500</label>
                     </div>
                   </fieldset>
@@ -223,8 +223,8 @@
 
             <!-- apply button -->
             <section class="apply-dropbtn-container ">
-              <button class="apply-dropbtn apply-btn">Aplicar</button>
-              <button class="apply-dropbtn clear-btn">Limpar</button>
+              <button class="apply-dropbtn apply-btn" id="get-filters-data">Aplicar</button>
+              <button class="apply-dropbtn clear-btn" id="clear-filters">Limpar</button>
             </section>
           </div>
         </div>
@@ -246,22 +246,22 @@
           <!-- filter by colors -->
           <fieldset>
             <legend>Cores</legend>
-            <div class="input-container">
-              <input type="checkbox" id="yellow" name="Amarelo" checked />
+            <div class="input-container color-container">
+              <input type="checkbox" id="yellow" name="Amarelo" />
               <label for="yellow">Amarelo</label>
             </div>
 
-            <div class="input-container">
+            <div class="input-container color-container">
               <input type="checkbox" id="blue" name="Azul" />
               <label for="blue">Azul</label>
             </div>
 
-            <div class="input-container">
+            <div class="input-container color-container">
               <input type="checkbox" id="white" name="Branco" />
               <label for="white">Branco</label>
             </div>
 
-            <div class="input-container">
+            <div class="input-container color-container">
               <input type="checkbox" id="gray" name="Cinza" />
               <label for="gray">Cinza</label>
             </div>
@@ -271,37 +271,37 @@
                 alt="arrow-icon"></span>
 
             <!-- default hidden -->
-            <div class="show-list-items"></div>
+            <section class="defaut-colors-hidden hidden">
+              <div class="input-container">
+                <input type="checkbox" id="orange" name="Laranja" />
+                <label for="orange">Laranja</label>
+              </div>
 
-            <!-- <div class="input-container hidden">
-              <input type="checkbox" id="orange" name="Laranja" />
-              <label for="orange">Laranja</label>
-            </div>
+              <div class="input-container color-container">
+                <input type="checkbox" id="green" name="Verde" />
+                <label for="green">Verde</label>
+              </div>
 
-            <div class="color-list-item hidden">
-              <input type="checkbox" id="green" name="Verde" />
-              <label for="green">Verde</label>
-            </div>
+              <div class="input-container color-container">
+                <input type="checkbox" id="red" name="Vermelho" />
+                <label for="red">Vermelho</label>
+              </div>
 
-            <div class="color-list-item hidden">
-              <input type="checkbox" id="red" name="Vermelho" />
-              <label for="red">Vermelho</label>
-            </div>
+              <div class="input-container color-container">
+                <input type="checkbox" id="black" name="Preto" />
+                <label for="black">Preto</label>
+              </div>
 
-            <div class="color-list-item hidden">
-              <input type="checkbox" id="black" name="Preto" />
-              <label for="black">Preto</label>
-            </div>
+              <div class="input-container color-container">
+                <input type="checkbox" id="pink" name="Rosa" />
+                <label for="pink">Rosa</label>
+              </div>
 
-            <div class="color-list-item hidden">
-              <input type="checkbox" id="pink" name="Rosa" />
-              <label for="pink">Rosa</label>
-            </div>
-
-            <div class="color-list-item hidden">
-              <input type="checkbox" id="wine" name="Vinho" />
-              <label for="wine">Vinho</label>
-            </div> -->
+              <div class="input-container color-container">
+                <input type="checkbox" id="wine" name="Vinho" />
+                <label for="wine">Vinho</label>
+              </div>
+            </section>
           </fieldset>
 
           <!-- filter by size-->
@@ -369,28 +369,28 @@
           <!-- filter by price -->
           <fieldset>
             <legend>Preço</legend>
-            <div class="input-container">
-              <input type="checkbox" id="0-50" name="de R$0 até R$50" />
+            <div class="input-container price-container">
+              <input type="checkbox" id="0-50" name="de R$0 até R$50" value="0-50" />
               <label for="0-50">de R$0 até R$50</label>
             </div>
 
-            <div class="input-container">
-              <input type="checkbox" id="51-150" name="de R$51 até R$150" />
+            <div class="input-container price-container">
+              <input type="checkbox" id="51-150" name="de R$51 até R$150" value="51-150" />
               <label for="51-150">de R$51 até R$150</label>
             </div>
 
-            <div class="input-container">
-              <input type="checkbox" id="151-300" name="de R$151 até R$300" />
+            <div class="input-container price-container">
+              <input type="checkbox" id="151-300" name="de R$151 até R$300" value="151-300" />
               <label for="151-300">de R$151 até R$300</label>
             </div>
 
-            <div class="input-container">
-              <input type="checkbox" id="301-500" name="de R$351 até R$500" />
+            <div class="input-container price-container">
+              <input type="checkbox" id="301-500" name="de R$351 até R$500" value="351-500" />
               <label for="301-500">de R$351 até R$500</label>
             </div>
 
-            <div class="input-container">
-              <input type="checkbox" id="500" name="a partir de R$ 500" />
+            <div class="input-container price-container">
+              <input type="checkbox" id="500" name="a partir de R$ 500" value="500" />
               <label for="500">a partir de R$ 500</label>
             </div>
           </fieldset>
