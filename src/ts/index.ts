@@ -1,4 +1,8 @@
-import { Product } from "./Product";
+import {
+  Filters,
+  OrderFunctions,
+  Product
+} from "./types";
 
 function main() {
   let colors: string[] = [];
@@ -15,6 +19,8 @@ function main() {
     size: ""
   };
 
+  let currentOrderFunction: ((a: Product, b: Product) => number) | null = null;
+
   const openedFilters = {
     size: selectedValues.size,
     color: selectedValues.color,
@@ -24,6 +30,12 @@ function main() {
   const serverUrl = "http://localhost:5000";
   const radioInput = 'input[type="radio"]'
   const checkboxInput = 'input[type="checkbox"]'
+
+  const orderFunctions: OrderFunctions = {
+    'menor preço': (a: Product, b: Product) => a.price - b.price,
+    'maior preço': (a: Product, b: Product) => b.price - a.price,
+    'mais recentes': (a: Product, b: Product) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+  };
 
   const ELEMENTS = {
     showListColors: document.getElementById("show-icons-btn"),
@@ -51,7 +63,12 @@ function main() {
     return data
   }
 
-  const renderProducts = async (start: number, end: number, filters?: any) => {
+  const renderProducts = async (
+    start: number,
+    end: number,
+    filters?: Filters,
+    sortOrder?: (a: Product, b: Product) => number
+  ) => {
     try {
       const products = await getProducts();
 
@@ -72,10 +89,17 @@ function main() {
         return colorFilter && sizeFilter && priceFilter
       });
 
-      for (let i = start; i < end && i < filteredProducts.length; i++) {
-        const product = filteredProducts[i];
+      const sortedProducts = sortOrder ? filteredProducts.slice().sort(sortOrder) : filteredProducts;
+      ELEMENTS.gridContainer.innerHTML = "";
 
-        const card = `
+      if (sortedProducts.length === 0) {
+        ELEMENTS.gridContainer.innerHTML = "<p>Nenhum produto encontrado.</p>";
+      } else {
+
+        for (let i = start; i < end && i < sortedProducts.length; i++) {
+          const product = sortedProducts[i];
+
+          const card = `
         <div class="content-card">
           <figure class="card-image-container">
             <img src="${product.image}" alt="clothing-image">
@@ -92,7 +116,8 @@ function main() {
         </div>
       `;
 
-        ELEMENTS.gridContainer.innerHTML += card;
+          ELEMENTS.gridContainer.innerHTML += card;
+        }
       }
     } catch (error) {
       console.error("Erro ao obter produtos:", error);
@@ -118,8 +143,13 @@ function main() {
     renderProducts(0, 9, openedFilters);
   };
 
-  const showFiltersList = () => ELEMENTS.filtersMobile.style.display = 'inline-block';
-  const showOrderList = () => ELEMENTS.filterOrderMobile.style.display = 'inline-block';
+  const showFiltersList = () => {
+    ELEMENTS.filtersMobile.style.display = 'inline-block';
+  }
+
+  const showOrderList = () => {
+    ELEMENTS.filterOrderMobile.style.display = 'inline-block';
+  }
 
   const closeMenuFiterMobile = () => {
     ELEMENTS.filtersMobile.style.display = 'none';
@@ -134,7 +164,7 @@ function main() {
 
   const handleLoadButtonClick = () => {
     const lastRenderedIndex = document.querySelectorAll(".content-card").length;
-    renderProducts(lastRenderedIndex, lastRenderedIndex + 9);
+    renderProducts(lastRenderedIndex, lastRenderedIndex + 9, openedFilters);
     ELEMENTS.loadCardBtn.style.display = 'none';
   }
 
@@ -183,11 +213,28 @@ function main() {
     renderProducts(0, 9, newFilter);
   }
 
-  const handleOrderOptionClick = (option: Element) => {
-    const selectedOrderValue = option.getAttribute('data-value');
-    closeMenuFiterMobile()
-    console.log(selectedOrderValue);
-  }
+  const handleOrderOptionClick = async (option: Element) => {
+    try {
+      const selectedOrderValue = option.getAttribute('data-value');
+      clearInputs(radioInput);
+      clearInputs(checkboxInput);
+      closeMenuFiterMobile();
+
+      if (selectedOrderValue) {
+        const orderFunction = orderFunctions[selectedOrderValue as keyof OrderFunctions];
+        if (orderFunction) {
+          currentOrderFunction = orderFunction;
+          await renderProducts(0, 9, openedFilters, currentOrderFunction);
+        } else {
+          console.error('Invalid sorting option:', selectedOrderValue);
+        }
+      } else {
+        console.error('Invalid sorting option attribute');
+      }
+    } catch (error) {
+      console.error('Error handling order option click:', error);
+    }
+  };
 
   renderProducts(0, 9, openedFilters);
 
