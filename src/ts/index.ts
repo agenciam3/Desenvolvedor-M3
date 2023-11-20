@@ -1,9 +1,10 @@
 import { Product } from "./Product";
 
-const serverUrl = "http://localhost:5000/products";
-
 const productsSection = document.getElementById("products");
 
+const loadMoreButton = document.getElementById("load-more");
+
+// função de criação dos produtos
 function createProduct(data: Product) {
   const productContainer = document.createElement("article");
   const productImage = document.createElement("img");
@@ -42,8 +43,12 @@ function createProduct(data: Product) {
   return productContainer;
 }
 
+// função para renderizar produtos via API
+let page = 1;
+let limit = 9;
+
 function getDataFromApi() {
-  fetch("http://localhost:5000/products")
+  fetch(`http://localhost:5000/products?_page=${page}&_limit=${limit}`)
     .then((data) => data.json())
     .then((data) => {
       const productsData = data;
@@ -58,9 +63,40 @@ function getDataFromApi() {
 
 getDataFromApi();
 
-// function productsList() {
-//   console.log(serverUrl);
-// }
+// função do "Ordenar por:"
+let selectValue = document.getElementById("select-value"),
+  optionsViewButton = document.getElementById("options-view-button"),
+  inputsOptions = document.querySelectorAll(".option input");
 
-// productsList();
-// document.addEventListener("DOMContentLoaded", main);
+inputsOptions.forEach((input: HTMLElement) => {
+  input.addEventListener("click", (event: any) => {
+    selectValue.textContent = input.dataset.label;
+
+    const isMouseOrTouch =
+      event.pointerType === "mouse" || event.pointerType === "touch";
+
+    isMouseOrTouch && optionsViewButton.click();
+  });
+});
+
+// função para carregar mais produtos
+loadMoreButton.addEventListener("click", loadMoreProducts);
+
+function loadMoreProducts() {
+  page++;
+  loadMoreButton.style.display = "none";
+  getDataFromApi();
+}
+
+// função para adicionar classe de estilização no filtro tamanho
+function addClassFilterSize() {
+  const sizes = document.querySelectorAll(".size");
+
+  sizes.forEach((size) => {
+    size.addEventListener("click", function () {
+      const sizeClass = size.classList.toggle("active");
+    });
+  });
+}
+
+addClassFilterSize();

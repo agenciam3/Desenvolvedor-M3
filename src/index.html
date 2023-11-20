@@ -16,12 +16,50 @@
 
     <section class="products-identification">
       <h1>Blusas</h1>
-      <select>
-        <option value="">Ordenar por:</option>
-        <option value="">Mais recentes</option>
-        <option value="">Menor preço</option>
-        <option value="">Maior preço</option>
-      </select>
+      <div class="select">
+        <div id="category-select">
+          <input type="checkbox" id="options-view-button" />
+
+          <div id="select-button">
+            <label id="select-value">
+              Ordernar por:
+              <img src="./img/Dropdown.svg" alt="" />
+            </label>
+          </div>
+        </div>
+
+        <ul id="options">
+          <li class="option">
+            <input
+              type="radio"
+              name="category"
+              value="maisRecentes"
+              data-label="Mais recentes"
+            />
+            <label class="label">Mais recentes</label>
+          </li>
+
+          <li class="option">
+            <input
+              type="radio"
+              name="category"
+              value="menorPreco"
+              data-label="Menor preço"
+            />
+            <label class="label">Menor preço</label>
+          </li>
+
+          <li class="option">
+            <input
+              type="radio"
+              name="category"
+              value="maiorPreco"
+              data-label="Maior preço"
+            />
+            <label class="label">Maior preço</label>
+          </li>
+        </ul>
+      </div>
 
       <div class="filters-mobile">
         <p>Filtrar</p>
@@ -34,30 +72,39 @@
         <div class="filter-colors">
           <h3>CORES</h3>
           <div class="colors-options">
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="">Amarelo</label>
-            </div>
+            <label for="color-yellow">
+              <div>
+                <input type="checkbox" name="" id="color-yellow" />
+              </div>
+              Amarelo
+            </label>
 
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="">Azul</label>
-            </div>
+            <label for="color-blue">
+              <div>
+                <input type="checkbox" name="" id="color-blue" />
+              </div>
+              Azul
+            </label>
 
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="">Branco</label>
-            </div>
+            <label for="color-white">
+              <div>
+                <input type="checkbox" name="" id="color-white" />
+              </div>
+              Branco
+            </label>
+            <label for="color-gray">
+              <div>
+                <input type="checkbox" name="" id="color-gray" />
+              </div>
+              Cinza
+            </label>
 
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="">Cinza</label>
-            </div>
-
-            <div>
-              <input type="checkbox" name="" id="" />
-              <label for="">Laranja</label>
-            </div>
+            <label for="color-orange">
+              <div>
+                <input type="checkbox" name="" id="color-orange" />
+              </div>
+              Laranja
+            </label>
           </div>
         </div>
 
@@ -65,8 +112,8 @@
           <h3>TAMANHOS</h3>
           <div class="sizes-options">
             <div class="size">P</div>
-            <div class="size">G</div>
             <div class="size">M</div>
+            <div class="size">G</div>
             <div class="size">GG</div>
             <div class="size">U</div>
             <div class="size">36</div>
@@ -81,36 +128,49 @@
         <div class="filter-prices">
           <h3>FAIXA DE PREÇO</h3>
           <div class="price-options">
-            <div>
-              <input type="radio" name="" id="" />
-              <label for="">de R$0 até R$50</label>
-            </div>
+            <label for="price-0-50">
+              <div>
+                <input type="checkbox" name="" id="price-0-50" />
+              </div>
+              de R$0 até R$50
+            </label>
 
-            <div>
-              <input type="radio" name="" id="" />
-              <label for="">de R$51 até R$150</label>
-            </div>
+            <label for="price-51-150">
+              <div>
+                <input type="checkbox" name="" id="price-51-150" />
+              </div>
+              de R$51 até R$150
+            </label>
 
-            <div>
-              <input type="radio" name="" id="" />
-              <label for="">de R$151 até R$300</label>
-            </div>
+            <label for="price-151-300">
+              <div>
+                <input type="checkbox" name="" id="price-151-300" />
+              </div>
+              de R$151 até R$300
+            </label>
 
-            <div>
-              <input type="radio" name="" id="" />
-              <label for="">de R$301 até R$500</label>
-            </div>
+            <label for="price-301-500">
+              <div>
+                <input type="checkbox" name="" id="price-301-500" />
+              </div>
+              de R$301 até R$500
+            </label>
 
-            <div>
-              <input type="radio" name="" id="" />
-              <label for="">a partir de R$ 500</label>
-            </div>
+            <label for="price-500">
+              <div>
+                <input type="checkbox" name="" id="price-500" />
+              </div>
+              a partir de R$500
+            </label>
           </div>
         </div>
       </aside>
 
-      <section id="products">
-      </section>
+      <div class="container-products">
+        <section id="products"></section>
+
+        <button id="load-more">CARREGAR MAIS</button>
+      </div>
     </main>
 
     <footer>
