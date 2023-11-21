@@ -70,6 +70,8 @@ function main() {
     sortOrder?: (a: Product, b: Product) => number
   ) => {
     try {
+      ELEMENTS.gridContainer.innerHTML = "<p>Carregando...</p>";
+
       const products = await getProducts();
 
       const filteredProducts = products.filter(product => {
@@ -95,7 +97,6 @@ function main() {
       if (sortedProducts.length === 0) {
         ELEMENTS.gridContainer.innerHTML = "<p>Nenhum produto encontrado.</p>";
       } else {
-
         for (let i = start; i < end && i < sortedProducts.length; i++) {
           const product = sortedProducts[i];
 
@@ -120,6 +121,7 @@ function main() {
         }
       }
     } catch (error) {
+      ELEMENTS.gridContainer.innerHTML = "<p>Dados não podem ser carregados.</p>";
       console.error("Erro ao obter produtos:", error);
     }
   };
