@@ -139,11 +139,12 @@
  .rest-filters-selects-mobile {
    z-index: 1;
    width: 100%;
-   height: calc(100vh + 10rem);
+   height: calc(100vh - 3rem);
    display: block;
    position: absolute;
    background-color: $third;
    border: none;
+   overflow-y: scroll;
  }
 
  // dropdown options
@@ -198,9 +199,13 @@
    }
  }
 
- .content-dropdown-mobile:hover .content-select-mobile {
-   display: block;
+ .content-dropdown-mobile .content-select-mobile {
+   display: none;
  }
+
+.content-dropdown-mobile.active .content-select-mobile {
+  display: block;
+}
 
  // apply button
  .apply-dropbtn-container {

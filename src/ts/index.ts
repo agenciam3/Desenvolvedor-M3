@@ -9,7 +9,7 @@ import {
 function main() {
   let colors: string[] = [];
   let prices: string[] = [];
-  let sizes: string = '';
+  let sizes: string = "";
 
   let selectedValues: {
     color: string[];
@@ -34,9 +34,9 @@ function main() {
   };
 
   const orderFunctions: OrderFunctions = {
-    'menor preço': (a: Product, b: Product) => a.price - b.price,
-    'maior preço': (a: Product, b: Product) => b.price - a.price,
-    'mais recentes': (a: Product, b: Product) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+    "menor preço": (a: Product, b: Product) => a.price - b.price,
+    "maior preço": (a: Product, b: Product) => b.price - a.price,
+    "mais recentes": (a: Product, b: Product) => new Date(b.date).getTime() - new Date(a.date).getTime(),
   };
 
   const ELEMENTS = {
@@ -47,17 +47,18 @@ function main() {
     closeOrderBtn: document.getElementById("close-order-btn"),
     loadCardBtn: document.getElementById("load-btn"),
     clearFilter: document.getElementById("clear-filters"),
-    gettingFiltersData: document.getElementById('get-filters-data'),
+    gettingFiltersData: document.getElementById("get-filters-data"),
     filterOrderMobile: document.getElementById("filter-order-mobile"),
     filtersMobile: document.getElementById("rest-filters-mobile"),
     cartAmount: document.getElementById("cart-amount-item"),
     defaultHiddenColors: document.querySelector(".defaut-colors-hidden"),
     gridContainer: document.querySelector(".content-grid-container"),
-    orderOptionsWeb: document.querySelectorAll('.content-select-web .custom-option'),
-    orderOptionsMobile: document.querySelectorAll('.order-select-mobile .custom-option'),
-    colorContainer: document.querySelectorAll('.color-container'),
-    priceContainer: document.querySelectorAll('.price-container'),
-    sizeOption: document.querySelectorAll('.size-option'),
+    contentDropdownMobile: document.querySelectorAll(".content-dropdown-mobile"),
+    orderOptionsWeb: document.querySelectorAll(".content-select-web .custom-option"),
+    orderOptionsMobile: document.querySelectorAll(".order-select-mobile .custom-option"),
+    colorContainer: document.querySelectorAll(".color-container"),
+    priceContainer: document.querySelectorAll(".price-container"),
+    sizeOption: document.querySelectorAll(".size-option"),
   };
 
   const getProductsUrl = (): string => {
@@ -130,22 +131,27 @@ function main() {
   };
 
   const showFiltersList = () => {
-    ELEMENTS.filtersMobile.style.display = 'inline-block';
+    ELEMENTS.filtersMobile.style.display = "inline-block";
   }
 
   const showOrderList = () => {
-    ELEMENTS.filterOrderMobile.style.display = 'inline-block';
+    ELEMENTS.filterOrderMobile.style.display = "inline-block";
   }
 
   const closeMenuFiterMobile = () => {
-    ELEMENTS.filtersMobile.style.display = 'none';
-    ELEMENTS.filterOrderMobile.style.display = 'none';
+    ELEMENTS.filtersMobile.style.display = "none";
+    ELEMENTS.filterOrderMobile.style.display = "none";
   }
 
   const showColorsList = () => {
-    ELEMENTS.showListColors.classList.remove('show-icons-btn');
-    ELEMENTS.showListColors.classList.add('hidden');
-    ELEMENTS.defaultHiddenColors.classList.remove('hidden')
+    ELEMENTS.showListColors.classList.remove("show-icons-btn");
+    ELEMENTS.showListColors.classList.add("hidden");
+    ELEMENTS.defaultHiddenColors.classList.remove("hidden")
+  }
+
+  const handleToggleDropdownMobile = (event: MouseEvent) => {
+    const dropdown = event.currentTarget as HTMLElement;
+    dropdown.classList.toggle("active");
   }
 
   const clearInputs = (selector: string): void => {
@@ -187,8 +193,8 @@ function main() {
         const sizeFilter = filters.size === "" || (Array.isArray(product.size) && product.size.includes(filters.size));
         const colorFilter = filters.color.length === 0 || filters.color.some((selectedColor: string) => product.color.includes(selectedColor));
         const priceFilter = filters.price.length === 0 || filters.price.some((selectedPrice: string) => {
-          if (selectedPrice.includes('-')) {
-            const [minPrice, maxPrice] = selectedPrice.split('-').map(Number);
+          if (selectedPrice.includes("-")) {
+            const [minPrice, maxPrice] = selectedPrice.split("-").map(Number);
             return product.price >= minPrice && product.price <= maxPrice;
           } else {
             const price = Number(selectedPrice);
@@ -223,9 +229,9 @@ function main() {
       });
 
     if (nextRenderIndex >= totalProducts.length) {
-      ELEMENTS.loadCardBtn.style.display = 'none';
+      ELEMENTS.loadCardBtn.style.display = "none";
     } else {
-      ELEMENTS.loadCardBtn.style.display = 'inline-block';
+      ELEMENTS.loadCardBtn.style.display = "inline-block";
     }
   }
 
@@ -255,7 +261,7 @@ function main() {
   const handleCheckboxChange = (
     checkbox: HTMLInputElement,
     values: string[],
-    filterType: 'color' | 'price'
+    filterType: "color" | "price"
   ) => {
     if (checkbox.checked) {
       if (!values.includes(checkbox.value)) {
@@ -270,8 +276,8 @@ function main() {
 
     const newFilter = {
       size: selectedValues.size,
-      color: filterType === 'color' ? values : selectedValues.color,
-      price: filterType === 'price' ? values : selectedValues.price
+      color: filterType === "color" ? values : selectedValues.color,
+      price: filterType === "price" ? values : selectedValues.price
     };
 
     ELEMENTS.gridContainer.innerHTML = "";
@@ -284,7 +290,7 @@ function main() {
 
   const handleOrderOptionClick = async (option: Element) => {
     try {
-      const selectedOrderValue = option.getAttribute('data-value');
+      const selectedOrderValue = option.getAttribute("data-value");
       clearInputs(radioInput);
       clearInputs(checkboxInput);
       closeMenuFiterMobile();
@@ -300,13 +306,13 @@ function main() {
             sortOrder: currentOrderFunction
           });
         } else {
-          console.error('Invalid sorting option:', selectedOrderValue);
+          console.error("Invalid sorting option:", selectedOrderValue);
         }
       } else {
-        console.error('Invalid sorting option attribute');
+        console.error("Invalid sorting option attribute");
       }
     } catch (error) {
-      console.error('Error handling order option click:', error);
+      console.error("Error handling order option click:", error);
     }
   };
 
@@ -349,23 +355,23 @@ function main() {
     });
   }
 
-  ELEMENTS.showListColors.addEventListener('click', showColorsList);
-  ELEMENTS.filtersBtn.addEventListener('click', showFiltersList);
-  ELEMENTS.orderBtn.addEventListener('click', showOrderList);
-  ELEMENTS.closeOrderBtn.addEventListener('click', closeMenuFiterMobile);
-  ELEMENTS.closeFiltersBtn.addEventListener('click', closeMenuFiterMobile);
-  ELEMENTS.clearFilter.addEventListener('click', clearFilterData);
+  ELEMENTS.showListColors.addEventListener("click", showColorsList);
+  ELEMENTS.filtersBtn.addEventListener("click", showFiltersList);
+  ELEMENTS.orderBtn.addEventListener("click", showOrderList);
+  ELEMENTS.closeOrderBtn.addEventListener("click", closeMenuFiterMobile);
+  ELEMENTS.closeFiltersBtn.addEventListener("click", closeMenuFiterMobile);
+  ELEMENTS.clearFilter.addEventListener("click", clearFilterData);
   ELEMENTS.loadCardBtn.addEventListener("click", handleLoadButtonClick);
 
-  ELEMENTS.gridContainer.addEventListener('click', (event) => {
+  ELEMENTS.gridContainer.addEventListener("click", (event) => {
     const target = event.target as HTMLElement;
-    if (target.matches('.card-clothing-btn')) {
-      const productId = target.getAttribute('data-product-id');
+    if (target.matches(".card-clothing-btn")) {
+      const productId = target.getAttribute("data-product-id");
       handleUpdateQuantityCart(productId);
     }
   });
 
-  ELEMENTS.gettingFiltersData.addEventListener('click', function () {
+  ELEMENTS.gettingFiltersData.addEventListener("click", function () {
     selectedValues = {
       color: colors,
       price: prices,
@@ -378,27 +384,31 @@ function main() {
     )
   });
 
+  ELEMENTS.contentDropdownMobile.forEach(dropdown => {
+    dropdown.addEventListener("click", handleToggleDropdownMobile);
+  });
+
   ELEMENTS.colorContainer.forEach(container => {
     const checkbox = container.querySelector(checkboxInput) as HTMLInputElement;
-    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, colors, 'color'));
+    checkbox.addEventListener("change", () => handleCheckboxChange(checkbox, colors, "color"));
   });
 
   ELEMENTS.sizeOption.forEach(container => {
     const checkbox = container.querySelector(radioInput) as HTMLInputElement;
-    checkbox.addEventListener('change', () => handleSizeChange(checkbox));
+    checkbox.addEventListener("change", () => handleSizeChange(checkbox));
   });
 
   ELEMENTS.priceContainer.forEach(container => {
     const checkbox = container.querySelector(checkboxInput) as HTMLInputElement;
-    checkbox.addEventListener('change', () => handleCheckboxChange(checkbox, prices, 'price'));
+    checkbox.addEventListener("change", () => handleCheckboxChange(checkbox, prices, "price"));
   });
 
   ELEMENTS.orderOptionsWeb.forEach(option => {
-    option.addEventListener('click', () => handleOrderOptionClick(option));
+    option.addEventListener("click", () => handleOrderOptionClick(option));
   });
 
   ELEMENTS.orderOptionsMobile.forEach(option => {
-    option.addEventListener('click', () => handleOrderOptionClick(option));
+    option.addEventListener("click", () => handleOrderOptionClick(option));
   });
 }
 
