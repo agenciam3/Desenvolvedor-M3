@@ -27,7 +27,7 @@ function main() {
   const radioInput = 'input[type="radio"]'
   const checkboxInput = 'input[type="checkbox"]'
 
-  const openedFilters = {
+  const openedFilters: Filters = {
     size: selectedValues.size,
     color: selectedValues.color,
     price: selectedValues.price,
