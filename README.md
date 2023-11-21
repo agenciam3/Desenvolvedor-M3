@@ -43,14 +43,14 @@ O layout se encontra no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997
 🎨 **Estilização**
 - [Sass](https://sass-lang.com/guide/)
 
-🔋 **Versionamento e Deploy**
+🔋 **Versionamento**
 - [Git](https://git-scm.com)
 
 ⚙️ **Configuranções e Instalações**
 
 Clone do Projeto 
 
-    $ gir clone https://github.com/renovatt/Desenvolvedor-M3.git
+    $ git clone https://github.com/renovatt/Desenvolvedor-M3.git
 
 Branch 
 
