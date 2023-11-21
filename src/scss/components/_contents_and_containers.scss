@@ -1,0 +1,102 @@
+  // container
+  .main-container {
+    @include center-items-column();
+    max-width: 1500px;
+    width: 100%;
+  }
+
+  // aside and cards
+  .content-article {
+    @include center-between();
+    align-items: flex-start;
+    width: 100%;
+    margin: 2rem 0;
+    gap: 2rem;
+  }
+
+  .content-container {
+    @include center-items-column();
+    @include max-width-content();
+    width: 100%;
+    margin-top: 2rem;
+
+    @media (max-width: 1246px) {
+      width: 96%;
+    }
+  }
+
+  // grid card container
+  .content-grid-container {
+    gap: 4rem;
+    width: 61rem;
+    @include center-items();
+    flex-wrap: wrap;
+    padding: 0 4rem;
+
+    @media (max-width: 987px) {
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 375px) {
+      gap: .5rem;
+      padding: 0 4rem;
+      width: 100%;
+      width: 70%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      overflow: hidden;
+      row-gap: 1.5rem;
+    }
+  }
+
+  // aside filters web
+  .content-filters-aside {
+    @include center-items-column();
+    align-items: flex-start;
+    gap: 1rem;
+    max-width: 9.813rem;
+    width: 100%;
+
+    @media (max-width: 375px) {
+      display: none;
+    }
+
+    legend {
+      color: $gray-4;
+      text-transform: uppercase;
+      line-height: 1.362rem;
+      margin-bottom: .5rem;
+    }
+
+    .show-icons-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $gray-1;
+      font-size: 0.75rem;
+      text-decoration: underline;
+      cursor: pointer;
+
+      img {
+        width: 1rem;
+        height: .5rem;
+        padding-top: 1px;
+      }
+    }
+  }
+
+  .load-btn {
+    padding: 0 .5rem;
+    font-size: 1rem;
+    width: 9.875rem;
+    height: 2.188rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $third;
+    border: none;
+    background-color: $primary;
+    font-weight: bold;
+    margin: 2rem 0;
+  }

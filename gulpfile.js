@@ -93,6 +93,7 @@ const dev = () => {
     browserSync.reload
   );
   watch(paths.styles.src, { ignoreInitial: false }, styles);
+  watch('src/scss/**/*.scss', { ignoreInitial: false }, styles);
   watch(paths.img.src, { ignoreInitial: false }, img);
   watch(paths.html.src, { ignoreInitial: false }, html).on(
     "change",

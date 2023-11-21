@@ -1,0 +1,11 @@
+  .footer {
+    @include center-items();
+    background-color: $secondary;
+    width: 100%;
+    height: 2.063rem;
+
+    p {
+      color: $third;
+      text-transform: uppercase;
+    }
+  }

@@ -1,0 +1,239 @@
+ // aside filters mobile
+ .content-filters-aside-mobile {
+   @include center-items-column();
+   align-items: flex-start;
+   gap: 1rem;
+   width: 9.813rem;
+   display: none;
+
+   @media (max-width: 375px) {
+     display: flex;
+   }
+ }
+
+ // menu mobile order filter
+ .filter-mobile-dropbtn-container {
+   width: 100%;
+   margin-top: 1rem;
+   @include center-items();
+ }
+
+ .content-dropbtn-mobile-open {
+   color: $gray-1;
+   padding: 0 .5rem;
+   font-size: 1rem;
+   width: 10.719rem;
+   height: 2.625rem;
+   border: 1px solid $gray-2;
+   background-color: $third;
+   cursor: pointer;
+   display: none;
+   justify-content: center;
+   align-items: center;
+
+   @media (max-width: 375px) {
+     display: flex;
+   }
+ }
+
+ // content order dropdown mobile
+ .filter-order-mobile {
+   position: fixed;
+   display: none;
+  //  display: inline-block;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 55;
+
+   @media (min-width: 375px) {
+     display: none;
+   }
+ }
+
+ // order order mobile
+ .order-dropbtn-mobile-close {
+   color: $gray-1;
+   padding: 0 0.5rem;
+   font-size: 1.75rem;
+   line-height: 2.383rem;
+   width: 100%;
+   height: 3.375rem;
+   border: 1px solid $gray-2;
+   border-left: none;
+   border-right: none;
+   background-color: $third;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-transform: uppercase;
+
+   img {
+     margin-right: .6rem;
+   }
+ }
+
+ .order-select-mobile {
+   z-index: 1;
+   width: 100%;
+   height: calc(100vh + 10rem);
+   display: block;
+   position: absolute;
+   background-color: $third;
+   border: none;
+
+   .custom-option {
+    color: $secondary;
+    padding: 0.75rem 0.5rem;
+    display: block;
+    text-align: start;
+    cursor: pointer;
+    font-size: 1.375rem;
+
+    &:hover {
+      background-color: $primary;
+      color: $third;
+    }
+  }
+ }
+
+ // content dropdown mobile
+ .rest-filters-mobile {
+   position: fixed;
+   display: none;
+  //  display: inline-block;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 55;
+
+   @media (min-width: 375px) {
+     display: none;
+   }
+ }
+
+ // rest filters mobile
+ .rest-filters-dropbtn-mobile-close {
+   color: $gray-1;
+   padding: 0 0.5rem;
+   font-size: 1.75rem;
+   line-height: 2.383rem;
+   width: 100%;
+   height: 3.375rem;
+   border: 1px solid $gray-2;
+   border-left: none;
+   border-right: none;
+   background-color: $third;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-transform: uppercase;
+
+   img {
+     margin-right: .6rem;
+   }
+ }
+
+ .rest-filters-selects-mobile {
+   z-index: 1;
+   width: 100%;
+   height: calc(100vh - 3rem);
+   display: block;
+   position: absolute;
+   background-color: $third;
+   border: none;
+   overflow-y: scroll;
+ }
+
+ // dropdown options
+ .content-dropdown-mobile {
+   position: relative;
+   display: block;
+ }
+
+ // dropdown mobile
+ .content-dropbtn-mobile {
+   color: $gray-1;
+   padding: 0 0.5rem;
+   font-size: 1.5rem;
+   width: 100%;
+   height: 2.625rem;
+   border: none;
+   background-color: $third;
+   cursor: pointer;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   text-transform: uppercase;
+   margin-top: 1rem;
+
+   img {
+     margin-right: .6rem;
+   }
+ }
+
+ .content-select-mobile {
+   z-index: 1;
+   width: 99%;
+   height: 100%;
+   display: none;
+   // position: absolute;
+   background-color: $third;
+   border: none;
+   padding: 0 .5rem;
+
+   option {
+     color: $secondary;
+     padding: 0.75rem 0.5rem;
+     display: block;
+     text-align: start;
+     cursor: pointer;
+     font-size: 1rem;
+
+     &:hover {
+       background-color: $primary;
+       color: $third;
+     }
+   }
+ }
+
+ .content-dropdown-mobile .content-select-mobile {
+   display: none;
+ }
+
+.content-dropdown-mobile.active .content-select-mobile {
+  display: block;
+}
+
+ // apply button
+ .apply-dropbtn-container {
+   width: 100%;
+   margin-top: 1rem;
+   @include center-items();
+   justify-content: space-around;
+ }
+
+ .apply-dropbtn {
+   padding: 0 .5rem;
+   font-size: 1rem;
+   width: 9.875rem;
+   height: 2.188rem;
+   cursor: pointer;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .apply-btn {
+   color: $third;
+   border: none;
+   background-color: $primary;
+ }
+
+ .clear-btn {
+   color: $gray-1;
+   border: 1px solid $gray-2;
+   background-color: $third;
+ }

@@ -1,0 +1,17 @@
+$primary: #00C0EE;
+$secondary: #000000;
+$third: #ffffff;
+$gray-1: #666666;
+$gray-2: #808080;
+$gray-3: #c7c7c7;
+$gray-4: #333333;
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+  gray-1: $gray-1;
+  gray-1: $gray-2;
+  gray-3: $gray-3;
+  gray-4: $gray-4;
+  third: $third;
+}

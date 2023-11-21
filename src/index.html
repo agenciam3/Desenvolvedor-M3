@@ -1,19 +1,546 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desenvolvedor M3</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="main.css" />
 </head>
 
 <body>
+  <section class="main-container">
+    <!-- header -->
+    <header class="main-header">
+      <section class="main-header-content">
+        <figure class="logo-container">
+          <img src="img/logo-m3.png" alt="logo-m3">
+        </figure>
 
+        <figure class="cart-icon-container">
+          <img src="img/cart-icon.png" alt="cart-icon">
+          <span class="cart-amount">
+            <span class="cart-amount-item" id="cart-amount-item">0</span>
+          </span>
+        </figure>
+      </section>
+    </header>
+
+    <!-- main -->
+    <section class="content-container">
+      <header class="content-header">
+        <h1>Blusas</h1>
+        <!-- filter button mobile -->
+        <section class="filter-mobile-dropbtn-container">
+          <button class="content-dropbtn-mobile-open" id="filters-btn">Filtrar</button>
+          <button class="content-dropbtn-mobile-open" id="order-btn">Ordenar</button>
+        </section>
+
+        <!-- filter by order menu mobile -->
+        <div class="filter-order-mobile" id="filter-order-mobile">
+          <button class="order-dropbtn-mobile-close">Ordenar<img id="close-order-btn" src="img/close.svg"
+              alt="arrow-icon"></button>
+          <div class="order-select-mobile" id="order-select-mobile">
+            <div class="custom-option" data-value="mais recentes">Mais recentes</div>
+            <div class="custom-option" data-value="menor preço">Menor preço</div>
+            <div class="custom-option" data-value="maior preço">Maior preço</div>
+          </div>
+        </div>
+
+        <!-- rest filters menu mobile -->
+        <div class="rest-filters-mobile" id="rest-filters-mobile">
+          <button class="rest-filters-dropbtn-mobile-close">Filtrar<img id="close-filters-btn" src="img/close.svg"
+              alt="arrow-icon"></button>
+
+          <div class="rest-filters-selects-mobile">
+            <!-- drop color options -->
+            <div class="content-dropdown-mobile">
+              <button class="content-dropbtn-mobile">Cores<img src="img/arrow.svg" alt="arrow-icon"></button>
+              <div class="content-select-mobile">
+                <aside class="content-filters-aside-mobile">
+                  <fieldset>
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="yellow" name="Amarelo" value="Amarelo" />
+                      <label for="yellow">Amarelo</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="blue" name="Azul" value="Azul" />
+                      <label for="blue">Azul</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="white" name="Branco" value="Branco" />
+                      <label for="white">Branco</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="gray" name="Cinza" value="Cinza" />
+                      <label for="gray">Cinza</label>
+                    </div>
+
+                    <div class="hidden color-list-item">
+                      <input type="checkbox" id="orange" name="Laranja" value="Laranja" />
+                      <label for="orange">Laranja</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="green" name="Verde" value="Verde" />
+                      <label for="green">Verde</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="red" name="Vermelho" value="Vermelho" />
+                      <label for="red">Vermelho</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="black" name="Preto" value="Preto" />
+                      <label for="black">Preto</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="pink" name="Rosa" value="Rosa" />
+                      <label for="pink">Rosa</label>
+                    </div>
+
+                    <div class="input-container color-container">
+                      <input type="checkbox" id="wine" name="Vinho" value="Vinho" />
+                      <label for="wine">Vinho</label>
+                    </div>
+                  </fieldset>
+                </aside>
+              </div>
+            </div>
+
+            <!-- drop size options -->
+            <div class="content-dropdown-mobile">
+              <button class="content-dropbtn-mobile">Tamanho<img src="img/arrow.svg" alt="arrow-icon"></button>
+              <div class="content-select-mobile">
+                <aside class="content-filters-aside-mobile">
+                  <fieldset>
+                    <!-- 4 -->
+                    <label class="size-option">
+                      <input type="radio" name="size" value="P">
+                      <span>P</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="M">
+                      <span>M</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="G">
+                      <span>G</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="GG">
+                      <span>GG</span>
+                    </label>
+
+                    <!-- 4 -->
+                    <label class="size-option">
+                      <input type="radio" name="size" value="U">
+                      <span>U</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="36">
+                      <span>36</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="38">
+                      <span>38</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="40">
+                      <span>40</span>
+                    </label>
+
+                    <!-- 3 -->
+                    <label class="size-option">
+                      <input type="radio" name="size" value="36">
+                      <span>36</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="38">
+                      <span>38</span>
+                    </label>
+
+                    <label class="size-option">
+                      <input type="radio" name="size" value="40">
+                      <span>40</span>
+                    </label>
+                  </fieldset>
+                </aside>
+              </div>
+            </div>
+
+            <!-- drop price options -->
+            <div class="content-dropdown-mobile">
+              <button class="content-dropbtn-mobile">Preço<img src="img/arrow.svg" alt="arrow-icon"></button>
+              <div class="content-select-mobile">
+                <aside class="content-filters-aside-mobile">
+                  <fieldset>
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="0-50" name="de R$0 até R$50" value="0-50" />
+                      <label for="0-50">de R$0 até R$50</label>
+                    </div>
+
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="51-150" name="de R$51 até R$150" value="51-150" />
+                      <label for="51-150">de R$51 até R$150</label>
+                    </div>
+
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="151-300" name="de R$151 até R$300" value="151-300" />
+                      <label for="151-300">de R$151 até R$300</label>
+                    </div>
+
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="301-500" name="de R$351 até R$500" value="351-500" />
+                      <label for="301-500">de R$351 até R$500</label>
+                    </div>
+
+                    <div class="input-container price-container">
+                      <input type="checkbox" id="500" name="a partir de R$ 500" value="500" />
+                      <label for="500">a partir de R$ 500</label>
+                    </div>
+                  </fieldset>
+                </aside>
+              </div>
+            </div>
+
+            <!-- apply button -->
+            <section class="apply-dropbtn-container ">
+              <button class="apply-dropbtn apply-btn" id="get-filters-data">Aplicar</button>
+              <button class="apply-dropbtn clear-btn" id="clear-filters">Limpar</button>
+            </section>
+          </div>
+        </div>
+
+        <!-- dropdown order web -->
+        <div class="content-order-dropdown-web">
+          <button class="content-dropbtn-web">Ordenar por: <img src="img/arrow.svg" alt="arrow-icon"></button>
+          <div class="content-select-web" id="order-select-web">
+            <div class="custom-option" data-value="mais recentes">Mais recentes</div>
+            <div class="custom-option" data-value="menor preço">Menor preço</div>
+            <div class="custom-option" data-value="maior preço">Maior preço</div>
+          </div>
+        </div>
+      </header>
+
+      <article class="content-article">
+        <!-- aside filters -->
+        <aside class="content-filters-aside">
+          <!-- filter by colors -->
+          <fieldset>
+            <legend>Cores</legend>
+
+            <div class="input-container color-container">
+              <input type="checkbox" id="yellow" name="Amarelo" value="Amarelo" />
+              <label for="yellow">Amarelo</label>
+            </div>
+
+            <div class="input-container color-container">
+              <input type="checkbox" id="blue" name="Azul" value="Azul" />
+              <label for="blue">Azul</label>
+            </div>
+
+            <div class="input-container color-container">
+              <input type="checkbox" id="white" name="Branco" value="Branco" />
+              <label for="white">Branco</label>
+            </div>
+
+            <div class="input-container color-container">
+              <input type="checkbox" id="gray" name="Cinza" value="Cinza" />
+              <label for="gray">Cinza</label>
+            </div>
+
+            <!-- show btn -->
+            <span class="show-icons-btn" id="show-icons-btn">Ver todas as cores <img src="img/arrow.svg"
+                alt="arrow-icon"></span>
+
+            <!-- default hidden -->
+            <section class="defaut-colors-hidden hidden">
+              <div class="hidden color-list-item">
+                <input type="checkbox" id="orange" name="Laranja" value="Laranja" />
+                <label for="orange">Laranja</label>
+              </div>
+
+              <div class="input-container color-container">
+                <input type="checkbox" id="green" name="Verde" value="Verde" />
+                <label for="green">Verde</label>
+              </div>
+
+              <div class="input-container color-container">
+                <input type="checkbox" id="red" name="Vermelho" value="Vermelho" />
+                <label for="red">Vermelho</label>
+              </div>
+
+              <div class="input-container color-container">
+                <input type="checkbox" id="black" name="Preto" value="Preto" />
+                <label for="black">Preto</label>
+              </div>
+
+              <div class="input-container color-container">
+                <input type="checkbox" id="pink" name="Rosa" value="Rosa" />
+                <label for="pink">Rosa</label>
+              </div>
+
+              <div class="input-container color-container">
+                <input type="checkbox" id="wine" name="Vinho" value="Vinho" />
+                <label for="wine">Vinho</label>
+              </div>
+            </section>
+          </fieldset>
+
+          <!-- filter by size-->
+          <fieldset>
+            <legend>Tamanho</legend>
+            <!-- 4 -->
+            <label class="size-option">
+              <input type="radio" name="size" value="P">
+              <span>P</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="M">
+              <span>M</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="G">
+              <span>G</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="GG">
+              <span>GG</span>
+            </label>
+
+            <!-- 4 -->
+            <label class="size-option">
+              <input type="radio" name="size" value="U">
+              <span>U</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="36">
+              <span>36</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="38">
+              <span>38</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="40">
+              <span>40</span>
+            </label>
+
+            <!-- 3 -->
+            <label class="size-option">
+              <input type="radio" name="size" value="36">
+              <span>36</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="38">
+              <span>38</span>
+            </label>
+
+            <label class="size-option">
+              <input type="radio" name="size" value="40">
+              <span>40</span>
+            </label>
+          </fieldset>
+
+          <!-- filter by price -->
+          <fieldset>
+            <legend>Preço</legend>
+            <div class="input-container price-container">
+              <input type="checkbox" id="0-50" name="de R$0 até R$50" value="0-50" />
+              <label for="0-50">de R$0 até R$50</label>
+            </div>
+
+            <div class="input-container price-container">
+              <input type="checkbox" id="51-150" name="de R$51 até R$150" value="51-150" />
+              <label for="51-150">de R$51 até R$150</label>
+            </div>
+
+            <div class="input-container price-container">
+              <input type="checkbox" id="151-300" name="de R$151 até R$300" value="151-300" />
+              <label for="151-300">de R$151 até R$300</label>
+            </div>
+
+            <div class="input-container price-container">
+              <input type="checkbox" id="301-500" name="de R$351 até R$500" value="351-500" />
+              <label for="301-500">de R$351 até R$500</label>
+            </div>
+
+            <div class="input-container price-container">
+              <input type="checkbox" id="500" name="a partir de R$ 500" value="500" />
+              <label for="500">a partir de R$ 500</label>
+            </div>
+          </fieldset>
+        </aside>
+
+        <!-- grid -->
+        <section class="content-grid-container">
+          <!-- <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_2.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_3.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_4.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_5.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_6.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_7.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_8.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_9.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div>
+          <div class="content-card">
+            <figure class="card-image-container">
+              <img src="img/img_10.png" alt="clothing-image">
+            </figure>
+
+            <div class="card-text-container">
+              <h2 class="card-clothing-name">Camiseta Mescla</h2>
+              <div class="card-span-container">
+                <span class="card-clothing-price">R$28,00</span>
+                <span class="card-clothing-divide-price">até 3x de R$9,33</span>
+              </div>
+              <button class="card-clothing-btn">Comprar</button>
+            </div>
+          </div> -->
+
+        </section>
+      </article>
+      <button class="load-btn" id="load-btn">Carregar mais</button>
+    </section>
+    <!-- main -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <p>M3: Implantação de E-commerce VTEX</p>
+    </footer>
+  </section>
+
+  <script src="bundle.js"></script>
 </body>
-<h1>Desafio m3</h1>
-
-<script src="bundle.js"></script>
 
 </html>

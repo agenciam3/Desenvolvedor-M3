@@ -1,0 +1,62 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: .5rem 0;
+  width: 100%;
+  flex-wrap: wrap;
+
+  label {
+    font-size: .8rem;
+    line-height: 0.875rem;
+  }
+}
+
+.input-container input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border: 1px solid $gray-2;
+  margin-right: 0.5rem;
+  cursor: pointer;
+
+  &:checked {
+    background-color: $third;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 3.2px;
+      background-color: $primary;
+    }
+  }
+}
+
+// size option
+.size-option {
+  display: inline-block;
+  position: relative;
+  margin-left: .2rem;
+  margin-top: .4rem;
+}
+
+.size-option input {
+  display: none;
+}
+
+.size-option span {
+  @include center-items();
+  padding: 10px;
+  border: 1px solid $gray-2;
+  color: $gray-2;
+  width: .5rem;
+  height: .5rem;
+  cursor: pointer;
+}
+
+.size-option input:checked+span {
+  border: 1px solid $primary;
+}

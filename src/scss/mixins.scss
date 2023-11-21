@@ -1,0 +1,22 @@
+@mixin center-items() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin center-items-column() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@mixin center-between() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin max-width-content() {
+  max-width: 1245px;
+}

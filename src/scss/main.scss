@@ -1,1 +1,22 @@
-@import "reset";
+  @import "reset";
+  @import "colors";
+  @import "mixins";
+
+  @import "body";
+
+  // components
+  @import "./components/contents_and_containers";
+  @import "./components/header";
+  @import "./components/footer";
+  @import "./components/mobile";
+  @import "./components/inputs";
+  @import "./components/dropdowns";
+  @import "./components/card";
+
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
