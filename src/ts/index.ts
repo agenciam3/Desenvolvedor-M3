@@ -1,4 +1,5 @@
 import {
+  CartItem,
   Filters,
   OrderFunctions,
   Product
@@ -20,6 +21,8 @@ function main() {
   };
 
   let currentOrderFunction: ((a: Product, b: Product) => number) | null = null;
+
+  const shoppingCart: CartItem[] = [];
 
   const openedFilters = {
     size: selectedValues.size,
@@ -48,6 +51,7 @@ function main() {
     gettingFiltersData: document.getElementById('get-filters-data'),
     filterOrderMobile: document.getElementById("filter-order-mobile"),
     filtersMobile: document.getElementById("rest-filters-mobile"),
+    cartAmount: document.getElementById("cart-amount-item"),
     defaultHiddenColors: document.querySelector(".defaut-colors-hidden"),
     gridContainer: document.querySelector(".content-grid-container"),
     orderOptionsWeb: document.querySelectorAll('.content-select-web .custom-option'),
@@ -60,6 +64,12 @@ function main() {
   const getProducts = async () => {
     const response = await fetch(`${serverUrl}/products`)
     const data: Product[] = await response.json()
+    return data
+  }
+
+  const getProductById = async (productId: string) => {
+    const response = await fetch(`${serverUrl}/products/${productId}`)
+    const data: Product = await response.json()
     return data
   }
 
@@ -112,7 +122,7 @@ function main() {
               <span class="card-clothing-price">R$${product.price.toFixed(2)}</span>
               <span class="card-clothing-divide-price">até ${product.parcelamento[0]}x de R$${(product.parcelamento[1] / product.parcelamento[0]).toFixed(2)}</span>
             </div>
-            <button class="card-clothing-btn">Comprar</button>
+            <button class="card-clothing-btn" data-product-id="${product.id}">Comprar</button>
           </div>
         </div>
       `;
@@ -238,6 +248,31 @@ function main() {
     }
   };
 
+  const handleUpdateQuantityCart = async (productId: string) => {
+    try {
+      const product = await getProductById(productId);
+
+      if (product) {
+        const existingCartItem = shoppingCart.find(item => item.product.id === productId);
+
+        if (existingCartItem) {
+          existingCartItem.quantity++;
+        } else {
+          shoppingCart.push({ product, quantity: 1 });
+        }
+
+        updateTotalQuantity();
+      }
+    } catch (error) {
+      console.error("Error updating quantity:", error);
+    }
+  };
+
+  const updateTotalQuantity = () => {
+    const totalQuantity = shoppingCart.reduce((total, item) => total + item.quantity, 0);
+    ELEMENTS.cartAmount.innerHTML = totalQuantity.toString();
+  };
+
   renderProducts(0, 9, openedFilters);
 
   ELEMENTS.showListColors.addEventListener('click', showColorsList);
@@ -247,6 +282,14 @@ function main() {
   ELEMENTS.closeFiltersBtn.addEventListener('click', closeMenuFiterMobile);
   ELEMENTS.clearFilter.addEventListener('click', clearFilterData);
   ELEMENTS.loadCardBtn.addEventListener("click", handleLoadButtonClick);
+
+  ELEMENTS.gridContainer.addEventListener('click', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.matches('.card-clothing-btn')) {
+      const productId = target.getAttribute('data-product-id');
+      handleUpdateQuantityCart(productId);
+    }
+  });
 
   ELEMENTS.gettingFiltersData.addEventListener('click', function () {
     selectedValues = {

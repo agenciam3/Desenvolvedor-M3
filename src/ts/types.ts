@@ -9,6 +9,11 @@ export interface Product {
   date: string;
 }
 
+export interface CartItem {
+  product: Product;
+  quantity: number;
+}
+
 export interface Filters {
   size: string;
   color: string[];
