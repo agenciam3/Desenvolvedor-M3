@@ -2,7 +2,8 @@ import {
   CartItem,
   Filters,
   OrderFunctions,
-  Product
+  Product,
+  RenderOptionsType
 } from "./types";
 
 function main() {
@@ -23,16 +24,14 @@ function main() {
   let currentOrderFunction: ((a: Product, b: Product) => number) | null = null;
 
   const shoppingCart: CartItem[] = [];
+  const radioInput = 'input[type="radio"]'
+  const checkboxInput = 'input[type="checkbox"]'
 
   const openedFilters = {
     size: selectedValues.size,
     color: selectedValues.color,
     price: selectedValues.price,
   };
-
-  const serverUrl = "http://localhost:5000";
-  const radioInput = 'input[type="radio"]'
-  const checkboxInput = 'input[type="checkbox"]'
 
   const orderFunctions: OrderFunctions = {
     'menor preço': (a: Product, b: Product) => a.price - b.price,
@@ -61,98 +60,73 @@ function main() {
     sizeOption: document.querySelectorAll('.size-option'),
   };
 
-  const getProducts = async () => {
-    const response = await fetch(`${serverUrl}/products`)
-    const data: Product[] = await response.json()
-    return data
+  const getProductsUrl = (): string => {
+    return "http://localhost:5000/products";
   }
 
-  const getProductById = async (productId: string) => {
-    const response = await fetch(`${serverUrl}/products/${productId}`)
-    const data: Product = await response.json()
-    return data
+  const getProductByIdUrl = (productId: string): string => {
+    return `http://localhost:5000/products/${productId}`;
   }
 
-  const renderProducts = async (
-    start: number,
-    end: number,
-    filters?: Filters,
-    sortOrder?: (a: Product, b: Product) => number
-  ) => {
-    try {
-      ELEMENTS.gridContainer.innerHTML = "<p>Carregando...</p>";
+  const fetchJson = async <T>(url: string): Promise<T> => {
+    const response = await fetch(url);
+    return response.json();
+  }
 
-      const products = await getProducts();
+  const getProducts = async (): Promise<Product[]> => {
+    return fetchJson<Product[]>(getProductsUrl());
+  }
 
-      const filteredProducts = products.filter(product => {
-        const sizeFilter = filters.size === "" || (Array.isArray(product.size) && product.size.includes(filters.size));
-        const colorFilter = filters.color.length === 0 || filters.color.some((selectedColor: string) => product.color.includes(selectedColor));
+  const getProductById = async (productId: string): Promise<Product> => {
+    return fetchJson<Product>(getProductByIdUrl(productId));
+  }
 
-        const priceFilter = filters.price.length === 0 || filters.price.some((selectedPrice: string) => {
-          if (selectedPrice.includes('-')) {
-            const [minPrice, maxPrice] = selectedPrice.split('-').map(Number);
-            return product.price >= minPrice && product.price <= maxPrice;
-          } else {
-            const price = Number(selectedPrice);
-            return product.price === price;
-          }
-        });
+  const renderLoading = (): void => {
+    ELEMENTS.gridContainer.innerHTML = "<p>Carregando...</p>";
+  }
 
-        return colorFilter && sizeFilter && priceFilter
-      });
+  const renderNoProducts = (): void => {
+    ELEMENTS.gridContainer.innerHTML = "<p>Nenhum produto encontrado.</p>";
+  }
 
-      const sortedProducts = sortOrder ? filteredProducts.slice().sort(sortOrder) : filteredProducts;
-      ELEMENTS.gridContainer.innerHTML = "";
+  const renderError = (message: string): void => {
+    ELEMENTS.gridContainer.innerHTML = `<p>${message}</p>`;
+  }
 
-      if (sortedProducts.length === 0) {
-        ELEMENTS.gridContainer.innerHTML = "<p>Nenhum produto encontrado.</p>";
-      } else {
-        for (let i = start; i < end && i < sortedProducts.length; i++) {
-          const product = sortedProducts[i];
-
-          const card = `
-        <div class="content-card">
-          <figure class="card-image-container">
-            <img src="${product.image}" alt="clothing-image">
-          </figure>
-
-          <div class="card-text-container">
-            <h2 class="card-clothing-name">${product.name}</h2>
-            <div class="card-span-container">
-              <span class="card-clothing-price">R$${product.price.toFixed(2)}</span>
-              <span class="card-clothing-divide-price">até ${product.parcelamento[0]}x de R$${(product.parcelamento[1] / product.parcelamento[0]).toFixed(2)}</span>
-            </div>
-            <button class="card-clothing-btn" data-product-id="${product.id}">Comprar</button>
+  const renderProductCard = (product: Product): string => {
+    return `
+      <div class="content-card">
+        <figure class="card-image-container">
+          <img src="${product.image}" alt="clothing-image">
+        </figure>
+        <div class="card-text-container">
+          <h2 class="card-clothing-name">${product.name}</h2>
+          <div class="card-span-container">
+            <span class="card-clothing-price">R$${product.price.toFixed(2)}</span>
+            <span class="card-clothing-divide-price">até ${product.parcelamento[0]}x de R$${(product.parcelamento[1] / product.parcelamento[0]).toFixed(2)}</span>
           </div>
+          <button class="card-clothing-btn" data-product-id="${product.id}">Comprar</button>
         </div>
-      `;
+      </div>`;
+  }
 
-          ELEMENTS.gridContainer.innerHTML += card;
-        }
+  const renderProductsGrid = (
+    products: Product[],
+    start?: number,
+    end?: number,
+  ): void => {
+    const gridContainer = ELEMENTS.gridContainer;
+    gridContainer.innerHTML = "";
+
+    if (products.length === 0) {
+      renderNoProducts();
+    } else {
+      for (let i = start; i < end && i < products.length; i++) {
+        const product = products[i];
+        const card = renderProductCard(product);
+        gridContainer.innerHTML += card;
       }
-    } catch (error) {
-      ELEMENTS.gridContainer.innerHTML = "<p>Dados não podem ser carregados.</p>";
-      console.error("Erro ao obter produtos:", error);
     }
-  };
-
-  const clearInputs = (selector: string) => {
-    const elements = document.querySelectorAll(selector);
-    elements.forEach((element) => {
-      if (element instanceof HTMLInputElement) {
-        element.checked = false;
-      }
-    });
-  };
-
-  const clearFilterData = () => {
-    colors = [];
-    prices = [];
-    sizes = "";
-
-    clearInputs(radioInput);
-    clearInputs(checkboxInput);
-    renderProducts(0, 9, openedFilters);
   };
 
   const showFiltersList = () => {
@@ -174,10 +148,85 @@ function main() {
     ELEMENTS.defaultHiddenColors.classList.remove('hidden')
   }
 
-  const handleLoadButtonClick = () => {
+  const clearInputs = (selector: string): void => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      if (element instanceof HTMLInputElement) {
+        element.checked = false;
+      }
+    });
+  }
+
+  const clearFilterData = () => {
+    colors = [];
+    prices = [];
+    sizes = "";
+
+    clearInputs(radioInput);
+    clearInputs(checkboxInput);
+    renderProducts({
+      start: 0,
+      end: 9,
+      filters: openedFilters
+    });
+  };
+
+  const updateTotalQuantity = (cart: CartItem[]): void => {
+    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+    ELEMENTS.cartAmount.innerHTML = totalQuantity.toString();
+  }
+
+  const renderProducts = async (options: RenderOptionsType) => {
+    try {
+      renderLoading()
+
+      const products = await getProducts();
+      const { start, end, filters, sortOrder } = options;
+
+      const filteredProducts = products.filter(product => {
+        const sizeFilter = filters.size === "" || (Array.isArray(product.size) && product.size.includes(filters.size));
+        const colorFilter = filters.color.length === 0 || filters.color.some((selectedColor: string) => product.color.includes(selectedColor));
+        const priceFilter = filters.price.length === 0 || filters.price.some((selectedPrice: string) => {
+          if (selectedPrice.includes('-')) {
+            const [minPrice, maxPrice] = selectedPrice.split('-').map(Number);
+            return product.price >= minPrice && product.price <= maxPrice;
+          } else {
+            const price = Number(selectedPrice);
+            return product.price === price;
+          }
+        });
+        return colorFilter && sizeFilter && priceFilter
+      });
+      const sortedProducts = sortOrder ? filteredProducts.slice().sort(sortOrder) : filteredProducts;
+      renderProductsGrid(sortedProducts, start, end);
+    } catch (error) {
+      renderError("Dados não podem ser carregados.");
+    }
+  };
+
+  renderProducts({
+    start: 0,
+    end: 9,
+    filters: openedFilters
+  });
+
+  const handleLoadButtonClick = async () => {
     const lastRenderedIndex = document.querySelectorAll(".content-card").length;
-    renderProducts(lastRenderedIndex, lastRenderedIndex + 9, openedFilters);
-    ELEMENTS.loadCardBtn.style.display = 'none';
+    const totalProducts = await getProducts();
+    const nextRenderIndex = lastRenderedIndex + 3;
+
+    renderProducts(
+      {
+        start: 0,
+        end: nextRenderIndex,
+        filters: openedFilters
+      });
+
+    if (nextRenderIndex >= totalProducts.length) {
+      ELEMENTS.loadCardBtn.style.display = 'none';
+    } else {
+      ELEMENTS.loadCardBtn.style.display = 'inline-block';
+    }
   }
 
   const handleSizeChange = (checkbox: HTMLInputElement) => {
@@ -195,7 +244,11 @@ function main() {
       };
 
       ELEMENTS.gridContainer.innerHTML = "";
-      renderProducts(0, 9, newFilter);
+      renderProducts({
+        start: 0,
+        end: 9,
+        filters: newFilter
+      });
     }
   }
 
@@ -222,7 +275,11 @@ function main() {
     };
 
     ELEMENTS.gridContainer.innerHTML = "";
-    renderProducts(0, 9, newFilter);
+    renderProducts({
+      start: 0,
+      end: 9,
+      filters: newFilter
+    });
   }
 
   const handleOrderOptionClick = async (option: Element) => {
@@ -236,7 +293,12 @@ function main() {
         const orderFunction = orderFunctions[selectedOrderValue as keyof OrderFunctions];
         if (orderFunction) {
           currentOrderFunction = orderFunction;
-          await renderProducts(0, 9, openedFilters, currentOrderFunction);
+          await renderProducts({
+            start: 0,
+            end: 9,
+            filters: openedFilters,
+            sortOrder: currentOrderFunction
+          });
         } else {
           console.error('Invalid sorting option:', selectedOrderValue);
         }
@@ -260,20 +322,32 @@ function main() {
         } else {
           shoppingCart.push({ product, quantity: 1 });
         }
-
-        updateTotalQuantity();
+        updateTotalQuantity(shoppingCart);
       }
     } catch (error) {
       console.error("Error updating quantity:", error);
     }
   };
 
-  const updateTotalQuantity = () => {
-    const totalQuantity = shoppingCart.reduce((total, item) => total + item.quantity, 0);
-    ELEMENTS.cartAmount.innerHTML = totalQuantity.toString();
-  };
-
-  renderProducts(0, 9, openedFilters);
+  const handleGettingFiltersData = async (
+    colors: string[],
+    prices: string[],
+    sizes: string
+  ): Promise<void> => {
+    selectedValues = {
+      color: colors,
+      price: prices,
+      size: sizes
+    };
+    closeMenuFiterMobile();
+    const newFilter = selectedValues;
+    ELEMENTS.gridContainer.innerHTML = "";
+    renderProducts({
+      start: 0,
+      end: 9,
+      filters: newFilter
+    });
+  }
 
   ELEMENTS.showListColors.addEventListener('click', showColorsList);
   ELEMENTS.filtersBtn.addEventListener('click', showFiltersList);
@@ -297,12 +371,11 @@ function main() {
       price: prices,
       size: sizes
     };
-    closeMenuFiterMobile()
-
-    const newFilter = selectedValues;
-
-    ELEMENTS.gridContainer.innerHTML = "";
-    renderProducts(0, 9, newFilter);
+    handleGettingFiltersData(
+      selectedValues.color,
+      selectedValues.price,
+      selectedValues.size
+    )
   });
 
   ELEMENTS.colorContainer.forEach(container => {

@@ -25,3 +25,10 @@ export type OrderFunctions = {
   'maior preço': (a: Product, b: Product) => number;
   'mais recentes': (a: Product, b: Product) => number;
 };
+
+export type RenderOptionsType = {
+  start: number,
+  end: number,
+  filters?: Filters,
+  sortOrder?: (a: Product, b: Product) => number
+}
