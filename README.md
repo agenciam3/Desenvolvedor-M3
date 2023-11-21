@@ -25,6 +25,7 @@ O layout se encontra no [figma](https://www.figma.com/file/hPfcV6VClVfkHCtje9997
 ![Web 3](.github/web-3.png)
 ![Web 4](.github/web-4.png)
 ![Web 5](.github/web-5.png)
+![Web 5](.github/web-6.png)
 
 ## Layout mobile
 ![Mobile 6](.github/mobile-1.png)
