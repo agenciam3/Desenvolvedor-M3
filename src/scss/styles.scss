@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
 
 $color-primary: #00c0ee;
 $color-secondary: #000000;
@@ -166,16 +166,25 @@ main {
           padding-top: 6px;
           color: $color-gray-light;
           cursor: pointer;
+          transition: all 0.1s ease-in;
         }
 
         .size:hover {
-          border: 1px solid $color-primary;
+          border: 2px solid $color-primary;
           color: $color-secondary;
+          font-weight: 500;
         }
 
         .active {
-          border: 1px solid $color-primary;
+          border: 2px solid $color-primary;
           color: $color-secondary;
+          font-weight: 500;
+        }
+
+        .off {
+          pointer-events: none;
+          border: 1px solid rgba($color-gray-light, 0.2) !important;
+          color: rgba($color-gray-light, 0.2) !important;
         }
       }
     }
@@ -285,6 +294,14 @@ main {
           background-color: rgba($color-secondary, 0.8);
           scale: 1.05;
         }
+      }
+
+      .show {
+        display: block;
+      }
+
+      .hidden {
+        display: none;
       }
     }
 

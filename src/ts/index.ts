@@ -1,10 +1,18 @@
 import { Product } from "./Product";
 
-const productsSection = document.getElementById("products");
-
+let productsSection = document.getElementById("products");
+const products = document.querySelectorAll(".product");
 const loadMoreButton = document.getElementById("load-more");
+const sizes = document.querySelectorAll(".size");
+let page = 1;
+let limit = 9;
 
-// função de criação dos produtos
+function main() {
+  getDataFromApi();
+}
+
+main();
+
 function createProduct(data: Product) {
   const productContainer = document.createElement("article");
   const productImage = document.createElement("img");
@@ -12,6 +20,10 @@ function createProduct(data: Product) {
   const productPrice = document.createElement("p");
   const productInstallment = document.createElement("p");
   const productButton = document.createElement("button");
+
+  data.size.forEach((sizeClass) => {
+    productContainer.classList.add(`size-${sizeClass}`);
+  });
 
   productContainer.classList.add("product");
   productImage.classList.add("product-image");
@@ -43,27 +55,116 @@ function createProduct(data: Product) {
   return productContainer;
 }
 
-// função para renderizar produtos via API
-let page = 1;
-let limit = 9;
-
 function getDataFromApi() {
-  fetch(`http://localhost:5000/products?_page=${page}&_limit=${limit}`)
+  fetch(`http://localhost:5000/products`)
     .then((data) => data.json())
-    .then((data) => {
-      const productsData = data;
-
-      productsData.map((product: Product) => {
+    .then(function (data) {
+      data.map((product: Product) => {
+        const productId = Number(product.id);
         const productContainer = createProduct(product);
+
         productsSection.appendChild(productContainer);
+
+        if (productId > 9) {
+          productContainer.style.display = "none";
+        }
       });
     })
     .catch((error) => console.error(error));
 }
 
-getDataFromApi();
+loadMoreButton.addEventListener("click", loadMoreProducts);
 
-// função do "Ordenar por:"
+function loadMoreProducts() {
+  const products = document.querySelectorAll(".product");
+
+  products.forEach((product: HTMLElement) => {
+    if (product.style.display == "none") {
+      product.style.display = "flex";
+    }
+  });
+
+  loadMoreButton.style.display = "none";
+}
+
+function addClassFilterSize() {
+  let countClick = 0;
+  sizes.forEach((size: HTMLElement) => {
+    size.addEventListener("click", function () {
+      if (countClick == 0) {
+        size.classList.toggle("active");
+        sizes.forEach((sizeDisable: HTMLElement) => {
+          if (!sizeDisable.classList.contains("active")) {
+            sizeDisable.classList.add("off");
+          }
+        });
+        countClick++;
+        console.log("entrou no caso 0", countClick);
+      } else {
+        size.classList.toggle("active");
+        sizes.forEach((sizeDisable: HTMLElement) => {
+          if (sizeDisable.classList.contains("off")) {
+            sizeDisable.classList.remove("off");
+          }
+        });
+        console.log("entrou no caso 1", countClick);
+        countClick = 0;
+      }
+    });
+  });
+}
+
+function filterSize() {
+  addClassFilterSize();
+
+  sizes.forEach((size) => {
+    size.addEventListener("click", function () {
+      const productsElement = document.getElementsByClassName("product");
+      const sizeValueSelected = `size-${size.innerHTML}`;
+      const productsFilter = [];
+
+      loadMoreButton.style.display = "none";
+
+      for (let i = 0; i < productsElement.length; i++) {
+        const product: any = productsElement[i];
+        const classContain = product.classList.contains(sizeValueSelected);
+
+        // acrescentando o produto no array de produtos filtrados
+        if (classContain) {
+          productsFilter.push(product);
+        }
+
+        // condição para mostrar ou não os elementos do filtro
+        if (
+          productsFilter.includes(product) &&
+          size.classList.contains("active")
+        ) {
+          product.style.display = "flex";
+        } else product.style.display = "none";
+
+        // caso nenhum filtro esteja ativo
+        if (!size.classList.contains("active")) {
+          loadMoreButton.style.display = "block";
+          productsSection.innerHTML = "";
+          return getDataFromApi();
+        }
+      }
+
+      // caso não haja nenhum produto com aquele tamanho
+      if (productsFilter.length == 0) {
+        console.log("não tem produto");
+        const withoutProduct = document.createElement("p");
+        withoutProduct.innerText = "Nenhum produto encontrado";
+
+        productsSection.appendChild(withoutProduct);
+      }
+    });
+  });
+}
+
+filterSize();
+
+// função de seleção do "Ordenar por:"
 let selectValue = document.getElementById("select-value"),
   optionsViewButton = document.getElementById("options-view-button"),
   inputsOptions = document.querySelectorAll(".option input");
@@ -78,25 +179,3 @@ inputsOptions.forEach((input: HTMLElement) => {
     isMouseOrTouch && optionsViewButton.click();
   });
 });
-
-// função para carregar mais produtos
-loadMoreButton.addEventListener("click", loadMoreProducts);
-
-function loadMoreProducts() {
-  page++;
-  loadMoreButton.style.display = "none";
-  getDataFromApi();
-}
-
-// função para adicionar classe de estilização no filtro tamanho
-function addClassFilterSize() {
-  const sizes = document.querySelectorAll(".size");
-
-  sizes.forEach((size) => {
-    size.addEventListener("click", function () {
-      const sizeClass = size.classList.toggle("active");
-    });
-  });
-}
-
-addClassFilterSize();
