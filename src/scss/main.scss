@@ -1,1 +1,29 @@
-@import "reset";
+@import "reset", "variables";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 162px;
+  border-bottom: 1px solid black;
+}
+
+footer {
+  display: grid;
+  place-items: center;
+  padding: 7px 0;
+  color: $branco;
+  background-color: $preto;
+}
+
+.product-card {
+  margin: 2px;
+  padding: 5px;
+  text-align: center;
+  width: calc(33.33% - 20px);
+  display: inline-block;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    width: calc(50% - 20px);
+  }
+}
