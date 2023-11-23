@@ -6,6 +6,9 @@ const loadMoreButton = document.getElementById("load-more");
 const sizes = document.querySelectorAll(".size");
 let page = 1;
 let limit = 9;
+let query = "";
+let sort = "";
+let extraQuery = "";
 
 function main() {
   getDataFromApi();
@@ -56,7 +59,9 @@ function createProduct(data: Product) {
 }
 
 function getDataFromApi() {
-  fetch(`http://localhost:5000/products`)
+  fetch(
+    `http://localhost:5000/products?_sort=${query}&_order=${sort}${extraQuery}`
+  )
     .then((data) => data.json())
     .then(function (data) {
       data.map((product: Product) => {
@@ -164,7 +169,7 @@ function filterSize() {
 
 filterSize();
 
-// função de seleção do "Ordenar por:"
+// função de selecionar uma opção do "Ordenar por:"
 let selectValue = document.getElementById("select-value"),
   optionsViewButton = document.getElementById("options-view-button"),
   inputsOptions = document.querySelectorAll(".option input");
@@ -177,5 +182,59 @@ inputsOptions.forEach((input: HTMLElement) => {
       event.pointerType === "mouse" || event.pointerType === "touch";
 
     isMouseOrTouch && optionsViewButton.click();
+
+    if (selectValue.textContent == "Mais recentes") {
+      filterOrderMoreRecent();
+    } else if (selectValue.textContent == "Menor preço") {
+      filterOrderLowestPrice();
+    } else if (selectValue.textContent == "Maior preço") {
+      filterOrderBiggestPrice();
+    }
   });
 });
+
+function filterOrderMoreRecent() {
+  productsSection.innerHTML = "";
+
+  query = "date";
+  sort = "asc";
+
+  getDataFromApi();
+
+  loadMoreButton.style.display = "block";
+}
+
+function filterOrderLowestPrice() {
+  productsSection.innerHTML = "";
+
+  query = "price";
+  sort = "asc";
+
+  getDataFromApi();
+
+  loadMoreButton.style.display = "block";
+}
+
+function filterOrderBiggestPrice() {
+  productsSection.innerHTML = "";
+
+  query = "price";
+  sort = "desc";
+
+  getDataFromApi();
+
+  loadMoreButton.style.display = "block";
+}
+
+const colorsOptions = document.querySelectorAll(".colors-options label");
+const allColorsButton = document.getElementById("all-colors");
+
+allColorsButton.addEventListener("click", seeAllColors);
+
+function seeAllColors() {
+  colorsOptions.forEach((option: HTMLElement) => {
+    option.style.display = "flex";
+  });
+
+  allColorsButton.style.display = "none";
+}
