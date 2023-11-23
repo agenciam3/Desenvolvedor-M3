@@ -9,80 +9,146 @@
   </head>
 
   <body>
-    <header>
-      <img src="./img/logo-m3.png" alt="Logo-M3" />
-      <div>
-        <img src="./img/image 3.png" alt="product-bag" />
+    <div class="content">
+      <header>
+        <img src="./img/logo-m3.png" alt="Logo-M3" />
+        <div>
+          <img src="./img/image 3.png" alt="product-bag" />
+        </div>
+      </header>
+
+      <div class="combo-box">
+        <select class="select">
+          <option selected disabled hidden>Ordenar por</option>
+          <option value="recentes">Mais recentes</option>
+          <option value="menor-preco">Menor Preço</option>
+          <option value="maior-preco">Maior Preço</option>
+        </select>
       </div>
-    </header>
-    <div class="product-card">
-      <img src="./img/img_2.png" alt="product" />
-      <h2>CAMISETA MESCLA</h2>
-      <span>R$ 28,00</span>
-      <p>até 3x de R$9,33</p>
-      <button><p>COMPRAR</p></button>
+
+      <div class="products"></div>
+
+      <footer>
+        <div class="footer">
+          <h2>M3: Implantação de E-commerce VTEX</h2>
+        </div>
+      </footer>
     </div>
-    <div class="product-card">
-      <img src="./img/img_3.png" alt="product" />
-      <h2>SAIA EM COURO</h2>
-      <span>R$ 398,00</span>
-      <p>até 10x de R$39,80</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_4.png" alt="product" />
-      <h2>CARDIGAN TIGRE</h2>
-      <span>R$ 398,00</span>
-      <p>até 10x de R$39,80</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_5.png" alt="product" />
-      <h2>CARDIGAN OFF WHITE</h2>
-      <span>R$ 99,90</span>
-      <p>até 3x de R$33,30</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_6.png" alt="product" />
-      <h2>BODY LEOPARDO</h2>
-      <span>R$ 129,90</span>
-      <p>até 3x de R$43,43</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_7.png" alt="product" />
-      <h2>CASACO PELOS</h2>
-      <span>R$ 398,00</span>
-      <p>até 10x de R$39,80</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_8.png" alt="product" />
-      <h2>CROPPED STRIPES</h2>
-      <span>R$ 120,00</span>
-      <p>até 3x de R$40,00</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_9.png" alt="product" />
-      <h2>CAMISA TRANSPARENTE</h2>
-      <span>R$ 398,00</span>
-      <p>até 10x de R$39,80</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <div class="product-card">
-      <img src="./img/img_10.png" alt="product" />
-      <h2>CARDIGAN TIGRE</h2>
-      <span>R$ 398,00</span>
-      <p>até 10x de R$39,80</p>
-      <button><p>COMPRAR</p></button>
-    </div>
-    <footer>
-      <div class="footer">
-        <h2>M3: Implantação de E-commerce VTEX</h2>
-      </div>
-    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const select = document.querySelector(".select");
+        const productsContainer = document.querySelector(".products");
+
+        const products = [
+          {
+            nome: "CAMISETA MESCLA",
+            preco: 28.0,
+            parcelas: 3,
+            valorParcela: 9.33,
+            img: "img_2.png",
+          },
+          {
+            nome: "SAIA EM COURO",
+            preco: 398.0,
+            parcelas: 10,
+            valorParcela: 39.8,
+            img: "img_3.png",
+          },
+          {
+            nome: "CARDIGAN TIGRE",
+            preco: 398.0,
+            parcelas: 10,
+            valorParcela: 39.8,
+            img: "img_4.png",
+          },
+          {
+            nome: "CARDIGAN OFF WHITE",
+            preco: 99.9,
+            parcelas: 3,
+            valorParcela: 33.3,
+            img: "img_5.png",
+          },
+          {
+            nome: "BODY LEOPARDO",
+            preco: 129.9,
+            parcelas: 3,
+            valorParcela: 43.43,
+            img: "img_6.png",
+          },
+          {
+            nome: "CASACO PELOS",
+            preco: 398.0,
+            parcelas: 10,
+            valorParcela: 39.8,
+            img: "img_7.png",
+          },
+          {
+            nome: "CROPPED STRIPES",
+            preco: 120.0,
+            parcelas: 3,
+            valorParcela: 40.0,
+            img: "img_8.png",
+          },
+          {
+            nome: "CAMISA TRANSPARENTE",
+            preco: 398.0,
+            parcelas: 10,
+            valorParcela: 39.8,
+            img: "img_9.png",
+          },
+          {
+            nome: "CARDIGAN TIGRE",
+            preco: 398.0,
+            parcelas: 10,
+            valorParcela: 39.8,
+            img: "img_10.png",
+          },
+        ];
+
+        function renderProducts(products) {
+          productsContainer.innerHTML = "";
+
+          products.forEach((product) => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+            <img src="./img/${product.img}" alt="${product.nome}" />
+            <h2>${product.nome}</h2>
+            <span>R$ ${product.preco.toFixed(2)}</span>
+            <p>até ${product.parcelas}x de R$${product.valorParcela.toFixed(
+              2
+            )}</p>
+              <button class="buy-button"><p>COMPRAR</p></button>
+              `;
+            productsContainer.appendChild(card);
+          });
+        }
+
+        function sortProducts(option) {
+          const sortedProducts = [...products];
+
+          switch (option) {
+            case "recentes":
+              break;
+            case "menor-preco":
+              sortedProducts.sort((a, b) => a.preco - b.preco);
+              break;
+            case "maior-preco":
+              sortedProducts.sort((a, b) => b.preco - a.preco);
+              break;
+          }
+
+          renderProducts(sortedProducts);
+        }
+
+        select.addEventListener("change", function () {
+          const selectedOption = select.value;
+          sortProducts(selectedOption);
+        });
+
+        renderProducts(products);
+      });
+    </script>
   </body>
-  <script src="bundle.js"></script>
 </html>
