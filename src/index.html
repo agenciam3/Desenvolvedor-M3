@@ -11,7 +11,10 @@
   <body>
     <header>
       <img src="./img/logo-m3.png" alt="Logo da M3" />
-      <img src="./img/image-bag.jpg" alt="Carrinho de produtos" />
+      <div class="shopping-cart">
+        <img src="./img/image-bag.jpg" alt="Carrinho de produtos" />
+        <div id="quantity-products">0</div>
+      </div>
     </header>
 
     <section class="products-identification">
@@ -72,36 +75,58 @@
         <div class="filter-colors">
           <h3>CORES</h3>
           <div class="colors-options">
-            <label for="color-yellow" data-id="1">
+            <label class="color" for="color-yellow" data-id="1">
               <div>
-                <input type="checkbox" name="" id="color-yellow" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-yellow"
+                />
               </div>
               Amarelo
             </label>
 
-            <label for="color-blue" data-id="2">
+            <label class="color" for="color-blue" data-id="2">
               <div>
-                <input type="checkbox" name="color-selected" id="color-blue" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-blue"
+                />
               </div>
               Azul
             </label>
 
-            <label for="color-white" data-id="3">
+            <label class="color" class="color" for="color-white" data-id="3">
               <div>
-                <input type="checkbox" name="color-selected" id="color-white" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-white"
+                />
               </div>
               Branco
             </label>
-            <label for="color-gray" data-id="4">
+
+            <label class="color" for="color-gray" data-id="4">
               <div>
-                <input type="checkbox" name="color-selected" id="color-gray" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-gray"
+                />
               </div>
               Cinza
             </label>
 
-            <label for="color-orange" data-id="5">
+            <label class="color" for="color-orange" data-id="5">
               <div>
                 <input
+                  class="color-input"
                   type="checkbox"
                   name="color-selected"
                   id="color-orange"
@@ -110,37 +135,58 @@
               Laranja
             </label>
 
-            <label for="color-green" data-id="6">
+            <label class="color" for="color-green" data-id="6">
               <div>
-                <input type="checkbox" name="color-selected" id="color-green" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-green"
+                />
               </div>
               Verde
             </label>
 
-            <label for="color-red" data-id="7">
+            <label class="color" for="color-red" data-id="7">
               <div>
-                <input type="checkbox" name="color-selected" id="color-red" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-red"
+                />
               </div>
               Vermelho
             </label>
 
-            <label for="color-black" data-id="8">
+            <label class="color" for="color-black" data-id="8">
               <div>
-                <input type="checkbox" name="color-selected" id="color-black" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-black"
+                />
               </div>
               Preto
             </label>
 
-            <label for="color-pink" data-id="9">
+            <label class="color" for="color-pink" data-id="9">
               <div>
-                <input type="checkbox" name="color-selected" id="color-pink" />
+                <input
+                  class="color-input"
+                  type="checkbox"
+                  name="color-selected"
+                  id="color-pink"
+                />
               </div>
               Rosa
             </label>
 
-            <label for="color-burgundy" data-id="10">
+            <label class="color" for="color-burgundy" data-id="10">
               <div>
                 <input
+                  class="color-input"
                   type="checkbox"
                   name="color-selected"
                   id="color-burgundy"
@@ -176,35 +222,35 @@
         <div class="filter-prices">
           <h3>FAIXA DE PREÇO</h3>
           <div class="price-options">
-            <label for="price-0-50">
+            <label class="price" for="price-0-50">
               <div>
                 <input type="checkbox" name="" id="price-0-50" />
               </div>
               de R$0 até R$50
             </label>
 
-            <label for="price-51-150">
+            <label class="price" for="price-51-150">
               <div>
                 <input type="checkbox" name="" id="price-51-150" />
               </div>
               de R$51 até R$150
             </label>
 
-            <label for="price-151-300">
+            <label class="price" for="price-151-300">
               <div>
                 <input type="checkbox" name="" id="price-151-300" />
               </div>
               de R$151 até R$300
             </label>
 
-            <label for="price-301-500">
+            <label class="price" for="price-301-500">
               <div>
                 <input type="checkbox" name="" id="price-301-500" />
               </div>
               de R$301 até R$500
             </label>
 
-            <label for="price-500">
+            <label class="price" for="price-500">
               <div>
                 <input type="checkbox" name="" id="price-500" />
               </div>
