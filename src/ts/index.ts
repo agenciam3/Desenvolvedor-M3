@@ -24,8 +24,6 @@ function fetchData() {
   }
 }
 
-window.addEventListener('resize', fetchData);
-
 let quantidadeNaSacola = 0;
 
 function adicionarAoCarrinho() {
@@ -123,7 +121,7 @@ function setupOrderSelect() {
   })
 }
 
-function seeAllColors(): boolean{
+function seeAllColors() {
   const allColorsButton = document.querySelector<HTMLElement>("#allColors");
   const openColors = document.querySelector<HTMLElement>("#cores")
 
@@ -138,6 +136,35 @@ function seeAllColors(): boolean{
   })
 
 }
+
+function seeAllFilters() {
+  const allFiltersButton = document.querySelectorAll<HTMLElement>(".filter-title")
+  allFiltersButton.forEach( (button) => {
+    if (window.innerWidth < 1024)
+    (button.nextElementSibling as HTMLElement).style.maxHeight = "0"
+
+    button.addEventListener("click", () => {
+      if (window.innerWidth >= 1024) return
+      if ((button.nextElementSibling as HTMLElement).style.maxHeight == "0px"){
+        (button.nextElementSibling as HTMLElement).style.maxHeight = ""
+      }else {
+        (button.nextElementSibling as HTMLElement).style.maxHeight = "0"
+      }
+    })
+  }) 
+}
+
+function closeFilter() {
+  const closeFiltersButton: HTMLElement | null = document.querySelector(".apply-button");
+  const filterMenu: HTMLElement | null = document.querySelector(".filter-menu");
+
+  if (closeFiltersButton && filterMenu) {
+    closeFiltersButton.addEventListener("click", () => {
+      filterMenu.classList.add("opened");
+    });
+  }
+}
+
 
 function getSelectedSizes(): string[] {
   const selectedSizes: string[] = [];
@@ -249,6 +276,10 @@ function main() {
     setupOrderSelect();
 
     seeAllColors();
+
+    seeAllFilters();
+
+    closeFilter();
 
     loadMore();
 

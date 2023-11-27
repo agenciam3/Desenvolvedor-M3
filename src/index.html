@@ -25,14 +25,8 @@
         <h1 class="title">Blusas</h1>
         <div class="filter-and-box">
           <button class="filter-mobile">Filtrar</button>
-          <div class="sidemenu-filter">
-            
-          </div>
-
           <button class="box-mobile">Ordenar</button>
-
           <div class="sidemenu-box">
-
           </div>
         </div>  
           <div class="combo-box">
@@ -54,8 +48,15 @@
       </div>
       <div class="store">
         <div class="filter-menu">
+          <div class="sidemenu-filter">
+            <div class="sidemenu-filter-header">
+              <h2>Filtrar</h2>
+              <img src="./img/Group 1.svg" alt="botão de fechar">
+            </div>
+            <hr>
+          </div>
           <div>
-            <label class="filter-title" for="cores">CORES</label>
+            <h3 class="filter-title" id="title-colors"  for="cores">CORES</h3>
             <ul id="cores" onclick="toggleSelection(event)">
               <li>
                 <input class="inputcor" name="amarelo" id="amarelo" type="checkbox" data-value="amarelo" />
@@ -141,7 +142,7 @@
             <button id="allColors">Ver todas as cores <img src="./img/Vector 1.svg" alt="ver todas as cores"></button>
           </div>
           <div>
-            <label class="filter-title-tamanho" for="tamanhos">TAMANHOS</label>
+            <h3 class="filter-title" for="tamanhos">TAMANHOS</h3>
             <ul id="tamanhos" onclick="toggleSelection(event)">
               <li><button data-value="P">P</button></li>
               <li><button data-value="M">M</button></li>
@@ -156,8 +157,8 @@
               <li><button data-value="40">40</button></li>
           </ul>
           </div>
-        <div>
-            <label class="filter-title" for="faixa-preco">FAIXA DE PREÇO</label>
+          <div>
+            <h3 class="filter-title" for="faixa-preco">FAIXA DE PREÇO</h3>
             <ul id="faixa-preco" onclick="toggleSelection(event)">
               <li>
                 <input class="inputpreco" name="preco0" id="preco0" type="checkbox" data-value="0-50" />
@@ -205,6 +206,10 @@
                 A partir de R$500
               </li>
             </ul>
+          </div>
+          <div class="apply-and-clear">
+            <button class="apply-button">aplicar</button>
+            <button class="clear-button">limpar</button>
           </div>
         </div>
         

@@ -96,7 +96,7 @@ header {
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: inline;
 
 
@@ -146,17 +146,13 @@ header {
   }
 }
 
-.sidemenu-filter{
-  display: none;
-}
-
-
 .store {
   display: flex;
   padding: 0 10.8vw;
 }
 
 .products{
+  display: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 43px 64px;
@@ -201,26 +197,78 @@ header {
     }
   
   }
-  @media (max-width: 1024px) {
+
+  
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr 1fr;
     gap: 18px 19px;
+    
+  }
+}
+
+.sidemenu-filter{
+  display: none;
+
+  h2{
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    color: $cinza2;
+  }
+
+  hr{
+    margin: 16px -20px 30px;
+  }
+
+  .sidemenu-filter-header{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 1023px){
+    display: unset;
   }
 }
 
 .filter-menu{
   margin-right: 44px;
+  
+  &.opened{
+    transform: translateX(-100%);
+  }
+
+  #title-colors{
+    margin-top: 0;
+  }
 
   .filter-title{
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
     margin-bottom: 14px;
-  }
+    
 
-  .filter-title-tamanho{
-    display: block;
-    margin: 24px 0;
+    @media (max-width: 1023px){
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: $cinza2;
+
+      &::after{
+        content: "";
+        width: 19px;
+        height: 14px;
+        background-image: url("../img/Vector 3.svg");   
+      }
+    }
   }
   
-  ul#cores{
+  ul{
     overflow: hidden;
 
     
@@ -365,10 +413,57 @@ header {
     margin: 10px 0;
     padding: 0;
     cursor: pointer;
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
   }
 
-  @media (max-width: 1024px) {
+  .apply-and-clear{
     display: none;
+  }
+
+  @media (max-width: 1023px) {
+    position: fixed;
+    overflow-y: scroll;
+    background-color: $branco;
+    inset: 0;
+    margin: 0;
+    padding: 16px 16px 82px 16px;
+
+    .apply-and-clear{
+      display: flex;
+      margin: 30px 0 17px;
+      gap: 23px;
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 0;
+
+      .apply-button{
+        flex: 1;
+        padding: 8px 31px;
+        border: none;
+        color: $branco;
+        background-color: $primaria;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+
+      .clear-button{
+        flex: 1;
+        padding: 8px 31px;
+        border: 1px solid #666;
+        color: $cinza2;
+        background-color: $branco;
+        font-size: 14px;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 14px;
+      }
+    }
   }
 
 }
