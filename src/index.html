@@ -4,151 +4,222 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <title>Desenvolvedor M3</title>
     <link rel="stylesheet" href="main.css" />
+    <script type="module" src="src/ts/index.js"></script>
   </head>
-
+  
   <body>
     <div class="content">
       <header>
-        <img src="./img/logo-m3.png" alt="Logo-M3" />
-        <div>
+          <img src="./img/logo-m3.png" alt="Logo-M3" />
+        <div class="bag-count">
           <img src="./img/image 3.png" alt="product-bag" />
+          <div id="productBagCount">0</div>
         </div>
       </header>
+      <div class="title-and-box">
+        <h1 class="title">Blusas</h1>
+        <div class="filter-and-box">
+          <button class="filter-mobile">Filtrar</button>
+          <div class="sidemenu-filter">
+            
+          </div>
 
-      <div class="combo-box">
-        <select class="select">
-          <option selected disabled hidden>Ordenar por</option>
-          <option value="recentes">Mais recentes</option>
-          <option value="menor-preco">Menor Preço</option>
-          <option value="maior-preco">Maior Preço</option>
-        </select>
+          <button class="box-mobile">Ordenar</button>
+
+          <div class="sidemenu-box">
+
+          </div>
+        </div>  
+          <div class="combo-box">
+            <select class="select" id="productSort">
+              <option selected disabled hidden>Ordenar por:</option>
+              <option class="option-most-recent" value="recentes">Mais recentes</option>
+              <option value="menor-preco">Menor Preço</option>
+              <option value="maior-preco">Maior Preço</option>
+            </select>
+            <div class="order-select">
+              <p>Ordenar por: <img src="./img/Vector 2.svg" alt="seta ordernar por"></p>
+              <div>
+                <button class="most-recent">Mais recentes</button>
+                <button class="lower-price">Menor preço</button>
+                <button class="higher-price">Maior preço</button>
+              </div>
+            </div>
+          </div>
       </div>
-
-      <div class="products"></div>
-
+      <div class="store">
+        <div class="filter-menu">
+          <div>
+            <label class="filter-title" for="cores">CORES</label>
+            <ul id="cores" onclick="toggleSelection(event)">
+              <li>
+                <input class="inputcor" name="amarelo" id="amarelo" type="checkbox" data-value="amarelo" />
+                <label class="label" for="amarelo">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Amarelo
+              </li>
+              <li>
+                <input class="inputcor" name="azul" id="azul" type="checkbox" data-value="azul" />
+                <label class="label" for="azul">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Azul
+              </li>
+              <li>
+                <input class="inputcor" name="branco" id="branco" type="checkbox" data-value="branco" />
+                <label class="label" for="branco">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Branco
+              </li>
+              <li>
+                <input class="inputcor" name="cinza" id="cinza" type="checkbox" data-value="cinza" />
+                <label class="label" for="cinza">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Cinza
+              </li>
+              <li>
+                <input class="inputcor" name="laranja" id="laranja" type="checkbox" data-value="laranja" />
+                <label class="label" for="laranja">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Laranja
+              </li>
+              <li>
+                <input class="inputcor" name="verde" id="verde" type="checkbox" data-value="verde" />
+                <label class="label" for="verde">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Verde
+              </li>
+              <li>
+                <input class="inputcor" name="vermelho" id="vermelho" type="checkbox" data-value="vermelho" />
+                <label class="label" for="vermelho">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Vermelho
+              </li>
+              <li>
+                <input class="inputcor" name="preto" id="preto" type="checkbox" data-value="preto" />
+                <label class="label" for="preto">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Preto
+              </li>
+              <li>
+                <input class="inputcor" name="rosa" id="rosa" type="checkbox" data-value="rosa" />
+                <label class="label" for="rosa">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Rosa
+              </li>
+              <li>
+                <input class="inputcor" name="vinho" id="vinho" type="checkbox" data-value="vinho" />
+                <label class="label" for="vinho">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>Vinho
+              </li>
+            </ul>
+            <button id="allColors">Ver todas as cores <img src="./img/Vector 1.svg" alt="ver todas as cores"></button>
+          </div>
+          <div>
+            <label class="filter-title-tamanho" for="tamanhos">TAMANHOS</label>
+            <ul id="tamanhos" onclick="toggleSelection(event)">
+              <li><button data-value="P">P</button></li>
+              <li><button data-value="M">M</button></li>
+              <li><button data-value="G">G</button></li>
+              <li><button data-value="GG">GG</button></li>
+              <li><button data-value="U">U</button></li>
+              <li><button data-value="36">36</button></li>
+              <li><button data-value="38">38</button></li>
+              <li><button data-value="40">40</button></li>
+              <li><button data-value="36">36</button></li>
+              <li><button data-value="38">38</button></li>
+              <li><button data-value="40">40</button></li>
+          </ul>
+          </div>
+        <div>
+            <label class="filter-title" for="faixa-preco">FAIXA DE PREÇO</label>
+            <ul id="faixa-preco" onclick="toggleSelection(event)">
+              <li>
+                <input class="inputpreco" name="preco0" id="preco0" type="checkbox" data-value="0-50" />
+                <label class="label" for="preco0">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>
+                  R$0 até R$50
+              </li>
+              <li>
+                <input class="inputpreco" name="preco51" id="preco51" type="checkbox" data-value="51-150" />
+                <label class="label" for="preco51">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>
+                R$51 até R$150
+              </li>
+              <li>
+                <input class="inputpreco" name="preco151" id="preco151" type="checkbox" data-value="151-300" />
+                <label class="label" for="preco151">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>
+                R$151 até R$300
+              </li>
+              <li>
+                <input class="inputpreco" name="preco301" id="preco301" type="checkbox" data-value="301-500" />
+                <label class="label" for="preco301">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>
+                R$301 até R$500
+              </li>
+              <li>
+                <input class="inputpreco" name="preco500" id="preco500" type="checkbox" data-value="500+" />
+                <label class="label" for="preco500">
+                  <div class="check">
+                    <div class="mark"></div>
+                  </div>
+                </label>
+                A partir de R$500
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="products">         
+        </div>
+      </div>
+      <div class="loadMore">
+        <button id="load-more" onclick="loadMore()">CARREGAR MAIS</button>
+      </div>
+    </div>
       <footer>
         <div class="footer">
           <h2>M3: Implantação de E-commerce VTEX</h2>
         </div>
       </footer>
     </div>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const select = document.querySelector(".select");
-        const productsContainer = document.querySelector(".products");
-
-        const products = [
-          {
-            nome: "CAMISETA MESCLA",
-            preco: 28.0,
-            parcelas: 3,
-            valorParcela: 9.33,
-            img: "img_2.png",
-          },
-          {
-            nome: "SAIA EM COURO",
-            preco: 398.0,
-            parcelas: 10,
-            valorParcela: 39.8,
-            img: "img_3.png",
-          },
-          {
-            nome: "CARDIGAN TIGRE",
-            preco: 398.0,
-            parcelas: 10,
-            valorParcela: 39.8,
-            img: "img_4.png",
-          },
-          {
-            nome: "CARDIGAN OFF WHITE",
-            preco: 99.9,
-            parcelas: 3,
-            valorParcela: 33.3,
-            img: "img_5.png",
-          },
-          {
-            nome: "BODY LEOPARDO",
-            preco: 129.9,
-            parcelas: 3,
-            valorParcela: 43.43,
-            img: "img_6.png",
-          },
-          {
-            nome: "CASACO PELOS",
-            preco: 398.0,
-            parcelas: 10,
-            valorParcela: 39.8,
-            img: "img_7.png",
-          },
-          {
-            nome: "CROPPED STRIPES",
-            preco: 120.0,
-            parcelas: 3,
-            valorParcela: 40.0,
-            img: "img_8.png",
-          },
-          {
-            nome: "CAMISA TRANSPARENTE",
-            preco: 398.0,
-            parcelas: 10,
-            valorParcela: 39.8,
-            img: "img_9.png",
-          },
-          {
-            nome: "CARDIGAN TIGRE",
-            preco: 398.0,
-            parcelas: 10,
-            valorParcela: 39.8,
-            img: "img_10.png",
-          },
-        ];
-
-        function renderProducts(products) {
-          productsContainer.innerHTML = "";
-
-          products.forEach((product) => {
-            const card = document.createElement("div");
-            card.className = "product-card";
-            card.innerHTML = `
-            <img src="./img/${product.img}" alt="${product.nome}" />
-            <h2>${product.nome}</h2>
-            <span>R$ ${product.preco.toFixed(2)}</span>
-            <p>até ${product.parcelas}x de R$${product.valorParcela.toFixed(
-              2
-            )}</p>
-              <button class="buy-button"><p>COMPRAR</p></button>
-              `;
-            productsContainer.appendChild(card);
-          });
-        }
-
-        function sortProducts(option) {
-          const sortedProducts = [...products];
-
-          switch (option) {
-            case "recentes":
-              break;
-            case "menor-preco":
-              sortedProducts.sort((a, b) => a.preco - b.preco);
-              break;
-            case "maior-preco":
-              sortedProducts.sort((a, b) => b.preco - a.preco);
-              break;
-          }
-
-          renderProducts(sortedProducts);
-        }
-
-        select.addEventListener("change", function () {
-          const selectedOption = select.value;
-          sortProducts(selectedOption);
-        });
-
-        renderProducts(products);
-      });
-    </script>
   </body>
 </html>
