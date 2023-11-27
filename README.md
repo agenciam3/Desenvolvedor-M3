@@ -2,10 +2,16 @@
 
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias-e-características">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-funcionalidades">Funcionalidades</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-rodar-o-projeto">Rodar o projeto</a>&nbsp;&nbsp;&nbsp;
 </p>
+
+
+
+https://github.com/laynamoraes/Desenvolvedor-M3/assets/111987747/1e933166-0d33-42de-96e9-e9e143fe8a8f
+
+
 
 <br><br>
 
@@ -34,6 +40,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/características:
 - Filtrar produtos por cor, tamanho e preço
 - Adicionar produto ao carrinho
 - Carregar mais produtos
+   <br><br>
 
 ## ▶ Rodar o projeto
 
@@ -45,6 +52,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias/características:
   - um para acessar o front-end, que roda na porta 3000. No qual pode ser acessado pela url: http://localhost:3000
 
   - um para o json-server que irá exportar uma API com a lista de produtos que roda na porta 5000. Para acessar os produtos acesse a url: http://localhost:5000/products
+ <br>
 
 #### OBS: durante o desenvolvimento, um dos problemas encontrados foi a execução do comando `npm start`, caso você também receba este erro tente trocar o caminho atual do comando para 👉🏻 `"start": "node_modules/.bin/cross-env SERVER_API=http://localhost:5000 npm-run-all --parallel dev server"`.
 
