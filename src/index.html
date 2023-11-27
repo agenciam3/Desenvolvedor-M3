@@ -9,76 +9,298 @@
   </head>
 
   <body>
-    <header>
-      <img src="./img/logo-m3.png" alt="Logo da M3" />
-      <div class="shopping-cart">
-        <img src="./img/image-bag.jpg" alt="Carrinho de produtos" />
-        <div id="quantity-products">0</div>
-      </div>
-    </header>
+    <div class="container">
+      <header>
+        <img src="./img/logo-m3.png" alt="Logo da M3" />
+        <div class="shopping-cart">
+          <img src="./img/image-bag.jpg" alt="Carrinho de produtos" />
+          <div id="quantity-products">0</div>
+        </div>
+      </header>
 
-    <section class="products-identification">
-      <h1>Blusas</h1>
-      <div class="select">
-        <div id="category-select">
-          <input type="checkbox" id="options-view-button" />
+      <section class="products-identification">
+        <h1>Blusas</h1>
+        <div class="select">
+          <div id="category-select">
+            <input type="checkbox" id="options-view-button" />
 
-          <div id="select-button">
-            <label id="select-value">
-              Ordernar por:
-              <img src="./img/Dropdown.svg" alt="" />
-            </label>
+            <div id="select-button">
+              <label id="select-value">
+                Ordernar por:
+                <img src="./img/Dropdown.svg" alt="" />
+              </label>
+            </div>
           </div>
+
+          <ul id="options">
+            <li class="option">
+              <input
+                type="radio"
+                name="category"
+                value="maisRecentes"
+                data-label="Mais recentes"
+              />
+              <label class="label">Mais recentes</label>
+            </li>
+
+            <li class="option">
+              <input
+                type="radio"
+                name="category"
+                value="menorPreco"
+                data-label="Menor preço"
+              />
+              <label class="label">Menor preço</label>
+            </li>
+
+            <li class="option">
+              <input
+                type="radio"
+                name="category"
+                value="maiorPreco"
+                data-label="Maior preço"
+              />
+              <label class="label">Maior preço</label>
+            </li>
+          </ul>
         </div>
 
-        <ul id="options">
-          <li class="option">
-            <input
-              type="radio"
-              name="category"
-              value="maisRecentes"
-              data-label="Mais recentes"
-            />
-            <label class="label">Mais recentes</label>
-          </li>
+        <div class="filters-mobile">
+          <div class="filters-mobile-content">
+            <div id="filter-mobile">Filtrar</div>
+            <div id="order-mobile">Ordenar</div>
+          </div>
+        </div>
+      </section>
 
-          <li class="option">
-            <input
-              type="radio"
-              name="category"
-              value="menorPreco"
-              data-label="Menor preço"
-            />
-            <label class="label">Menor preço</label>
-          </li>
+      <main>
+        <aside class="filters-desktop">
+          <div class="filter-colors">
+            <h3>CORES</h3>
+            <div class="colors-options">
+              <label class="color" for="color-yellow" data-id="1">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-yellow"
+                  />
+                </div>
+                Amarelo
+              </label>
 
-          <li class="option">
-            <input
-              type="radio"
-              name="category"
-              value="maiorPreco"
-              data-label="Maior preço"
-            />
-            <label class="label">Maior preço</label>
-          </li>
-        </ul>
+              <label class="color" for="color-blue" data-id="2">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-blue"
+                  />
+                </div>
+                Azul
+              </label>
+
+              <label class="color" class="color" for="color-white" data-id="3">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-white"
+                  />
+                </div>
+                Branco
+              </label>
+
+              <label class="color" for="color-gray" data-id="4">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-gray"
+                  />
+                </div>
+                Cinza
+              </label>
+
+              <label class="color" for="color-orange" data-id="5">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-orange"
+                  />
+                </div>
+                Laranja
+              </label>
+
+              <label class="color" for="color-green" data-id="6">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-green"
+                  />
+                </div>
+                Verde
+              </label>
+
+              <label class="color" for="color-red" data-id="7">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-red"
+                  />
+                </div>
+                Vermelho
+              </label>
+
+              <label class="color" for="color-black" data-id="8">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-black"
+                  />
+                </div>
+                Preto
+              </label>
+
+              <label class="color" for="color-pink" data-id="9">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-pink"
+                  />
+                </div>
+                Rosa
+              </label>
+
+              <label class="color" for="color-burgundy" data-id="10">
+                <div>
+                  <input
+                    class="color-input"
+                    type="checkbox"
+                    name="color-selected"
+                    id="color-burgundy"
+                  />
+                </div>
+                Vinho
+              </label>
+
+              <span id="all-colors">
+                Ver todas as cores
+                <img src="./img/Dropdown.svg" />
+              </span>
+            </div>
+          </div>
+
+          <div class="filter-sizes">
+            <h3>TAMANHOS</h3>
+            <div class="sizes-options">
+              <div class="size">P</div>
+              <div class="size">M</div>
+              <div class="size">G</div>
+              <div class="size">GG</div>
+              <div class="size">U</div>
+              <div class="size">36</div>
+              <div class="size">38</div>
+              <div class="size">40</div>
+              <div class="size">42</div>
+              <div class="size">44</div>
+              <div class="size">46</div>
+            </div>
+          </div>
+
+          <div class="filter-prices">
+            <h3>FAIXA DE PREÇO</h3>
+            <div class="price-options">
+              <label class="price" for="price-0-50">
+                <div>
+                  <input type="checkbox" name="" id="price-0-50" />
+                </div>
+                de R$0 até R$50
+              </label>
+
+              <label class="price" for="price-51-150">
+                <div>
+                  <input type="checkbox" name="" id="price-51-150" />
+                </div>
+                de R$51 até R$150
+              </label>
+
+              <label class="price" for="price-151-300">
+                <div>
+                  <input type="checkbox" name="" id="price-151-300" />
+                </div>
+                de R$151 até R$300
+              </label>
+
+              <label class="price" for="price-301-500">
+                <div>
+                  <input type="checkbox" name="" id="price-301-500" />
+                </div>
+                de R$301 até R$500
+              </label>
+
+              <label class="price" for="price-500">
+                <div>
+                  <input type="checkbox" name="" id="price-500" />
+                </div>
+                a partir de R$500
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <div class="container-products">
+          <section id="products"></section>
+
+          <button id="load-more">CARREGAR MAIS</button>
+        </div>
+      </main>
+
+      <footer>
+        <p>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</p>
+      </footer>
+    </div>
+
+    <div class="filter-page-mobile">
+      <div class="filter-page-mobile-header">
+        <h2>FILTRAR</h2>
+        <img
+          id="close-filter-page"
+          src="./img/close.svg"
+          alt="Botão de fechar"
+        />
       </div>
 
-      <div class="filters-mobile">
-        <p>Filtrar</p>
-        <p>Ordenar</p>
-      </div>
-    </section>
-
-    <main>
-      <aside class="filters-desktop">
-        <div class="filter-colors">
-          <h3>CORES</h3>
-          <div class="colors-options">
-            <label class="color" for="color-yellow" data-id="1">
+      <div class="filter-page-mobile-options">
+        <div class="filter-colors-mobile">
+          <div class="filter-colors-title">
+            <h3>CORES</h3>
+            <div class="dropdown-container">
+              <img
+                src="./img/Dropdown.svg"
+                alt="Seta para baixo - expandir opções de cores"
+              />
+            </div>
+          </div>
+          <div class="colors-options-mobile">
+            <label class="color-mobile" for="color-yellow" data-id="1">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-yellow"
@@ -87,10 +309,10 @@
               Amarelo
             </label>
 
-            <label class="color" for="color-blue" data-id="2">
+            <label class="color-mobile" for="color-blue" data-id="2">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-blue"
@@ -99,10 +321,15 @@
               Azul
             </label>
 
-            <label class="color" class="color" for="color-white" data-id="3">
+            <label
+              class="color-mobile"
+              class="color"
+              for="color-white"
+              data-id="3"
+            >
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-white"
@@ -111,7 +338,7 @@
               Branco
             </label>
 
-            <label class="color" for="color-gray" data-id="4">
+            <label class="color-mobile" for="color-gray" data-id="4">
               <div>
                 <input
                   class="color-input"
@@ -123,10 +350,10 @@
               Cinza
             </label>
 
-            <label class="color" for="color-orange" data-id="5">
+            <label class="color-mobile" for="color-orange" data-id="5">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-orange"
@@ -135,10 +362,10 @@
               Laranja
             </label>
 
-            <label class="color" for="color-green" data-id="6">
+            <label class="color-mobile" for="color-green" data-id="6">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-green"
@@ -147,10 +374,10 @@
               Verde
             </label>
 
-            <label class="color" for="color-red" data-id="7">
+            <label class="color-mobile" for="color-red" data-id="7">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-red"
@@ -159,10 +386,10 @@
               Vermelho
             </label>
 
-            <label class="color" for="color-black" data-id="8">
+            <label class="color-mobile" for="color-black" data-id="8">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-black"
@@ -171,10 +398,10 @@
               Preto
             </label>
 
-            <label class="color" for="color-pink" data-id="9">
+            <label class="color-mobile" for="color-pink" data-id="9">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-pink"
@@ -183,10 +410,10 @@
               Rosa
             </label>
 
-            <label class="color" for="color-burgundy" data-id="10">
+            <label class="color-mobile" for="color-burgundy" data-id="10">
               <div>
                 <input
-                  class="color-input"
+                  class="color-input-mobile"
                   type="checkbox"
                   name="color-selected"
                   id="color-burgundy"
@@ -194,63 +421,74 @@
               </div>
               Vinho
             </label>
-
-            <span id="all-colors">
-              Ver todas as cores
-              <img src="./img/Dropdown.svg" />
-            </span>
           </div>
         </div>
 
-        <div class="filter-sizes">
-          <h3>TAMANHOS</h3>
-          <div class="sizes-options">
-            <div class="size">P</div>
-            <div class="size">M</div>
-            <div class="size">G</div>
-            <div class="size">GG</div>
-            <div class="size">U</div>
-            <div class="size">36</div>
-            <div class="size">38</div>
-            <div class="size">40</div>
-            <div class="size">42</div>
-            <div class="size">44</div>
-            <div class="size">46</div>
+        <div class="filter-sizes-mobile">
+          <div class="filter-sizes-title">
+            <h3>TAMANHOS</h3>
+            <div class="dropdown-container">
+              <img
+                src="./img/Dropdown.svg"
+                alt="Seta para baixo - expandir opções de cores"
+              />
+            </div>
+          </div>
+          <div class="sizes-options-mobile">
+            <div class="size-mobile">P</div>
+            <div class="size-mobile">M</div>
+            <div class="size-mobile">G</div>
+            <div class="size-mobile">GG</div>
+            <div class="size-mobile">U</div>
+            <div class="size-mobile">36</div>
+            <div class="size-mobile">38</div>
+            <div class="size-mobile">40</div>
+            <div class="size-mobile">42</div>
+            <div class="size-mobile">44</div>
+            <div class="size-mobile">46</div>
           </div>
         </div>
 
-        <div class="filter-prices">
-          <h3>FAIXA DE PREÇO</h3>
-          <div class="price-options">
-            <label class="price" for="price-0-50">
+        <div class="filter-prices-mobile">
+          <div class="filter-prices-title">
+            <h3>FAIXA DE PREÇO</h3>
+            <div class="dropdown-container">
+              <img
+                src="./img/Dropdown.svg"
+                alt="Seta para baixo - expandir opções de cores"
+              />
+            </div>
+          </div>
+          <div class="price-options-mobile">
+            <label class="price-mobile" for="price-0-50">
               <div>
                 <input type="checkbox" name="" id="price-0-50" />
               </div>
               de R$0 até R$50
             </label>
 
-            <label class="price" for="price-51-150">
+            <label class="price-mobile" for="price-51-150">
               <div>
                 <input type="checkbox" name="" id="price-51-150" />
               </div>
               de R$51 até R$150
             </label>
 
-            <label class="price" for="price-151-300">
+            <label class="price-mobile" for="price-151-300">
               <div>
                 <input type="checkbox" name="" id="price-151-300" />
               </div>
               de R$151 até R$300
             </label>
 
-            <label class="price" for="price-301-500">
+            <label class="price-mobile" for="price-301-500">
               <div>
                 <input type="checkbox" name="" id="price-301-500" />
               </div>
               de R$301 até R$500
             </label>
 
-            <label class="price" for="price-500">
+            <label class="price-mobile" for="price-500">
               <div>
                 <input type="checkbox" name="" id="price-500" />
               </div>
@@ -258,18 +496,55 @@
             </label>
           </div>
         </div>
-      </aside>
-
-      <div class="container-products">
-        <section id="products"></section>
-
-        <button id="load-more">CARREGAR MAIS</button>
       </div>
-    </main>
 
-    <footer>
-      <p>M3: IMPLANTAÇÃO DE E-COMMERCE VTEX</p>
-    </footer>
+      <div class="filter-page-mobile-buttons">
+        <button id="button-apply">APLICAR</button>
+        <button id="button-clean">LIMPAR</button>
+      </div>
+    </div>
+
+    <div class="order-page-mobile">
+      <div class="order-page-mobile-header">
+        <h2>ORDENAR</h2>
+        <img
+          id="close-order-page"
+          src="./img/close.svg"
+          alt="Botão de fechar"
+        />
+      </div>
+      <ul class="order-page-mobile-options">
+        <li class="order-page-mobile-option">
+          <input
+            type="radio"
+            name="category"
+            value="maisRecentes"
+            data-label="Mais recentes"
+          />
+          <label class="label">Mais recentes</label>
+        </li>
+
+        <li class="order-page-mobile-option">
+          <input
+            type="radio"
+            name="category"
+            value="menorPreco"
+            data-label="Menor preço"
+          />
+          <label class="label">Menor preço</label>
+        </li>
+
+        <li class="order-page-mobile-option">
+          <input
+            type="radio"
+            name="category"
+            value="maiorPreco"
+            data-label="Maior preço"
+          />
+          <label class="label">Maior preço</label>
+        </li>
+      </ul>
+    </div>
 
     <script src="bundle.js" defer></script>
   </body>
