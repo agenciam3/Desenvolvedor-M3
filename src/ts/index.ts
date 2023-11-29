@@ -121,6 +121,31 @@ function setupOrderSelect() {
   })
 }
 
+
+
+function orderMenu() {
+  const select = document.querySelector<HTMLSelectElement>("#productSort") 
+  const mostRecent = document.querySelector(".aside-most-recent")
+  const lowerPrice = document.querySelector(".aside-lower-price")
+  const higherPrice = document.querySelector(".aside-higher-price")
+
+  mostRecent.addEventListener("click", () => {
+    select.value = "recentes"
+    fetchData()
+    updateOrderMenuStatus()
+  })
+  lowerPrice.addEventListener("click", () => {
+    select.value = "menor-preco"
+    fetchData()
+    updateOrderMenuStatus()
+  })
+  higherPrice.addEventListener("click", () => {
+    select.value = "maior-preco"
+    fetchData()
+    updateOrderMenuStatus()
+  })
+}
+
 function seeAllColors() {
   const allColorsButton = document.querySelector<HTMLElement>("#allColors");
   const openColors = document.querySelector<HTMLElement>("#cores")
@@ -155,12 +180,25 @@ function seeAllFilters() {
 }
 
 function closeFilter() {
-  const closeFiltersButton: HTMLElement | null = document.querySelector(".apply-button");
-  const filterMenu: HTMLElement | null = document.querySelector(".filter-menu");
+  const closeFiltersButton: HTMLElement | null = document.querySelector(".close-button");
+  const applyFilters: HTMLElement | null = document.querySelector(".apply-button");
 
-  if (closeFiltersButton && filterMenu) {
+  if (closeFiltersButton && applyFilters) {
     closeFiltersButton.addEventListener("click", () => {
-      filterMenu.classList.add("opened");
+      updateFilterMenuStatus()
+    });
+    applyFilters.addEventListener("click", () => {
+      updateFilterMenuStatus()
+    });
+  }
+}
+
+function closeOrder() {
+  const closeOrderButton: HTMLElement | null = document.querySelector(".close-button2");
+
+  if (closeOrderButton ) {
+    closeOrderButton.addEventListener("click", () => {
+      updateOrderMenuStatus()
     });
   }
 }
@@ -239,20 +277,19 @@ function matchesPriceRange(price: number, selectedRanges: string[]): boolean {
   return false;
 }
 
-function addEventListenerToCheckboxList(checkboxList: HTMLUListElement) {
-  checkboxList.addEventListener("click", () => {
-    toggleSelection(event);
-    fetchData();
-  });
-}
-
-
 function toggleSelection(event: Event) {
   const target = event.target as HTMLButtonElement;
 
   if (target.tagName === "BUTTON") {
     target.classList.toggle("selected");
   }
+}
+
+function addEventListenerToCheckboxList(checkboxList: HTMLUListElement) {
+  checkboxList.addEventListener("click", (event) => {
+    toggleSelection(event);
+    fetchData();
+  });
 }
 
 function loadMore() {
@@ -265,6 +302,56 @@ function loadMore() {
 
 }
 
+function clearFilters() {
+  const selectedButtons = document.querySelectorAll(".selected");
+  selectedButtons.forEach((button) => {
+    button.classList.remove("selected");
+  });
+
+  const checkboxes = document.querySelectorAll("input[type=checkbox]");
+  checkboxes.forEach((checkbox) => {
+    (checkbox as HTMLInputElement).checked = false;
+  });
+
+  fetchData();
+}
+
+function handleOrderButtonClick() {
+  const orderMobileButton = document.querySelector(".box-mobile");
+
+  orderMobileButton.addEventListener("click", () => {
+    updateOrderMenuStatus()
+  })
+
+}
+
+function handleFilterButtonClick() {
+  const filterMenu = document.querySelector(".filter-menu");
+  const filterMobileButton = document.querySelector(".filter-mobile");
+
+  if (filterMenu && filterMobileButton) {
+    filterMobileButton.addEventListener("click", () => {
+      filterMenu.classList.toggle("opened");
+    });
+  }
+}
+
+function updateFilterMenuStatus() {
+  let filterMenu = document.querySelector(".filter-menu");
+  
+  if (window.innerWidth <= 1023) {
+    filterMenu.classList.toggle("opened");
+  }
+}
+
+function updateOrderMenuStatus() {
+  let orderMenu = document.querySelector(".sidemenu-ordenar");
+  
+  if (window.innerWidth <= 1023) {
+    orderMenu.classList.toggle("opened");
+  }
+}
+
 function main() {
   console.log(serverUrl);
 
@@ -273,6 +360,12 @@ function main() {
     addEventListenerToCheckboxList(coresCheckboxList);
     addEventListenerToCheckboxList(tamanhosCheckboxList);
     addEventListenerToCheckboxList(faixaPrecoCheckboxList);
+
+    const clearButton = document.querySelector(".clear-button");
+    if (clearButton) {
+      clearButton.addEventListener("click", () => clearFilters());
+    }
+
     setupOrderSelect();
 
     seeAllColors();
@@ -281,9 +374,17 @@ function main() {
 
     closeFilter();
 
+    closeOrder();
+
     loadMore();
 
+    handleFilterButtonClick();
+
+    handleOrderButtonClick();
+
     fetchData();
+
+    orderMenu();
 
   });
 }

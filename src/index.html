@@ -13,14 +13,14 @@
   </head>
   
   <body>
+    <header>
+        <img src="./img/logo-m3.png" alt="Logo-M3" />
+      <div class="bag-count">
+        <img src="./img/image 3.png" alt="product-bag" />
+        <div id="productBagCount">0</div>
+      </div>
+    </header>
     <div class="content">
-      <header>
-          <img src="./img/logo-m3.png" alt="Logo-M3" />
-        <div class="bag-count">
-          <img src="./img/image 3.png" alt="product-bag" />
-          <div id="productBagCount">0</div>
-        </div>
-      </header>
       <div class="title-and-box">
         <h1 class="title">Blusas</h1>
         <div class="filter-and-box">
@@ -51,13 +51,13 @@
           <div class="sidemenu-filter">
             <div class="sidemenu-filter-header">
               <h2>Filtrar</h2>
-              <img src="./img/Group 1.svg" alt="botão de fechar">
+              <img class="close-button" src="./img/Group 1.svg" alt="botão de fechar">
             </div>
             <hr>
           </div>
           <div>
             <h3 class="filter-title" id="title-colors"  for="cores">CORES</h3>
-            <ul id="cores" onclick="toggleSelection(event)">
+            <ul id="cores">
               <li>
                 <input class="inputcor" name="amarelo" id="amarelo" type="checkbox" data-value="amarelo" />
                 <label class="label" for="amarelo">
@@ -143,7 +143,7 @@
           </div>
           <div>
             <h3 class="filter-title" for="tamanhos">TAMANHOS</h3>
-            <ul id="tamanhos" onclick="toggleSelection(event)">
+            <ul id="tamanhos">
               <li><button data-value="P">P</button></li>
               <li><button data-value="M">M</button></li>
               <li><button data-value="G">G</button></li>
@@ -159,7 +159,7 @@
           </div>
           <div>
             <h3 class="filter-title" for="faixa-preco">FAIXA DE PREÇO</h3>
-            <ul id="faixa-preco" onclick="toggleSelection(event)">
+            <ul id="faixa-preco">
               <li>
                 <input class="inputpreco" name="preco0" id="preco0" type="checkbox" data-value="0-50" />
                 <label class="label" for="preco0">
@@ -212,7 +212,18 @@
             <button class="clear-button">limpar</button>
           </div>
         </div>
-        
+        <div class="sidemenu-ordenar">
+          <div class="sidemenu-ordernar-header">
+            <h2>Ordernar</h2>
+            <img class="close-button2" src="./img/Group 1.svg" alt="botão de fechar">
+          </div>
+          <hr>
+          <div class="ordernar-button">
+            <button class="aside-most-recent">Mais recentes</button>
+            <button class="aside-lower-price">Menor preço</button>
+            <button class="aside-higher-price">Maior preço</button>
+          </div>
+        </div>
         <div class="products">         
         </div>
       </div>
