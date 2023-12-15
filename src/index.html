@@ -27,22 +27,174 @@
     <div class="body-header">
 
       <div class="body-header-title">
-        <h2>Blusas</h2>
+        <h1>Blusas</h1>
       </div>
 
       <div class="body-header-options-box">
           <div class="body-header-options-select">
             <span>Ordernar por:</span>
-            <img src="./img/arrow.svg" alt="arrow icon" class="arrow-icon">
+            <img src="./img/arrow.svg" alt="arrow icon" class="arrow-icon" id="arrow-icon-order">
           </div>
+          
+          <div class="body-header-options-select-mobile">
+            <span>Filtrar</span>
+          </div>
+          
+          <div class="body-header-options-select-mobile">
+            <span>Ordenar</span>
+          </div>
+
+
           <div class="body-header-options-select-dropdown">
-            <span>Mais recentes</span>
-            <span>Menor preço</span>
-            <span>Maior preço</span>
+            <span id="selectMaisRecentes" class="body-header-options-select-dropdown-option">Mais recentes</span>
+            <span id="selectMenorPreco" class="body-header-options-select-dropdown-option">Menor preço</span>
+            <span id="selectMaiorPreco" class="body-header-options-select-dropdown-option">Maior preço</span>
           </div>
       </div>
 
     </div>
+
+
+    <div class="body-sidebar-filter-content">
+      <div class="body-sidebar-filter-colors">
+
+        <div class="body-sidebar-filter-colors-title">
+          <h2>CORES</h2>
+        </div>
+
+        <div class="body-sidebar-filter-colors-list">
+          <label class="input-checkbox-filter">
+            <p>Amarelo</p>
+            <input name="color" value="amarelo" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>Azul</p>
+            <input name="color" value="azul" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>Branco</p>
+            <input name="color" value="branco" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>Cinza</p>
+            <input name="color" value="cinza" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>Laranja</p>
+            <input name="color" value="laranja" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter input-checkbox-filter-hidden">
+            <p>Verde</p>
+            <input name="color" value="verde" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter input-checkbox-filter-hidden">
+            <p>Vermelho</p>
+            <input name="color" value="vermelho" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter input-checkbox-filter-hidden">
+            <p>Preto</p>
+            <input name="color" value="preto" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter input-checkbox-filter-hidden">
+            <p>Rosa</p>
+            <input name="color" value="rosa" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter input-checkbox-filter-hidden">
+            <p>Vinho</p>
+            <input name="color" value="vinho" type="checkbox">
+            <span class="checkmark"></span>
+          </label> 
+        </div>
+        <div class='body-sidebar-show-all-colors'>
+          <span id="span-show-colors"> Ver todas as cores </span>
+          <img src="./img/arrow.svg" alt="arrow icon" class="arrow-icon" id="arrow-icon-colors">
+        </div>
+
+      </div>
+
+      <div class="body-sidebar-filter-size">
+
+        <div class="body-sidebar-filter-size-title">
+          <h2>TAMANHOS</h2>
+        </div>
+
+        <div class='body-sidebar-filters-grid-sizes-box'>
+          <div class='body-sidebar-filters-grid-sizes'>
+            <input type="checkbox" name="size" id="tamanho-p"  value="P" >
+            <label for="tamanho-p"><span> P </span></label>
+            <input type="checkbox" name="size" id="tamanho-m"  value="M" >
+            <label for="tamanho-m"><span>M</span></label>
+            <input type="checkbox" name="size" id="tamanho-g"  value="G" >
+            <label for="tamanho-g"><span>G</span></label>
+            <input type="checkbox" name="size" id="tamanho-gg" value="GG">
+            <label for="tamanho-gg"><span>GG</span></label>
+            <input type="checkbox" name="size" id="tamanho-u"  value="U" >
+            <label for="tamanho-u"><span>U</span></label>
+            <input type="checkbox" name="size" id="tamanho-36" value="36">
+            <label for="tamanho-36"><span>36</span></label>
+            <input type="checkbox" name="size" id="tamanho-38" value="38">
+            <label for="tamanho-38"><span>38</span></label>
+            <input type="checkbox" name="size" id="tamanho-40" value="40">
+            <label for="tamanho-40"><span>40</span></label>
+            <input type="checkbox" name="size" id="tamanho-42" value="42">
+            <label for="tamanho-42"><span>42</span></label>
+            <input type="checkbox" name="size" id="tamanho-44" value="44">
+            <label for="tamanho-44"><span>44</span></label>
+            <input type="checkbox" name="size" id="tamanho-46" value="46">
+            <label for="tamanho-46"><span>46</span></label>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="body-sidebar-filter-price">
+
+        <div class="body-sidebar-filter-price-title">
+          <h2>FAIXA DE PREÇO</h2>
+        </div>
+
+        <div class="body-sidebar-filter-prices-list">
+          <label class="input-checkbox-filter">
+            <p>de R$0 até R$50</p>
+            <input name="price" value="0a50" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>de R$51 até R$150</p>
+            <input name="price" value="51a150" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>de R$151 até R$300</p>
+            <input name="price" value="151a300" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>de R$301 até R$500</p>
+            <input name="price" value="301a500" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="input-checkbox-filter">
+            <p>a partir de R$500</p>
+            <input name="price" value="500" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          
+        </div>
+
+      </div>
+
+    </div>
+    
   </div>
   
 </body>
