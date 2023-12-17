@@ -180,12 +180,13 @@ closeButtonFilter.addEventListener("click", handleCloseStuff);
 
 //clean button
 const cleanButton = document.querySelector<HTMLElement>(".clean-button");
-const checkboxes = document.querySelectorAll<HTMLInputElement>(".checkbox");
+const checkboxes = Array.from(document.querySelectorAll<HTMLInputElement>(".checkbox"));
 
 cleanButton.addEventListener("click", () => {
   checkboxes.forEach(checkbox => {
     checkbox.checked = false;
   })
+  shouldFilter = false
 })
 //
 
@@ -194,3 +195,101 @@ const applyButton = document.querySelector<HTMLElement>(".apply-button");
 
 applyButton.addEventListener("click", handleCloseStuff);
 
+
+//products search
+
+const productsContainer = document.querySelector<HTMLElement>('.products-container');
+const emptySearch = document.querySelector<HTMLElement>('.empty-search');
+
+const searchProduct = async () => {
+  const response = await fetch(`http://localhost:5000/products`)
+    .then(response => response.json())
+    .then(json => json)
+    .catch(erro => console.log(erro));
+  // console.log(response);
+  return response
+}
+
+// searchProduct();
+
+let searchResult: Product[]
+let filteredProducts: Product[] = [];
+let shouldFilter = false;
+
+const renderSearch = async () => {
+  // await searchProduct();
+
+  searchResult = await searchProduct();
+  const productRenderList = shouldFilter ? filteredProducts : searchResult;
+  console.log(productRenderList);
+
+  if (productRenderList.length > 0) {
+    productsContainer.innerHTML = productRenderList.map((item: Product) => {
+
+      const formattedPrice = item.price.toLocaleString('pt-BR', {
+        style: 'currency',
+        currency: 'BRL',
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+      return (
+          `<div class="product">
+            <img src=".${item.image}" alt="product img" class="product-img">
+            <h3 class="product-title">${item.name}</h3>
+            <span class="product-price">${formattedPrice}</span>
+            <span class="product-price-installment">até ${item.parcelamento[0]}x de R$${item.parcelamento[1]}</span>
+            <div class="product-buy-button">
+              <span>COMPRAR</span>
+            </div>
+          </div>`
+      )
+    }).join('');
+  } else {
+    productsContainer.innerHTML = (
+      `<div class="product-list-empty">
+        <span>Busca vazia.</span>
+      </div>`
+    );
+  }
+ 
+}
+
+const handleFilterProducts = () => {
+  filteredProducts = [];
+  shouldFilter = true;
+  const checkedColorFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'color');
+  const checkedSizeFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'size');
+  const checkedPriceFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'price');
+
+  searchResult.forEach((product) => {
+    const colorFilterMatch = checkedColorFilters.some(checkbox => product.color.toLowerCase() === checkbox.value);
+    const sizeFilterMatch = checkedSizeFilters.some(checkbox => product.size.includes(checkbox.value));
+    const priceFilterMatch = checkedPriceFilters.some(checkbox => {
+      let priceRange = checkbox.value.split("a");
+      if (priceRange.length === 1 && product.price >= +priceRange[0]) {
+        return true;
+      }
+      return +priceRange[0] <= product.price && +priceRange[1] >= product.price;
+    });
+
+    if(
+      (colorFilterMatch || checkedColorFilters.length === 0) &&
+      (sizeFilterMatch || checkedSizeFilters.length === 0) &&
+      (priceFilterMatch || checkedPriceFilters.length === 0) &&
+      !filteredProducts.some((p) => p.id === product.id)) {
+      filteredProducts.push(product);
+    }
+  });
+
+  // console.log(filteredProducts);
+};
+
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener("click", () => {
+    handleFilterProducts();
+    renderSearch();
+  })
+})
+
+renderSearch();
