@@ -212,16 +212,16 @@ const searchProduct = async () => {
 
 // searchProduct();
 
-let searchResult: Product[]
+let productsApi: Product[]
 let filteredProducts: Product[] = [];
 let shouldFilter = false;
 
-const renderSearch = async () => {
+const renderProducts = async () => {
   // await searchProduct();
 
-  searchResult = await searchProduct();
-  const productRenderList = shouldFilter ? filteredProducts : searchResult;
-  console.log(productRenderList);
+  productsApi = await searchProduct();
+  const productRenderList = shouldFilter ? filteredProducts : productsApi;
+  // console.log(productRenderList);
 
   if (productRenderList.length > 0) {
     productsContainer.innerHTML = productRenderList.map((item: Product) => {
@@ -245,8 +245,10 @@ const renderSearch = async () => {
           </div>`
       )
     }).join('');
+    emptySearch.innerHTML = "";
   } else {
-    productsContainer.innerHTML = (
+    productsContainer.innerHTML = ""
+    emptySearch.innerHTML = (
       `<div class="product-list-empty">
         <span>Busca vazia.</span>
       </div>`
@@ -262,7 +264,7 @@ const handleFilterProducts = () => {
   const checkedSizeFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'size');
   const checkedPriceFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'price');
 
-  searchResult.forEach((product) => {
+  productsApi.forEach((product) => {
     const colorFilterMatch = checkedColorFilters.some(checkbox => product.color.toLowerCase() === checkbox.value);
     const sizeFilterMatch = checkedSizeFilters.some(checkbox => product.size.includes(checkbox.value));
     const priceFilterMatch = checkedPriceFilters.some(checkbox => {
@@ -285,11 +287,61 @@ const handleFilterProducts = () => {
   // console.log(filteredProducts);
 };
 
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener("click", () => {
-    handleFilterProducts();
-    renderSearch();
-  })
-})
+const handleFilter = () => {
+  handleFilterProducts();
+  renderProducts();
+}
 
-renderSearch();
+checkboxes.forEach(checkbox => {
+  if(window.innerWidth >= 640) {
+    checkbox.addEventListener("click", handleFilter);
+  }
+})
+applyButton.addEventListener("click", handleFilter);
+
+const handleOrderBy = (orderByParam: string) => {
+  const productRenderList = shouldFilter ? filteredProducts : productsApi;
+  console.log(productRenderList);
+  switch (orderByParam) {
+    case "selectMaisRecentes":
+      productRenderList.sort((a, b) => {
+        return (new Date(b.date) as any) - (new Date(a.date) as any);
+      });
+      break;
+      case "selectMenorPreco":
+        productRenderList.sort((a, b) => a.price - b.price);
+        break;
+      case "selectMaiorPreco":
+        productRenderList.sort((b, a) => a.price - b.price);
+        break;
+
+      default:
+        break;
+  }
+  console.log(productRenderList);
+
+  productsApi = productRenderList;
+  filteredProducts = productRenderList;
+}
+
+const orderByMaisRecentes = document.getElementById('selectMaisRecentes');
+const orderByMenorPreco = document.getElementById('selectMenorPreco');
+const orderByMaiorPreco = document.getElementById('selectMaiorPreco');
+
+orderByMaisRecentes.addEventListener("click", () => {
+  handleOrderBy("selectMaisRecentes");
+  renderProducts();
+  shouldFilter = true;
+});
+orderByMenorPreco.addEventListener("click", () => {
+  handleOrderBy("selectMenorPreco");
+  renderProducts();
+  shouldFilter = true;
+});
+orderByMaiorPreco.addEventListener("click", () => {
+  handleOrderBy("selectMaiorPreco");
+  renderProducts();
+  shouldFilter = true;
+});
+
+renderProducts();
