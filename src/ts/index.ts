@@ -8,7 +8,6 @@ function main() {
 
 document.addEventListener("DOMContentLoaded", main);
 
-
 //bodyHeader dropdown script
 const bodyHeaderOptionsSelect = document.querySelector<HTMLElement>('.body-header-options-select');
 const bodyHeaderOptionsSelectDropdown = document.querySelector<HTMLElement>('.body-header-options-select-dropdown');
@@ -187,6 +186,7 @@ cleanButton.addEventListener("click", () => {
     checkbox.checked = false;
   })
   shouldFilter = false
+  renderProducts();
 })
 //
 
@@ -212,19 +212,33 @@ const searchProduct = async () => {
 
 // searchProduct();
 
+let isMobile: boolean = window.innerWidth <= 640
+let productRenderList: Product[]
 let productsApi: Product[]
 let filteredProducts: Product[] = [];
-let shouldFilter = false;
+let shouldFilter: boolean = false;
+let productListLimit: number = isMobile ? 4 : 9
 
 const renderProducts = async () => {
   // await searchProduct();
 
+  
   productsApi = await searchProduct();
-  const productRenderList = shouldFilter ? filteredProducts : productsApi;
-  // console.log(productRenderList);
+  productRenderList = shouldFilter ? filteredProducts : productsApi;
+ 
+  if (
+    (!isMobile && productRenderList.length > 9 && productListLimit === 9) ||
+    (isMobile && productRenderList.length > 4 && productListLimit === 4)
+  ){
+    loadMoreButton.style.display = "flex";
+  } else if (productRenderList.length === 0 || productListLimit > productRenderList.length) {
+    loadMoreButton.style.display = "none";
+  }
+
+  
 
   if (productRenderList.length > 0) {
-    productsContainer.innerHTML = productRenderList.map((item: Product) => {
+    productsContainer.innerHTML = productRenderList.slice(0, productListLimit).map((item: Product) => {
 
       const formattedPrice = item.price.toLocaleString('pt-BR', {
         style: 'currency',
@@ -234,14 +248,14 @@ const renderProducts = async () => {
       });
 
       return (
-          `<div class="product">
+          `<div class="product">           
             <img src=".${item.image}" alt="product img" class="product-img">
             <h3 class="product-title">${item.name}</h3>
             <span class="product-price">${formattedPrice}</span>
             <span class="product-price-installment">até ${item.parcelamento[0]}x de R$${item.parcelamento[1]}</span>
             <div class="product-buy-button">
               <span>COMPRAR</span>
-            </div>
+            </div>                     
           </div>`
       )
     }).join('');
@@ -256,10 +270,38 @@ const renderProducts = async () => {
   }
  
 }
+//
+
+//load more button
+const loadMoreButton = document.querySelector<HTMLElement>('.load-more-button');
+
+loadMoreButton.addEventListener("click", () => {
+  productListLimit = productListLimit + productListLimit;
+  renderProducts();
+  
+  if (productListLimit > productRenderList.length) {
+    loadMoreButton.style.display = "none";
+  }
+})
+//
+
+//cart counter
+const headerCarrinhoCounter = document.querySelector<HTMLElement>('.header-carrinho-counter');
+
+let clicks: number = 0;
+
+document.body.addEventListener("click", (e: any) => {
+  if (e.target.closest('.product-buy-button')) {
+    clicks += 1;
+    headerCarrinhoCounter.innerHTML = `${clicks}`;
+  }
+})
+
 
 const handleFilterProducts = () => {
   filteredProducts = [];
   shouldFilter = true;
+  productListLimit = isMobile ? 4 : 9;
   const checkedColorFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'color');
   const checkedSizeFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'size');
   const checkedPriceFilters = checkboxes.filter((checkbox) => checkbox.checked && checkbox.name === 'price');
@@ -293,7 +335,7 @@ const handleFilter = () => {
 }
 
 checkboxes.forEach(checkbox => {
-  if(window.innerWidth >= 640) {
+  if (!isMobile) {
     checkbox.addEventListener("click", handleFilter);
   }
 })
