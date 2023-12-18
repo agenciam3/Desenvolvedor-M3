@@ -206,7 +206,7 @@ const searchProduct = async () => {
     .then(response => response.json())
     .then(json => json)
     .catch(erro => console.log(erro));
-  // console.log(response);
+  
   return response
 }
 
@@ -326,7 +326,6 @@ const handleFilterProducts = () => {
     }
   });
 
-  // console.log(filteredProducts);
 };
 
 const handleFilter = () => {
@@ -343,7 +342,7 @@ applyButton.addEventListener("click", handleFilter);
 
 const handleOrderBy = (orderByParam: string) => {
   const productRenderList = shouldFilter ? filteredProducts : productsApi;
-  console.log(productRenderList);
+
   switch (orderByParam) {
     case "selectMaisRecentes":
       productRenderList.sort((a, b) => {
@@ -360,7 +359,6 @@ const handleOrderBy = (orderByParam: string) => {
       default:
         break;
   }
-  console.log(productRenderList);
 
   productsApi = productRenderList;
   filteredProducts = productRenderList;
